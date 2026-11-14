@@ -75,11 +75,11 @@ IA recomendada: ChatGPT para ideas y textos, y la IA de código que tengas para 
 
 IA recomendada: ChatGPT. Prompt: `prompts/joel.md`.
 
-- [ ] **J-1 (en la primera hora).** `docs/REQUISITOS.md`: entregables, formato, idioma, duración del pitch y del video, plazo, plataforma de envío y criterios de evaluación. Revisar la pestaña Resources del reto. Avisar al grupo de cualquier cambio.
-- [ ] **J-2 (hasta 18:00).** `README.md` principal y `docs/ATRIBUCION.md` con fuentes, licencias y créditos de NASA.
+- [x] **J-1 (en la primera hora).** `docs/REQUISITOS.md`: entregables, formato, idioma, duración del pitch y del video, plazo, plataforma de envío y criterios de evaluación. Revisar la pestaña Resources del reto. Avisar al grupo de cualquier cambio.
+- [x] **J-2 (hasta 18:00).** `README.md` principal y `docs/ATRIBUCION.md` con fuentes, licencias y créditos de NASA.
 - [ ] **J-3 (hasta 00:00).** `docs/QA.md`: matriz de pruebas. Primera pasada de QA sobre producción en escritorio y móvil; bugs como Issues de GitHub.
 - [ ] **J-4 (hasta 06:00).** `docs/PITCH.md`: guion con el lenguaje del reto (identificar, caracterizar, qué es análogo, dónde falla, conexión con la exploración), diapositivas y guion gráfico del video.
-- [ ] **J-4b (hasta 06:00).** `docs/INFORME.md`: informe público de 2 a 3 páginas con método, hallazgos (mejores análogos por sitio, los inesperados, el caso de Bolivia) y dónde falla la analogía.
+- [x] **J-4b (hasta 06:00).** `docs/INFORME.md`: informe público de 2 a 3 páginas con método, hallazgos (mejores análogos por sitio, los inesperados, el caso de Bolivia) y dónde falla la analogía.
 - [ ] **J-5 (07:00 a 09:00).** Grabar el video y ensayar el pitch 3 veces con el equipo.
 - [ ] **J-6 (09:00).** Lista de verificación de entrega y envío antes de las 10:00.
 
