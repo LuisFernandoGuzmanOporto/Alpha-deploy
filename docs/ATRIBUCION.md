@@ -17,7 +17,7 @@ Dueño: Joel. Cada persona le pasa sus fuentes. Se muestra en el pie de la web y
 | Texturas del globo, Tierra: Blue Marble Next Generation | Dante | https://gibs.earthdata.nasa.gov/ | Datos de NASA; GIBS pide un agradecimiento | We acknowledge the use of imagery provided by services from NASA's Global Imagery Browse Services (GIBS), part of NASA's Earth Science Data and Information System (ESDIS). |
 | Mapa base: teselas de OpenStreetMap | Fernando | https://www.openstreetmap.org/copyright | Datos bajo Open Database License (ODbL); el crédito debe verse en el mapa | © OpenStreetMap contributors |
 | NASA POWER (temperatura TS, precipitación PRECTOTCORR y albedo ALLSKY_SRF_ALB de la Tierra, climatología 2001-2025) | Lian | https://power.larc.nasa.gov/ | Datos de NASA; reconocer a NASA como fuente | NASA Langley Research Center POWER Project (MERRA-2 y CERES SYN1deg) |
-| Terrain Tiles en AWS (pendiente y relieve de la Tierra; SRTM y otros modelos) | Lian | https://registry.opendata.aws/terrain-tiles/ | Atribución según https://github.com/tilezen/joerd/blob/master/docs/attribution.md (texto exacto a verificar) | Terrain Tiles was accessed on 14/11/2026 from https://registry.opendata.aws/terrain-tiles |
+| Terrain Tiles en AWS (pendiente y relieve de la Tierra; SRTM y otros modelos) | Lian | https://registry.opendata.aws/terrain-tiles/ | Atribución según https://github.com/tilezen/joerd/blob/master/docs/attribution.md (texto exacto abajo, en Notas) | Terrain Tiles was accessed on 14/11/2026 from https://registry.opendata.aws/terrain-tiles |
 | Coordenadas de los candidatos terrestres | Lian | Artículo de Wikipedia de cada lugar (ver `pipeline/earth/seed.json`) | Coordenadas: dato factual; citar la fuente | Wikipedia |
 | Referencias de las fichas (`fichas.json`) | Lian | | | Pendiente: Lian |
 | Tipografías, logo e imágenes | Noe | `docs/design/IDENTIDAD.md` | Fuentes del sistema (Segoe UI, system-ui), sin descarga; símbolo SVG original del equipo; sin recursos gráficos externos | No requiere crédito |
@@ -50,3 +50,28 @@ El equipo usó asistentes de IA (Claude y ChatGPT) para escribir y revisar códi
 - **OpenStreetMap:** la web hoy muestra "© colaboradores de OpenStreetMap". Al pasar la web a inglés (issue #25) debe decir "© OpenStreetMap contributors".
 - **A verificar:** el crédito exacto del mosaico Viking MDIM 2.1 ("NASA/USGS").
 - Detalle de los productos de la Luna y Marte: `pipeline/moon_mars/README.md` y `web/src/components/globe/README.md`.
+
+## Atribución requerida de Terrain Tiles
+
+Texto copiado de https://github.com/tilezen/joerd/blob/master/docs/attribution.md (consultado el 14/11/2026). Las fuentes que realmente aportaron a cada candidato figuran en su campo `sources` de `data/candidates.json`; este bloque cubre todas las posibles.
+
+```text
+* ArcticDEM terrain data DEM(s) were created from DigitalGlobe, Inc., imagery and
+  funded under National Science Foundation awards 1043681, 1559691, and 1542736;
+* Australia terrain data © Commonwealth of Australia (Geoscience Australia) 2017;
+* Austria terrain data © offene Daten Österreichs – Digitales Geländemodell (DGM)
+  Österreich;
+* Canada terrain data contains information licensed under the Open Government
+  Licence – Canada;
+* Europe terrain data produced using Copernicus data and information funded by the
+  European Union - EU-DEM layers;
+* Global ETOPO1 terrain data U.S. National Oceanic and Atmospheric Administration
+* Mexico terrain data source: INEGI, Continental relief, 2016;
+* New Zealand terrain data Copyright 2011 Crown copyright (c) Land Information New
+  Zealand and the New Zealand Government (All rights reserved);
+* Norway terrain data © Kartverket;
+* United Kingdom terrain data © Environment Agency copyright and/or database right
+  2015. All rights reserved;
+* United States 3DEP (formerly NED) and global GMTED2010 and SRTM terrain data
+  courtesy of the U.S. Geological Survey.
+```
