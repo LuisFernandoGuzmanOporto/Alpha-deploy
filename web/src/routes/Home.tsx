@@ -69,8 +69,23 @@ export function Home() {
           Solo lugares poco estudiados
         </label>
       </div>
-      {site && <SiteInfo site={site} />}
-      <WeightSliders weights={weights} onChange={(w) => update({ pesos: serializeWeights(w) })} onReset={() => update({ pesos: null })} />
+      {site && (
+        <details>
+          <summary>Datos del sitio</summary>
+          <SiteInfo site={site} />
+        </details>
+      )}
+      <details>
+        <summary>Ajustar el peso de cada variable</summary>
+        <WeightSliders
+          weights={weights}
+          onChange={(w) => update({ pesos: serializeWeights(w) })}
+          onReset={() => update({ pesos: null })}
+        />
+      </details>
+      <p aria-live="polite">
+        {rows.length} {rows.length === 1 ? "análogo" : "análogos"} en el ranking.
+      </p>
       <div className="explorer">
         <Suspense fallback={<p>Cargando mapa…</p>}>
           <RankingMap rows={rows} selectedId={selectedId} onSelect={(id) => update({ analogo: id })} />

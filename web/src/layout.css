@@ -1,4 +1,13 @@
 /* Maquetación mínima de la app. Los tokens y estilos de diseño los aporta Noe en src/styles/. */
+:root {
+  color-scheme: light;
+}
+
+body {
+  background: #ffffff;
+  color: #111111;
+}
+
 .controls {
   display: flex;
   flex-wrap: wrap;
