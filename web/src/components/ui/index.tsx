@@ -2,6 +2,7 @@ import { useId, useRef } from "react";
 import type { ButtonHTMLAttributes, HTMLAttributes, ReactNode, KeyboardEvent } from "react";
 import { NavLink } from "react-router-dom";
 import { LANGS, useContent, useLang, useT } from "../../i18n";
+import { Select } from "../controls";
 import { formatValue } from "../../lib/variables";
 import type { Candidate, Site, Tag as DataTag, VariableId } from "../../types";
 import "../../styles/ui.css";
@@ -25,20 +26,18 @@ export function LangSwitch() {
   const { lang, setLang } = useLang();
   const t = useT();
   return (
-    <label className="ea-lang">
-      <span className="visually-hidden">{t("lang.label")}</span>
-      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-        <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="1.6" />
-        <path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" fill="none" stroke="currentColor" strokeWidth="1.6" />
-      </svg>
-      <select value={lang} onChange={(event) => setLang(event.target.value === "en" ? "en" : "es")}>
-        {LANGS.map((code) => (
-          <option key={code} value={code} lang={code}>
-            {t(`lang.${code}`)}
-          </option>
-        ))}
-      </select>
-    </label>
+    <Select
+      value={lang}
+      onValueChange={(value) => setLang(value === "en" ? "en" : "es")}
+      label={t("lang.label")}
+      icon={
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="1.5" />
+          <path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" fill="none" stroke="currentColor" strokeWidth="1.5" />
+        </svg>
+      }
+      options={LANGS.map((code) => ({ value: code, label: t(`lang.${code}`), lang: code }))}
+    />
   );
 }
 
@@ -47,34 +46,30 @@ export function Header() {
   const { ui } = useContent();
   const t = useT();
   return (
-    <header className="ea-header">
-      <NavLink className="ea-brand" to="/" aria-label={t("ui.brandAria")}>
-        <svg viewBox="0 0 40 40" width="36" height="36" aria-hidden="true">
+    <header className="cc-topbar">
+      <NavLink className="cc-brand" to="/" aria-label={t("ui.brandAria")}>
+        <svg viewBox="0 0 40 40" width="28" height="28" aria-hidden="true">
           <circle cx="20" cy="20" r="13" fill="none" stroke="currentColor" strokeWidth="2" />
           <ellipse cx="20" cy="20" rx="19" ry="6" transform="rotate(-35 20 20)" fill="none" stroke="currentColor" strokeWidth="2" />
-          <circle cx="29" cy="8" r="3" fill="currentColor" />
+          <circle cx="29" cy="8" r="3" fill="var(--cc-accent)" />
         </svg>
-        {ui.brand}
+        <span className="cc-brand__name">{ui.brand}</span>
       </NavLink>
-      <div className="ea-header__end">
-        <nav aria-label={t("ui.navLabel")}>
-          <NavLink end to="/">{ui.nav.explore}</NavLink>
-          <NavLink to="/descubrimientos">{ui.nav.discoveries}</NavLink>
-          <NavLink to="/metodologia">{ui.nav.methodology}</NavLink>
-        </nav>
-        <LangSwitch />
-      </div>
+      <nav className="cc-nav" aria-label={t("ui.navLabel")}>
+        <NavLink end to="/">{ui.nav.explore}</NavLink>
+        <NavLink to="/descubrimientos">{ui.nav.discoveries}</NavLink>
+        <NavLink to="/metodologia">{ui.nav.methodology}</NavLink>
+      </nav>
+      <LangSwitch />
     </header>
   );
 }
 
 /** <Footer /> */
 export function Footer() {
-  const { ui } = useContent();
   const t = useT();
   return (
-    <footer className="ea-footer">
-      <strong>{ui.tagline}</strong>
+    <footer className="cc-footer">
       <span>{t("ui.footerTeam")}</span>
       <small>{t("ui.footerDisclaimer")}</small>
     </footer>
@@ -85,7 +80,7 @@ export function Footer() {
 export function Layout({ children }: { children: ReactNode }) {
   const t = useT();
   return (
-    <div className="ea-layout">
+    <div className="cc-app">
       <a className="ea-skip" href="#ea-main">{t("ui.skip")}</a>
       <Header />
       <main id="ea-main" tabIndex={-1}>{children}</main>

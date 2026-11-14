@@ -1,3 +1,4 @@
+import { AnimatePresence, MotionConfig, motion } from "motion/react";
 import { lazy, Suspense } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { ErrorBoundary } from "./components/ErrorBoundary";
@@ -15,21 +16,31 @@ export function App() {
   const t = useT();
   const location = useLocation();
   return (
-    <Layout>
-      <ErrorBoundary>
-        <Suspense fallback={<Loading />}>
-          {/* La clave por ruta reinicia la animación de entrada en cada pantalla. */}
-          <div key={location.pathname}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/comparar/:siteId/:candidateId" element={<Compare />} />
-              <Route path="/descubrimientos" element={<Discoveries />} />
-              <Route path="/metodologia" element={<Methodology />} />
-              <Route path="*" element={<p className="ea-empty">{t("app.notFound")}</p>} />
-            </Routes>
-          </div>
-        </Suspense>
-      </ErrorBoundary>
-    </Layout>
+    // reducedMotion="user": con "reducir movimiento" activado se apagan las animaciones de transformación y de layout.
+    <MotionConfig reducedMotion="user">
+      <Layout>
+        <ErrorBoundary>
+          <Suspense fallback={<Loading />}>
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={location.pathname}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2, ease: [0.2, 0.7, 0.2, 1] }}
+              >
+                <Routes location={location}>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/comparar/:siteId/:candidateId" element={<Compare />} />
+                  <Route path="/descubrimientos" element={<Discoveries />} />
+                  <Route path="/metodologia" element={<Methodology />} />
+                  <Route path="*" element={<p className="cc-empty">{t("app.notFound")}</p>} />
+                </Routes>
+              </motion.div>
+            </AnimatePresence>
+          </Suspense>
+        </ErrorBoundary>
+      </Layout>
+    </MotionConfig>
   );
 }

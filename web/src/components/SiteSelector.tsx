@@ -1,7 +1,8 @@
-import type { CSSProperties } from "react";
+import { motion } from "motion/react";
+import { useRef, type KeyboardEvent } from "react";
 import { useT } from "../i18n";
+import { formatValue } from "../lib/variables";
 import type { Site } from "../types";
-import { SiteCard } from "./ui";
 
 interface Props {
   sites: Site[];
@@ -9,17 +10,61 @@ interface Props {
   onChange: (siteId: string) => void;
 }
 
-/** Elección del destino: una tarjeta por sitio (primero la Luna, luego Marte; cada tarjeta dice su cuerpo). */
+/** Elección del destino como grupo de opciones: flechas para moverse y cambiar, Tab para salir. */
 export function SiteSelector({ sites, value, onChange }: Props) {
   const t = useT();
+  const refs = useRef<Record<string, HTMLButtonElement | null>>({});
   const ordered = [...sites].sort((a, b) => Number(a.body === "mars") - Number(b.body === "mars"));
+
+  const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    const step = event.key === "ArrowDown" || event.key === "ArrowRight" ? 1 : event.key === "ArrowUp" || event.key === "ArrowLeft" ? -1 : 0;
+    if (!step) return;
+    event.preventDefault();
+    const index = ordered.findIndex((site) => site.id === value);
+    const next = ordered[(index + step + ordered.length) % ordered.length];
+    if (!next) return;
+    onChange(next.id);
+    refs.current[next.id]?.focus();
+  };
+
   return (
-    <div className="ea-sites ea-stagger" role="group" aria-label={`${t("body.moon")} / ${t("body.mars")}`}>
-      {ordered.map((site, index) => (
-        <div key={site.id} style={{ "--i": index } as CSSProperties} className="ea-sites__item">
-          <SiteCard site={site} selected={site.id === value} onSelect={onChange} />
-        </div>
-      ))}
+    <div className="cc-targets" role="radiogroup" aria-label={`${t("body.moon")} / ${t("body.mars")}`} onKeyDown={onKeyDown}>
+      {ordered.map((site) => {
+        const selected = site.id === value;
+        return (
+          <button
+            key={site.id}
+            ref={(node) => {
+              refs.current[site.id] = node;
+            }}
+            type="button"
+            role="radio"
+            aria-checked={selected}
+            tabIndex={selected ? 0 : -1}
+            className="cc-target"
+            onClick={() => onChange(site.id)}
+          >
+            {selected && (
+              <motion.span
+                layoutId="target-active"
+                className="cc-target__active"
+                transition={{ type: "spring", stiffness: 520, damping: 42 }}
+              />
+            )}
+            <span className={`cc-disc cc-disc--${site.body}`} aria-hidden="true" />
+            <span className="cc-target__main">
+              <span className="cc-target__name">{site.name}</span>
+              <span className="cc-target__meta">
+                {t(`body.${site.body}`)} · {site.region}
+              </span>
+            </span>
+            <span className="cc-target__stats">
+              <span>{formatValue("slope_deg", site.variables.slope_deg, t)}</span>
+              <span>{formatValue("temp_mean_c", site.variables.temp_mean_c, t)}</span>
+            </span>
+          </button>
+        );
+      })}
     </div>
   );
 }

@@ -1,8 +1,8 @@
 /** Escala de color del puntaje: la misma en el mapa, la lista y la leyenda. */
 export const SCORE_STOPS: readonly (readonly [number, string])[] = [
-  [20, "#b5472c"],
-  [55, "#e0a93b"],
-  [85, "#0a7a6e"],
+  [20, "#8a7d6e"],
+  [55, "#ffb566"],
+  [85, "#ff6a00"],
 ];
 
 function hexToRgb(hex: string): [number, number, number] {

@@ -166,6 +166,17 @@ const es = {
   "cmp.bias": "La temperatura y la precipitación de este lugar vienen de una malla regional gruesa (decenas de km) y probablemente no representan el punto exacto. La pendiente y el relieve sí son fiables.",
   "cmp.biasMark": "dato sesgado",
   "discoveries.eyebrow": "Poco estudiados",
+
+  "rail.telemetry": "Telemetría del sitio",
+  "rail.params": "Parámetros del índice",
+  "rail.paramsOpen": "Ajustar pesos",
+  "rail.paramsDesc": "Cambia el peso de cada variable: el ranking se recalcula al instante.",
+  "dialog.close": "Cerrar",
+  "ranking.colRank": "N.º",
+  "ranking.colAnalog": "Análogo",
+  "ranking.colScore": "Puntaje",
+  "discoveries.colTarget": "Destino",
+  "discoveries.colRank": "Puesto {n}",
 } as const;
 
 export type MessageKey = keyof typeof es;
@@ -336,6 +347,17 @@ const en: Record<MessageKey, string> = {
   "cmp.bias": "This place's temperature and precipitation come from a coarse regional grid (tens of km) and probably do not represent the exact point. Slope and relief are reliable.",
   "cmp.biasMark": "biased value",
   "discoveries.eyebrow": "Less studied",
+
+  "rail.telemetry": "Site telemetry",
+  "rail.params": "Index parameters",
+  "rail.paramsOpen": "Adjust weights",
+  "rail.paramsDesc": "Change the weight of each variable: the ranking recalculates instantly.",
+  "dialog.close": "Close",
+  "ranking.colRank": "No.",
+  "ranking.colAnalog": "Analog",
+  "ranking.colScore": "Score",
+  "discoveries.colTarget": "Target",
+  "discoveries.colRank": "Rank {n}",
 };
 
 const CATALOGS: Record<Lang, Record<MessageKey, string>> = { es, en };
