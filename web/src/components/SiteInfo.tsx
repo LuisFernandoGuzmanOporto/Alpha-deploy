@@ -26,7 +26,12 @@ export function SiteInfo({ site }: Props) {
         ))}
       </dl>
       <TagList tags={site.tags} />
-      {site.notes && <p className="cc-note">{site.notes}</p>}
+      {site.notes && (
+        <details className="cc-notes">
+          <summary>{t("siteinfo.notes")}</summary>
+          <p className="cc-note">{site.notes}</p>
+        </details>
+      )}
     </section>
   );
 }

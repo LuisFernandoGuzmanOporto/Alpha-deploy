@@ -30,9 +30,9 @@ describe("catálogo de mensajes", () => {
   });
 
   it("reemplaza los parámetros y deja visible uno que falta", () => {
-    expect(en("home.countMany", { n: 7 })).toBe("7 analogs in the ranking");
+    expect(en("home.countMany", { n: 7 })).toBe("7 ranked analogs");
     expect(es("home.countOne", { n: 1 })).toBe("1 análogo en el ranking");
-    expect(en("home.countMany")).toBe("{n} analogs in the ranking");
+    expect(en("home.countMany")).toBe("{n} ranked analogs");
   });
 });
 

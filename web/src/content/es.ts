@@ -29,8 +29,8 @@ export const variables: Record<VariableId, { label: string; unit: string; descri
 export const es = {
   brand: "Earth Analogs",
   tagline: "La Tierra, laboratorio de otros mundos.",
-  title: "Explora aquí. Prepara el próximo destino.",
-  intro: "Elige un sitio de la Luna o Marte y compara sus características con lugares de la Tierra.",
+  title: "Explora análogos terrestres",
+  intro: "Elige un sitio de la Luna o Marte y mira qué lugar de la Tierra se le parece más, y por qué.",
   nav: { explore: "Explorar", discoveries: "Descubrimientos", methodology: "Metodología" },
   filters: { site: "Destino de exploración", bolivia: "Solo Bolivia", discoveries: "Solo lugares poco estudiados", reset: "Limpiar filtros" },
   states: { loading: "Cargando datos…", error: "No pudimos cargar los datos. Intenta de nuevo.", empty: "No hay análogos para estos filtros. Prueba ampliando la búsqueda.", noData: "Sin datos disponibles", retry: "Reintentar", notFound: "No encontramos esta página." },

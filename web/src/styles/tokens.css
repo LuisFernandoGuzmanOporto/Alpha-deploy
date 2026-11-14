@@ -1,42 +1,64 @@
-/* Sistema de diseño "centro de control": grafito, blanco cálido y naranja.
+/* Sistema de diseño "centro de control": azul noche, cian solo para la interacción y ámbar/naranja solo para el puntaje.
    Todo el color, la tipografía, el espaciado, las formas y el movimiento salen de estas variables.
    Los alias `--ea-*` mantienen funcionando los componentes de Noe (components/ui) con el tema nuevo. */
 :root {
   color-scheme: dark;
 
   /* Color: superficies de grafito (de la más oscura a la más clara) */
-  --cc-bg: #0f1113;
-  --cc-surface: #16191c;
-  --cc-surface-2: #1d2124;
-  --cc-surface-3: #262b2f;
-  --cc-border: #2c3237;
-  --cc-border-strong: #454d54;
+  --cc-bg: #0b0f17;
+  --cc-surface: #121826;
+  --cc-surface-2: #19212f;
+  --cc-surface-3: #222b3b;
+  --cc-border: #253044;
+  --cc-border-strong: #3a475e;
+  /* Borde de controles (botones, interruptores, selectores): 3:1 sobre todas las superficies */
+  --cc-control-line: #6b7a93;
 
   /* Color: texto y acento */
-  --cc-text: #f3ede4;
-  --cc-text-muted: #aaa396;
-  --cc-accent: #ff7a1a;
-  --cc-accent-strong: #ff9440;
-  --cc-accent-ink: #14110d;
-  --cc-accent-wash: #ff7a1a1f;
-  --cc-warn: #f0c14b;
-  --cc-warn-wash: #f0c14b1a;
-  --cc-focus: #ffd29e;
+  --cc-text: #e8ecf3;
+  --cc-text-muted: #a3adbf;
+  --cc-accent: #4cc9f0;
+  --cc-accent-strong: #7ad8f5;
+  --cc-accent-ink: #06121a;
+  --cc-accent-wash: #4cc9f01f;
+  --cc-warn: #ff7b7b;
+  --cc-warn-wash: #ff7b7b1a;
+  --cc-focus: #a5e6ff;
 
   /* Escala del índice de similitud: apagado, ámbar y naranja intenso (brillo y tamaño dicen lo mismo que el color) */
   --cc-scale-low: #8a7d6e;
   --cc-scale-mid: #ffb566;
   --cc-scale-high: #ff6a00;
 
+  /* Significado fijo: coincide / Luna / Marte / Tierra */
+  --cc-good: #5fd39a;
+  --cc-moon: #c9d1dc;
+  --cc-mars: #e0694a;
+  --cc-earth: #4a90d9;
+
+  /* Capas sobre el mapa y fondos translúcidos */
+  --cc-glass: #121826f2;
+  --cc-hud-bg: #0b0f17f0;
+  --cc-topbar-bg: #0b0f17ee;
+  --cc-scrim: #05080db3;
+  --cc-map-water: #0f2240;
+  --cc-accent-line: #4cc9f066;
+  --cc-warn-line: #ff7b7b55;
+  --cc-shade: #00000059;
+
   /* Tipografía */
   --cc-font-sans: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, sans-serif;
   --cc-font-mono: "Cascadia Mono", "JetBrains Mono", "SF Mono", ui-monospace, Consolas, monospace;
-  --cc-text-xs: 0.72rem;
-  --cc-text-sm: 0.8125rem;
-  --cc-text-md: 0.9375rem;
-  --cc-text-lg: 1.125rem;
+  --cc-text-xs: 0.78rem;
+  --cc-text-sm: 0.875rem;
+  --cc-text-md: 1rem;
+  --cc-text-lg: 1.2rem;
   --cc-text-xl: 1.5rem;
   --cc-text-display: clamp(1.9rem, 3.6vw, 3rem);
+  --cc-text-score: 1.4rem;
+  --cc-text-score-lg: 1.9rem;
+  --cc-text-stat: 2rem;
+  --cc-leading: 1.6;
   --cc-tracking-caps: 0.12em;
 
   /* Espaciado */
@@ -52,6 +74,9 @@
   --cc-line: 1px;
   --cc-radius: 4px;
   --cc-radius-lg: 8px;
+  --cc-radius-xl: 12px;
+  --cc-radius-pill: 999px;
+  --cc-shadow-float: 0 12px 32px var(--cc-shade), 0 0 0 1px var(--cc-border);
 
   /* Movimiento */
   --cc-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -60,8 +85,8 @@
 
   /* Estructura */
   --cc-topbar-h: 56px;
-  --cc-rail-w: 320px;
-  --cc-panel-w: 430px;
+  --cc-rail-w: 340px;
+  --cc-panel-w: 460px;
 
   /* Alias para los componentes de Noe */
   --ea-ink: var(--cc-text);
