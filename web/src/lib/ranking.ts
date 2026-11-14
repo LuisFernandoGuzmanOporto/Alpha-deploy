@@ -1,4 +1,5 @@
 import type { Candidate, RankingEntry, Results, VariableId } from "../types";
+import { rescore } from "./score";
 
 export type Weights = Record<VariableId, number>;
 
@@ -11,21 +12,6 @@ export interface RankingFilters {
   boliviaOnly: boolean;
   /** Solo candidatos `known: false` (poco estudiados como análogo). */
   unstudiedOnly: boolean;
-}
-
-/**
- * Puntaje con otros pesos, a partir de `norm_diff` (misma fórmula que pipeline/similarity.py).
- * Devuelve `null` si todas las variables disponibles tienen peso 0.
- */
-function rescore(entry: RankingEntry, weights: Weights): number | null {
-  let totalWeight = 0;
-  let weighted = 0;
-  for (const [variable, diff] of Object.entries(entry.norm_diff) as [VariableId, number][]) {
-    totalWeight += weights[variable];
-    weighted += weights[variable] * diff;
-  }
-  if (totalWeight === 0) return null;
-  return Math.round(100 * (1 - weighted / totalWeight) * 10) / 10;
 }
 
 function sameWeights(a: Weights, b: Weights): boolean {
@@ -53,7 +39,7 @@ export function buildRanking(
     if (filters.unstudiedOnly && candidate.known) continue;
     let entry = original;
     if (customWeights) {
-      const score = rescore(original, weights);
+      const score = rescore(original.norm_diff, weights);
       if (score === null) continue;
       entry = { ...original, score };
     }
