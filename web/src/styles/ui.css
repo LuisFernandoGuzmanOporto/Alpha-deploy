@@ -24,7 +24,7 @@
 
 .ea-tag { display: inline-flex; align-items: center; gap: var(--cc-space-1); padding: 1px var(--cc-space-2); border: var(--cc-line) solid var(--cc-border-strong); border-radius: 2px; background: transparent; color: var(--cc-text-muted); font: 600 0.7rem/1.6 var(--cc-font-mono); letter-spacing: 0.04em; text-transform: uppercase; }
 .ea-known { color: var(--cc-text-muted); }
-.ea-new { color: var(--cc-accent-strong); border-color: #ff7a1a66; }
+.ea-new { color: var(--cc-accent-strong); border-color: var(--cc-accent-border); }
 .ea-tags { display: flex; flex-wrap: wrap; gap: var(--cc-space-1); margin: var(--cc-space-3) 0 0; padding: 0; list-style: none; }
 
 .ea-score { display: inline-grid; gap: 2px; padding: var(--cc-space-2) var(--cc-space-3); border: var(--cc-line) solid var(--cc-border-strong); border-radius: var(--cc-radius); color: var(--cc-text-muted); font: var(--cc-text-xs) var(--cc-font-mono); }

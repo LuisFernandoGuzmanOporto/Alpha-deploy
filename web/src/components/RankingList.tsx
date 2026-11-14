@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Link } from "react-router-dom";
 import { useContent, useT } from "../i18n";
 import type { RankingRow } from "../lib/ranking";
@@ -15,6 +15,7 @@ interface Props {
 /** Ranking como tabla densa: puesto, análogo y puntaje. Al cambiar el sitio o los filtros las filas se reordenan con animación. */
 export function RankingList({ siteId, rows, selectedId, onSelect }: Props) {
   const t = useT();
+  const reduce = useReducedMotion();
   const { ui, tags } = useContent();
 
   if (rows.length === 0) {
@@ -35,11 +36,11 @@ export function RankingList({ siteId, rows, selectedId, onSelect }: Props) {
             return (
               <motion.li
                 key={candidate.id}
-                layout="position"
-                initial={{ opacity: 0, y: 10 }}
+                layout={reduce ? false : "position"}
+                initial={reduce ? false : { opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.22, delay: Math.min(index, 10) * 0.015 }}
+                transition={{ duration: reduce ? 0 : 0.22, delay: reduce ? 0 : Math.min(index, 10) * 0.015 }}
                 className={`cc-rank__item${selected ? " is-selected" : ""}`}
               >
                 <button
@@ -64,10 +65,10 @@ export function RankingList({ siteId, rows, selectedId, onSelect }: Props) {
                   {selected && (
                     <motion.div
                       className="cc-rank__body"
-                      initial={{ height: 0, opacity: 0 }}
+                      initial={reduce ? false : { height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.24, ease: [0.2, 0.7, 0.2, 1] }}
+                      transition={{ duration: reduce ? 0 : 0.24, ease: [0.2, 0.7, 0.2, 1] }}
                     >
                       <div className="cc-rank__inner">
                         <p>{candidate.why}</p>

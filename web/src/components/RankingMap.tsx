@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
+import { useReducedMotion } from "motion/react";
 import { LngLatBounds, Map as MapLibreMap, Popup, setWorkerUrl, type GeoJSONSource } from "maplibre-gl";
 import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
 import type { Feature, FeatureCollection, Point } from "geojson";
@@ -35,6 +36,8 @@ function toGeoJson(rows: RankingRow[]): FeatureCollection<Point> {
 
 export function RankingMap({ rows, selectedId, onSelect }: Props) {
   const t = useT();
+  const reduce = useReducedMotion();
+  const descriptionId = useId();
   const containerRef = useRef<HTMLDivElement>(null);
   const cursorRef = useRef<HTMLOutputElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
@@ -135,9 +138,15 @@ export function RankingMap({ rows, selectedId, onSelect }: Props) {
     if (data.features.length > 0) {
       const bounds = new LngLatBounds();
       for (const feature of data.features) bounds.extend(feature.geometry.coordinates as [number, number]);
-      map.fitBounds(bounds, { padding: 60, maxZoom: 6, duration: 600 });
+      map.fitBounds(bounds, { padding: 60, maxZoom: 6, duration: reduce ? 0 : 600 });
     }
-  }, [rows, ready]);
+  }, [rows, ready, reduce]);
+
+  useEffect(() => {
+    const canvas = mapRef.current?.getCanvas();
+    canvas?.setAttribute("aria-label", t("map.aria"));
+    canvas?.setAttribute("aria-describedby", descriptionId);
+  }, [t, ready, descriptionId]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -149,7 +158,7 @@ export function RankingMap({ rows, selectedId, onSelect }: Props) {
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !ready) return undefined;
-    if (!selectedId || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (!selectedId || reduce) {
       map.setPaintProperty(SELECTED_LAYER, "circle-radius", 22);
       map.setPaintProperty(SELECTED_LAYER, "circle-stroke-opacity", 1);
       return undefined;
@@ -163,11 +172,12 @@ export function RankingMap({ rows, selectedId, onSelect }: Props) {
     };
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [selectedId, ready]);
+  }, [selectedId, ready, reduce]);
 
   return (
     <div className="cc-map">
-      <div ref={containerRef} className="cc-map__canvas" role="region" aria-label={t("map.aria")} />
+      <p id={descriptionId} className="visually-hidden">{t("map.description")}</p>
+      <div ref={containerRef} className="cc-map__canvas" role="region" aria-label={t("map.aria")} aria-describedby={descriptionId} />
       <span className="cc-hud cc-hud--title">{t("map.title")}</span>
       <output ref={cursorRef} className="cc-hud cc-hud--cursor" aria-hidden="true">
         LAT — · LON —

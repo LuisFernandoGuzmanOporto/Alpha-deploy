@@ -27,7 +27,7 @@ export function Discoveries() {
       </header>
 
       {/* Matriz destino × puesto: se lee de un vistazo qué lugar poco estudiado lidera cada destino. */}
-      <div className="cc-matrix-wrap">
+      <div className="cc-matrix-wrap" tabIndex={0} role="region" aria-label={t("discoveries.title")}>
         <table className="cc-matrix">
           <thead>
             <tr>

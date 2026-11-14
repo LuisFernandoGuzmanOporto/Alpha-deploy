@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { useRef, type KeyboardEvent } from "react";
 import { useT } from "../i18n";
 import { formatValue } from "../lib/variables";
@@ -13,6 +13,7 @@ interface Props {
 /** Elección del destino como grupo de opciones: flechas para moverse y cambiar, Tab para salir. */
 export function SiteSelector({ sites, value, onChange }: Props) {
   const t = useT();
+  const reduce = useReducedMotion();
   const refs = useRef<Record<string, HTMLButtonElement | null>>({});
   const ordered = [...sites].sort((a, b) => Number(a.body === "mars") - Number(b.body === "mars"));
 
@@ -48,7 +49,7 @@ export function SiteSelector({ sites, value, onChange }: Props) {
               <motion.span
                 layoutId="target-active"
                 className="cc-target__active"
-                transition={{ type: "spring", stiffness: 520, damping: 42 }}
+                transition={reduce ? { duration: 0 } : { type: "spring", stiffness: 520, damping: 42 }}
               />
             )}
             <span className={`cc-disc cc-disc--${site.body}`} aria-hidden="true" />

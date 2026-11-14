@@ -1,4 +1,5 @@
 import type { CSSProperties, ReactNode } from "react";
+import { useReducedMotion } from "motion/react";
 import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer } from "recharts";
 import { useContent, useT, type Translate } from "../../i18n";
 import { scoreColor } from "../../lib/scoreColor";
@@ -28,6 +29,7 @@ const CLIMATE_VARIABLES: readonly VariableId[] = ["temp_mean_c", "precip_mm_year
 /** F3: comparación lado a lado de un sitio de la Luna o Marte con un lugar de la Tierra. */
 export function Comparador({ site, candidate, entry, limitations, tagLabel, breaksDown = [] }: ComparadorProps) {
   const t = useT();
+  const reduce = useReducedMotion();
   const { ui, tags, variables } = useContent();
   const labelOf = tagLabel ?? ((tag: Tag) => tags[tag].label);
   const rows = compareVariables(site.variables, candidate.variables, entry, t);
@@ -85,7 +87,7 @@ export function Comparador({ site, candidate, entry, limitations, tagLabel, brea
 
       <Card className="comparador-card" aria-labelledby="cmp-variables">
         <h3 id="cmp-variables">{t("cmp.byVariable")}</h3>
-        <div className="comparador-table-wrap">
+        <div className="comparador-table-wrap" tabIndex={0} role="region" aria-labelledby="cmp-variables">
           <table className="comparador-table">
             <thead>
               <tr>
@@ -144,16 +146,16 @@ export function Comparador({ site, candidate, entry, limitations, tagLabel, brea
         {radarData.length >= 3 && (
           <Card className="comparador-card" aria-labelledby="cmp-radar">
             <h3 id="cmp-radar">{t("cmp.profile")}</h3>
-            <figure className="comparador-radar" role="img" aria-label={t("cmp.radarAria", { summary: radarSummary })}>
+            <figure className="comparador-radar" role="img" aria-label={t("cmp.radarAria", { summary: radarSummary })} aria-describedby="cmp-radar-caption">
               <ResponsiveContainer width="100%" height={300}>
                 <RadarChart data={radarData} outerRadius="72%">
-                  <PolarGrid stroke="#c5d3ce" />
+                  <PolarGrid stroke="var(--cc-control-border)" />
                   <PolarAngleAxis dataKey="label" />
                   <PolarRadiusAxis domain={[0, 100]} tick={false} axisLine={false} />
-                  <Radar dataKey="similarity" name={t("cmp.radarName")} isAnimationActive />
+                  <Radar dataKey="similarity" name={t("cmp.radarName")} isAnimationActive={!reduce} />
                 </RadarChart>
               </ResponsiveContainer>
-              <figcaption>{t("cmp.radarCaption")}</figcaption>
+              <figcaption id="cmp-radar-caption">{t("cmp.radarCaption")}</figcaption>
             </figure>
           </Card>
         )}

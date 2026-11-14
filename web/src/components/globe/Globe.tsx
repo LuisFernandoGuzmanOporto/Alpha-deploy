@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
+import { useCallback, useEffect, useId, useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
 import { useT } from "../../i18n";
 import { clampLat, project, wrapLon, type View } from "./orthographic";
 import { spreadMarkers } from "./layout";
@@ -44,6 +44,7 @@ interface Texture {
 /** Globo en proyección ortográfica dibujado en un canvas: se arrastra o se gira con las flechas. */
 export function Globe({ texture, markers, initialView, label, size = 360 }: GlobeProps) {
   const t = useT();
+  const helpId = useId();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const textureRef = useRef<Texture | null>(null);
   const dragRef = useRef<{ x: number; y: number } | null>(null);
@@ -141,7 +142,8 @@ export function Globe({ texture, markers, initialView, label, size = 360 }: Glob
         className="globe-canvas"
         style={{ width: "100%", aspectRatio: "1" }}
         role="img"
-        aria-label={`${label}. ${t("globe.help")}`}
+        aria-label={label}
+        aria-describedby={helpId}
         tabIndex={0}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -149,12 +151,10 @@ export function Globe({ texture, markers, initialView, label, size = 360 }: Glob
         onPointerCancel={endDrag}
         onKeyDown={onKeyDown}
       />
-      {status === "loading" && <p className="globe-status">{t("globe.loadingTexture")}</p>}
-      {status === "error" && (
-        <p className="globe-status" role="alert">
-          {t("globe.textureError")}
-        </p>
-      )}
+      <p id={helpId} className="globe-help">{t("globe.help")}</p>
+      <p className="globe-status" role={status === "error" ? "alert" : "status"}>
+        {status === "loading" ? t("globe.loadingTexture") : status === "error" ? t("globe.textureError") : ""}
+      </p>
       <button type="button" className="globe-reset" onClick={() => setView(initialView)}>
         {t("globe.reset")}
       </button>

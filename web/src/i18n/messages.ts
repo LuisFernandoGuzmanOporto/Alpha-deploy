@@ -52,6 +52,7 @@ const es = {
   "ranking.noOverlap": "Coincidencias cualitativas: sin dato. ",
   "ranking.compare": "Ver comparación",
   "map.aria": "Mapa de análogos terrestres",
+  "map.description": "Los puntos muestran los análogos del ranking. El tamaño y el color representan el índice de similitud. También puedes elegir y comparar cada lugar desde la lista de análogos con el teclado.",
 
   "discoveries.title": "Descubrimientos",
   "discoveries.intro":
@@ -233,6 +234,7 @@ const en: Record<MessageKey, string> = {
   "ranking.noOverlap": "Qualitative matches: no data. ",
   "ranking.compare": "View comparison",
   "map.aria": "Map of Earth analogs",
+  "map.description": "Points show the analogs in the ranking. Size and color represent the similarity index. You can also select and compare each place using the keyboard in the analog list.",
 
   "discoveries.title": "Discoveries",
   "discoveries.intro":

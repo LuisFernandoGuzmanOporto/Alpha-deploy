@@ -49,4 +49,22 @@ describe("contraste de los tokens", () => {
     expect(ratio).toBeGreaterThanOrEqual(1.3);
     expect(ratio).toBeLessThan(3);
   });
+
+  it("los bordes de controles alcanzan 3:1 sin depender de los bordes decorativos", () => {
+    for (const surface of SURFACES) {
+      expect(contrast(token("cc-control-border"), token(surface)), surface).toBeGreaterThanOrEqual(3);
+    }
+  });
+
+  it("el texto conserva 4.5:1 incluso sobre un píxel blanco de la nebulosa", () => {
+    for (const name of ["cc-sky-shade", "cc-sky-shade-edge", "cc-nav-shade"]) {
+      const raw = new RegExp(`--${name}:\\s*(#[0-9a-fA-F]{8})\\s*;`).exec(css)?.[1];
+      if (!raw) throw new Error(`Falta el velo ${name}`);
+      const alpha = parseInt(raw.slice(7, 9), 16) / 255;
+      const composite = "#" + [1, 3, 5].map((offset) => Math.round(parseInt(raw.slice(offset, offset + 2), 16) * alpha + 255 * (1 - alpha)).toString(16).padStart(2, "0")).join("");
+      for (const text of ["cc-text", "cc-text-muted", "cc-accent-strong"]) {
+        expect(contrast(token(text), composite), `${text} / ${name}`).toBeGreaterThanOrEqual(4.5);
+      }
+    }
+  });
 });

@@ -1,8 +1,7 @@
 import { lazy, Suspense, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Dialog, Switch } from "../components/controls";
-import CountUp from "../components/reactbits/CountUp";
-import DecryptedText from "../components/reactbits/DecryptedText";
+import { CountUp, DecryptedText } from "../components/ui/motion";
 import { RankingList } from "../components/RankingList";
 import { SiteInfo } from "../components/SiteInfo";
 import { SiteSelector } from "../components/SiteSelector";
