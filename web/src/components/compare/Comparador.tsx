@@ -12,12 +12,27 @@ export interface ComparadorProps {
   entry: RankingEntry | null;
   /** Panel fijo de limitaciones universales; se muestra dentro de "Dónde falla la analogía". */
   limitations?: ReactNode;
+  /** Texto legible de cada etiqueta (de `content/es.ts`); por defecto, el identificador. */
+  tagLabel?: (tag: Tag) => string;
+  /** "Dónde falla" redactado y citado en la ficha del candidato (`fichas.json`). */
+  breaksDown?: string[];
 }
 
+const identity = (tag: Tag): string => tag;
+
 /** F3: comparación lado a lado de un sitio de la Luna o Marte con un lugar de la Tierra. */
-export function Comparador({ site, candidate, entry, limitations }: ComparadorProps) {
+export function Comparador({
+  site,
+  candidate,
+  entry,
+  limitations,
+  tagLabel = identity,
+  breaksDown = [],
+}: ComparadorProps) {
   const rows = compareVariables(site.variables, candidate.variables, entry);
   const gaps = biggestGaps(rows);
+  const missingTags = entry?.tag_overlap?.only_site ?? [];
+  const hasBreaks = gaps.length > 0 || missingTags.length > 0 || breaksDown.length > 0;
   const radarData = rows
     .filter((row) => row.similarity !== null)
     .map((row) => ({ label: VARIABLE_INFO[row.variable].label, similarity: row.similarity }));
@@ -75,6 +90,9 @@ export function Comparador({ site, candidate, entry, limitations }: ComparadorPr
             </tbody>
           </table>
         </div>
+        <p className="comparador-note">
+          «Mucho» y «algo» son relativos al rango de todos los lugares comparados, no a la diferencia absoluta.
+        </p>
       </section>
 
       {radarData.length >= 3 && (
@@ -86,7 +104,7 @@ export function Comparador({ site, candidate, entry, limitations }: ComparadorPr
                 <PolarGrid />
                 <PolarAngleAxis dataKey="label" />
                 <PolarRadiusAxis domain={[0, 100]} tickCount={5} angle={90} />
-                <Radar dataKey="similarity" name="Similitud" stroke="#1f4fbf" fill="#1f4fbf" fillOpacity={0.35} />
+                <Radar dataKey="similarity" name="Similitud" />
               </RadarChart>
             </ResponsiveContainer>
             <figcaption>100 % es idéntico en esa variable; 0 % es la mayor diferencia entre todos los lugares.</figcaption>
@@ -98,9 +116,9 @@ export function Comparador({ site, candidate, entry, limitations }: ComparadorPr
         <h3 id="cmp-tags">Coincidencias cualitativas</h3>
         {entry?.tag_overlap ? (
           <dl className="comparador-tags">
-            <TagGroup title="Comparten" tags={entry.tag_overlap.shared} />
-            <TagGroup title={`Solo ${site.name}`} tags={entry.tag_overlap.only_site} />
-            <TagGroup title={`Solo ${candidate.name}`} tags={entry.tag_overlap.only_candidate} />
+            <TagGroup title="Comparten" tags={entry.tag_overlap.shared} tagLabel={tagLabel} />
+            <TagGroup title={`Solo ${site.name}`} tags={entry.tag_overlap.only_site} tagLabel={tagLabel} />
+            <TagGroup title={`Solo ${candidate.name}`} tags={entry.tag_overlap.only_candidate} tagLabel={tagLabel} />
           </dl>
         ) : (
           <p>Sin etiquetas suficientes para comparar geología, hielo, cuevas o polvo.</p>
@@ -109,7 +127,7 @@ export function Comparador({ site, candidate, entry, limitations }: ComparadorPr
 
       <section aria-labelledby="cmp-breaks" className="comparador-breaks">
         <h3 id="cmp-breaks">Dónde falla la analogía</h3>
-        {gaps.length > 0 ? (
+        {hasBreaks ? (
           <ul>
             {gaps.map((row) => (
               <li key={row.variable}>
@@ -117,9 +135,20 @@ export function Comparador({ site, candidate, entry, limitations }: ComparadorPr
                 {formatValue(row.variable, row.candidateValue)} frente a {formatValue(row.variable, row.siteValue)}).
               </li>
             ))}
+            {missingTags.map((tag) => (
+              <li key={tag}>
+                <strong>{tagLabel(tag)}:</strong> {site.name} lo tiene; {candidate.name} no.
+              </li>
+            ))}
+            {breaksDown.map((text) => (
+              <li key={text}>{text}</li>
+            ))}
           </ul>
         ) : (
-          <p>Ninguna variable con dato difiere mucho; aun así valen los límites de abajo.</p>
+          <p>
+            Ninguna variable ni etiqueta difiere mucho.
+            {limitations && " Aun así valen los límites de abajo."}
+          </p>
         )}
         {limitations}
       </section>
@@ -127,7 +156,7 @@ export function Comparador({ site, candidate, entry, limitations }: ComparadorPr
   );
 }
 
-function TagGroup({ title, tags }: { title: string; tags: Tag[] }) {
+function TagGroup({ title, tags, tagLabel }: { title: string; tags: Tag[]; tagLabel: (tag: Tag) => string }) {
   return (
     <div>
       <dt>{title}</dt>
@@ -135,7 +164,7 @@ function TagGroup({ title, tags }: { title: string; tags: Tag[] }) {
         {tags.length > 0 ? (
           <ul className="comparador-taglist">
             {tags.map((tag) => (
-              <li key={tag}>{tag}</li>
+              <li key={tag}>{tagLabel(tag)}</li>
             ))}
           </ul>
         ) : (
