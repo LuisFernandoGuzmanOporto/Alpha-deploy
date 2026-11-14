@@ -1,0 +1,57 @@
+[
+  {
+    "id": "demo-moon-a",
+    "body": "moon",
+    "name": "DEMO Sitio lunar A (datos inventados)",
+    "region": "Demostracion",
+    "lat": -85.0,
+    "lon": 20.0,
+    "variables": {
+      "slope_deg": 6.0,
+      "relief_m": 300,
+      "temp_mean_c": -60,
+      "precip_mm_year": 0,
+      "albedo": 0.12
+    },
+    "sources": {
+      "slope_deg": "DEMO",
+      "relief_m": "DEMO",
+      "temp_mean_c": "DEMO",
+      "precip_mm_year": "DEMO",
+      "albedo": "DEMO"
+    },
+    "notes": "Datos de demostracion. No son reales. Sirven solo para probar el pipeline y la web.",
+    "tags": [
+      "highland-terrain",
+      "extreme-cold"
+    ]
+  },
+  {
+    "id": "demo-mars-a",
+    "body": "mars",
+    "name": "DEMO Sitio marciano A (datos inventados)",
+    "region": "Demostracion",
+    "lat": 18.0,
+    "lon": 77.0,
+    "variables": {
+      "slope_deg": 3.0,
+      "relief_m": 120,
+      "temp_mean_c": -55,
+      "precip_mm_year": 0,
+      "albedo": 0.25
+    },
+    "sources": {
+      "slope_deg": "DEMO",
+      "relief_m": "DEMO",
+      "temp_mean_c": "DEMO",
+      "precip_mm_year": "DEMO",
+      "albedo": "DEMO"
+    },
+    "notes": "Datos de demostracion. No son reales.",
+    "tags": [
+      "basalt",
+      "dust-activity",
+      "hyper-arid"
+    ]
+  }
+]

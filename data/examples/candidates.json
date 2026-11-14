@@ -1,0 +1,143 @@
+[
+  {
+    "id": "demo-earth-1",
+    "body": "earth",
+    "name": "DEMO Lugar terrestre 1 (datos inventados)",
+    "country": "Bolivia",
+    "is_bolivia": true,
+    "analog_for": [
+      "mars"
+    ],
+    "why": "Demostracion",
+    "reference_urls": [],
+    "lat": -20.0,
+    "lon": -67.0,
+    "variables": {
+      "slope_deg": 2.5,
+      "relief_m": 90,
+      "temp_mean_c": 5,
+      "precip_mm_year": 150,
+      "albedo": 0.3
+    },
+    "sources": {
+      "slope_deg": "DEMO",
+      "relief_m": "DEMO",
+      "temp_mean_c": "DEMO",
+      "precip_mm_year": "DEMO",
+      "albedo": "DEMO"
+    },
+    "notes": "Datos de demostracion.",
+    "known": false,
+    "tags": [
+      "evaporite",
+      "hyper-arid",
+      "highland-terrain"
+    ]
+  },
+  {
+    "id": "demo-earth-2",
+    "body": "earth",
+    "name": "DEMO Lugar terrestre 2 (datos inventados)",
+    "country": "Chile",
+    "is_bolivia": false,
+    "analog_for": [
+      "mars",
+      "moon"
+    ],
+    "why": "Demostracion",
+    "reference_urls": [],
+    "lat": -24.0,
+    "lon": -69.0,
+    "variables": {
+      "slope_deg": 4.0,
+      "relief_m": 200,
+      "temp_mean_c": 15,
+      "precip_mm_year": 2,
+      "albedo": 0.22
+    },
+    "sources": {
+      "slope_deg": "DEMO",
+      "relief_m": "DEMO",
+      "temp_mean_c": "DEMO",
+      "precip_mm_year": "DEMO",
+      "albedo": "DEMO"
+    },
+    "notes": "Datos de demostracion.",
+    "known": true,
+    "tags": [
+      "hyper-arid",
+      "aeolian-dunes",
+      "dust-activity"
+    ]
+  },
+  {
+    "id": "demo-earth-3",
+    "body": "earth",
+    "name": "DEMO Lugar terrestre 3 (datos inventados, con un dato faltante)",
+    "country": "Estados Unidos",
+    "is_bolivia": false,
+    "analog_for": [
+      "moon"
+    ],
+    "why": "Demostracion",
+    "reference_urls": [],
+    "lat": 37.0,
+    "lon": -116.0,
+    "variables": {
+      "slope_deg": 8.0,
+      "relief_m": 500,
+      "temp_mean_c": 25,
+      "precip_mm_year": 60,
+      "albedo": null
+    },
+    "sources": {
+      "slope_deg": "DEMO",
+      "relief_m": "DEMO",
+      "temp_mean_c": "DEMO",
+      "precip_mm_year": "DEMO"
+    },
+    "notes": "Datos de demostracion. Albedo en null para probar el manejo de datos faltantes.",
+    "known": true,
+    "tags": [
+      "basalt",
+      "volcanic-field",
+      "hyper-arid"
+    ]
+  },
+  {
+    "id": "demo-earth-4",
+    "body": "earth",
+    "name": "DEMO Lugar terrestre 4 (datos inventados)",
+    "country": "Antartida",
+    "is_bolivia": false,
+    "analog_for": [
+      "mars",
+      "moon"
+    ],
+    "why": "Demostracion",
+    "reference_urls": [],
+    "lat": -77.0,
+    "lon": 162.0,
+    "variables": {
+      "slope_deg": 5.0,
+      "relief_m": 250,
+      "temp_mean_c": -20,
+      "precip_mm_year": 10,
+      "albedo": 0.18
+    },
+    "sources": {
+      "slope_deg": "DEMO",
+      "relief_m": "DEMO",
+      "temp_mean_c": "DEMO",
+      "precip_mm_year": "DEMO",
+      "albedo": "DEMO"
+    },
+    "notes": "Datos de demostracion.",
+    "known": true,
+    "tags": [
+      "polar-ice",
+      "extreme-cold",
+      "hyper-arid"
+    ]
+  }
+]
