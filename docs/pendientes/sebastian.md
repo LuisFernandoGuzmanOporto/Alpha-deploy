@@ -1,0 +1,25 @@
+# Pendientes de Sebastián (índice, validación y metodología)
+
+Estado revisado sobre `main` en `2517734` (14/11/2026). Fuente de las tareas originales: `TASKS.md`. Marca tus casillas en tu propio PR.
+
+Ya entregado: S-1 a S-4 (revisión del índice, validación, sensibilidad y `web/src/lib/score.ts`). Los resultados de sensibilidad están en `docs/METODOLOGIA.md`.
+
+## Antes de empezar
+
+1. `git checkout main && git pull`
+2. Rama propia: `git checkout -b feat/sebastian-<tarea>`
+3. Corre `python pipeline/validate.py` antes del pipeline.
+
+## Pendientes
+
+- [ ] **S-5, preguntas del jurado:** cerrar `docs/PREGUNTAS_JURADO.md`. La pregunta 8 dice que la validación con datos reales sigue pendiente, y ya hay catálogo terrestre integrado. Después, ensayar con Joel el rol de jurado.
+- [ ] **S-6, tesis de descubrimiento:** confirmar que está escrita: los `known: true` aparecen arriba para sus sitios, y cuántos poco estudiados entran al top 5 y por qué.
+- [ ] **Re-correr el pipeline** cuando Lian complete etiquetas y variables faltantes, validar y commitear `web/public/data/*.json`. Hoy hay 24 candidatos sin etiquetas.
+- [ ] **S-7, escaneo global (F12):** no existe `scan.json`. Decidir y dejar escrito si se descarta, porque solo vale con un camino de datos que no exija descargas enormes.
+- [ ] **Inglés (#25):** traducir `docs/METODOLOGIA.md` al inglés, si se decide. La web avisa hoy que ese documento está en español.
+
+## Reglas
+
+- No cambies el contrato de datos (`CONTEXT.md`, sección 6) sin avisar a Fernando.
+- Commits con prefijo `feat:`, `fix:`, `docs:` o `data:`.
+- Un PR pequeño por cambio y `git pull --rebase` antes de subir. Nunca subas directo a `main`.
