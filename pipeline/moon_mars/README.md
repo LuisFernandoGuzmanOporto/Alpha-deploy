@@ -26,7 +26,7 @@ Cada script imprime un JSON con las variables por sitio y algunos datos de contr
 | Pendiente y relieve | LOLA `LDEM_75S_240M` (LRO-L-LOLA-4-GDR-V1.0), 240 m/px | Estereográfica polar sur |
 | Temperatura | Diviner Polar Resource Product sur (LRO-L-DLRE-5-PRP-V2.0), `temp_avg` | Media anual modelada a 2 cm de profundidad |
 | Hielo (nota) | Misma tabla de Diviner, `ice_depth` | Fracción de la ventana con hielo estable a 1 m o menos: estabilidad térmica, no detección |
-| Albedo | Sin producto | No hay mapa grillado de albedo que cubra el polo en PDS, en el nodo LOLA del MIT ni en PGDA; queda `null` |
+| Albedo (no usado) | LOLA `LDAM_50S_1000M_FLOAT`, albedo normal a 1064 nm (Lemelin et al. 2016), 1000 m/px | El script lo calcula (`albedo_lola_1064nm`) y queda en `notes`; `albedo` sigue `null` porque es de una sola longitud de onda y no se compara con el albedo de banda ancha de la Tierra y Marte |
 
 Coordenadas: centros de los mosaicos LROC NAC de cada región. La fórmula de `DSMAP_POLAR.CAT` invierte el signo de X en el sur; la orientación correcta (`X = r·sin(lon)`, `Y = −r·cos(lon)`) se verificó contra las altitudes Kaguya de la tabla de Diviner (diferencias menores a 100 m) y el fondo del cráter Shackleton.
 

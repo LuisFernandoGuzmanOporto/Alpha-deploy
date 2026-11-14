@@ -6,6 +6,9 @@ Fuentes (se leen por HTTP Range, sin descargar los archivos completos):
 - Temperatura: Diviner Polar Resource Product sur (LRO-L-DLRE-5-PRP-V2.0), columna
   temp_avg: temperatura media anual a 2 cm de profundidad, segun la etiqueta del producto;
   ice_depth: profundidad a la que el hielo de agua seria estable segun el modelo termico.
+- Albedo: LOLA LDAM_50S_1000M_FLOAT (LRO-L-LOLA-4-GDR-V1.0), albedo normal a 1064 nm
+  (Lemelin et al. 2016), estereografica polar, 1000 m/px. Es reflectancia en una sola
+  longitud de onda, no albedo solar de banda ancha.
 
 La ventana es un cuadrado de WINDOW_KM x WINDOW_KM en el suelo, alineado con la
 cuadricula de LOLA. Las coordenadas son planetocentricas, longitud este (Mean Earth/Polar Axis, DE421).
@@ -30,6 +33,11 @@ LOLA_URL = ("https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1x
 LOLA_N = 3812
 LOLA_SCALE_M = 240.0
 LOLA_DN_TO_M = 0.5
+
+LDAM_URL = ("https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/"
+            "data/lola_gdr/polar/float_img/ldam_50s_1000m_float.img")
+LDAM_N = 2532
+LDAM_SCALE_M = 1000.0
 
 DIVINER_URL = ("https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/"
                "data_derived_prp/dlre_prp_south.tab")
@@ -82,6 +90,24 @@ def lola_window(lat: float, lon: float) -> tuple[Grid, float]:
     return grid, LOLA_SCALE_M / k
 
 
+def ldam_window_mean(lat: float, lon: float) -> tuple[float, int]:
+    """Promedio del albedo normal a 1064 nm de LOLA en la ventana, y cuantos pixeles validos hay."""
+    k = scale_factor(lat)
+    n_px = max(1, round(WINDOW_KM * 1000 * k / LDAM_SCALE_M))
+    x, y = stereo_xy(lat, lon)
+    sample = round(x / LDAM_SCALE_M + LDAM_N / 2 + 0.5)
+    line = round(y / LDAM_SCALE_M + LDAM_N / 2 + 0.5)
+    first_sample = sample - n_px // 2
+    first_line = line - n_px // 2
+    values: list[float] = []
+    for ln in range(first_line, first_line + n_px):
+        raw = fetch_range(LDAM_URL, ((ln - 1) * LDAM_N + (first_sample - 1)) * 4, n_px * 4)
+        values.extend(v for v in struct.unpack(f"<{n_px}f", raw) if math.isfinite(v) and v > 0)
+    if not values:
+        raise ValueError(f"LDAM sin pixeles validos en la ventana de ({lat}, {lon})")
+    return sum(values) / len(values), len(values)
+
+
 def diviner_window(lat: float, lon: float) -> tuple[float, int, float]:
     """Triangulos de Diviner cuyo centro cae en la ventana.
 
@@ -127,6 +153,7 @@ def main() -> None:
     for site_id, (lat, lon) in SITES.items():
         grid, cell_m = lola_window(lat, lon)
         temp_k, n_triangles, ice_fraction = diviner_window(lat, lon)
+        albedo_1064, ldam_pixels = ldam_window_mean(lat, lon)
         results[site_id] = {
             "lat": lat,
             "lon": lon,
@@ -137,6 +164,8 @@ def main() -> None:
             "lola_cell_m": round(cell_m, 1),
             "diviner_triangles": n_triangles,
             "diviner_ice_stable_1m_fraction": round(ice_fraction, 3),
+            "albedo_lola_1064nm": round(albedo_1064, 3),
+            "ldam_pixels": ldam_pixels,
         }
         print(f"{site_id}: listo", file=sys.stderr)
     print(json.dumps(results, indent=2))
