@@ -2,6 +2,43 @@
 
 Dueño: Joel. Cada fallo va como issue de GitHub con pasos para reproducir. Pasadas previstas: sábado ~14:30 (local), 04:00 y 07:00 (producción).
 
+## Pasada 2: sábado 14/11, ~16:00
+
+- **Versión:** `main` en `2517734`, después del rediseño (#44 y #45) y del selector de idioma (#40). Build de producción con `npm run build` y `npm run preview`.
+- **La web sigue sin estar en Vercel** (0 despliegues), así que la pasada es local otra vez.
+- **Datos:** reales, de `main` (6 sitios y 47 candidatos). `python pipeline/validate.py`: 0 errores.
+- **Pruebas y build:** `npm test` 48/48; `npm run build` sin errores. El paquete principal pasó de 270 KB a 592 KB (194 KB comprimido) con el rediseño.
+- **Navegador:** Chromium, escritorio y emulación de móvil de 375 × 812, en **español y en inglés**.
+
+| # | Función | Resultado | Estado |
+| --- | --- | --- | --- |
+| 1 | F1 Selector de sitio | Las 6 tarjetas funcionan como grupo de radio; el ranking de Malapert coincide con `results.json` (Licancabur 69.8) y la URL guarda `?sitio=` | OK |
+| 2 | F2 Mapa y ranking | 43 análogos para Malapert y 47 para Jezero; el puesto aparece dentro de la fila (#30 resuelto); crédito "© OpenStreetMap contributors" | OK |
+| 3 | F5 Solo Bolivia | 10 análogos para Malapert (los datos dan 10); los interruptores tienen etiqueta accesible | OK |
+| 4 | F11 Solo poco estudiados y combinado | 26 solos y 7 con Bolivia; coincide con los datos; los filtros quedan en la URL | OK |
+| 5 | F11 Descubrimientos | Top 5 de poco estudiados por sitio; coincide con la validación de Sebastián | OK |
+| 6 | F3 Comparador | Malapert ↔ Licancabur: 69.8/100, tabla, radar, coincidencias, "Where the analogy breaks down", límites y **aviso de dato sesgado** (#36) | OK |
+| 7 | F4 Ficha | "This place has no published fact sheet yet." | Pendiente: falta `fichas.json` (L-2, Lian) |
+| 8 | F9 Metodología | Se muestra completa, con 4 tablas; en inglés avisa que el documento está en español | OK, pero el texto sigue en español (#25) |
+| 9 | F10 Pesos | Con teclado: temperatura a 1.5, cambian los puntajes, la URL guarda `pesos=` y "Reset weights" vuelve a los valores originales | OK |
+| 10 | F6 Globo 3D | Abre en Marte para Jezero, con el sitio marcado y textos en inglés | OK |
+| 11 | Idioma | El selector cambia `lang` a `en`, traduce la interfaz y recuerda la elección | OK para la interfaz; los textos de los datos siguen en español (ver abajo) |
+| 12 | Comparación y ruta inexistentes | "That comparison does not exist" y "Page not found." | OK |
+| 13 | Error de datos | Sin `results.json`: mensaje con `role="alert"` y botón "Retry"; al restaurar el archivo, "Retry" recupera los datos | OK |
+| 14 | Teclado y foco | La fila del ranking muestra un contorno sólido de 2 px con Tab (#29 resuelto); hay enlace "Skip to content" | OK |
+| 15 | Título animado | El título aparece dos veces en el texto, pero la copia animada lleva `aria-hidden`; un lector lo lee una vez | OK |
+| 16 | Movimiento reducido | Las animaciones respetan `prefers-reduced-motion` | OK |
+| 17 | Móvil 375 px | Inicio, comparador, descubrimientos y metodología sin desplazamiento horizontal | OK |
+| 18 | Consola | Sin errores en todas las rutas | OK |
+| 19 | Lista vacía y carga lenta | No probado | No probado |
+| 20 | Producción y enlace directo | No probado | **Bloqueante: falta desplegar en Vercel (F-1)** |
+
+**Sigue en español en modo inglés** (requisito de inglés, #25). Son textos que vienen de los datos, no de la interfaz:
+- regiones de los sitios ("Polo sur lunar", "Isidis Planitia, Marte", "Llanuras del norte, Marte") en `data/sites.json`;
+- nombres y países de los candidatos ("Volcán Licancabur y su lago de cumbre", "Egipto y Libia") en `data/candidates.json`;
+- notas técnicas (`notes`) de sitios y candidatos;
+- el documento de metodología.
+
 ## Pasada 1: sábado 14/11, ~14:30
 
 - **Versión:** `main` en `2b9d241`, build de producción (`npm run build` y `npm run preview`). La web **aún no está en Vercel**, así que no se pudo probar la URL de producción.
