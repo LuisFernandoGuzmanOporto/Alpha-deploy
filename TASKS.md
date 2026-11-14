@@ -26,7 +26,7 @@ Dependencias clave: todos trabajan contra el contrato de datos (`CONTEXT.md`, se
 IA recomendada: Claude. Prompt: `prompts/fernando.md`.
 
 - [ ] **F-1 (ya, 45 min).** Subir el starter al repositorio Alpha-deploy (pasos en `GIT.md`), invitar al equipo, conectar Vercel (carpeta raíz `web`) y proteger `main`.
-- [ ] **F-2 (hasta 12:30).** Esqueleto de `web/` con Vite, React y TypeScript; instalar `maplibre-gl`, `recharts` y `react-router-dom`. Publicar `web/src/types.ts` con los tipos del contrato (incluidos `known`, `tags` y `tag_overlap`) y las rutas `/`, `/comparar/:siteId/:candidateId`, `/metodologia`. Desplegado en Vercel con los datos de demostración.
+- [x] **F-2 (hasta 12:30).** Esqueleto de `web/` con Vite, React y TypeScript; instalar `maplibre-gl`, `recharts` y `react-router-dom`. Publicar `web/src/types.ts` con los tipos del contrato (incluidos `known`, `tags` y `tag_overlap`) y las rutas `/`, `/comparar/:siteId/:candidateId`, `/metodologia`. Desplegado en Vercel con los datos de demostración.
 - [ ] **F-3 (hasta 18:00).** F1 selector de sitio, F2 mapa con el ranking (marcadores por puntaje) y lista lateral, F5 filtro Bolivia.
 - [ ] **F-4 (hasta 00:00).** Integrar los componentes de Noe, Dante y Lian. F9 página de metodología que muestra `docs/METODOLOGIA.md`. **F11 descubrimientos:** interruptor "solo poco estudiados", etiqueta Nuevo o Conocido y vista de los 5 mejores poco estudiados por sitio. Panel fijo de limitaciones universales en fichas y comparador. Estados de carga y de error.
 - [ ] **F-5 (continuo).** Revisar PRs en menos de 15 minutos y mantener `main` siempre desplegable.
