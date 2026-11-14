@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
-import type { Candidate, Results, Site } from "../types";
+import type { Candidate, Ficha, Results, Site } from "../types";
+import { indexFichas } from "./fichas";
 
 export interface AppData {
   sites: Site[];
   candidates: Candidate[];
   results: Results;
+  /** Fichas publicables por `candidate_id`; vacío si todavía no existe `fichas.json`. */
+  fichas: Record<string, Ficha>;
 }
 
 export type DataState =
@@ -25,16 +28,29 @@ async function fetchJson<T>(file: string): Promise<T> {
   }
 }
 
+/** `fichas.json` es opcional: si no existe (404, o el servidor devuelve la página HTML) no hay fichas. */
+async function fetchFichas(): Promise<Record<string, Ficha>> {
+  const response = await fetch(`${import.meta.env.BASE_URL}data/fichas.json`);
+  const isHtml = response.headers.get("content-type")?.includes("text/html") ?? false;
+  if (!response.ok || isHtml) return {};
+  try {
+    return indexFichas(await response.json());
+  } catch {
+    throw new Error("fichas.json no es un JSON válido");
+  }
+}
+
 export async function loadData(): Promise<AppData> {
-  const [sites, candidates, results] = await Promise.all([
+  const [sites, candidates, results, fichas] = await Promise.all([
     fetchJson<Site[]>("sites.json"),
     fetchJson<Candidate[]>("candidates.json"),
     fetchJson<Results>("results.json"),
+    fetchFichas(),
   ]);
   if (!Array.isArray(sites) || !Array.isArray(candidates)) {
     throw new Error("sites.json y candidates.json deben ser listas");
   }
-  return { sites, candidates, results };
+  return { sites, candidates, results, fichas };
 }
 
 let cached: Promise<AppData> | null = null;
