@@ -27,7 +27,7 @@ Dueño: Joel. Reglas y fuentes en `docs/REQUISITOS.md`.
 
 ### Domingo 07:00 a 09:00, demo y QA
 - [ ] Pasada de QA de las 07:00 en producción (`docs/QA.md`).
-- [ ] Demo oficial lista (`docs/PITCH.md`):
+- [ ] Demo oficial lista (`docs/PITCH.md`). El PDF de 7 diapositivas ya está generado en `docs/demo/earth-analogs-demo.pdf`; falta la revisión del equipo y subirlo:
   - **7 diapositivas** como máximo, en inglés, en PDF.
   - O un **video de 30 s** como máximo, con subtítulos en inglés si se habla en español.
 - [ ] Ningún menor de 18 años en imágenes, video o audio.

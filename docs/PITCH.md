@@ -45,7 +45,7 @@ Una idea por diapositiva, poco texto y una imagen fuerte en cada una.
 - [x] No presentar Uyuni, Coipasa ni Licancabur como "descubrimientos": ya están documentados como análogos de Marte. Revisado: la diapositiva 6 y el bloque de hallazgos presentan a Licancabur como análogo ya documentado.
 - [ ] Ninguna persona menor de 18 años en las imágenes.
 - [ ] Ningún logo de NASA.
-- [ ] Exportar a PDF y subir a Google Drive con acceso "cualquiera con el enlace".
+- [ ] Subir a Google Drive con acceso "cualquiera con el enlace". El PDF de 7 diapositivas ya está generado en `docs/demo/earth-analogs-demo.pdf` (ver `docs/demo/README.md`); falta que el equipo lo revise, con los nombres completos y el nombre del equipo en la diapositiva 1.
 - [ ] Probar el enlace en una ventana privada.
 
 ## 4. Video de 30 segundos (opcional, inglés)
@@ -96,11 +96,11 @@ Apertura y cierre los proponemos para Joel y Noe, que son quienes no tienen otro
 
 Todas en inglés si la web ya tiene versión en inglés (#25). Si no, se usan solo en la presentación local.
 
-- [ ] Pantalla principal con un sitio lunar: mapa y ranking.
-- [ ] Mismo sitio con "Solo Bolivia".
-- [ ] Comparador completo: tabla, radar, coincidencias y "Dónde falla".
-- [ ] Vista de descubrimientos.
-- [ ] Globo 3D: Luna con el sitio, y Tierra con los 5 análogos numerados.
+- [x] Pantalla principal con un sitio lunar: mapa y ranking (`docs/demo/img/home-malapert.jpg`).
+- [x] "Solo Bolivia", sobre Jezero (`docs/demo/img/bolivia-jezero.jpg`).
+- [ ] Comparador completo: tabla, radar, coincidencias y "Dónde falla". La diapositiva 4 usa solo la parte de arriba (`docs/demo/img/compare-malapert-licancabur.jpg`) porque "Dónde falla" muestra textos de los datos en español (#25).
+- [x] Vista de descubrimientos (`docs/demo/img/discoveries.jpg`).
+- [x] Globo 3D: Luna con el sitio y Tierra con los análogos numerados (`docs/demo/img/globe-moon.jpg` y `globe-earth.jpg`).
 - [ ] Página de metodología (para la diapositiva 4).
 - [ ] Grabación de pantalla del recorrido de la sección 5 (para el video de respaldo).
 

@@ -25,12 +25,12 @@ Dependencias clave: todos trabajan contra el contrato de datos (`CONTEXT.md`, se
 
 IA recomendada: Claude. Prompt: `prompts/fernando.md`.
 
-- [ ] **F-1 (ya, 45 min).** Subir el starter al repositorio Alpha-deploy (pasos en `GIT.md`), invitar al equipo, conectar Vercel (carpeta raíz `web`) y proteger `main`.
+- [ ] **F-1 (ya, 45 min).** Subir el starter al repositorio Alpha-deploy (pasos en `GIT.md`), invitar al equipo, conectar Vercel (carpeta raíz `web`) y proteger `main`. _Estado: equipo invitado y `main` protegida con un ruleset; falta conectar Vercel._
 - [x] **F-2 (hasta 12:30).** Esqueleto de `web/` con Vite, React y TypeScript; instalar `maplibre-gl`, `recharts` y `react-router-dom`. Publicar `web/src/types.ts` con los tipos del contrato (incluidos `known`, `tags` y `tag_overlap`) y las rutas `/`, `/comparar/:siteId/:candidateId`, `/metodologia`. Desplegado en Vercel con los datos de demostración.
 - [x] **F-3 (hasta 18:00).** F1 selector de sitio, F2 mapa con el ranking (marcadores por puntaje) y lista lateral, F5 filtro Bolivia.
-- [ ] **F-4 (hasta 00:00).** Integrar los componentes de Noe, Dante y Lian. F9 página de metodología que muestra `docs/METODOLOGIA.md`. **F11 descubrimientos:** interruptor "solo poco estudiados", etiqueta Nuevo o Conocido y vista de los 5 mejores poco estudiados por sitio. Panel fijo de limitaciones universales en fichas y comparador. Estados de carga y de error.
+- [x] **F-4 (hasta 00:00).** Integrar los componentes de Noe, Dante y Lian. F9 página de metodología que muestra `docs/METODOLOGIA.md`. **F11 descubrimientos:** interruptor "solo poco estudiados", etiqueta Nuevo o Conocido y vista de los 5 mejores poco estudiados por sitio. Panel fijo de limitaciones universales en fichas y comparador. Estados de carga y de error. _Estado: todo integrado en `main` (selector, mapa, comparador, globo, descubrimientos, metodología, limitaciones, estados de carga y error)._
 - [ ] **F-5 (continuo).** Revisar PRs en menos de 15 minutos y mantener `main` siempre desplegable.
-- [ ] **F-6 (segunda fase, desde 00:00).** F10 sliders de pesos con `web/src/lib/score.ts` de Sebastián. F12 capa del escaneo global si existe `scan.json`. Rendimiento y revisión final en móvil.
+- [x] **F-6 (segunda fase, desde 00:00).** F10 sliders de pesos con `web/src/lib/score.ts` de Sebastián. F12 capa del escaneo global si existe `scan.json`. Rendimiento y revisión final en móvil. _Estado: sliders de pesos (F10), selector ES/EN y rendimiento hechos; F12 descartado (S-7)._
 
 ## Dante: datos de la Luna y Marte, comparador y globo 3D
 
@@ -44,8 +44,8 @@ IA recomendada: Claude. Prompt: `prompts/dante.md`.
 
 IA recomendada: ChatGPT con búsqueda web para la literatura, y la IA de código que tengas para los scripts. Prompt: `prompts/lian.md`.
 
-- [ ] **L-1 (versión 1 con 10 candidatos a las 15:00; completo a las 19:00).** `data/candidates.json` con 40 o más: 12 o más conocidos, 25 o más poco estudiados y 8 o más de Bolivia. Variables, fuentes, `known`, `tags` y referencias. Scripts de apoyo en `pipeline/earth/`.
-- [ ] **L-2 (hasta 00:00 para los del top 10 de algún sitio; el resto hasta 04:00).** F4 `web/public/data/fichas.json` con resumen, procesos, usos, **dónde falla la analogía** y referencias. Solo afirmaciones citables.
+- [x] **L-1 (versión 1 con 10 candidatos a las 15:00; completo a las 19:00).** `data/candidates.json` con 40 o más: 12 o más conocidos, 25 o más poco estudiados y 8 o más de Bolivia. Variables, fuentes, `known`, `tags` y referencias. Scripts de apoyo en `pipeline/earth/`. _Estado: 47 candidatos (21 conocidos, 26 poco estudiados, 10 de Bolivia); 11 avisos de `validate.py` (4 sin etiqueta citable y datos faltantes)._
+- [ ] **L-2 (hasta 00:00 para los del top 10 de algún sitio; el resto hasta 04:00).** F4 `web/public/data/fichas.json` con resumen, procesos, usos, **dónde falla la analogía** y referencias. Solo afirmaciones citables. _Estado: 31 fichas del top 10 publicadas (#52); faltan las de los 16 candidatos restantes._
 - [ ] **L-3 (segunda fase, hasta 04:00).** F7 `web/public/data/explicaciones.json`: explicación de 3 a 4 frases, con lo que se parece y dónde falla, para los 5 mejores pares de cada sitio, redactada con IA y revisada por una persona.
 - [ ] **L-4 (segunda fase, hasta 06:00).** F8 exportar ficha a PDF en `web/src/features/export/` con estilos de impresión.
 
@@ -53,23 +53,23 @@ IA recomendada: ChatGPT con búsqueda web para la literatura, y la IA de código
 
 IA recomendada: Claude o el modelo con más razonamiento que tenga tu plan. Prompt: `prompts/sebastian.md`.
 
-- [ ] **S-1 (hasta 13:00).** Revisar `pipeline/similarity.py`, confirmar variables, transformaciones, ventana común, pesos y el papel de `tag_overlap`. Primer borrador de `docs/METODOLOGIA.md`.
-- [ ] **S-2 (continuo desde 15:00).** Correr el pipeline cada vez que lleguen datos, validar con `validate.py` y commitear `web/public/data/*.json`. Primer `results.json` a las 15:30.
-- [ ] **S-3 (hasta 00:00).** Análisis de sensibilidad: estabilidad del ranking al mover los pesos y al quitar una variable. Resultados en `docs/METODOLOGIA.md`.
-- [ ] **S-6 (hasta 01:00).** Validación y descubrimiento: los `known: true` aparecen arriba para sus sitios; cuántos poco estudiados entran al top 5 y por qué. Esa es nuestra tesis de descubrimiento y debe quedar escrita.
-- [ ] **S-4 (hasta 02:00).** `web/src/lib/score.ts`: recalcular el puntaje con otros pesos a partir de `norm_diff`, idéntico al pipeline, con una prueba.
-- [ ] **S-5 (hasta 06:00).** `docs/PREGUNTAS_JURADO.md`: las 10 preguntas técnicas más probables con su respuesta, junto con Joel.
-- [ ] **S-7 (segunda fase, decisión a las 19:00).** F12 escaneo global grueso en `pipeline/scan.py` con `web/public/data/scan.json`. Solo si hay un camino de datos que funcione sin descargas enormes; si no, se descarta.
+- [x] **S-1 (hasta 13:00).** Revisar `pipeline/similarity.py`, confirmar variables, transformaciones, ventana común, pesos y el papel de `tag_overlap`. Primer borrador de `docs/METODOLOGIA.md`.
+- [x] **S-2 (continuo desde 15:00).** Correr el pipeline cada vez que lleguen datos, validar con `validate.py` y commitear `web/public/data/*.json`. Primer `results.json` a las 15:30. _Estado: `results.json` regenerado con el catálogo integrado (47 candidatos)._
+- [x] **S-3 (hasta 00:00).** Análisis de sensibilidad: estabilidad del ranking al mover los pesos y al quitar una variable. Resultados en `docs/METODOLOGIA.md`.
+- [x] **S-6 (hasta 01:00).** Validación y descubrimiento: los `known: true` aparecen arriba para sus sitios; cuántos poco estudiados entran al top 5 y por qué. Esa es nuestra tesis de descubrimiento y debe quedar escrita.
+- [x] **S-4 (hasta 02:00).** `web/src/lib/score.ts`: recalcular el puntaje con otros pesos a partir de `norm_diff`, idéntico al pipeline, con una prueba.
+- [x] **S-5 (hasta 06:00).** `docs/PREGUNTAS_JURADO.md`: las 10 preguntas técnicas más probables con su respuesta, junto con Joel. _Estado: las 10 respuestas están con resultados reales; falta el ensayo con Joel._
+- [x] **S-7 (segunda fase, decisión a las 19:00).** F12 escaneo global grueso en `pipeline/scan.py` con `web/public/data/scan.json`. Solo si hay un camino de datos que funcione sin descargas enormes; si no, se descarta. _Estado: descartado y registrado en `docs/METODOLOGIA.md`, sección 9._
 
 ## Noe: diseño y componentes visuales
 
 IA recomendada: ChatGPT para ideas y textos, y la IA de código que tengas para los componentes. Prompt: `prompts/noe.md`.
 
-- [ ] **N-1 (hasta 12:30).** Identidad: nombre, logo SVG, paleta, tipografías y `web/src/styles/tokens.css`. Wireframes de las 4 pantallas en `docs/design/`.
-- [ ] **N-2 (hasta 18:00).** Componentes en `web/src/components/ui/`: Layout, Header, Footer, Button, Card, SiteCard, AnalogCard, ScoreBadge, VariableBar, Tag, Tabs, **KnownBadge**, **TagList** y **LimitationsPanel**. Si no programas React, entregas diseño y CSS y Fernando integra.
-- [ ] **N-3 (hasta 00:00).** Textos de la interfaz en `web/src/content/es.ts`, incluido el texto de las limitaciones universales y una frase por cada tag. Estilo de la página de metodología.
-- [ ] **N-4 (hasta 05:00).** Responsive en móvil y accesibilidad: contraste mínimo 4.5:1, foco visible, textos alternativos.
-- [ ] **N-5 (hasta 07:00).** Material visual para el pitch: capturas, tema de las diapositivas y póster.
+- [x] **N-1 (hasta 12:30).** Identidad: nombre, logo SVG, paleta, tipografías y `web/src/styles/tokens.css`. Wireframes de las 4 pantallas en `docs/design/`.
+- [x] **N-2 (hasta 18:00).** Componentes en `web/src/components/ui/`: Layout, Header, Footer, Button, Card, SiteCard, AnalogCard, ScoreBadge, VariableBar, Tag, Tabs, **KnownBadge**, **TagList** y **LimitationsPanel**. Si no programas React, entregas diseño y CSS y Fernando integra.
+- [x] **N-3 (hasta 00:00).** Textos de la interfaz en `web/src/content/es.ts`, incluido el texto de las limitaciones universales y una frase por cada tag. Estilo de la página de metodología.
+- [ ] **N-4 (hasta 05:00).** Responsive en móvil y accesibilidad: contraste mínimo 4.5:1, foco visible, textos alternativos. _Estado: entregado; falta verificarlo sobre el rediseño #45 (`docs/pendientes/noe.md`)._
+- [ ] **N-5 (hasta 07:00).** Material visual para el pitch: capturas, tema de las diapositivas y póster. _Estado: las capturas de `docs/design/` son del diseño anterior._
 
 ## Joel: requisitos, README, pitch, video, informe, QA y entrega
 
@@ -77,8 +77,8 @@ IA recomendada: ChatGPT. Prompt: `prompts/joel.md`.
 
 - [x] **J-1 (en la primera hora).** `docs/REQUISITOS.md`: entregables, formato, idioma, duración del pitch y del video, plazo, plataforma de envío y criterios de evaluación. Revisar la pestaña Resources del reto. Avisar al grupo de cualquier cambio.
 - [x] **J-2 (hasta 18:00).** `README.md` principal y `docs/ATRIBUCION.md` con fuentes, licencias y créditos de NASA.
-- [ ] **J-3 (hasta 00:00).** `docs/QA.md`: matriz de pruebas. Primera pasada de QA sobre producción en escritorio y móvil; bugs como Issues de GitHub.
-- [ ] **J-4 (hasta 06:00).** `docs/PITCH.md`: guion con el lenguaje del reto (identificar, caracterizar, qué es análogo, dónde falla, conexión con la exploración), diapositivas y guion gráfico del video.
+- [ ] **J-3 (hasta 00:00).** `docs/QA.md`: matriz de pruebas. Primera pasada de QA sobre producción en escritorio y móvil; bugs como Issues de GitHub. _Estado: primera y segunda pasada hechas; falta la pasada sobre producción (necesita Vercel)._
+- [ ] **J-4 (hasta 06:00).** `docs/PITCH.md`: guion con el lenguaje del reto (identificar, caracterizar, qué es análogo, dónde falla, conexión con la exploración), diapositivas y guion gráfico del video. _Estado: guion con cifras verificadas; faltan oradores confirmados, URL de Vercel y las capturas._
 - [x] **J-4b (hasta 06:00).** `docs/INFORME.md`: informe público de 2 a 3 páginas con método, hallazgos (mejores análogos por sitio, los inesperados, el caso de Bolivia) y dónde falla la analogía.
 - [ ] **J-5 (07:00 a 09:00).** Grabar el video y ensayar el pitch 3 veces con el equipo.
 - [ ] **J-6 (09:00).** Lista de verificación de entrega y envío antes de las 10:00.
