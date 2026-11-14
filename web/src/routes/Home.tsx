@@ -1,4 +1,4 @@
-import { lazy, Suspense, useMemo } from "react";
+import { lazy, Suspense, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { RankingList } from "../components/RankingList";
 import { SiteInfo } from "../components/SiteInfo";
@@ -10,10 +10,15 @@ import { parseWeights, serializeWeights } from "../lib/variables";
 
 // MapLibre pesa casi 1 MB: se carga aparte del resto de la app.
 const RankingMap = lazy(() => import("../components/RankingMap").then((m) => ({ default: m.RankingMap })));
+// El globo trae texturas de ~1,3 MB: solo se carga cuando se abre la sección.
+const GlobeView = lazy(() => import("../components/globe/GlobeView").then((m) => ({ default: m.GlobeView })));
+
+const GLOBE_ANALOGS = 5;
 
 export function Home() {
   const state = useData();
   const [params, setParams] = useSearchParams();
+  const [globeOpen, setGlobeOpen] = useState(false);
 
   const data = state.status === "ready" ? state.data : null;
   const siteId = data ? (data.sites.find((s) => s.id === params.get("sitio"))?.id ?? data.sites[0]?.id) : undefined;
@@ -92,6 +97,14 @@ export function Home() {
         </Suspense>
         <RankingList siteId={siteId} rows={rows} selectedId={selectedId} onSelect={(id) => update({ analogo: id })} />
       </div>
+      <details onToggle={(event) => setGlobeOpen(event.currentTarget.open)}>
+        <summary>Ver en el globo 3D</summary>
+        {globeOpen && (
+          <Suspense fallback={<p>Cargando globo…</p>}>
+            <GlobeView site={site ?? null} analogs={rows.slice(0, GLOBE_ANALOGS).map((row) => row.candidate)} />
+          </Suspense>
+        )}
+      </details>
     </>
   );
 }
