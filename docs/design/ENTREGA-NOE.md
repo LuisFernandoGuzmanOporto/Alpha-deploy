@@ -1,11 +1,23 @@
-# Estado de las tareas de Noe
+# Entrega de Noe — 14/11/2026
 
-- N-1: identidad, cinco opciones de nombre, logo SVG, paleta, tipografía, tokens y wireframes entregados.
-- N-2: 14 componentes tipados con ejemplos de uso entregados en `web/src/components/ui/index.tsx`.
-- N-3: textos en español, descripción de los 15 tags, cinco variables y limitaciones universales entregados. Estilo de metodología incluido.
-- N-4: vista de diseño verificada en navegador a 360, 768 y 1440 px, sin desbordamiento. Teclado y filtro de ejemplo verificados. Cinco pares de colores superan 4.5:1. Foco visible, enlace para saltar al contenido, estado textual y símbolos además del color. Pendiente lector de pantalla y QA tras integración.
-- N-5: póster HTML imprimible, tema CSS de diapositivas y tres capturas de la vista de diseño entregados. Capturas de producción pendientes de la integración de Fernando.
+Se conserva el fondo de nebulosa aprobado por Noe, integrado en fondo y navbar.
 
-Validación: `npm run build` pasa. Resultados de las pruebas de navegador en QA-RESULTADOS.md.
+- A: jerarquía, densidad de ranking/destinos, más espacio para mapa, tablas, radar y lectura.
+- B: contraste de controles y velos, descripciones accesibles, tablas con foco y movimiento reducido.
+- C: inglés natural de interfaz sin traducir los datos científicos.
+- D: siete capturas reales, póster HTML y tema CSS, informe de verificación y textos de PR.
 
-No se modifican archivos ajenos ni los datos del proyecto. No se ha publicado, subido una rama ni abierto un PR. La guía INTEGRACION.md describe los cambios que corresponden a Fernando.
+Verificación final: TypeScript, 54 pruebas y build pasan; 30 combinaciones ES/EN/ancho
+sin desborde de página. Evidencia y pendientes manuales: QA-NOE.md y qa-navegador.json.
+Capturas y póster: CAPTURAS.md, capturas/ y poster.html.
+
+Cuatro ramas publicadas en GitHub, sin fusionar main. PRs pendientes de creación por
+restricciones de acceso. Formularios, títulos y descripciones listos en PRS-NOE.md.
+Integrar A → B → C → D. No se cambian datos, lib, filtros ni parámetros URL.
+
+Pendientes: NVDA/VoiceOver, zoom real, preferencia real de reducir movimiento, falla de red,
+impresión A3 y decisión de Fernando sobre traducción de datos y actualización de la demo de Joel.
+La atribución de la textura generada está documentada para que Joel la integre en los créditos.
+
+Las variantes visuales anteriores se conservan fuera del repositorio en
+C:/Users/gonza/Documents/NasaSpace-copias/variantes-locales y el ZIP orbital original.

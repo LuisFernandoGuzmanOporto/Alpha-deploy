@@ -12,7 +12,7 @@ detrás de marca, navegación e idioma. Público: visitantes y jurado de Earth A
 Fuente canónica: `web/src/styles/tokens.css`; alias `--ea-*` derivados sin copias.
 Fondo #02040E, profundidad #000107. Superficies #0B1429, #13213A, #20324D.
 Texto #FFF8E9, secundario #C0CCE4; acciones #94D9FF, hover #C8EDFF, tinta #142243.
-Nebulosa raster original en styles/nebula-stardust.jpg: polvo dorado/naranja con filamentos violetas y luces celestes. Velos #02040E99 a #02040E80 para lectura; navbar #02040EB3. El token --cc-nebula-image es la única referencia de la textura.
+Nebulosa raster original en styles/nebula-stardust.jpg: polvo dorado/naranja con filamentos violetas y luces celestes. Velos #02040EB8 a #02040EB3 para lectura; navbar #02040EB3. El token --cc-nebula-image es la única referencia de la textura.
 Estrellas blancas y celestes, con algunas cálidas y violetas. Los índices conservan
 números, escala y colores cálidos; no se introducen umbrales científicos.
 ## Typography
@@ -63,3 +63,10 @@ No se modifican datos, cálculos ni filtros.
 El ZIP `C:/Users/gonza/Documents/NasaSpace-copias/Earth-Analogs-orbital.zip`
 conserva el proyecto completo con el tema orbital anterior y su captura, sin node_modules,
 dist ni .git. Para ejecutarlo: extraer, abrir web, ejecutar npm ci y npm run dev.
+
+## Refinamiento y validación
+
+Columnas laterales de 300 y 390 px en escritorio, con adaptación a tablet y móvil.
+Los bordes interactivos usan --cc-control-border (3:1); los decorativos siguen --cc-border.
+Globo consume los tokens de marcadores y fuente compartida. Detalles: BLOQUE-A.md,
+BLOQUE-B.md, BLOQUE-C.md, QA-NOE.md y CAPTURAS.md. La textura aprobada se conserva.

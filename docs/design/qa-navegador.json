@@ -1,0 +1,260 @@
+[
+  {
+    "heading": "Explora aquí. Prepara el próximo destino.Ex4p0l0o:r·a0 a/q5u·í9.: P0r:e6p3a·r+a: e·l2 p/r9ó+x5i0m6o3 d1e1s-t7i8n4o+.:",
+    "lang": "es",
+    "name": "inicio",
+    "overflow": false,
+    "scroll": 1350,
+    "viewport": 1360
+  },
+  {
+    "heading": "Faustini Rim A comparado con Núcleo hiperárido del Atacama (Yungay)",
+    "lang": "es",
+    "name": "comparador",
+    "overflow": false,
+    "scroll": 1350,
+    "viewport": 1360
+  },
+  {
+    "heading": "Descubrimientos",
+    "lang": "es",
+    "name": "descubrimientos",
+    "overflow": false,
+    "scroll": 1350,
+    "viewport": 1360
+  },
+  {
+    "heading": "Metodología del índice de similitud",
+    "lang": "es",
+    "name": "metodologia",
+    "overflow": false,
+    "scroll": 1350,
+    "viewport": 1360
+  },
+  {
+    "heading": "Explore Earth. Prepare for other worlds.E4x6p0l-o8r-e+ E4a0r5t7h9.3 P/r0e6p2a4r:e5 f4o9r5 o9t·h0e2r2 w5o0r9l+d7s3.·",
+    "lang": "en",
+    "name": "inicio",
+    "overflow": false,
+    "scroll": 1350,
+    "viewport": 1360
+  },
+  {
+    "heading": "Faustini Rim A compared with Núcleo hiperárido del Atacama (Yungay)",
+    "lang": "en",
+    "name": "comparador",
+    "overflow": false,
+    "scroll": 1350,
+    "viewport": 1360
+  },
+  {
+    "heading": "Discoveries",
+    "lang": "en",
+    "name": "descubrimientos",
+    "overflow": false,
+    "scroll": 1350,
+    "viewport": 1360
+  },
+  {
+    "heading": "Metodología del índice de similitud",
+    "lang": "en",
+    "name": "metodologia",
+    "overflow": false,
+    "scroll": 1350,
+    "viewport": 1360
+  },
+  {
+    "lang": "es",
+    "name": "inicio",
+    "overflow": false,
+    "scroll": 758,
+    "viewport": 768
+  },
+  {
+    "lang": "es",
+    "name": "comparador",
+    "overflow": false,
+    "scroll": 758,
+    "viewport": 768
+  },
+  {
+    "lang": "es",
+    "name": "descubrimientos",
+    "overflow": false,
+    "scroll": 758,
+    "viewport": 768
+  },
+  {
+    "lang": "es",
+    "name": "metodologia",
+    "overflow": false,
+    "scroll": 758,
+    "viewport": 768
+  },
+  {
+    "lang": "en",
+    "name": "inicio",
+    "overflow": false,
+    "scroll": 758,
+    "viewport": 768
+  },
+  {
+    "lang": "en",
+    "name": "comparador",
+    "overflow": false,
+    "scroll": 758,
+    "viewport": 768
+  },
+  {
+    "lang": "en",
+    "name": "descubrimientos",
+    "overflow": false,
+    "scroll": 758,
+    "viewport": 768
+  },
+  {
+    "lang": "en",
+    "name": "metodologia",
+    "overflow": false,
+    "scroll": 758,
+    "viewport": 768
+  },
+  {
+    "lang": "es",
+    "name": "inicio",
+    "overflow": false,
+    "scroll": 365,
+    "viewport": 375
+  },
+  {
+    "lang": "es",
+    "name": "comparador",
+    "overflow": false,
+    "scroll": 365,
+    "viewport": 375
+  },
+  {
+    "lang": "es",
+    "name": "descubrimientos",
+    "overflow": false,
+    "scroll": 365,
+    "viewport": 375
+  },
+  {
+    "lang": "es",
+    "name": "metodologia",
+    "overflow": false,
+    "scroll": 365,
+    "viewport": 375
+  },
+  {
+    "lang": "en",
+    "name": "inicio",
+    "overflow": false,
+    "scroll": 365,
+    "viewport": 375
+  },
+  {
+    "lang": "en",
+    "name": "comparador",
+    "overflow": false,
+    "scroll": 365,
+    "viewport": 375
+  },
+  {
+    "lang": "en",
+    "name": "descubrimientos",
+    "overflow": false,
+    "scroll": 365,
+    "viewport": 375
+  },
+  {
+    "lang": "en",
+    "name": "metodologia",
+    "overflow": false,
+    "scroll": 365,
+    "viewport": 375
+  },
+  {
+    "description": "_r_65_",
+    "label": "Globo de Tierra con 5 marcadores",
+    "lang": "es",
+    "markerList": "Núcleo hiperárido del Atacama (Yungay) (Chile) (24.50° S, 69.25° O)Volcán Licancabur y su lago de cumbre (Bolivia) (22.83° S, 67.88° O)Laguna Verde (Bolivia) (Bolivia) (22.80° S, 67.82° O)Volcán Uturuncu (Sud Lípez) (Bolivia) (22.27° S, 67.18° O)Volcán Ojos del Salado (Chile y Argentina) (27.11° S, 68.54° O)",
+    "name": "globo",
+    "overflow": false,
+    "viewport": 1360
+  },
+  {
+    "description": "_r_69_",
+    "label": "Globe of Earth with 5 markers",
+    "lang": "en",
+    "markerList": "Núcleo hiperárido del Atacama (Yungay) (Chile) (24.50° S, 69.25° W)Volcán Licancabur y su lago de cumbre (Bolivia) (22.83° S, 67.88° W)Laguna Verde (Bolivia) (Bolivia) (22.80° S, 67.82° W)Volcán Uturuncu (Sud Lípez) (Bolivia) (22.27° S, 67.18° W)Volcán Ojos del Salado (Chile y Argentina) (27.11° S, 68.54° W)",
+    "name": "globo",
+    "overflow": false,
+    "viewport": 1360
+  },
+  {
+    "description": "_r_6a_",
+    "label": "Globo de Tierra con 5 marcadores",
+    "lang": "es",
+    "markerList": "Núcleo hiperárido del Atacama (Yungay) (Chile) (24.50° S, 69.25° O)Volcán Licancabur y su lago de cumbre (Bolivia) (22.83° S, 67.88° O)Laguna Verde (Bolivia) (Bolivia) (22.80° S, 67.82° O)Volcán Uturuncu (Sud Lípez) (Bolivia) (22.27° S, 67.18° O)Volcán Ojos del Salado (Chile y Argentina) (27.11° S, 68.54° O)",
+    "name": "globo",
+    "overflow": false,
+    "viewport": 768
+  },
+  {
+    "description": "_r_67_",
+    "label": "Globe of Earth with 5 markers",
+    "lang": "en",
+    "markerList": "Núcleo hiperárido del Atacama (Yungay) (Chile) (24.50° S, 69.25° W)Volcán Licancabur y su lago de cumbre (Bolivia) (22.83° S, 67.88° W)Laguna Verde (Bolivia) (Bolivia) (22.80° S, 67.82° W)Volcán Uturuncu (Sud Lípez) (Bolivia) (22.27° S, 67.18° W)Volcán Ojos del Salado (Chile y Argentina) (27.11° S, 68.54° W)",
+    "name": "globo",
+    "overflow": false,
+    "viewport": 768
+  },
+  {
+    "description": "_r_67_",
+    "label": "Globo de Tierra con 5 marcadores",
+    "lang": "es",
+    "markerList": "Núcleo hiperárido del Atacama (Yungay) (Chile) (24.50° S, 69.25° O)Volcán Licancabur y su lago de cumbre (Bolivia) (22.83° S, 67.88° O)Laguna Verde (Bolivia) (Bolivia) (22.80° S, 67.82° O)Volcán Uturuncu (Sud Lípez) (Bolivia) (22.27° S, 67.18° O)Volcán Ojos del Salado (Chile y Argentina) (27.11° S, 68.54° O)",
+    "name": "globo",
+    "overflow": false,
+    "viewport": 375
+  },
+  {
+    "description": "_r_6a_",
+    "label": "Globe of Earth with 5 markers",
+    "lang": "en",
+    "markerList": "Núcleo hiperárido del Atacama (Yungay) (Chile) (24.50° S, 69.25° W)Volcán Licancabur y su lago de cumbre (Bolivia) (22.83° S, 67.88° W)Laguna Verde (Bolivia) (Bolivia) (22.80° S, 67.82° W)Volcán Uturuncu (Sud Lípez) (Bolivia) (22.27° S, 67.18° W)Volcán Ojos del Salado (Chile y Argentina) (27.11° S, 68.54° W)",
+    "name": "globo",
+    "overflow": false,
+    "viewport": 375
+  },
+  {
+    "lang": "es",
+    "mode": "reflow-680-equivalente-a-1360-al-200-sin-zoom-real",
+    "name": "inicio",
+    "overflow": false,
+    "viewport": 680
+  },
+  {
+    "lang": "es",
+    "mode": "reflow-680-equivalente-a-1360-al-200-sin-zoom-real",
+    "name": "comparador",
+    "overflow": false,
+    "viewport": 680
+  },
+  {
+    "lang": "es",
+    "mode": "reflow-680-equivalente-a-1360-al-200-sin-zoom-real",
+    "name": "descubrimientos",
+    "overflow": false,
+    "viewport": 680
+  },
+  {
+    "lang": "es",
+    "mode": "reflow-680-equivalente-a-1360-al-200-sin-zoom-real",
+    "name": "metodologia",
+    "overflow": false,
+    "viewport": 680
+  }
+]

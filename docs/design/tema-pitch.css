@@ -1,10 +1,14 @@
-/* Tema para las diapositivas de Joel. Lienzo recomendado: 1920 × 1080. */
+/* Tema de diapositivas y póster. Fuente única: tokens del producto. */
 @import "../../web/src/styles/tokens.css";
-.slide { aspect-ratio: 16 / 9; padding: 6%; background: var(--ea-bg); color: var(--ea-ink); font-family: var(--ea-font); }
-.slide h1 { font-size: 72px; line-height: 1.1; letter-spacing: -.04em; max-width: 20ch; }
-.slide h2 { font-size: 48px; line-height: 1.15; }
-.slide p, .slide li { font-size: 30px; line-height: 1.5; max-width: 58ch; }
-.slide .accent { color: var(--ea-primary); }
-.slide .caution { color: var(--ea-mars); }
-.slide small { font-size: 22px; color: var(--ea-muted); }
-.slide img { max-width: 100%; max-height: 65%; object-fit: contain; }
+:root { --cc-pitch-title: clamp(2rem, 5vw, 4.5rem); --cc-pitch-subtitle: clamp(1.5rem, 3vw, 3rem); --cc-pitch-body: clamp(1rem, 2vw, 1.875rem); --cc-poster-width: 1100px; }
+.slide { aspect-ratio: 16 / 9; padding: calc(var(--cc-space-6) * 2); background: var(--cc-bg); color: var(--cc-text); font-family: var(--cc-font-sans); line-height: 1.5; border-top: var(--cc-line-emphasis) solid var(--cc-accent); }
+.slide--cover { background-image: linear-gradient(var(--cc-sky-shade), var(--cc-sky-shade)), var(--cc-nebula-image); background-size: cover; background-position: center; }
+.slide h1 { font-size: var(--cc-pitch-title); line-height: 1.1; max-width: 20ch; }
+.slide h2 { font-size: var(--cc-pitch-subtitle); line-height: 1.2; }
+.slide p, .slide li { font-size: var(--cc-pitch-body); max-width: 58ch; }
+.slide .accent { color: var(--cc-accent); }
+.slide .caution { color: var(--cc-warn); }
+.slide small { font-size: var(--cc-text-lg); color: var(--cc-text-muted); }
+.slide img { max-width: 100%; max-height: 65%; object-fit: contain; border: var(--cc-line) solid var(--cc-control-border); }
+.slide .eyebrow { font-family: var(--cc-font-mono); font-size: var(--cc-text-lg); color: var(--cc-accent); }
+@media print { .slide { break-after: page; print-color-adjust: exact; } }

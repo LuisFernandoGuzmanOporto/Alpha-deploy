@@ -331,11 +331,12 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.01em; }
 .ea-state small { max-width: var(--cc-reading-width); }
 .ea-empty, .cc-empty { overflow-wrap: anywhere; }
 .cc-target:active, .cc-rank__row:active, .cc-matrix td a:active { background: var(--cc-accent-wash); }
-.cc-select, .cc-switch__root, .cc-dialog__close, .ea-button--secondary, .globe-reset, .globe-tabs { border-color: var(--cc-control-border); }
+.cc-select, .cc-select__content, .cc-switch__root, .cc-dialog__close, .ea-button--secondary, .ea-back, .globe-reset, .globe-tabs { border-color: var(--cc-control-border); }
 .cc-select__content { min-width: var(--radix-select-trigger-width); max-width: calc(100vw - var(--cc-space-6)); max-height: var(--radix-select-content-available-height); overflow-y: auto; }
 .cc-select__item { min-height: var(--cc-space-6); }
 .cc-nav a, .ea-tabs [role="tab"], .globe-tabs [role="tab"] { cursor: pointer; }
 .ea-tabs [role="tab"]:hover, .globe-tabs [role="tab"]:hover { background: var(--cc-accent-wash); }
+.globe-tabs [role="tab"][aria-selected="true"]:hover { background: var(--cc-accent-strong); color: var(--cc-accent-ink); }
 .cc-app main { scroll-margin-top: calc(var(--cc-topbar-h) + var(--cc-space-7)); }
 button, a, [tabindex="0"] { scroll-margin-block: calc(var(--cc-topbar-h) + var(--cc-space-7)); }
 .comparador-table-wrap, .methodology table { scrollbar-gutter: stable; }

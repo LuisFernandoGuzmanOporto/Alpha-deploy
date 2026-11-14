@@ -14,24 +14,24 @@ Ya entregado: N-1 a N-4. El foco (#29) y el puesto en la fila (#30) están resue
 ## Pendientes
 
 - [ ] **N-4, accesibilidad sobre el rediseño nuevo (#45):**
-  - [ ] Contraste mínimo 4.5:1 en todas las pantallas: texto sobre el mapa, leyenda y etiquetas "Nuevo" y "Conocido".
-  - [ ] Textos alternativos del globo, el mapa y el radar.
+  - [x] Contraste mínimo 4.5:1 en todas las pantallas: texto sobre el mapa, leyenda y etiquetas "Nuevo" y "Conocido".
+  - [x] Textos alternativos del globo, el mapa y el radar.
   - [ ] Recorrido completo con un lector de pantalla (NVDA o VoiceOver).
   - [ ] Zoom al 200 %.
   - [ ] Preferencia de "reducir movimiento" activada en el sistema.
-- [ ] **N-5, material visual del pitch:**
-  - [ ] Capturas nuevas con el rediseño. Las de `docs/design/` son del diseño anterior: pantalla principal, "Solo Bolivia", comparador, descubrimientos, globo y metodología.
-  - [ ] Tema de las diapositivas.
-  - [ ] Póster.
-  - [ ] Sin menores de 18 años y sin logo de NASA.
-- [ ] **Textos en inglés:** revisar `web/src/content/en.ts`, los textos de las limitaciones universales y la frase de cada etiqueta. La interfaz debe leerse natural en inglés.
+- [x] **N-5, material visual del pitch:**
+  - [x] Capturas nuevas con el rediseño. Las de `docs/design/` son del diseño anterior: pantalla principal, "Solo Bolivia", comparador, descubrimientos, globo y metodología.
+  - [x] Tema de las diapositivas.
+  - [x] Póster.
+  - [x] Sin menores de 18 años y sin logo de NASA.
+- [x] **Textos en inglés:** revisar `web/src/content/en.ts`, los textos de las limitaciones universales y la frase de cada etiqueta. La interfaz debe leerse natural en inglés.
 - [ ] **Mejoras visuales**, sobre el sistema actual sin reinventarlo:
-  - [ ] Pantalla principal: jerarquía de la franja superior, espacios entre las tres columnas, densidad del ranking y de la lista de destinos.
-  - [ ] Comparador: que el anillo de similitud, la tabla, el radar y "dónde falla" se lean mejor; hoy se ven correctos pero planos.
-  - [ ] Descubrimientos y Metodología: la matriz, las tablas largas y la lectura del documento.
-  - [ ] Globo: los marcadores se superponen cuando los mejores análogos están agrupados.
+  - [x] Pantalla principal: jerarquía de la franja superior, espacios entre las tres columnas, densidad del ranking y de la lista de destinos.
+  - [x] Comparador: que el anillo de similitud, la tabla, el radar y "dónde falla" se lean mejor; hoy se ven correctos pero planos.
+  - [x] Descubrimientos y Metodología: la matriz, las tablas largas y la lectura del documento.
+  - [x] Globo: los marcadores se superponen cuando los mejores análogos están agrupados.
   - [ ] Estados de carga, vacío y error, y estados de hover y foco.
-  - [ ] Móvil: revisar todas las pantallas a 375 px y a 768 px, sin desborde horizontal.
+  - [x] Móvil: revisar todas las pantallas a 375 px y a 768 px, sin desborde horizontal.
   - [ ] Movimiento suave y sin excesos; con "reducir movimiento" no debe haber animación.
 
 ## Reglas
@@ -41,3 +41,9 @@ Ya entregado: N-1 a N-4. El foco (#29) y el puesto en la fila (#30) están resue
 - Dependencias nuevas solo si son estrictamente necesarias y avisando antes a Fernando.
 - Antes de cada PR: `npm run build` y `npm test` deben pasar. `tokens.test.ts` comprueba el contraste de las variables.
 - Un PR pequeño por cambio y `git pull --rebase` antes de subir. Nunca subas directo a `main`.
+
+## Revisión local del 14/11/2026
+
+Ver docs/design/QA-NOE.md, CAPTURAS.md y PRS-NOE.md. Se conserva el cielo aprobado por Noe.
+Las casillas manuales (NVDA, zoom real, preferencia del sistema y fallas de red) siguen abiertas.
+La separación y numeración del globo ya existían y se verificaron sin cambiar coordenadas.

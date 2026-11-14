@@ -31,9 +31,7 @@ const MAX_PIXEL_RATIO = 2;
 const MARKER_RADIUS = 9;
 /** Espacio mínimo (en px a 360 px de lado) entre marcadores agrupados. */
 const MARKER_GAP = 3;
-const SITE_COLOR = "#e4572e";
-const ANALOG_COLOR = "#ffd23f";
-const OUTLINE_COLOR = "#111111";
+interface MarkerPalette { site: string; analog: string; ink: string; font: string }
 
 interface Texture {
   data: Uint8ClampedArray;
@@ -90,7 +88,13 @@ export function Globe({ texture, markers, initialView, label, size = 360 }: Glob
       canvas.height = px;
     }
     renderSphere(ctx, px, tex, view, dragging ? DRAG_BLOCK : 1);
-    renderMarkers(ctx, px, markers, view);
+    const style = getComputedStyle(canvas);
+    renderMarkers(ctx, px, markers, view, {
+      site: style.getPropertyValue("--cc-marker-site").trim(),
+      analog: style.getPropertyValue("--cc-marker-analog").trim(),
+      ink: style.getPropertyValue("--cc-marker-ink").trim(),
+      font: style.fontFamily,
+    });
   }, [size, view, markers, dragging]);
 
   useEffect(() => {
@@ -203,7 +207,7 @@ function renderSphere(ctx: CanvasRenderingContext2D, px: number, tex: Texture, v
 }
 
 /** Dibuja los marcadores visibles; el sitio va encima de los análogos. */
-function renderMarkers(ctx: CanvasRenderingContext2D, px: number, markers: GlobeMarker[], view: View) {
+function renderMarkers(ctx: CanvasRenderingContext2D, px: number, markers: GlobeMarker[], view: View, palette: MarkerPalette) {
   const radius = px / 2;
   const scale = px / 360;
   const r = MARKER_RADIUS * Math.max(1, scale);
@@ -217,7 +221,7 @@ function renderMarkers(ctx: CanvasRenderingContext2D, px: number, markers: Globe
     2 * r + MARKER_GAP * scale,
   );
   ctx.lineWidth = Math.max(1.5, scale * 1.5);
-  ctx.strokeStyle = OUTLINE_COLOR;
+  ctx.strokeStyle = palette.ink;
   visible.forEach(({ point }, i) => {
     const at = placed[i]!;
     if (at.x === point.x && at.y === point.y) return;
@@ -227,20 +231,20 @@ function renderMarkers(ctx: CanvasRenderingContext2D, px: number, markers: Globe
     ctx.stroke();
     ctx.beginPath();
     ctx.arc(point.x, point.y, Math.max(2, r / 4), 0, 2 * Math.PI);
-    ctx.fillStyle = OUTLINE_COLOR;
+    ctx.fillStyle = palette.ink;
     ctx.fill();
   });
-  ctx.font = `bold ${Math.round(r * 1.1)}px system-ui, sans-serif`;
+  ctx.font = `bold ${Math.round(r * 1.1)}px ${palette.font}`;
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
   visible.forEach(({ marker }, i) => {
     const { x, y } = placed[i]!;
     ctx.beginPath();
     ctx.arc(x, y, r, 0, 2 * Math.PI);
-    ctx.fillStyle = marker.kind === "site" ? SITE_COLOR : ANALOG_COLOR;
+    ctx.fillStyle = marker.kind === "site" ? palette.site : palette.analog;
     ctx.fill();
     ctx.stroke();
-    ctx.fillStyle = OUTLINE_COLOR;
+    ctx.fillStyle = palette.ink;
     ctx.fillText(marker.badge, x, y + 0.5);
   });
 }

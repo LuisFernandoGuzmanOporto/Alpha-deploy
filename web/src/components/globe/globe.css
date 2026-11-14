@@ -1,14 +1,14 @@
 /* Reglas estructurales del globo (F6). El color y las pestañas se estilan en styles/app.css con los tokens de Noe. */
 .globe {
   display: grid;
-  gap: 0.5rem;
+  gap: var(--cc-space-2);
   justify-items: start;
 }
 
 .globe-canvas {
   display: block;
   border-radius: 50%;
-  background: #05070d;
+  background: var(--cc-orbit-deep);
   cursor: grab;
   touch-action: none;
 }
@@ -19,7 +19,7 @@
 
 .globe-status,
 .globe-credit {
-  font-size: 0.9rem;
+  font-size: var(--cc-text-sm);
 }
 
 .globe-list {
@@ -30,8 +30,8 @@
   display: inline-block;
   width: 0.8rem;
   height: 0.8rem;
-  border: 1px solid #111111;
+  border: var(--cc-line) solid var(--cc-marker-ink);
   border-radius: 50%;
-  background: #e4572e;
+  background: var(--cc-marker-site);
   vertical-align: middle;
 }

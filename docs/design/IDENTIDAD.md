@@ -1,7 +1,7 @@
 # Identidad de Noe
 
 > Actualización: el tema orbital está conservado en una copia ZIP local. Noe pidió
-> una segunda variante de noche estrellada, con acentos dorados y titileo suave.
+> variantes posteriores y aprobó el cielo de nebulosa texturizada con estrellas animadas.
 > La dirección vigente y su relación con los tokens están en
 > [DESIGN.md](DESIGN.md). La propuesta clara siguiente se conserva como antecedente.
 
