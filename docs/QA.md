@@ -1,0 +1,50 @@
+# QA: matriz de pruebas
+
+Dueño: Joel. Cada fallo va como issue de GitHub con pasos para reproducir. Pasadas previstas: sábado ~14:30 (local), 04:00 y 07:00 (producción).
+
+## Pasada 1: sábado 14/11, ~14:30
+
+- **Versión:** `main` en `2b9d241`, build de producción (`npm run build` y `npm run preview`). La web **aún no está en Vercel**, así que no se pudo probar la URL de producción.
+- **Datos:** DEMO (`npm run data:demo`, inventados). `data/candidates.json` todavía está vacío.
+- **Navegador:** Chromium (navegador integrado), escritorio y emulación de móvil de 375 × 812.
+
+Estados: **OK**, **Falla** (con issue o PR), **No probado** (con motivo).
+
+| # | Función | Pasos | Resultado esperado | Escritorio | Móvil | Estado |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | F1 Selector de sitio | Cambiar de un sitio lunar a uno marciano | El ranking cambia y la URL guarda `?sitio=` | OK | OK | OK |
+| 2 | F2 Mapa y ranking | Abrir `/` | Marcadores en el mapa y lista ordenada por puntaje; crédito de OpenStreetMap visible | OK | OK | Falla visual: el número de puesto aparece junto al país (#30) |
+| 3 | F5 Filtro Bolivia | Marcar "Solo Bolivia" | Solo candidatos de Bolivia, en el mismo orden; URL `bolivia=1` | OK | No probado | OK |
+| 4 | F11 Solo poco estudiados | Marcar "Solo lugares poco estudiados", y luego también "Solo Bolivia" | Solo candidatos "Nuevo"; los dos filtros se combinan | OK | No probado | OK |
+| 5 | F11 Descubrimientos | Abrir `/descubrimientos` | Los 5 mejores poco estudiados por sitio | OK | No probado | OK |
+| 6 | Selección de análogo | Clic en un análogo de la lista | Queda resaltado, la URL guarda `analogo=` y aparece "Ver comparación" | OK | No probado | OK |
+| 7 | F3 Comparador | "Ver comparación" | Tabla por variable, radar, coincidencias, "Dónde falla", limitaciones y "Volver al ranking" | OK | Falla: la página se ensanchaba a 568 px | Arreglado en PR #28 |
+| 8 | F4 Ficha | En el comparador, bajar hasta la ficha | Ficha del análogo, o un aviso si aún no tiene | OK (estructura) | No probado | Contenido pendiente: falta `fichas.json` (Lian) |
+| 9 | F9 Metodología | Abrir `/metodologia` | Se lee `docs/METODOLOGIA.md` con títulos y tablas | OK | No probado | OK |
+| 10 | F10 Pesos | Subir "Temperatura" a 3 y luego "Restablecer pesos" | Cambian los puntajes, la URL guarda `pesos=`; al restablecer vuelven los valores originales | OK | No probado | OK |
+| 11 | F6 Globo 3D | Abrir "Ver en el globo 3D" | Se abre en el cuerpo del sitio, con el sitio marcado y pestañas Tierra, Luna y Marte | OK | OK (359 px, pestaña Luna) | OK |
+| 12 | Comparación inexistente | Abrir `/comparar/demo-moon-a/no-existe` | "No existe esa comparación" y enlace al inicio | OK | No probado | OK |
+| 13 | Ruta inexistente | Abrir `/no-existe` | "Página no encontrada" | OK | No probado | OK |
+| 14 | Error de datos | Quitar `results.json` del build y recargar | Mensaje de error, sin pantalla en blanco | OK | No probado | OK (*) |
+| 15 | Lista vacía | Filtros que no dejan candidatos | Mensaje de lista vacía | No probado | No probado | No probado: los datos DEMO siempre dejan al menos uno |
+| 16 | Carga lenta | Red lenta (DevTools, "Slow 3G") | "Cargando…" mientras llegan los datos y el mapa | No probado | No probado | No probado |
+| 17 | Teclado y foco | Recorrer la página con Tab | El control enfocado se ve | Falla | No probado | Falla: el foco no se ve en la lista del ranking (#29) |
+| 18 | Ancho en móvil | Inicio y comparador a 375 px | Sin desplazamiento horizontal de la página | — | Inicio OK; comparador arreglado en PR #28 | OK tras PR #28 |
+| 19 | Consola | Recorrer todas las rutas | Sin errores en la consola | OK | No probado | OK |
+| 20 | Idioma | Revisar textos de la web | En inglés, como exige la entrega | Falla | Falla | Falla: la web está en español (#25) |
+| 21 | Enlace directo | Recargar estando en `/comparar/...` en producción | Abre la misma pantalla (regla de `vercel.json`) | No probado | No probado | No probado: falta desplegar |
+| 22 | Producción | Abrir la URL de Vercel desde otra red y desde un teléfono | Carga sin login | No probado | No probado | **Bloqueante: la web aún no está en Vercel (F-1)** |
+
+(*) En `vite preview`, un JSON que falta devuelve `index.html` y el mensaje dice "no es un JSON válido". En Vercel la regla de `vercel.json` excluye `data/`, así que debería dar 404 y el mensaje "No se pudo cargar". Confirmar en la pasada de producción.
+
+## Pasadas siguientes
+
+Repetir la matriz completa en producción a las **04:00** y a las **07:00**, con datos reales. Agregar:
+
+- [ ] URL de producción desde otra red y desde un teléfono real.
+- [ ] Ranking con los candidatos reales: los análogos conocidos (`known: true`) aparecen arriba para su cuerpo.
+- [ ] Fichas reales de Lian en el comparador.
+- [ ] Versión en inglés (#25).
+- [ ] Crédito "© OpenStreetMap contributors" en inglés.
+- [ ] Contraste mínimo 4.5:1 y textos alternativos (N-4, Noe).
+- [ ] Enlaces del formulario de entrega abiertos en ventana privada: demo, proyecto y repositorio.
