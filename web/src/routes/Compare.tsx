@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { Comparador } from "../components/compare/Comparador";
+import { FichaPanel } from "../components/FichaPanel";
 import { LimitationsPanel } from "../components/placeholders/LimitationsPanel";
 import { useData } from "../lib/data";
 
@@ -10,7 +11,7 @@ export function Compare() {
   if (state.status === "loading") return <p>Cargando datos…</p>;
   if (state.status === "error") return <p role="alert">Error al cargar los datos: {state.message}</p>;
 
-  const { sites, candidates, results } = state.data;
+  const { sites, candidates, results, fichas } = state.data;
   const site = sites.find((s) => s.id === siteId);
   const candidate = candidates.find((c) => c.id === candidateId);
   if (!site || !candidate) {
@@ -23,13 +24,21 @@ export function Compare() {
   }
 
   const entry = results.sites[site.id]?.find((e) => e.candidate_id === candidate.id) ?? null;
+  const ficha = fichas[candidate.id];
 
   return (
     <>
       <p>
         <Link to={`/?sitio=${site.id}&analogo=${candidate.id}`}>← Volver al ranking</Link>
       </p>
-      <Comparador site={site} candidate={candidate} entry={entry} limitations={<LimitationsPanel />} />
+      <Comparador
+        site={site}
+        candidate={candidate}
+        entry={entry}
+        limitations={<LimitationsPanel />}
+        breaksDown={ficha?.breaks_down}
+      />
+      <FichaPanel candidate={candidate} ficha={ficha} />
     </>
   );
 }
