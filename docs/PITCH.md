@@ -4,7 +4,7 @@ Dueño: Joel. Reglas en `docs/REQUISITOS.md`. Las respuestas técnicas para las 
 
 **Reglas que no se negocian:**
 - **Solo se afirma lo que la web ya hace en producción.** Si una función no llega a `main`, se quita del guion.
-- Los datos marcados `[PENDIENTE: …]` se llenan con los resultados reales de `web/public/data/results.json` cuando Lian suba los candidatos. Nunca se inventan.
+- Las cifras salen de los resultados reales de la versión 1 (`docs/INFORME.md`, verificadas por Fernando). Si cambian los datos, se actualizan antes de presentar. Lo que aún no se sabe queda como `[PENDIENTE: …]`; nunca se inventa.
 - La demo oficial va **en inglés**: diapositivas en inglés, o video con subtítulos en inglés.
 
 ## 1. Qué entregamos y cuándo
@@ -35,13 +35,13 @@ Una idea por diapositiva, poco texto y una imagen fuerte en cada una.
 | 2 | **The problem** | Earth analogs such as Atacama, Haughton Crater or Death Valley are "not entirely well characterized" (challenge statement). No place on Earth matches the Moon or Mars in everything. Mission teams need to know *what* an analog is good for, and *where it fails*. | Dos fotos: un sitio lunar (mosaico LROC) y un desierto terrestre |
 | 3 | **Our solution** | Pick a Moon or Mars site and get a ranked map of Earth analogs, a 0–100 similarity score, a side-by-side comparison and an explicit *"where the analogy breaks down"* panel. | Captura de la pantalla principal: mapa y ranking |
 | 4 | **How the index works** | 5 variables derived from NASA data and models in a common 10 × 10 km window: slope, relief, mean temperature, aridity, albedo. Normalized differences, weighted mean, score = 100 × (1 − distance). Geology, ice and dust tags compared separately. Every value cites its source; missing data stays empty, never guessed. | Captura del comparador: tabla y radar |
-| 5 | **NASA data at the core** | Moon: LRO LOLA (terrain) and LRO Diviner (temperature). Mars: MGS MOLA (terrain) and Mars Climate Database (LMD, ESA, CNES). Earth: NASA POWER [PENDIENTE: confirmar las fuentes que usó Lian]. Globe: NASA GIBS, Moon Trek, Mars Trek. | Logos de misión **no** (no se pueden usar); usar mapas de los datos |
-| 6 | **What we found** | [PENDIENTE: mejor análogo de un sitio lunar y uno marciano, con su puntaje.] [PENDIENTE: un análogo poco estudiado que entra al top 5.] [PENDIENTE: el mejor análogo de Bolivia.] Plus one line on where it fails, e.g. *"no Earth place reaches the lunar polar cold"*. | Captura de la vista de descubrimientos |
+| 5 | **NASA data at the core** | Moon: LRO LOLA (terrain) and LRO Diviner (temperature). Mars: MGS MOLA (terrain) and Mars Climate Database (LMD, ESA, CNES). Earth: NASA POWER (surface temperature, precipitation and CERES albedo) and elevation tiles on AWS (SRTM and other models). Globe: NASA GIBS, Moon Trek, Mars Trek. | Logos de misión **no** (no se pueden usar); usar mapas de los datos |
+| 6 | **What we found** | **Moon:** Volcán Licancabur ranks 1st for Peak Near Cabeus B and Malapert Massif (69.8)\*. **Mars:** the Gilf Kebir plateau, rarely studied as an analog, ranks 1st for Jezero (80.8) and Gale (83.2). **Bolivia:** in the top 5 of all six sites; less-studied places such as the Siloli Desert (3rd for Jezero and Gale) and Laguna Colorada. **Where it fails:** the coldest Earth candidate averages −27 °C, the lunar sites −126 to −160 °C. <br>\* *Temperature and precipitation for mountain and volcano candidates come from a coarse regional grid and are biased; the lunar ranking of these places rests mainly on slope and relief.* | Captura de la vista de descubrimientos |
 | 7 | **Why it matters and what's next** | Helps choose where to test rovers, instruments and operations on Earth, and makes each analog's limits explicit (gravity, vacuum, thin atmosphere, radiation). Less-studied Bolivian places (Siloli, Laguna Colorada, Uturuncu) as analog candidates. Next: more Earth candidates, a finer global scan, field validation. | Mapa con los análogos de Bolivia |
 
 **Antes de subirlas:**
 - [ ] Revisar ortografía en inglés.
-- [ ] Diapositiva 6: decir que la temperatura de Licancabur, Ojos del Salado y Socompa viene de una malla regional gruesa y está sesgada, y que su posición se apoya en pendiente y relieve (issue #36).
+- [x] Diapositiva 6: decir que la temperatura de Licancabur, Ojos del Salado y Socompa viene de una malla regional gruesa y está sesgada, y que su posición se apoya en pendiente y relieve (issue #36).
 - [ ] No presentar Uyuni, Coipasa ni Licancabur como "descubrimientos": ya están documentados como análogos de Marte.
 - [ ] Ninguna persona menor de 18 años en las imágenes.
 - [ ] Ningún logo de NASA.
@@ -58,7 +58,7 @@ Sigue la estructura que recomienda la guía oficial. Locución en inglés; si se
 | 0:02–0:05 | "Where on Earth should we rehearse a Moon base or a Mars landing?" | Globo 3D girando sobre el polo sur lunar |
 | 0:05–0:10 | "Earth Analogs measures which Earth places resemble each landing site, and where they don't." | Título y lema sobre la pantalla principal |
 | 0:10–0:20 | "Pick a site, get a ranked map of Earth analogs, a similarity score built from NASA data, and an honest view of where each analogy breaks down." | Grabación: elegir sitio, el mapa se llena, clic en un análogo, comparador con "Dónde falla" |
-| 0:20–0:30 | "From the Bolivian Altiplano to [PENDIENTE: otro análogo real del top], we help mission teams choose where to test before they fly." | Filtro de Bolivia y luego el globo de la Tierra con los análogos numerados |
+| 0:20–0:30 | "From Bolivia's Siloli Desert to Egypt's Gilf Kebir plateau, we help mission teams choose where to test before they fly." | Filtro de Bolivia y luego el globo de la Tierra con los análogos numerados |
 
 **Comprobar:** que dure 30 s o menos (medir el archivo final), que los subtítulos estén incrustados, que esté subido a YouTube como "no listado" o a Drive público, y que el enlace se haya probado en una ventana privada.
 
@@ -72,7 +72,7 @@ Bloques con tiempo; si la sede da 3 minutos, se recorta lo marcado como *recorta
 | Solución | 0:30–1:00 | | Qué es Earth Analogs, en una frase (sección 2). |
 | Demo en vivo | 1:00–2:30 | Fernando | Elegir **Malapert Massif** → mapa y ranking → clic en un análogo → comparador: la tabla, el radar y **"Dónde falla la analogía"** → volver y activar **"Solo Bolivia"** → abrir el **globo 3D**. Si falla, se pasa al video de respaldo. |
 | Cómo funciona | 2:30–3:15 | Sebastián | Cinco variables, ventana común, normalización y puntaje; cada valor con su fuente y sin datos inventados. *Recortable: dejar solo una frase.* |
-| Hallazgos | 3:15–4:15 | Dante y Lian | [PENDIENTE: mejor análogo por cuerpo, un descubrimiento poco estudiado y el caso de Bolivia, con sus puntajes y lo que falla en cada uno.] |
+| Hallazgos | 3:15–4:15 | Dante y Lian | **Luna:** el Licancabur es el primero para Peak Near Cabeus B y Malapert (69,8), seguido de Ojos del Salado y Socompa. **Aviso obligatorio:** su temperatura y lluvia vienen de una grilla regional gruesa y están sesgadas, así que su puesto se apoya sobre todo en pendiente y relieve (#36). **Marte:** la meseta de Gilf Kebir, poco estudiada, es la primera para Jezero (80,8) y Gale (83,2). **Bolivia:** aparece en el top 5 de los seis sitios, con lugares poco estudiados como el desierto de Siloli (3.º para Jezero y Gale) y Laguna Colorada. **Dónde falla:** el lugar más frío del catálogo promedia −27 °C y los sitios lunares, de −126 a −160 °C; ningún lugar de la Tierra llega a ese frío. Ser honestos con la validación: los análogos lunares conocidos quedan 14.º, 16.º y 23.º. |
 | Límites e impacto | 4:15–5:00 | [PENDIENTE: asignar] | Gravedad, vacío, atmósfera y radiación no se reproducen; el valor está en saber qué se puede ensayar en cada lugar. Cierre con el mensaje central. |
 
 **Recorrido de la demo en vivo (probarlo antes):**

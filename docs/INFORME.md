@@ -58,7 +58,7 @@ The Siloli Desert and Laguna Colorada, both in the top 5 for Jezero and Gale, ar
 - **Temperature is the largest gap for the Moon.** The coldest Earth candidate with data averages −27 °C; the lunar sites average −126 to −160 °C. In most lunar comparisons it is the largest single difference. No place on Earth reproduces the cold of permanently shadowed regions.
 - **Temperature and precipitation of mountain candidates are biased.** NASA POWER describes a grid cell tens of kilometres wide, so for volcanoes and high mountains (Licancabur, Ojos del Salado, Socompa, Sajama, Uturuncu and ten others) the elevation of the cell differs from the real one by 500 m to more than 3,500 m, so its temperature does not represent the point. We flagged these values in the data and did not correct them. Slope and relief are not affected.
 - **Even the "driest" Earth places get rain.** The Moon and Mars have zero precipitation; Licancabur gets ~29 mm a year and the Siloli Desert ~40 mm. Precipitation is the most common weak point among the Mars matches.
-- **Coverage shapes the ranking.** The McMurdo Dry Valleys of Antarctica, a classic analog, have no elevation data in our source (it does not cover Antarctica). With the lunar albedo also missing, they fall below the three-variable minimum and **drop out of the lunar ranking entirely**, together with three other candidates.
+- **Coverage shapes the ranking.** Four candidates have no slope or relief. Because the lunar albedo is also missing, they fall below the three-variable minimum and **drop out of the lunar ranking**. The McMurdo Dry Valleys (Antarctica), a classic analog, and Svalbard only have coarse elevation models; the La Corona (Lanzarote) and Manjanggul (Jeju) lava tubes have sea inside their 10 km window.
 - **What no Earth analog can reproduce:** reduced gravity, the lunar vacuum, the thin Martian atmosphere and the radiation environment. A good score means similar terrain and climate, not similar conditions for a spacecraft or a crew.
 
 ## Does the index agree with known analogs?
@@ -75,7 +75,7 @@ The tool turns "this looks like Mars" into a measured, explainable comparison. A
 - Add the missing lunar albedo and Antarctic elevation data.
 - Add variables for rock type and soil.
 - Run a coarse global scan to find analogs outside our hand-picked list.
-- Validate the top matches in the field, starting with the Bolivian Altiplano.
+- Validate the top matches in the field, starting with less-studied Bolivian places such as the Siloli Desert and Laguna Colorada.
 
 **Data and credits:** NASA LRO (LOLA, Diviner, LROC), MGS MOLA, NASA POWER, NASA GIBS, Moon Trek and Mars Trek; Mars Climate Database (LMD, ESA, CNES); SRTM via Terrain Tiles on AWS; OpenStreetMap. Full list: `docs/ATRIBUCION.md`.
 

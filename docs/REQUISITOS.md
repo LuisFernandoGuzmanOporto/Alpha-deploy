@@ -24,12 +24,12 @@ Todo el contenido del formulario va en inglés.
 | Campo | Qué pide | Responsable | Estado |
 | --- | --- | --- | --- |
 | Project Name | Nombre del proyecto | Noe propone, equipo decide | Pendiente |
-| High-Level Project Summary | Qué desarrollamos, cómo responde al desafío y por qué importa | Joel | Pendiente |
+| High-Level Project Summary | Qué desarrollamos, cómo responde al desafío y por qué importa | Joel | Borrador en `docs/ENTREGA.md` |
 | Link to Project Demo | Video de 30 s o menos, o hasta 7 diapositivas (incluidas título e introducción), en enlace público sin login | Joel | Pendiente |
 | Link to Final Project | Enlace público sin login: la web desplegada y/o el repositorio | Fernando | Pendiente: la web aún no está en Vercel |
-| Detailed Project Description | Qué hace, cómo funciona, beneficios, objetivos, herramientas y lenguajes | Joel con Sebastián | Pendiente |
-| Use of Super Intelligence (SI) | Si usamos herramientas de IA y cómo (no lo ven los jueces) | Joel | Pendiente |
-| NASA Data | Qué datos y recursos de NASA usamos (al menos uno para premios globales) | Joel con Dante y Lian | Pendiente |
+| Detailed Project Description | Qué hace, cómo funciona, beneficios, objetivos, herramientas y lenguajes | Joel con Sebastián | Borrador en `docs/ENTREGA.md` |
+| Use of Super Intelligence (SI) | Si usamos herramientas de IA y cómo (no lo ven los jueces) | Joel | Borrador en `docs/ENTREGA.md` |
+| NASA Data | Qué datos y recursos de NASA usamos (al menos uno para premios globales) | Joel con Dante y Lian | Borrador en `docs/ENTREGA.md` |
 | Space Agency Partner Data and Other References | Todos los datos, recursos, código, textos e imágenes usados | Joel (desde `docs/ATRIBUCION.md`) | Pendiente |
 | Imágenes en la página | JPG, PNG o GIF de hasta 10 MB; no se suben videos ni documentos | Noe | Pendiente |
 
