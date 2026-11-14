@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import type { RankingRow } from "../lib/ranking";
+import { KnownBadge } from "./placeholders/KnownBadge";
 
 interface Props {
   siteId: string;
@@ -10,7 +11,7 @@ interface Props {
 
 export function RankingList({ siteId, rows, selectedId, onSelect }: Props) {
   if (rows.length === 0) {
-    return <p>No hay análogos que cumplan el filtro.</p>;
+    return <p>No hay análogos que cumplan los filtros.</p>;
   }
 
   return (
@@ -20,7 +21,7 @@ export function RankingList({ siteId, rows, selectedId, onSelect }: Props) {
         return (
           <li key={candidate.id} className={selected ? "selected" : undefined}>
             <button type="button" aria-pressed={selected} onClick={() => onSelect(candidate.id)}>
-              <strong>{candidate.name}</strong> — {entry.score.toFixed(1)}
+              <strong>{candidate.name}</strong> — {entry.score.toFixed(1)} <KnownBadge known={candidate.known} />
               <br />
               <small>
                 {candidate.country}
@@ -29,11 +30,13 @@ export function RankingList({ siteId, rows, selectedId, onSelect }: Props) {
             </button>
             {selected && (
               <p>
-                {entry.tag_overlap && (
+                {entry.tag_overlap ? (
                   <>
                     Coincidencias: {entry.tag_overlap.shared.join(", ") || "ninguna"} (
                     {entry.tag_overlap.jaccard.toFixed(2)}).{" "}
                   </>
+                ) : (
+                  <>Coincidencias cualitativas: sin dato. </>
                 )}
                 <Link to={`/comparar/${siteId}/${candidate.id}`}>Ver comparación</Link>
               </p>

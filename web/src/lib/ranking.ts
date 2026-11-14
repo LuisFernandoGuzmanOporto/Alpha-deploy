@@ -7,6 +7,8 @@ export interface RankingRow {
 
 export interface RankingFilters {
   boliviaOnly: boolean;
+  /** Solo candidatos `known: false` (poco estudiados como análogo). */
+  unstudiedOnly: boolean;
 }
 
 /** Ranking de un sitio con su candidato resuelto, conservando el orden por puntaje del pipeline. */
@@ -22,7 +24,13 @@ export function buildRanking(
     const candidate = byId.get(entry.candidate_id);
     if (!candidate) continue;
     if (filters.boliviaOnly && !candidate.is_bolivia) continue;
+    if (filters.unstudiedOnly && candidate.known) continue;
     rows.push({ entry, candidate });
   }
   return rows;
+}
+
+/** Los mejores candidatos poco estudiados de un sitio (F11). */
+export function topUnstudied(results: Results, candidates: Candidate[], siteId: string, limit: number): RankingRow[] {
+  return buildRanking(results, candidates, siteId, { boliviaOnly: false, unstudiedOnly: true }).slice(0, limit);
 }

@@ -1,4 +1,11 @@
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import methodology from "../../../docs/METODOLOGIA.md?raw";
+
 export function Methodology() {
-  // Mostrará docs/METODOLOGIA.md (tarea F-4).
-  return <h1>Metodología</h1>;
+  return (
+    <article className="methodology">
+      <Markdown remarkPlugins={[remarkGfm]}>{methodology}</Markdown>
+    </article>
+  );
 }
