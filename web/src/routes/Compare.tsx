@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router-dom";
+import { Comparador } from "../components/compare/Comparador";
 import { LimitationsPanel } from "../components/placeholders/LimitationsPanel";
 import { useData } from "../lib/data";
 
@@ -9,8 +10,9 @@ export function Compare() {
   if (state.status === "loading") return <p>Cargando datos…</p>;
   if (state.status === "error") return <p role="alert">Error al cargar los datos: {state.message}</p>;
 
-  const site = state.data.sites.find((s) => s.id === siteId);
-  const candidate = state.data.candidates.find((c) => c.id === candidateId);
+  const { sites, candidates, results } = state.data;
+  const site = sites.find((s) => s.id === siteId);
+  const candidate = candidates.find((c) => c.id === candidateId);
   if (!site || !candidate) {
     return (
       <>
@@ -20,13 +22,14 @@ export function Compare() {
     );
   }
 
-  // Aquí se integrará el componente Comparador de Dante (web/src/components/compare/).
+  const entry = results.sites[site.id]?.find((e) => e.candidate_id === candidate.id) ?? null;
+
   return (
     <>
-      <h1>
-        {site.name} vs. {candidate.name}
-      </h1>
-      <LimitationsPanel />
+      <p>
+        <Link to={`/?sitio=${site.id}&analogo=${candidate.id}`}>← Volver al ranking</Link>
+      </p>
+      <Comparador site={site} candidate={candidate} entry={entry} limitations={<LimitationsPanel />} />
     </>
   );
 }

@@ -1,11 +1,11 @@
 import { lazy, Suspense } from "react";
 import { NavLink, Route, Routes } from "react-router-dom";
 import { ErrorBoundary } from "./components/ErrorBoundary";
-import { Compare } from "./routes/Compare";
 import { Discoveries } from "./routes/Discoveries";
 import { Home } from "./routes/Home";
 
-// react-markdown solo hace falta en esta pantalla: se carga aparte.
+// Estas pantallas traen librerías pesadas (recharts, react-markdown): se cargan aparte.
+const Compare = lazy(() => import("./routes/Compare").then((m) => ({ default: m.Compare })));
 const Methodology = lazy(() => import("./routes/Methodology").then((m) => ({ default: m.Methodology })));
 
 export function App() {
