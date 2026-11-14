@@ -59,7 +59,7 @@ Revisar contra la web en producción antes de pegar: cada frase tiene que ser ci
 [PENDING: final name, Noe] (working name: **Earth Analogs**)
 
 ### High-Level Project Summary
-> Earth Analogs is a web tool that ranks places on Earth by how closely they resemble candidate Moon base sites and Mars landing sites. For each site it computes a 0–100 similarity score from five variables measured in a common 10 × 10 km window (slope, local relief, mean temperature, aridity and albedo), mostly from NASA data, and shows side by side what is similar and where the analogy breaks down. It answers the challenge by identifying and characterizing analogs systematically instead of only by appearance, has a dedicated view for less-studied places and a Bolivia filter, and states the limits no Earth analog can overcome: reduced gravity, the lunar vacuum, the thin Martian atmosphere and radiation.
+> Earth Analogs is a web tool that ranks places on Earth by how closely they resemble candidate Moon base sites and Mars landing sites. For each site it computes a 0–100 similarity score from five variables derived from NASA data and models in a common 10 × 10 km window (slope, local relief, mean temperature, aridity and albedo), mostly from NASA data, and shows side by side what is similar and where the analogy breaks down. It answers the challenge by identifying and characterizing analogs systematically instead of only by appearance, has a dedicated view for less-studied places and a Bolivia filter, and states the limits no Earth analog can overcome: reduced gravity, the lunar vacuum, the thin Martian atmosphere and radiation.
 
 ### Link to Project Demo
 [PENDING: public link to the 7-slide PDF or the ≤ 30 s video]
@@ -72,11 +72,11 @@ Revisar contra la web en producción antes de pegar: cada frase tiene que ser ci
 >
 > **How it works.** Each place is described by five variables in a 10 × 10 km window. Relief and precipitation are log-transformed, all variables are min–max normalized over the whole catalog, and the score is 100 × (1 − weighted mean of the absolute normalized differences), using only variables both places have (at least three). Qualitative tags are compared separately with the Jaccard index. Every non-null value cites its source; missing values stay empty and are never estimated. Everything is computed offline in Python (standard library only) and the web app (React, TypeScript, MapLibre) only reads static JSON files.
 >
-> **Benefits and goals.** It helps mission teams and researchers choose where on Earth to test rovers, instruments and operations, and makes explicit what each analog is good for and where it fails. It also brings attention to under-characterized regions such as the Bolivian Altiplano.
+> **Benefits and goals.** It helps mission teams and researchers choose where on Earth to test rovers, instruments and operations, and makes explicit what each analog is good for and where it fails. It also brings attention to less-studied places in the Bolivian Altiplano.
 >
 > **Tools.** Python, TypeScript, React, Vite, MapLibre GL JS, Recharts and GitHub. [PENDING: add Vercel once the site is deployed.]
 >
-> **Findings.** [PENDING: best analog per body with its score, one less-studied analog in a top 5 and the best Bolivian analog, from the final results.]
+> **Findings.** [PENDING: best analog per body with its score, one less-studied analog in a top 5 and the best Bolivian analog, from the final results.] Add that temperature and precipitation of the mountain and volcano candidates come from a coarse grid and are biased, so their lunar ranking rests mainly on slope and relief (issue #36).
 
 ### Use of Super Intelligence (SI)
 > Yes. The team used AI assistants (Claude and ChatGPT) as tools: to help write and review code, to search and check scientific literature and to draft and translate texts. The idea, the method and the data decisions are the team's. Every data value cites an original source that a team member opened and checked. The app makes no AI calls, and the project contains no AI-generated images, video or audio.

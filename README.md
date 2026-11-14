@@ -12,13 +12,14 @@ Teams preparing lunar bases and Mars landings test rovers, instruments and opera
 
 Earth Analogs is a web app. You pick a candidate site on the Moon or Mars and get the places on Earth that most resemble it, with:
 
-- **A similarity index from 0 to 100**, computed from five measured variables: slope, local relief, mean temperature, aridity (annual precipitation) and albedo.
+- **A similarity index from 0 to 100**, computed from five variables derived from NASA data and models: slope, local relief, mean temperature, aridity (annual precipitation) and albedo.
 - **A map and a ranked list** of Earth analogs, with a **Bolivia-only filter** and a **"less-studied places only" filter**.
 - **A side-by-side comparison** of each pair: value by value, a similarity radar, shared geology/ice/dust tags, and **where the analogy breaks down**.
 - **A discoveries view** with the five best less-studied analogs for each site, evaluated with the same index as the well-known ones.
 - **Adjustable weights** per variable, recomputed in the browser.
 - **A 3D globe** of the Earth, the Moon and Mars showing the selected site and its top analogs.
 - **A methodology page** with the formula, sources and limitations.
+- **A Spanish/English interface**, with a language selector in the header (`?lang=en` or `?lang=es` in the link also works). Place names and descriptions come from the data files and stay in Spanish; the methodology document is in Spanish only.
 
 Every comparison also shows the limits no Earth analog can overcome: reduced gravity, the lunar vacuum, the thin Martian atmosphere and radiation.
 
@@ -31,7 +32,7 @@ Every comparison also shows the limits no Earth analog can overcome: reduced gra
 
 ## How the index works
 
-1. Each place is described by five variables measured in a common 10 × 10 km window.
+1. Each place is described by five variables derived from NASA data and models in a common 10 × 10 km window.
 2. Relief and precipitation are log-transformed; every variable is normalized to 0–1 over all places together.
 3. For each site–analog pair we take the absolute difference per variable, using only the variables both places have.
 4. The distance is the weighted mean of those differences, and the score is `100 × (1 − distance)`; a pair needs at least three shared variables.
@@ -45,7 +46,7 @@ Every non-null value carries its source; missing values are `null`, never estima
 
 - **Moon:** LRO LOLA polar elevation model (slope, relief) and LRO Diviner Polar Resource Product (mean temperature), from the NASA Planetary Data System.
 - **Mars:** MGS MOLA MEGDR elevation (slope, relief) and the Mars Climate Database v6.2 (surface temperature and albedo).
-- **Earth (in progress):** planned sources are NASA POWER (temperature, precipitation), an open elevation model (SRTM or similar) and MODIS albedo. The Earth candidate dataset is still being completed.
+- **Earth:** 47 candidate places (20 documented as planetary analogs, 27 less studied; 10 in Bolivia). Slope and relief come from Terrain Tiles on AWS (a composite of SRTM and other open elevation models); temperature, precipitation and albedo come from NASA POWER (MERRA-2 and CERES). POWER's grid is tens of kilometres wide, so temperature is biased for mountain and volcano candidates; those values are flagged in the data. Method: [`pipeline/earth/README.md`](pipeline/earth/README.md).
 - **Globe textures:** NASA Blue Marble (via NASA GIBS), LRO WAC mosaic (via Moon Trek) and Viking MDIM 2.1 mosaic (via Mars Trek).
 
 How each lunar and Martian value was extracted: [`pipeline/moon_mars/README.md`](pipeline/moon_mars/README.md). Credits and terms of use: [`docs/ATRIBUCION.md`](docs/ATRIBUCION.md).
@@ -76,6 +77,6 @@ Dante (Moon and Mars data, comparison view, 3D globe), Fernando (technical lead,
 
 ## Resumen en español
 
-Earth Analogs es una web que, dado un sitio candidato de base lunar o de aterrizaje en Marte, ordena los lugares de la Tierra que más se le parecen con un índice de 0 a 100. El índice usa cinco variables medidas: pendiente, relieve, temperatura media, aridez y albedo. Cada comparación muestra qué se parece, por cuánto y **dónde falla la analogía**. Incluye un filtro de Bolivia, una vista de lugares poco estudiados y un globo 3D. Todo se calcula de antemano con datos abiertos de NASA y de otras agencias, y cada valor lleva su fuente.
+Earth Analogs es una web que, dado un sitio candidato de base lunar o de aterrizaje en Marte, ordena los lugares de la Tierra que más se le parecen con un índice de 0 a 100. El índice usa cinco variables derivadas de datos y modelos de NASA: pendiente, relieve, temperatura media, aridez y albedo. Cada comparación muestra qué se parece, por cuánto y **dónde falla la analogía**. Incluye un filtro de Bolivia, una vista de lugares poco estudiados y un globo 3D. Todo se calcula de antemano con datos abiertos de NASA y de otras agencias, y cada valor lleva su fuente.
 
 Para el equipo: el contexto, las tareas y el flujo de trabajo están en [`CONTEXT.md`](CONTEXT.md), [`TASKS.md`](TASKS.md), [`GIT.md`](GIT.md) y [`AI.md`](AI.md).
