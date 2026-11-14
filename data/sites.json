@@ -1,1 +1,162 @@
-[]
+[
+  {
+    "id": "moon-faustini-rim-a",
+    "body": "moon",
+    "name": "Faustini Rim A",
+    "region": "Polo sur lunar",
+    "lat": -87.8,
+    "lon": 90.0,
+    "variables": {
+      "slope_deg": 10.87,
+      "relief_m": 496.4,
+      "temp_mean_c": -160.4,
+      "precip_mm_year": 0,
+      "albedo": null
+    },
+    "sources": {
+      "slope_deg": "LRO LOLA LDEM_75S_240M (LRO-L-LOLA-4-GDR-V1.0), pendiente media de Horn en ventana de 10 x 10 km, calculada con pipeline/moon_mars/moon_polar.py: https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/polar/img/ldem_75s_240m.img",
+      "relief_m": "LRO LOLA LDEM_75S_240M (LRO-L-LOLA-4-GDR-V1.0), desviacion estandar de la elevacion en ventana de 10 x 10 km, calculada con pipeline/moon_mars/moon_polar.py: https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/polar/img/ldem_75s_240m.img",
+      "temp_mean_c": "LRO Diviner Polar Resource Product sur (LRO-L-DLRE-5-PRP-V2.0, Paige et al. 2010), promedio de temp_avg en la ventana de 10 x 10 km, calculado con pipeline/moon_mars/moon_polar.py: https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_prp/dlre_prp_south.tab",
+      "precip_mm_year": "Sin atmosfera con precipitacion; valor definido como 0"
+    },
+    "tags": [
+      "extreme-cold",
+      "polar-ice",
+      "impact-crater"
+    ],
+    "notes": "Coordenadas: Centro del mosaico LROC NAC NAC_ROI_FAUSTINILOC (Faustini Rim A): https://data.lroc.im-ldi.com/lroc/view_rdr/NAC_ROI_FAUSTINILOC. Coordenadas planetocentricas, longitud este (Mean Earth/Polar Axis, DE421). Region retirada de la lista de Artemis III en octubre de 2024 (NASA paso de 13 a 9 regiones; George et al., NTRS 20250011660: https://ntrs.nasa.gov/citations/20250011660). Ventana: 42 x 42 pixeles LOLA de 240 m (unos 10 x 10 km en el suelo). Temperatura: temp_avg de Diviner es la media anual modelada a 2 cm de profundidad (780 triangulos de la malla en la ventana). Hielo: en el 52,9 % de los triangulos de la ventana el modelo termico de Diviner (columna ice_depth) da hielo de agua estable a 1 m o menos; es estabilidad termica (modelo de Paige et al. 2010, Science 330, 479, doi:10.1126/science.1187726), no deteccion directa. Crater de impacto: la region es el borde del crater Faustini. Albedo: null, no hay mapa polar grillado de albedo en PDS (LOLA solo publica perfiles RADR a 1064 nm)."
+  },
+  {
+    "id": "moon-peak-near-cabeus-b",
+    "body": "moon",
+    "name": "Peak Near Cabeus B",
+    "region": "Polo sur lunar",
+    "lat": -83.6,
+    "lon": 291.2,
+    "variables": {
+      "slope_deg": 15.1,
+      "relief_m": 511.9,
+      "temp_mean_c": -125.6,
+      "precip_mm_year": 0,
+      "albedo": null
+    },
+    "sources": {
+      "slope_deg": "LRO LOLA LDEM_75S_240M (LRO-L-LOLA-4-GDR-V1.0), pendiente media de Horn en ventana de 10 x 10 km, calculada con pipeline/moon_mars/moon_polar.py: https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/polar/img/ldem_75s_240m.img",
+      "relief_m": "LRO LOLA LDEM_75S_240M (LRO-L-LOLA-4-GDR-V1.0), desviacion estandar de la elevacion en ventana de 10 x 10 km, calculada con pipeline/moon_mars/moon_polar.py: https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/polar/img/ldem_75s_240m.img",
+      "temp_mean_c": "LRO Diviner Polar Resource Product sur (LRO-L-DLRE-5-PRP-V2.0, Paige et al. 2010), promedio de temp_avg en la ventana de 10 x 10 km, calculado con pipeline/moon_mars/moon_polar.py: https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_prp/dlre_prp_south.tab",
+      "precip_mm_year": "Sin atmosfera con precipitacion; valor definido como 0"
+    },
+    "tags": [
+      "extreme-cold",
+      "polar-ice"
+    ],
+    "notes": "Coordenadas: Centro del mosaico LROC NAC NAC_ROI_CABEUSPKLOB (Peak Near Cabeus B): https://data.lroc.im-ldi.com/lroc/view_rdr/NAC_ROI_CABEUSPKLOB. Coordenadas planetocentricas, longitud este (Mean Earth/Polar Axis, DE421). Region vigente en la lista de 9 candidatas de Artemis III (octubre de 2024). Ventana: 42 x 42 pixeles LOLA de 240 m (unos 10 x 10 km en el suelo). Temperatura: temp_avg de Diviner es la media anual modelada a 2 cm de profundidad (780 triangulos en la ventana). Hielo: en el 25,0 % de los triangulos de la ventana el modelo termico de Diviner (ice_depth) da hielo de agua estable a 1 m o menos; es estabilidad termica (modelo de Paige et al. 2010, Science 330, 479, doi:10.1126/science.1187726), no deteccion directa. Contexto: el impacto LCROSS detecto agua en el crater vecino Cabeus (Colaprete et al. 2010, Science 330, 463, doi:10.1126/science.1186986). Albedo: null, no hay mapa polar grillado de albedo en PDS."
+  },
+  {
+    "id": "moon-malapert-massif",
+    "body": "moon",
+    "name": "Malapert Massif",
+    "region": "Polo sur lunar",
+    "lat": -86.0,
+    "lon": 0.3,
+    "variables": {
+      "slope_deg": 15.16,
+      "relief_m": 456.2,
+      "temp_mean_c": -128.5,
+      "precip_mm_year": 0,
+      "albedo": null
+    },
+    "sources": {
+      "slope_deg": "LRO LOLA LDEM_75S_240M (LRO-L-LOLA-4-GDR-V1.0), pendiente media de Horn en ventana de 10 x 10 km, calculada con pipeline/moon_mars/moon_polar.py: https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/polar/img/ldem_75s_240m.img",
+      "relief_m": "LRO LOLA LDEM_75S_240M (LRO-L-LOLA-4-GDR-V1.0), desviacion estandar de la elevacion en ventana de 10 x 10 km, calculada con pipeline/moon_mars/moon_polar.py: https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/polar/img/ldem_75s_240m.img",
+      "temp_mean_c": "LRO Diviner Polar Resource Product sur (LRO-L-DLRE-5-PRP-V2.0, Paige et al. 2010), promedio de temp_avg en la ventana de 10 x 10 km, calculado con pipeline/moon_mars/moon_polar.py: https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_prp/dlre_prp_south.tab",
+      "precip_mm_year": "Sin atmosfera con precipitacion; valor definido como 0"
+    },
+    "tags": [
+      "extreme-cold"
+    ],
+    "notes": "Coordenadas: Centro del mosaico LROC NAC NAC_ROI_MALAPERTLOA (Malapert Massif): https://data.lroc.im-ldi.com/lroc/view_rdr/NAC_ROI_MALAPERTLOA. Coordenadas planetocentricas, longitud este (Mean Earth/Polar Axis, DE421). Region vigente en la lista de 9 candidatas de Artemis III (octubre de 2024). El punto esta a unos 5,7 km del el sitio nocional de NASA (-85.964, 357.681) citado por Kring et al. 2025 (JGR Planets, doi:10.1029/2024JE008905). Ventana: 42 x 42 pixeles LOLA de 240 m (unos 10 x 10 km en el suelo). Temperatura: temp_avg de Diviner es la media anual modelada a 2 cm de profundidad (780 triangulos en la ventana). Hielo: en el 9,2 % de los triangulos de la ventana el modelo termico de Diviner (ice_depth) da hielo de agua estable a 1 m o menos; es estabilidad termica (modelo de Paige et al. 2010, Science 330, 479, doi:10.1126/science.1187726), no deteccion directa. Sin etiqueta polar-ice: la fraccion es baja y no hay cita de hielo en el macizo (los estudios de hielo nombran al crater Malapert, a unos 45 km). Albedo: null, no hay mapa polar grillado de albedo en PDS."
+  },
+  {
+    "id": "mars-jezero",
+    "body": "mars",
+    "name": "Crater Jezero",
+    "region": "Isidis Planitia, Marte",
+    "lat": 18.4447,
+    "lon": 77.4508,
+    "variables": {
+      "slope_deg": 1.37,
+      "relief_m": 62.7,
+      "temp_mean_c": -49.4,
+      "precip_mm_year": 0,
+      "albedo": 0.171
+    },
+    "sources": {
+      "slope_deg": "MGS MOLA MEGDR 128 px/grado (MGS-M-MOLA-5-MEGDR-L3-V1.0), tesela megt44n000hb.img, pendiente media de Horn en ventana de 10 x 10 km, calculada con pipeline/moon_mars/mars_sites.py: https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/meg128/megt44n000hb.img",
+      "relief_m": "MGS MOLA MEGDR 128 px/grado (MGS-M-MOLA-5-MEGDR-L3-V1.0), tesela megt44n000hb.img, desviacion estandar de la elevacion en ventana de 10 x 10 km, calculada con pipeline/moon_mars/mars_sites.py: https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/meg128/megt44n000hb.img",
+      "temp_mean_c": "Mars Climate Database v6.2 (LMD/OU/IAA/ESA/CNES), escenario climatologico promedio, variable tsurf promediada sobre Ls 0-345 cada 15 grados y horas locales 0-23, calculada con pipeline/moon_mars/mars_sites.py: https://www-mars.lmd.jussieu.fr/mcd_python/",
+      "precip_mm_year": "Sin precipitacion liquida en la superficie; valor definido como 0",
+      "albedo": "Mars Climate Database v6.2 (LMD/OU/IAA/ESA/CNES), variable ground_albedo (albedo de suelo desnudo del modelo), consultada con pipeline/moon_mars/mars_sites.py: https://www-mars.lmd.jussieu.fr/mcd_python/"
+    },
+    "tags": [
+      "impact-crater",
+      "hydrated-minerals",
+      "basalt"
+    ],
+    "notes": "Coordenadas: Octavia E. Butler Landing (aterrizaje de Perseverance), NASA Planetary Spectrum Generator, Mars Explorer: https://psg.gsfc.nasa.gov/apps/mars/ ; planetocentricas, longitud este 0-360. Elevacion MOLA en el punto: -2571 m. Ventana: unos 10 x 10 km sobre MOLA de 463 m por pixel (mas grueso que los 240 m de LOLA; la pendiente sale suavizada respecto de un modelo de 250 m). Temperatura: media de la MCD con Ls uniforme, no ponderada por la duracion de cada estacion; es un valor de modelo, no medido. Albedo: albedo de suelo desnudo del modelo de la MCD (a verificar si es el mapa de TES que usa la MCD). Tags: crater de impacto (Jezero, nombre IAU); minerales hidratados, arcillas y carbonatos del delta (Goudge et al. 2015, JGR Planets, doi:10.1002/2014JE004782); basalto, rocas igneas del piso del crater (Farley et al. 2022, Science, doi:10.1126/science.abo2196)."
+  },
+  {
+    "id": "mars-gale",
+    "body": "mars",
+    "name": "Crater Gale",
+    "region": "Aeolis, Marte",
+    "lat": -4.5895,
+    "lon": 137.4417,
+    "variables": {
+      "slope_deg": 1.4,
+      "relief_m": 60.4,
+      "temp_mean_c": -50.7,
+      "precip_mm_year": 0,
+      "albedo": 0.236
+    },
+    "sources": {
+      "slope_deg": "MGS MOLA MEGDR 128 px/grado (MGS-M-MOLA-5-MEGDR-L3-V1.0), tesela megt00n090hb.img, pendiente media de Horn en ventana de 10 x 10 km, calculada con pipeline/moon_mars/mars_sites.py: https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/meg128/megt00n090hb.img",
+      "relief_m": "MGS MOLA MEGDR 128 px/grado (MGS-M-MOLA-5-MEGDR-L3-V1.0), tesela megt00n090hb.img, desviacion estandar de la elevacion en ventana de 10 x 10 km, calculada con pipeline/moon_mars/mars_sites.py: https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/meg128/megt00n090hb.img",
+      "temp_mean_c": "Mars Climate Database v6.2 (LMD/OU/IAA/ESA/CNES), escenario climatologico promedio, variable tsurf promediada sobre Ls 0-345 cada 15 grados y horas locales 0-23, calculada con pipeline/moon_mars/mars_sites.py: https://www-mars.lmd.jussieu.fr/mcd_python/",
+      "precip_mm_year": "Sin precipitacion liquida en la superficie; valor definido como 0",
+      "albedo": "Mars Climate Database v6.2 (LMD/OU/IAA/ESA/CNES), variable ground_albedo (albedo de suelo desnudo del modelo), consultada con pipeline/moon_mars/mars_sites.py: https://www-mars.lmd.jussieu.fr/mcd_python/"
+    },
+    "tags": [
+      "impact-crater",
+      "hydrated-minerals",
+      "aeolian-dunes"
+    ],
+    "notes": "Coordenadas: Bradbury Landing (aterrizaje de Curiosity), Vasavada et al. 2014, JGR Planets, doi:10.1002/2014JE004622 ; planetocentricas, longitud este 0-360. Elevacion MOLA en el punto: -4503 m (publicada: -4501 m). Ventana: unos 10 x 10 km sobre MOLA de 463 m por pixel (mas grueso que los 240 m de LOLA; la pendiente sale suavizada respecto de un modelo de 250 m). Temperatura: media de la MCD con Ls uniforme, no ponderada por la duracion de cada estacion; es un valor de modelo, no medido. Albedo: albedo de suelo desnudo del modelo de la MCD (a verificar si es el mapa de TES que usa la MCD). Tags: crater de impacto (Gale, nombre IAU); minerales arcillosos en Yellowknife Bay (Vaniman et al. 2014, Science, doi:10.1126/science.1243480); dunas eolicas activas Bagnold (Bridges et al. 2018, JGR Planets, doi:10.1002/2017JE005401)."
+  },
+  {
+    "id": "mars-arcadia-planitia",
+    "body": "mars",
+    "name": "Arcadia Planitia",
+    "region": "Llanuras del norte, Marte",
+    "lat": 49.02,
+    "lon": 188.15,
+    "variables": {
+      "slope_deg": 0.18,
+      "relief_m": 3.8,
+      "temp_mean_c": -77.9,
+      "precip_mm_year": 0,
+      "albedo": 0.214
+    },
+    "sources": {
+      "slope_deg": "MGS MOLA MEGDR 128 px/grado (MGS-M-MOLA-5-MEGDR-L3-V1.0), tesela megt88n180hb.img, pendiente media de Horn en ventana de 10 x 10 km, calculada con pipeline/moon_mars/mars_sites.py: https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/meg128/megt88n180hb.img",
+      "relief_m": "MGS MOLA MEGDR 128 px/grado (MGS-M-MOLA-5-MEGDR-L3-V1.0), tesela megt88n180hb.img, desviacion estandar de la elevacion en ventana de 10 x 10 km, calculada con pipeline/moon_mars/mars_sites.py: https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/meg128/megt88n180hb.img",
+      "temp_mean_c": "Mars Climate Database v6.2 (LMD/OU/IAA/ESA/CNES), escenario climatologico promedio, variable tsurf promediada sobre Ls 0-345 cada 15 grados y horas locales 0-23, calculada con pipeline/moon_mars/mars_sites.py: https://www-mars.lmd.jussieu.fr/mcd_python/",
+      "precip_mm_year": "Sin precipitacion liquida en la superficie; valor definido como 0",
+      "albedo": "Mars Climate Database v6.2 (LMD/OU/IAA/ESA/CNES), variable ground_albedo (albedo de suelo desnudo del modelo), consultada con pipeline/moon_mars/mars_sites.py: https://www-mars.lmd.jussieu.fr/mcd_python/"
+    },
+    "tags": [
+      "permafrost"
+    ],
+    "notes": "Coordenadas: centro de Arcadia Planitia en el Gazetteer of Planetary Nomenclature (IAU/USGS): https://planetarynames.wr.usgs.gov/Feature/348 ; se usa la red de control MDIM 2.1, la vigente en el gazetteer (49.02 N, 188.15 E); la red anterior MDIM 2.0 daba 46.66 N, 192.00 E. Es una llanura de unos 2200 km: el punto representa la region, no un sitio de aterrizaje concreto. Ventana: unos 10 x 10 km sobre MOLA de 463 m por pixel (mas grueso que los 240 m de LOLA; la pendiente sale suavizada respecto de un modelo de 250 m). Temperatura: media de la MCD con Ls uniforme, no ponderada por la duracion de cada estacion; es un valor de modelo, no medido. Albedo: albedo de suelo desnudo del modelo de la MCD (a verificar si es el mapa de TES que usa la MCD). Tags: permafrost, hielo en exceso extendido bajo la superficie (Bramson et al. 2015, GRL, doi:10.1002/2015GL064844)."
+  }
+]
