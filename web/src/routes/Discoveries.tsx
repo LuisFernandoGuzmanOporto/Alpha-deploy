@@ -1,33 +1,33 @@
 import { Link } from "react-router-dom";
 import { KnownBadge } from "../components/placeholders/KnownBadge";
-import { useData } from "../lib/data";
+import { useContent, useT } from "../i18n";
+import { loadErrorText, useData } from "../lib/data";
 import { topUnstudied } from "../lib/ranking";
 
 const TOP_N = 5;
 
 export function Discoveries() {
   const state = useData();
+  const t = useT();
+  const { ui } = useContent();
 
-  if (state.status === "loading") return <p>Cargando datos…</p>;
-  if (state.status === "error") return <p role="alert">Error al cargar los datos: {state.message}</p>;
+  if (state.status === "loading") return <p>{ui.states.loading}</p>;
+  if (state.status === "error") return <p role="alert">{loadErrorText(t, state.error)}</p>;
 
   const { sites, candidates, results } = state.data;
-  if (sites.length === 0) return <p>Aún no hay sitios cargados.</p>;
+  if (sites.length === 0) return <p>{t("discoveries.noSites")}</p>;
 
   return (
     <>
-      <h1>Descubrimientos</h1>
-      <p>
-        Los {TOP_N} mejores análogos poco estudiados de cada sitio: lugares que la literatura aún no documenta como
-        análogo planetario, evaluados con el mismo índice que los conocidos.
-      </p>
+      <h1>{t("discoveries.title")}</h1>
+      <p>{t("discoveries.intro", { n: TOP_N })}</p>
       {sites.map((site) => {
         const rows = topUnstudied(results, candidates, site.id, TOP_N);
         return (
           <section key={site.id}>
             <h2>{site.name}</h2>
             {rows.length === 0 ? (
-              <p>No hay candidatos poco estudiados con datos suficientes para este sitio.</p>
+              <p>{t("discoveries.none")}</p>
             ) : (
               <ol>
                 {rows.map(({ entry, candidate }) => (

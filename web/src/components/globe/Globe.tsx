@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
+import { useT } from "../../i18n";
 import { clampLat, project, wrapLon, type View } from "./orthographic";
 
 export interface GlobeMarker {
@@ -39,6 +40,7 @@ interface Texture {
 
 /** Globo en proyección ortográfica dibujado en un canvas: se arrastra o se gira con las flechas. */
 export function Globe({ texture, markers, initialView, label, size = 360 }: GlobeProps) {
+  const t = useT();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const textureRef = useRef<Texture | null>(null);
   const dragRef = useRef<{ x: number; y: number } | null>(null);
@@ -136,7 +138,7 @@ export function Globe({ texture, markers, initialView, label, size = 360 }: Glob
         className="globe-canvas"
         style={{ width: "100%", aspectRatio: "1" }}
         role="img"
-        aria-label={`${label}. Arrastra o usa las flechas del teclado para girarlo.`}
+        aria-label={`${label}. ${t("globe.help")}`}
         tabIndex={0}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -144,14 +146,14 @@ export function Globe({ texture, markers, initialView, label, size = 360 }: Glob
         onPointerCancel={endDrag}
         onKeyDown={onKeyDown}
       />
-      {status === "loading" && <p className="globe-status">Cargando textura…</p>}
+      {status === "loading" && <p className="globe-status">{t("globe.loadingTexture")}</p>}
       {status === "error" && (
         <p className="globe-status" role="alert">
-          No se pudo cargar la textura del globo.
+          {t("globe.textureError")}
         </p>
       )}
       <button type="button" className="globe-reset" onClick={() => setView(initialView)}>
-        Volver al punto elegido
+        {t("globe.reset")}
       </button>
     </div>
   );

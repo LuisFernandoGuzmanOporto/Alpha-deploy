@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
+import { useT, type MessageKey, type Translate } from "../../i18n";
 import type { Candidate, Site } from "../../types";
 import { Globe, type GlobeMarker } from "./Globe";
 import { wrapLon, type View } from "./orthographic";
@@ -9,10 +10,10 @@ import "./globe.css";
 
 type Body = "earth" | "moon" | "mars";
 
-const BODIES: { id: Body; label: string; texture: string; credit: string }[] = [
-  { id: "earth", label: "Tierra", texture: earthTexture, credit: "NASA Blue Marble Next Generation, vía NASA GIBS" },
-  { id: "moon", label: "Luna", texture: moonTexture, credit: "Mosaico global LRO WAC (NASA/GSFC/ASU), vía Moon Trek" },
-  { id: "mars", label: "Marte", texture: marsTexture, credit: "Mosaico color Viking MDIM 2.1 (NASA/USGS), vía Mars Trek" },
+const BODIES: { id: Body; texture: string; creditKey: MessageKey }[] = [
+  { id: "earth", texture: earthTexture, creditKey: "globe.creditEarth" },
+  { id: "moon", texture: moonTexture, creditKey: "globe.creditMoon" },
+  { id: "mars", texture: marsTexture, creditKey: "globe.creditMars" },
 ];
 
 const ORIGIN: View = { lat: 0, lon: 0 };
@@ -26,6 +27,7 @@ export interface GlobeViewProps {
 
 /** F6: globo 3D con pestañas Tierra, Luna y Marte, el sitio elegido y sus mejores análogos. */
 export function GlobeView({ site, analogs }: GlobeViewProps) {
+  const t = useT();
   const [body, setBody] = useState<Body>(site?.body ?? "earth");
   const tabRefs = useRef<Partial<Record<Body, HTMLButtonElement | null>>>({});
 
@@ -59,8 +61,8 @@ export function GlobeView({ site, analogs }: GlobeViewProps) {
 
   return (
     <section className="globe-view" aria-labelledby="globe-title">
-      <h2 id="globe-title">Globo</h2>
-      <div role="tablist" aria-label="Cuerpo" className="globe-tabs">
+      <h2 id="globe-title">{t("globe.title")}</h2>
+      <div role="tablist" aria-label={t("globe.tabs")} className="globe-tabs">
         {BODIES.map((b) => (
           <button
             key={b.id}
@@ -76,7 +78,7 @@ export function GlobeView({ site, analogs }: GlobeViewProps) {
             onClick={() => setBody(b.id)}
             onKeyDown={onTabKeyDown}
           >
-            {b.label}
+            {t(`body.${b.id}`)}
           </button>
         ))}
       </div>
@@ -85,48 +87,48 @@ export function GlobeView({ site, analogs }: GlobeViewProps) {
           texture={current.texture}
           markers={markers}
           initialView={initialView}
-          label={`Globo de ${current.label}${markerSummary(markers.length)}`}
+          label={t("globe.aria", { body: t(`body.${body}`), summary: markerSummary(t, markers.length) })}
         />
-        <MarkerList body={body} site={site} analogs={analogs} />
-        <p className="globe-credit">Textura: {current.credit}.</p>
+        <MarkerList body={body} site={site} analogs={analogs} t={t} />
+        <p className="globe-credit">{t("globe.credit", { credit: t(current.creditKey) })}</p>
       </div>
     </section>
   );
 }
 
-function MarkerList({ body, site, analogs }: { body: Body; site: Site | null; analogs: Candidate[] }) {
+function MarkerList({ body, site, analogs, t }: { body: Body; site: Site | null; analogs: Candidate[]; t: Translate }) {
   if (body === "earth") {
-    if (analogs.length === 0) return <p>Elige un sitio para ver sus mejores análogos en la Tierra.</p>;
+    if (analogs.length === 0) return <p>{t("globe.pickEarth")}</p>;
     return (
       <ol className="globe-list">
         {analogs.map((c) => (
           <li key={c.id}>
-            {c.name} ({c.country}) {formatCoords(c.lat, c.lon)}
+            {c.name} ({c.country}) {formatCoords(t, c.lat, c.lon)}
           </li>
         ))}
       </ol>
     );
   }
-  if (!site) return <p>Elige un sitio para marcarlo en el globo.</p>;
+  if (!site) return <p>{t("globe.pickSite")}</p>;
   if (site.body !== body) {
-    return <p>El sitio elegido, {site.name}, está en {site.body === "moon" ? "la Luna" : "Marte"}.</p>;
+    return <p>{t("globe.elsewhere", { site: site.name, body: t(site.body === "moon" ? "globe.onMoon" : "globe.onMars") })}</p>;
   }
   return (
     <p className="globe-list">
-      <span className="globe-swatch" aria-hidden="true" /> {site.name} {formatCoords(site.lat, site.lon)}
+      <span className="globe-swatch" aria-hidden="true" /> {site.name} {formatCoords(t, site.lat, site.lon)}
     </p>
   );
 }
 
-function markerSummary(count: number): string {
+function markerSummary(t: Translate, count: number): string {
   if (count === 0) return "";
-  return count === 1 ? " con 1 marcador" : ` con ${count} marcadores`;
+  return count === 1 ? t("globe.summaryOne") : t("globe.summaryMany", { n: count });
 }
 
-function formatCoords(lat: number | null, lon: number | null): string {
-  if (lat === null || lon === null) return "(sin coordenadas)";
+function formatCoords(t: Translate, lat: number | null, lon: number | null): string {
+  if (lat === null || lon === null) return t("globe.noCoords");
   const ns = lat >= 0 ? "N" : "S";
   const lonW = wrapLon(lon);
-  const ew = lonW >= 0 ? "E" : "O";
+  const ew = lonW >= 0 ? "E" : t("globe.west");
   return `(${Math.abs(lat).toFixed(2)}° ${ns}, ${Math.abs(lonW).toFixed(2)}° ${ew})`;
 }

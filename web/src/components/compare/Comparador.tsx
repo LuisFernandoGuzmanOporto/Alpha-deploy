@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer } from "recharts";
-import { VARIABLE_INFO, formatValue } from "../../lib/variables";
+import { useContent, useT, type Translate } from "../../i18n";
+import { formatValue } from "../../lib/variables";
 import type { Candidate, RankingEntry, Site, Tag } from "../../types";
 import { biggestGaps, compareVariables } from "./compare";
 import "./comparador.css";
@@ -12,30 +13,24 @@ export interface ComparadorProps {
   entry: RankingEntry | null;
   /** Panel fijo de limitaciones universales; se muestra dentro de "Dónde falla la analogía". */
   limitations?: ReactNode;
-  /** Texto legible de cada etiqueta (de `content/es.ts`); por defecto, el identificador. */
+  /** Texto legible de cada etiqueta; por defecto, el de `content/` en el idioma actual. */
   tagLabel?: (tag: Tag) => string;
   /** "Dónde falla" redactado y citado en la ficha del candidato (`fichas.json`). */
   breaksDown?: string[];
 }
 
-const identity = (tag: Tag): string => tag;
-
 /** F3: comparación lado a lado de un sitio de la Luna o Marte con un lugar de la Tierra. */
-export function Comparador({
-  site,
-  candidate,
-  entry,
-  limitations,
-  tagLabel = identity,
-  breaksDown = [],
-}: ComparadorProps) {
-  const rows = compareVariables(site.variables, candidate.variables, entry);
+export function Comparador({ site, candidate, entry, limitations, tagLabel, breaksDown = [] }: ComparadorProps) {
+  const t = useT();
+  const { tags, variables } = useContent();
+  const labelOf = tagLabel ?? ((tag: Tag) => tags[tag].label);
+  const rows = compareVariables(site.variables, candidate.variables, entry, t);
   const gaps = biggestGaps(rows);
   const missingTags = entry?.tag_overlap?.only_site ?? [];
   const hasBreaks = gaps.length > 0 || missingTags.length > 0 || breaksDown.length > 0;
   const radarData = rows
     .filter((row) => row.similarity !== null)
-    .map((row) => ({ label: VARIABLE_INFO[row.variable].label, similarity: row.similarity }));
+    .map((row) => ({ label: variables[row.variable].label, similarity: row.similarity }));
   const radarSummary = radarData.map((d) => `${d.label} ${d.similarity} %`).join(", ");
 
   return (
@@ -43,43 +38,49 @@ export function Comparador({
       <header>
         <h2>
           {site.name} <span aria-hidden="true">↔</span>
-          <span className="visually-hidden">comparado con</span> {candidate.name}
+          <span className="visually-hidden">{t("cmp.comparedWith")}</span> {candidate.name}
         </h2>
         {entry ? (
           <p className="comparador-score">
-            Índice de similitud: <strong>{entry.score.toFixed(1)}</strong> de 100, con {entry.n_vars_used} de{" "}
-            {rows.length} variables.
+            {t("cmp.scorePre")}
+            <strong>{entry.score.toFixed(1)}</strong>
+            {t("cmp.scorePost", { n: entry.n_vars_used, total: rows.length })}
           </p>
         ) : (
-          <p className="comparador-score">Este par no entra al ranking: tiene menos de 3 variables con dato en ambos lados.</p>
+          <p className="comparador-score">{t("cmp.notRanked")}</p>
         )}
       </header>
 
       <section aria-labelledby="cmp-variables">
-        <h3 id="cmp-variables">Variable por variable</h3>
+        <h3 id="cmp-variables">{t("cmp.byVariable")}</h3>
         <div className="comparador-table-wrap">
           <table className="comparador-table">
             <thead>
               <tr>
-                <th scope="col">Variable</th>
+                <th scope="col">{t("cmp.colVariable")}</th>
                 <th scope="col">{site.name}</th>
                 <th scope="col">{candidate.name}</th>
-                <th scope="col">Similitud</th>
-                <th scope="col">En palabras</th>
+                <th scope="col">{t("cmp.colSimilarity")}</th>
+                <th scope="col">{t("cmp.colWords")}</th>
               </tr>
             </thead>
             <tbody>
               {rows.map((row) => (
                 <tr key={row.variable}>
-                  <th scope="row">{VARIABLE_INFO[row.variable].label}</th>
-                  <td>{formatValue(row.variable, row.siteValue)}</td>
-                  <td>{formatValue(row.variable, row.candidateValue)}</td>
+                  <th scope="row">{variables[row.variable].label}</th>
+                  <td>{formatValue(row.variable, row.siteValue, t)}</td>
+                  <td>{formatValue(row.variable, row.candidateValue, t)}</td>
                   <td>
                     {row.similarity === null ? (
-                      "sin dato"
+                      t("common.noData")
                     ) : (
                       <span className="comparador-bar">
-                        <meter min={0} max={100} value={row.similarity} aria-label={`Similitud en ${VARIABLE_INFO[row.variable].label}`} />
+                        <meter
+                          min={0}
+                          max={100}
+                          value={row.similarity}
+                          aria-label={t("cmp.meterAria", { variable: variables[row.variable].label })}
+                        />
                         <span>{row.similarity} %</span>
                       </span>
                     )}
@@ -90,54 +91,62 @@ export function Comparador({
             </tbody>
           </table>
         </div>
-        <p className="comparador-note">
-          «Mucho» y «algo» son relativos al rango de todos los lugares comparados, no a la diferencia absoluta.
-        </p>
+        <p className="comparador-note">{t("cmp.note")}</p>
       </section>
 
       {radarData.length >= 3 && (
         <section aria-labelledby="cmp-radar">
-          <h3 id="cmp-radar">Perfil de similitud</h3>
-          <figure className="comparador-radar" role="img" aria-label={`Similitud por variable: ${radarSummary}`}>
+          <h3 id="cmp-radar">{t("cmp.profile")}</h3>
+          <figure className="comparador-radar" role="img" aria-label={t("cmp.radarAria", { summary: radarSummary })}>
             <ResponsiveContainer width="100%" height={300}>
               <RadarChart data={radarData} outerRadius="75%">
                 <PolarGrid />
                 <PolarAngleAxis dataKey="label" />
                 <PolarRadiusAxis domain={[0, 100]} tickCount={5} angle={90} />
-                <Radar dataKey="similarity" name="Similitud" />
+                <Radar dataKey="similarity" name={t("cmp.radarName")} />
               </RadarChart>
             </ResponsiveContainer>
-            <figcaption>100 % es idéntico en esa variable; 0 % es la mayor diferencia entre todos los lugares.</figcaption>
+            <figcaption>{t("cmp.radarCaption")}</figcaption>
           </figure>
         </section>
       )}
 
       <section aria-labelledby="cmp-tags">
-        <h3 id="cmp-tags">Coincidencias cualitativas</h3>
+        <h3 id="cmp-tags">{t("cmp.tags")}</h3>
         {entry?.tag_overlap ? (
           <dl className="comparador-tags">
-            <TagGroup title="Comparten" tags={entry.tag_overlap.shared} tagLabel={tagLabel} />
-            <TagGroup title={`Solo ${site.name}`} tags={entry.tag_overlap.only_site} tagLabel={tagLabel} />
-            <TagGroup title={`Solo ${candidate.name}`} tags={entry.tag_overlap.only_candidate} tagLabel={tagLabel} />
+            <TagGroup title={t("cmp.shared")} tags={entry.tag_overlap.shared} labelOf={labelOf} t={t} />
+            <TagGroup title={t("cmp.onlySite", { name: site.name })} tags={entry.tag_overlap.only_site} labelOf={labelOf} t={t} />
+            <TagGroup
+              title={t("cmp.onlySite", { name: candidate.name })}
+              tags={entry.tag_overlap.only_candidate}
+              labelOf={labelOf}
+              t={t}
+            />
           </dl>
         ) : (
-          <p>Sin etiquetas suficientes para comparar geología, hielo, cuevas o polvo.</p>
+          <p>{t("cmp.noTags")}</p>
         )}
       </section>
 
       <section aria-labelledby="cmp-breaks" className="comparador-breaks">
-        <h3 id="cmp-breaks">Dónde falla la analogía</h3>
+        <h3 id="cmp-breaks">{t("cmp.breaks")}</h3>
         {hasBreaks ? (
           <ul>
             {gaps.map((row) => (
               <li key={row.variable}>
-                <strong>{VARIABLE_INFO[row.variable].label}:</strong> el lugar terrestre es {row.description} (
-                {formatValue(row.variable, row.candidateValue)} frente a {formatValue(row.variable, row.siteValue)}).
+                <strong>{variables[row.variable].label}:</strong>
+                {t("cmp.gapText", {
+                  description: row.description,
+                  candidate: formatValue(row.variable, row.candidateValue, t),
+                  site: formatValue(row.variable, row.siteValue, t),
+                })}
               </li>
             ))}
             {missingTags.map((tag) => (
               <li key={tag}>
-                <strong>{tagLabel(tag)}:</strong> {site.name} lo tiene; {candidate.name} no.
+                <strong>{labelOf(tag)}:</strong>
+                {t("cmp.missingTag", { site: site.name, candidate: candidate.name })}
               </li>
             ))}
             {breaksDown.map((text) => (
@@ -146,8 +155,8 @@ export function Comparador({
           </ul>
         ) : (
           <p>
-            Ninguna variable ni etiqueta difiere mucho.
-            {limitations && " Aun así valen los límites de abajo."}
+            {t("cmp.nothing")}
+            {limitations && t("cmp.limitsBelow")}
           </p>
         )}
         {limitations}
@@ -156,7 +165,17 @@ export function Comparador({
   );
 }
 
-function TagGroup({ title, tags, tagLabel }: { title: string; tags: Tag[]; tagLabel: (tag: Tag) => string }) {
+function TagGroup({
+  title,
+  tags,
+  labelOf,
+  t,
+}: {
+  title: string;
+  tags: Tag[];
+  labelOf: (tag: Tag) => string;
+  t: Translate;
+}) {
   return (
     <div>
       <dt>{title}</dt>
@@ -164,11 +183,11 @@ function TagGroup({ title, tags, tagLabel }: { title: string; tags: Tag[]; tagLa
         {tags.length > 0 ? (
           <ul className="comparador-taglist">
             {tags.map((tag) => (
-              <li key={tag}>{tagLabel(tag)}</li>
+              <li key={tag}>{labelOf(tag)}</li>
             ))}
           </ul>
         ) : (
-          "ninguna"
+          t("common.none")
         )}
       </dd>
     </div>

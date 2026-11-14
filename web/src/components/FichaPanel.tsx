@@ -1,3 +1,4 @@
+import { useT } from "../i18n";
 import type { Candidate, Ficha } from "../types";
 
 interface Props {
@@ -22,19 +23,20 @@ function List({ title, items }: { title: string; items: string[] }) {
 
 /** Ficha del análogo (F4, contenido de Lian). */
 export function FichaPanel({ candidate, ficha }: Props) {
+  const t = useT();
   return (
-    <article className="ficha" aria-label={`Ficha de ${candidate.name}`}>
-      <h2>Ficha: {candidate.name}</h2>
+    <article className="ficha" aria-label={t("ficha.aria", { name: candidate.name })}>
+      <h2>{t("ficha.title", { name: candidate.name })}</h2>
       {!ficha ? (
-        <p>Este lugar aún no tiene ficha publicada.</p>
+        <p>{t("ficha.none")}</p>
       ) : (
         <>
           {ficha.summary && <p>{ficha.summary}</p>}
-          <List title="Procesos que sirven de análogo" items={ficha.processes} />
-          <List title="Para qué sirve" items={ficha.use_cases} />
+          <List title={t("ficha.processes")} items={ficha.processes} />
+          <List title={t("ficha.useCases")} items={ficha.use_cases} />
           {ficha.references.length > 0 && (
             <section>
-              <h3>Referencias</h3>
+              <h3>{t("ficha.references")}</h3>
               <ul>
                 {ficha.references.map((reference) => (
                   <li key={reference.url}>

@@ -4,7 +4,8 @@ import { RankingList } from "../components/RankingList";
 import { SiteInfo } from "../components/SiteInfo";
 import { SiteSelector } from "../components/SiteSelector";
 import { WeightSliders } from "../components/WeightSliders";
-import { useData } from "../lib/data";
+import { useContent, useT } from "../i18n";
+import { loadErrorText, useData } from "../lib/data";
 import { buildRanking } from "../lib/ranking";
 import { parseWeights, serializeWeights } from "../lib/variables";
 
@@ -17,6 +18,8 @@ const GLOBE_ANALOGS = 5;
 
 export function Home() {
   const state = useData();
+  const t = useT();
+  const { ui } = useContent();
   const [params, setParams] = useSearchParams();
   const [globeOpen, setGlobeOpen] = useState(false);
 
@@ -46,9 +49,9 @@ export function Home() {
     setParams(next, { replace: true });
   };
 
-  if (state.status === "loading") return <p>Cargando datos…</p>;
-  if (state.status === "error") return <p role="alert">Error al cargar los datos: {state.message}</p>;
-  if (!data || !siteId || !weights) return <p>Aún no hay sitios o candidatos cargados.</p>;
+  if (state.status === "loading") return <p>{ui.states.loading}</p>;
+  if (state.status === "error") return <p role="alert">{loadErrorText(t, state.error)}</p>;
+  if (!data || !siteId || !weights) return <p>{t("home.empty")}</p>;
 
   const site = data.sites.find((s) => s.id === siteId);
 
@@ -63,7 +66,7 @@ export function Home() {
             checked={boliviaOnly}
             onChange={(event) => update({ bolivia: event.target.checked ? "1" : null, analogo: null })}
           />{" "}
-          Solo Bolivia
+          {t("filters.bolivia")}
         </label>
         <label>
           <input
@@ -71,17 +74,17 @@ export function Home() {
             checked={unstudiedOnly}
             onChange={(event) => update({ nuevos: event.target.checked ? "1" : null, analogo: null })}
           />{" "}
-          Solo lugares poco estudiados
+          {t("filters.unstudied")}
         </label>
       </div>
       {site && (
         <details>
-          <summary>Datos del sitio</summary>
+          <summary>{t("home.siteData")}</summary>
           <SiteInfo site={site} />
         </details>
       )}
       <details>
-        <summary>Ajustar el peso de cada variable</summary>
+        <summary>{t("home.weights")}</summary>
         <WeightSliders
           weights={weights}
           onChange={(w) => update({ pesos: serializeWeights(w) })}
@@ -89,18 +92,18 @@ export function Home() {
         />
       </details>
       <p aria-live="polite">
-        {rows.length} {rows.length === 1 ? "análogo" : "análogos"} en el ranking.
+        {t(rows.length === 1 ? "home.countOne" : "home.countMany", { n: rows.length })}
       </p>
       <div className="explorer">
-        <Suspense fallback={<p>Cargando mapa…</p>}>
+        <Suspense fallback={<p>{t("home.loadingMap")}</p>}>
           <RankingMap rows={rows} selectedId={selectedId} onSelect={(id) => update({ analogo: id })} />
         </Suspense>
         <RankingList siteId={siteId} rows={rows} selectedId={selectedId} onSelect={(id) => update({ analogo: id })} />
       </div>
       <details onToggle={(event) => setGlobeOpen(event.currentTarget.open)}>
-        <summary>Ver en el globo 3D</summary>
+        <summary>{t("home.globe")}</summary>
         {globeOpen && (
-          <Suspense fallback={<p>Cargando globo…</p>}>
+          <Suspense fallback={<p>{t("home.loadingGlobe")}</p>}>
             <GlobeView site={site ?? null} analogs={rows.slice(0, GLOBE_ANALOGS).map((row) => row.candidate)} />
           </Suspense>
         )}

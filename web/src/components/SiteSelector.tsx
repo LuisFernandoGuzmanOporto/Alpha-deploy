@@ -1,6 +1,7 @@
+import { useT } from "../i18n";
 import type { Site, SiteBody } from "../types";
 
-const BODY_LABELS: Record<SiteBody, string> = { moon: "Luna", mars: "Marte" };
+const BODIES: SiteBody[] = ["moon", "mars"];
 
 interface Props {
   sites: Site[];
@@ -9,15 +10,16 @@ interface Props {
 }
 
 export function SiteSelector({ sites, value, onChange }: Props) {
+  const t = useT();
   return (
     <label>
-      Sitio de la Luna o Marte{" "}
+      {t("selector.label")}{" "}
       <select value={value} onChange={(event) => onChange(event.target.value)}>
-        {(Object.keys(BODY_LABELS) as SiteBody[]).map((body) => {
+        {BODIES.map((body) => {
           const group = sites.filter((site) => site.body === body);
           if (group.length === 0) return null;
           return (
-            <optgroup key={body} label={BODY_LABELS[body]}>
+            <optgroup key={body} label={t(`body.${body}`)}>
               {group.map((site) => (
                 <option key={site.id} value={site.id}>
                   {site.name}
