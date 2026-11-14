@@ -1,28 +1,30 @@
 import { Link, useParams } from "react-router-dom";
 import { Comparador } from "../components/compare/Comparador";
 import { FichaPanel } from "../components/FichaPanel";
-import { LimitationsPanel } from "../components/placeholders/LimitationsPanel";
-import { useContent, useT } from "../i18n";
+import { LimitationsPanel } from "../components/ui";
+import { ErrorState, Loading } from "../components/ui/extra";
+import { useT } from "../i18n";
 import { loadErrorText, useData } from "../lib/data";
 
 export function Compare() {
   const { siteId, candidateId } = useParams();
   const state = useData();
   const t = useT();
-  const { ui } = useContent();
 
-  if (state.status === "loading") return <p>{ui.states.loading}</p>;
-  if (state.status === "error") return <p role="alert">{loadErrorText(t, state.error)}</p>;
+  if (state.status === "loading") return <Loading />;
+  if (state.status === "error") return <ErrorState detail={loadErrorText(t, state.error)} />;
 
   const { sites, candidates, results, fichas } = state.data;
   const site = sites.find((s) => s.id === siteId);
   const candidate = candidates.find((c) => c.id === candidateId);
   if (!site || !candidate) {
     return (
-      <>
-        <p>{t("compare.notFound")}</p>
-        <Link to="/">{t("common.backHome")}</Link>
-      </>
+      <div className="ea-state">
+        <strong>{t("compare.notFound")}</strong>
+        <Link className="ea-button ea-button--secondary" to="/">
+          {t("common.backHome")}
+        </Link>
+      </div>
     );
   }
 
@@ -30,10 +32,10 @@ export function Compare() {
   const ficha = fichas[candidate.id];
 
   return (
-    <>
-      <p>
-        <Link to={`/?sitio=${site.id}&analogo=${candidate.id}`}>{t("compare.back")}</Link>
-      </p>
+    <div className="ea-page">
+      <Link className="ea-back" to={`/?sitio=${site.id}&analogo=${candidate.id}`}>
+        {t("compare.back")}
+      </Link>
       <Comparador
         site={site}
         candidate={candidate}
@@ -42,6 +44,6 @@ export function Compare() {
         breaksDown={ficha?.breaks_down}
       />
       <FichaPanel candidate={candidate} ficha={ficha} />
-    </>
+    </div>
   );
 }

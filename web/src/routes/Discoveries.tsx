@@ -1,6 +1,8 @@
+import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
-import { KnownBadge } from "../components/placeholders/KnownBadge";
-import { useContent, useT } from "../i18n";
+import { Card, KnownBadge } from "../components/ui";
+import { ErrorState, Loading, ScoreMeter } from "../components/ui/extra";
+import { useT } from "../i18n";
 import { loadErrorText, useData } from "../lib/data";
 import { topUnstudied } from "../lib/ranking";
 
@@ -9,38 +11,56 @@ const TOP_N = 5;
 export function Discoveries() {
   const state = useData();
   const t = useT();
-  const { ui } = useContent();
 
-  if (state.status === "loading") return <p>{ui.states.loading}</p>;
-  if (state.status === "error") return <p role="alert">{loadErrorText(t, state.error)}</p>;
+  if (state.status === "loading") return <Loading />;
+  if (state.status === "error") return <ErrorState detail={loadErrorText(t, state.error)} />;
 
   const { sites, candidates, results } = state.data;
-  if (sites.length === 0) return <p>{t("discoveries.noSites")}</p>;
+  if (sites.length === 0) return <p className="ea-empty">{t("discoveries.noSites")}</p>;
 
   return (
-    <>
-      <h1>{t("discoveries.title")}</h1>
-      <p>{t("discoveries.intro", { n: TOP_N })}</p>
-      {sites.map((site) => {
-        const rows = topUnstudied(results, candidates, site.id, TOP_N);
-        return (
-          <section key={site.id}>
-            <h2>{site.name}</h2>
-            {rows.length === 0 ? (
-              <p>{t("discoveries.none")}</p>
-            ) : (
-              <ol>
-                {rows.map(({ entry, candidate }) => (
-                  <li key={candidate.id}>
-                    <Link to={`/comparar/${site.id}/${candidate.id}`}>{candidate.name}</Link> — {entry.score.toFixed(1)}{" "}
-                    <KnownBadge known={candidate.known} /> <small>{candidate.country}</small>
-                  </li>
-                ))}
-              </ol>
-            )}
-          </section>
-        );
-      })}
-    </>
+    <div className="ea-page">
+      <header className="ea-page-head">
+        <span className="ea-eyebrow">{t("discoveries.eyebrow")}</span>
+        <h1>{t("discoveries.title")}</h1>
+        <p>{t("discoveries.intro", { n: TOP_N })}</p>
+      </header>
+      <div className="ea-disc-grid ea-stagger">
+        {sites.map((site, siteIndex) => {
+          const rows = topUnstudied(results, candidates, site.id, TOP_N);
+          return (
+            <Card className="ea-disc-card" key={site.id} style={{ "--i": siteIndex } as CSSProperties}>
+              <div className="ea-disc-card__head">
+                <span className={`ea-disc ea-disc--${site.body}`} aria-hidden="true" />
+                <div>
+                  <span className="ea-eyebrow">{t(`body.${site.body}`)}</span>
+                  <h2>{site.name}</h2>
+                </div>
+              </div>
+              {rows.length === 0 ? (
+                <p className="ea-empty">{t("discoveries.none")}</p>
+              ) : (
+                <ol className="ea-disc-list">
+                  {rows.map(({ entry, candidate }, index) => (
+                    <li key={candidate.id}>
+                      <Link className="ea-disc-row" to={`/comparar/${site.id}/${candidate.id}`} style={{ "--i": index } as CSSProperties}>
+                        <span className="ea-rank__pos" aria-hidden="true">{index + 1}</span>
+                        <span className="ea-disc-row__main">
+                          <strong>{candidate.name}</strong>
+                          <span className="ea-disc-row__meta">
+                            {candidate.country} <KnownBadge known={candidate.known} />
+                          </span>
+                        </span>
+                        <ScoreMeter score={entry.score} size="sm" />
+                      </Link>
+                    </li>
+                  ))}
+                </ol>
+              )}
+            </Card>
+          );
+        })}
+      </div>
+    </div>
   );
 }

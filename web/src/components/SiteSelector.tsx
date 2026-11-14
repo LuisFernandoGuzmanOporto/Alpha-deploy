@@ -1,7 +1,7 @@
+import type { CSSProperties } from "react";
 import { useT } from "../i18n";
-import type { Site, SiteBody } from "../types";
-
-const BODIES: SiteBody[] = ["moon", "mars"];
+import type { Site } from "../types";
+import { SiteCard } from "./ui";
 
 interface Props {
   sites: Site[];
@@ -9,26 +9,17 @@ interface Props {
   onChange: (siteId: string) => void;
 }
 
+/** Elección del destino: una tarjeta por sitio (primero la Luna, luego Marte; cada tarjeta dice su cuerpo). */
 export function SiteSelector({ sites, value, onChange }: Props) {
   const t = useT();
+  const ordered = [...sites].sort((a, b) => Number(a.body === "mars") - Number(b.body === "mars"));
   return (
-    <label>
-      {t("selector.label")}{" "}
-      <select value={value} onChange={(event) => onChange(event.target.value)}>
-        {BODIES.map((body) => {
-          const group = sites.filter((site) => site.body === body);
-          if (group.length === 0) return null;
-          return (
-            <optgroup key={body} label={t(`body.${body}`)}>
-              {group.map((site) => (
-                <option key={site.id} value={site.id}>
-                  {site.name}
-                </option>
-              ))}
-            </optgroup>
-          );
-        })}
-      </select>
-    </label>
+    <div className="ea-sites ea-stagger" role="group" aria-label={`${t("body.moon")} / ${t("body.mars")}`}>
+      {ordered.map((site, index) => (
+        <div key={site.id} style={{ "--i": index } as CSSProperties} className="ea-sites__item">
+          <SiteCard site={site} selected={site.id === value} onSelect={onChange} />
+        </div>
+      ))}
+    </div>
   );
 }

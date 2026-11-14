@@ -5,6 +5,7 @@ import type { Feature, FeatureCollection, Point } from "geojson";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useT } from "../i18n";
 import type { RankingRow } from "../lib/ranking";
+import { SCORE_GRADIENT, SCORE_STOPS } from "../lib/scoreColor";
 
 // Vite empaqueta el worker aparte; sin esto MapLibre no lo encuentra en dev ni en producción.
 setWorkerUrl(workerUrl);
@@ -60,7 +61,7 @@ export function RankingMap({ rows, selectedId, onSelect }: Props) {
             attribution: "© OpenStreetMap contributors",
           },
         },
-        layers: [{ id: "osm", type: "raster", source: "osm" }],
+        layers: [{ id: "osm", type: "raster", source: "osm", paint: { "raster-saturation": -0.4, "raster-brightness-min": 0.08 } }],
       },
     });
     mapRef.current = map;
@@ -72,21 +73,11 @@ export function RankingMap({ rows, selectedId, onSelect }: Props) {
         type: "circle",
         source: SOURCE_ID,
         paint: {
-          "circle-radius": ["interpolate", ["linear"], ["get", "score"], 0, 5, 100, 15],
-          "circle-color": [
-            "interpolate",
-            ["linear"],
-            ["get", "score"],
-            0,
-            "#d73027",
-            50,
-            "#fee08b",
-            100,
-            "#1a9850",
-          ],
-          "circle-stroke-color": "#222222",
-          "circle-stroke-width": 1,
-          "circle-opacity": 0.9,
+          "circle-radius": ["interpolate", ["linear"], ["get", "score"], 20, 7, 85, 15],
+          "circle-color": ["interpolate", ["linear"], ["get", "score"], ...SCORE_STOPS.flatMap(([score, color]) => [score, color])],
+          "circle-stroke-color": "#ffffff",
+          "circle-stroke-width": 2,
+          "circle-opacity": 0.94,
         },
       });
       map.addLayer({
@@ -95,9 +86,9 @@ export function RankingMap({ rows, selectedId, onSelect }: Props) {
         source: SOURCE_ID,
         filter: ["==", ["get", "id"], ""],
         paint: {
-          "circle-radius": 20,
+          "circle-radius": 22,
           "circle-color": "rgba(0,0,0,0)",
-          "circle-stroke-color": "#0050ff",
+          "circle-stroke-color": "#064e48",
           "circle-stroke-width": 3,
         },
       });
@@ -148,5 +139,38 @@ export function RankingMap({ rows, selectedId, onSelect }: Props) {
     map.setFilter(SELECTED_LAYER, ["==", ["get", "id"], selectedId ?? ""]);
   }, [selectedId, ready]);
 
-  return <div ref={containerRef} className="ranking-map" role="region" aria-label={t("map.aria")} />;
+  // El marcador elegido late para que se vea dónde está; sin animación si el usuario la desactivó.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !ready) return undefined;
+    if (!selectedId || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      map.setPaintProperty(SELECTED_LAYER, "circle-radius", 22);
+      map.setPaintProperty(SELECTED_LAYER, "circle-stroke-opacity", 1);
+      return undefined;
+    }
+    let frame = 0;
+    const tick = (now: number) => {
+      const wave = (Math.sin(now / 320) + 1) / 2;
+      map.setPaintProperty(SELECTED_LAYER, "circle-radius", 20 + wave * 6);
+      map.setPaintProperty(SELECTED_LAYER, "circle-stroke-opacity", 1 - wave * 0.55);
+      frame = requestAnimationFrame(tick);
+    };
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [selectedId, ready]);
+
+  return (
+    <div className="ea-map">
+      <div ref={containerRef} className="ea-map__canvas" role="region" aria-label={t("map.aria")} />
+      <span className="ea-map__title">{t("map.title")}</span>
+      <div className="ea-legend" aria-hidden="true">
+        <span>{t("map.legend")}</span>
+        <span className="ea-legend__bar" style={{ background: SCORE_GRADIENT }} />
+        <span className="ea-legend__labels">
+          <span>{t("map.legendLow")}</span>
+          <span>{t("map.legendHigh")}</span>
+        </span>
+      </div>
+    </div>
+  );
 }

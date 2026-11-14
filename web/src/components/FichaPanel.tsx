@@ -1,5 +1,6 @@
 import { useT } from "../i18n";
 import type { Candidate, Ficha } from "../types";
+import { Card } from "./ui";
 
 interface Props {
   candidate: Candidate;
@@ -25,7 +26,7 @@ function List({ title, items }: { title: string; items: string[] }) {
 export function FichaPanel({ candidate, ficha }: Props) {
   const t = useT();
   return (
-    <article className="ficha" aria-label={t("ficha.aria", { name: candidate.name })}>
+    <Card className="ea-ficha" aria-label={t("ficha.aria", { name: candidate.name })}>
       <h2>{t("ficha.title", { name: candidate.name })}</h2>
       {!ficha ? (
         <p>{t("ficha.none")}</p>
@@ -50,6 +51,6 @@ export function FichaPanel({ candidate, ficha }: Props) {
           )}
         </>
       )}
-    </article>
+    </Card>
   );
 }

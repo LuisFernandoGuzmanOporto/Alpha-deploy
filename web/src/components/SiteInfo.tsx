@@ -1,6 +1,7 @@
 import { useContent, useT } from "../i18n";
 import { formatValue } from "../lib/variables";
 import { VARIABLE_IDS, type Site } from "../types";
+import { TagList } from "./ui";
 
 interface Props {
   site: Site;
@@ -8,31 +9,23 @@ interface Props {
 
 export function SiteInfo({ site }: Props) {
   const t = useT();
-  const { tags, variables } = useContent();
+  const { variables } = useContent();
   return (
-    <section className="site-info" aria-label={t("siteinfo.aria", { name: site.name })}>
-      <h2>{site.name}</h2>
-      <p>
+    <section aria-label={t("siteinfo.aria", { name: site.name })}>
+      <p className="ea-sitenote">
         {site.region} ·{" "}
         {site.lat === null || site.lon === null ? t("siteinfo.noCoords") : `${site.lat}°, ${site.lon}°`}
       </p>
-      <ul>
+      <ul className="ea-varchips">
         {VARIABLE_IDS.map((variable) => (
-          <li key={variable} title={site.sources[variable]}>
-            {variables[variable].label}: {formatValue(variable, site.variables[variable], t)}
+          <li className="ea-varchip" key={variable} title={site.sources[variable]}>
+            <small>{variables[variable].label}</small>
+            <strong>{formatValue(variable, site.variables[variable], t)}</strong>
           </li>
         ))}
       </ul>
-      <p>
-        {t("siteinfo.tags", {
-          tags: site.tags.length > 0 ? site.tags.map((tag) => tags[tag].label).join(", ") : t("common.noData"),
-        })}
-      </p>
-      {site.notes && (
-        <p>
-          <small>{site.notes}</small>
-        </p>
-      )}
+      <TagList tags={site.tags} />
+      {site.notes && <p className="ea-sitenote">{site.notes}</p>}
     </section>
   );
 }
