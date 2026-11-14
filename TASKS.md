@@ -36,9 +36,9 @@ IA recomendada: Claude. Prompt: `prompts/fernando.md`.
 
 IA recomendada: Claude. Prompt: `prompts/dante.md`.
 
-- [ ] **D-1 (versión 1 con 3 sitios a las 15:00; completo a las 17:00).** `data/sites.json` con los 6 sitios: coordenadas, las 5 variables en la ventana común, fuente por variable, `tags` con respaldo y nota de evidencia de hielo cuando exista. Temperatura lunar con los productos polares de Diviner. Scripts de apoyo en `pipeline/moon_mars/`.
-- [ ] **D-2 (hasta 23:00).** F3 componente `Comparador` en `web/src/components/compare/`: dos columnas, barras por variable, radar, bloque de coincidencias cualitativas y bloque "dónde falla la analogía".
-- [ ] **D-3 (segunda fase, hasta 05:00).** F6 globo 3D en `web/src/components/globe/` con pestañas Tierra, Luna y Marte, el sitio elegido y sus 5 mejores análogos. Atribución de texturas en `docs/ATRIBUCION.md`.
+- [x] **D-1 (versión 1 con 3 sitios a las 15:00; completo a las 17:00).** `data/sites.json` con los 6 sitios: coordenadas, las 5 variables en la ventana común, fuente por variable, `tags` con respaldo y nota de evidencia de hielo cuando exista. Temperatura lunar con los productos polares de Diviner. Scripts de apoyo en `pipeline/moon_mars/`.
+- [x] **D-2 (hasta 23:00).** F3 componente `Comparador` en `web/src/components/compare/`: dos columnas, barras por variable, radar, bloque de coincidencias cualitativas y bloque "dónde falla la analogía".
+- [x] **D-3 (segunda fase, hasta 05:00).** F6 globo 3D en `web/src/components/globe/` con pestañas Tierra, Luna y Marte, el sitio elegido y sus 5 mejores análogos. Atribución de texturas en `docs/ATRIBUCION.md`.
 
 ## Lian: datos de la Tierra y Bolivia, descubrimiento, fichas, explicaciones y PDF
 
