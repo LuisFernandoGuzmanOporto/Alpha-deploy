@@ -17,7 +17,7 @@ We compared each candidate landing or base site with Earth locations using **fiv
 | Slope and local relief | LRO LOLA elevation, 240 m pixels | MGS MOLA elevation, ~463 m pixels | Terrain Tiles on AWS (a composite of SRTM and other open elevation models), 250 m |
 | Mean annual temperature | LRO Diviner thermal model (2 cm depth) | Mars Climate Database v6.2, surface | NASA POWER, surface ("skin") temperature |
 | Aridity (annual precipitation) | 0 by definition | 0 by definition | NASA POWER, corrected precipitation |
-| Albedo (reflectivity) | Not available for the polar sites | Mars Climate Database v6.2 | NASA POWER (CERES) |
+| Albedo (reflectivity) | Not used: LOLA measures it only at 1064 nm, which is not comparable with broadband albedo | Mars Climate Database v6.2 | NASA POWER (CERES) |
 
 Each value is normalized to a 0–1 scale across all places, and the score is **100 × (1 − the average difference)** over the variables both places have (at least three). Geology, ice and dust tags are compared separately. Every value cites its source; missing values are left empty, never estimated. Full method: `docs/METODOLOGIA.md`.
 
@@ -58,7 +58,7 @@ The Siloli Desert and Laguna Colorada, both in the top 5 for Jezero and Gale, ar
 - **Temperature is the largest gap for the Moon.** The coldest Earth candidate with data averages −27 °C; the lunar sites average −126 to −160 °C. In most lunar comparisons it is the largest single difference. No place on Earth reproduces the cold of permanently shadowed regions.
 - **Temperature and precipitation of mountain candidates are biased.** NASA POWER describes a grid cell tens of kilometres wide, so for volcanoes and high mountains (Licancabur, Ojos del Salado, Socompa, Sajama, Uturuncu and ten others) the elevation of the cell differs from the real one by 500 m to more than 3,500 m, so its temperature does not represent the point. We flagged these values in the data and did not correct them. Slope and relief are not affected.
 - **Even the "driest" Earth places get rain.** The Moon and Mars have zero precipitation; Licancabur gets ~29 mm a year and the Siloli Desert ~40 mm. Precipitation is the most common weak point among the Mars matches.
-- **Coverage shapes the ranking.** Four candidates have no slope or relief. Because the lunar albedo is also missing, they fall below the three-variable minimum and **drop out of the lunar ranking**. The McMurdo Dry Valleys (Antarctica), a classic analog, and Svalbard only have coarse elevation models; the La Corona (Lanzarote) and Manjanggul (Jeju) lava tubes have sea inside their 10 km window.
+- **Coverage shapes the ranking.** Four candidates have no slope or relief. Because the lunar albedo is not used in the index, they fall below the three-variable minimum and **drop out of the lunar ranking**. The McMurdo Dry Valleys (Antarctica), a classic analog, and Svalbard only have coarse elevation models; the La Corona (Lanzarote) and Manjanggul (Jeju) lava tubes have sea inside their 10 km window.
 - **What no Earth analog can reproduce:** reduced gravity, the lunar vacuum, the thin Martian atmosphere and the radiation environment. A good score means similar terrain and climate, not similar conditions for a spacecraft or a crew.
 
 ## Does the index agree with known analogs?
@@ -72,7 +72,7 @@ This suggests the index captures terrain and dryness, while **lunar analogs are 
 ## How this helps exploration, and what's next
 
 The tool turns "this looks like Mars" into a measured, explainable comparison. A mission team can see which Earth places match a target site in slope, relief and dryness, which is useful for testing mobility, navigation and instruments, and exactly which conditions each place cannot provide. Next steps:
-- Add the missing lunar albedo and Antarctic elevation data.
+- Decide whether LOLA's 1064 nm lunar albedo can be compared with broadband albedo, and add Antarctic elevation data.
 - Add variables for rock type and soil.
 - Run a coarse global scan to find analogs outside our hand-picked list.
 - Validate the top matches in the field, starting with less-studied Bolivian places such as the Siloli Desert and Laguna Colorada.
