@@ -96,3 +96,7 @@ Los poco estudiados ocupan 20 de los 30 puestos del top 5 general, contando repe
 - Tierra — [Terrain Tiles de Mapzen](https://registry.opendata.aws/terrain-tiles/) y [climatología de NASA POWER](https://power.larc.nasa.gov/docs/services/api/temporal/climatology/) (TS, PRECTOTCORR y ALLSKY_SRF_ALB).
 - Luna — [LOLA LDEM_75S_240M](https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/polar/img/ldem_75s_240m.img) y [Diviner Polar Resource Product sur](https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_prp/dlre_prp_south.tab).
 - Marte — [MOLA MEGDR de 128 píxeles/grado](https://pds-geosciences.wustl.edu/missions/mgs/megdr.html) y [Mars Climate Database v6.2](https://www-mars.lmd.jussieu.fr/mcd_python/).
+
+## 9. Escaneo global (S-7)
+
+Se descarta el escaneo global en cuadrícula de 2° para esta entrega. Falta una vía de datos validada que cubra tierra firme y obtenga variables comparables sin descargas masivas. El escaneo queda como posible trabajo futuro. Esta entrega publica los rankings del catálogo de 47 candidatos y prescinde de `scan.json`.
