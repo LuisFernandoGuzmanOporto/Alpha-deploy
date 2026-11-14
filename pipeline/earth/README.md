@@ -10,7 +10,7 @@ python pipeline/validate.py
 python pipeline/similarity.py
 ```
 
-- `seed.json`: la lista curada. Cada candidato lleva sus coordenadas con su fuente, `known`, etiquetas y referencias. **Es lo que se edita a mano**; `data/candidates.json` se regenera.
+- `seed.json`: la lista curada. Cada candidato lleva sus coordenadas con su fuente, `known`, etiquetas y referencias. **Es lo que se edita a mano**; `data/candidates.json` se regenera. Cada etiqueta lleva su fuente en `tag_sources` (etiqueta → URL) y, si no hay etiqueta con respaldo, `tags_pending` explica por qué; las dos cosas terminan en `notes`.
 - `terrain_tiles.py`: pendiente y relieve en la ventana de 10 × 10 km (Terrain Tiles de Mapzen en AWS, Terrarium, zoom 10). Mismo método que `pipeline/moon_mars/`: cuadrícula de 250 m, pendiente de Horn (3 × 3) y desviación estándar poblacional de la elevación.
 - `power.py`: temperatura de superficie (`TS`), precipitación (`PRECTOTCORR` × 365,25) y albedo (`ALLSKY_SRF_ALB`) de NASA POWER, climatología 2001-2025.
 - `build_candidates.py`: une todo, escribe la fuente exacta de cada valor en `sources` y los motivos de cada `null` en `notes`.

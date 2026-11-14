@@ -29,7 +29,11 @@
     "analog_for": [
       "mars"
     ],
-    "tags": [],
+    "tags": [
+      "extreme-cold",
+      "hyper-arid",
+      "permafrost"
+    ],
     "lat": -77.4667,
     "lon": 162.5167,
     "coord_source": "Wikipedia, artículo 'McMurdo Dry Valleys' (https://en.wikipedia.org/wiki/McMurdo_Dry_Valleys)",
@@ -37,7 +41,12 @@
     "references": [
       "https://doi.org/10.1016/j.icarus.2007.06.018",
       "https://doi.org/10.1016/b978-0-12-820245-6.00011-2"
-    ]
+    ],
+    "tag_sources": {
+      "extreme-cold": "https://en.wikipedia.org/wiki/McMurdo_Dry_Valleys",
+      "hyper-arid": "https://en.wikipedia.org/wiki/McMurdo_Dry_Valleys",
+      "permafrost": "https://en.wikipedia.org/wiki/McMurdo_Dry_Valleys"
+    }
   },
   {
     "id": "earth-haughton-isla-devon",
@@ -77,7 +86,8 @@
     "references": [
       "https://doi.org/10.1016/j.pss.2025.106038",
       "https://doi.org/10.15560/20.5.1096"
-    ]
+    ],
+    "tags_pending": "Etiquetas pendientes: no se encontro una fuente abierta que describa la geologia local con el vocabulario cerrado (a verificar)"
   },
   {
     "id": "earth-dallol-danakil",
@@ -88,7 +98,10 @@
     "analog_for": [
       "mars"
     ],
-    "tags": [],
+    "tags": [
+      "evaporite",
+      "hyper-arid"
+    ],
     "lat": 14.2386,
     "lon": 40.2936,
     "coord_source": "Wikipedia, artículo 'Dallol (ghost town)' (https://en.wikipedia.org/wiki/Dallol_(ghost_town))",
@@ -96,7 +109,11 @@
     "references": [
       "https://doi.org/10.1089/ast.2018.1926"
     ],
-    "land_below_sea_level": true
+    "land_below_sea_level": true,
+    "tag_sources": {
+      "evaporite": "https://doi.org/10.1089/ast.2018.1926",
+      "hyper-arid": "https://doi.org/10.1089/ast.2018.1926"
+    }
   },
   {
     "id": "earth-askja-islandia",
@@ -108,7 +125,10 @@
       "moon",
       "mars"
     ],
-    "tags": [],
+    "tags": [
+      "basalt",
+      "volcanic-field"
+    ],
     "lat": 65.033,
     "lon": -16.783,
     "coord_source": "Wikipedia, artículo 'Askja' (https://en.wikipedia.org/wiki/Askja)",
@@ -116,7 +136,11 @@
     "references": [
       "https://doi.org/10.1007/978-3-642-27833-4_5623-1",
       "https://doi.org/10.1021/acsearthspacechem.0c00015"
-    ]
+    ],
+    "tag_sources": {
+      "basalt": "https://en.wikipedia.org/wiki/Askja",
+      "volcanic-field": "https://en.wikipedia.org/wiki/Askja"
+    }
   },
   {
     "id": "earth-mauna-kea-hawai",
@@ -127,14 +151,19 @@
     "analog_for": [
       "moon"
     ],
-    "tags": [],
+    "tags": [
+      "basalt"
+    ],
     "lat": 19.8206,
     "lon": -155.4681,
     "coord_source": "Wikipedia, artículo 'Mauna Kea' (cumbre: https://en.wikipedia.org/wiki/Mauna_Kea). Las pruebas de análogo lunar se hicieron en sus laderas: a verificar",
     "why": "Sitio de pruebas de análogo para el aprovechamiento de recursos in situ en la Luna.",
     "references": [
       "https://doi.org/10.2514/6.2010-8902"
-    ]
+    ],
+    "tag_sources": {
+      "basalt": "https://en.wikipedia.org/wiki/Mauna_Kea"
+    }
   },
   {
     "id": "earth-rio-tinto-espana",
@@ -145,7 +174,9 @@
     "analog_for": [
       "mars"
     ],
-    "tags": [],
+    "tags": [
+      "hydrated-minerals"
+    ],
     "lat": 37.7,
     "lon": -6.55,
     "coord_source": "Coordenada aproximada del distrito minero del alto Río Tinto, sin verificar contra un gazetteer: a verificar",
@@ -153,7 +184,10 @@
     "references": [
       "https://doi.org/10.1016/j.epsl.2005.09.043",
       "https://doi.org/10.1007/978-3-642-11274-4_3050"
-    ]
+    ],
+    "tag_sources": {
+      "hydrated-minerals": "https://doi.org/10.1016/j.epsl.2005.09.043"
+    }
   },
   {
     "id": "earth-ubehebe-valle-de-la-muerte",
@@ -164,14 +198,19 @@
     "analog_for": [
       "mars"
     ],
-    "tags": [],
+    "tags": [
+      "volcanic-field"
+    ],
     "lat": 37.0097,
     "lon": -117.4503,
     "coord_source": "Wikipedia, artículo 'Ubehebe Crater' (https://en.wikipedia.org/wiki/Ubehebe_Crater)",
     "why": "Cráter del Valle de la Muerte propuesto como análogo de cráteres de Marte por sus depósitos de la Pequeña Edad de Hielo.",
     "references": [
       "https://doi.org/10.1016/j.geomorph.2015.05.029"
-    ]
+    ],
+    "tag_sources": {
+      "volcanic-field": "https://en.wikipedia.org/wiki/Ubehebe_Crater"
+    }
   },
   {
     "id": "earth-svalbard-sverrefjellet",
@@ -182,7 +221,9 @@
     "analog_for": [
       "mars"
     ],
-    "tags": [],
+    "tags": [
+      "basalt"
+    ],
     "lat": 79.4317,
     "lon": 13.305,
     "coord_source": "Wikipedia, artículo 'Sverrefjellet' (https://en.wikipedia.org/wiki/Sverrefjellet)",
@@ -190,7 +231,10 @@
     "references": [
       "https://doi.org/10.1130/abs/2016am-280390",
       "https://doi.org/10.3402/polar.v31i0.17320"
-    ]
+    ],
+    "tag_sources": {
+      "basalt": "https://en.wikipedia.org/wiki/Sverrefjellet"
+    }
   },
   {
     "id": "earth-kau-kilauea-hawai",
@@ -201,14 +245,21 @@
     "analog_for": [
       "mars"
     ],
-    "tags": [],
+    "tags": [
+      "basalt",
+      "hydrated-minerals"
+    ],
     "lat": 19.4086,
     "lon": -155.2967,
     "coord_source": "Wikipedia, artículo 'Kaʻū Desert' (https://en.wikipedia.org/wiki/Ka%CA%BB%C5%AB_Desert)",
     "why": "Ambiente volcánico con sílice descrito como análogo de Marte.",
     "references": [
       "https://doi.org/10.1029/2009je003347"
-    ]
+    ],
+    "tag_sources": {
+      "basalt": "https://doi.org/10.1029/2009je003347",
+      "hydrated-minerals": "https://doi.org/10.1029/2009je003347"
+    }
   },
   {
     "id": "earth-cuenca-qaidam",
@@ -400,7 +451,8 @@
     "references": [
       "https://doi.org/10.1017/cbo9780511536014.015",
       "https://en.wikipedia.org/wiki/Licancabur_Lake"
-    ]
+    ],
+    "tags_pending": "Etiquetas pendientes: es un lago de crater en un estratovolcan aislado; ninguna etiqueta del vocabulario cerrado tiene respaldo citable (a verificar)"
   },
   {
     "id": "earth-laguna-colorada",
@@ -411,14 +463,19 @@
     "analog_for": [
       "mars"
     ],
-    "tags": [],
+    "tags": [
+      "evaporite"
+    ],
     "lat": -22.1986,
     "lon": -67.7811,
     "coord_source": "Wikipedia, artículo 'Laguna Colorada' (https://en.wikipedia.org/wiki/Laguna_Colorada)",
     "why": "",
     "references": [
       "https://doi.org/10.1099/ijs.0.014522-0"
-    ]
+    ],
+    "tag_sources": {
+      "evaporite": "https://en.wikipedia.org/wiki/Laguna_Colorada"
+    }
   },
   {
     "id": "earth-laguna-verde-bolivia",
@@ -434,7 +491,8 @@
     "lon": -67.825,
     "coord_source": "Wikipedia, artículo 'Laguna Verde (Bolivia)' (https://en.wikipedia.org/wiki/Laguna_Verde_(Bolivia))",
     "why": "",
-    "references": []
+    "references": [],
+    "tags_pending": "Etiquetas pendientes: las fuentes la describen como lago salado, sin depositos evaporiticos documentados (a verificar)"
   },
   {
     "id": "earth-uturuncu-bolivia",
@@ -445,7 +503,9 @@
     "analog_for": [
       "mars"
     ],
-    "tags": [],
+    "tags": [
+      "volcanic-field"
+    ],
     "lat": -22.27,
     "lon": -67.18,
     "coord_source": "Wikipedia, artículo 'Uturuncu' (https://en.wikipedia.org/wiki/Uturuncu)",
@@ -453,7 +513,10 @@
     "references": [
       "https://doi.org/10.1002/essoar.10506460.1"
     ],
-    "note_extra": "El estudio de análogo de Marte del complejo volcánico Altiplano-Puna (https://doi.org/10.3390/rs14092081) cubre el norte de Chile; no se encontró uno para el sector boliviano"
+    "note_extra": "El estudio de análogo de Marte del complejo volcánico Altiplano-Puna (https://doi.org/10.3390/rs14092081) cubre el norte de Chile; no se encontró uno para el sector boliviano",
+    "tag_sources": {
+      "volcanic-field": "https://en.wikipedia.org/wiki/Uturuncu"
+    }
   },
   {
     "id": "earth-nevado-sajama",
@@ -506,12 +569,17 @@
     "analog_for": [
       "mars"
     ],
-    "tags": [],
+    "tags": [
+      "aeolian-dunes"
+    ],
     "lat": -22.0517,
     "lon": -67.8833,
     "coord_source": "Wikipedia, artículo 'Árbol de Piedra' (https://en.wikipedia.org/wiki/%C3%81rbol_de_Piedra)",
     "why": "",
-    "references": []
+    "references": [],
+    "tag_sources": {
+      "aeolian-dunes": "https://en.wikipedia.org/wiki/%C3%81rbol_de_Piedra"
+    }
   },
   {
     "id": "earth-volcan-tunupa-uyuni",
@@ -527,7 +595,8 @@
     "lon": -67.6458,
     "coord_source": "Wikipedia, artículo 'Tunupa' (https://en.wikipedia.org/wiki/Tunupa)",
     "why": "",
-    "references": []
+    "references": [],
+    "tags_pending": "Etiquetas pendientes: es un estratovolcan aislado, no un campo volcanico; ninguna etiqueta del vocabulario cerrado tiene respaldo citable (a verificar)"
   },
   {
     "id": "earth-badain-jaran-china",
@@ -763,12 +832,17 @@
     "analog_for": [
       "mars"
     ],
-    "tags": [],
+    "tags": [
+      "evaporite"
+    ],
     "lat": 33.7,
     "lon": 8.43,
     "coord_source": "Wikipedia, artículo 'Chott el Djerid' (https://en.wikipedia.org/wiki/Chott_el_Djerid)",
     "why": "",
-    "references": []
+    "references": [],
+    "tag_sources": {
+      "evaporite": "https://en.wikipedia.org/wiki/Chott_el_Djerid"
+    }
   },
   {
     "id": "earth-desierto-tengger",
@@ -779,12 +853,17 @@
     "analog_for": [
       "mars"
     ],
-    "tags": [],
+    "tags": [
+      "aeolian-dunes"
+    ],
     "lat": 38.7,
     "lon": 104.7,
     "coord_source": "Wikipedia, artículo 'Tengger Desert' (https://en.wikipedia.org/wiki/Tengger_Desert)",
     "why": "",
-    "references": []
+    "references": [],
+    "tag_sources": {
+      "aeolian-dunes": "https://en.wikipedia.org/wiki/Tengger_Desert"
+    }
   },
   {
     "id": "earth-dasht-e-kavir",
@@ -795,12 +874,17 @@
     "analog_for": [
       "mars"
     ],
-    "tags": [],
+    "tags": [
+      "evaporite"
+    ],
     "lat": 34.7376,
     "lon": 54.8271,
     "coord_source": "Wikipedia, artículo 'Great Salt Desert' (https://en.wikipedia.org/wiki/Great_Salt_Desert)",
     "why": "",
-    "references": []
+    "references": [],
+    "tag_sources": {
+      "evaporite": "https://en.wikipedia.org/wiki/Dasht-e_Kavir"
+    }
   },
   {
     "id": "earth-lago-eyre-australia",
@@ -811,13 +895,18 @@
     "analog_for": [
       "mars"
     ],
-    "tags": [],
+    "tags": [
+      "evaporite"
+    ],
     "lat": -28.6667,
     "lon": 137.3333,
     "coord_source": "Wikipedia, artículo 'Kati Thanda–Lake Eyre' (https://en.wikipedia.org/wiki/Kati_Thanda%E2%80%93Lake_Eyre)",
     "why": "",
     "references": [],
-    "land_below_sea_level": true
+    "land_below_sea_level": true,
+    "tag_sources": {
+      "evaporite": "https://en.wikipedia.org/wiki/Lake_Eyre"
+    }
   },
   {
     "id": "earth-gilf-kebir",
@@ -828,12 +917,17 @@
     "analog_for": [
       "mars"
     ],
-    "tags": [],
+    "tags": [
+      "hyper-arid"
+    ],
     "lat": 23.4414,
     "lon": 25.8397,
     "coord_source": "Wikipedia, artículo 'Gilf Kebir' (https://en.wikipedia.org/wiki/Gilf_Kebir)",
     "why": "",
-    "references": []
+    "references": [],
+    "tag_sources": {
+      "hyper-arid": "https://en.wikipedia.org/wiki/Gilf_Kebir"
+    }
   },
   {
     "id": "earth-macizo-del-hoggar",
@@ -844,12 +938,17 @@
     "analog_for": [
       "mars"
     ],
-    "tags": [],
+    "tags": [
+      "volcanic-field"
+    ],
     "lat": 23.2889,
     "lon": 5.5336,
     "coord_source": "Wikipedia, artículo 'Hoggar Mountains' (https://en.wikipedia.org/wiki/Hoggar_Mountains)",
     "why": "",
-    "references": []
+    "references": [],
+    "tag_sources": {
+      "volcanic-field": "https://en.wikipedia.org/wiki/Hoggar_Mountains"
+    }
   },
   {
     "id": "earth-desierto-de-taklamakan",
@@ -860,12 +959,19 @@
     "analog_for": [
       "mars"
     ],
-    "tags": [],
+    "tags": [
+      "aeolian-dunes",
+      "dust-activity"
+    ],
     "lat": 38.9,
     "lon": 82.2,
     "coord_source": "Wikipedia, artículo 'Taklamakan Desert' (https://en.wikipedia.org/wiki/Taklamakan_Desert)",
     "why": "",
-    "references": []
+    "references": [],
+    "tag_sources": {
+      "aeolian-dunes": "https://en.wikipedia.org/wiki/Taklamakan_Desert",
+      "dust-activity": "https://en.wikipedia.org/wiki/Taklamakan_Desert"
+    }
   },
   {
     "id": "earth-montanas-del-pamir",
@@ -876,14 +982,19 @@
     "analog_for": [
       "mars"
     ],
-    "tags": [],
+    "tags": [
+      "glacier"
+    ],
     "lat": 38.5,
     "lon": 73.5,
     "coord_source": "Wikipedia, artículo 'Pamir Mountains' (centro aproximado: https://en.wikipedia.org/wiki/Pamir_Mountains)",
     "why": "",
     "references": [
       "https://doi.org/10.3390/microorganisms9010006"
-    ]
+    ],
+    "tag_sources": {
+      "glacier": "https://en.wikipedia.org/wiki/Pamir_Mountains"
+    }
   },
   {
     "id": "earth-salar-de-arizaro",
@@ -894,11 +1005,16 @@
     "analog_for": [
       "mars"
     ],
-    "tags": [],
+    "tags": [
+      "evaporite"
+    ],
     "lat": -24.723,
     "lon": -67.738,
     "coord_source": "Wikipedia, artículo 'Salar de Arizaro' (https://en.wikipedia.org/wiki/Salar_de_Arizaro)",
     "why": "",
-    "references": []
+    "references": [],
+    "tag_sources": {
+      "evaporite": "https://en.wikipedia.org/wiki/Salar_de_Arizaro"
+    }
   }
 ]
