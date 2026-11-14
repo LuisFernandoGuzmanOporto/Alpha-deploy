@@ -6,13 +6,13 @@ El índice ordena lugares de la Tierra según su similitud con un sitio candidat
 
 ## 2. Variables y su razón física
 
-| Variable | Qué mide | Por qué importa | Fuente candidata en la Tierra | Fuente usada en Luna y Marte |
+| Variable | Qué mide | Por qué importa | Fuente usada en la Tierra | Fuente usada en Luna y Marte |
 | --- | --- | --- | --- | --- |
-| `slope_deg` | Pendiente media del terreno, en grados | Ayuda a comparar la inclinación del terreno para movilidad y emplazamiento. | SRTM u otro modelo digital de elevación con cobertura local | LOLA `LDEM_75S_240M` en la Luna y MOLA MEGDR de 128 píxeles/grado en Marte |
+| `slope_deg` | Pendiente media del terreno, en grados | Ayuda a comparar la inclinación del terreno para movilidad y emplazamiento. | Mapzen Terrain Tiles (fuentes por tesela en cada registro) | LOLA `LDEM_75S_240M` en la Luna y MOLA MEGDR de 128 píxeles/grado en Marte |
 | `relief_m` | Desviación estándar de la elevación en la ventana, en metros | Describe la variación vertical del terreno a escala local. | El mismo modelo de elevación | Los mismos productos de elevación |
 | `temp_mean_c` | Temperatura media anual en °C, con una aproximación subsuperficial en la Luna | Compara el entorno térmico medio relevante para equipos y materiales. | NASA POWER, temperatura de superficie | Diviner Polar Resource Product sur, `temp_avg` modelada a 2 cm en la Luna. Mars Climate Database (MCD) v6.2, `tsurf` de superficie modelada en Marte. |
 | `precip_mm_year` | Precipitación media anual, en mm/año | Distingue los entornos terrestres por aridez según la precipitación. | NASA POWER, precipitación corregida | Cero por convención del índice, que compara el aporte por lluvia |
-| `albedo` | Fracción de radiación solar reflejada por la superficie, de 0 a 1 | Ayuda a comparar cómo interactúa la superficie con la luz solar. | MODIS MCD43A3 | Luna: `null`, sin mapa grillado comparable para las ventanas polares. Marte: `ground_albedo` de MCD v6.2, albedo de suelo desnudo del modelo. |
+| `albedo` | Fracción de radiación solar reflejada por la superficie, de 0 a 1 | Ayuda a comparar cómo interactúa la superficie con la luz solar. | NASA POWER, `ALLSKY_SRF_ALB` (CERES) | Luna: `null`, sin mapa grillado comparable para las ventanas polares. Marte: `ground_albedo` de MCD v6.2, albedo de suelo desnudo del modelo. |
 
 Cada valor no nulo requiere una fuente en `sources` con el producto y su referencia. En `notes` se documenta el sistema de coordenadas extraterrestre, el método de extracción y, cuando corresponda, la resolución, el período o el motivo de un dato faltante. Un valor cuya cobertura o definición impida compararlo se registra como `null`.
 
@@ -42,9 +42,47 @@ Cada variable empieza con peso 1. Es una referencia reproducible mientras se eva
 
 La referencia inicial es mínimo–máximo sobre el catálogo conjunto. Una temperatura lunar extrema ensancha el rango y reduce la separación térmica entre los demás registros. La comparación con una variante basada en cuantiles sigue sin realizarse. Con pocas observaciones, los cuantiles son inestables y el recorte puede ocultar diferencias relevantes en los polos.
 
-El análisis de sensibilidad (S-3) aún no se ha realizado. Incluye cambios de posición y del top 5 al variar cada peso ±50 % y al omitir variables. El código actual cuenta una variable constante como compartida y le asigna diferencia cero, lo que puede aumentar el puntaje y ayudar a alcanzar el mínimo de tres variables sin aportar capacidad de distinguir candidatos.
+### Resultados de sensibilidad (S-3)
 
-La validación y el análisis de descubrimientos (S-6) aún no se han realizado. Evalúan la posición de los análogos conocidos para el cuerpo indicado en `analog_for` y cuántos candidatos poco estudiados aparecen en el top 5 de cada sitio.
+Se evaluaron 47 candidatos y seis sitios con los catálogos de `fe45e52`. Las 60 pruebas de pesos modifican una variable a la vez en ±50 %. Las otras 30 retiran una variable y vuelven a exigir al menos tres valores compartidos. El desplazamiento se calcula entre candidatos presentes en ambos rankings. El top 5 se toma del ranking general, con el orden de entrada como desempate de los puntajes redondeados.
+
+| Sitio | ±50 %: top 5 compartido (mín.–máx.) | ±50 %: mayor desplazamiento medio / individual | Omisión: top 5 compartido (mín.–máx.) | Omisión: mayor desplazamiento medio / individual |
+| --- | ---: | ---: | ---: | ---: |
+| Faustini Rim A | 4–5 | 1,91 / 14 | 2–5 | 4,88 / 20 |
+| Peak Near Cabeus B | 4–5 | 1,72 / 13 | 2–5 | 3,91 / 19 |
+| Malapert Massif | 3–5 | 1,77 / 13 | 3–5 | 3,86 / 19 |
+| Jezero | 4–5 | 3,15 / 11 | 3–5 | 6,55 / 29 |
+| Gale | 4–5 | 3,06 / 13 | 2–5 | 6,60 / 31 |
+| Arcadia Planitia | 4–5 | 2,04 / 8 | 4–5 | 4,60 / 17 |
+
+Con cambios de peso, 59 de 60 pruebas mantuvieron al menos cuatro nombres del top 5 y 39 conservaron los cinco. La excepción fue Malapert con precipitación al −50 %. Las omisiones conservaron al menos cuatro nombres en 21 de 30 pruebas. Quitar la precipitación dejó solo dos nombres en Faustini y Gale. En Gale, retirar la pendiente movió hasta 31 posiciones a un candidato del ranking. En Marte, quitar temperatura, precipitación o albedo excluyó cuatro pares que ya carecían de pendiente y relieve. El albedo lunar faltante explica que variar o retirar su peso deje intactos los rankings lunares.
+
+Se mantienen los pesos iguales como referencia. Para interpretar candidatos cercanos en puntaje, conviene mirar su cobertura y si se mantienen arriba al retirar una variable. La influencia de los extremos térmicos sobre la escala min–max sigue siendo una limitación. La prueba no compara normalizaciones alternativas.
+
+| Control sintético con terreno y albedo iguales | Puntajes comparados | Resultado |
+| --- | ---: | --- |
+| Frío y seco frente a cálido y húmedo | 85,8 / 60,0 | Orden esperado |
+| Menor precipitación a igual temperatura | 75,1 / 60,0 | Orden esperado |
+| Menor diferencia térmica a igual precipitación | 70,7 / 60,0 | Orden esperado |
+
+### Validación por cuerpo y candidatos poco estudiados (S-6)
+
+La validación usa `known: true` y exige que `analog_for` incluya el cuerpo del sitio. El conteo de poco estudiados usa `known: false` dentro del top 5 general. El índice compara los pares con cobertura suficiente, con independencia de `analog_for`. Esta distinción importa en la Luna, donde todos los poco estudiados del top 5 están etiquetados para Marte en el catálogo.
+
+| Sitio | Pares | Conocidos del cuerpo en el top 5 | Poco estudiados en el top 5 (posición y puntaje) |
+| --- | ---: | --- | --- |
+| Faustini Rim A | 43 | 0 de 4 | 3: Laguna Verde (3.º, 58,7), Uturuncu (4.º, 57,2), Ojos del Salado (5.º, 56,3) |
+| Peak Near Cabeus B | 43 | 0 de 4 | 3: Ojos del Salado (2.º, 63,3), Socompa (4.º, 62,0), Sajama (5.º, 60,6) |
+| Malapert Massif | 43 | 0 de 4 | 3: Ojos del Salado (2.º, 63,3), Socompa (4.º, 62,0), Pamir (5.º, 60,8) |
+| Jezero | 47 | 1 de 19: Tibesti (2.º, 80,2) | 4: Gilf Kebir (1.º, 80,8), Siloli (3.º, 79,4), Harrat Khaybar (4.º, 79,2), Laguna Colorada (5.º, 78,6) |
+| Gale | 47 | 1 de 19: Tibesti (2.º, 79,0) | 4: Gilf Kebir (1.º, 83,2), Siloli (3.º, 78,9), Laguna Colorada (4.º, 78,1), Namib (5.º, 77,2) |
+| Arcadia Planitia | 47 | 2 de 19: Qaidam (4.º, 75,8) y Coipasa (5.º, 74,5) | 3: Taklamakan (1.º, 76,9), Dasht-e Kavir (2.º, 76,8), Gilf Kebir (3.º, 76,8) |
+
+En los tres rankings lunares, Pinacate queda 14.º, Mauna Kea 16.º y Askja 23.º. Las mayores diferencias normalizadas de esos pares son temperatura o precipitación. La Corona queda excluida porque, sin pendiente, relieve ni albedo lunar, solo comparte dos variables. Los análogos documentados pueden ser útiles por procesos geológicos, como el vulcanismo o los tubos de lava, que quedan fuera del puntaje. En Marte entran al ranking los 19 conocidos pertinentes, pero solo algunos llegan al top 5. McMurdo queda entre 37.º y 45.º con tres variables y la diferencia de albedo como su mayor penalización. El albedo terrestre incluye nieve, agua y vegetación, mientras que el marciano describe suelo desnudo. La validación respalda parcialmente el ranking marciano y deja sin confirmar el lunar.
+
+Gilf Kebir lidera Jezero y Gale por su pendiente cercana y los 0,0 mm/año del producto regional NASA POWER. Ese cero es un valor del producto y no demuestra ausencia local de lluvias. En Arcadia, Taklamakan y Dasht-e Kavir tienen diferencias normalizadas de pendiente inferiores a 0,004 y de relieve inferiores a 0,046, aunque sus diferencias térmicas rondan 0,49–0,52. Siloli aparece tercero en Jezero y Gale. En ambos la diferencia normalizada de albedo es inferior a 0,07 y la de relieve inferior a 0,10. En la Luna, Ojos del Salado y Socompa se mantienen entre los primeros en más de un sitio por la semejanza del terreno, mientras la diferencia térmica de esos pares supera 0,65.
+
+Los poco estudiados ocupan 20 de los 30 puestos del top 5 general, contando repeticiones entre sitios. El catálogo asigna `known: false` a partir de una búsqueda bibliográfica preliminar. Estos resultados sirven para priorizar la revisión de candidatos. Jaccard sigue como indicador aparte para contrastar procesos documentados. La climatología terrestre es regional y varias coordenadas son aproximadas, incluido el punto usado para Yungay, por lo que la comparación debe verificarse antes de atribuir una similitud a un lugar de campo concreto.
 
 ## 7. Limitaciones
 
@@ -55,6 +93,6 @@ La validación y el análisis de descubrimientos (S-6) aún no se han realizado.
 
 ## 8. Fuentes
 
-- Tierra (fuentes candidatas) — [SRTM, NASA Earthdata](https://doi.org/10.5067/MEaSUREs/SRTM/SRTMGL1.003), [variables meteorológicas y de superficie de NASA POWER](https://power.larc.nasa.gov/docs/methodology/data/sources_hydrology/), [precipitación corregida de NASA POWER](https://power.larc.nasa.gov/docs/methodology/data/sources_validation/), [MODIS MCD43A3 de NASA](https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/MCD43A3).
+- Tierra — [Terrain Tiles de Mapzen](https://registry.opendata.aws/terrain-tiles/) y [climatología de NASA POWER](https://power.larc.nasa.gov/docs/services/api/temporal/climatology/) (TS, PRECTOTCORR y ALLSKY_SRF_ALB).
 - Luna — [LOLA LDEM_75S_240M](https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/polar/img/ldem_75s_240m.img) y [Diviner Polar Resource Product sur](https://pds-geosciences.wustl.edu/lro/urn-nasa-pds-lro_diviner_derived1/data_derived_prp/dlre_prp_south.tab).
 - Marte — [MOLA MEGDR de 128 píxeles/grado](https://pds-geosciences.wustl.edu/missions/mgs/megdr.html) y [Mars Climate Database v6.2](https://www-mars.lmd.jussieu.fr/mcd_python/).
