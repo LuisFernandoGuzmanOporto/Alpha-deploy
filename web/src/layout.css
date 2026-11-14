@@ -1,0 +1,41 @@
+/* Maquetación mínima de la app. Los tokens y estilos de diseño los aporta Noe en src/styles/. */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.explorer {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.ranking-map {
+  height: 70vh;
+  min-height: 360px;
+}
+
+.ranking-list {
+  margin: 0;
+  padding-left: 1.5rem;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.ranking-list button {
+  all: unset;
+  cursor: pointer;
+}
+
+.ranking-list li.selected {
+  background: #e8f0ff;
+}
+
+@media (max-width: 800px) {
+  .explorer {
+    grid-template-columns: 1fr;
+  }
+}
