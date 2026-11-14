@@ -1,10 +1,12 @@
-import { lazy, Suspense, useMemo, useState } from "react";
+import { lazy, Suspense, useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 import { RankingList } from "../components/RankingList";
+import { SiteInfo } from "../components/SiteInfo";
 import { SiteSelector } from "../components/SiteSelector";
 import { WeightSliders } from "../components/WeightSliders";
 import { useData } from "../lib/data";
-import { buildRanking, type Weights } from "../lib/ranking";
+import { buildRanking } from "../lib/ranking";
+import { parseWeights, serializeWeights } from "../lib/variables";
 
 // MapLibre pesa casi 1 MB: se carga aparte del resto de la app.
 const RankingMap = lazy(() => import("../components/RankingMap").then((m) => ({ default: m.RankingMap })));
@@ -12,14 +14,15 @@ const RankingMap = lazy(() => import("../components/RankingMap").then((m) => ({ 
 export function Home() {
   const state = useData();
   const [params, setParams] = useSearchParams();
-  const [customWeights, setCustomWeights] = useState<Weights | null>(null);
 
   const data = state.status === "ready" ? state.data : null;
   const siteId = data ? (data.sites.find((s) => s.id === params.get("sitio"))?.id ?? data.sites[0]?.id) : undefined;
   const boliviaOnly = params.get("bolivia") === "1";
   const unstudiedOnly = params.get("nuevos") === "1";
   const selectedId = params.get("analogo");
-  const weights = customWeights ?? data?.results.weights;
+  const weightsParam = params.get("pesos");
+  const defaultWeights = data?.results.weights;
+  const weights = useMemo(() => parseWeights(weightsParam) ?? defaultWeights, [weightsParam, defaultWeights]);
 
   const rows = useMemo(
     () =>
@@ -41,6 +44,8 @@ export function Home() {
   if (state.status === "loading") return <p>Cargando datos…</p>;
   if (state.status === "error") return <p role="alert">Error al cargar los datos: {state.message}</p>;
   if (!data || !siteId || !weights) return <p>Aún no hay sitios o candidatos cargados.</p>;
+
+  const site = data.sites.find((s) => s.id === siteId);
 
   return (
     <>
@@ -64,7 +69,8 @@ export function Home() {
           Solo lugares poco estudiados
         </label>
       </div>
-      <WeightSliders weights={weights} onChange={setCustomWeights} onReset={() => setCustomWeights(null)} />
+      {site && <SiteInfo site={site} />}
+      <WeightSliders weights={weights} onChange={(w) => update({ pesos: serializeWeights(w) })} onReset={() => update({ pesos: null })} />
       <div className="explorer">
         <Suspense fallback={<p>Cargando mapa…</p>}>
           <RankingMap rows={rows} selectedId={selectedId} onSelect={(id) => update({ analogo: id })} />

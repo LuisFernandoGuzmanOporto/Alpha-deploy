@@ -30,6 +30,8 @@ export function RankingList({ siteId, rows, selectedId, onSelect }: Props) {
             </button>
             {selected && (
               <p>
+                {candidate.why}
+                <br />
                 {entry.tag_overlap ? (
                   <>
                     Coincidencias: {entry.tag_overlap.shared.join(", ") || "ninguna"} (
