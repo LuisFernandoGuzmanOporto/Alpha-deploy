@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T18:13:15+00:00",
+  "generated_at": "2026-11-14T20:39:24+00:00",
   "variables": [
     "slope_deg",
     "relief_m",
@@ -99,7 +99,18 @@
           "temp_mean_c": 0.8657,
           "precip_mm_year": 0.7051
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-ojos-del-salado",
@@ -215,7 +226,18 @@
           "temp_mean_c": 0.9594,
           "precip_mm_year": 0.6276
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-gilf-kebir",
@@ -227,7 +249,18 @@
           "temp_mean_c": 0.9604,
           "precip_mm_year": 0.0
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "hyper-arid"
+          ]
+        }
       },
       {
         "candidate_id": "earth-arbol-de-piedra-siloli",
@@ -239,7 +272,18 @@
           "temp_mean_c": 0.873,
           "precip_mm_year": 0.4803
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "aeolian-dunes"
+          ]
+        }
       },
       {
         "candidate_id": "earth-montanas-del-pamir",
@@ -251,7 +295,18 @@
           "temp_mean_c": 0.8167,
           "precip_mm_year": 0.5495
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "glacier"
+          ]
+        }
       },
       {
         "candidate_id": "earth-pinacate-mexico",
@@ -309,7 +364,18 @@
           "temp_mean_c": 0.959,
           "precip_mm_year": 0.954
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "basalt"
+          ]
+        }
       },
       {
         "candidate_id": "earth-harrat-khaybar",
@@ -390,7 +456,18 @@
           "temp_mean_c": 0.9248,
           "precip_mm_year": 0.6599
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-craters-of-the-moon-idaho",
@@ -426,7 +503,18 @@
           "temp_mean_c": 0.8675,
           "precip_mm_year": 0.6479
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-askja-islandia",
@@ -438,7 +526,19 @@
           "temp_mean_c": 0.8183,
           "precip_mm_year": 0.8733
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "basalt",
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-rio-tinto-espana",
@@ -450,7 +550,18 @@
           "temp_mean_c": 0.9398,
           "precip_mm_year": 0.7944
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "hydrated-minerals"
+          ]
+        }
       },
       {
         "candidate_id": "earth-lava-beds-california",
@@ -519,7 +630,18 @@
           "temp_mean_c": 0.8937,
           "precip_mm_year": 0.6708
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "aeolian-dunes"
+          ]
+        }
       },
       {
         "candidate_id": "earth-rub-al-khali",
@@ -600,7 +722,19 @@
           "temp_mean_c": 0.9587,
           "precip_mm_year": 1.0
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "basalt",
+            "hydrated-minerals"
+          ]
+        }
       },
       {
         "candidate_id": "earth-cuenca-qaidam",
@@ -658,7 +792,19 @@
           "temp_mean_c": 0.9181,
           "precip_mm_year": 0.5276
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "aeolian-dunes",
+            "dust-activity"
+          ]
+        }
       },
       {
         "candidate_id": "earth-chott-el-djerid",
@@ -670,7 +816,18 @@
           "temp_mean_c": 0.96,
           "precip_mm_year": 0.5794
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-dasht-e-kavir",
@@ -682,7 +839,18 @@
           "temp_mean_c": 0.952,
           "precip_mm_year": 0.5623
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-lago-eyre-australia",
@@ -694,7 +862,18 @@
           "temp_mean_c": 0.9664,
           "precip_mm_year": 0.6312
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-dallol-danakil",
@@ -706,7 +885,19 @@
           "temp_mean_c": 0.986,
           "precip_mm_year": 0.7892
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "evaporite",
+            "hyper-arid"
+          ]
+        }
       },
       {
         "candidate_id": "earth-salar-de-coipasa",
@@ -787,7 +978,18 @@
           "temp_mean_c": 0.8781,
           "precip_mm_year": 0.7993
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       }
     ],
     "moon-peak-near-cabeus-b": [
@@ -901,7 +1103,17 @@
           "temp_mean_c": 0.6342,
           "precip_mm_year": 0.5495
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "glacier"
+          ]
+        }
       },
       {
         "candidate_id": "earth-volcan-tunupa-uyuni",
@@ -937,7 +1149,17 @@
           "temp_mean_c": 0.6832,
           "precip_mm_year": 0.7051
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-torotoro-umajalanta",
@@ -971,7 +1193,17 @@
           "temp_mean_c": 0.7768,
           "precip_mm_year": 0.6276
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-gilf-kebir",
@@ -983,7 +1215,17 @@
           "temp_mean_c": 0.7779,
           "precip_mm_year": 0.0
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "hyper-arid"
+          ]
+        }
       },
       {
         "candidate_id": "earth-arbol-de-piedra-siloli",
@@ -995,7 +1237,17 @@
           "temp_mean_c": 0.6905,
           "precip_mm_year": 0.4803
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "aeolian-dunes"
+          ]
+        }
       },
       {
         "candidate_id": "earth-pinacate-mexico",
@@ -1051,7 +1303,17 @@
           "temp_mean_c": 0.7765,
           "precip_mm_year": 0.954
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "basalt"
+          ]
+        }
       },
       {
         "candidate_id": "earth-harrat-khaybar",
@@ -1129,7 +1391,17 @@
           "temp_mean_c": 0.7423,
           "precip_mm_year": 0.6599
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-craters-of-the-moon-idaho",
@@ -1164,7 +1436,17 @@
           "temp_mean_c": 0.6849,
           "precip_mm_year": 0.6479
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-askja-islandia",
@@ -1176,7 +1458,18 @@
           "temp_mean_c": 0.6357,
           "precip_mm_year": 0.8733
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "basalt",
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-rio-tinto-espana",
@@ -1188,7 +1481,17 @@
           "temp_mean_c": 0.7573,
           "precip_mm_year": 0.7944
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "hydrated-minerals"
+          ]
+        }
       },
       {
         "candidate_id": "earth-lava-beds-california",
@@ -1256,7 +1559,17 @@
           "temp_mean_c": 0.7112,
           "precip_mm_year": 0.6708
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "aeolian-dunes"
+          ]
+        }
       },
       {
         "candidate_id": "earth-rub-al-khali",
@@ -1334,7 +1647,18 @@
           "temp_mean_c": 0.7761,
           "precip_mm_year": 1.0
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "basalt",
+            "hydrated-minerals"
+          ]
+        }
       },
       {
         "candidate_id": "earth-cuenca-qaidam",
@@ -1390,7 +1714,18 @@
           "temp_mean_c": 0.7356,
           "precip_mm_year": 0.5276
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "aeolian-dunes",
+            "dust-activity"
+          ]
+        }
       },
       {
         "candidate_id": "earth-chott-el-djerid",
@@ -1402,7 +1737,17 @@
           "temp_mean_c": 0.7775,
           "precip_mm_year": 0.5794
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-dasht-e-kavir",
@@ -1414,7 +1759,17 @@
           "temp_mean_c": 0.7694,
           "precip_mm_year": 0.5623
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-lago-eyre-australia",
@@ -1426,7 +1781,17 @@
           "temp_mean_c": 0.7839,
           "precip_mm_year": 0.6312
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-dallol-danakil",
@@ -1438,7 +1803,18 @@
           "temp_mean_c": 0.8035,
           "precip_mm_year": 0.7892
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "evaporite",
+            "hyper-arid"
+          ]
+        }
       },
       {
         "candidate_id": "earth-salar-de-coipasa",
@@ -1516,7 +1892,17 @@
           "temp_mean_c": 0.6956,
           "precip_mm_year": 0.7993
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       }
     ],
     "moon-malapert-massif": [
@@ -1605,7 +1991,16 @@
           "temp_mean_c": 0.6494,
           "precip_mm_year": 0.5495
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "glacier"
+          ]
+        }
       },
       {
         "candidate_id": "earth-nevado-sajama",
@@ -1662,7 +2057,16 @@
           "temp_mean_c": 0.6984,
           "precip_mm_year": 0.7051
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-torotoro-umajalanta",
@@ -1695,7 +2099,16 @@
           "temp_mean_c": 0.792,
           "precip_mm_year": 0.6276
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-gilf-kebir",
@@ -1707,7 +2120,16 @@
           "temp_mean_c": 0.7931,
           "precip_mm_year": 0.0
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "hyper-arid"
+          ]
+        }
       },
       {
         "candidate_id": "earth-arbol-de-piedra-siloli",
@@ -1719,7 +2141,16 @@
           "temp_mean_c": 0.7057,
           "precip_mm_year": 0.4803
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "aeolian-dunes"
+          ]
+        }
       },
       {
         "candidate_id": "earth-pinacate-mexico",
@@ -1773,7 +2204,16 @@
           "temp_mean_c": 0.7917,
           "precip_mm_year": 0.954
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "basalt"
+          ]
+        }
       },
       {
         "candidate_id": "earth-harrat-khaybar",
@@ -1848,7 +2288,16 @@
           "temp_mean_c": 0.7575,
           "precip_mm_year": 0.6599
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-craters-of-the-moon-idaho",
@@ -1882,7 +2331,16 @@
           "temp_mean_c": 0.7001,
           "precip_mm_year": 0.6479
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-askja-islandia",
@@ -1894,7 +2352,17 @@
           "temp_mean_c": 0.6509,
           "precip_mm_year": 0.8733
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "basalt",
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-rio-tinto-espana",
@@ -1906,7 +2374,16 @@
           "temp_mean_c": 0.7725,
           "precip_mm_year": 0.7944
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "hydrated-minerals"
+          ]
+        }
       },
       {
         "candidate_id": "earth-lava-beds-california",
@@ -1972,7 +2449,16 @@
           "temp_mean_c": 0.7264,
           "precip_mm_year": 0.6708
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "aeolian-dunes"
+          ]
+        }
       },
       {
         "candidate_id": "earth-rub-al-khali",
@@ -2047,7 +2533,17 @@
           "temp_mean_c": 0.7914,
           "precip_mm_year": 1.0
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "basalt",
+            "hydrated-minerals"
+          ]
+        }
       },
       {
         "candidate_id": "earth-cuenca-qaidam",
@@ -2101,7 +2597,17 @@
           "temp_mean_c": 0.7508,
           "precip_mm_year": 0.5276
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "aeolian-dunes",
+            "dust-activity"
+          ]
+        }
       },
       {
         "candidate_id": "earth-chott-el-djerid",
@@ -2113,7 +2619,16 @@
           "temp_mean_c": 0.7927,
           "precip_mm_year": 0.5794
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-dasht-e-kavir",
@@ -2125,7 +2640,16 @@
           "temp_mean_c": 0.7846,
           "precip_mm_year": 0.5623
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-lago-eyre-australia",
@@ -2137,7 +2661,16 @@
           "temp_mean_c": 0.7991,
           "precip_mm_year": 0.6312
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-dallol-danakil",
@@ -2149,7 +2682,17 @@
           "temp_mean_c": 0.8187,
           "precip_mm_year": 0.7892
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "evaporite",
+            "hyper-arid"
+          ]
+        }
       },
       {
         "candidate_id": "earth-salar-de-coipasa",
@@ -2224,7 +2767,16 @@
           "temp_mean_c": 0.7108,
           "precip_mm_year": 0.7993
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       }
     ],
     "mars-jezero": [
@@ -2239,7 +2791,18 @@
           "precip_mm_year": 0.0,
           "albedo": 0.3943
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "hyper-arid"
+          ]
+        }
       },
       {
         "candidate_id": "earth-tibesti-chad",
@@ -2276,7 +2839,18 @@
           "precip_mm_year": 0.4803,
           "albedo": 0.0547
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "aeolian-dunes"
+          ]
+        }
       },
       {
         "candidate_id": "earth-harrat-khaybar",
@@ -2313,7 +2887,18 @@
           "precip_mm_year": 0.6479,
           "albedo": 0.0547
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-el-malpais-nuevo-mexico",
@@ -2411,7 +2996,18 @@
           "precip_mm_year": 0.6599,
           "albedo": 0.0358
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-atacama-nucleo-hiperarido",
@@ -2485,7 +3081,18 @@
           "precip_mm_year": 0.6708,
           "albedo": 0.1868
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "aeolian-dunes"
+          ]
+        }
       },
       {
         "candidate_id": "earth-lava-beds-california",
@@ -2522,7 +3129,17 @@
           "precip_mm_year": 0.7944,
           "albedo": 0.0585
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.333,
+          "shared": [
+            "hydrated-minerals"
+          ],
+          "only_site": [
+            "basalt",
+            "impact-crater"
+          ],
+          "only_candidate": []
+        }
       },
       {
         "candidate_id": "earth-cuenca-qaidam",
@@ -2608,7 +3225,19 @@
           "precip_mm_year": 0.5276,
           "albedo": 0.1868
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "aeolian-dunes",
+            "dust-activity"
+          ]
+        }
       },
       {
         "candidate_id": "earth-pinacate-mexico",
@@ -2645,7 +3274,18 @@
           "precip_mm_year": 0.5623,
           "albedo": 0.1113
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-rub-al-khali",
@@ -2705,7 +3345,19 @@
           "precip_mm_year": 0.7892,
           "albedo": 0.0208
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "evaporite",
+            "hyper-arid"
+          ]
+        }
       },
       {
         "candidate_id": "earth-macizo-del-hoggar",
@@ -2718,7 +3370,18 @@
           "precip_mm_year": 0.6276,
           "albedo": 0.1679
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-salar-de-coipasa",
@@ -2755,7 +3418,17 @@
           "precip_mm_year": 1.0,
           "albedo": 0.1717
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.667,
+          "shared": [
+            "basalt",
+            "hydrated-minerals"
+          ],
+          "only_site": [
+            "impact-crater"
+          ],
+          "only_candidate": []
+        }
       },
       {
         "candidate_id": "earth-uturuncu-bolivia",
@@ -2768,7 +3441,18 @@
           "precip_mm_year": 0.7051,
           "albedo": 0.0547
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-licancabur-laguna-verde",
@@ -2794,7 +3478,18 @@
           "precip_mm_year": 0.7993,
           "albedo": 0.0547
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-ojos-del-salado",
@@ -2831,7 +3526,18 @@
           "precip_mm_year": 0.6312,
           "albedo": 0.2811
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-torotoro-umajalanta",
@@ -2892,7 +3598,18 @@
           "precip_mm_year": 0.5794,
           "albedo": 0.4887
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-askja-islandia",
@@ -2905,7 +3622,19 @@
           "precip_mm_year": 0.8733,
           "albedo": 0.5642
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.25,
+          "shared": [
+            "basalt"
+          ],
+          "only_site": [
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-salar-de-uyuni",
@@ -3026,7 +3755,18 @@
           "precip_mm_year": 0.5495,
           "albedo": 0.1679
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "glacier"
+          ]
+        }
       },
       {
         "candidate_id": "earth-mauna-kea-hawai",
@@ -3039,7 +3779,17 @@
           "precip_mm_year": 0.954,
           "albedo": 0.1717
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.333,
+          "shared": [
+            "basalt"
+          ],
+          "only_site": [
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": []
+        }
       },
       {
         "candidate_id": "earth-valles-secos-mcmurdo",
@@ -3050,7 +3800,20 @@
           "precip_mm_year": 0.556,
           "albedo": 0.734
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "extreme-cold",
+            "hyper-arid",
+            "permafrost"
+          ]
+        }
       },
       {
         "candidate_id": "earth-manjanggul-jeju",
@@ -3083,7 +3846,17 @@
           "precip_mm_year": 0.8398,
           "albedo": 0.6962
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.333,
+          "shared": [
+            "basalt"
+          ],
+          "only_site": [
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": []
+        }
       }
     ],
     "mars-gale": [
@@ -3098,7 +3871,18 @@
           "precip_mm_year": 0.0,
           "albedo": 0.2717
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "aeolian-dunes",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "hyper-arid"
+          ]
+        }
       },
       {
         "candidate_id": "earth-tibesti-chad",
@@ -3135,7 +3919,17 @@
           "precip_mm_year": 0.4803,
           "albedo": 0.0679
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.333,
+          "shared": [
+            "aeolian-dunes"
+          ],
+          "only_site": [
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": []
+        }
       },
       {
         "candidate_id": "earth-laguna-colorada",
@@ -3148,7 +3942,18 @@
           "precip_mm_year": 0.6479,
           "albedo": 0.0679
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "aeolian-dunes",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-mar-de-arena-namib",
@@ -3268,7 +4073,17 @@
           "precip_mm_year": 0.6708,
           "albedo": 0.0642
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.333,
+          "shared": [
+            "aeolian-dunes"
+          ],
+          "only_site": [
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": []
+        }
       },
       {
         "candidate_id": "earth-el-malpais-nuevo-mexico",
@@ -3364,7 +4179,18 @@
           "precip_mm_year": 0.6599,
           "albedo": 0.0868
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "aeolian-dunes",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-craters-of-the-moon-idaho",
@@ -3402,7 +4228,19 @@
           "precip_mm_year": 0.5276,
           "albedo": 0.0642
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.25,
+          "shared": [
+            "aeolian-dunes"
+          ],
+          "only_site": [
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "dust-activity"
+          ]
+        }
       },
       {
         "candidate_id": "earth-pinacate-mexico",
@@ -3462,7 +4300,18 @@
           "precip_mm_year": 0.5623,
           "albedo": 0.0113
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "aeolian-dunes",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-haughton-isla-devon",
@@ -3522,7 +4371,18 @@
           "precip_mm_year": 0.6276,
           "albedo": 0.0453
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "aeolian-dunes",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-undara-australia",
@@ -3559,7 +4419,17 @@
           "precip_mm_year": 0.7944,
           "albedo": 0.1811
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.333,
+          "shared": [
+            "hydrated-minerals"
+          ],
+          "only_site": [
+            "aeolian-dunes",
+            "impact-crater"
+          ],
+          "only_candidate": []
+        }
       },
       {
         "candidate_id": "earth-salar-de-coipasa",
@@ -3596,7 +4466,18 @@
           "precip_mm_year": 0.6312,
           "albedo": 0.1585
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "aeolian-dunes",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-dallol-danakil",
@@ -3609,7 +4490,19 @@
           "precip_mm_year": 0.7892,
           "albedo": 0.1434
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "aeolian-dunes",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "evaporite",
+            "hyper-arid"
+          ]
+        }
       },
       {
         "candidate_id": "earth-uturuncu-bolivia",
@@ -3622,7 +4515,18 @@
           "precip_mm_year": 0.7051,
           "albedo": 0.0679
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "aeolian-dunes",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-etosha-namibia",
@@ -3659,7 +4563,18 @@
           "precip_mm_year": 0.5794,
           "albedo": 0.366
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "aeolian-dunes",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-askja-islandia",
@@ -3672,7 +4587,19 @@
           "precip_mm_year": 0.8733,
           "albedo": 0.4415
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "aeolian-dunes",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "basalt",
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-salar-de-uyuni",
@@ -3722,7 +4649,19 @@
           "precip_mm_year": 1.0,
           "albedo": 0.2943
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.25,
+          "shared": [
+            "hydrated-minerals"
+          ],
+          "only_site": [
+            "aeolian-dunes",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "basalt"
+          ]
+        }
       },
       {
         "candidate_id": "earth-salar-de-arizaro",
@@ -3735,7 +4674,18 @@
           "precip_mm_year": 0.7993,
           "albedo": 0.0679
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "aeolian-dunes",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-volcan-tunupa-uyuni",
@@ -3833,7 +4783,18 @@
           "precip_mm_year": 0.5495,
           "albedo": 0.0453
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "aeolian-dunes",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "glacier"
+          ]
+        }
       },
       {
         "candidate_id": "earth-valles-secos-mcmurdo",
@@ -3844,7 +4805,20 @@
           "precip_mm_year": 0.556,
           "albedo": 0.6113
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "aeolian-dunes",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "extreme-cold",
+            "hyper-arid",
+            "permafrost"
+          ]
+        }
       },
       {
         "candidate_id": "earth-volcan-socompa",
@@ -3904,7 +4878,18 @@
           "precip_mm_year": 0.954,
           "albedo": 0.2943
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "aeolian-dunes",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "basalt"
+          ]
+        }
       },
       {
         "candidate_id": "earth-svalbard-sverrefjellet",
@@ -3915,7 +4900,18 @@
           "precip_mm_year": 0.8398,
           "albedo": 0.5736
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "aeolian-dunes",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "basalt"
+          ]
+        }
       },
       {
         "candidate_id": "earth-manjanggul-jeju",
@@ -3952,7 +4948,17 @@
           "precip_mm_year": 0.5276,
           "albedo": 0.1057
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "aeolian-dunes",
+            "dust-activity"
+          ]
+        }
       },
       {
         "candidate_id": "earth-dasht-e-kavir",
@@ -3965,7 +4971,16 @@
           "precip_mm_year": 0.5623,
           "albedo": 0.0302
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-gilf-kebir",
@@ -3978,7 +4993,16 @@
           "precip_mm_year": 0.0,
           "albedo": 0.3132
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "hyper-arid"
+          ]
+        }
       },
       {
         "candidate_id": "earth-cuenca-qaidam",
@@ -4079,7 +5103,16 @@
           "precip_mm_year": 0.6312,
           "albedo": 0.2
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-salar-de-arizaro",
@@ -4092,7 +5125,16 @@
           "precip_mm_year": 0.7993,
           "albedo": 0.0264
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-etosha-namibia",
@@ -4149,7 +5191,17 @@
           "precip_mm_year": 0.7892,
           "albedo": 0.1019
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "evaporite",
+            "hyper-arid"
+          ]
+        }
       },
       {
         "candidate_id": "earth-chott-el-djerid",
@@ -4162,7 +5214,16 @@
           "precip_mm_year": 0.5794,
           "albedo": 0.4075
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-el-malpais-nuevo-mexico",
@@ -4219,7 +5280,16 @@
           "precip_mm_year": 0.4803,
           "albedo": 0.0264
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "aeolian-dunes"
+          ]
+        }
       },
       {
         "candidate_id": "earth-desierto-tengger",
@@ -4232,7 +5302,16 @@
           "precip_mm_year": 0.6708,
           "albedo": 0.1057
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "aeolian-dunes"
+          ]
+        }
       },
       {
         "candidate_id": "earth-laguna-colorada",
@@ -4245,7 +5324,16 @@
           "precip_mm_year": 0.6479,
           "albedo": 0.0264
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-mdrs-utah",
@@ -4394,7 +5482,16 @@
           "precip_mm_year": 0.6599,
           "albedo": 0.0453
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-haughton-isla-devon",
@@ -4474,7 +5571,16 @@
           "precip_mm_year": 0.7944,
           "albedo": 0.1396
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "hydrated-minerals"
+          ]
+        }
       },
       {
         "candidate_id": "earth-pinacate-mexico",
@@ -4509,7 +5615,16 @@
           "precip_mm_year": 0.6276,
           "albedo": 0.0868
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-uturuncu-bolivia",
@@ -4522,7 +5637,16 @@
           "precip_mm_year": 0.7051,
           "albedo": 0.0264
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-licancabur-laguna-verde",
@@ -4548,7 +5672,17 @@
           "precip_mm_year": 1.0,
           "albedo": 0.2528
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "basalt",
+            "hydrated-minerals"
+          ]
+        }
       },
       {
         "candidate_id": "earth-la-corona-lanzarote",
@@ -4580,7 +5714,17 @@
           "precip_mm_year": 0.556,
           "albedo": 0.6528
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.333,
+          "shared": [
+            "permafrost"
+          ],
+          "only_site": [],
+          "only_candidate": [
+            "extreme-cold",
+            "hyper-arid"
+          ]
+        }
       },
       {
         "candidate_id": "earth-askja-islandia",
@@ -4593,7 +5737,17 @@
           "precip_mm_year": 0.8733,
           "albedo": 0.483
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "basalt",
+            "volcanic-field"
+          ]
+        }
       },
       {
         "candidate_id": "earth-ojos-del-salado",
@@ -4683,7 +5837,16 @@
           "precip_mm_year": 0.5495,
           "albedo": 0.0868
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "glacier"
+          ]
+        }
       },
       {
         "candidate_id": "earth-volcan-socompa",
@@ -4718,7 +5881,16 @@
           "precip_mm_year": 0.954,
           "albedo": 0.2528
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "basalt"
+          ]
+        }
       },
       {
         "candidate_id": "earth-manjanggul-jeju",
@@ -4749,7 +5921,16 @@
           "precip_mm_year": 0.8398,
           "albedo": 0.6151
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "basalt"
+          ]
+        }
       }
     ]
   }
