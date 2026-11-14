@@ -1,0 +1,92 @@
+/* Estilos propios del Comparador (F3). Los tokens de diseño globales los aporta Noe en src/styles/. */
+.comparador {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.comparador-score {
+  font-size: 1.1rem;
+}
+
+.comparador-table-wrap {
+  overflow-x: auto;
+}
+
+.comparador-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 560px;
+}
+
+.comparador-table th,
+.comparador-table td {
+  border-bottom: 1px solid #c8c8c8;
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.comparador-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.comparador-bar meter {
+  width: 6rem;
+}
+
+.comparador-radar {
+  margin: 0;
+  max-width: 520px;
+}
+
+.comparador-radar figcaption {
+  font-size: 0.9rem;
+  color: #444444;
+}
+
+.comparador-tags {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 0;
+}
+
+.comparador-tags dt {
+  font-weight: 600;
+}
+
+.comparador-tags dd {
+  margin: 0.25rem 0 0;
+}
+
+.comparador-taglist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.comparador-taglist li {
+  border: 1px solid #1f4fbf;
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+  font-size: 0.9rem;
+}
+
+.comparador-breaks ul {
+  padding-left: 1.25rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
