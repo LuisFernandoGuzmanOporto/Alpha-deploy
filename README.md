@@ -6,7 +6,7 @@
 
 ## The problem
 
-Teams preparing lunar bases and Mars landings test rovers, instruments and operations in Earth analogs, but the usual ones (Atacama, Devon Island, Death Valley) were chosen by experience, not by a systematic comparison with the actual target sites. And no place on Earth reproduces the Moon or Mars: each analog is good for some conditions and fails for others.
+Teams preparing lunar bases and Mars landings test rovers, instruments and operations in Earth analogs, but, as the challenge itself notes, well-known analogs such as the Atacama Desert, Haughton Crater or Death Valley "are not entirely well characterized". And no place on Earth reproduces the Moon or Mars: each analog is good for some conditions and fails for others.
 
 ## What it does
 
