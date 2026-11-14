@@ -1,0 +1,25 @@
+:root {
+  color-scheme: light;
+  --ea-ink: #142d3b;
+  --ea-muted: #506570;
+  --ea-bg: #f3f6f4;
+  --ea-surface: #ffffff;
+  --ea-primary: #075e57;
+  --ea-primary-hover: #03463f;
+  --ea-soft: #e4f2ec;
+  --ea-border: #c5d3ce;
+  --ea-mars: #963e25;
+  --ea-mars-soft: #fff0e8;
+  --ea-focus: #175ab5;
+  --ea-font: "Segoe UI", system-ui, sans-serif;
+  --ea-mono: ui-monospace, Consolas, monospace;
+  --ea-space-1: 4px;
+  --ea-space-2: 8px;
+  --ea-space-3: 12px;
+  --ea-space-4: 16px;
+  --ea-space-6: 24px;
+  --ea-space-8: 32px;
+  --ea-space-12: 48px;
+  --ea-radius: 16px;
+  --ea-shadow: 0 8px 32px #142d3b0d;
+}
