@@ -1,7 +1,13 @@
 /* Estilos propios del Comparador (F3). Los colores usan los tokens de Noe (src/styles/) con valor de respaldo. */
 .comparador {
   display: grid;
+  /* minmax(0, 1fr) deja que la tabla use su desplazamiento propio en pantallas angostas. */
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
+}
+
+.comparador h2 {
+  overflow-wrap: anywhere;
 }
 
 .comparador-score {
