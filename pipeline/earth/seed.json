@@ -1,0 +1,904 @@
+[
+  {
+    "id": "earth-atacama-nucleo-hiperarido",
+    "name": "Núcleo hiperárido del Atacama (Yungay)",
+    "country": "Chile",
+    "is_bolivia": false,
+    "known": true,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [
+      "hyper-arid"
+    ],
+    "lat": -24.5,
+    "lon": -69.25,
+    "coord_source": "Wikipedia, artículo 'Atacama Desert' (centro del desierto: https://en.wikipedia.org/wiki/Atacama_Desert). El punto exacto de Yungay no se obtuvo: a verificar",
+    "why": "Suelos hiperáridos descritos como semejantes a los de Marte y límite seco de la vida microbiana.",
+    "references": [
+      "https://doi.org/10.1126/science.1089143",
+      "https://doi.org/10.1016/j.asr.2011.10.001"
+    ]
+  },
+  {
+    "id": "earth-valles-secos-mcmurdo",
+    "name": "Valles Secos de McMurdo",
+    "country": "Antártida",
+    "is_bolivia": false,
+    "known": true,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": -77.4667,
+    "lon": 162.5167,
+    "coord_source": "Wikipedia, artículo 'McMurdo Dry Valleys' (https://en.wikipedia.org/wiki/McMurdo_Dry_Valleys)",
+    "why": "Zonas de microclima y procesos geomorfológicos descritos como análogos geológicos, ambientales y ecológicos de la superficie de Marte.",
+    "references": [
+      "https://doi.org/10.1016/j.icarus.2007.06.018",
+      "https://doi.org/10.1016/b978-0-12-820245-6.00011-2"
+    ]
+  },
+  {
+    "id": "earth-haughton-isla-devon",
+    "name": "Estructura de impacto Haughton (isla Devon)",
+    "country": "Canadá",
+    "is_bolivia": false,
+    "known": true,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [
+      "impact-crater"
+    ],
+    "lat": 75.3833,
+    "lon": -89.6667,
+    "coord_source": "Wikipedia, artículo 'Haughton impact crater' (https://en.wikipedia.org/wiki/Haughton_impact_crater)",
+    "why": "Estructura de impacto sede del Proyecto Haughton-Mars, con investigación de relevancia para los estudios planetarios.",
+    "references": [
+      "https://doi.org/10.1111/j.1945-5100.2005.tb00144.x",
+      "https://doi.org/10.1007/978-3-642-27833-4_5534-1"
+    ]
+  },
+  {
+    "id": "earth-mdrs-utah",
+    "name": "Mars Desert Research Station (Utah)",
+    "country": "Estados Unidos",
+    "is_bolivia": false,
+    "known": true,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": 38.4065,
+    "lon": -110.7919,
+    "coord_source": "Wikipedia, artículo 'Mars Desert Research Station' (https://en.wikipedia.org/wiki/Mars_Desert_Research_Station)",
+    "why": "Estación de simulación de Marte en un desierto de Utah, usada como sitio análogo.",
+    "references": [
+      "https://doi.org/10.1016/j.pss.2025.106038",
+      "https://doi.org/10.15560/20.5.1096"
+    ]
+  },
+  {
+    "id": "earth-dallol-danakil",
+    "name": "Dallol (depresión de Danakil)",
+    "country": "Etiopía",
+    "is_bolivia": false,
+    "known": true,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": 14.2386,
+    "lon": 40.2936,
+    "coord_source": "Wikipedia, artículo 'Dallol (ghost town)' (https://en.wikipedia.org/wiki/Dallol_(ghost_town))",
+    "why": "Área geotérmica del norte de Afar descrita como un análogo planetario de campo excepcional.",
+    "references": [
+      "https://doi.org/10.1089/ast.2018.1926"
+    ],
+    "land_below_sea_level": true
+  },
+  {
+    "id": "earth-askja-islandia",
+    "name": "Caldera de Askja (Islandia)",
+    "country": "Islandia",
+    "is_bolivia": false,
+    "known": true,
+    "analog_for": [
+      "moon",
+      "mars"
+    ],
+    "tags": [],
+    "lat": 65.033,
+    "lon": -16.783,
+    "coord_source": "Wikipedia, artículo 'Askja' (https://en.wikipedia.org/wiki/Askja)",
+    "why": "Caldera descrita como análogo natural lunar; sus depósitos volcánicos también se estudian en relación con Marte.",
+    "references": [
+      "https://doi.org/10.1007/978-3-642-27833-4_5623-1",
+      "https://doi.org/10.1021/acsearthspacechem.0c00015"
+    ]
+  },
+  {
+    "id": "earth-mauna-kea-hawai",
+    "name": "Mauna Kea (Hawái)",
+    "country": "Estados Unidos",
+    "is_bolivia": false,
+    "known": true,
+    "analog_for": [
+      "moon"
+    ],
+    "tags": [],
+    "lat": 19.8206,
+    "lon": -155.4681,
+    "coord_source": "Wikipedia, artículo 'Mauna Kea' (cumbre: https://en.wikipedia.org/wiki/Mauna_Kea). Las pruebas de análogo lunar se hicieron en sus laderas: a verificar",
+    "why": "Sitio de pruebas de análogo para el aprovechamiento de recursos in situ en la Luna.",
+    "references": [
+      "https://doi.org/10.2514/6.2010-8902"
+    ]
+  },
+  {
+    "id": "earth-rio-tinto-espana",
+    "name": "Distrito minero de Río Tinto",
+    "country": "España",
+    "is_bolivia": false,
+    "known": true,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": 37.7,
+    "lon": -6.55,
+    "coord_source": "Coordenada aproximada del distrito minero del alto Río Tinto, sin verificar contra un gazetteer: a verificar",
+    "why": "Cuenca ácida con mineralogía y geobiología sedimentaria usadas para interpretar afloramientos de Meridiani Planum, en Marte.",
+    "references": [
+      "https://doi.org/10.1016/j.epsl.2005.09.043",
+      "https://doi.org/10.1007/978-3-642-11274-4_3050"
+    ]
+  },
+  {
+    "id": "earth-ubehebe-valle-de-la-muerte",
+    "name": "Cráter Ubehebe (Valle de la Muerte)",
+    "country": "Estados Unidos",
+    "is_bolivia": false,
+    "known": true,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": 37.0097,
+    "lon": -117.4503,
+    "coord_source": "Wikipedia, artículo 'Ubehebe Crater' (https://en.wikipedia.org/wiki/Ubehebe_Crater)",
+    "why": "Cráter del Valle de la Muerte propuesto como análogo de cráteres de Marte por sus depósitos de la Pequeña Edad de Hielo.",
+    "references": [
+      "https://doi.org/10.1016/j.geomorph.2015.05.029"
+    ]
+  },
+  {
+    "id": "earth-svalbard-sverrefjellet",
+    "name": "Volcán Sverrefjellet (Svalbard)",
+    "country": "Noruega",
+    "is_bolivia": false,
+    "known": true,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": 79.4317,
+    "lon": 13.305,
+    "coord_source": "Wikipedia, artículo 'Sverrefjellet' (https://en.wikipedia.org/wiki/Sverrefjellet)",
+    "why": "Sus carbonatos en basalto se comparan con los glóbulos del meteorito marciano ALH 84001.",
+    "references": [
+      "https://doi.org/10.1130/abs/2016am-280390",
+      "https://doi.org/10.3402/polar.v31i0.17320"
+    ]
+  },
+  {
+    "id": "earth-kau-kilauea-hawai",
+    "name": "Desierto de Ka'u (volcán Kilauea)",
+    "country": "Estados Unidos",
+    "is_bolivia": false,
+    "known": true,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": 19.4086,
+    "lon": -155.2967,
+    "coord_source": "Wikipedia, artículo 'Kaʻū Desert' (https://en.wikipedia.org/wiki/Ka%CA%BB%C5%AB_Desert)",
+    "why": "Ambiente volcánico con sílice descrito como análogo de Marte.",
+    "references": [
+      "https://doi.org/10.1029/2009je003347"
+    ]
+  },
+  {
+    "id": "earth-cuenca-qaidam",
+    "name": "Cuenca de Qaidam",
+    "country": "China",
+    "is_bolivia": false,
+    "known": true,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [
+      "aeolian-dunes"
+    ],
+    "lat": 37.2667,
+    "lon": 94.45,
+    "coord_source": "Wikipedia, artículo 'Qaidam Basin' (centro de la cuenca: https://en.wikipedia.org/wiki/Qaidam_Basin)",
+    "why": "Cuenca desértica descrita como análogo de Marte; sus dunas lineales se comparan con las de Chasma Boreale.",
+    "references": [
+      "https://doi.org/10.1016/j.geomorph.2018.08.033",
+      "https://doi.org/10.1038/s41597-025-06085-3"
+    ]
+  },
+  {
+    "id": "earth-tibesti-chad",
+    "name": "Montañas Tibesti",
+    "country": "Chad",
+    "is_bolivia": false,
+    "known": true,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [
+      "volcanic-field"
+    ],
+    "lat": 20.7808,
+    "lon": 18.0498,
+    "coord_source": "Wikipedia, artículo 'Tibesti Mountains' (centro de la cordillera: https://en.wikipedia.org/wiki/Tibesti_Mountains)",
+    "why": "Provincia volcánica cuyas formas se han comparado con las de Elysium, en Marte.",
+    "references": [
+      "https://doi.org/10.1130/0016-7606(1977)88<908:covfoe>2.0.co;2",
+      "https://doi.org/10.1007/s00445-015-0955-6"
+    ]
+  },
+  {
+    "id": "earth-craters-of-the-moon-idaho",
+    "name": "Craters of the Moon (Idaho)",
+    "country": "Estados Unidos",
+    "is_bolivia": false,
+    "known": true,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [
+      "basalt",
+      "volcanic-field"
+    ],
+    "lat": 43.4617,
+    "lon": -113.5627,
+    "coord_source": "Wikipedia, artículo 'Craters of the Moon National Monument and Preserve' (https://en.wikipedia.org/wiki/Craters_of_the_Moon_National_Monument_and_Preserve)",
+    "why": "Campo volcánico basáltico con mineralización de sulfatos propuesto como posible análogo marciano.",
+    "references": [
+      "https://doi.org/10.1016/j.pss.2012.02.002",
+      "https://doi.org/10.46427/gold2022.12537"
+    ]
+  },
+  {
+    "id": "earth-pinacate-mexico",
+    "name": "Campo volcánico El Pinacate",
+    "country": "México",
+    "is_bolivia": false,
+    "known": true,
+    "analog_for": [
+      "moon",
+      "mars"
+    ],
+    "tags": [
+      "volcanic-field"
+    ],
+    "lat": 31.77,
+    "lon": -113.49,
+    "coord_source": "Wikipedia, artículo 'Pinacate Peaks' (https://en.wikipedia.org/wiki/Pinacate_Peaks)",
+    "why": "Campo volcánico usado en ejercicios de campo como análogo del volcanismo planetario.",
+    "references": [
+      "https://doi.org/10.1130/2011.2483(27)",
+      "https://doi.org/10.1127/1860-1804/2006/0157-0451"
+    ]
+  },
+  {
+    "id": "earth-la-corona-lanzarote",
+    "name": "Tubo de lava La Corona (Lanzarote)",
+    "country": "España",
+    "is_bolivia": false,
+    "known": true,
+    "analog_for": [
+      "moon",
+      "mars"
+    ],
+    "tags": [
+      "lava-tubes",
+      "caves"
+    ],
+    "lat": 29.158,
+    "lon": -13.436,
+    "coord_source": "Coordenada aproximada del volcán La Corona, sin verificar contra un gazetteer: a verificar",
+    "why": "Tubo de lava estudiado como análogo planetario para cuevas de la Luna y Marte.",
+    "references": [
+      "https://doi.org/10.5194/egusphere-egu25-6513",
+      "https://doi.org/10.1007/978-3-030-05408-3_4"
+    ]
+  },
+  {
+    "id": "earth-desierto-de-lut-iran",
+    "name": "Desierto de Lut",
+    "country": "Irán",
+    "is_bolivia": false,
+    "known": true,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [
+      "aeolian-dunes"
+    ],
+    "lat": 30.605,
+    "lon": 59.0678,
+    "coord_source": "Wikipedia, artículo 'Lut Desert' (centro del desierto: https://en.wikipedia.org/wiki/Lut_Desert)",
+    "why": "Sus yardangs se proponen como análogos terrestres de los yardangs marcianos, y sus dunas barján se han caracterizado.",
+    "references": [
+      "https://doi.org/10.1130/abs/2017cd-292992",
+      "https://doi.org/10.1127/zfg/2020/0671"
+    ]
+  },
+  {
+    "id": "earth-salar-de-uyuni",
+    "name": "Salar de Uyuni",
+    "country": "Bolivia",
+    "is_bolivia": true,
+    "known": true,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [
+      "evaporite"
+    ],
+    "lat": -20.1338,
+    "lon": -67.4891,
+    "coord_source": "Wikipedia, artículo 'Salar de Uyuni' (https://en.wikipedia.org/wiki/Salar_de_Uyuni)",
+    "why": "Salmueras estacionales del mayor salar del mundo, propuestas como análogo de las salmueras marcianas; NASA lo describe como laboratorio natural para estudiar Marte.",
+    "references": [
+      "https://doi.org/10.3390/rs11182104",
+      "https://science.nasa.gov/earth/earth-observatory/bolivian-salt-flats-151813",
+      "https://doi.org/10.1016/s0009-2541(99)00251-x"
+    ]
+  },
+  {
+    "id": "earth-salar-de-coipasa",
+    "name": "Salar de Coipasa",
+    "country": "Bolivia",
+    "is_bolivia": true,
+    "known": true,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [
+      "evaporite"
+    ],
+    "lat": -19.2,
+    "lon": -68.1167,
+    "coord_source": "Wikipedia, artículo 'Coipasa Lake' (https://en.wikipedia.org/wiki/Coipasa_Lake)",
+    "why": "NASA describe a Uyuni y Coipasa como laboratorios naturales para estudiar el entorno marciano.",
+    "references": [
+      "https://science.nasa.gov/earth/earth-observatory/bolivian-salt-flats-151813",
+      "https://doi.org/10.1017/qua.2018.108"
+    ]
+  },
+  {
+    "id": "earth-licancabur-laguna-verde",
+    "name": "Volcán Licancabur y su lago de cumbre",
+    "country": "Bolivia",
+    "is_bolivia": true,
+    "known": true,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": -22.8339,
+    "lon": -67.8836,
+    "coord_source": "Wikipedia, artículo 'Licancabur' (https://en.wikipedia.org/wiki/Licancabur). El volcán está en la frontera entre Bolivia y Chile",
+    "why": "Lago de cráter de altura estudiado como análogo de los lagos marcianos de hace unos 3.500 millones de años.",
+    "references": [
+      "https://doi.org/10.1017/cbo9780511536014.015",
+      "https://en.wikipedia.org/wiki/Licancabur_Lake"
+    ]
+  },
+  {
+    "id": "earth-laguna-colorada",
+    "name": "Laguna Colorada",
+    "country": "Bolivia",
+    "is_bolivia": true,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": -22.1986,
+    "lon": -67.7811,
+    "coord_source": "Wikipedia, artículo 'Laguna Colorada' (https://en.wikipedia.org/wiki/Laguna_Colorada)",
+    "why": "",
+    "references": [
+      "https://doi.org/10.1099/ijs.0.014522-0"
+    ]
+  },
+  {
+    "id": "earth-laguna-verde-bolivia",
+    "name": "Laguna Verde (Bolivia)",
+    "country": "Bolivia",
+    "is_bolivia": true,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": -22.795,
+    "lon": -67.825,
+    "coord_source": "Wikipedia, artículo 'Laguna Verde (Bolivia)' (https://en.wikipedia.org/wiki/Laguna_Verde_(Bolivia))",
+    "why": "",
+    "references": []
+  },
+  {
+    "id": "earth-uturuncu-bolivia",
+    "name": "Volcán Uturuncu (Sud Lípez)",
+    "country": "Bolivia",
+    "is_bolivia": true,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": -22.27,
+    "lon": -67.18,
+    "coord_source": "Wikipedia, artículo 'Uturuncu' (https://en.wikipedia.org/wiki/Uturuncu)",
+    "why": "",
+    "references": [
+      "https://doi.org/10.1002/essoar.10506460.1"
+    ],
+    "note_extra": "El estudio de análogo de Marte del complejo volcánico Altiplano-Puna (https://doi.org/10.3390/rs14092081) cubre el norte de Chile; no se encontró uno para el sector boliviano"
+  },
+  {
+    "id": "earth-nevado-sajama",
+    "name": "Nevado Sajama",
+    "country": "Bolivia",
+    "is_bolivia": true,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [
+      "glacier"
+    ],
+    "lat": -18.1081,
+    "lon": -68.8831,
+    "coord_source": "Wikipedia, artículo 'Nevado Sajama' (https://en.wikipedia.org/wiki/Nevado_Sajama)",
+    "why": "",
+    "references": [
+      "https://doi.org/10.1029/2001jd900198"
+    ]
+  },
+  {
+    "id": "earth-torotoro-umajalanta",
+    "name": "Parque Nacional Torotoro (cueva de Umajalanta)",
+    "country": "Bolivia",
+    "is_bolivia": true,
+    "known": false,
+    "analog_for": [
+      "moon",
+      "mars"
+    ],
+    "tags": [
+      "caves"
+    ],
+    "lat": -18.1,
+    "lon": -65.7667,
+    "coord_source": "Wikipedia, artículo 'Torotoro National Park' (centro del parque: https://en.wikipedia.org/wiki/Torotoro_National_Park)",
+    "why": "",
+    "references": [
+      "https://showcaves.com/english/other/caves/Umajalanta.html"
+    ],
+    "note_extra": "Cueva calcárea de unos 4,5 km explorados según fuentes de espeleología; el análogo planetario para cuevas es una hipótesis del equipo, sin estudio publicado encontrado"
+  },
+  {
+    "id": "earth-arbol-de-piedra-siloli",
+    "name": "Desierto de Siloli (Árbol de Piedra)",
+    "country": "Bolivia",
+    "is_bolivia": true,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": -22.0517,
+    "lon": -67.8833,
+    "coord_source": "Wikipedia, artículo 'Árbol de Piedra' (https://en.wikipedia.org/wiki/%C3%81rbol_de_Piedra)",
+    "why": "",
+    "references": []
+  },
+  {
+    "id": "earth-volcan-tunupa-uyuni",
+    "name": "Volcán Tunupa (orilla norte del salar de Uyuni)",
+    "country": "Bolivia",
+    "is_bolivia": true,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": -19.8325,
+    "lon": -67.6458,
+    "coord_source": "Wikipedia, artículo 'Tunupa' (https://en.wikipedia.org/wiki/Tunupa)",
+    "why": "",
+    "references": []
+  },
+  {
+    "id": "earth-badain-jaran-china",
+    "name": "Desierto de Badain Jaran (megadunas)",
+    "country": "China",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [
+      "aeolian-dunes"
+    ],
+    "lat": 40.0725,
+    "lon": 102.21,
+    "coord_source": "Wikipedia, artículo 'Badain Jaran Desert' (https://en.wikipedia.org/wiki/Badain_Jaran_Desert)",
+    "why": "",
+    "references": [
+      "https://doi.org/10.1016/j.geomorph.2003.07.023"
+    ]
+  },
+  {
+    "id": "earth-rub-al-khali",
+    "name": "Rub' al Khali (Cuarto Vacío)",
+    "country": "Arabia Saudita",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [
+      "aeolian-dunes"
+    ],
+    "lat": 20.0,
+    "lon": 50.0,
+    "coord_source": "Wikipedia, artículo 'Rub' al Khali' (centro aproximado: https://en.wikipedia.org/wiki/Rub%27_al_Khali)",
+    "why": "",
+    "references": [
+      "https://doi.org/10.1016/j.geomorph.2010.03.029"
+    ]
+  },
+  {
+    "id": "earth-mar-de-arena-namib",
+    "name": "Mar de arena del Namib",
+    "country": "Namibia",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [
+      "aeolian-dunes"
+    ],
+    "lat": -24.7519,
+    "lon": 15.2764,
+    "coord_source": "Wikipedia, artículo 'Namib' (https://en.wikipedia.org/wiki/Namib)",
+    "why": "",
+    "references": [
+      "https://doi.org/10.1201/9781003763185"
+    ]
+  },
+  {
+    "id": "earth-harrat-khaybar",
+    "name": "Campo volcánico Harrat Khaybar",
+    "country": "Arabia Saudita",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "mars",
+      "moon"
+    ],
+    "tags": [
+      "volcanic-field"
+    ],
+    "lat": 25.7194,
+    "lon": 39.9428,
+    "coord_source": "Wikipedia, artículo 'Harrat Khaybar' (https://en.wikipedia.org/wiki/Harrat_Khaybar)",
+    "why": "",
+    "references": [
+      "https://doi.org/10.1007/s12371-017-0243-2"
+    ]
+  },
+  {
+    "id": "earth-ojos-del-salado",
+    "name": "Volcán Ojos del Salado",
+    "country": "Chile y Argentina",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [
+      "permafrost"
+    ],
+    "lat": -27.1097,
+    "lon": -68.5414,
+    "coord_source": "Wikipedia, artículo 'Ojos del Salado' (https://en.wikipedia.org/wiki/Ojos_del_Salado)",
+    "why": "",
+    "references": [
+      "https://doi.org/10.1002/ppp.1989"
+    ]
+  },
+  {
+    "id": "earth-volcan-socompa",
+    "name": "Volcán Socompa (Puna de Atacama)",
+    "country": "Argentina y Chile",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [
+      "hyper-arid"
+    ],
+    "lat": -24.3958,
+    "lon": -68.2458,
+    "coord_source": "Wikipedia, artículo 'Socompa' (https://en.wikipedia.org/wiki/Socompa)",
+    "why": "",
+    "references": [
+      "https://doi.org/10.1128/aem.01469-08"
+    ]
+  },
+  {
+    "id": "earth-el-malpais-nuevo-mexico",
+    "name": "El Malpaís (Nuevo México)",
+    "country": "Estados Unidos",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "moon",
+      "mars"
+    ],
+    "tags": [
+      "lava-tubes"
+    ],
+    "lat": 34.8772,
+    "lon": -108.0508,
+    "coord_source": "Wikipedia, artículo 'El Malpais National Monument' (https://en.wikipedia.org/wiki/El_Malpais_National_Monument)",
+    "why": "",
+    "references": [
+      "https://doi.org/10.58799/nmms-1989.105"
+    ]
+  },
+  {
+    "id": "earth-manjanggul-jeju",
+    "name": "Tubo de lava Manjanggul (Jeju)",
+    "country": "Corea del Sur",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "moon",
+      "mars"
+    ],
+    "tags": [
+      "lava-tubes"
+    ],
+    "lat": 33.5282,
+    "lon": 126.7701,
+    "coord_source": "Wikipedia, artículo 'Manjanggul' (https://en.wikipedia.org/wiki/Manjanggul)",
+    "why": "",
+    "references": [
+      "https://doi.org/10.1127/zfg_suppl/2021/0695"
+    ]
+  },
+  {
+    "id": "earth-undara-australia",
+    "name": "Tubos de lava de Undara",
+    "country": "Australia",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "moon",
+      "mars"
+    ],
+    "tags": [
+      "lava-tubes"
+    ],
+    "lat": -18.2011,
+    "lon": 144.5961,
+    "coord_source": "Wikipedia, artículo 'Undara Volcanic National Park' (https://en.wikipedia.org/wiki/Undara_Volcanic_National_Park)",
+    "why": "",
+    "references": [
+      "https://doi.org/10.3390/d13070326"
+    ]
+  },
+  {
+    "id": "earth-lava-beds-california",
+    "name": "Lava Beds (California)",
+    "country": "Estados Unidos",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "moon",
+      "mars"
+    ],
+    "tags": [
+      "lava-tubes"
+    ],
+    "lat": 41.7139,
+    "lon": -121.5083,
+    "coord_source": "Wikipedia, artículo 'Lava Beds National Monument' (https://en.wikipedia.org/wiki/Lava_Beds_National_Monument)",
+    "why": "",
+    "references": [
+      "https://doi.org/10.3133/b1673"
+    ]
+  },
+  {
+    "id": "earth-etosha-namibia",
+    "name": "Salar de Etosha",
+    "country": "Namibia",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [
+      "dust-activity"
+    ],
+    "lat": -18.7853,
+    "lon": 16.2639,
+    "coord_source": "Wikipedia, artículo 'Etosha Pan' (https://en.wikipedia.org/wiki/Etosha_Pan)",
+    "why": "",
+    "references": [
+      "https://doi.org/10.5194/egusphere-egu24-3661"
+    ]
+  },
+  {
+    "id": "earth-chott-el-djerid",
+    "name": "Chott el Djerid",
+    "country": "Túnez",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": 33.7,
+    "lon": 8.43,
+    "coord_source": "Wikipedia, artículo 'Chott el Djerid' (https://en.wikipedia.org/wiki/Chott_el_Djerid)",
+    "why": "",
+    "references": []
+  },
+  {
+    "id": "earth-desierto-tengger",
+    "name": "Desierto de Tengger",
+    "country": "China",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": 38.7,
+    "lon": 104.7,
+    "coord_source": "Wikipedia, artículo 'Tengger Desert' (https://en.wikipedia.org/wiki/Tengger_Desert)",
+    "why": "",
+    "references": []
+  },
+  {
+    "id": "earth-dasht-e-kavir",
+    "name": "Gran Desierto Salado (Dasht-e Kavir)",
+    "country": "Irán",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": 34.7376,
+    "lon": 54.8271,
+    "coord_source": "Wikipedia, artículo 'Great Salt Desert' (https://en.wikipedia.org/wiki/Great_Salt_Desert)",
+    "why": "",
+    "references": []
+  },
+  {
+    "id": "earth-lago-eyre-australia",
+    "name": "Kati Thanda–lago Eyre",
+    "country": "Australia",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": -28.6667,
+    "lon": 137.3333,
+    "coord_source": "Wikipedia, artículo 'Kati Thanda–Lake Eyre' (https://en.wikipedia.org/wiki/Kati_Thanda%E2%80%93Lake_Eyre)",
+    "why": "",
+    "references": [],
+    "land_below_sea_level": true
+  },
+  {
+    "id": "earth-gilf-kebir",
+    "name": "Meseta de Gilf Kebir",
+    "country": "Egipto y Libia",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": 23.4414,
+    "lon": 25.8397,
+    "coord_source": "Wikipedia, artículo 'Gilf Kebir' (https://en.wikipedia.org/wiki/Gilf_Kebir)",
+    "why": "",
+    "references": []
+  },
+  {
+    "id": "earth-macizo-del-hoggar",
+    "name": "Macizo del Hoggar (Ahaggar)",
+    "country": "Argelia",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": 23.2889,
+    "lon": 5.5336,
+    "coord_source": "Wikipedia, artículo 'Hoggar Mountains' (https://en.wikipedia.org/wiki/Hoggar_Mountains)",
+    "why": "",
+    "references": []
+  },
+  {
+    "id": "earth-desierto-de-taklamakan",
+    "name": "Desierto de Taklamakan",
+    "country": "China",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": 38.9,
+    "lon": 82.2,
+    "coord_source": "Wikipedia, artículo 'Taklamakan Desert' (https://en.wikipedia.org/wiki/Taklamakan_Desert)",
+    "why": "",
+    "references": []
+  },
+  {
+    "id": "earth-montanas-del-pamir",
+    "name": "Desierto frío de altura del Pamir",
+    "country": "Tayikistán",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": 38.5,
+    "lon": 73.5,
+    "coord_source": "Wikipedia, artículo 'Pamir Mountains' (centro aproximado: https://en.wikipedia.org/wiki/Pamir_Mountains)",
+    "why": "",
+    "references": [
+      "https://doi.org/10.3390/microorganisms9010006"
+    ]
+  },
+  {
+    "id": "earth-salar-de-arizaro",
+    "name": "Salar de Arizaro",
+    "country": "Argentina",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": -24.723,
+    "lon": -67.738,
+    "coord_source": "Wikipedia, artículo 'Salar de Arizaro' (https://en.wikipedia.org/wiki/Salar_de_Arizaro)",
+    "why": "",
+    "references": []
+  }
+]
