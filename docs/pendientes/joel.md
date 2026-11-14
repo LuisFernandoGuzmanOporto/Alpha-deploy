@@ -13,7 +13,8 @@ Ya entregado: J-1 (requisitos), J-2 (README y atribución), J-4b (informe) y la 
 
 - [ ] **J-3, QA:** fusionar el PR #46 (segunda pasada). Falta la pasada de las 07:00 sobre producción, cuando exista la URL de Vercel. Los bugs van como issues de GitHub.
 - [ ] **J-4, pitch (`docs/PITCH.md`):**
-  - [ ] Asignar los dos oradores en `[PENDIENTE: asignar]`.
+  - [x] Cifras contrastadas con `results.json` el 14/11 y corregido el orden de Ojos del Salado y Socompa.
+  - [ ] Confirmar los oradores propuestos: Joel en la apertura y Noe en límites e impacto.
   - [ ] Poner la URL de Vercel donde dice `[PENDIENTE: URL de Vercel]`.
   - [ ] Revisar la ortografía en inglés.
   - [ ] Exportar a PDF y subirlo a Google Drive con acceso "cualquiera con el enlace".
