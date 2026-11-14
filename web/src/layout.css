@@ -39,3 +39,18 @@
     grid-template-columns: 1fr;
   }
 }
+
+.weights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.weights label {
+  display: grid;
+}
+
+.weights button {
+  justify-self: start;
+}
