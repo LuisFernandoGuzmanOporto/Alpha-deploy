@@ -1,0 +1,867 @@
+[
+  {
+    "candidate_id": "earth-atacama-nucleo-hiperarido",
+    "summary": "Núcleo hiperárido del desierto de Atacama, en el norte de Chile. Navarro-González y colaboradores (2003) describieron allí suelos semejantes a los de Marte, con compuestos orgánicos solo en trazas y muy pocas bacterias cultivables.",
+    "processes": [
+      "Hiperaridez: 11 mm de precipitación anual en la celda de NASA POWER.",
+      "Descomposición no biológica de compuestos orgánicos en el suelo, observada con experimentos inspirados en el de liberación marcada de las Viking (Navarro-González et al., 2003)."
+    ],
+    "use_cases": [
+      "Probar experimentos de detección de vida y de compuestos orgánicos en suelos casi estériles, como los de las Viking (Navarro-González et al., 2003).",
+      "Estudiar cómo varía la materia orgánica en los horizontes superficiales de suelos parecidos a los marcianos (Advances in Space Research, 2012)."
+    ],
+    "breaks_down": [
+      "La temperatura media de superficie es 15,7 °C (NASA POWER), unos 66 °C más que en Gale (−50,7 °C) y unos 176 °C más que en Faustini Rim A (−160,4 °C, Diviner).",
+      "Entra al top 10 de los sitios lunares solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares.",
+      "El punto usado es el centro del desierto y no la estación de Yungay: las variables describen la región, no el sitio exacto de los estudios."
+    ],
+    "references": [
+      {
+        "title": "Mars-Like Soils in the Atacama Desert, Chile, and the Dry Limit of Microbial Life (Science, 2003)",
+        "url": "https://doi.org/10.1126/science.1089143"
+      },
+      {
+        "title": "Variability of organic material in surface horizons of the hyper-arid Mars-like soils of the Atacama Desert (Advances in Space Research, 2012)",
+        "url": "https://doi.org/10.1016/j.asr.2011.10.001"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      },
+      {
+        "title": "LRO Diviner, temperaturas lunares (PDS Geosciences)",
+        "url": "https://pds-geosciences.wustl.edu/missions/lro/diviner.htm"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-licancabur-laguna-verde",
+    "summary": "Lago del cráter del volcán Licancabur (5868 m), en la frontera entre Bolivia y Chile. Un capítulo de The Geology of Mars (2007) usa los lagos de gran altura como este como pista para entender los ambientes acuosos del Noeico en Marte.",
+    "processes": [
+      "Lago de cráter a gran altura, usado como referencia de ambientes acuosos antiguos de Marte (The Geology of Mars, 2007).",
+      "Relieve volcánico fuerte: pendiente media de 15° y relieve de 434 m en la ventana de 10 km (Terrain Tiles)."
+    ],
+    "use_cases": [
+      "Buscar firmas de hábitat y de vida en lagos de altura como guía para explorar paleolagos marcianos (The Geology of Mars, 2007)."
+    ],
+    "breaks_down": [
+      "Es el primero del ranking en Peak Near Cabeus B y Malapert por pendiente y relieve, pero su temperatura media (14,7 °C) está unos 140 °C por encima de la de esos sitios (Diviner).",
+      "La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato).",
+      "Hoy tiene agua líquida en superficie; los lagos de Marte son antiguos y ya no existen en superficie."
+    ],
+    "references": [
+      {
+        "title": "Signatures of habitats and life in Earth's high-altitude lakes: clues to Noachian aqueous environments on Mars (The Geology of Mars, 2007)",
+        "url": "https://doi.org/10.1017/cbo9780511536014.015"
+      },
+      {
+        "title": "Wikipedia: Licancabur Lake",
+        "url": "https://en.wikipedia.org/wiki/Licancabur_Lake"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      },
+      {
+        "title": "Terrain Tiles (Mapzen) en AWS Open Data",
+        "url": "https://registry.opendata.aws/terrain-tiles/"
+      },
+      {
+        "title": "LRO Diviner, temperaturas lunares (PDS Geosciences)",
+        "url": "https://pds-geosciences.wustl.edu/missions/lro/diviner.htm"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-laguna-verde-bolivia",
+    "summary": "Laguna salada a unos 4300 m, al pie del volcán Licancabur, en el suroeste de Bolivia. Sus aguas llevan minerales en suspensión, entre ellos arsénico, y su color cambia de turquesa a verde esmeralda cuando el viento remueve los sedimentos.",
+    "processes": [
+      "Resuspensión de sedimentos por el viento, que cambia el color del agua.",
+      "Agua salada con minerales disueltos y en suspensión, entre ellos arsénico."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio publicado: comparar su química con la del lago del cráter vecino, que sí se estudia como análogo de Marte."
+    ],
+    "breaks_down": [
+      "No encontramos un estudio que la use como análogo planetario; su lugar en el ranking lunar se debe al relieve de la ventana, no a su química.",
+      "Comparte la celda de NASA POWER con el lago del Licancabur: la temperatura (14,7 °C) no distingue entre los dos lugares. La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato).",
+      "Tiene agua líquida en superficie, algo que hoy no existe ni en la Luna ni en Marte."
+    ],
+    "references": [
+      {
+        "title": "Wikipedia: Laguna Verde (Bolivia)",
+        "url": "https://en.wikipedia.org/wiki/Laguna_Verde_(Bolivia)"
+      },
+      {
+        "title": "Signatures of habitats and life in Earth's high-altitude lakes: clues to Noachian aqueous environments on Mars (The Geology of Mars, 2007)",
+        "url": "https://doi.org/10.1017/cbo9780511536014.015"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-uturuncu-bolivia",
+    "summary": "Volcán de 6008 m del sur de Bolivia que no entra en erupción desde hace unos 250 000 años, pero muestra deformación del suelo, sismicidad y fumarolas activas. Por eso se lo describe como un volcán «zombi».",
+    "processes": [
+      "Levantamiento del terreno detectado por radar satelital desde 1992, de 1 a 2 cm por año entre 1992 y 2006.",
+      "Fumarolas de dióxido de carbono y vapor de agua que depositan azufre."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio publicado: ensayar la combinación de métodos geofísicos (magnetotelúrica y densidad) que se usó para ver su estructura interna."
+    ],
+    "breaks_down": [
+      "El estudio del complejo volcánico Altiplano-Puna como análogo planetario cubre el sector chileno; no encontramos uno sobre este volcán.",
+      "La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato).",
+      "Entra al top 10 de los sitios lunares solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares."
+    ],
+    "references": [
+      {
+        "title": "Dissecting a Zombie: Shallow Volcanic Structure Revealed by Multiple Geophysical Data Sets at Uturuncu Volcano, Bolivia (2021)",
+        "url": "https://doi.org/10.1002/essoar.10506460.1"
+      },
+      {
+        "title": "Remote Sensing Survey of Altiplano-Puna Volcanic Complex Rocks and Minerals for Planetary Analog Use (Remote Sensing, 2022)",
+        "url": "https://doi.org/10.3390/rs14092081"
+      },
+      {
+        "title": "Wikipedia: Uturuncu",
+        "url": "https://en.wikipedia.org/wiki/Uturuncu"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-ojos-del-salado",
+    "summary": "El volcán más alto de la Tierra (6893 m), en la Diagonal Árida de los Andes, entre Chile y Argentina. Por la extrema aridez casi no hay hielo en superficie, aunque podría existir permafrost con hielo.",
+    "processes": [
+      "Régimen térmico del suelo medido durante cuatro años (2012-2016) en seis sitios entre 4200 y 6893 m (Permafrost and Periglacial Processes, 2018).",
+      "Permafrost posible bajo un clima extremadamente árido."
+    ],
+    "use_cases": [
+      "Propuesta del equipo: probar sensores de temperatura del subsuelo y de detección de hielo en terreno empinado y muy seco."
+    ],
+    "breaks_down": [
+      "Con −1,3 °C de media es el más frío del top 10 lunar, pero sigue unos 124 °C por encima de Peak Near Cabeus B (Diviner).",
+      "La celda de NASA POWER da 219 mm de precipitación anual, aunque el estudio de campo describe un clima extremadamente árido: la celda es demasiado gruesa para la cumbre. La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato)."
+    ],
+    "references": [
+      {
+        "title": "Shallow ground temperature measurements on the highest volcano on Earth, Mt. Ojos del Salado, Arid Andes, Chile (Permafrost and Periglacial Processes, 2018)",
+        "url": "https://doi.org/10.1002/ppp.1989"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      },
+      {
+        "title": "LRO Diviner, temperaturas lunares (PDS Geosciences)",
+        "url": "https://pds-geosciences.wustl.edu/missions/lro/diviner.htm"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-volcan-socompa",
+    "summary": "Volcán de la Puna de Atacama donde, cerca de la cumbre (6051 m), las fumarolas mantienen comunidades microbianas en forma de tapetes. Están aisladas en un paisaje estéril: las plantas vasculares no pasan de unos 4600 m.",
+    "processes": [
+      "Actividad fumarólica que aporta calor y humedad en un entorno hiperárido y de gran altura (Applied and Environmental Microbiology, 2009)."
+    ],
+    "use_cases": [
+      "Estudiar cómo una fuente geotermal sostiene islas de vida en un paisaje frío y seco, útil para pensar en hábitats geotermales de Marte (propuesta del equipo)."
+    ],
+    "breaks_down": [
+      "La vida depende del calor volcánico, que los sitios polares lunares no tienen.",
+      "La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato).",
+      "Entra al top 10 de los sitios lunares solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares."
+    ],
+    "references": [
+      {
+        "title": "Fumarole-Supported Islands of Biodiversity within a Hyperarid, High-Elevation Landscape on Socompa Volcano, Puna de Atacama, Andes (Applied and Environmental Microbiology, 2009)",
+        "url": "https://doi.org/10.1128/aem.01469-08"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      },
+      {
+        "title": "LRO Diviner, temperaturas lunares (PDS Geosciences)",
+        "url": "https://pds-geosciences.wustl.edu/missions/lro/diviner.htm"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-nevado-sajama",
+    "summary": "Volcán del Altiplano boliviano, a unos 100 km de la costa del Pacífico, con el glaciar tropical más austral. Su línea de nieve se siguió con Landsat y fotografía aérea de 1963 a 1998 para estudiar la influencia de El Niño.",
+    "processes": [
+      "Variación de la línea de nieve del glaciar según las lluvias y El Niño (Journal of Geophysical Research, 2001)."
+    ],
+    "use_cases": [
+      "Propuesta del equipo: probar métodos de seguimiento de hielo y nieve con imágenes satelitales en un volcán de altura."
+    ],
+    "breaks_down": [
+      "Su hielo viene de nevadas; en los polos lunares el hielo estaría atrapado en cráteres en sombra permanente, sin precipitación.",
+      "La celda de NASA POWER da 376 mm de precipitación anual, de las más altas del top 10 lunar. La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato).",
+      "Entra al top 10 de los sitios lunares solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares."
+    ],
+    "references": [
+      {
+        "title": "El Niño‐Southern Oscillation (ENSO) influence on a Sajama volcano glacier (Bolivia) from 1963 to 1998 as seen from Landsat data and aerial photography (Journal of Geophysical Research: Atmospheres, 2001)",
+        "url": "https://doi.org/10.1029/2001jd900198"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-torotoro-umajalanta",
+    "summary": "Cueva de caliza en el Parque Nacional Torotoro (Potosí, Bolivia), con unos 4,5 km explorados según fuentes de espeleología. Su uso como análogo planetario es una hipótesis del equipo.",
+    "processes": [
+      "Disolución de caliza por agua subterránea (karst)."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio publicado: practicar navegación, cartografía y comunicaciones dentro de una cueva."
+    ],
+    "breaks_down": [
+      "Es una cueva kárstica formada por agua; las cuevas que se buscan en la Luna y Marte como refugio son sobre todo tubos de lava.",
+      "Recibe 533 mm de precipitación anual (NASA POWER), la más alta de los candidatos del top 10 lunar.",
+      "Entra al top 10 de los sitios lunares solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares."
+    ],
+    "references": [
+      {
+        "title": "Showcaves.com: Caverna de Umajalanta",
+        "url": "https://showcaves.com/english/other/caves/Umajalanta.html"
+      },
+      {
+        "title": "Magnetic signature of La Corona lava tube (Lanzarote, Canary Islands) as a planetary analog (2025)",
+        "url": "https://doi.org/10.5194/egusphere-egu25-6513"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-volcan-tunupa-uyuni",
+    "summary": "Estratovolcán extinto de 5321 m que forma una península en el norte del Salar de Uyuni. Está hecho sobre todo de lavas de andesita, traquiandesita y traquidacita de hace unos 1,4 a 1,6 millones de años.",
+    "processes": [
+      "Relieve volcánico rodeado por la llanura salina del Salar de Uyuni."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio publicado: probar la transición de un rover entre terreno volcánico empinado y una llanura salina."
+    ],
+    "breaks_down": [
+      "No encontramos un estudio que lo use como análogo planetario.",
+      "La celda de NASA POWER da 332 mm de precipitación anual. La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato).",
+      "Entra al top 10 de los sitios lunares solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares."
+    ],
+    "references": [
+      {
+        "title": "Wikipedia: Tunupa",
+        "url": "https://en.wikipedia.org/wiki/Tunupa"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-macizo-del-hoggar",
+    "summary": "Macizo del sur de Argelia, hecho sobre todo de rocas metamórficas de unos 2000 millones de años con zonas de volcanismo más reciente. Su punto más alto es el monte Tahat (2908 m).",
+    "processes": [
+      "Erosión de antiguos domos volcánicos que deja picos aislados."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio publicado: comparar picos volcánicos erosionados con relieves de las tierras altas de Marte."
+    ],
+    "breaks_down": [
+      "Es el décimo en Faustini Rim A con un puntaje bajo (52,4): la coincidencia es débil y solo topográfica.",
+      "Temperatura media de 22,5 °C (NASA POWER), unos 183 °C por encima de Faustini Rim A (Diviner). La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato)."
+    ],
+    "references": [
+      {
+        "title": "Wikipedia: Hoggar Mountains",
+        "url": "https://en.wikipedia.org/wiki/Hoggar_Mountains"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      },
+      {
+        "title": "LRO Diviner, temperaturas lunares (PDS Geosciences)",
+        "url": "https://pds-geosciences.wustl.edu/missions/lro/diviner.htm"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-montanas-del-pamir",
+    "summary": "Desierto frío de montaña en el este del Pamir (Tayikistán). Allí se estudiaron cianobacterias endolíticas, que viven dentro de las rocas para resistir un clima severo y muy variable.",
+    "processes": [
+      "Colonización microbiana del interior de las rocas en un desierto frío (Microorganisms, 2020)."
+    ],
+    "use_cases": [
+      "Estudiar vida endolítica como modelo de dónde buscar vida protegida bajo la superficie de rocas en Marte (propuesta del equipo a partir de Microorganisms, 2020)."
+    ],
+    "breaks_down": [
+      "Con −4,7 °C de media es de los más fríos del ranking, pero sigue unos 120 °C por encima de Peak Near Cabeus B (Diviner).",
+      "El punto es un centro aproximado de la región, no un sitio de estudio. La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato).",
+      "Entra al top 10 de los sitios lunares solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares."
+    ],
+    "references": [
+      {
+        "title": "Diversity and Colonization Strategies of Endolithic Cyanobacteria in the Cold Mountain Desert of Pamir (Microorganisms, 2020)",
+        "url": "https://doi.org/10.3390/microorganisms9010006"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      },
+      {
+        "title": "LRO Diviner, temperaturas lunares (PDS Geosciences)",
+        "url": "https://pds-geosciences.wustl.edu/missions/lro/diviner.htm"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-gilf-kebir",
+    "summary": "Meseta de arenisca de unos 7770 km² entre Egipto y Libia, con una precipitación media de apenas 0,1 mm al año. El-Baz y Maxwell (1982, NASA) compararon las formas de erosión eólica y fluvial de la región Gilf Kebir-Uweinat con las fotografiadas por Mariner y Viking en Marte.",
+    "processes": [
+      "Erosión eólica que deja vetas y formas semejantes a las de Marte (El-Baz y Maxwell, 1982).",
+      "Valles secos (wadis) excavados en épocas más húmedas."
+    ],
+    "use_cases": [
+      "Interpretar formas eólicas y valles secos de Marte a partir de imágenes orbitales de un desierto terrestre (El-Baz y Maxwell, 1982)."
+    ],
+    "breaks_down": [
+      "Temperatura media de 22,7 °C (NASA POWER), unos 72 °C por encima de Jezero (−49,4 °C).",
+      "Su albedo (0,38) es más alto que el de Jezero (0,17) y Gale (0,24).",
+      "Es arenisca; Jezero y Gale tienen minerales hidratados y Jezero basalto, así que la semejanza es de forma y clima, no de composición."
+    ],
+    "references": [
+      {
+        "title": "El-Baz y Maxwell (1982). Desert landforms of southwest Egypt: A basis for comparison with Mars, NASA CR-3611",
+        "url": "https://ntrs.nasa.gov/citations/19830008725"
+      },
+      {
+        "title": "Wikipedia: Gilf Kebir",
+        "url": "https://en.wikipedia.org/wiki/Gilf_Kebir"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-tibesti-chad",
+    "summary": "Provincia volcánica cenozoica del Sahara de Chad. Un estudio de 1977 comparó sus formas volcánicas con las de Elysium, en Marte.",
+    "processes": [
+      "Volcanismo cenozoico con unidades y cronología descritas en Bulletin of Volcanology (2015)."
+    ],
+    "use_cases": [
+      "Comparar formas volcánicas terrestres y marcianas con imágenes orbitales (Geological Society of America Bulletin, 1977)."
+    ],
+    "breaks_down": [
+      "Jezero y Gale son cráteres de impacto con minerales hidratados: la semejanza con ellos es topográfica y climática, no geológica.",
+      "Temperatura media de 23,5 °C (NASA POWER), unos 73 °C por encima de Jezero."
+    ],
+    "references": [
+      {
+        "title": "Comparison of volcanic features of Elysium (Mars) and Tibesti (Earth) (Geological Society of America Bulletin, 1977)",
+        "url": "https://doi.org/10.1130/0016-7606(1977)88%3C908:covfoe%3E2.0.co;2"
+      },
+      {
+        "title": "The Cenozoic volcanic province of Tibesti (Sahara of Chad): major units, chronology, and structural features (Bulletin of Volcanology, 2015)",
+        "url": "https://doi.org/10.1007/s00445-015-0955-6"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-arbol-de-piedra-siloli",
+    "summary": "Formación de arenisca de unos 7 m en el desierto de Siloli, dentro de la Reserva Eduardo Avaroa (Potosí, Bolivia). Es un ventifacto: el viento cargado de arena erosionó su base hasta dejarla delgada.",
+    "processes": [
+      "Erosión eólica por abrasión con arena (ventifacto)."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio publicado: estudiar rocas erosionadas por el viento en un altiplano frío y seco como referencia de los ventifactos de Marte."
+    ],
+    "breaks_down": [
+      "No encontramos un estudio que use el desierto de Siloli como análogo planetario.",
+      "Temperatura media de 6,0 °C (NASA POWER), unos 56 °C por encima de Jezero y Gale.",
+      "Es arenisca; Jezero y Gale tienen minerales hidratados y Jezero basalto."
+    ],
+    "references": [
+      {
+        "title": "Wikipedia: Árbol de Piedra",
+        "url": "https://en.wikipedia.org/wiki/%C3%81rbol_de_Piedra"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-harrat-khaybar",
+    "summary": "Campo volcánico monogenético maduro en el interior de Arabia Saudita, descrito por su valor como patrimonio geológico.",
+    "processes": [
+      "Volcanismo monogenético con conos y coladas de lava en un clima árido (Geoheritage, 2017)."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio publicado: practicar reconocimiento de campos volcánicos áridos con rovers o drones."
+    ],
+    "breaks_down": [
+      "No encontramos un estudio que lo use como análogo planetario.",
+      "Temperatura media de 25,7 °C (NASA POWER), unos 75 °C por encima de Jezero. La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato)."
+    ],
+    "references": [
+      {
+        "title": "Geoheritage Values of a Mature Monogenetic Volcanic Field in Intra-continental Settings: Harrat Khaybar, Kingdom of Saudi Arabia (Geoheritage, 2017)",
+        "url": "https://doi.org/10.1007/s12371-017-0243-2"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-laguna-colorada",
+    "summary": "Laguna salada de poca profundidad (0,35 m de media) a unos 4278 m en el suroeste de Bolivia. Su color rojo viene de sedimentos y de algas pigmentadas como Dunaliella salina, y en ella se aisló la bacteria halófila Halomonas andesensis.",
+    "processes": [
+      "Evaporación que deja islas de bórax y aguas ricas en cloruro de sodio, boratos y sulfatos.",
+      "Vida halófila en agua salada, fría y a gran altura (International Journal of Systematic and Evolutionary Microbiology, 2010)."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio publicado: estudiar microbios halófilos y sales como referencia para salmueras marcianas."
+    ],
+    "breaks_down": [
+      "Es un lago con agua líquida y mucha vida, incluidos flamencos; Jezero y Gale tuvieron lagos hace miles de millones de años.",
+      "Temperatura media de 5,0 °C (NASA POWER), unos 56 °C por encima de Gale."
+    ],
+    "references": [
+      {
+        "title": "Halomonas andesensis sp. nov., a moderate halophile isolated from the saline lake Laguna Colorada in Bolivia (International Journal of Systematic and Evolutionary Microbiology, 2010)",
+        "url": "https://doi.org/10.1099/ijs.0.014522-0"
+      },
+      {
+        "title": "Wikipedia: Laguna Colorada",
+        "url": "https://en.wikipedia.org/wiki/Laguna_Colorada"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-el-malpais-nuevo-mexico",
+    "summary": "Campo de lava en Nuevo México con tubos de lava, donde se describieron minerales y formas de roca propios de estas cuevas.",
+    "processes": [
+      "Formación de tubos de lava en coladas basálticas y depósito de minerales en su interior (New Mexico Mineral Symposium, 1989)."
+    ],
+    "use_cases": [
+      "Propuesta del equipo: practicar exploración de tubos de lava, que en la Luna y Marte podrían servir de refugio."
+    ],
+    "breaks_down": [
+      "La celda de NASA POWER da 288 mm de precipitación anual: tiene más agua que cualquier sitio de Marte.",
+      "Temperatura media de 11,3 °C (NASA POWER), unos 61 °C por encima de Jezero."
+    ],
+    "references": [
+      {
+        "title": "Minerals and rock forms in lava tubes of El Malpais National Monument, Cibola County, New Mexico (New Mexico Mineral Symposium, 1989)",
+        "url": "https://doi.org/10.58799/nmms-1989.105"
+      },
+      {
+        "title": "Magnetic signature of La Corona lava tube (Lanzarote, Canary Islands) as a planetary analog (2025)",
+        "url": "https://doi.org/10.5194/egusphere-egu25-6513"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-mar-de-arena-namib",
+    "summary": "Mar de arena costero del desierto del Namib, en Namibia, tema de una monografía de 2026.",
+    "processes": [
+      "Formación de dunas por viento (The Namib Sand Sea, 2026)."
+    ],
+    "use_cases": [
+      "Propuesta del equipo: probar la movilidad de rovers en campos de dunas activas."
+    ],
+    "breaks_down": [
+      "Temperatura media de 21,1 °C (NASA POWER), unos 72 °C por encima de Gale.",
+      "Es un desierto costero con influencia del océano, que no existe en Marte."
+    ],
+    "references": [
+      {
+        "title": "The Namib Sand Sea (2026)",
+        "url": "https://doi.org/10.1201/9781003763185"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-mdrs-utah",
+    "summary": "Mars Desert Research Station, una estación de simulación de misiones marcianas en el desierto de Utah. En la misión Mars 160 (2016-2017) sus tripulaciones registraron 35 especies de líquenes.",
+    "processes": [
+      "Ambiente desértico con suelos expuestos y erosión."
+    ],
+    "use_cases": [
+      "Simulación de misiones humanas a Marte (Mars 160).",
+      "Ensayar prácticas de conservación de sitios geológicos para futuras misiones a Marte (Planetary and Space Science, 2025)."
+    ],
+    "breaks_down": [
+      "Tiene líquenes y otra vida en superficie: 35 especies registradas (Check List, 2024).",
+      "La celda de NASA POWER da 241 mm de precipitación anual y 12,2 °C de media, lejos de los −50 °C de Gale."
+    ],
+    "references": [
+      {
+        "title": "An annotated checklist of the lichen biodiversity at two Mars analog sites: The Mars Desert Research Station (Utah, USA) and The Flashline Mars Arctic Research Station (Nunavut, Canada) recorded during the Mars 160 Mission (Check List, 2024)",
+        "url": "https://doi.org/10.15560/20.5.1096"
+      },
+      {
+        "title": "Practical exogeoconservation of Mars: Lessons from the Mars Desert Research Station, Utah (Planetary and Space Science, 2025)",
+        "url": "https://doi.org/10.1016/j.pss.2025.106038"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-ubehebe-valle-de-la-muerte",
+    "summary": "Cráter volcánico del Valle de la Muerte (California). Un estudio de 2015 describe lóbulos de derrubios y huecos de nivación de la Pequeña Edad de Hielo en su interior y pregunta si son análogos de formas en cráteres de Marte.",
+    "processes": [
+      "Procesos de nivación y de derrubios en las paredes de un cráter durante la Pequeña Edad de Hielo (Geomorphology, 2015)."
+    ],
+    "use_cases": [
+      "Comparar formas de laderas en cráteres terrestres y marcianos (Geomorphology, 2015)."
+    ],
+    "breaks_down": [
+      "El propio estudio plantea la analogía como pregunta, no como conclusión.",
+      "Es un cráter volcánico, no de impacto como Jezero y Gale.",
+      "La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato)."
+    ],
+    "references": [
+      {
+        "title": "Little Ice Age debris lobes and nivation hollows inside Ubehebe Crater, Death Valley, California: Analog for Mars craters? (Geomorphology, 2015)",
+        "url": "https://doi.org/10.1016/j.geomorph.2015.05.029"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-badain-jaran-china",
+    "summary": "Desierto del norte de China famoso por sus megadunas, cuya geomorfología se describió en 2004.",
+    "processes": [
+      "Formación de megadunas por el viento (Geomorphology, 2004)."
+    ],
+    "use_cases": [
+      "Propuesta del equipo: comparar megadunas terrestres con campos de dunas de Marte, como los de Gale."
+    ],
+    "breaks_down": [
+      "No encontramos un estudio que lo use como análogo planetario.",
+      "Temperatura media de 9,9 °C (NASA POWER), unos 61 °C por encima de Gale."
+    ],
+    "references": [
+      {
+        "title": "Geomorphology of the megadunes in the Badain Jaran Desert (Geomorphology, 2004)",
+        "url": "https://doi.org/10.1016/j.geomorph.2003.07.023"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-desierto-tengger",
+    "summary": "Desierto árido de unos 36 700 km² en el norte de China, sobre todo en Mongolia Interior. Se está extendiendo por el desvío de ríos y la deforestación.",
+    "processes": [
+      "Avance de dunas y desertificación."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio publicado: estudiar dunas activas como referencia de las de Gale."
+    ],
+    "breaks_down": [
+      "No encontramos un estudio que lo use como análogo planetario.",
+      "La celda de NASA POWER da 179 mm de precipitación anual y 10,0 °C de media."
+    ],
+    "references": [
+      {
+        "title": "Wikipedia: Tengger Desert",
+        "url": "https://en.wikipedia.org/wiki/Tengger_Desert"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-cuenca-qaidam",
+    "summary": "Cuenca desértica del noroeste de China, descrita como análogo de Marte. Sus dunas lineales se compararon con las de Chasma Boreale y de muestras del desierto se recuperaron 1773 genomas microbianos.",
+    "processes": [
+      "Formación de dunas lineales por viento (Geomorphology, 2018).",
+      "Vida microbiana en un desierto análogo de Marte (Scientific Data, 2025)."
+    ],
+    "use_cases": [
+      "Estudiar cómo se forman dunas lineales para interpretar las de Chasma Boreale (Geomorphology, 2018).",
+      "Catalogar la vida microbiana de un desierto análogo (Scientific Data, 2025)."
+    ],
+    "breaks_down": [
+      "Arcadia Planitia se caracteriza por permafrost; Qaidam tiene 7,0 °C de media (NASA POWER), unos 85 °C más.",
+      "El punto es un centro aproximado de la cuenca; las variables describen la región."
+    ],
+    "references": [
+      {
+        "title": "Qaidam Basin as an analog for linear dune formation in Chasma Boreale, Mars: A comparative analysis (Geomorphology, 2018)",
+        "url": "https://doi.org/10.1016/j.geomorph.2018.08.033"
+      },
+      {
+        "title": "Recovery of 1,773 microbial genomes and 2,060 viral genomes from the Mars-analog Qaidam Basin desert (Scientific Data, 2025)",
+        "url": "https://doi.org/10.1038/s41597-025-06085-3"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-dasht-e-kavir",
+    "summary": "Gran Desierto de Sal, en el centro de la meseta iraní. NASA Earth Observatory describe aguas poco profundas, llanuras de barro y humedales salinos en sus valles.",
+    "processes": [
+      "Encharcamiento estacional y evaporación en llanuras salinas."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio publicado: comparar llanuras salinas muy planas con Arcadia Planitia."
+    ],
+    "breaks_down": [
+      "No encontramos un estudio que lo use como análogo planetario.",
+      "Temperatura media de 21,1 °C (NASA POWER), unos 99 °C por encima de Arcadia Planitia (−77,9 °C), que tiene permafrost."
+    ],
+    "references": [
+      {
+        "title": "NASA Earth Observatory: Dasht-e Kavir (Great Salt Desert), Iran",
+        "url": "https://science.nasa.gov/earth/earth-observatory/dasht-e-kavir-great-salt-desert-iran-4382"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-desierto-de-lut-iran",
+    "summary": "Desierto del este de Irán. Sus yardangs se propusieron como análogos de los yardangs marcianos y sus dunas barján se caracterizaron junto con el régimen de vientos.",
+    "processes": [
+      "Erosión eólica que forma yardangs (Geological Society of America Abstracts, 2017).",
+      "Migración de dunas barján según el viento (Zeitschrift für Geomorphologie, 2021)."
+    ],
+    "use_cases": [
+      "Interpretar yardangs y barjanes de Marte con mediciones de campo (GSA, 2017; Zeitschrift für Geomorphologie, 2021)."
+    ],
+    "breaks_down": [
+      "Temperatura media de 26,0 °C (NASA POWER), una de las más altas del ranking, unos 75 °C por encima de Jezero.",
+      "La comparación de yardangs es de forma; los materiales y el viento de Marte son distintos."
+    ],
+    "references": [
+      {
+        "title": "TERRESTRIAL ANALOGS FOR MARTIAN YARDANGS: THE ARGENTINIAN ALTIPLANO AND THE LUT DESERT OF IRAN (Geological Society of America Abstracts with Programs, 2017)",
+        "url": "https://doi.org/10.1130/abs/2017cd-292992"
+      },
+      {
+        "title": "Geomorphology and wind regime of barchans in the Lut Desert (Iran) (Zeitschrift für Geomorphologie, 2021)",
+        "url": "https://doi.org/10.1127/zfg/2020/0671"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-salar-de-coipasa",
+    "summary": "Salar del Altiplano boliviano, vecino del Salar de Uyuni. NASA describe a Uyuni y Coipasa como laboratorios naturales para estudiar el ambiente marciano.",
+    "processes": [
+      "Variación del nivel del lago en los últimos ~40 000 años registrada en sus sedimentos (Quaternary Research, 2018).",
+      "Procesos fluviales y eólicos en un salar (NASA Earth Observatory)."
+    ],
+    "use_cases": [
+      "Estudiar sales y sedimentos de un salar como referencia de procesos fluviales y eólicos en Marte (NASA Earth Observatory)."
+    ],
+    "breaks_down": [
+      "La celda de NASA POWER da 296 mm de precipitación anual: el salar se inunda en temporada de lluvias.",
+      "Temperatura media de 11,3 °C (NASA POWER), unos 89 °C por encima de Arcadia Planitia, que tiene permafrost."
+    ],
+    "references": [
+      {
+        "title": "NASA Earth Observatory: Bolivian Salt Flats",
+        "url": "https://science.nasa.gov/earth/earth-observatory/bolivian-salt-flats-151813"
+      },
+      {
+        "title": "Lake-level variability in Salar de Coipasa, Bolivia during the past ∼40,000 yr (Quaternary Research, 2018)",
+        "url": "https://doi.org/10.1017/qua.2018.108"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-rub-al-khali",
+    "summary": "Gran mar de arena de la península arábiga, hiperárido, con menos de 35 mm de lluvia al año y dunas de hasta 250 m. Sus megadunas barjanoides se estudiaron para entender la autoorganización de los campos de dunas.",
+    "processes": [
+      "Autoorganización y maduración de campos de megadunas (Geomorphology, 2010)."
+    ],
+    "use_cases": [
+      "Propuesta del equipo: comparar la organización de campos de dunas terrestres y marcianos."
+    ],
+    "breaks_down": [
+      "Temperatura media de 30,3 °C (NASA POWER), la más alta del top 10 de Arcadia Planitia y unos 108 °C por encima de ese sitio.",
+      "Su albedo (0,43) duplica el de Arcadia Planitia (0,21)."
+    ],
+    "references": [
+      {
+        "title": "Nearest neighbor analysis of mega-barchanoid dunes, Ar Rub' al Khali, sand sea: The application of geographical indices to the understanding of dune field self-organization, maturity and environmental change (Geomorphology, 2010)",
+        "url": "https://doi.org/10.1016/j.geomorph.2010.03.029"
+      },
+      {
+        "title": "Wikipedia: Rub' al Khali",
+        "url": "https://en.wikipedia.org/wiki/Rub%27_al_Khali"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-lago-eyre-australia",
+    "summary": "Lago salado casi siempre seco en el sur de Australia, con el punto natural más bajo del país (unos 15 m bajo el nivel del mar). Su costra de sal llega a 50 cm y se disuelve en las grandes inundaciones, que lo llenan por completo solo unas pocas veces por siglo.",
+    "processes": [
+      "Ciclos de inundación y evaporación que disuelven y vuelven a formar la costra salina."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio publicado: comparar costras salinas y su evolución con depósitos salinos de Marte."
+    ],
+    "breaks_down": [
+      "No encontramos un estudio publicado que lo use como análogo planetario.",
+      "Se inunda periódicamente con agua de lluvia caída aguas arriba; Arcadia Planitia no tiene agua líquida en superficie.",
+      "Temperatura media de 23,9 °C (NASA POWER), unos 102 °C por encima de Arcadia Planitia."
+    ],
+    "references": [
+      {
+        "title": "Wikipedia: Lake Eyre",
+        "url": "https://en.wikipedia.org/wiki/Lake_Eyre"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-salar-de-arizaro",
+    "summary": "Salar de unos 1600 km² a 3460 m en la Puna argentina, el sexto más grande del mundo. Está en el Triángulo del Litio y tiene el Cono de Arita como hito.",
+    "processes": [
+      "Llanura salina muy plana (relieve de 0,7 m en la ventana de 10 km, Terrain Tiles)."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio publicado: comparar llanuras salinas de altura con planicies de Marte."
+    ],
+    "breaks_down": [
+      "No encontramos un estudio que lo use como análogo planetario; los estudios de la Puna se centran en otros salares.",
+      "La celda de NASA POWER da 486 mm de precipitación anual, un valor poco creíble para la Puna: la celda es demasiado gruesa.",
+      "Temperatura media de 7,0 °C (NASA POWER), unos 85 °C por encima de Arcadia Planitia."
+    ],
+    "references": [
+      {
+        "title": "Wikipedia: Salar de Arizaro",
+        "url": "https://en.wikipedia.org/wiki/Salar_de_Arizaro"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      },
+      {
+        "title": "Terrain Tiles (Mapzen) en AWS Open Data",
+        "url": "https://registry.opendata.aws/terrain-tiles/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-etosha-namibia",
+    "summary": "Gran salar (pan) efímero del norte de Namibia. Un registro satelital de 2000 a 2022 identificó «puntos calientes» de emisión de polvo controlados por la geoquímica de la superficie.",
+    "processes": [
+      "Emisión de polvo desde la costra de un salar efímero (EGU, 2025)."
+    ],
+    "use_cases": [
+      "Estudiar qué superficies emiten polvo, una pregunta clave para entender el polvo en Marte (propuesta del equipo a partir de EGU, 2025)."
+    ],
+    "breaks_down": [
+      "La celda de NASA POWER da 402 mm de precipitación anual: no es un desierto hiperárido.",
+      "Temperatura media de 25,2 °C (NASA POWER), unos 103 °C por encima de Arcadia Planitia."
+    ],
+    "references": [
+      {
+        "title": "Surface geochemistry controls 'hot-spots' of dust emission at Etosha Pan, Namibia (2025)",
+        "url": "https://doi.org/10.5194/egusphere-egu24-3661"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-desierto-de-taklamakan",
+    "summary": "Desierto de arena de unos 337 000 km² en el oeste de China, con clima de desierto frío y dunas móviles de 18 a 91 m. La estación de Tazhong registra unos 26 mm de lluvia al año.",
+    "processes": [
+      "Dunas que se desplazan con el viento.",
+      "Tormentas de polvo, sobre todo en primavera."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio publicado: comparar sus llanuras de arena con Arcadia Planitia."
+    ],
+    "breaks_down": [
+      "No encontramos un estudio que lo use como análogo planetario.",
+      "NASA POWER da 58 mm anuales, más del doble que la estación de Tazhong (26 mm): la celda es gruesa.",
+      "Temperatura media de 14,7 °C (NASA POWER), unos 93 °C por encima de Arcadia Planitia, que tiene permafrost."
+    ],
+    "references": [
+      {
+        "title": "Wikipedia: Taklamakan Desert",
+        "url": "https://en.wikipedia.org/wiki/Taklamakan_Desert"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  }
+]
