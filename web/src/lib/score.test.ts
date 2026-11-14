@@ -36,4 +36,37 @@ describe("rescore", () => {
       ...weights, slope_deg: 0, relief_m: 0, temp_mean_c: 0,
     })).toBeNull();
   });
+
+  it("cuenta una diferencia cero y excluye del promedio las variables ausentes", () => {
+    const differences = { slope_deg: 0, relief_m: 1, temp_mean_c: 0.5 };
+    expect(rescore(differences, { ...weights, slope_deg: 2, albedo: 100 })).toBe(62.5);
+    expect(rescore({ slope_deg: 0, relief_m: 1 }, weights)).toBeNull();
+  });
+
+  it("acepta los extremos de la escala y omite el peso cero sin perder cobertura", () => {
+    expect(rescore({ slope_deg: 0, relief_m: 0, temp_mean_c: 0 }, weights)).toBe(100);
+    expect(rescore({ slope_deg: 1, relief_m: 1, temp_mean_c: 1 }, weights)).toBe(0);
+    expect(rescore({ slope_deg: 1, relief_m: 0, temp_mean_c: 1 }, {
+      ...weights, slope_deg: 0, temp_mean_c: 0,
+    })).toBe(100);
+  });
+
+  it("recalcula en el orden del pipeline independientemente del orden del JSON", () => {
+    const shuffled = { albedo: 0.3333, temp_mean_c: 0.4706, precip_mm_year: 0.4779, relief_m: 0.1065, slope_deg: 0.1818 };
+    expect(rescore(shuffled, weights)).toBe(rescore(moon, weights));
+  });
+
+  it("permite ordenar de mayor a menor tras cambiar los pesos", () => {
+    const pairA = { slope_deg: 0.1, relief_m: 0.8, temp_mean_c: 0.1 };
+    const pairB = { slope_deg: 0.8, relief_m: 0.1, temp_mean_c: 0.3 };
+    expect(rescore(pairA, weights)!).toBeGreaterThan(rescore(pairB, weights)!);
+    const reliefWeight = { ...weights, relief_m: 3 };
+    expect(rescore(pairB, reliefWeight)!).toBeGreaterThan(rescore(pairA, reliefWeight)!);
+  });
+
+  it("recalcula a partir de la precisión publicada, que puede perder una décima", () => {
+    // Ambos conjuntos originales exportan 0.5005 y Python los puntúa como 50.0 y 49.9.
+    const published = { slope_deg: 0.5005, relief_m: 0.5005, temp_mean_c: 0.5005 };
+    expect(rescore(published, weights)).toBe(50);
+  });
 });

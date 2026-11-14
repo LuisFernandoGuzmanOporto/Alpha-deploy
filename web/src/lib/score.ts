@@ -1,4 +1,4 @@
-import type { RankingEntry, Results, VariableId } from "../types";
+import { VARIABLE_IDS, type RankingEntry, type Results } from "../types";
 
 /**
  * Recalcula un par a partir de las diferencias que exporta Python a cuatro decimales.
@@ -11,8 +11,9 @@ export function rescore(
   let count = 0;
   let weightedDifference = 0;
   let totalWeight = 0;
-  for (const [variable, difference] of Object.entries(normDiff) as [VariableId, number][]) {
-    if (difference === undefined) continue;
+  for (const variable of VARIABLE_IDS) {
+    const difference = normDiff[variable];
+    if (typeof difference !== "number") continue;
     const weight = weights[variable];
     count += 1;
     weightedDifference += weight * difference;
@@ -22,7 +23,7 @@ export function rescore(
 
   const score = 100 * (1 - weightedDifference / totalWeight);
   // En un empate exacto entre décimas, Python redondea hacia la décima par.
-  // En binario, esos empates solo son representables en los cuartos impares.
+  // Los empates representables en binario dentro de [0, 100] son 0.25, 0.75, 1.25, etc.
   if ((score * 4) % 2 === 1) {
     const lowerTenth = Math.floor(score * 10);
     return (lowerTenth + (lowerTenth % 2)) / 10;
