@@ -82,6 +82,8 @@ def score_pair(site, cand, ranges, weights):
     if len(diffs) < MIN_VARS:
         return None
     total_w = sum(weights[v] for v in diffs)
+    if total_w == 0:
+        return None
     distance = sum(weights[v] * d for v, d in diffs.items()) / total_w
     score = round(100 * (1 - distance), 1)
     return score, len(diffs), {v: round(d, 4) for v, d in diffs.items()}
