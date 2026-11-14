@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { LngLatBounds, Map as MapLibreMap, setWorkerUrl, type GeoJSONSource } from "maplibre-gl";
+import { LngLatBounds, Map as MapLibreMap, Popup, setWorkerUrl, type GeoJSONSource } from "maplibre-gl";
 import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
 import type { Feature, FeatureCollection, Point } from "geojson";
 import "maplibre-gl/dist/maplibre-gl.css";
@@ -103,8 +103,21 @@ export function RankingMap({ rows, selectedId, onSelect }: Props) {
         const id = event.features?.[0]?.properties?.id;
         if (typeof id === "string") onSelectRef.current(id);
       });
-      map.on("mouseenter", POINTS_LAYER, () => (map.getCanvas().style.cursor = "pointer"));
-      map.on("mouseleave", POINTS_LAYER, () => (map.getCanvas().style.cursor = ""));
+      const tooltip = new Popup({ closeButton: false, closeOnClick: false, offset: 12 });
+      map.on("mouseenter", POINTS_LAYER, (event) => {
+        map.getCanvas().style.cursor = "pointer";
+        const feature = event.features?.[0];
+        if (feature?.geometry.type !== "Point") return;
+        const { name, score } = feature.properties;
+        const [lon, lat] = feature.geometry.coordinates;
+        if (lon === undefined || lat === undefined) return;
+        // setText evita interpretar el nombre como HTML.
+        tooltip.setLngLat([lon, lat]).setText(`${String(name)}: ${Number(score).toFixed(1)}`).addTo(map);
+      });
+      map.on("mouseleave", POINTS_LAYER, () => {
+        map.getCanvas().style.cursor = "";
+        tooltip.remove();
+      });
       setReady(true);
     });
 

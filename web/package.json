@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "data:demo": "python ../pipeline/similarity.py --data ../data/examples --out-dir public/data"
+    "data:demo": "python ../pipeline/similarity.py --data ../data/examples --out-dir public/data",
+    "test": "vitest run"
   },
   "dependencies": {
     "maplibre-gl": "^6.18.0",
@@ -24,6 +25,7 @@
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.3.0",
     "typescript": "^7.0.2",
-    "vite": "^8.3.8"
+    "vite": "^8.3.8",
+    "vitest": "^4.1.12"
   }
 }
