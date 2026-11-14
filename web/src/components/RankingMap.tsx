@@ -36,6 +36,7 @@ function toGeoJson(rows: RankingRow[]): FeatureCollection<Point> {
 export function RankingMap({ rows, selectedId, onSelect }: Props) {
   const t = useT();
   const containerRef = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLOutputElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const onSelectRef = useRef(onSelect);
   const [ready, setReady] = useState(false);
@@ -61,7 +62,7 @@ export function RankingMap({ rows, selectedId, onSelect }: Props) {
             attribution: "© OpenStreetMap contributors",
           },
         },
-        layers: [{ id: "osm", type: "raster", source: "osm", paint: { "raster-saturation": -0.4, "raster-brightness-min": 0.08 } }],
+        layers: [{ id: "osm", type: "raster", source: "osm", paint: { "raster-saturation": -1, "raster-brightness-max": 0.42, "raster-contrast": 0.12 } }],
       },
     });
     mapRef.current = map;
@@ -73,11 +74,11 @@ export function RankingMap({ rows, selectedId, onSelect }: Props) {
         type: "circle",
         source: SOURCE_ID,
         paint: {
-          "circle-radius": ["interpolate", ["linear"], ["get", "score"], 20, 7, 85, 15],
+          "circle-radius": ["interpolate", ["linear"], ["get", "score"], 20, 5, 85, 14],
           "circle-color": ["interpolate", ["linear"], ["get", "score"], ...SCORE_STOPS.flatMap(([score, color]) => [score, color])],
-          "circle-stroke-color": "#ffffff",
-          "circle-stroke-width": 2,
-          "circle-opacity": 0.94,
+          "circle-stroke-color": "#0f1113",
+          "circle-stroke-width": 1.5,
+          "circle-opacity": 0.95,
         },
       });
       map.addLayer({
@@ -88,7 +89,7 @@ export function RankingMap({ rows, selectedId, onSelect }: Props) {
         paint: {
           "circle-radius": 22,
           "circle-color": "rgba(0,0,0,0)",
-          "circle-stroke-color": "#064e48",
+          "circle-stroke-color": "#f3ede4",
           "circle-stroke-width": 3,
         },
       });
@@ -110,6 +111,11 @@ export function RankingMap({ rows, selectedId, onSelect }: Props) {
       map.on("mouseleave", POINTS_LAYER, () => {
         map.getCanvas().style.cursor = "";
         tooltip.remove();
+      });
+      map.on("mousemove", (event) => {
+        if (!cursorRef.current) return;
+        const lon = ((((event.lngLat.lng + 180) % 360) + 360) % 360) - 180;
+        cursorRef.current.textContent = `LAT ${event.lngLat.lat.toFixed(2)} · LON ${lon.toFixed(2)}`;
       });
       setReady(true);
     });
@@ -160,13 +166,16 @@ export function RankingMap({ rows, selectedId, onSelect }: Props) {
   }, [selectedId, ready]);
 
   return (
-    <div className="ea-map">
-      <div ref={containerRef} className="ea-map__canvas" role="region" aria-label={t("map.aria")} />
-      <span className="ea-map__title">{t("map.title")}</span>
-      <div className="ea-legend" aria-hidden="true">
-        <span>{t("map.legend")}</span>
-        <span className="ea-legend__bar" style={{ background: SCORE_GRADIENT }} />
-        <span className="ea-legend__labels">
+    <div className="cc-map">
+      <div ref={containerRef} className="cc-map__canvas" role="region" aria-label={t("map.aria")} />
+      <span className="cc-hud cc-hud--title">{t("map.title")}</span>
+      <output ref={cursorRef} className="cc-hud cc-hud--cursor" aria-hidden="true">
+        LAT — · LON —
+      </output>
+      <div className="cc-legend" aria-hidden="true">
+        <span className="cc-label">{t("map.legend")}</span>
+        <span className="cc-legend__bar" style={{ background: SCORE_GRADIENT }} />
+        <span className="cc-legend__labels">
           <span>{t("map.legendLow")}</span>
           <span>{t("map.legendHigh")}</span>
         </span>

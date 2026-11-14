@@ -1,25 +1,89 @@
+/* Sistema de diseño "centro de control": grafito, blanco cálido y naranja.
+   Todo el color, la tipografía, el espaciado, las formas y el movimiento salen de estas variables.
+   Los alias `--ea-*` mantienen funcionando los componentes de Noe (components/ui) con el tema nuevo. */
 :root {
-  color-scheme: light;
-  --ea-ink: #142d3b;
-  --ea-muted: #506570;
-  --ea-bg: #f3f6f4;
-  --ea-surface: #ffffff;
-  --ea-primary: #075e57;
-  --ea-primary-hover: #03463f;
-  --ea-soft: #e4f2ec;
-  --ea-border: #c5d3ce;
-  --ea-mars: #963e25;
-  --ea-mars-soft: #fff0e8;
-  --ea-focus: #175ab5;
-  --ea-font: "Segoe UI", system-ui, sans-serif;
-  --ea-mono: ui-monospace, Consolas, monospace;
-  --ea-space-1: 4px;
-  --ea-space-2: 8px;
-  --ea-space-3: 12px;
-  --ea-space-4: 16px;
-  --ea-space-6: 24px;
-  --ea-space-8: 32px;
-  --ea-space-12: 48px;
-  --ea-radius: 16px;
-  --ea-shadow: 0 8px 32px #142d3b0d;
+  color-scheme: dark;
+
+  /* Color: superficies de grafito (de la más oscura a la más clara) */
+  --cc-bg: #0f1113;
+  --cc-surface: #16191c;
+  --cc-surface-2: #1d2124;
+  --cc-surface-3: #262b2f;
+  --cc-border: #2c3237;
+  --cc-border-strong: #454d54;
+
+  /* Color: texto y acento */
+  --cc-text: #f3ede4;
+  --cc-text-muted: #aaa396;
+  --cc-accent: #ff7a1a;
+  --cc-accent-strong: #ff9440;
+  --cc-accent-ink: #14110d;
+  --cc-accent-wash: #ff7a1a1f;
+  --cc-warn: #f0c14b;
+  --cc-warn-wash: #f0c14b1a;
+  --cc-focus: #ffd29e;
+
+  /* Escala del índice de similitud: apagado, ámbar y naranja intenso (brillo y tamaño dicen lo mismo que el color) */
+  --cc-scale-low: #8a7d6e;
+  --cc-scale-mid: #ffb566;
+  --cc-scale-high: #ff6a00;
+
+  /* Tipografía */
+  --cc-font-sans: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --cc-font-mono: "Cascadia Mono", "JetBrains Mono", "SF Mono", ui-monospace, Consolas, monospace;
+  --cc-text-xs: 0.72rem;
+  --cc-text-sm: 0.8125rem;
+  --cc-text-md: 0.9375rem;
+  --cc-text-lg: 1.125rem;
+  --cc-text-xl: 1.5rem;
+  --cc-text-display: clamp(1.9rem, 3.6vw, 3rem);
+  --cc-tracking-caps: 0.12em;
+
+  /* Espaciado */
+  --cc-space-1: 4px;
+  --cc-space-2: 8px;
+  --cc-space-3: 12px;
+  --cc-space-4: 16px;
+  --cc-space-5: 24px;
+  --cc-space-6: 32px;
+  --cc-space-7: 48px;
+
+  /* Formas y bordes finos */
+  --cc-line: 1px;
+  --cc-radius: 4px;
+  --cc-radius-lg: 8px;
+
+  /* Movimiento */
+  --cc-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --cc-dur: 200ms;
+  --cc-dur-slow: 420ms;
+
+  /* Estructura */
+  --cc-topbar-h: 56px;
+  --cc-rail-w: 320px;
+  --cc-panel-w: 430px;
+
+  /* Alias para los componentes de Noe */
+  --ea-ink: var(--cc-text);
+  --ea-muted: var(--cc-text-muted);
+  --ea-bg: var(--cc-bg);
+  --ea-surface: var(--cc-surface);
+  --ea-primary: var(--cc-accent);
+  --ea-primary-hover: var(--cc-accent-strong);
+  --ea-soft: var(--cc-accent-wash);
+  --ea-border: var(--cc-border);
+  --ea-mars: var(--cc-accent-strong);
+  --ea-mars-soft: var(--cc-warn-wash);
+  --ea-focus: var(--cc-focus);
+  --ea-font: var(--cc-font-sans);
+  --ea-mono: var(--cc-font-mono);
+  --ea-space-1: var(--cc-space-1);
+  --ea-space-2: var(--cc-space-2);
+  --ea-space-3: var(--cc-space-3);
+  --ea-space-4: var(--cc-space-4);
+  --ea-space-6: var(--cc-space-5);
+  --ea-space-8: var(--cc-space-6);
+  --ea-space-12: var(--cc-space-7);
+  --ea-radius: var(--cc-radius-lg);
+  --ea-shadow: none;
 }

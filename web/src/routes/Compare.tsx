@@ -32,7 +32,7 @@ export function Compare() {
   const ficha = fichas[candidate.id];
 
   return (
-    <div className="ea-page">
+    <div className="cc-compare">
       <Link className="ea-back" to={`/?sitio=${site.id}&analogo=${candidate.id}`}>
         {t("compare.back")}
       </Link>

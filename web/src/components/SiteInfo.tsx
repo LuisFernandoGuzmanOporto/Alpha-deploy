@@ -7,25 +7,26 @@ interface Props {
   site: Site;
 }
 
+/** Telemetría del sitio: coordenadas y las cinco variables, en tipografía monoespaciada. */
 export function SiteInfo({ site }: Props) {
   const t = useT();
   const { variables } = useContent();
   return (
     <section aria-label={t("siteinfo.aria", { name: site.name })}>
-      <p className="ea-sitenote">
-        {site.region} ·{" "}
-        {site.lat === null || site.lon === null ? t("siteinfo.noCoords") : `${site.lat}°, ${site.lon}°`}
-      </p>
-      <ul className="ea-varchips">
+      <dl className="cc-readout">
+        <div>
+          <dt>LAT · LON</dt>
+          <dd>{site.lat === null || site.lon === null ? t("siteinfo.noCoords") : `${site.lat}° · ${site.lon}°`}</dd>
+        </div>
         {VARIABLE_IDS.map((variable) => (
-          <li className="ea-varchip" key={variable} title={site.sources[variable]}>
-            <small>{variables[variable].label}</small>
-            <strong>{formatValue(variable, site.variables[variable], t)}</strong>
-          </li>
+          <div key={variable} title={site.sources[variable]}>
+            <dt>{variables[variable].label}</dt>
+            <dd>{formatValue(variable, site.variables[variable], t)}</dd>
+          </div>
         ))}
-      </ul>
+      </dl>
       <TagList tags={site.tags} />
-      {site.notes && <p className="ea-sitenote">{site.notes}</p>}
+      {site.notes && <p className="cc-note">{site.notes}</p>}
     </section>
   );
 }

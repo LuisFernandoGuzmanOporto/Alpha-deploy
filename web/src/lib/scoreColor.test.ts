@@ -4,8 +4,8 @@ import { SCORE_STOPS, scoreColor } from "./scoreColor";
 describe("scoreColor", () => {
   it("devuelve el color exacto de cada tramo y se queda en los extremos", () => {
     for (const [score, color] of SCORE_STOPS) expect(scoreColor(score)).toBe(color);
-    expect(scoreColor(0)).toBe("#b5472c");
-    expect(scoreColor(100)).toBe("#0a7a6e");
+    expect(scoreColor(0)).toBe("#8a7d6e");
+    expect(scoreColor(100)).toBe("#ff6a00");
   });
 
   it("interpola entre tramos y siempre devuelve #rrggbb", () => {

@@ -33,6 +33,9 @@ Versiones instaladas en `web/`; licencias leídas del `package.json` de cada paq
 | MapLibre GL JS | 6.18.0 | BSD-3-Clause | Mapa del ranking |
 | Recharts | 3.10.1 | MIT | Radar del comparador |
 | react-markdown y remark-gfm | 10.1.0 y 4.0.1 | MIT | Página de metodología |
+| Motion | 14.14.0 | MIT | Transiciones entre pantallas, indicador del destino y reordenado del ranking |
+| Radix UI (dialog, select, slider, switch) | ver `web/package.json` | MIT | Controles accesibles con estilo propio (en lugar de shadcn/ui, que exige Tailwind) |
+| React Bits (`DecryptedText`, `CountUp`) | copiados en `web/src/components/reactbits/` | MIT + Commons Clause | Efecto del título y contadores de la franja superior; se usan dentro de la app, no se redistribuyen |
 | Vite | 8.3.8 | MIT | Compilación |
 | TypeScript | 7.0.2 | Apache-2.0 | Lenguaje |
 | Vitest | 4.1.12 | MIT | Pruebas |
