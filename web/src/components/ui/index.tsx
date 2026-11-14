@@ -47,6 +47,7 @@ export function Header() {
   const t = useT();
   return (
     <header className="cc-topbar">
+      <OrbitalSky navigation />
       <NavLink className="cc-brand" to="/" aria-label={t("ui.brandAria")}>
         <svg viewBox="0 0 40 40" width="28" height="28" aria-hidden="true">
           <circle cx="20" cy="20" r="13" fill="none" stroke="currentColor" strokeWidth="2" />
@@ -76,11 +77,38 @@ export function Footer() {
   );
 }
 
-/** <Layout>…</Layout> dentro de BrowserRouter. */
+// Campo determinista: misma distribución al navegar, sin cálculos por fotograma.
+const skyStars = Array.from({ length: 560 }, (_, i) => ({
+  x: (Math.sin(i * 127.1 + 13) * 43758.5453 % 1 + 1) % 1 * 1440,
+  y: (Math.sin(i * 311.7 + 29) * 22578.1459 % 1 + 1) % 1 * 900,
+  radius: i % 23 === 0 ? 1.9 : i % 5 === 0 ? 0.95 : 0.5,
+}));
+
+/** Nebulosa ilustrativa original. Decoración sin significado científico. */
+function OrbitalSky({ navigation = false }: { navigation?: boolean }) {
+  return (
+    <svg className={`cc-sky${navigation ? " cc-sky--nav" : ""}`} viewBox={navigation ? "0 0 1440 160" : "0 0 1440 900"} preserveAspectRatio="xMidYMin slice" aria-hidden="true" focusable="false">
+      <g className="cc-sky__stars">
+        {skyStars.filter((star) => star.radius < 1.9).map((star, i) => <circle key={i} cx={star.x} cy={star.y} r={star.radius} />)}
+      </g>
+      <g className="cc-sky__bright">
+        {skyStars.filter((star) => star.radius >= 1.9).map((star, i) => (
+          <g className="cc-sky__twinkle" key={i}>
+            <circle cx={star.x} cy={star.y} r="13" opacity="0.1" />
+            <circle cx={star.x} cy={star.y} r="5.5" opacity="0.25" />
+            <path className="cc-sky__diffraction" d={`M${star.x - 6} ${star.y}h12 M${star.x} ${star.y - 8}v16`} />
+            <circle cx={star.x} cy={star.y} r="2" />
+          </g>
+        ))}
+      </g>
+    </svg>
+  );
+}
 export function Layout({ children }: { children: ReactNode }) {
   const t = useT();
   return (
     <div className="cc-app">
+      <OrbitalSky />
       <a className="ea-skip" href="#ea-main">{t("ui.skip")}</a>
       <Header />
       <main id="ea-main" tabIndex={-1}>{children}</main>

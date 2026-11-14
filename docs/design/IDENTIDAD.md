@@ -1,5 +1,10 @@
 # Identidad de Noe
 
+> Actualización: el tema orbital está conservado en una copia ZIP local. Noe pidió
+> una segunda variante de noche estrellada, con acentos dorados y titileo suave.
+> La dirección vigente y su relación con los tokens están en
+> [DESIGN.md](DESIGN.md). La propuesta clara siguiente se conserva como antecedente.
+
 Nombre de trabajo elegido: **Earth Analogs**. Conserva el nombre del producto actual y comunica el propósito en ambos idiomas. Alternativas: TerraLink (conexión entre mundos), Analog Atlas (exploración cartográfica), TerraScope (observación de la Tierra), Mundo Espejo (divulgación en español). Criterios: claridad del propósito, pronunciación, coherencia con el reto. Disponibilidad de marcas y dominios sin verificar.
 
 Frase: **La Tierra, laboratorio de otros mundos.**
