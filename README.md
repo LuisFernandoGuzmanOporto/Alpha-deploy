@@ -1,51 +1,81 @@
 # Earth Analogs
 
-Proyecto del equipo para el NASA Space Apps Challenge, sede Cochabamba. Desafío: *Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars*.
+**NASA Space Apps Challenge 2026, Cochabamba (Bolivia).** Challenge: *Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars.*
 
-Web que, dado un sitio candidato de base lunar o marciana, ordena los lugares de la Tierra que más se le parecen y explica por qué, con foco en los análogos de Bolivia.
+*Resumen en español al final.*
 
-> Este README es el arranque rápido del equipo. Joel lo reemplaza por la versión pública antes de la entrega.
+## The problem
 
-## Empezar en 5 pasos
+Teams preparing lunar bases and Mars landings test rovers, instruments and operations in Earth analogs, but the usual ones (Atacama, Devon Island, Death Valley) were chosen by experience, not by a systematic comparison with the actual target sites. And no place on Earth reproduces the Moon or Mars: each analog is good for some conditions and fails for others.
 
-1. Fernando crea el repositorio y lo comparte (ver `GIT.md`, sección 1).
-2. Cada persona clona el repositorio (ver `GIT.md`, sección 2).
-3. Lee `CONTEXT.md` y `TASKS.md` (10 minutos).
-4. Abre un chat con tu IA y pega `CONTEXT.md` y luego tu archivo de `prompts/` (ver `AI.md`).
-5. Crea tu rama y trabaja (ver `GIT.md`, sección 3).
+## What it does
 
-## Qué hay en cada archivo
+Earth Analogs is a web app. You pick a candidate site on the Moon or Mars and get the places on Earth that most resemble it, with:
 
-| Archivo | Para qué |
-| --- | --- |
-| `CONTEXT.md` | Qué construimos, variables, contrato de datos, método, reglas y dueños de cada archivo |
-| `TASKS.md` | Tareas por persona con horas límite y hitos del equipo |
-| `AI.md` | Qué IA usar para qué y cómo arrancar cada chat |
-| `GIT.md` | Flujo de Git, reglas y comandos |
-| `prompts/` | Un prompt listo por persona: `fernando`, `dante`, `lian`, `sebastian`, `noe`, `joel` |
-| `data/` | Datos de entrada (`sites.json`, `candidates.json`) y datos de ejemplo en `data/examples/` |
-| `pipeline/` | Scripts de Python: `validate.py` y `similarity.py` |
-| `web/` | Aplicación web (la crea Fernando) |
-| `docs/` | Texto oficial del desafío (`DESAFIO_OFICIAL.md`), metodología, requisitos, atribuciones, QA y pitch |
+- **A similarity index from 0 to 100**, computed from five measured variables: slope, local relief, mean temperature, aridity (annual precipitation) and albedo.
+- **A map and a ranked list** of Earth analogs, with a **Bolivia-only filter** and a **"less-studied places only" filter**.
+- **A side-by-side comparison** of each pair: value by value, a similarity radar, shared geology/ice/dust tags, and **where the analogy breaks down**.
+- **A discoveries view** with the five best less-studied analogs for each site, evaluated with the same index as the well-known ones.
+- **Adjustable weights** per variable, recomputed in the browser.
+- **A 3D globe** of the Earth, the Moon and Mars showing the selected site and its top analogs.
+- **A methodology page** with the formula, sources and limitations.
 
-## Probar el pipeline ahora mismo
+Every comparison also shows the limits no Earth analog can overcome: reduced gravity, the lunar vacuum, the thin Martian atmosphere and radiation.
 
-Solo necesita Python 3.9 o superior, sin instalar nada:
+## Sites
+
+| Body | Site | Why |
+| --- | --- | --- |
+| Moon | Faustini Rim A, Peak Near Cabeus B, Malapert Massif | Artemis III candidate regions near the lunar south pole (Faustini Rim A was in NASA's 2022 list of 13 and dropped in the 2024 list of 9) |
+| Mars | Jezero crater, Gale crater, Arcadia Planitia | Perseverance and Curiosity landing sites, and a mid-latitude plain with widespread ground ice |
+
+## How the index works
+
+1. Each place is described by five variables measured in a common 10 × 10 km window.
+2. Relief and precipitation are log-transformed; every variable is normalized to 0–1 over all places together.
+3. For each site–analog pair we take the absolute difference per variable, using only the variables both places have.
+4. The distance is the weighted mean of those differences, and the score is `100 × (1 − distance)`; a pair needs at least three shared variables.
+5. Qualitative tags (basalt, impact crater, evaporite, polar ice, permafrost, lava tubes…) are compared separately with the Jaccard index and shown next to the score.
+
+Full method, choices and limitations: [`docs/METODOLOGIA.md`](docs/METODOLOGIA.md) (in Spanish).
+
+## Data
+
+Every non-null value carries its source; missing values are `null`, never estimated.
+
+- **Moon:** LRO LOLA polar elevation model (slope, relief) and LRO Diviner Polar Resource Product (mean temperature), from the NASA Planetary Data System.
+- **Mars:** MGS MOLA MEGDR elevation (slope, relief) and the Mars Climate Database v6.2 (surface temperature and albedo).
+- **Earth (in progress):** planned sources are NASA POWER (temperature, precipitation), an open elevation model (SRTM or similar) and MODIS albedo. The Earth candidate dataset is still being completed.
+- **Globe textures:** NASA Blue Marble (via NASA GIBS), LRO WAC mosaic (via Moon Trek) and Viking MDIM 2.1 mosaic (via Mars Trek).
+
+How each lunar and Martian value was extracted: [`pipeline/moon_mars/README.md`](pipeline/moon_mars/README.md). Credits and terms of use: [`docs/ATRIBUCION.md`](docs/ATRIBUCION.md).
+
+## Run it locally
+
+Requirements: Python 3.9+ (standard library only) and Node.js.
 
 ```bash
-python pipeline/validate.py --data data/examples
-python pipeline/similarity.py --data data/examples --out-dir web/public/data
+python pipeline/validate.py      # checks data/sites.json and data/candidates.json
+python pipeline/similarity.py    # writes web/public/data/results.json
+cd web
+npm install
+npm run dev
 ```
 
-Con datos reales (cuando existan):
+To try the interface with **invented demo data** (never presented as real): `npm run data:demo` inside `web/`.
 
-```bash
-python pipeline/validate.py
-python pipeline/similarity.py
-```
+The app is fully static: all results are computed offline in Python and the web only reads JSON files. No server and no AI calls at runtime.
 
-Los datos de `data/examples/` están **inventados** y solo sirven para probar. Nunca los presentes como reales.
+## Use of AI tools
 
-## Equipo
+The team used AI assistants (Claude and ChatGPT) as tools to help write and review code, search and check literature, and draft texts. The idea, the method and the data decisions are the team's. By team rule every data value must cite an original source that a team member opened and checked, and the app makes no AI calls.
 
-Dante, Fernando, Lian, Sebastián, Joel y Noe.
+## Team
+
+Dante (Moon and Mars data, comparison view, 3D globe), Fernando (technical lead, web app and map), Lian (Earth and Bolivia data, analog fact sheets), Sebastián (similarity index, validation and methodology), Noe (design) and Joel (requirements, documentation, pitch and QA).
+
+## Resumen en español
+
+Earth Analogs es una web que, dado un sitio candidato de base lunar o de aterrizaje en Marte, ordena los lugares de la Tierra que más se le parecen con un índice de 0 a 100. El índice usa cinco variables medidas: pendiente, relieve, temperatura media, aridez y albedo. Cada comparación muestra qué se parece, por cuánto y **dónde falla la analogía**. Incluye un filtro de Bolivia, una vista de lugares poco estudiados y un globo 3D. Todo se calcula de antemano con datos abiertos de NASA y de otras agencias, y cada valor lleva su fuente.
+
+Para el equipo: el contexto, las tareas y el flujo de trabajo están en [`CONTEXT.md`](CONTEXT.md), [`TASKS.md`](TASKS.md), [`GIT.md`](GIT.md) y [`AI.md`](AI.md).
