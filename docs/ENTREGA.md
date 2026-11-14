@@ -56,7 +56,7 @@ Dueño: Joel. Reglas y fuentes en `docs/REQUISITOS.md`.
 Revisar contra la web en producción antes de pegar: cada frase tiene que ser cierta en ese momento.
 
 ### Project Name
-[PENDING: final name, Noe] (working name: **Earth Analogs**)
+[PENDING: confirm the final name] (Noe's chosen working name: **Earth Analogs**)
 
 ### High-Level Project Summary
 > Earth Analogs is a web tool that ranks places on Earth by how closely they resemble candidate Moon base sites and Mars landing sites. For each site it computes a 0–100 similarity score from five variables derived from NASA data and models in a common 10 × 10 km window (slope, local relief, mean temperature, aridity and albedo), mostly from NASA data, and shows side by side what is similar and where the analogy breaks down. It answers the challenge by identifying and characterizing analogs systematically instead of only by appearance, has a dedicated view for less-studied places and a Bolivia filter, and states the limits no Earth analog can overcome: reduced gravity, the lunar vacuum, the thin Martian atmosphere and radiation.
@@ -76,7 +76,7 @@ Revisar contra la web en producción antes de pegar: cada frase tiene que ser ci
 >
 > **Tools.** Python, TypeScript, React, Vite, MapLibre GL JS, Recharts and GitHub. [PENDING: add Vercel once the site is deployed.]
 >
-> **Findings.** [PENDING: best analog per body with its score, one less-studied analog in a top 5 and the best Bolivian analog, from the final results.] Add that temperature and precipitation of the mountain and volcano candidates come from a coarse grid and are biased, so their lunar ranking rests mainly on slope and relief (issue #36).
+> **Findings (version 1, 6 sites and 47 Earth candidates).** For the lunar south pole sites, steep, dry Andean volcanoes match best: Volcán Licancabur ranks first for Peak Near Cabeus B and Malapert Massif (score 69.8), followed by Ojos del Salado and Socompa. Temperature and precipitation for mountain and volcano candidates come from a coarse regional grid and are biased; the lunar ranking of these places rests mainly on slope and relief. For Mars, the Gilf Kebir plateau (Egypt and Libya), rarely studied as an analog, ranks first for Jezero (80.8) and Gale (83.2). Bolivian places appear in the top 5 of all six sites, including less-studied ones such as the Siloli Desert (third for Jezero and Gale) and Laguna Colorada. The analogy breaks down mainly on temperature (the coldest Earth candidate averages −27 °C, the lunar sites −126 to −160 °C) and on precipitation. Known lunar analogs rank only 14th, 16th and 23rd out of 43, which suggests they are chosen for properties our five variables do not measure.
 
 ### Use of Super Intelligence (SI)
 > Yes. The team used AI assistants (Claude and ChatGPT) as tools: to help write and review code, to search and check scientific literature and to draft and translate texts. The idea, the method and the data decisions are the team's. Every data value cites an original source that a team member opened and checked. The app makes no AI calls, and the project contains no AI-generated images, video or audio.
@@ -87,7 +87,8 @@ Revisar contra la web en producción antes de pegar: cada frase tiene que ser ci
 > - **MGS MOLA** MEGDR 128 pixels/degree (PDS): slope and relief of the Mars sites.
 > - **LROC NAC** region mosaics: coordinates of the lunar sites.
 > - **NASA GIBS** (Blue Marble Next Generation), **Moon Trek** (LRO WAC mosaic) and **Mars Trek** (Viking MDIM 2.1 mosaic): globe textures.
-> - [PENDING: Earth data from Lian, e.g. NASA POWER temperature and precipitation, with the exact products used.]
+> - **NASA POWER** climatology 2001–2025 (MERRA-2 and CERES SYN1deg): surface temperature (TS), corrected precipitation (PRECTOTCORR) and all-sky surface albedo (ALLSKY_SRF_ALB) of the Earth candidates.
+> - **SRTM** (NASA), through Terrain Tiles on AWS: slope and relief of the Earth candidates.
 
 ### Space Agency Partner Data and Other References
 > - **Mars Climate Database v6.2** (LMD/LATMOS/OU/IAA/ESA/CNES): Mars surface temperature and albedo.
@@ -95,5 +96,8 @@ Revisar contra la web en producción antes de pegar: cada frase tiene que ser ci
 > - **OpenStreetMap** contributors (ODbL): base map.
 > - **Literature:** Paige et al. 2010 (Science 330, 479); Vasavada et al. 2014 (JGR Planets, doi:10.1002/2014JE004622); Goudge et al. 2015; Farley et al. 2022; Vaniman et al. 2014; Bridges et al. 2018; Bramson et al. 2015; Colaprete et al. 2010; Kring et al. 2025.
 > - **Software:** React, React Router, MapLibre GL JS, Recharts, react-markdown, Vite, TypeScript, Vitest.
-> - [PENDING: Earth sources and fact-sheet references from Lian; fonts and icons from Noe.]
+> - **Terrain Tiles** on the AWS Registry of Open Data (https://registry.opendata.aws/terrain-tiles), accessed on 14 November 2026: elevation tiles combining SRTM and other models.
+> - **Wikipedia**: approximate coordinates of the Earth candidates. **Crossref**: check of which places are already documented as planetary analogs.
+> - **Design:** system fonts (Segoe UI, system-ui) and an original SVG symbol made by the team; no external graphics.
+> - [PENDING: fact-sheet references from Lian, once `fichas.json` is published.]
 > - Full list with links and licenses: `docs/ATRIBUCION.md` in the repository.

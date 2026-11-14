@@ -16,11 +16,11 @@ Dueño: Joel. Cada persona le pasa sus fuentes. Se muestra en el pie de la web y
 | Mars Trek (NASA), mosaico color Viking MDIM 2.1 para el globo | Dante | https://trek.nasa.gov/mars/ | Datos de NASA; reconocer a NASA como fuente | NASA/USGS (a verificar), vía NASA Mars Trek |
 | Texturas del globo, Tierra: Blue Marble Next Generation | Dante | https://gibs.earthdata.nasa.gov/ | Datos de NASA; GIBS pide un agradecimiento | We acknowledge the use of imagery provided by services from NASA's Global Imagery Browse Services (GIBS), part of NASA's Earth Science Data and Information System (ESDIS). |
 | Mapa base: teselas de OpenStreetMap | Fernando | https://www.openstreetmap.org/copyright | Datos bajo Open Database License (ODbL); el crédito debe verse en el mapa | © OpenStreetMap contributors |
-| NASA POWER (temperatura y precipitación de la Tierra) | Lian | | | Pendiente: Lian |
-| Modelo digital de elevación de la Tierra | Lian | | | Pendiente: Lian |
-| Producto de albedo de la Tierra | Lian | | | Pendiente: Lian |
+| NASA POWER (temperatura TS, precipitación PRECTOTCORR y albedo ALLSKY_SRF_ALB de la Tierra, climatología 2001-2025) | Lian | https://power.larc.nasa.gov/ | Datos de NASA; reconocer a NASA como fuente | NASA Langley Research Center POWER Project (MERRA-2 y CERES SYN1deg) |
+| Terrain Tiles en AWS (pendiente y relieve de la Tierra; SRTM y otros modelos) | Lian | https://registry.opendata.aws/terrain-tiles/ | Atribución según https://github.com/tilezen/joerd/blob/master/docs/attribution.md (texto exacto a verificar) | Terrain Tiles was accessed on 14/11/2026 from https://registry.opendata.aws/terrain-tiles |
+| Coordenadas de los candidatos terrestres | Lian | Artículo de Wikipedia de cada lugar (ver `pipeline/earth/seed.json`) | Coordenadas: dato factual; citar la fuente | Wikipedia |
 | Referencias de las fichas (`fichas.json`) | Lian | | | Pendiente: Lian |
-| Íconos, tipografías e imágenes | Noe | | | Pendiente: Noe |
+| Tipografías, logo e imágenes | Noe | `docs/design/IDENTIDAD.md` | Fuentes del sistema (Segoe UI, system-ui), sin descarga; símbolo SVG original del equipo; sin recursos gráficos externos | No requiere crédito |
 
 ## Software
 
