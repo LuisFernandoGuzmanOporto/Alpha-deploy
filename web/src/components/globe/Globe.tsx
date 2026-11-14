@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
 import { useT } from "../../i18n";
 import { clampLat, project, wrapLon, type View } from "./orthographic";
+import { spreadMarkers } from "./layout";
 
 export interface GlobeMarker {
   id: string;
@@ -28,6 +29,8 @@ const DRAG_BLOCK = 2;
 const SHADE_MIN = 0.55;
 const MAX_PIXEL_RATIO = 2;
 const MARKER_RADIUS = 9;
+/** Espacio mínimo (en px a 360 px de lado) entre marcadores agrupados. */
+const MARKER_GAP = 3;
 const SITE_COLOR = "#e4572e";
 const ANALOG_COLOR = "#ffd23f";
 const OUTLINE_COLOR = "#111111";
@@ -205,22 +208,39 @@ function renderMarkers(ctx: CanvasRenderingContext2D, px: number, markers: Globe
   const scale = px / 360;
   const r = MARKER_RADIUS * Math.max(1, scale);
   const ordered = [...markers].sort((a, b) => (a.kind === b.kind ? 0 : a.kind === "site" ? 1 : -1));
+  const visible = ordered.flatMap((marker) => {
+    const p = project(marker.lat, marker.lon, view);
+    return p ? [{ marker, point: { x: radius + p.x * radius, y: radius - p.y * radius } }] : [];
+  });
+  const placed = spreadMarkers(
+    visible.map((v) => v.point),
+    2 * r + MARKER_GAP * scale,
+  );
+  ctx.lineWidth = Math.max(1.5, scale * 1.5);
+  ctx.strokeStyle = OUTLINE_COLOR;
+  visible.forEach(({ point }, i) => {
+    const at = placed[i]!;
+    if (at.x === point.x && at.y === point.y) return;
+    ctx.beginPath();
+    ctx.moveTo(point.x, point.y);
+    ctx.lineTo(at.x, at.y);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(point.x, point.y, Math.max(2, r / 4), 0, 2 * Math.PI);
+    ctx.fillStyle = OUTLINE_COLOR;
+    ctx.fill();
+  });
   ctx.font = `bold ${Math.round(r * 1.1)}px system-ui, sans-serif`;
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
-  for (const marker of ordered) {
-    const p = project(marker.lat, marker.lon, view);
-    if (!p) continue;
-    const cx = radius + p.x * radius;
-    const cy = radius - p.y * radius;
+  visible.forEach(({ marker }, i) => {
+    const { x, y } = placed[i]!;
     ctx.beginPath();
-    ctx.arc(cx, cy, r, 0, 2 * Math.PI);
+    ctx.arc(x, y, r, 0, 2 * Math.PI);
     ctx.fillStyle = marker.kind === "site" ? SITE_COLOR : ANALOG_COLOR;
     ctx.fill();
-    ctx.lineWidth = Math.max(1.5, scale * 1.5);
-    ctx.strokeStyle = OUTLINE_COLOR;
     ctx.stroke();
     ctx.fillStyle = OUTLINE_COLOR;
-    ctx.fillText(marker.badge, cx, cy + 0.5);
-  }
+    ctx.fillText(marker.badge, x, y + 0.5);
+  });
 }
