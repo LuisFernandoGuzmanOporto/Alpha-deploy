@@ -913,7 +913,7 @@
     "name": "Meseta de Gilf Kebir",
     "country": "Egipto y Libia",
     "is_bolivia": false,
-    "known": false,
+    "known": true,
     "analog_for": [
       "mars"
     ],
@@ -923,8 +923,10 @@
     "lat": 23.4414,
     "lon": 25.8397,
     "coord_source": "Wikipedia, artículo 'Gilf Kebir' (https://en.wikipedia.org/wiki/Gilf_Kebir)",
-    "why": "",
-    "references": [],
+    "why": "Meseta del desierto occidental de Egipto cuyas formas eólicas y valles secos se compararon con las de Marte en un informe de NASA (El-Baz y Maxwell, 1982).",
+    "references": [
+      "https://ntrs.nasa.gov/citations/19830008725"
+    ],
     "tag_sources": {
       "hyper-arid": "https://en.wikipedia.org/wiki/Gilf_Kebir"
     }

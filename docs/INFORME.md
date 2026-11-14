@@ -36,7 +36,7 @@ Each value is normalized to a 0–1 scale across all places, and the score is **
 
 **For the Moon, the best matches are high, steep, dry Andean terrain.** Volcán Licancabur, on the Bolivia–Chile border, ranks **first for Peak Near Cabeus B and Malapert Massif** (score 69.8). Volcán Ojos del Salado (63.3) and Volcán Socompa (62.0), both less studied as analogs, follow. For Faustini Rim A the top match is the hyper-arid core of the Atacama Desert near Yungay (62.7). These places match the slopes and relief of the lunar polar massifs and are among the driest on Earth. **Caution:** the temperature and precipitation of these three mountain candidates come from a coarse regional grid (tens of kilometres) and are biased; for example, Licancabur shows 14.7 °C on a 5,900 m summit. Their ranking rests mainly on slope and relief, which we checked against known elevations.
 
-**For Mars, the best matches are flat, hyper-arid desert plateaus, several of them rarely used as analogs.** The Gilf Kebir plateau (Egypt and Libya), not documented as a planetary analog in the literature we reviewed, ranks **first for Jezero (80.8) and Gale (83.2)**. The Tibesti Mountains (Chad), a known analog, are second for both. For Arcadia Planitia, the extremely flat Taklamakan Desert (76.9) and Dasht-e Kavir salt desert (76.8) lead.
+**For Mars, the best matches are flat, hyper-arid desert plateaus, and the index puts documented analogs on top.** The Gilf Kebir plateau (Egypt and Libya), which a 1982 NASA report already compared with Mars, ranks **first for Jezero (80.8) and Gale (83.2)**. The Tibesti Mountains (Chad), also a known analog, are second for both. Less-studied places such as the Siloli Desert, Harrat Khaybar and Laguna Colorada follow in the top 5. For Arcadia Planitia, the extremely flat Taklamakan Desert (76.9) and Dasht-e Kavir salt desert (76.8) lead.
 
 **Bolivia appears in every top 5.**
 
@@ -85,7 +85,7 @@ The tool turns "this looks like Mars" into a measured, explainable comparison. A
 
 Comparamos 6 sitios candidatos de la Luna y Marte con 47 lugares de la Tierra usando cinco variables derivadas de datos y modelos de NASA en la misma ventana de 10 × 10 km.
 - **Luna:** los mejores análogos son volcanes altos, empinados y secos de los Andes. El **Licancabur (Bolivia–Chile)** es el primero para Peak Near Cabeus B y Malapert Massif.
-- **Marte:** ganan mesetas desérticas planas y muy áridas, varias poco estudiadas, como **Gilf Kebir**.
+- **Marte:** ganan mesetas desérticas planas y muy áridas, y el índice pone arriba a análogos ya documentados: **Gilf Kebir** y Tibesti quedan primero y segundo para Jezero y Gale.
 - **Bolivia:** aparece en el top 5 de los seis sitios (Licancabur, Siloli, Laguna Colorada y Coipasa).
 
 La analogía falla sobre todo por la **temperatura**: ningún lugar de la Tierra se acerca a los −126 a −160 °C del polo sur lunar. También fallan la **lluvia** y lo que la Tierra no puede reproducir: gravedad, vacío, atmósfera y radiación. Los análogos lunares que ya usa la literatura quedan lejos del primer lugar, lo que muestra que se eligen por razones que nuestras cinco variables no miden. Ojo: la temperatura y la lluvia de los volcanes y montañas andinos (Licancabur, Ojos del Salado, Socompa) vienen de una malla regional gruesa y están sesgadas; su posición se apoya sobre todo en la pendiente y el relieve. Son resultados de la versión 1 y la validación del equipo sigue en curso.
