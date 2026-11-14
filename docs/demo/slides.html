@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Earth Analogs: official demo (7 slides)</title>
+<style>
+  /* Mismos colores y tipografías que la web (web/src/styles/tokens.css). Se exporta con capture.mjs. */
+  :root {
+    --bg: #0f1113; --surface: #16191c; --surface-2: #1d2124; --border: #2c3237; --border-strong: #454d54;
+    --text: #f3ede4; --muted: #aaa396; --accent: #ff7a1a; --accent-strong: #ff9440; --warn: #f0c14b;
+    --sans: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, sans-serif;
+    --mono: "Cascadia Mono", "JetBrains Mono", "SF Mono", ui-monospace, Consolas, monospace;
+  }
+  @page { size: 1280px 720px; margin: 0; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { background: var(--bg); color: var(--text); font-family: var(--sans); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .slide { position: relative; display: grid; grid-template-rows: auto 1fr auto; width: 1280px; height: 720px; padding: 44px 64px 28px; overflow: hidden; break-after: page; page-break-after: always; background: var(--bg); }
+  .slide:last-child { break-after: auto; page-break-after: auto; }
+  .kicker { color: var(--accent); font: 600 15px var(--mono); letter-spacing: 0.14em; text-transform: uppercase; }
+  h1 { margin-top: 10px; font-size: 52px; line-height: 1.08; letter-spacing: -0.02em; }
+  h2 { margin-top: 10px; font-size: 42px; line-height: 1.1; letter-spacing: -0.02em; }
+  .body { display: grid; align-content: center; gap: 22px; min-height: 0; padding: 18px 0; }
+  .two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 44px; align-items: center; min-height: 0; }
+  .lead { color: var(--text); font-size: 25px; line-height: 1.4; }
+  .muted { color: var(--muted); }
+  ul { display: grid; gap: 14px; padding: 0; list-style: none; font-size: 21px; line-height: 1.38; }
+  li { position: relative; padding-left: 22px; }
+  li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 8px; height: 8px; background: var(--accent); }
+  li b { color: var(--accent-strong); font-weight: 700; }
+  .shot { width: 100%; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--surface); object-fit: cover; object-position: top; }
+  .shot.short { height: auto; max-height: 440px; }
+  .tag { display: inline-block; padding: 2px 9px; border: 1px solid #ff7a1a66; color: var(--accent-strong); font: 600 14px var(--mono); letter-spacing: 0.05em; text-transform: uppercase; }
+  .foot { display: flex; justify-content: space-between; gap: 40px; color: var(--muted); font: 13px var(--mono); letter-spacing: 0.04em; border-top: 1px solid var(--border); padding-top: 10px; }
+  .foot .num { white-space: nowrap; }
+  .note { color: var(--muted); font-size: 15px; line-height: 1.4; }
+  .disc { width: 220px; height: 220px; border-radius: 50%; object-fit: cover; box-shadow: inset -14px -14px 28px #00000066; }
+  .discs { display: flex; gap: 36px; justify-content: center; align-items: center; }
+  .discs figure { display: grid; justify-items: center; gap: 12px; }
+  .discs figcaption { color: var(--muted); font: 600 15px var(--mono); letter-spacing: 0.1em; text-transform: uppercase; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .card { display: grid; align-content: start; gap: 12px; padding: 20px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
+  .card h3 { color: var(--accent-strong); font: 700 16px var(--mono); letter-spacing: 0.1em; text-transform: uppercase; }
+  .card p { font-size: 18px; line-height: 1.4; }
+  .formula { padding: 14px 18px; border-left: 3px solid var(--accent); background: var(--surface); font: 600 21px var(--mono); }
+  .cover { display: grid; grid-template-columns: minmax(0, 1.15fr) 360px; gap: 40px; align-items: center; }
+  .team { display: flex; flex-wrap: wrap; gap: 8px 22px; font: 600 19px var(--mono); color: var(--text); }
+</style>
+</head>
+<body>
+
+<section class="slide">
+  <div><span class="kicker">NASA Space Apps Challenge 2026 · Cochabamba, Bolivia</span></div>
+  <div class="cover">
+    <div class="body">
+      <h1>Earth Analogs</h1>
+      <p class="lead">Measuring which places on Earth resemble the Moon and Mars, and where they don't.</p>
+      <p class="note">Challenge: <i>Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars</i></p>
+      <div class="team"><span>Fernando</span><span>Lian</span><span>Dante</span><span>Sebastián</span><span>Noe</span><span>Joel</span></div>
+    </div>
+    <img class="shot" style="border-radius:50%; border:0; background:none" src="img/globe-moon.jpg" alt="3D globe of the Moon with the Malapert Massif site marked near the south pole">
+  </div>
+  <div class="foot"><span>Earth Analogs</span><span>1 / 7</span></div>
+</section>
+
+<section class="slide">
+  <div><span class="kicker">The problem</span><h2>No place on Earth matches the Moon or Mars in everything.</h2></div>
+  <div class="two">
+    <ul>
+      <li>Earth analogs such as Atacama, Haughton Crater or Death Valley are "not entirely well characterized" (challenge statement).</li>
+      <li>Mission teams need to know <b>what</b> an analog is good for, and <b>where it fails</b>.</li>
+    </ul>
+    <div class="discs">
+      <figure><img class="disc" src="../../web/src/components/globe/textures/moon.jpg" alt="Moon mosaic"><figcaption>Moon</figcaption></figure>
+      <figure><img class="disc" src="../../web/src/components/globe/textures/earth.jpg" alt="Earth mosaic"><figcaption>Earth</figcaption></figure>
+    </div>
+  </div>
+  <div class="foot"><span>Textures: NASA Moon Trek and NASA GIBS</span><span>2 / 7</span></div>
+</section>
+
+<section class="slide">
+  <div><span class="kicker">Our solution</span><h2>Pick a site. Get a ranked map of Earth analogs.</h2></div>
+  <div class="two" style="grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr)">
+    <ul>
+      <li>A <b>0–100 similarity score</b> for every Earth place.</li>
+      <li>A <b>side-by-side comparison</b> with a radar of each variable.</li>
+      <li>An explicit <b>"where the analogy breaks down"</b> panel.</li>
+    </ul>
+    <img class="shot short" src="img/home-malapert.jpg" alt="Main screen: Malapert Massif selected, world map with analog markers and the ranking">
+  </div>
+  <div class="foot"><span>Base map © OpenStreetMap contributors</span><span>3 / 7</span></div>
+</section>
+
+<section class="slide">
+  <div><span class="kicker">How the index works</span><h2>Five measurable variables, one honest score.</h2></div>
+  <div class="two" style="grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr)">
+    <div class="body" style="padding:0">
+      <ul>
+        <li><b>Slope, relief, mean temperature, aridity, albedo</b>, from NASA data and models in a common 10 × 10 km window.</li>
+        <li>Each value is normalized; geology, ice and dust tags are compared separately.</li>
+        <li>Every value cites its source. <b>Missing data stays empty, never guessed.</b></li>
+      </ul>
+      <div class="formula">score = 100 × (1 − weighted mean difference)</div>
+    </div>
+    <img class="shot short" src="img/compare-malapert-licancabur.jpg" alt="Comparison of Malapert Massif and Volcán Licancabur: score 69.8, variable table and radar">
+  </div>
+  <div class="foot"><span>Malapert Massif vs. Volcán Licancabur: 69.8 / 100</span><span>4 / 7</span></div>
+</section>
+
+<section class="slide">
+  <div><span class="kicker">NASA data at the core</span><h2>Built on open NASA data.</h2></div>
+  <div class="body">
+    <div class="grid3">
+      <div class="card"><h3>Moon</h3><p>LRO LOLA terrain and LRO Diviner temperature, at the lunar south pole.</p></div>
+      <div class="card"><h3>Mars</h3><p>MGS MOLA terrain and the Mars Climate Database (LMD, ESA, CNES).</p></div>
+      <div class="card"><h3>Earth</h3><p>NASA POWER (temperature, precipitation, CERES albedo) and SRTM-based elevation tiles on AWS.</p></div>
+    </div>
+    <div class="discs" style="justify-content:flex-start">
+      <figure><img class="disc" style="width:120px;height:120px" src="../../web/src/components/globe/textures/moon.jpg" alt="Moon"><figcaption>Moon Trek</figcaption></figure>
+      <figure><img class="disc" style="width:120px;height:120px" src="../../web/src/components/globe/textures/mars.jpg" alt="Mars"><figcaption>Mars Trek</figcaption></figure>
+      <figure><img class="disc" style="width:120px;height:120px" src="../../web/src/components/globe/textures/earth.jpg" alt="Earth"><figcaption>NASA GIBS</figcaption></figure>
+      <p class="note" style="max-width:560px">The 3D globe uses NASA GIBS, Moon Trek and Mars Trek mosaics. Full sources and licenses: docs/ATRIBUCION.md.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Every value comes from a cited source; the app makes no AI calls</span><span>5 / 7</span></div>
+</section>
+
+<section class="slide">
+  <div><span class="kicker">What we found</span><h2>What the index found: Andes for the Moon, deserts for Mars.</h2></div>
+  <div class="two" style="grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr)">
+    <ul style="font-size:19px; gap:11px">
+      <li><b>Moon:</b> Volcán Licancabur, already a documented analog, ranks 1st for Peak Near Cabeus B and Malapert Massif (69.8), then Ojos del Salado (2nd) and Socompa (4th).*</li>
+      <li><b>Mars:</b> the Gilf Kebir plateau, which a 1982 NASA report already compared with Mars, ranks 1st for Jezero (80.8) and Gale (83.2).</li>
+      <li><b>Bolivia</b> is in the top 5 of all six sites, with less-studied places such as the Siloli Desert (3rd for Jezero and Gale) and Laguna Colorada.</li>
+      <li><b>Where it fails:</b> the coldest Earth candidate averages −27 °C; the lunar sites, −126 to −160 °C.</li>
+    </ul>
+    <img class="shot short" src="img/discoveries.jpg" alt="Discoveries view: the five best less-studied analogs for each site">
+  </div>
+  <div class="foot"><span>* Temperature and precipitation of mountain candidates are biased (coarse regional grid); their rank rests mainly on slope and relief.</span><span class="num">6 / 7</span></div>
+</section>
+
+<section class="slide">
+  <div><span class="kicker">Why it matters, and what's next</span><h2>Test on Earth first, knowing each place's limits.</h2></div>
+  <div class="two" style="grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr)">
+    <ul style="font-size:20px; gap:12px">
+      <li>Helps choose where to test <b>rovers, instruments and operations</b>.</li>
+      <li>Makes the limits explicit: gravity, vacuum, thin atmosphere and radiation cannot be reproduced.</li>
+      <li>Puts less-studied Bolivian places (Siloli, Laguna Colorada, Uturuncu) on the analog map.</li>
+      <li><b>Next:</b> more Earth candidates, a finer global scan and field validation.</li>
+    </ul>
+    <img class="shot short" src="img/bolivia-jezero.jpg" alt="Bolivia-only filter for Jezero crater: the Bolivian analogs on the map and in the ranking">
+  </div>
+  <div class="foot"><span>github.com/LuisFernandoGuzmanOporto/Alpha-deploy · Base map © OpenStreetMap contributors</span><span>7 / 7</span></div>
+</section>
+
+</body>
+</html>

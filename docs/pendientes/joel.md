@@ -17,8 +17,10 @@ Ya entregado: J-1 (requisitos), J-2 (README y atribución), J-4b (informe) y la 
   - [ ] Confirmar los oradores propuestos: Joel en la apertura y Noe en límites e impacto.
   - [ ] Poner la URL de Vercel donde dice `[PENDIENTE: URL de Vercel]`.
   - [ ] Revisar la ortografía en inglés.
-  - [ ] Exportar a PDF y subirlo a Google Drive con acceso "cualquiera con el enlace".
-  - [ ] Capturas: pantalla principal, "Solo Bolivia", comparador completo, descubrimientos, globo y metodología (con Noe, sobre el rediseño nuevo).
+  - [x] PDF de las 7 diapositivas en `docs/demo/earth-analogs-demo.pdf`.
+  - [ ] Revisarlo con el equipo (nombres completos y nombre del equipo en la diapositiva 1) y subirlo a Google Drive con acceso "cualquiera con el enlace".
+  - [x] Capturas del rediseño nuevo: pantalla principal, "Solo Bolivia", comparador, descubrimientos y globo (`docs/demo/img/`).
+  - [ ] Captura de la metodología y la del comparador completo, cuando los textos de los datos estén en inglés (#25).
 - [ ] **J-5, video y ensayo:** grabar el video de respaldo con el recorrido de la sección 5 del pitch y ensayar 3 veces con el equipo (Sebastián hace de jurado). Cronometrar contra el tiempo de la sede.
 - [ ] **J-6, lista de entrega (`docs/ENTREGA.md`):**
   - [ ] Los 6 integrantes registrados en la sede Cochabamba, sin lista de espera, y visibles en la pestaña Members.
