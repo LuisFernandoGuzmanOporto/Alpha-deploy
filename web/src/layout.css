@@ -8,6 +8,26 @@ body {
   color: #111111;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.app-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+}
+
 .controls {
   display: flex;
   flex-wrap: wrap;
@@ -36,7 +56,21 @@ body {
 
 .ranking-list button {
   all: unset;
+  display: block;
+  width: 100%;
   cursor: pointer;
+}
+
+/* Sin esto `all: unset` borra el foco y no se ve dónde está el teclado (issue #29). */
+.ranking-list button:focus-visible {
+  outline: 3px solid #0050ff;
+  outline-offset: 2px;
+}
+
+/* El número de puesto va junto al nombre, no junto al país (issue #30). */
+.ranking-name,
+.ranking-place {
+  display: block;
 }
 
 .ranking-list li.selected {

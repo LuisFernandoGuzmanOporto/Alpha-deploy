@@ -1,4 +1,6 @@
-import { Component, type ErrorInfo, type ReactNode } from "react";
+import { Component, type ContextType, type ErrorInfo, type ReactNode } from "react";
+import { LanguageContext } from "../i18n";
+import { makeT } from "../i18n/messages";
 
 interface Props {
   children: ReactNode;
@@ -10,6 +12,9 @@ interface State {
 
 /** Evita la pantalla en blanco si un componente falla al dibujarse. */
 export class ErrorBoundary extends Component<Props, State> {
+  static contextType = LanguageContext;
+  declare context: ContextType<typeof LanguageContext>;
+
   state: State = { error: null };
 
   static getDerivedStateFromError(error: Error): State {
@@ -22,10 +27,11 @@ export class ErrorBoundary extends Component<Props, State> {
 
   render() {
     if (this.state.error) {
+      const t = makeT(this.context.lang);
       return (
         <div role="alert">
-          <p>Algo salió mal al mostrar esta pantalla: {this.state.error.message}</p>
-          <a href="/">Volver al inicio</a>
+          <p>{t("error.boundary", { message: this.state.error.message })}</p>
+          <a href="/">{t("common.backHome")}</a>
         </div>
       );
     }

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import type { MessageKey, Translate, TranslateParams } from "../i18n/messages";
 import type { Candidate, Ficha, Results, Site } from "../types";
 import { indexFichas } from "./fichas";
 
@@ -10,21 +11,38 @@ export interface AppData {
   fichas: Record<string, Ficha>;
 }
 
+/** Error de carga con un mensaje traducible (la clave y sus parámetros, no el texto). */
+export class LoadError extends Error {
+  constructor(
+    readonly key: MessageKey,
+    readonly params?: TranslateParams,
+  ) {
+    super(key);
+  }
+}
+
 export type DataState =
   | { status: "loading" }
-  | { status: "error"; message: string }
+  | { status: "error"; error: unknown }
   | { status: "ready"; data: AppData };
+
+/** Texto del error de carga en el idioma actual. */
+export function loadErrorText(t: Translate, error: unknown): string {
+  const detail =
+    error instanceof LoadError ? t(error.key, error.params) : error instanceof Error ? error.message : t("error.unknown");
+  return t("error.load", { message: detail });
+}
 
 async function fetchJson<T>(file: string): Promise<T> {
   const url = `${import.meta.env.BASE_URL}data/${file}`;
   const response = await fetch(url);
   if (!response.ok) {
-    throw new Error(`No se pudo cargar ${file} (HTTP ${response.status})`);
+    throw new LoadError("error.http", { file, status: response.status });
   }
   try {
     return (await response.json()) as T;
   } catch {
-    throw new Error(`${file} no es un JSON válido`);
+    throw new LoadError("error.json", { file });
   }
 }
 
@@ -36,7 +54,7 @@ async function fetchFichas(): Promise<Record<string, Ficha>> {
   try {
     return indexFichas(await response.json());
   } catch {
-    throw new Error("fichas.json no es un JSON válido");
+    throw new LoadError("error.json", { file: "fichas.json" });
   }
 }
 
@@ -48,7 +66,7 @@ export async function loadData(): Promise<AppData> {
     fetchFichas(),
   ]);
   if (!Array.isArray(sites) || !Array.isArray(candidates)) {
-    throw new Error("sites.json y candidates.json deben ser listas");
+    throw new LoadError("error.lists");
   }
   return { sites, candidates, results, fichas };
 }
@@ -66,12 +84,7 @@ export function useData(): DataState {
       (data) => active && setState({ status: "ready", data }),
       (error: unknown) => {
         cached = null;
-        if (active) {
-          setState({
-            status: "error",
-            message: error instanceof Error ? error.message : "Error desconocido",
-          });
-        }
+        if (active) setState({ status: "error", error });
       },
     );
     return () => {

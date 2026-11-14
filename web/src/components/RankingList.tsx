@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useContent, useT } from "../i18n";
 import type { RankingRow } from "../lib/ranking";
 import { KnownBadge } from "./placeholders/KnownBadge";
 
@@ -10,8 +11,11 @@ interface Props {
 }
 
 export function RankingList({ siteId, rows, selectedId, onSelect }: Props) {
+  const t = useT();
+  const { tags } = useContent();
+
   if (rows.length === 0) {
-    return <p>No hay análogos que cumplan los filtros.</p>;
+    return <p>{t("ranking.empty")}</p>;
   }
 
   return (
@@ -21,26 +25,25 @@ export function RankingList({ siteId, rows, selectedId, onSelect }: Props) {
         return (
           <li key={candidate.id} className={selected ? "selected" : undefined}>
             <button type="button" aria-pressed={selected} onClick={() => onSelect(candidate.id)}>
-              <strong>{candidate.name}</strong> — {entry.score.toFixed(1)} <KnownBadge known={candidate.known} />
-              <br />
-              <small>
+              <span className="ranking-name">
+                <strong>{candidate.name}</strong> — {entry.score.toFixed(1)} <KnownBadge known={candidate.known} />
+              </span>
+              <small className="ranking-place">
                 {candidate.country}
-                {candidate.lat === null || candidate.lon === null ? " · sin coordenadas" : ""}
+                {candidate.lat === null || candidate.lon === null ? t("ranking.noCoords") : ""}
               </small>
             </button>
             {selected && (
               <p>
                 {candidate.why}
                 <br />
-                {entry.tag_overlap ? (
-                  <>
-                    Coincidencias: {entry.tag_overlap.shared.join(", ") || "ninguna"} (
-                    {entry.tag_overlap.jaccard.toFixed(2)}).{" "}
-                  </>
-                ) : (
-                  <>Coincidencias cualitativas: sin dato. </>
-                )}
-                <Link to={`/comparar/${siteId}/${candidate.id}`}>Ver comparación</Link>
+                {entry.tag_overlap
+                  ? t("ranking.shared", {
+                      tags: entry.tag_overlap.shared.map((tag) => tags[tag].label).join(", ") || t("common.none"),
+                      jaccard: entry.tag_overlap.jaccard.toFixed(2),
+                    })
+                  : t("ranking.noOverlap")}
+                <Link to={`/comparar/${siteId}/${candidate.id}`}>{t("ranking.compare")}</Link>
               </p>
             )}
           </li>

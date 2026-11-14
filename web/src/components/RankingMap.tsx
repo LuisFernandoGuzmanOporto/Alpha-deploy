@@ -3,6 +3,7 @@ import { LngLatBounds, Map as MapLibreMap, Popup, setWorkerUrl, type GeoJSONSour
 import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
 import type { Feature, FeatureCollection, Point } from "geojson";
 import "maplibre-gl/dist/maplibre-gl.css";
+import { useT } from "../i18n";
 import type { RankingRow } from "../lib/ranking";
 
 // Vite empaqueta el worker aparte; sin esto MapLibre no lo encuentra en dev ni en producción.
@@ -32,6 +33,7 @@ function toGeoJson(rows: RankingRow[]): FeatureCollection<Point> {
 }
 
 export function RankingMap({ rows, selectedId, onSelect }: Props) {
+  const t = useT();
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const onSelectRef = useRef(onSelect);
@@ -55,7 +57,7 @@ export function RankingMap({ rows, selectedId, onSelect }: Props) {
             tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
             tileSize: 256,
             maxzoom: 19,
-            attribution: "© colaboradores de OpenStreetMap",
+            attribution: "© OpenStreetMap contributors",
           },
         },
         layers: [{ id: "osm", type: "raster", source: "osm" }],
@@ -146,5 +148,5 @@ export function RankingMap({ rows, selectedId, onSelect }: Props) {
     map.setFilter(SELECTED_LAYER, ["==", ["get", "id"], selectedId ?? ""]);
   }, [selectedId, ready]);
 
-  return <div ref={containerRef} className="ranking-map" role="region" aria-label="Mapa de análogos terrestres" />;
+  return <div ref={containerRef} className="ranking-map" role="region" aria-label={t("map.aria")} />;
 }

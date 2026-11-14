@@ -1,3 +1,4 @@
+import { tEs, type Translate } from "../../i18n/messages";
 import { VARIABLE_IDS, type RankingEntry, type VariableId, type VariableValues } from "../../types";
 
 /** Diferencia normalizada a partir de la cual una variable cuenta como "donde falla". */
@@ -5,15 +6,6 @@ export const BREAKDOWN_THRESHOLD = 0.3;
 
 const SIMILAR_BELOW = 0.1;
 const SOMEWHAT_BELOW = 0.3;
-
-/** Palabras para cuando el candidato terrestre tiene un valor mayor o menor que el sitio. */
-const DIRECTION_WORDS: Record<VariableId, { higher: string; lower: string }> = {
-  slope_deg: { higher: "más empinado", lower: "más llano" },
-  relief_m: { higher: "más accidentado", lower: "más plano" },
-  temp_mean_c: { higher: "más cálido", lower: "más frío" },
-  precip_mm_year: { higher: "más lluvioso", lower: "más árido" },
-  albedo: { higher: "más claro", lower: "más oscuro" },
-};
 
 export interface VariableComparison {
   variable: VariableId;
@@ -33,12 +25,12 @@ export function describeDifference(
   siteValue: number | null,
   candidateValue: number | null,
   normDiff: number | null,
+  t: Translate = tEs,
 ): string {
-  if (siteValue === null || candidateValue === null || normDiff === null) return "sin dato para comparar";
-  if (normDiff < SIMILAR_BELOW || siteValue === candidateValue) return "parecido";
-  const words = DIRECTION_WORDS[variable];
-  const direction = candidateValue > siteValue ? words.higher : words.lower;
-  return normDiff < SOMEWHAT_BELOW ? `algo ${direction}` : `mucho ${direction}`;
+  if (siteValue === null || candidateValue === null || normDiff === null) return t("cmp.noCompare");
+  if (normDiff < SIMILAR_BELOW || siteValue === candidateValue) return t("cmp.same");
+  const direction = t(`cmp.dir.${variable}.${candidateValue > siteValue ? "higher" : "lower"}`);
+  return t(normDiff < SOMEWHAT_BELOW ? "cmp.some" : "cmp.much", { direction });
 }
 
 /** Una fila por variable, en el orden del contrato. */
@@ -46,6 +38,7 @@ export function compareVariables(
   site: VariableValues,
   candidate: VariableValues,
   entry: RankingEntry | null,
+  t: Translate = tEs,
 ): VariableComparison[] {
   return VARIABLE_IDS.map((variable) => {
     const normDiff = entry?.norm_diff[variable] ?? null;
@@ -55,7 +48,7 @@ export function compareVariables(
       candidateValue: candidate[variable],
       normDiff,
       similarity: normDiff === null ? null : Math.round(100 * (1 - normDiff)),
-      description: describeDifference(variable, site[variable], candidate[variable], normDiff),
+      description: describeDifference(variable, site[variable], candidate[variable], normDiff, t),
     };
   });
 }

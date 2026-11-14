@@ -2,14 +2,17 @@ import { Link, useParams } from "react-router-dom";
 import { Comparador } from "../components/compare/Comparador";
 import { FichaPanel } from "../components/FichaPanel";
 import { LimitationsPanel } from "../components/placeholders/LimitationsPanel";
-import { useData } from "../lib/data";
+import { useContent, useT } from "../i18n";
+import { loadErrorText, useData } from "../lib/data";
 
 export function Compare() {
   const { siteId, candidateId } = useParams();
   const state = useData();
+  const t = useT();
+  const { ui } = useContent();
 
-  if (state.status === "loading") return <p>Cargando datos…</p>;
-  if (state.status === "error") return <p role="alert">Error al cargar los datos: {state.message}</p>;
+  if (state.status === "loading") return <p>{ui.states.loading}</p>;
+  if (state.status === "error") return <p role="alert">{loadErrorText(t, state.error)}</p>;
 
   const { sites, candidates, results, fichas } = state.data;
   const site = sites.find((s) => s.id === siteId);
@@ -17,8 +20,8 @@ export function Compare() {
   if (!site || !candidate) {
     return (
       <>
-        <p>No existe esa comparación.</p>
-        <Link to="/">Volver al inicio</Link>
+        <p>{t("compare.notFound")}</p>
+        <Link to="/">{t("common.backHome")}</Link>
       </>
     );
   }
@@ -29,7 +32,7 @@ export function Compare() {
   return (
     <>
       <p>
-        <Link to={`/?sitio=${site.id}&analogo=${candidate.id}`}>← Volver al ranking</Link>
+        <Link to={`/?sitio=${site.id}&analogo=${candidate.id}`}>{t("compare.back")}</Link>
       </p>
       <Comparador
         site={site}

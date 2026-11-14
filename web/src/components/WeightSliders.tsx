@@ -1,5 +1,6 @@
+import { useContent, useT } from "../i18n";
 import type { Weights } from "../lib/ranking";
-import { MAX_WEIGHT, VARIABLE_INFO } from "../lib/variables";
+import { MAX_WEIGHT } from "../lib/variables";
 import { VARIABLE_IDS } from "../types";
 
 interface Props {
@@ -9,12 +10,14 @@ interface Props {
 }
 
 export function WeightSliders({ weights, onChange, onReset }: Props) {
+  const t = useT();
+  const { variables } = useContent();
   return (
     <fieldset className="weights">
-      <legend>Peso de cada variable en el índice</legend>
+      <legend>{t("weights.legend")}</legend>
       {VARIABLE_IDS.map((variable) => (
         <label key={variable}>
-          {VARIABLE_INFO[variable].label}: {weights[variable]}
+          {variables[variable].label}: {weights[variable]}
           <input
             type="range"
             min={0}
@@ -26,7 +29,7 @@ export function WeightSliders({ weights, onChange, onReset }: Props) {
         </label>
       ))}
       <button type="button" onClick={onReset}>
-        Restablecer pesos
+        {t("weights.reset")}
       </button>
     </fieldset>
   );
