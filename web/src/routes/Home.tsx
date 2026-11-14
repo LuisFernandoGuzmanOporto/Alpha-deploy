@@ -15,11 +15,12 @@ export function Home() {
   const data = state.status === "ready" ? state.data : null;
   const siteId = data ? (data.sites.find((s) => s.id === params.get("sitio"))?.id ?? data.sites[0]?.id) : undefined;
   const boliviaOnly = params.get("bolivia") === "1";
+  const unstudiedOnly = params.get("nuevos") === "1";
   const selectedId = params.get("analogo");
 
   const rows = useMemo(
-    () => (data && siteId ? buildRanking(data.results, data.candidates, siteId, { boliviaOnly }) : []),
-    [data, siteId, boliviaOnly],
+    () => (data && siteId ? buildRanking(data.results, data.candidates, siteId, { boliviaOnly, unstudiedOnly }) : []),
+    [data, siteId, boliviaOnly, unstudiedOnly],
   );
 
   const update = (changes: Record<string, string | null>) => {
@@ -47,6 +48,14 @@ export function Home() {
             onChange={(event) => update({ bolivia: event.target.checked ? "1" : null, analogo: null })}
           />{" "}
           Solo Bolivia
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            checked={unstudiedOnly}
+            onChange={(event) => update({ nuevos: event.target.checked ? "1" : null, analogo: null })}
+          />{" "}
+          Solo lugares poco estudiados
         </label>
       </div>
       <div className="explorer">
