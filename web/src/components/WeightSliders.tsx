@@ -2,6 +2,7 @@ import { useContent, useT } from "../i18n";
 import type { Weights } from "../lib/ranking";
 import { MAX_WEIGHT } from "../lib/variables";
 import { VARIABLE_IDS } from "../types";
+import { Button } from "./ui";
 
 interface Props {
   weights: Weights;
@@ -28,9 +29,9 @@ export function WeightSliders({ weights, onChange, onReset }: Props) {
           />
         </label>
       ))}
-      <button type="button" onClick={onReset}>
+      <Button variant="secondary" onClick={onReset}>
         {t("weights.reset")}
-      </button>
+      </Button>
     </fieldset>
   );
 }

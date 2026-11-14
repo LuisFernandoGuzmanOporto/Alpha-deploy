@@ -1,29 +1,4 @@
-/* Estilos propios del globo (F6). Los colores usan los tokens de Noe (src/styles/) con valor de respaldo. */
-.globe-view {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.globe-tabs {
-  display: flex;
-  gap: 0.25rem;
-}
-
-.globe-tabs [role="tab"] {
-  padding: 0.35rem 0.9rem;
-  border: 1px solid var(--color-border, #c8c8c8);
-  border-radius: 999px;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-}
-
-.globe-tabs [role="tab"][aria-selected="true"] {
-  border-color: var(--color-accent, #1f4fbf);
-  background: var(--color-accent, #1f4fbf);
-  color: var(--color-on-accent, #ffffff);
-}
-
+/* Reglas estructurales del globo (F6). El color y las pestañas se estilan en styles/app.css con los tokens de Noe. */
 .globe {
   display: grid;
   gap: 0.5rem;
@@ -33,7 +8,7 @@
 .globe-canvas {
   display: block;
   border-radius: 50%;
-  background: var(--color-globe-space, #05070d);
+  background: #05070d;
   cursor: grab;
   touch-action: none;
 }
@@ -42,17 +17,9 @@
   cursor: grabbing;
 }
 
-.globe-canvas:focus-visible,
-.globe-tabs [role="tab"]:focus-visible,
-.globe-reset:focus-visible {
-  outline: 3px solid var(--color-focus, #ffbf47);
-  outline-offset: 3px;
-}
-
 .globe-status,
 .globe-credit {
   font-size: 0.9rem;
-  color: var(--color-text-muted, #444444);
 }
 
 .globe-list {

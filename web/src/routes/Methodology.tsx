@@ -8,7 +8,11 @@ export function Methodology() {
   const t = useT();
   return (
     <article className="methodology">
-      {lang === "en" && <p lang="en">{t("methodology.notice")}</p>}
+      {lang === "en" && (
+        <p className="ea-note" lang="en">
+          {t("methodology.notice")}
+        </p>
+      )}
       <div lang="es">
         <Markdown remarkPlugins={[remarkGfm]}>{methodology}</Markdown>
       </div>
