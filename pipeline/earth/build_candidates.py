@@ -59,6 +59,17 @@ def auto_why(variables: dict) -> str:
     return f"Propuesto por sus valores en este catalogo ({detail}); no se encontro un estudio previo como analogo planetario."
 
 
+def tag_notes(seed: dict) -> list[str]:
+    """Fuente de cada etiqueta (`tag_sources`) y motivo de las que faltan (`tags_pending`)."""
+    notes = []
+    if seed.get("tag_sources"):
+        cited = "; ".join(f"{tag}: {url}" for tag, url in seed["tag_sources"].items())
+        notes.append(f"Respaldo de etiquetas: {cited}.")
+    if seed.get("tags_pending"):
+        notes.append(seed["tags_pending"] + ".")
+    return notes
+
+
 def build_record(seed: dict) -> dict:
     lat, lon = seed["lat"], seed["lon"]
     terrain = terrain_variables(lat, lon, seed.get("land_below_sea_level", False))
@@ -116,6 +127,7 @@ def build_record(seed: dict) -> dict:
         )
     if seed.get("note_extra"):
         notes.append(seed["note_extra"] + ".")
+    notes.extend(tag_notes(seed))
 
     variables = {
         "slope_deg": terrain["slope_deg"],
