@@ -1,15 +1,6 @@
 import type { Weights } from "../lib/ranking";
-import { VARIABLE_IDS, type VariableId } from "../types";
-
-const LABELS: Record<VariableId, string> = {
-  slope_deg: "Pendiente",
-  relief_m: "Relieve local",
-  temp_mean_c: "Temperatura de superficie",
-  precip_mm_year: "Aridez (precipitación)",
-  albedo: "Albedo",
-};
-
-const MAX_WEIGHT = 3;
+import { MAX_WEIGHT, VARIABLE_INFO } from "../lib/variables";
+import { VARIABLE_IDS } from "../types";
 
 interface Props {
   weights: Weights;
@@ -23,7 +14,7 @@ export function WeightSliders({ weights, onChange, onReset }: Props) {
       <legend>Peso de cada variable en el índice</legend>
       {VARIABLE_IDS.map((variable) => (
         <label key={variable}>
-          {LABELS[variable]}: {weights[variable]}
+          {VARIABLE_INFO[variable].label}: {weights[variable]}
           <input
             type="range"
             min={0}
