@@ -187,7 +187,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     breaks_down: [
       "Mean surface temperature is 19.0 °C (NASA POWER), about 70 °C more than at Gale (−50.7 °C) and about 179 °C more than at Faustini Rim A (−160.4 °C, Diviner).",
       TOP10_FAUSTINI,
-      "The point used is the center of the desert and not the Yungay station: the variables describe the region, not the exact site of the studies.",
+      "The point is the Yungay sampling pit, but temperature and precipitation come from a regional NASA POWER cell (tens of kilometres wide), not from the exact site.",
     ],
   },
   "earth-licancabur-laguna-verde": {
