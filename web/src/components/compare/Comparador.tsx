@@ -7,7 +7,7 @@ import { hasClimateBias } from "../../lib/warnings";
 import type { Candidate, RankingEntry, Site, Tag, VariableId } from "../../types";
 import { Card, KnownBadge } from "../ui";
 import { ScoreRing } from "../ui/extra";
-import { biggestGaps, compareVariables } from "./compare";
+import { BREAKDOWN_THRESHOLD, biggestGaps, compareVariables } from "./compare";
 
 export interface ComparadorProps {
   site: Site;
@@ -24,6 +24,9 @@ export interface ComparadorProps {
 
 /** Variables que dependen del clima de NASA POWER, afectadas por el aviso de dato sesgado. */
 const CLIMATE_VARIABLES: readonly VariableId[] = ["temp_mean_c", "precip_mm_year"];
+
+/** Recharts anima por su cuenta: se apaga si el usuario pidió reducir el movimiento. */
+const reducedMotion = (): boolean => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /** F3: comparación lado a lado de un sitio de la Luna o Marte con un lugar de la Tierra. */
 export function Comparador({ site, candidate, entry, limitations, tagLabel, breaksDown = [] }: ComparadorProps) {
@@ -98,7 +101,7 @@ export function Comparador({ site, candidate, entry, limitations, tagLabel, brea
             </thead>
             <tbody>
               {rows.map((row, index) => (
-                <tr key={row.variable}>
+                <tr key={row.variable} className={row.normDiff !== null && row.normDiff >= BREAKDOWN_THRESHOLD ? "is-gap" : undefined}>
                   <th scope="row">{variables[row.variable].label}</th>
                   <td>{formatValue(row.variable, row.siteValue, t)}</td>
                   <td>
@@ -147,10 +150,10 @@ export function Comparador({ site, candidate, entry, limitations, tagLabel, brea
             <figure className="comparador-radar" role="img" aria-label={t("cmp.radarAria", { summary: radarSummary })}>
               <ResponsiveContainer width="100%" height={300}>
                 <RadarChart data={radarData} outerRadius="72%">
-                  <PolarGrid stroke="#c5d3ce" />
+                  <PolarGrid />
                   <PolarAngleAxis dataKey="label" />
                   <PolarRadiusAxis domain={[0, 100]} tick={false} axisLine={false} />
-                  <Radar dataKey="similarity" name={t("cmp.radarName")} isAnimationActive />
+                  <Radar dataKey="similarity" name={t("cmp.radarName")} isAnimationActive={!reducedMotion()} />
                 </RadarChart>
               </ResponsiveContainer>
               <figcaption>{t("cmp.radarCaption")}</figcaption>

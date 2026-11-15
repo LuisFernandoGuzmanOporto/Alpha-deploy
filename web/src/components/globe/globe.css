@@ -8,7 +8,7 @@
 .globe-canvas {
   display: block;
   border-radius: 50%;
-  background: #05070d;
+  background: var(--cc-bg);
   cursor: grab;
   touch-action: none;
 }
@@ -30,8 +30,8 @@
   display: inline-block;
   width: 0.8rem;
   height: 0.8rem;
-  border: 1px solid #111111;
+  border: var(--cc-line) solid var(--cc-bg);
   border-radius: 50%;
-  background: #e4572e;
+  background: var(--cc-accent);
   vertical-align: middle;
 }

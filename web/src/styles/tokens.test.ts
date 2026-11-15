@@ -44,6 +44,12 @@ describe("contraste de los tokens", () => {
     }
   });
 
+  it("el borde de los controles se distingue de todas las superficies (3:1)", () => {
+    for (const surface of SURFACES) {
+      expect(contrast(token("cc-control-line"), token(surface)), surface).toBeGreaterThanOrEqual(3);
+    }
+  });
+
   it("los bordes finos se ven sin competir con el texto (1.3:1 a 3:1)", () => {
     const ratio = contrast(token("cc-border-strong"), token("cc-surface"));
     expect(ratio).toBeGreaterThanOrEqual(1.3);

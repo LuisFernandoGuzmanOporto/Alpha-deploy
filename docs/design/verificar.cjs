@@ -8,7 +8,7 @@ const path = require('node:path');
     const page = await browser.newPage();
     const results = [];
     await page.goto((process.env.EA_PREVIEW_URL || 'http://127.0.0.1:5173') + '/src/components/ui/preview.html');
-    await page.getByRole('heading', { name: 'Explora aquí. Prepara el próximo destino.' }).waitFor();
+    await page.getByRole('heading', { name: 'Explora análogos terrestres' }).waitFor();
     for (const width of [360, 768, 1440]) {
       await page.setViewportSize({ width, height: 1000 });
       for (const name of ['Explorador', 'Comparador', 'Ficha', 'Metodología']) {
