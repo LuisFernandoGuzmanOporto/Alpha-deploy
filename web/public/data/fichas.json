@@ -863,5 +863,531 @@
         "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
       }
     ]
+  },
+  {
+    "candidate_id": "earth-valles-secos-mcmurdo",
+    "summary": "Valles casi sin nieve en la costa de la Tierra de Victoria (Antártida), entre la capa de hielo de la Antártida Oriental y el mar de Ross. Wikipedia los describe como el desierto más frío y seco del mundo y la mayor región sin hielo de la Antártida. Marchant y Head (2007) los usan para estudiar microclimas y procesos geomorfológicos como guía del cambio climático en Marte.",
+    "processes": [
+      "Zonación de microclimas y procesos geomorfológicos que varían entre valles (Marchant y Head, 2007).",
+      "Frío extremo, hiperaridez y permafrost (Wikipedia)."
+    ],
+    "use_cases": [
+      "Evaluar el cambio climático de Marte con los microclimas y procesos de los valles secos (Marchant y Head, 2007).",
+      "Estudiar un análogo geológico, ambiental y ecológico de la superficie y la subsuperficie de Marte (Salvatore y Levy, 2021)."
+    ],
+    "breaks_down": [
+      "Temperatura media de −26,7 °C (NASA POWER), unos 51 °C más que Arcadia Planitia (−77,9 °C), que tiene permafrost.",
+      "Su albedo (0,56) es más del doble que el de Arcadia Planitia (0,21), porque el albedo terrestre incluye nieve y hielo.",
+      "No tiene pendiente ni relieve: las teselas de elevación solo aportaron modelos globales gruesos. Con tres variables compartidas queda entre los puestos 37 y 45 en Marte."
+    ],
+    "references": [
+      {
+        "title": "Antarctic dry valleys: Microclimate zonation, variable geomorphic processes, and implications for assessing climate change on Mars (Icarus, 2007)",
+        "url": "https://doi.org/10.1016/j.icarus.2007.06.018"
+      },
+      {
+        "title": "The McMurdo Dry Valleys of Antarctica: a geological, environmental, and ecological analog to the Martian surface and near surface (Mars Geological Enigmas, 2021)",
+        "url": "https://doi.org/10.1016/b978-0-12-820245-6.00011-2"
+      },
+      {
+        "title": "Wikipedia: McMurdo Dry Valleys",
+        "url": "https://en.wikipedia.org/wiki/McMurdo_Dry_Valleys"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-haughton-isla-devon",
+    "summary": "Cráter de impacto de unos 23 km de diámetro en la isla Devon (Nunavut, Canadá), formado hace 31 a 32 millones de años, en el Oligoceno temprano. Es sede del Proyecto Haughton-Mars, cuyas investigaciones tienen relevancia para los estudios planetarios (Lee y Osinski, 2005).",
+    "processes": [
+      "El impacto levantó las lutitas y limolitas y dejó expuesto el basamento, con material de hasta 1700 m de profundidad (Wikipedia).",
+      "Investigaciones de ciencia en la estructura de impacto y sus alrededores, con relevancia para los estudios planetarios (Lee y Osinski, 2005; Osinski, 2022)."
+    ],
+    "use_cases": [
+      "Ensayar investigaciones de campo en una estructura de impacto como referencia de los cráteres planetarios (Lee y Osinski, 2005)."
+    ],
+    "breaks_down": [
+      "Temperatura media de −14,8 °C (NASA POWER), unos 36 °C más que Gale (−50,7 °C).",
+      "Recibe unos 310 mm de precipitación anual (NASA POWER); Marte no tiene lluvia.",
+      "Su albedo (0,46) casi duplica el de Gale (0,24)."
+    ],
+    "references": [
+      {
+        "title": "The Haughton-Mars Project: Overview of science investigations at the Haughton impact structure and surrounding terrains, and relevance to planetary studies (Meteoritics & Planetary Science, 2005)",
+        "url": "https://doi.org/10.1111/j.1945-5100.2005.tb00144.x"
+      },
+      {
+        "title": "Devon Island's Haughton Impact Structure (Encyclopedia of Astrobiology, 2022)",
+        "url": "https://doi.org/10.1007/978-3-642-27833-4_5534-1"
+      },
+      {
+        "title": "Wikipedia: Haughton impact crater",
+        "url": "https://en.wikipedia.org/wiki/Haughton_impact_crater"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-dallol-danakil",
+    "summary": "Sistema hidrotermal alrededor de un volcán de cono de ceniza en la depresión de Danakil, en el norte de Afar (Etiopía), conocido por sus colores y minerales y por fluidos muy ácidos. Cavalazzi y colaboradores (2019) lo describen como un análogo planetario de campo excepcional, rodeado de una amplia llanura salina hiperárida.",
+    "processes": [
+      "Aguas hidrotermales y salmueras sobresaturadas que producen geomorfologías y depósitos minerales, con fuentes sulfúricas, fumarolas y géiseres (Cavalazzi et al., 2019).",
+      "Uno de los sistemas naturales más ácidos de la Tierra, con pH cercano a 0 (Cavalazzi et al., 2019)."
+    ],
+    "use_cases": [
+      "Estudiar ambientes en el borde de los extremos físico-químicos naturales como análogo de campo planetario (Cavalazzi et al., 2019)."
+    ],
+    "breaks_down": [
+      "Temperatura media de 27,6 °C en la celda de NASA POWER, unos 105 °C más que Arcadia Planitia (−77,9 °C). El estudio da 36 a 38 °C de media anual en Dallol, aún más.",
+      "La celda de NASA POWER da 449 mm de precipitación anual, un valor poco creíble para una llanura salina hiperárida: la celda es demasiado gruesa.",
+      "El punto está 1144 m por debajo de la celda de NASA POWER, así que la temperatura y la precipitación probablemente no lo representan (aviso en las notas del candidato)."
+    ],
+    "references": [
+      {
+        "title": "The Dallol Geothermal Area, Northern Afar (Ethiopia)—An Exceptional Planetary Field Analog on Earth (Astrobiology, 2019)",
+        "url": "https://doi.org/10.1089/ast.2018.1926"
+      },
+      {
+        "title": "Wikipedia: Dallol (hydrothermal system)",
+        "url": "https://en.wikipedia.org/wiki/Dallol_(volcano)"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-askja-islandia",
+    "summary": "Complejo de calderas anidadas en las tierras altas del centro de Islandia, dentro de las montañas Dyngjufjöll, que llegan a 1514 m. La Enciclopedia de Astrobiología lo describe como análogo natural lunar (Pinti y Rocher, 2022), y un estudio de 2020 analizó la actividad microbiana de depósitos volcánicos de su ladera para la exploración de Marte (Rader et al., 2020).",
+    "processes": [
+      "En depósitos volcánicos modernos, la actividad microbiana se relacionó con la composición química, la mineralogía y el tamaño de grano (Rader et al., 2020).",
+      "Volcán activo con calderas anidadas en las tierras altas de Islandia (Wikipedia)."
+    ],
+    "use_cases": [
+      "Buscar rastros de vida en depósitos volcánicos con instrumentos análogos a los de los rovers de Marte (Rader et al., 2020).",
+      "Estudiarlo como análogo natural lunar (Pinti y Rocher, 2022)."
+    ],
+    "breaks_down": [
+      "Temperatura media de −4,4 °C (NASA POWER), unos 156 °C más que Faustini Rim A (−160,4 °C, Diviner).",
+      "Recibe unos 862 mm de precipitación anual (NASA POWER); la Luna no tiene lluvia.",
+      "Es el 23.º en los tres sitios lunares, con puntajes de 43,5 a 44,0: la coincidencia es débil."
+    ],
+    "references": [
+      {
+        "title": "Askja Caldera, Lunar Natural Analog (Encyclopedia of Astrobiology, 2022)",
+        "url": "https://doi.org/10.1007/978-3-642-27833-4_5623-1"
+      },
+      {
+        "title": "Preferably Plinian and Pumaceous: Implications of Microbial Activity in Modern Volcanic Deposits at Askja Volcano, Iceland, and Relevancy for Mars Exploration (ACS Earth and Space Chemistry, 2020)",
+        "url": "https://doi.org/10.1021/acsearthspacechem.0c00015"
+      },
+      {
+        "title": "Wikipedia: Askja",
+        "url": "https://en.wikipedia.org/wiki/Askja"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      },
+      {
+        "title": "LRO Diviner, temperaturas lunares (PDS Geosciences)",
+        "url": "https://pds-geosciences.wustl.edu/missions/lro/diviner.htm"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-mauna-kea-hawai",
+    "summary": "Volcán en escudo inactivo de la isla de Hawái, con una cumbre de 4207 m, el punto más alto del estado. Nakamura y Smith (2010) probaron allí un sistema de energía solar térmica en una prueba de análogo para el aprovechamiento de recursos in situ (ISRU) en la Luna.",
+    "processes": [
+      "Terreno volcánico de un volcán en escudo inactivo, usado como sitio de pruebas de análogo lunar (Wikipedia; Nakamura y Smith, 2010)."
+    ],
+    "use_cases": [
+      "Probar sistemas de energía solar térmica para el aprovechamiento de recursos in situ en la Luna (Nakamura y Smith, 2010)."
+    ],
+    "breaks_down": [
+      "Temperatura media de 22,5 °C en la celda de NASA POWER, unos 183 °C más que Faustini Rim A (−160,4 °C, Diviner). El punto está 3525 m por encima de la celda, así que la temperatura y la precipitación probablemente no lo representan (aviso en las notas del candidato).",
+      "El punto es la cumbre, pero las pruebas de análogo lunar se hicieron en sus laderas: las variables no describen el sitio de las pruebas.",
+      "Recibe unos 1611 mm de precipitación anual (NASA POWER); la Luna no tiene lluvia."
+    ],
+    "references": [
+      {
+        "title": "Solar Thermal Power System for Lunar ISRU Applications: Result of ISRU Analog Test, Mauna Kea, HI (AIAA SPACE Conference, 2010)",
+        "url": "https://doi.org/10.2514/6.2010-8902"
+      },
+      {
+        "title": "Wikipedia: Mauna Kea",
+        "url": "https://en.wikipedia.org/wiki/Mauna_Kea"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      },
+      {
+        "title": "LRO Diviner, temperaturas lunares (PDS Geosciences)",
+        "url": "https://pds-geosciences.wustl.edu/missions/lro/diviner.htm"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-rio-tinto-espana",
+    "summary": "Río muy tóxico del suroeste de España, que nace en la sierra Morena y llega al golfo de Cádiz por Huelva. Su color rojo y naranja viene de su química extremadamente ácida y de su alto contenido de hierro y metales pesados. Fernández-Remolar y colaboradores (2005) usaron la mineralogía y la geobiología sedimentaria de su cuenca para interpretar los afloramientos de Meridiani Planum, en Marte.",
+    "processes": [
+      "Aguas extremadamente ácidas, con mucho hierro y metales pesados (Wikipedia).",
+      "Mineralogía y geobiología sedimentaria de la cuenca, usadas para interpretar rocas de Meridiani Planum (Fernández-Remolar et al., 2005)."
+    ],
+    "use_cases": [
+      "Interpretar afloramientos de Meridiani Planum con la mineralogía y la geobiología de la cuenca del Río Tinto (Fernández-Remolar et al., 2005).",
+      "Consultar la entrada de la Enciclopedia de Astrobiología sobre el análogo de Marte de Río Tinto (2011)."
+    ],
+    "breaks_down": [
+      "Temperatura media de 18,8 °C (NASA POWER), unos 68 °C más que Jezero (−49,4 °C).",
+      "Recibe unos 468 mm de precipitación anual (NASA POWER) y es un río con agua líquida en superficie.",
+      "La analogía es de química y mineralogía, no de terreno: es el 16.º en Jezero (71,3) y no entra al top 10."
+    ],
+    "references": [
+      {
+        "title": "The Río Tinto Basin, Spain: Mineralogy, sedimentary geobiology, and implications for interpretation of outcrop rocks at Meridiani Planum, Mars (Earth and Planetary Science Letters, 2005)",
+        "url": "https://doi.org/10.1016/j.epsl.2005.09.043"
+      },
+      {
+        "title": "Río Tinto Mars Analog (Encyclopedia of Astrobiology, 2011)",
+        "url": "https://doi.org/10.1007/978-3-642-11274-4_3050"
+      },
+      {
+        "title": "Wikipedia: Río Tinto",
+        "url": "https://en.wikipedia.org/wiki/Rio_Tinto_(river)"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-svalbard-sverrefjellet",
+    "summary": "Volcán extinto de 507 m en Haakon VII Land, en Spitsbergen (Svalbard, Noruega), al oeste del Bockfjorden. Sus carbonatos en basalto se comparan con los glóbulos de carbonato del meteorito marciano ALH 84001 (GSA Abstracts, 2016), y su edad de erupción se estudió en Polar Research (Treiman, 2012).",
+    "processes": [
+      "Carbonatos en roca basáltica, comparados con los glóbulos de carbonato del meteorito marciano ALH 84001 (GSA Abstracts, 2016)."
+    ],
+    "use_cases": [
+      "Comparar los carbonatos de un basalto terrestre con los del meteorito marciano ALH 84001 (GSA Abstracts, 2016)."
+    ],
+    "breaks_down": [
+      "No tiene pendiente ni relieve: las teselas de elevación solo aportaron modelos globales gruesos. Con tres variables compartidas queda entre los puestos 46 y 47 en Marte.",
+      "Temperatura media de −8,1 °C (NASA POWER), unos 43 °C más que Gale (−50,7 °C).",
+      "Su albedo (0,54) es más del doble que el de Gale (0,24), porque el albedo terrestre incluye nieve y hielo."
+    ],
+    "references": [
+      {
+        "title": "Investigation of carbonate globules in Martian meteorite Allan Hills 84001 and an Earth analog from Svalbard, Norway (GSA Abstracts with Programs, 2016)",
+        "url": "https://doi.org/10.1130/abs/2016am-280390"
+      },
+      {
+        "title": "Eruption age of the Sverrefjellet volcano, Spitsbergen Island, Norway (Polar Research, 2012)",
+        "url": "https://doi.org/10.3402/polar.v31i0.17320"
+      },
+      {
+        "title": "Wikipedia: Sverrefjellet",
+        "url": "https://en.wikipedia.org/wiki/Sverrefjellet"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-kau-kilauea-hawai",
+    "summary": "Desierto de sotavento del distrito de Kaʻū, en el sur de la isla de Hawái, hecho sobre todo de restos de lava seca, ceniza volcánica, arena y grava en la zona de rift suroeste del Kilauea; casi no tiene vegetación por la lluvia ácida. Seelos y colaboradores (2010) identificaron los minerales de sus materiales basálticos jóvenes con datos AVIRIS y describieron sílice en este ambiente análogo de Marte.",
+    "processes": [
+      "Materiales basálticos jóvenes (coladas de 1971 y 1974, ceniza e incrustaciones de solfatara) con minerales de hierro como piroxeno, olivino y hematita (Seelos et al., 2010)."
+    ],
+    "use_cases": [
+      "Interpretar la mineralogía de superficies marcianas con espectrometría de imágenes, usando como referencia basaltos jóvenes con sílice (Seelos et al., 2010)."
+    ],
+    "breaks_down": [
+      "La celda de NASA POWER da 2301 mm de precipitación anual, aunque se describe como un desierto de sotavento: la celda es demasiado gruesa.",
+      "El punto está 669 m por encima de la celda de NASA POWER, así que la temperatura (22,4 °C, unos 72 °C más que Jezero) puede estar sesgada (aviso en las notas del candidato).",
+      "Su albedo (0,08) es menos de la mitad del de Jezero (0,17)."
+    ],
+    "references": [
+      {
+        "title": "Silica in a Mars analog environment: Ka'u Desert, Kilauea Volcano, Hawaii (Journal of Geophysical Research: Planets, 2010)",
+        "url": "https://doi.org/10.1029/2009je003347"
+      },
+      {
+        "title": "Wikipedia: Kaʻū Desert",
+        "url": "https://en.wikipedia.org/wiki/Ka%CA%BB%C5%AB_Desert"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-craters-of-the-moon-idaho",
+    "summary": "Monumento y reserva nacional de EE. UU. en la llanura del río Snake, en el centro de Idaho, a unos 1800 m de altitud media. Richardson y colaboradores (2012) estudiaron su mineralización secundaria de sulfatos y su química basáltica como posible análogo marciano.",
+    "processes": [
+      "Mineralización secundaria de sulfatos en lavas basálticas (Richardson et al., 2012).",
+      "Evolución composicional de las ocho coladas más jóvenes del campo volcánico (Chadwick, 2022)."
+    ],
+    "use_cases": [
+      "Interpretar los sulfatos y la química basáltica de Marte con un campo volcánico terrestre (Richardson et al., 2012)."
+    ],
+    "breaks_down": [
+      "Temperatura media de 5,2 °C (NASA POWER), unos 56 °C más que Gale (−50,7 °C).",
+      "Recibe unos 416 mm de precipitación anual (NASA POWER); Marte no tiene lluvia.",
+      "Es el 16.º en Gale (72,1) y el 19.º en Jezero (71,1): no entra al top 10."
+    ],
+    "references": [
+      {
+        "title": "Secondary sulfate mineralization and basaltic chemistry of Craters of the Moon National Monument, Idaho: Potential martian analog (Planetary and Space Science, 2012)",
+        "url": "https://doi.org/10.1016/j.pss.2012.02.002"
+      },
+      {
+        "title": "Compositional Evolution of the Eight Youngest Lavas Erupted at Craters of the Moon Volcanic Field, Idaho, U.S. (Goldschmidt 2022)",
+        "url": "https://doi.org/10.46427/gold2022.12537"
+      },
+      {
+        "title": "Wikipedia: Craters of the Moon National Monument and Preserve",
+        "url": "https://en.wikipedia.org/wiki/Craters_of_the_Moon_National_Monument_and_Preserve"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-pinacate-mexico",
+    "summary": "Campo volcánico de picos y conos de ceniza en Sonora (México), en la frontera con Arizona, rodeado por el campo de dunas del Gran Desierto de Altar. Williams y colaboradores (2011) lo usan en ejercicios de campo como análogo del volcanismo planetario, y Martin y Németh (2006) compararon el mecanismo de erupción de dos volcanes freatomagmáticos, Crater Elegante y Cerro Colorado.",
+    "processes": [
+      "Volcanismo freatomagmático: comparación entre Crater Elegante y Cerro Colorado (Martin y Németh, 2006).",
+      "Conos de ceniza y picos volcánicos en un desierto de dunas (Wikipedia)."
+    ],
+    "use_cases": [
+      "Practicar ejercicios de campo de volcanismo planetario (Williams et al., 2011)."
+    ],
+    "breaks_down": [
+      "Temperatura media de 23,4 °C (NASA POWER), unos 184 °C más que Faustini Rim A (−160,4 °C, Diviner). El punto está 814 m por encima de la celda de NASA POWER, así que la temperatura puede estar sesgada (aviso en las notas del candidato).",
+      "Recibe unos 139 mm de precipitación anual (NASA POWER); la Luna no tiene lluvia.",
+      "Es el 14.º en los tres sitios lunares, con puntajes de 50,6 a 51,1: la coincidencia es débil y solo topográfica."
+    ],
+    "references": [
+      {
+        "title": "Field exercises in the Pinacate volcanic field, Mexico: An analog for planetary volcanism (Analogs for Planetary Exploration, 2011)",
+        "url": "https://doi.org/10.1130/2011.2483(27)"
+      },
+      {
+        "title": "Eruptive mechanism of phreatomagmatic volcanoes from the Pinacate Volcanic Field: comparison between Crater Elegante and Cerro Colorado, Mexico (Zeitschrift der Deutschen Gesellschaft für Geowissenschaften, 2006)",
+        "url": "https://doi.org/10.1127/1860-1804/2006/0157-0451"
+      },
+      {
+        "title": "Wikipedia: Pinacate Peaks",
+        "url": "https://en.wikipedia.org/wiki/Pinacate_Peaks"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      },
+      {
+        "title": "LRO Diviner, temperaturas lunares (PDS Geosciences)",
+        "url": "https://pds-geosciences.wustl.edu/missions/lro/diviner.htm"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-la-corona-lanzarote",
+    "summary": "Tubo de lava de 7,6 km de largo en Lanzarote (islas Canarias), uno de los mayores de la Tierra. Lanzarote se reconoce como análogo terrestre para la ciencia planetaria; en la expedición GeoLife de NASA Goddard, de mayo de 2023, se midió la señal magnética de este tubo para detectar cavidades que podrían servir de refugio en misiones planetarias (Martin de Blas et al., 2025).",
+    "processes": [
+      "Tubo de lava de 7,6 km, uno de los mayores de la Tierra (Martin de Blas et al., 2025).",
+      "Señal magnética del tubo medida con magnetómetros de vector y susceptibilidad magnética (Martin de Blas et al., 2025)."
+    ],
+    "use_cases": [
+      "Probar métodos para detectar tubos de lava y otras cavidades del subsuelo, que podrían servir de refugio seguro en misiones planetarias (Martin de Blas et al., 2025).",
+      "Consultar la investigación sobre cuevas y tubos de lava terrestres (von Ehrenfried, 2019)."
+    ],
+    "breaks_down": [
+      "No tiene pendiente ni relieve: la ventana de 10 × 10 km incluye mar y la batimetría de ETOPO1 no sirve. Con tres variables compartidas queda entre los puestos 36 y 44 en Marte, y no entra al ranking lunar.",
+      "Temperatura media de 20,4 °C (NASA POWER), unos 98 °C más que Arcadia Planitia (−77,9 °C).",
+      "Su albedo (0,03) es mucho menor que el de Arcadia Planitia (0,21)."
+    ],
+    "references": [
+      {
+        "title": "Magnetic signature of La Corona lava tube (Lanzarote, Canary Islands) as a planetary analog (EGU, 2025)",
+        "url": "https://doi.org/10.5194/egusphere-egu25-6513"
+      },
+      {
+        "title": "Terrestrial Cave and Lava Tube Research (From Cave Man to Cave Martian, 2019)",
+        "url": "https://doi.org/10.1007/978-3-030-05408-3_4"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-salar-de-uyuni",
+    "summary": "El mayor salar del mundo, de unos 10 582 km², en el suroeste de Bolivia, a 3656 m de altitud. Bhardwaj y colaboradores (2019) proponen sus salmueras estacionales como análogo de las salmueras marcianas, y NASA describe a Uyuni y Coipasa como laboratorios naturales para estudiar el ambiente de Marte.",
+    "processes": [
+      "Salmueras estacionales y zonas de mezcla entre agua dulce y salmuera, en un ambiente fluvio-eólico (Bhardwaj et al., 2019).",
+      "Costras de sal con geoquímica del bromo (Risacher y Fritz, 2000)."
+    ],
+    "use_cases": [
+      "Estudiar con imágenes de drones los procesos de salmueras como análogo de las salmueras propuestas en Marte (Bhardwaj et al., 2019)."
+    ],
+    "breaks_down": [
+      "Sus salmueras son estacionales y dependen del agua de lluvia: la celda de NASA POWER da 332 mm de precipitación anual, y Marte no tiene lluvia.",
+      "Temperatura media de 8,3 °C (NASA POWER), unos 86 °C más que Arcadia Planitia (−77,9 °C), que tiene permafrost.",
+      "Su albedo (0,27) es mayor que el de Arcadia Planitia (0,21)."
+    ],
+    "references": [
+      {
+        "title": "UAV Imaging of a Martian Brine Analogue Environment in a Fluvio-Aeolian Setting (Remote Sensing, 2019)",
+        "url": "https://doi.org/10.3390/rs11182104"
+      },
+      {
+        "title": "NASA Earth Observatory: Bolivian Salt Flats",
+        "url": "https://science.nasa.gov/earth/earth-observatory/bolivian-salt-flats-151813"
+      },
+      {
+        "title": "Bromine geochemistry of salar de Uyuni and deeper salt crusts, Central Altiplano, Bolivia (Chemical Geology, 2000)",
+        "url": "https://doi.org/10.1016/s0009-2541(99)00251-x"
+      },
+      {
+        "title": "Wikipedia: Salar de Uyuni",
+        "url": "https://en.wikipedia.org/wiki/Salar_de_Uyuni"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-manjanggul-jeju",
+    "summary": "Tubo de lava de 8,9 km de largo en Jeju (Corea del Sur), de hasta 23 m de ancho y 30 m de alto; es el 12.º más largo del mundo y forma parte del Patrimonio Mundial de la UNESCO. Woo y colaboradores (2021) evaluaron el valor de geopatrimonio de los tubos de lava de Jeju. Su uso como análogo planetario es una propuesta del equipo.",
+    "processes": [
+      "Tubo de lava del sistema de tubos de Geomunoreum, considerado uno de los mejores del mundo (Wikipedia)."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio planetario publicado: practicar exploración de tubos de lava, que en la Luna y Marte podrían servir de refugio."
+    ],
+    "breaks_down": [
+      "No encontramos un estudio que lo use como análogo planetario.",
+      "No tiene pendiente ni relieve: la ventana de 10 × 10 km incluye mar. Con tres variables compartidas queda entre los puestos 46 y 47 en Marte.",
+      "Recibe unos 1629 mm de precipitación anual (NASA POWER), más que cualquier sitio de Marte, y 18,3 °C de media, unos 68 °C más que Jezero."
+    ],
+    "references": [
+      {
+        "title": "Geoheritage assessment of lava tube caves in Jeju Island, Korea (Zeitschrift für Geomorphologie, Supplementary Issues, 2021)",
+        "url": "https://doi.org/10.1127/zfg_suppl/2021/0695"
+      },
+      {
+        "title": "Wikipedia: Manjanggul",
+        "url": "https://en.wikipedia.org/wiki/Manjanggul"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-undara-australia",
+    "summary": "Parque nacional de Queensland (Australia), a 275 km al suroeste de Cairns, creado en 1989 para proteger el tubo de lava más largo del país. Sus basaltos tienen menos de 8 millones de años y los más jóvenes, 7000 años. Eberhard y Howarth (2021) registraron al menos 78 especies de artrópodos en 17 tubos de lava de Undara.",
+    "processes": [
+      "Tubos de lava en basaltos de la provincia volcánica McBride, de menos de 8 millones de años (Wikipedia).",
+      "Comunidades de cuevas con al menos 78 especies de artrópodos en 17 tubos de lava (Eberhard y Howarth, 2021)."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio planetario publicado: practicar exploración de tubos de lava, que en la Luna y Marte podrían servir de refugio."
+    ],
+    "breaks_down": [
+      "No encontramos un estudio que lo use como análogo planetario.",
+      "Recibe unos 844 mm de precipitación anual (NASA POWER) y sus cuevas tienen vida; Marte no tiene lluvia.",
+      "Temperatura media de 24,9 °C (NASA POWER), unos 74 °C más que Jezero (−49,4 °C)."
+    ],
+    "references": [
+      {
+        "title": "Undara Lava Cave Fauna in Tropical Queensland with an Annotated List of Australian Subterranean Biodiversity Hotspots (Diversity, 2021)",
+        "url": "https://doi.org/10.3390/d13070326"
+      },
+      {
+        "title": "Wikipedia: Undara Volcanic National Park",
+        "url": "https://en.wikipedia.org/wiki/Undara_Volcanic_National_Park"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-lava-beds-california",
+    "summary": "Monumento nacional del noreste de California, en la ladera noreste del volcán Medicine Lake, el mayor volcán por superficie de la cordillera de las Cascadas. Un boletín del Servicio Geológico de EE. UU. (1990) describe cuevas y sistemas de tubos de lava seleccionados en el monumento y sus alrededores.",
+    "processes": [
+      "Cuevas y tubos de lava en la ladera de un gran volcán (USGS, 1990)."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio planetario publicado: practicar exploración de tubos de lava, que en la Luna y Marte podrían servir de refugio."
+    ],
+    "breaks_down": [
+      "No encontramos un estudio que lo use como análogo planetario.",
+      "Recibe unos 676 mm de precipitación anual (NASA POWER); Marte no tiene lluvia.",
+      "Temperatura media de 9,0 °C (NASA POWER), unos 58 °C más que Jezero (−49,4 °C)."
+    ],
+    "references": [
+      {
+        "title": "Selected caves and lava-tube systems in and near Lava Beds National Monument, California (USGS Bulletin 1673, 1990)",
+        "url": "https://doi.org/10.3133/b1673"
+      },
+      {
+        "title": "Wikipedia: Lava Beds National Monument",
+        "url": "https://en.wikipedia.org/wiki/Lava_Beds_National_Monument"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-chott-el-djerid",
+    "summary": "Gran lago salado endorreico del centro de Túnez; su nombre árabe se traduce como «laguna de la tierra de las palmeras». Un estudio de Sedimentary Geology (1994) analiza allí la formación de evaporitas de potasio en una playa continental. Su uso como análogo planetario es una propuesta del equipo.",
+    "processes": [
+      "Formación de evaporitas de potasio semejantes a las marinas en una playa continental (Sedimentary Geology, 1994)."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio publicado: comparar llanuras salinas muy planas con Arcadia Planitia."
+    ],
+    "breaks_down": [
+      "No encontramos un estudio que lo use como análogo planetario.",
+      "Temperatura media de 22,6 °C (NASA POWER), unos 101 °C más que Arcadia Planitia (−77,9 °C), que tiene permafrost.",
+      "Su albedo (0,43) duplica el de Arcadia Planitia (0,21)."
+    ],
+    "references": [
+      {
+        "title": "Marine-like potash evaporite formation on a continental playa: case study from Chott el Djerid, southern Tunisia (Sedimentary Geology, 1994)",
+        "url": "https://doi.org/10.1016/0037-0738(94)90043-4"
+      },
+      {
+        "title": "Wikipedia: Chott el Djerid",
+        "url": "https://en.wikipedia.org/wiki/Chott_el_Djerid"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
   }
 ]

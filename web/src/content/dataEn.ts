@@ -159,6 +159,8 @@ const CELL = "The NASA POWER cell differs by more than 500 m from the elevation 
 const TOP10 =
   "It reaches the top 10 of the lunar sites only because of slope and relief: it has no permanently shadowed ice and none of the cold of the lunar poles.";
 const NO_STUDY = "We found no study that uses it as a planetary analog.";
+const LAVA_TUBE_USE =
+  "Team proposal, no published planetary study: practice exploring lava tubes, which on the Moon and Mars could serve as shelter.";
 
 export const FICHAS_EN: Record<string, FichaEn> = {
   "earth-atacama-nucleo-hiperarido": {
@@ -536,6 +538,230 @@ export const FICHAS_EN: Record<string, FichaEn> = {
       NO_STUDY,
       "NASA POWER gives 58 mm a year, more than double the Tazhong station (26 mm): the cell is coarse.",
       "Mean temperature of 14.7 °C (NASA POWER), about 93 °C above Arcadia Planitia, which has permafrost.",
+    ],
+  },
+  "earth-valles-secos-mcmurdo": {
+    summary:
+      "Almost snow-free valleys on the coast of Victoria Land (Antarctica), between the East Antarctic Ice Sheet and the Ross Sea. Wikipedia describes them as the coldest and driest desert in the world and the largest ice-free region of Antarctica. Marchant and Head (2007) use them to study microclimates and geomorphic processes as a guide to climate change on Mars.",
+    processes: [
+      "Microclimate zonation and geomorphic processes that vary between valleys (Marchant and Head, 2007).",
+      "Extreme cold, hyper-aridity and permafrost (Wikipedia).",
+    ],
+    use_cases: [
+      "Assess the climate change of Mars with the microclimates and processes of the dry valleys (Marchant and Head, 2007).",
+      "Study a geological, environmental and ecological analog of the Martian surface and near surface (Salvatore and Levy, 2021).",
+    ],
+    breaks_down: [
+      "Mean temperature of −26.7 °C (NASA POWER), about 51 °C more than Arcadia Planitia (−77.9 °C), which has permafrost.",
+      "Its albedo (0.56) is more than double that of Arcadia Planitia (0.21), because terrestrial albedo includes snow and ice.",
+      "It has no slope or relief: the elevation tiles only provided coarse global models. With three shared variables it ranks between 37th and 45th on Mars.",
+    ],
+  },
+  "earth-haughton-isla-devon": {
+    summary:
+      "Impact crater about 23 km in diameter on Devon Island (Nunavut, Canada), formed 31 to 32 million years ago, in the Early Oligocene. It hosts the Haughton-Mars Project, whose research is relevant to planetary studies (Lee and Osinski, 2005).",
+    processes: [
+      "The impact peeled back the shale and siltstone and exposed the basement, with material from as deep as 1,700 m (Wikipedia).",
+      "Science investigations at the impact structure and its surroundings, relevant to planetary studies (Lee and Osinski, 2005; Osinski, 2022).",
+    ],
+    use_cases: ["Rehearse field investigations at an impact structure as a reference for planetary craters (Lee and Osinski, 2005)."],
+    breaks_down: [
+      "Mean temperature of −14.8 °C (NASA POWER), about 36 °C more than Gale (−50.7 °C).",
+      "It receives about 310 mm of annual precipitation (NASA POWER); Mars has no rain.",
+      "Its albedo (0.46) is almost double that of Gale (0.24).",
+    ],
+  },
+  "earth-dallol-danakil": {
+    summary:
+      "Hydrothermal system around a cinder-cone volcano in the Danakil Depression, in northern Afar (Ethiopia), known for its colors and minerals and for very acidic fluids. Cavalazzi and colleagues (2019) describe it as an exceptional planetary field analog, surrounded by a wide hyper-arid salt plain.",
+    processes: [
+      "Supersaturated hydrothermal waters and brines that produce geomorphologies and mineral deposits, with sulfuric springs, fumaroles and geysers (Cavalazzi et al., 2019).",
+      "One of the most acidic natural systems on Earth, with a pH close to 0 (Cavalazzi et al., 2019).",
+    ],
+    use_cases: [
+      "Study environments at the edge of natural physical-chemical extremes as a planetary field analog (Cavalazzi et al., 2019).",
+    ],
+    breaks_down: [
+      "Mean temperature of 27.6 °C in the NASA POWER cell, about 105 °C more than Arcadia Planitia (−77.9 °C). The study gives 36 to 38 °C as the annual mean at Dallol, even more.",
+      "The NASA POWER cell gives 449 mm of annual precipitation, a hardly credible value for a hyper-arid salt plain: the cell is too coarse.",
+      "The point is 1,144 m below the NASA POWER cell, so the temperature and precipitation probably do not represent it (see the candidate's notes).",
+    ],
+  },
+  "earth-askja-islandia": {
+    summary:
+      "Complex of nested calderas in the central highlands of Iceland, within the Dyngjufjöll mountains, which rise to 1,514 m. The Encyclopedia of Astrobiology describes it as a lunar natural analog (Pinti and Rocher, 2022), and a 2020 study analyzed the microbial activity of volcanic deposits on its flank for the exploration of Mars (Rader et al., 2020).",
+    processes: [
+      "In modern volcanic deposits, microbial activity was related to chemical composition, mineralogy and grain size (Rader et al., 2020).",
+      "Active volcano with nested calderas in the Icelandic highlands (Wikipedia).",
+    ],
+    use_cases: [
+      "Look for traces of life in volcanic deposits with instruments analogous to those of Mars rovers (Rader et al., 2020).",
+      "Study it as a lunar natural analog (Pinti and Rocher, 2022).",
+    ],
+    breaks_down: [
+      "Mean temperature of −4.4 °C (NASA POWER), about 156 °C more than Faustini Rim A (−160.4 °C, Diviner).",
+      "It receives about 862 mm of annual precipitation (NASA POWER); the Moon has no rain.",
+      "It is 23rd at all three lunar sites, with scores of 43.5 to 44.0: the match is weak.",
+    ],
+  },
+  "earth-mauna-kea-hawai": {
+    summary:
+      "Dormant shield volcano on the island of Hawaii, with a 4,207 m summit, the highest point in the state. Nakamura and Smith (2010) tested a solar thermal power system there in an analog test for in-situ resource utilization (ISRU) on the Moon.",
+    processes: ["Volcanic terrain of a dormant shield volcano, used as a lunar analog test site (Wikipedia; Nakamura and Smith, 2010)."],
+    use_cases: ["Test solar thermal power systems for in-situ resource utilization on the Moon (Nakamura and Smith, 2010)."],
+    breaks_down: [
+      "Mean temperature of 22.5 °C in the NASA POWER cell, about 183 °C more than Faustini Rim A (−160.4 °C, Diviner). The point is 3,525 m above the cell, so the temperature and precipitation probably do not represent it (see the candidate's notes).",
+      "The point is the summit, but the lunar analog tests were carried out on its slopes: the variables do not describe the test site.",
+      "It receives about 1,611 mm of annual precipitation (NASA POWER); the Moon has no rain.",
+    ],
+  },
+  "earth-rio-tinto-espana": {
+    summary:
+      "Highly toxic river in southwestern Spain, which rises in the Sierra Morena and reaches the Gulf of Cádiz at Huelva. Its red and orange color comes from its extremely acidic chemistry and its high content of iron and heavy metals. Fernández-Remolar and colleagues (2005) used the mineralogy and sedimentary geobiology of its basin to interpret the outcrops of Meridiani Planum, on Mars.",
+    processes: [
+      "Extremely acidic waters, with a lot of iron and heavy metals (Wikipedia).",
+      "Mineralogy and sedimentary geobiology of the basin, used to interpret rocks of Meridiani Planum (Fernández-Remolar et al., 2005).",
+    ],
+    use_cases: [
+      "Interpret outcrops of Meridiani Planum with the mineralogy and geobiology of the Río Tinto basin (Fernández-Remolar et al., 2005).",
+      "Consult the Encyclopedia of Astrobiology entry on the Río Tinto Mars analog (2011).",
+    ],
+    breaks_down: [
+      "Mean temperature of 18.8 °C (NASA POWER), about 68 °C more than Jezero (−49.4 °C).",
+      "It receives about 468 mm of annual precipitation (NASA POWER) and it is a river with liquid water at the surface.",
+      "The analogy is one of chemistry and mineralogy, not of terrain: it is 16th at Jezero (71.3) and does not reach the top 10.",
+    ],
+  },
+  "earth-svalbard-sverrefjellet": {
+    summary:
+      "Extinct 507 m volcano in Haakon VII Land, on Spitsbergen (Svalbard, Norway), west of Bockfjorden. Its carbonates in basalt are compared with the carbonate globules of the Martian meteorite ALH 84001 (GSA Abstracts, 2016), and its eruption age was studied in Polar Research (Treiman, 2012).",
+    processes: ["Carbonates in basaltic rock, compared with the carbonate globules of the Martian meteorite ALH 84001 (GSA Abstracts, 2016)."],
+    use_cases: ["Compare the carbonates of a terrestrial basalt with those of the Martian meteorite ALH 84001 (GSA Abstracts, 2016)."],
+    breaks_down: [
+      "It has no slope or relief: the elevation tiles only provided coarse global models. With three shared variables it ranks between 46th and 47th on Mars.",
+      "Mean temperature of −8.1 °C (NASA POWER), about 43 °C more than Gale (−50.7 °C).",
+      "Its albedo (0.54) is more than double that of Gale (0.24), because terrestrial albedo includes snow and ice.",
+    ],
+  },
+  "earth-kau-kilauea-hawai": {
+    summary:
+      "Leeward desert in the Kaʻū district, in the south of the island of Hawaii, made mostly of dried lava remnants, volcanic ash, sand and gravel in the southwest rift zone of Kilauea; it has almost no vegetation because of acid rain. Seelos and colleagues (2010) identified the minerals of its young basaltic materials with AVIRIS data and described silica in this Mars analog environment.",
+    processes: [
+      "Young basaltic materials (1971 and 1974 flows, ash and solfatara incrustations) with iron minerals such as pyroxene, olivine and hematite (Seelos et al., 2010).",
+    ],
+    use_cases: [
+      "Interpret the mineralogy of Martian surfaces with imaging spectrometry, using young basalts with silica as a reference (Seelos et al., 2010).",
+    ],
+    breaks_down: [
+      "The NASA POWER cell gives 2,301 mm of annual precipitation, although it is described as a leeward desert: the cell is too coarse.",
+      "The point is 669 m above the NASA POWER cell, so the temperature (22.4 °C, about 72 °C more than Jezero) may be biased (see the candidate's notes).",
+      "Its albedo (0.08) is less than half that of Jezero (0.17).",
+    ],
+  },
+  "earth-craters-of-the-moon-idaho": {
+    summary:
+      "U.S. national monument and preserve on the Snake River Plain, in central Idaho, at an average elevation of about 1,800 m. Richardson and colleagues (2012) studied its secondary sulfate mineralization and its basaltic chemistry as a potential Martian analog.",
+    processes: [
+      "Secondary sulfate mineralization in basaltic lavas (Richardson et al., 2012).",
+      "Compositional evolution of the eight youngest lavas of the volcanic field (Chadwick, 2022).",
+    ],
+    use_cases: ["Interpret the sulfates and basaltic chemistry of Mars with a terrestrial volcanic field (Richardson et al., 2012)."],
+    breaks_down: [
+      "Mean temperature of 5.2 °C (NASA POWER), about 56 °C more than Gale (−50.7 °C).",
+      "It receives about 416 mm of annual precipitation (NASA POWER); Mars has no rain.",
+      "It is 16th at Gale (72.1) and 19th at Jezero (71.1): it does not reach the top 10.",
+    ],
+  },
+  "earth-pinacate-mexico": {
+    summary:
+      "Volcanic field of peaks and cinder cones in Sonora (Mexico), on the border with Arizona, surrounded by the dune field of the Gran Desierto de Altar. Williams and colleagues (2011) use it in field exercises as an analog for planetary volcanism, and Martin and Németh (2006) compared the eruption mechanism of two phreatomagmatic volcanoes, Crater Elegante and Cerro Colorado.",
+    processes: [
+      "Phreatomagmatic volcanism: comparison between Crater Elegante and Cerro Colorado (Martin and Németh, 2006).",
+      "Cinder cones and volcanic peaks in a dune desert (Wikipedia).",
+    ],
+    use_cases: ["Practice field exercises on planetary volcanism (Williams et al., 2011)."],
+    breaks_down: [
+      "Mean temperature of 23.4 °C (NASA POWER), about 184 °C more than Faustini Rim A (−160.4 °C, Diviner). The point is 814 m above the NASA POWER cell, so the temperature may be biased (see the candidate's notes).",
+      "It receives about 139 mm of annual precipitation (NASA POWER); the Moon has no rain.",
+      "It is 14th at all three lunar sites, with scores of 50.6 to 51.1: the match is weak and only topographic.",
+    ],
+  },
+  "earth-la-corona-lanzarote": {
+    summary:
+      "7.6 km long lava tube on Lanzarote (Canary Islands), one of the largest on Earth. Lanzarote is recognized as a terrestrial analog for planetary science; during NASA Goddard's GeoLife expedition in May 2023, the magnetic signal of this tube was measured to detect cavities that could serve as shelter in planetary missions (Martin de Blas et al., 2025).",
+    processes: [
+      "7.6 km lava tube, one of the largest on Earth (Martin de Blas et al., 2025).",
+      "Magnetic signal of the tube measured with vector magnetometers and magnetic susceptibility (Martin de Blas et al., 2025).",
+    ],
+    use_cases: [
+      "Test methods to detect lava tubes and other subsurface cavities, which could serve as safe shelter in planetary missions (Martin de Blas et al., 2025).",
+      "Consult the research on terrestrial caves and lava tubes (von Ehrenfried, 2019).",
+    ],
+    breaks_down: [
+      "It has no slope or relief: the 10 × 10 km window includes sea and the ETOPO1 bathymetry is not usable. With three shared variables it ranks between 36th and 44th on Mars, and it is not in the lunar ranking.",
+      "Mean temperature of 20.4 °C (NASA POWER), about 98 °C more than Arcadia Planitia (−77.9 °C).",
+      "Its albedo (0.03) is much lower than that of Arcadia Planitia (0.21).",
+    ],
+  },
+  "earth-salar-de-uyuni": {
+    summary:
+      "The largest salt flat in the world, about 10,582 km², in southwestern Bolivia, at 3,656 m above sea level. Bhardwaj and colleagues (2019) propose its seasonal brines as an analog of Martian brines, and NASA describes Uyuni and Coipasa as natural laboratories for studying the Martian environment.",
+    processes: [
+      "Seasonal brines and mixing zones between fresh water and brine, in a fluvio-aeolian setting (Bhardwaj et al., 2019).",
+      "Salt crusts with bromine geochemistry (Risacher and Fritz, 2000).",
+    ],
+    use_cases: ["Study brine processes with drone imagery as an analog of the brines proposed on Mars (Bhardwaj et al., 2019)."],
+    breaks_down: [
+      "Its brines are seasonal and depend on rainwater: the NASA POWER cell gives 332 mm of annual precipitation, and Mars has no rain.",
+      "Mean temperature of 8.3 °C (NASA POWER), about 86 °C more than Arcadia Planitia (−77.9 °C), which has permafrost.",
+      "Its albedo (0.27) is higher than that of Arcadia Planitia (0.21).",
+    ],
+  },
+  "earth-manjanggul-jeju": {
+    summary:
+      "8.9 km long lava tube on Jeju (South Korea), up to 23 m wide and 30 m high; it is the 12th longest in the world and is part of a UNESCO World Heritage Site. Woo and colleagues (2021) assessed the geoheritage value of the lava tubes of Jeju. Its use as a planetary analog is a team proposal.",
+    processes: ["Lava tube of the Geomunoreum Lava Tube System, considered one of the finest in the world (Wikipedia)."],
+    use_cases: [LAVA_TUBE_USE],
+    breaks_down: [
+      NO_STUDY,
+      "It has no slope or relief: the 10 × 10 km window includes sea. With three shared variables it ranks between 46th and 47th on Mars.",
+      "It receives about 1,629 mm of annual precipitation (NASA POWER), more than any site on Mars, and 18.3 °C on average, about 68 °C more than Jezero.",
+    ],
+  },
+  "earth-undara-australia": {
+    summary:
+      "National park in Queensland (Australia), 275 km southwest of Cairns, established in 1989 to protect the country's longest lava tube. Its basalts are less than 8 million years old and the youngest are 7,000 years old. Eberhard and Howarth (2021) recorded at least 78 species of arthropods in 17 lava tubes of Undara.",
+    processes: [
+      "Lava tubes in basalts of the McBride volcanic province, less than 8 million years old (Wikipedia).",
+      "Cave communities with at least 78 species of arthropods in 17 lava tubes (Eberhard and Howarth, 2021).",
+    ],
+    use_cases: [LAVA_TUBE_USE],
+    breaks_down: [
+      NO_STUDY,
+      "It receives about 844 mm of annual precipitation (NASA POWER) and its caves have life; Mars has no rain.",
+      "Mean temperature of 24.9 °C (NASA POWER), about 74 °C more than Jezero (−49.4 °C).",
+    ],
+  },
+  "earth-lava-beds-california": {
+    summary:
+      "National monument in northeastern California, on the northeastern flank of the Medicine Lake volcano, the largest volcano by area in the Cascade Range. A U.S. Geological Survey bulletin (1990) describes selected caves and lava-tube systems in and near the monument.",
+    processes: ["Caves and lava tubes on the flank of a large volcano (USGS, 1990)."],
+    use_cases: [LAVA_TUBE_USE],
+    breaks_down: [
+      NO_STUDY,
+      "It receives about 676 mm of annual precipitation (NASA POWER); Mars has no rain.",
+      "Mean temperature of 9.0 °C (NASA POWER), about 58 °C more than Jezero (−49.4 °C).",
+    ],
+  },
+  "earth-chott-el-djerid": {
+    summary:
+      "Large endorheic salt lake in central Tunisia; its Arabic name translates as “lagoon of the land of palms”. A Sedimentary Geology study (1994) analyzes the formation of potash evaporites on a continental playa there. Its use as a planetary analog is a team proposal.",
+    processes: ["Formation of marine-like potash evaporites on a continental playa (Sedimentary Geology, 1994)."],
+    use_cases: ["Team proposal, no published study: compare very flat salt plains with Arcadia Planitia."],
+    breaks_down: [
+      NO_STUDY,
+      "Mean temperature of 22.6 °C (NASA POWER), about 101 °C more than Arcadia Planitia (−77.9 °C), which has permafrost.",
+      "Its albedo (0.43) is double that of Arcadia Planitia (0.21).",
     ],
   },
 };

@@ -45,7 +45,7 @@ IA recomendada: Claude. Prompt: `prompts/dante.md`.
 IA recomendada: ChatGPT con búsqueda web para la literatura, y la IA de código que tengas para los scripts. Prompt: `prompts/lian.md`.
 
 - [x] **L-1 (versión 1 con 10 candidatos a las 15:00; completo a las 19:00).** `data/candidates.json` con 40 o más: 12 o más conocidos, 25 o más poco estudiados y 8 o más de Bolivia. Variables, fuentes, `known`, `tags` y referencias. Scripts de apoyo en `pipeline/earth/`. _Estado: 47 candidatos (21 conocidos, 26 poco estudiados, 10 de Bolivia); 11 avisos de `validate.py` (4 sin etiqueta citable y datos faltantes)._
-- [ ] **L-2 (hasta 00:00 para los del top 10 de algún sitio; el resto hasta 04:00).** F4 `web/public/data/fichas.json` con resumen, procesos, usos, **dónde falla la analogía** y referencias. Solo afirmaciones citables. _Estado: 31 fichas del top 10 publicadas (#52); faltan las de los 16 candidatos restantes._
+- [x] **L-2 (hasta 00:00 para los del top 10 de algún sitio; el resto hasta 04:00).** F4 `web/public/data/fichas.json` con resumen, procesos, usos, **dónde falla la analogía** y referencias. Solo afirmaciones citables. _Estado: 47 fichas, una por candidato (las 31 del top 10 de #52 y 16 más). Los lugares sin estudio planetario publicado dicen "propuesta del equipo"._
 - [ ] **L-3 (segunda fase, hasta 04:00).** F7 `web/public/data/explicaciones.json`: explicación de 3 a 4 frases, con lo que se parece y dónde falla, para los 5 mejores pares de cada sitio, redactada con IA y revisada por una persona.
 - [ ] **L-4 (segunda fase, hasta 06:00).** F8 exportar ficha a PDF en `web/src/features/export/` con estilos de impresión.
 

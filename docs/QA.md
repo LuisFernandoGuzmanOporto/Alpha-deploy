@@ -6,7 +6,7 @@ Dueño: Joel. Cada fallo va como issue de GitHub con pasos para reproducir. Pasa
 
 - **Versión:** `main` en `a36532c` más la corrección de la metodología en móvil (ver abajo). Build de producción con `vite preview`. **Sigue sin estar en Vercel**, así que la pasada es local.
 - **Cómo:** 34 comprobaciones automáticas con Chrome y **clics y teclas reales** (no eventos simulados), en español e inglés. Chequeos sobre la web en inglés: `?lang=en`.
-- **Datos:** reales (6 sitios, 47 candidatos, 31 fichas). `python pipeline/validate.py`: 0 errores. `npm test` 61/61; `tsc` y `npm run build` sin errores.
+- **Datos:** reales (6 sitios, 47 candidatos, 47 fichas desde la ampliación posterior a esta pasada). `python pipeline/validate.py`: 0 errores. `npm test` 61/61; `tsc` y `npm run build` sin errores.
 - **Resultado: 34 de 34 OK.**
 
 | Grupo | Qué se comprobó | Estado |
