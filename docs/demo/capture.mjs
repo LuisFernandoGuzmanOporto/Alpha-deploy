@@ -102,7 +102,7 @@ try {
 
   // Globo: Luna con el sitio marcado y Tierra con los análogos (diapositivas 1 y 7).
   await open("/?lang=en&sitio=moon-malapert-massif", 1440, 900);
-  await evaluate(`document.querySelector('.ea-fold summary').click()`);
+  await evaluate(`window.scrollTo(0, document.body.scrollHeight)`); // el globo ya no está plegado: se carga al bajar
   await sleep(4000);
   await evaluate(`document.querySelector('.globe-canvas').scrollIntoView({ block: 'center' })`);
   await sleep(800);
