@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Earth Analogs: demo oficial (7 diapositivas)</title>
+<style>
+  /* Mismos colores y tipografías que la web (web/src/styles/tokens.css). Se exporta con capture.mjs. */
+  :root {
+    --bg: #0b0f17; --surface: #121826; --surface-2: #19212f; --border: #253044; --border-strong: #3a475e;
+    --text: #e8ecf3; --muted: #a3adbf; --accent: #4cc9f0; --accent-strong: #7ad8f5; --warn: #ff7b7b;
+    --sans: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, sans-serif;
+    --mono: "Cascadia Mono", "JetBrains Mono", "SF Mono", ui-monospace, Consolas, monospace;
+  }
+  @page { size: 1280px 720px; margin: 0; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { background: var(--bg); color: var(--text); font-family: var(--sans); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .slide { position: relative; display: grid; grid-template-rows: auto 1fr auto; width: 1280px; height: 720px; padding: 44px 64px 28px; overflow: hidden; break-after: page; page-break-after: always; background: var(--bg); }
+  .slide:last-child { break-after: auto; page-break-after: auto; }
+  .kicker { color: var(--accent); font: 600 15px var(--mono); letter-spacing: 0.14em; text-transform: uppercase; }
+  h1 { margin-top: 10px; font-size: 52px; line-height: 1.08; letter-spacing: -0.02em; }
+  h2 { margin-top: 10px; font-size: 42px; line-height: 1.1; letter-spacing: -0.02em; }
+  .body { display: grid; align-content: center; gap: 22px; min-height: 0; padding: 18px 0; }
+  .two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 44px; align-items: center; min-height: 0; }
+  .lead { color: var(--text); font-size: 25px; line-height: 1.4; }
+  .muted { color: var(--muted); }
+  ul { display: grid; gap: 14px; padding: 0; list-style: none; font-size: 21px; line-height: 1.38; }
+  li { position: relative; padding-left: 22px; }
+  li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 8px; height: 8px; background: var(--accent); }
+  li b { color: var(--accent-strong); font-weight: 700; }
+  .shot { width: 100%; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--surface); object-fit: cover; object-position: top; }
+  .shot.short { height: auto; max-height: 440px; }
+  .foot { display: flex; justify-content: space-between; gap: 40px; color: var(--muted); font: 13px var(--mono); letter-spacing: 0.04em; border-top: 1px solid var(--border); padding-top: 10px; }
+  .foot .num { white-space: nowrap; }
+  .note { color: var(--muted); font-size: 15px; line-height: 1.4; }
+  .disc { width: 220px; height: 220px; border-radius: 50%; object-fit: cover; box-shadow: inset -14px -14px 28px #00000066; }
+  .discs { display: flex; gap: 36px; justify-content: center; align-items: center; }
+  .discs figure { display: grid; justify-items: center; gap: 12px; }
+  .discs figcaption { color: var(--muted); font: 600 15px var(--mono); letter-spacing: 0.1em; text-transform: uppercase; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .card { display: grid; align-content: start; gap: 12px; padding: 20px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
+  .card h3 { color: var(--accent-strong); font: 700 16px var(--mono); letter-spacing: 0.1em; text-transform: uppercase; }
+  .card p { font-size: 18px; line-height: 1.4; }
+  .formula { padding: 14px 18px; border-left: 3px solid var(--accent); background: var(--surface); font: 600 21px var(--mono); }
+  .cover { display: grid; grid-template-columns: minmax(0, 1.15fr) 360px; gap: 40px; align-items: center; }
+  .team { display: flex; flex-wrap: wrap; gap: 8px 22px; font: 600 19px var(--mono); color: var(--text); }
+  .presenters { display: grid; gap: 4px; padding: 12px 16px; border-left: 3px solid var(--accent); background: var(--surface); font-size: 19px; line-height: 1.35; }
+  .presenters b { color: var(--accent-strong); font: 700 14px var(--mono); letter-spacing: 0.12em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+
+<section class="slide">
+  <div><span class="kicker">NASA Space Apps Challenge 2026 · Cochabamba, Bolivia</span></div>
+  <div class="cover">
+    <div class="body">
+      <h1>Earth Analogs</h1>
+      <p class="lead">Medimos qué lugares de la Tierra se parecen a la Luna y a Marte, y en qué no se parecen.</p>
+      <p class="note">Desafío: <i>Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars</i> (identificar lugares de la Tierra análogos a las bases lunares permanentes y a Marte)</p>
+      <div class="presenters"><b>Exponen</b><span>Lian Demian Linares Gutierrez y Noelia Lolita Gonzales Jaldin</span></div>
+      <div class="team"><span>Fernando</span><span>Lian</span><span>Dante</span><span>Sebastián</span><span>Noe</span><span>Joel</span></div>
+    </div>
+    <img class="shot" src="img-es/globe-moon.jpg" alt="Globo 3D de la Luna con el sitio Malapert Massif marcado cerca del polo sur">
+  </div>
+  <div class="foot"><span>Earth Analogs</span><span>1 / 7</span></div>
+</section>
+
+<section class="slide">
+  <div><span class="kicker">El problema</span><h2>Ningún lugar de la Tierra se parece a la Luna o a Marte en todo.</h2></div>
+  <div class="two">
+    <ul>
+      <li>Los análogos terrestres, como el desierto de Atacama, el cráter Haughton o el Valle de la Muerte, "no están del todo bien caracterizados" (enunciado del desafío).</li>
+      <li>Los equipos de misión necesitan saber <b>para qué</b> sirve un análogo y <b>dónde falla</b>.</li>
+    </ul>
+    <div class="discs">
+      <figure><img class="disc" src="../../web/src/components/globe/textures/moon.jpg" alt="Mosaico de la Luna"><figcaption>Luna</figcaption></figure>
+      <figure><img class="disc" src="../../web/src/components/globe/textures/earth.jpg" alt="Mosaico de la Tierra"><figcaption>Tierra</figcaption></figure>
+    </div>
+  </div>
+  <div class="foot"><span>Texturas: NASA Moon Trek y NASA GIBS</span><span>2 / 7</span></div>
+</section>
+
+<section class="slide">
+  <div><span class="kicker">Nuestra solución</span><h2>Elige un sitio. Obtén un mapa ordenado de análogos terrestres.</h2></div>
+  <div class="two" style="grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr)">
+    <ul>
+      <li>Un <b>índice de similitud de 0 a 100</b> para cada lugar de la Tierra.</li>
+      <li>Una <b>comparación lado a lado</b> con un radar de cada variable.</li>
+      <li>Un panel explícito de <b>"dónde falla la analogía"</b>.</li>
+    </ul>
+    <img class="shot short" src="img-es/home-malapert.jpg" alt="Pantalla principal: Malapert Massif elegido, mapa mundial con marcadores de análogos y el ranking">
+  </div>
+  <div class="foot"><span>Mapa base © colaboradores de OpenStreetMap</span><span>3 / 7</span></div>
+</section>
+
+<section class="slide">
+  <div><span class="kicker">Cómo funciona el índice</span><h2>Cinco variables medibles, un índice honesto.</h2></div>
+  <div class="two" style="grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr)">
+    <div class="body" style="padding:0">
+      <ul>
+        <li><b>Pendiente, relieve, temperatura media, precipitación y albedo</b>, a partir de datos y modelos de la NASA en una misma ventana de 10 × 10 km.</li>
+        <li>Cada valor se normaliza; las etiquetas de geología, hielo y polvo se comparan aparte.</li>
+        <li>Cada valor cita su fuente. <b>Si falta un dato, queda vacío: nunca se inventa.</b></li>
+      </ul>
+      <div class="formula">índice = 100 × (1 − diferencia media ponderada)</div>
+    </div>
+    <img class="shot short" src="img-es/compare-malapert-licancabur.jpg" alt="Comparación de Malapert Massif y el volcán Licancabur: índice 69.8, tabla de variables y radar">
+  </div>
+  <div class="foot"><span>Malapert Massif frente al volcán Licancabur: 69.8 / 100</span><span>4 / 7</span></div>
+</section>
+
+<section class="slide">
+  <div><span class="kicker">Datos de la NASA en el centro</span><h2>Construido con datos abiertos de la NASA.</h2></div>
+  <div class="body">
+    <div class="grid3">
+      <div class="card"><h3>Luna</h3><p>Terreno de LRO LOLA y temperatura de LRO Diviner, en el polo sur lunar.</p></div>
+      <div class="card"><h3>Marte</h3><p>Terreno de MGS MOLA y la Mars Climate Database (LMD, ESA, CNES).</p></div>
+      <div class="card"><h3>Tierra</h3><p>NASA POWER (temperatura, precipitación, albedo CERES) y teselas de elevación basadas en SRTM en AWS; el Copernicus DEM de la ESA en cuatro lugares.</p></div>
+    </div>
+    <div class="discs" style="justify-content:flex-start">
+      <figure><img class="disc" style="width:120px;height:120px" src="../../web/src/components/globe/textures/moon.jpg" alt="Luna"><figcaption>Moon Trek</figcaption></figure>
+      <figure><img class="disc" style="width:120px;height:120px" src="../../web/src/components/globe/textures/mars.jpg" alt="Marte"><figcaption>Mars Trek</figcaption></figure>
+      <figure><img class="disc" style="width:120px;height:120px" src="../../web/src/components/globe/textures/earth.jpg" alt="Tierra"><figcaption>NASA GIBS</figcaption></figure>
+      <p class="note" style="max-width:560px">El globo 3D usa mosaicos de NASA GIBS, Moon Trek y Mars Trek. Fuentes y licencias completas: docs/ATRIBUCION.md. Produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Cada valor viene de una fuente citada; la aplicación no hace llamadas a IA</span><span>5 / 7</span></div>
+</section>
+
+<section class="slide">
+  <div><span class="kicker">Lo que encontramos</span><h2>Lo que halló el índice: la Antártida y los Andes para la Luna, desiertos para Marte.</h2></div>
+  <div class="two" style="grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr)">
+    <ul style="font-size:19px; gap:11px">
+      <li><b>Luna:</b> los Valles Secos de McMurdo, ya documentados como análogo de Marte, quedan 1.º en los tres sitios lunares (72.1, 72.3 y 62.7); el volcán Licancabur es 2.º en los tres y el poco estudiado volcán Ollagüe, 3.º.*</li>
+      <li><b>Marte:</b> el núcleo hiperárido del desierto de Atacama (Yungay), un análogo de Marte documentado, queda 1.º para Jezero (82.1) y Gale (83.8), por delante de la meseta de Gilf Kebir.</li>
+      <li><b>Bolivia</b> está en el top 5 de los seis sitios, con lugares poco estudiados como el volcán Ollagüe (3.º en los tres sitios lunares) y el desierto de Siloli (4.º en Jezero, 5.º en Gale).</li>
+      <li><b>Dónde falla:</b> el candidato terrestre más frío promedia −27 °C; los sitios lunares, de −126 a −160 °C.</li>
+    </ul>
+    <img class="shot short" src="img-es/discoveries.jpg" alt="Vista de descubrimientos: los cinco mejores análogos poco estudiados de cada sitio">
+  </div>
+  <div class="foot"><span>* La temperatura y la precipitación de los candidatos de montaña están sesgadas (malla regional gruesa); su puesto se apoya sobre todo en pendiente y relieve.</span><span class="num">6 / 7</span></div>
+</section>
+
+<section class="slide">
+  <div><span class="kicker">Por qué importa y qué sigue</span><h2>Probar primero en la Tierra, conociendo los límites de cada lugar.</h2></div>
+  <div class="two" style="grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr)">
+    <ul style="font-size:20px; gap:12px">
+      <li>Ayuda a elegir dónde probar <b>rovers, instrumentos y operaciones</b>.</li>
+      <li>Deja explícitos los límites: la gravedad, el vacío, la atmósfera tenue y la radiación no se pueden reproducir.</li>
+      <li>Pone en el mapa de análogos lugares poco estudiados de Bolivia (Ollagüe, Siloli, Laguna Colorada).</li>
+      <li><b>Siguiente paso:</b> más candidatos terrestres, un barrido global más fino y validación en campo.</li>
+    </ul>
+    <img class="shot short" src="img-es/bolivia-jezero.jpg" alt="Filtro solo Bolivia para el cráter Jezero: los análogos bolivianos en el mapa y en el ranking">
+  </div>
+  <div class="foot"><span>github.com/LuisFernandoGuzmanOporto/Alpha-deploy · earth-analogs-coral.vercel.app · Mapa base © colaboradores de OpenStreetMap</span><span>7 / 7</span></div>
+</section>
+
+</body>
+</html>

@@ -13,11 +13,11 @@ Registro de lo comprobado y de lo que sigue abierto. Solo se marca lo que se ver
 | Rediseño visual y 3D (portada, globo WebGL, descubrimientos, metodología, Bolivia) | Hecho en la rama, **sin fusionar ni desplegar** | `tsc` sin errores, 80 de 80 pruebas, build correcto, `qa.mjs` 48 de 48, `a11y.mjs` sin hallazgos (`docs/QA.md`, pasada 6) |
 | Mapa con fotos reales (tarjetas, galería, explorador, globo) | Hecho en la rama, **sin fusionar** | 35 de 56 lugares con fotos de Wikimedia Commons (152 fotos geoetiquetadas a menos de 10 km); los otros 21 muestran una ilustración rotulada como tal. Google Places listo pero **sin clave configurada** |
 | Capturas de las seis secciones | Hecho | `docs/demo/img/` (ver `docs/demo/README.md`) |
-| PDF de la demo (7 diapositivas, inglés) | Exportado en local | `docs/demo/earth-analogs-demo.pdf`. Falta: nombres completos y nombre del equipo en la diapositiva 1, y la revisión del equipo |
-| PDF en Google Drive con enlace público | **Pendiente** | No se subió: el equipo aún no lo revisó |
+| PDF de la demo (7 diapositivas) | Hecho, en español y en inglés | `docs/demo/earth-analogs-demo-es.pdf` (español, el que se envía) y `docs/demo/earth-analogs-demo.pdf` (inglés). La diapositiva 1 indica quiénes exponen |
+| Enlace público del PDF | **Hecho** | Repositorio público de GitHub, sin contraseña ni registro: https://github.com/LuisFernandoGuzmanOporto/Alpha-deploy/blob/main/docs/demo/earth-analogs-demo-es.pdf (español) y https://github.com/LuisFernandoGuzmanOporto/Alpha-deploy/blob/main/docs/demo/earth-analogs-demo.pdf (inglés). Drive es opcional |
 | URL de Vercel | **Pendiente** (F-1, Fernando) | El repositorio no tiene ningún despliegue registrado |
 | QA sobre producción | **Pendiente** | Depende de la URL de Vercel |
-| Oradores del pitch | **Pendiente** | Joel (apertura) y Noe (cierre) siguen como propuesta; el bloque "Solución" no tiene orador |
+| Oradores del pitch | **Hecho** | Exponen Lian Demian Linares Gutierrez y Noelia Lolita Gonzales Jaldin (`docs/PITCH.md`, sección 5) |
 | Video de respaldo | **Pendiente** | Hay que grabarlo (recorrido de `docs/PITCH.md`, sección 5) |
 | Tres ensayos cronometrados | **Pendiente** | Tabla de abajo, por llenar |
 | Registro de los seis en la sede y "Full Name" | **Pendiente** | Lo revisa cada integrante en su perfil |
@@ -91,7 +91,7 @@ Earth Analogs
 > Earth Analogs is a web tool that ranks places on Earth by how closely they resemble candidate Moon base sites and Mars landing sites. For each site it computes a 0–100 similarity score from five variables derived from NASA data and models in a common 10 × 10 km window (slope, local relief, mean temperature, aridity and albedo), mostly from NASA data, and shows side by side what is similar and where the analogy breaks down. It answers the challenge by identifying and characterizing analogs systematically instead of only by appearance, has a dedicated view for less-studied places and a Bolivia filter, and states the limits no Earth analog can overcome: reduced gravity, the lunar vacuum, the thin Martian atmosphere and radiation.
 
 ### Link to Project Demo
-[PENDING: public link to the 7-slide PDF or the ≤ 30 s video]
+https://github.com/LuisFernandoGuzmanOporto/Alpha-deploy/blob/main/docs/demo/earth-analogs-demo-es.pdf (7 slides, Spanish). English version: https://github.com/LuisFernandoGuzmanOporto/Alpha-deploy/blob/main/docs/demo/earth-analogs-demo.pdf
 
 ### Link to Final Project
 https://earth-analogs-coral.vercel.app. Repository: https://github.com/LuisFernandoGuzmanOporto/Alpha-deploy

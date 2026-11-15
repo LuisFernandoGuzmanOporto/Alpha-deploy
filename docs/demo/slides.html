@@ -43,6 +43,8 @@
   .card p { font-size: 18px; line-height: 1.4; }
   .formula { padding: 14px 18px; border-left: 3px solid var(--accent); background: var(--surface); font: 600 21px var(--mono); }
   .cover { display: grid; grid-template-columns: minmax(0, 1.15fr) 360px; gap: 40px; align-items: center; }
+  .presenters { display: grid; gap: 4px; padding: 12px 16px; border-left: 3px solid var(--accent); background: var(--surface); font-size: 19px; line-height: 1.35; }
+  .presenters b { color: var(--accent-strong); font: 700 14px var(--mono); letter-spacing: 0.12em; text-transform: uppercase; }
   .team { display: flex; flex-wrap: wrap; gap: 8px 22px; font: 600 19px var(--mono); color: var(--text); }
 </style>
 </head>
@@ -55,6 +57,7 @@
       <h1>Earth Analogs</h1>
       <p class="lead">Measuring which places on Earth resemble the Moon and Mars, and where they don't.</p>
       <p class="note">Challenge: <i>Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars</i></p>
+      <div class="presenters"><b>Presenters</b><span>Lian Demian Linares Gutierrez and Noelia Lolita Gonzales Jaldin</span></div>
       <div class="team"><span>Fernando</span><span>Lian</span><span>Dante</span><span>Sebastián</span><span>Noe</span><span>Joel</span></div>
     </div>
     <img class="shot" src="img/globe-moon.jpg" alt="3D globe of the Moon with the Malapert Massif site marked near the south pole">
@@ -95,7 +98,7 @@
   <div class="two" style="grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr)">
     <div class="body" style="padding:0">
       <ul>
-        <li><b>Slope, relief, mean temperature, aridity, albedo</b>, from NASA data and models in a common 10 × 10 km window.</li>
+        <li><b>Slope, relief, mean temperature, precipitation, albedo</b>, from NASA data and models in a common 10 × 10 km window.</li>
         <li>Each value is normalized; geology, ice and dust tags are compared separately.</li>
         <li>Every value cites its source. <b>Missing data stays empty, never guessed.</b></li>
       </ul>
@@ -149,7 +152,7 @@
     </ul>
     <img class="shot short" src="img/bolivia-jezero.jpg" alt="Bolivia-only filter for Jezero crater: the Bolivian analogs on the map and in the ranking">
   </div>
-  <div class="foot"><span>github.com/LuisFernandoGuzmanOporto/Alpha-deploy · Base map © OpenStreetMap contributors</span><span>7 / 7</span></div>
+  <div class="foot"><span>github.com/LuisFernandoGuzmanOporto/Alpha-deploy · earth-analogs-coral.vercel.app · Base map © OpenStreetMap contributors</span><span>7 / 7</span></div>
 </section>
 
 </body>

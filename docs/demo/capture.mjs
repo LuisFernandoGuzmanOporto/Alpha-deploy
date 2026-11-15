@@ -11,6 +11,7 @@ const [base = "http://localhost:4173", outArg = "docs/demo/img"] = process.argv.
 const out = resolve(outArg);
 mkdirSync(out, { recursive: true });
 
+const LANG_UI = process.env.LANG_UI ?? "en"; // idioma de la web en las capturas (en o es)
 const CHROME = process.env.CHROME ?? "C:/Program Files/Google/Chrome/Application/chrome.exe";
 const PORT = 9333;
 const profile = mkdtempSync(join(tmpdir(), "ea-capture-"));
@@ -94,53 +95,53 @@ const stageClip = () => elementClip("#explore-stage");
 try {
   // Pantalla principal: sitio lunar, mapa y ranking (diapositiva 3).
   // Portada con la escena 3D (pantalla principal).
-  await open("/?lang=en", 1440, 810);
+  await open(`/?lang=${LANG_UI}`, 1440, 810);
   await sleep(3500);
   await shot("hero");
 
-  await open("/?lang=en&sitio=moon-malapert-massif", 1200, 816);
+  await open(`/?lang=${LANG_UI}&sitio=moon-malapert-massif`, 1200, 816);
   await toStage();
   await shot("home-malapert", await stageClip());
 
   // Solo Bolivia sobre Marte (diapositiva 7).
-  await open("/?lang=en&sitio=mars-jezero&bolivia=1", 1200, 816);
+  await open(`/?lang=${LANG_UI}&sitio=mars-jezero&bolivia=1`, 1200, 816);
   await toStage();
   await shot("bolivia-jezero", await stageClip());
 
   // Mapa con fotos: tarjeta fotográfica de un lugar elegido (foto real de Wikimedia Commons).
-  await open("/?lang=en&sitio=mars-jezero&analogo=earth-arbol-de-piedra-siloli", 1440, 900);
+  await open(`/?lang=${LANG_UI}&sitio=mars-jezero&analogo=earth-arbol-de-piedra-siloli`, 1440, 900);
   await toStage();
   await sleep(2500);
   await shot("map-photo-card", await stageClip());
 
   // Panel "Explore places" con buscador, filtros y miniaturas.
-  await open("/?lang=en&sitio=mars-jezero", 1440, 900);
+  await open(`/?lang=${LANG_UI}&sitio=mars-jezero`, 1440, 900);
   await toStage();
   await evaluate(`[...document.querySelectorAll('.cc-panel__tabs button')][1].click()`);
   await sleep(2500);
   await shot("explorer", await elementClip(".cc-panel"));
 
   // Comparador completo (diapositiva 4).
-  await open("/comparar/moon-malapert-massif/earth-licancabur-laguna-verde?lang=en", 900, 1400);
+  await open(`/comparar/moon-malapert-massif/earth-licancabur-laguna-verde?lang=${LANG_UI}`, 900, 1400);
   await sleep(2500);
   await shot("compare-malapert-licancabur", { x: 0, y: 80, width: 900, height: 660 });
 
   // Descubrimientos (diapositiva 6).
-  await open("/descubrimientos?lang=en", 1100, 800);
+  await open(`/descubrimientos?lang=${LANG_UI}`, 1100, 800);
   await shot("discoveries");
 
   // Metodología: diagrama del proceso y comienzo del texto (diapositiva 4).
-  await open("/metodologia?lang=en", 1100, 800);
+  await open(`/metodologia?lang=${LANG_UI}`, 1100, 800);
   await shot("methodology");
 
   // Globo: Luna con el sitio marcado y Tierra con los análogos (diapositivas 1 y 7).
-  await open("/?lang=en&sitio=moon-malapert-massif", 1440, 900);
+  await open(`/?lang=${LANG_UI}&sitio=moon-malapert-massif`, 1440, 900);
   await evaluate(`window.scrollTo(0, document.body.scrollHeight)`); // el globo ya no está plegado: se carga al bajar
   await sleep(4000);
   await evaluate(`document.querySelector('.globe-canvas').scrollIntoView({ block: 'center' })`);
   await sleep(3500); // la cámara vuela hasta el sitio
   await shot("globe-moon", await elementClip(".globe-canvas"));
-  await evaluate(`[...document.querySelectorAll('.globe-tabs [role=tab]')].find((t) => /earth/i.test(t.textContent)).click()`);
+  await evaluate(`[...document.querySelectorAll('.globe-tabs [role=tab]')].find((t) => /earth|tierra/i.test(t.textContent)).click()`);
   await sleep(4000);
   await evaluate(`document.querySelector('.globe-canvas').scrollIntoView({ block: 'center' })`);
   await sleep(800);
