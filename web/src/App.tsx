@@ -1,4 +1,4 @@
-import { AnimatePresence, LazyMotion, MotionConfig, m } from "motion/react";
+import { AnimatePresence, LazyMotion, MotionConfig, m, useReducedMotion } from "motion/react";
 import { lazy, Suspense } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { ErrorBoundary } from "./components/ErrorBoundary";
@@ -17,6 +17,8 @@ const loadMotionFeatures = () => import("./lib/motionFeatures").then((module) =>
 export function App() {
   const t = useT();
   const location = useLocation();
+  // Con "reducir movimiento" la pantalla entra sin desplazamiento, ni siquiera en el primer cuadro.
+  const reduceMotion = useReducedMotion();
   return (
     // reducedMotion="user": con "reducir movimiento" activado se apagan las animaciones de transformación y de layout.
     <MotionConfig reducedMotion="user">
@@ -27,7 +29,7 @@ export function App() {
               <AnimatePresence mode="wait" initial={false}>
                 <m.div
                   key={location.pathname}
-                  initial={{ opacity: 0, y: 12 }}
+                  initial={{ opacity: 0, y: reduceMotion ? 0 : 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.2, ease: [0.2, 0.7, 0.2, 1] }}

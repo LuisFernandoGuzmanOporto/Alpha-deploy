@@ -1,4 +1,4 @@
-import { lazy, Suspense, useMemo, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Dialog, Switch } from "../components/controls";
 import { RankingList } from "../components/RankingList";
@@ -13,7 +13,8 @@ import { parseWeights, serializeWeights } from "../lib/variables";
 import { VARIABLE_IDS } from "../types";
 
 // MapLibre pesa casi 1 MB: se carga aparte del resto de la app.
-const RankingMap = lazy(() => import("../components/RankingMap").then((m) => ({ default: m.RankingMap })));
+const loadRankingMap = () => import("../components/RankingMap");
+const RankingMap = lazy(() => loadRankingMap().then((m) => ({ default: m.RankingMap })));
 // El globo trae texturas de ~1,3 MB: solo se carga cuando se abre la sección.
 const GlobeView = lazy(() => import("../components/globe/GlobeView").then((m) => ({ default: m.GlobeView })));
 
@@ -21,6 +22,10 @@ const GLOBE_ANALOGS = 5;
 
 export function Home() {
   const state = useData();
+  // El mapa (MapLibre, ~1 MB) se pide después del primer pintado, en paralelo con los datos, y no cuando estos llegan.
+  useEffect(() => {
+    void loadRankingMap();
+  }, []);
   const t = useT();
   const { ui } = useContent();
   const [params, setParams] = useSearchParams();

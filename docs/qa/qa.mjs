@@ -152,7 +152,25 @@ try {
   const t = await ev(`({ s: document.documentElement.scrollWidth, i: innerWidth })`);
   check("Tableta 768 px sin desborde", t.s <= t.i, `${t.s}/${t.i}`);
 
-  // 12. Consola
+  // 12. Movimiento reducido: al cambiar de pantalla no hay desplazamientos (solo cambia la opacidad)
+  // Hace clic en "Discoveries" y muestrea la transformación de la pantalla durante la transición (unos 750 ms).
+  const sampleTransforms = `new Promise((done) => { const seen = new Set(); let i = 0; [...document.querySelectorAll("nav a")].find((a) => /Discoveries/.test(a.textContent)).click(); const id = setInterval(() => { const el = document.querySelector("main > div"); if (el) seen.add(getComputedStyle(el).transform); if (++i > 25) { clearInterval(id); done([...seen]); } }, 30); })`;
+  await send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "no-preference" }] });
+  await go("/?lang=en");
+  const animated = await ev(sampleTransforms);
+  check("Control: sin movimiento reducido la transición sí desplaza", animated.some((tr) => tr !== "none"), animated.slice(0, 3).join(" | "));
+  await send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }] });
+  await go("/?lang=en");
+  const reduced = await ev(sampleTransforms);
+  check("Movimiento reducido: la transición entre pantallas no desplaza", reduced.every((tr) => tr === "none"), reduced.join(" | "));
+  await send("Emulation.setEmulatedMedia", { features: [] });
+
+  // 13. Sin saltos de diseño al cargar el inicio
+  await go("/?lang=en&sitio=mars-jezero");
+  const cls = await ev(`new Promise((done) => { let v = 0; new PerformanceObserver((l) => { for (const e of l.getEntries()) if (!e.hadRecentInput) v += e.value; }).observe({ type: "layout-shift", buffered: true }); setTimeout(() => done(v), 200); })`);
+  check("Inicio sin saltos de diseño (CLS < 0,1)", cls < 0.1, cls.toFixed(4));
+
+  // 14. Consola
   check("Consola sin errores durante toda la pasada", consoleErrors.length === 0, consoleErrors.slice(0, 3).join(" | "));
 } catch (error) {
   check("La pasada terminó sin excepciones", false, String(error));
