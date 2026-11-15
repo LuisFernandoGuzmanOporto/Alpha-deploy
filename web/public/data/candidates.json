@@ -1007,7 +1007,7 @@
     "id": "earth-rub-al-khali",
     "body": "earth",
     "name": "Rub' al Khali (Cuarto Vacío)",
-    "country": "Arabia Saudita",
+    "country": "Emiratos Árabes Unidos",
     "is_bolivia": false,
     "known": true,
     "analog_for": [
@@ -1019,25 +1019,26 @@
       "https://doi.org/10.1371/journal.pone.0150342",
       "https://ntrs.nasa.gov/citations/20160012254"
     ],
-    "lat": 20.0,
-    "lon": 50.0,
+    "lat": 23.05088,
+    "lon": 53.77005,
     "variables": {
-      "slope_deg": 0.93,
-      "relief_m": 6.6,
-      "temp_mean_c": 30.26,
-      "precip_mm_year": 11.0,
-      "albedo": 0.43
+      "slope_deg": 4.24,
+      "relief_m": 29.8,
+      "temp_mean_c": 30.5,
+      "precip_mm_year": 21.9,
+      "albedo": 0.39
     },
     "sources": {
-      "slope_deg": "Terrain Tiles de Mapzen en AWS (Terrarium, zoom 10), compuesto de: srtm/N19E049.tif, srtm/N19E050.tif, srtm/N20E049.tif, srtm/N20E050.tif (https://registry.opendata.aws/terrain-tiles/); pendiente media de Horn (3 x 3) en ventana de 10 x 10 km a 250 m, calculada con pipeline/earth/terrain_tiles.py",
-      "relief_m": "Terrain Tiles de Mapzen en AWS (Terrarium, zoom 10), compuesto de: srtm/N19E049.tif, srtm/N19E050.tif, srtm/N20E049.tif, srtm/N20E050.tif (https://registry.opendata.aws/terrain-tiles/); desviacion estandar poblacional de la elevacion en ventana de 10 x 10 km a 250 m, calculada con pipeline/earth/terrain_tiles.py",
+      "slope_deg": "Terrain Tiles de Mapzen en AWS (Terrarium, zoom 10), compuesto de: srtm/N22E053.tif, srtm/N22E054.tif, srtm/N23E053.tif, srtm/N23E054.tif (https://registry.opendata.aws/terrain-tiles/); pendiente media de Horn (3 x 3) en ventana de 10 x 10 km a 250 m, calculada con pipeline/earth/terrain_tiles.py",
+      "relief_m": "Terrain Tiles de Mapzen en AWS (Terrarium, zoom 10), compuesto de: srtm/N22E053.tif, srtm/N22E054.tif, srtm/N23E053.tif, srtm/N23E054.tif (https://registry.opendata.aws/terrain-tiles/); desviacion estandar poblacional de la elevacion en ventana de 10 x 10 km a 250 m, calculada con pipeline/earth/terrain_tiles.py",
       "temp_mean_c": "NASA POWER, climatologia January 2001 - December 2025, parametro TS (Earth Skin Temperature, temperatura de superficie), media anual en °C, MERRA-2 (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)",
       "precip_mm_year": "NASA POWER, parametro PRECTOTCORR (precipitacion corregida), media anual en mm/dia x 365,25, MERRA-2 (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)",
       "albedo": "NASA POWER, parametro ALLSKY_SRF_ALB (albedo de superficie en todo cielo), CERES SYN1deg (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)"
     },
-    "notes": "Coordenadas: Wikipedia, artículo 'Rub' al Khali' (centro aproximado: https://en.wikipedia.org/wiki/Rub%27_al_Khali). Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Elevacion en el centro: 276 m. Pendiente y relieve en ventana de 10 x 10 km a 250 m con interpolacion bilineal; modelos de elevacion: srtm/N19E049.tif, srtm/N19E050.tif, srtm/N20E049.tif, srtm/N20E050.tif. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 273 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. known=true: las referencias citadas documentan el lugar (o su region) como analogo planetario.",
+    "notes": "Coordenadas: Sabkha de interduna de Liwa, Emiratos Árabes Unidos (N 23,05088°, E 53,77005°, 86 m), sitio de muestreo de McKay et al. 2016, PLOS ONE, doi:10.1371/journal.pone.0150342 (métodos). Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Elevacion en el centro: 92 m. Pendiente y relieve en ventana de 10 x 10 km a 250 m con interpolacion bilineal; modelos de elevacion: srtm/N22E053.tif, srtm/N22E054.tif, srtm/N23E053.tif, srtm/N23E054.tif. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 132 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. known=true: las referencias citadas documentan el lugar (o su region) como analogo planetario. Respaldo de etiquetas: aeolian-dunes: https://doi.org/10.1016/j.geomorph.2010.03.029; evaporite: https://doi.org/10.1371/journal.pone.0150342.",
     "tags": [
-      "aeolian-dunes"
+      "aeolian-dunes",
+      "evaporite"
     ]
   },
   {
@@ -1154,12 +1155,13 @@
     "name": "Volcán Socompa (Puna de Atacama)",
     "country": "Argentina y Chile",
     "is_bolivia": false,
-    "known": false,
+    "known": true,
     "analog_for": [
       "mars"
     ],
-    "why": "Propuesto por sus valores en este catalogo (164.4 mm/ano de precipitacion, 5.92 °C de temperatura media de superficie, 470.8 m de relieve local); no se encontro un estudio previo como analogo planetario.",
+    "why": "Volcán de la Puna de Atacama con fumarolas a más de 6000 m: parte del bioma de altura de los volcanes atacameños, descrito como el mejor análogo terrestre de la superficie de Marte (Schmidt et al., 2018).",
     "reference_urls": [
+      "https://doi.org/10.1007/s10482-018-1066-0",
       "https://doi.org/10.1128/aem.01469-08"
     ],
     "lat": -24.3958,
@@ -1178,7 +1180,7 @@
       "precip_mm_year": "NASA POWER, parametro PRECTOTCORR (precipitacion corregida), media anual en mm/dia x 365,25, MERRA-2 (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)",
       "albedo": "NASA POWER, parametro ALLSKY_SRF_ALB (albedo de superficie en todo cielo), CERES SYN1deg (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)"
     },
-    "notes": "Coordenadas: Wikipedia, artículo 'Socompa' (https://en.wikipedia.org/wiki/Socompa). Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Elevacion en el centro: 5980 m. Pendiente y relieve en ventana de 10 x 10 km a 250 m con interpolacion bilineal; modelos de elevacion: gmted/30S090W_20101117_gmted_mea075.tif, srtm/S25W068.tif, srtm/S25W069.tif. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 4057 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. ATENCION: el punto esta 1923 m por encima de la celda de POWER (elevacion de la celda frente a la del terreno); la temperatura y la precipitacion probablemente no representan el punto y no se corrigieron. known=false: en una busqueda en Crossref del 14/11/2026 no se encontro un estudio de analogo planetario de este lugar; falta una revision bibliografica completa (a verificar).",
+    "notes": "Coordenadas: Wikipedia, artículo 'Socompa' (https://en.wikipedia.org/wiki/Socompa). Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Elevacion en el centro: 5980 m. Pendiente y relieve en ventana de 10 x 10 km a 250 m con interpolacion bilineal; modelos de elevacion: gmted/30S090W_20101117_gmted_mea075.tif, srtm/S25W068.tif, srtm/S25W069.tif. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 4057 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. ATENCION: el punto esta 1923 m por encima de la celda de POWER (elevacion de la celda frente a la del terreno); la temperatura y la precipitacion probablemente no representan el punto y no se corrigieron. known=true: las referencias citadas documentan el lugar (o su region) como analogo planetario.",
     "tags": [
       "hyper-arid"
     ]
@@ -1262,13 +1264,13 @@
     "is_bolivia": false,
     "known": true,
     "analog_for": [
-      "moon",
-      "mars"
+      "moon"
     ],
-    "why": "Tubo de lava mostrado como ejemplo terrestre junto a tubos de la Luna y de Marte en un estudio de análogos planetarios.",
+    "why": "Sistema de tubos de lava propuesto como posible análogo de la Luna (Atkinson, 1991).",
     "reference_urls": [
       "https://doi.org/10.3390/d13070326",
-      "https://doi.org/10.5194/epsc2022-1003"
+      "https://digitalcommons.usf.edu/kip_talks/151",
+      "https://www.vulcanospeleology.org/sym14/papers/Atkinson.pdf"
     ],
     "lat": -18.2011,
     "lon": 144.5961,

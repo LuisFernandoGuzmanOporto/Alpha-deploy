@@ -50,6 +50,7 @@ export const SITES_EN: Record<string, SiteEn> = {
 export const COUNTRIES_EN: Record<string, string> = {
   Antártida: "Antarctica",
   "Arabia Saudita": "Saudi Arabia",
+  "Emiratos Árabes Unidos": "United Arab Emirates",
   Argelia: "Algeria",
   Argentina: "Argentina",
   "Argentina y Chile": "Argentina and Chile",
@@ -160,7 +161,8 @@ export const CANDIDATE_WHY_EN: Record<string, string> = {
   "earth-lava-beds-california": "Lava tubes used as an analog of lunar lava tubes, and ice caves described as a Mars analog.",
   "earth-el-malpais-nuevo-mexico": "Lava tubes chosen as a terrestrial analog of lunar rilles.",
   "earth-lago-eyre-australia": "Playa basin cited by NASA as an example of saline lakes analogous to early Mars.",
-  "earth-undara-australia": "Lava tube shown as the terrestrial example next to lunar and Martian lava tubes in a planetary-analog study.",
+  "earth-undara-australia": "Lava tube system proposed as a possible lunar analog (Atkinson, 1991 and 2010).",
+  "earth-volcan-socompa": "Volcano of the Puna de Atacama with fumaroles above 6,000 m: its summit was compared with Mars (University of Colorado Boulder, 2009) and it belongs to the high-altitude biome of the Atacama volcanoes, described as the best terrestrial analog of the Martian surface (Schmidt et al., 2018).",
 };
 
 const CELL = "The NASA POWER cell differs by more than 500 m from the elevation of the point, so the temperature may be biased (see the candidate's notes).";
@@ -256,14 +258,19 @@ export const FICHAS_EN: Record<string, FichaEn> = {
   },
   "earth-volcan-socompa": {
     summary:
-      "Volcano in the Puna de Atacama where, near the summit (6,051 m), fumaroles sustain microbial communities in the form of mats. They are isolated in a sterile landscape: vascular plants do not go beyond about 4,600 m.",
+      "Volcano in the Puna de Atacama where, near the summit (6,051 m), fumaroles sustain microbial communities in the form of mats. They are isolated in a sterile landscape: vascular plants do not go beyond about 4,600 m. Its summit was compared with Mars (University of Colorado Boulder, 2009) and Schmidt et al. (2018) treat the Atacama volcanoes above 6,000 m as perhaps the best terrestrial analog of the Martian surface.",
     processes: [
       "Fumarolic activity that provides heat and moisture in a hyper-arid, high-altitude environment (Applied and Environmental Microbiology, 2009).",
     ],
     use_cases: [
-      "Study how a geothermal source sustains islands of life in a cold, dry landscape, useful for thinking about geothermal habitats on Mars (team proposal).",
+      "Study how a geothermal source sustains islands of life in a cold, dry landscape, useful for thinking about geothermal habitats on Mars: the University of Colorado Boulder compared the summit with Mars (2009).",
     ],
-    breaks_down: ["Life depends on volcanic heat, which the lunar polar sites do not have.", CELL, TOP10],
+    breaks_down: [
+      "The Mars-analog framing comes from a university news item (2009) and a review article on the Atacama volcanoes (Schmidt et al., 2018), not from a study dedicated only to Socompa.",
+      "Life depends on volcanic heat, which the lunar polar sites do not have.",
+      CELL,
+      TOP10,
+    ],
   },
   "earth-nevado-sajama": {
     summary:
@@ -502,12 +509,12 @@ export const FICHAS_EN: Record<string, FichaEn> = {
   },
   "earth-rub-al-khali": {
     summary:
-      "Great sand sea of the Arabian Peninsula, hyper-arid, with less than 35 mm of rain a year and dunes up to 250 m. Its barchanoid megadunes were studied to understand the self-organization of dune fields.",
+      "Great sand sea of the Arabian Peninsula, hyper-arid, with less than 35 mm of rain a year and dunes up to 250 m. Its barchanoid megadunes were studied to understand the self-organization of dune fields. Our point is in an interdune sabkha at Liwa (United Arab Emirates), where McKay et al. (2016) took their samples.",
     processes: ["Self-organization and maturation of megadune fields (Geomorphology, 2010).", "Microbial mats under salt crusts in interdune sabkhas at Liwa (UAE), described as an analog of present-day Mars habitats (McKay et al., 2016)."],
     use_cases: ["Team proposal: compare the organization of terrestrial and Martian dune fields."],
     breaks_down: [
-      "Mean temperature of 30.3 °C (NASA POWER), the highest of the Arcadia Planitia top 10 and about 108 °C above that site.",
-      "Its albedo (0.43) is double that of Arcadia Planitia (0.21).",
+      "Mean temperature of 30.5 °C (NASA POWER), higher than any of the Arcadia Planitia top 10 and about 108 °C above that site.",
+      "Its albedo (0.39) is almost double that of Arcadia Planitia (0.21).",
     ],
   },
   "earth-lago-eyre-australia": {
@@ -569,7 +576,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
       "Study a geological, environmental and ecological analog of the Martian surface and near surface (Salvatore and Levy, 2021).",
     ],
     breaks_down: [
-      "It is first at all three lunar sites: Peak Near Cabeus B (72.1), Malapert Massif (72.2) and Faustini Rim A (62.7), thanks to its mean slope of 15.3° and relief of 418 m (Copernicus DEM GLO-30); on Mars it ranks between 45th and 46th.",
+      "It is first at all three lunar sites: Peak Near Cabeus B (72.1), Malapert Massif (72.3) and Faustini Rim A (62.7), thanks to its mean slope of 15.3° and relief of 418 m (Copernicus DEM GLO-30); on Mars it ranks between 45th and 46th.",
       "Mean temperature of −26.7 °C (NASA POWER), the lowest in the catalog, but about 99 °C more than Peak Near Cabeus B (−125.6 °C, Diviner) and about 51 °C more than Arcadia Planitia (−77.9 °C), which has permafrost.",
       "Its albedo (0.56) is more than double that of Arcadia Planitia (0.21), because terrestrial albedo includes snow and ice.",
       "The point is the approximate center of the valleys: the variables describe the region, not a specific valley.",
@@ -619,7 +626,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     breaks_down: [
       "Mean temperature of −4.4 °C (NASA POWER), about 156 °C more than Faustini Rim A (−160.4 °C, Diviner).",
       "It receives about 862 mm of annual precipitation (NASA POWER); the Moon has no rain.",
-      "It is 26th at all three lunar sites, with scores of 43.6 to 44.1: the match is weak.",
+      "It is 27th at all three lunar sites, with scores of 43.6 to 44.2: the match is weak.",
     ],
   },
   "earth-mauna-kea-hawai": {
@@ -687,7 +694,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     breaks_down: [
       "Mean temperature of 5.2 °C (NASA POWER), about 56 °C more than Gale (−50.7 °C).",
       "It receives about 416 mm of annual precipitation (NASA POWER); Mars has no rain.",
-      "It is 16th at Gale (72.2) and 19th at Jezero (71.2): it does not reach the top 10.",
+      "It is 17th at Gale (72.2) and 19th at Jezero (71.2): it does not reach the top 10.",
     ],
   },
   "earth-pinacate-mexico": {
@@ -701,7 +708,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     breaks_down: [
       "Mean temperature of 23.4 °C (NASA POWER), about 184 °C more than Faustini Rim A (−160.4 °C, Diviner). The point is 814 m above the NASA POWER cell, so the temperature may be biased (see the candidate's notes).",
       "It receives about 139 mm of annual precipitation (NASA POWER); the Moon has no rain.",
-      "It is 15th at Faustini Rim A (51.2), 16th at Malapert (50.7) and 17th at Peak Near Cabeus B (50.6): the match is weak and only topographic.",
+      "It is 15th at Faustini Rim A (51.2), 16th at Malapert (50.7) and 17th at Peak Near Cabeus B (50.7): the match is weak and only topographic.",
     ],
   },
   "earth-la-corona-lanzarote": {
@@ -716,7 +723,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
       "Consult the research on terrestrial caves and lava tubes (von Ehrenfried, 2019).",
     ],
     breaks_down: [
-      "Mean slope of 5.0° and relief of 116 m using land points only (Copernicus DEM GLO-30; 48.3 % of the 10 × 10 km window, the rest is sea): it is 20th at all three lunar sites (47.5 to 48.0) and between 20th and 33rd on Mars.",
+      "Mean slope of 5.0° and relief of 116 m using land points only (Copernicus DEM GLO-30; 48.3 % of the 10 × 10 km window, the rest is sea): it is 20th at all three lunar sites (47.5 to 48.0) and between 21st and 33rd on Mars.",
       "Mean temperature of 20.4 °C (NASA POWER), about 98 °C more than Arcadia Planitia (−77.9 °C).",
       "Its albedo (0.03) is much lower than that of Arcadia Planitia (0.21).",
     ],
@@ -742,22 +749,23 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     use_cases: [LAVA_TUBE_USE],
     breaks_down: [
       NO_STUDY,
-      "Mean slope of 1.8° and relief of 61 m using land points only (Copernicus DEM GLO-30; 84.0 % of the window, the rest is sea): it is 37th at all three lunar sites and between 21st and 34th on Mars.",
+      "Mean slope of 1.8° and relief of 61 m using land points only (Copernicus DEM GLO-30; 84.0 % of the window, the rest is sea): it is 37th at all three lunar sites and between 22nd and 34th on Mars.",
       "It receives about 1,629 mm of annual precipitation (NASA POWER), more than any site on Mars, and 18.3 °C on average, about 68 °C more than Jezero.",
     ],
   },
   "earth-undara-australia": {
     summary:
-      "National park in Queensland (Australia), 275 km southwest of Cairns, established in 1989 to protect the country's longest lava tube. Its basalts are less than 8 million years old and the youngest are 7,000 years old. Eberhard and Howarth (2021) recorded at least 78 species of arthropods in 17 lava tubes of Undara.",
+      "National park in Queensland (Australia), 275 km southwest of Cairns, established in 1989 to protect the country's longest lava tube. Its basalts are less than 8 million years old and the youngest are 7,000 years old. Atkinson (1991 and 2010) proposes it as a possible lunar analog, and Eberhard and Howarth (2021) recorded at least 78 species of arthropods in 17 lava tubes of Undara.",
     processes: [
       "Lava tubes in basalts of the McBride volcanic province, less than 8 million years old (Wikipedia).",
+      "Comparison of its lava field and collapsed tubes with the channels and rilles of the Moon (Atkinson, 2010).",
       "Cave communities with at least 78 species of arthropods in 17 lava tubes (Eberhard and Howarth, 2021).",
     ],
     use_cases: [
-      "Practice exploring lava tubes: a planetary-analog study shows it as the terrestrial example next to lunar and Martian lava tubes (Tomasi et al., 2022).",
+      "Practice exploring lava tubes: two papers by Atkinson (1991 and 2010) propose it as a possible analog of the Moon.",
     ],
     breaks_down: [
-      "It only appears as an example in a conference abstract; we found no field campaigns that use it as an analog.",
+      "The proposal speaks of a “possible” lunar analog and dates from 1991 and 2010; we found no recent field campaigns that use it.",
       "It receives about 844 mm of annual precipitation (NASA POWER) and its caves have life; Mars has no rain.",
       "Mean temperature of 24.9 °C (NASA POWER), about 74 °C more than Jezero (−49.4 °C).",
     ],

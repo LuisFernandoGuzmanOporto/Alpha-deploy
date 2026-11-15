@@ -188,14 +188,15 @@
   },
   {
     "candidate_id": "earth-volcan-socompa",
-    "summary": "Volcán de la Puna de Atacama donde, cerca de la cumbre (6051 m), las fumarolas mantienen comunidades microbianas en forma de tapetes. Están aisladas en un paisaje estéril: las plantas vasculares no pasan de unos 4600 m.",
+    "summary": "Volcán de la Puna de Atacama donde, cerca de la cumbre (6051 m), las fumarolas mantienen comunidades microbianas en forma de tapetes. Están aisladas en un paisaje estéril: las plantas vasculares no pasan de unos 4600 m. Su cumbre se comparó con Marte (Universidad de Colorado Boulder, 2009) y Schmidt et al. (2018) tratan los volcanes de Atacama por encima de 6000 m como quizá el mejor análogo terrestre de la superficie de Marte.",
     "processes": [
       "Actividad fumarólica que aporta calor y humedad en un entorno hiperárido y de gran altura (Applied and Environmental Microbiology, 2009)."
     ],
     "use_cases": [
-      "Estudiar cómo una fuente geotermal sostiene islas de vida en un paisaje frío y seco, útil para pensar en hábitats geotermales de Marte (propuesta del equipo)."
+      "Estudiar cómo una fuente geotermal sostiene islas de vida en un paisaje frío y seco, útil para pensar en hábitats geotermales de Marte: la Universidad de Colorado Boulder comparó la cumbre con Marte (2009)."
     ],
     "breaks_down": [
+      "El encuadre como análogo de Marte viene de una nota de la universidad (2009) y de un artículo de revisión sobre los volcanes de Atacama (Schmidt et al., 2018), no de un estudio dedicado solo al Socompa.",
       "La vida depende del calor volcánico, que los sitios polares lunares no tienen.",
       "La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato).",
       "Entra al top 10 de los sitios lunares solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares."
@@ -204,6 +205,14 @@
       {
         "title": "Fumarole-Supported Islands of Biodiversity within a Hyperarid, High-Elevation Landscape on Socompa Volcano, Puna de Atacama, Andes (Applied and Environmental Microbiology, 2009)",
         "url": "https://doi.org/10.1128/aem.01469-08"
+      },
+      {
+        "title": "Schmidt et al. (2018), Life at extreme elevations on Atacama volcanoes: the closest thing to Mars on Earth? (Antonie van Leeuwenhoek)",
+        "url": "https://doi.org/10.1007/s10482-018-1066-0"
+      },
+      {
+        "title": "Universidad de Colorado Boulder (2009), Volcanic gases fuel rarefied microbes",
+        "url": "https://www.colorado.edu/asmagazine-archive/node/131"
       },
       {
         "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
@@ -761,7 +770,7 @@
   },
   {
     "candidate_id": "earth-rub-al-khali",
-    "summary": "Gran mar de arena de la península arábiga, hiperárido, con menos de 35 mm de lluvia al año y dunas de hasta 250 m. Sus megadunas barjanoides se estudiaron para entender la autoorganización de los campos de dunas.",
+    "summary": "Gran mar de arena de la península arábiga, hiperárido, con menos de 35 mm de lluvia al año y dunas de hasta 250 m. Sus megadunas barjanoides se estudiaron para entender la autoorganización de los campos de dunas. Nuestro punto está en una sabkha interduna de Liwa (Emiratos Árabes Unidos), donde McKay et al. (2016) tomaron sus muestras.",
     "processes": [
       "Autoorganización y maduración de campos de megadunas (Geomorphology, 2010).",
       "Esteras microbianas bajo costras de sal en sabkhas entre dunas de Liwa (Emiratos), descritas como análogo de hábitats de Marte actual (McKay et al., 2016)."
@@ -770,8 +779,8 @@
       "Propuesta del equipo: comparar la organización de campos de dunas terrestres y marcianos."
     ],
     "breaks_down": [
-      "Temperatura media de 30,3 °C (NASA POWER), la más alta del top 10 de Arcadia Planitia y unos 108 °C por encima de ese sitio.",
-      "Su albedo (0,43) duplica el de Arcadia Planitia (0,21)."
+      "Temperatura media de 30,5 °C (NASA POWER), más alta que la de cualquiera de los 10 primeros de Arcadia Planitia y unos 108 °C por encima de ese sitio.",
+      "Su albedo (0,39) es casi el doble que el de Arcadia Planitia (0,21)."
     ],
     "references": [
       {
@@ -912,7 +921,7 @@
       "Estudiar un análogo geológico, ambiental y ecológico de la superficie y la subsuperficie de Marte (Salvatore y Levy, 2021)."
     ],
     "breaks_down": [
-      "Es el primero del ranking en los tres sitios lunares: Peak Near Cabeus B (72,1), Malapert Massif (72,2) y Faustini Rim A (62,7), por su pendiente media de 15,3° y su relieve de 418 m (Copernicus DEM GLO-30); en Marte queda entre los puestos 45 y 46.",
+      "Es el primero del ranking en los tres sitios lunares: Peak Near Cabeus B (72,1), Malapert Massif (72,3) y Faustini Rim A (62,7), por su pendiente media de 15,3° y su relieve de 418 m (Copernicus DEM GLO-30); en Marte queda entre los puestos 45 y 46.",
       "Temperatura media de −26,7 °C (NASA POWER), la más baja del catálogo, pero unos 99 °C más que Peak Near Cabeus B (−125,6 °C, Diviner) y unos 51 °C más que Arcadia Planitia (−77,9 °C), que tiene permafrost.",
       "Su albedo (0,56) es más del doble que el de Arcadia Planitia (0,21), porque el albedo terrestre incluye nieve y hielo.",
       "El punto es el centro aproximado de los valles: las variables describen la región, no un valle concreto."
@@ -1018,7 +1027,7 @@
     "breaks_down": [
       "Temperatura media de −4,4 °C (NASA POWER), unos 156 °C más que Faustini Rim A (−160,4 °C, Diviner).",
       "Recibe unos 862 mm de precipitación anual (NASA POWER); la Luna no tiene lluvia.",
-      "Es el 26.º en los tres sitios lunares, con puntajes de 43,6 a 44,1: la coincidencia es débil."
+      "Es el 27.º en los tres sitios lunares, con puntajes de 43,6 a 44,2: la coincidencia es débil."
     ],
     "references": [
       {
@@ -1194,7 +1203,7 @@
     "breaks_down": [
       "Temperatura media de 5,2 °C (NASA POWER), unos 56 °C más que Gale (−50,7 °C).",
       "Recibe unos 416 mm de precipitación anual (NASA POWER); Marte no tiene lluvia.",
-      "Es el 16.º en Gale (72,2) y el 19.º en Jezero (71,2): no entra al top 10."
+      "Es el 17.º en Gale (72,2) y el 19.º en Jezero (71,2): no entra al top 10."
     ],
     "references": [
       {
@@ -1228,7 +1237,7 @@
     "breaks_down": [
       "Temperatura media de 23,4 °C (NASA POWER), unos 184 °C más que Faustini Rim A (−160,4 °C, Diviner). El punto está 814 m por encima de la celda de NASA POWER, así que la temperatura puede estar sesgada (aviso en las notas del candidato).",
       "Recibe unos 139 mm de precipitación anual (NASA POWER); la Luna no tiene lluvia.",
-      "Es el 15.º en Faustini Rim A (51,2), el 16.º en Malapert (50,7) y el 17.º en Peak Near Cabeus B (50,6): la coincidencia es débil y solo topográfica."
+      "Es el 15.º en Faustini Rim A (51,2), el 16.º en Malapert (50,7) y el 17.º en Peak Near Cabeus B (50,7): la coincidencia es débil y solo topográfica."
     ],
     "references": [
       {
@@ -1265,7 +1274,7 @@
       "Consultar la investigación sobre cuevas y tubos de lava terrestres (von Ehrenfried, 2019)."
     ],
     "breaks_down": [
-      "Pendiente media de 5,0° y relieve de 116 m solo con los puntos de tierra (Copernicus DEM GLO-30; el 48,3 % de la ventana de 10 × 10 km, el resto es mar): es el 20.º en los tres sitios lunares (47,5 a 48,0) y queda entre los puestos 20 y 33 en Marte.",
+      "Pendiente media de 5,0° y relieve de 116 m solo con los puntos de tierra (Copernicus DEM GLO-30; el 48,3 % de la ventana de 10 × 10 km, el resto es mar): es el 20.º en los tres sitios lunares (47,5 a 48,0) y queda entre los puestos 21 y 33 en Marte.",
       "Temperatura media de 20,4 °C (NASA POWER), unos 98 °C más que Arcadia Planitia (−77,9 °C).",
       "Su albedo (0,03) es mucho menor que el de Arcadia Planitia (0,21)."
     ],
@@ -1337,7 +1346,7 @@
     ],
     "breaks_down": [
       "No encontramos un estudio que lo use como análogo planetario.",
-      "Pendiente media de 1,8° y relieve de 61 m solo con los puntos de tierra (Copernicus DEM GLO-30; el 84,0 % de la ventana, el resto es mar): es el 37.º en los tres sitios lunares y queda entre los puestos 21 y 34 en Marte.",
+      "Pendiente media de 1,8° y relieve de 61 m solo con los puntos de tierra (Copernicus DEM GLO-30; el 84,0 % de la ventana, el resto es mar): es el 37.º en los tres sitios lunares y queda entre los puestos 22 y 34 en Marte.",
       "Recibe unos 1629 mm de precipitación anual (NASA POWER), más que cualquier sitio de Marte, y 18,3 °C de media, unos 68 °C más que Jezero."
     ],
     "references": [
@@ -1361,16 +1370,17 @@
   },
   {
     "candidate_id": "earth-undara-australia",
-    "summary": "Parque nacional de Queensland (Australia), a 275 km al suroeste de Cairns, creado en 1989 para proteger el tubo de lava más largo del país. Sus basaltos tienen menos de 8 millones de años y los más jóvenes, 7000 años. Eberhard y Howarth (2021) registraron al menos 78 especies de artrópodos en 17 tubos de lava de Undara.",
+    "summary": "Parque nacional de Queensland (Australia), a 275 km al suroeste de Cairns, creado en 1989 para proteger el tubo de lava más largo del país. Sus basaltos tienen menos de 8 millones de años y los más jóvenes, 7000 años. Atkinson (1991 y 2010) lo propone como posible análogo lunar, y Eberhard y Howarth (2021) registraron al menos 78 especies de artrópodos en 17 tubos de lava de Undara.",
     "processes": [
       "Tubos de lava en basaltos de la provincia volcánica McBride, de menos de 8 millones de años (Wikipedia).",
+      "Comparación de su campo de lava y de sus tubos colapsados con los canales y surcos de la Luna (Atkinson, 2010).",
       "Comunidades de cuevas con al menos 78 especies de artrópodos en 17 tubos de lava (Eberhard y Howarth, 2021)."
     ],
     "use_cases": [
-      "Practicar exploración de tubos de lava: un estudio de análogos planetarios lo muestra como ejemplo terrestre junto a tubos de la Luna y de Marte (Tomasi et al., 2022)."
+      "Practicar exploración de tubos de lava: dos trabajos de Atkinson (1991 y 2010) lo proponen como posible análogo de la Luna."
     ],
     "breaks_down": [
-      "Solo aparece como ejemplo en un resumen de congreso; no encontramos campañas de campo que lo usen como análogo.",
+      "La propuesta habla de un «posible» análogo lunar y es de 1991 y 2010; no encontramos campañas de campo recientes que lo usen.",
       "Recibe unos 844 mm de precipitación anual (NASA POWER) y sus cuevas tienen vida; Marte no tiene lluvia.",
       "Temperatura media de 24,9 °C (NASA POWER), unos 74 °C más que Jezero (−49,4 °C)."
     ],
@@ -1384,8 +1394,12 @@
         "url": "https://en.wikipedia.org/wiki/Undara_Volcanic_National_Park"
       },
       {
-        "title": "Tomasi et al. (2022), Large size lava tubes as planetary analogues: the case of La Corona (Lanzarote, Canary Islands) (EPSC)",
-        "url": "https://doi.org/10.5194/epsc2022-1003"
+        "title": "Atkinson (2010), Undara Volcano, North Queensland, Australia and its Lava Field – Lava Caves, Depressions and The Wall – a Possible Lunar Analogue (14th International Symposium on Vulcanospeleology)",
+        "url": "https://www.vulcanospeleology.org/sym14/papers/Atkinson.pdf"
+      },
+      {
+        "title": "Atkinson (1991), The Undara lava tube system, North Queensland, Australia: updated data and notes on mode of formation and possible lunar analogue (6th International Symposium of Vulcanospeleology)",
+        "url": "https://digitalcommons.usf.edu/kip_talks/151"
       },
       {
         "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",

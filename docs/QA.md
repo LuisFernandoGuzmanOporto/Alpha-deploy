@@ -2,6 +2,17 @@
 
 Dueño: Joel. Cada fallo va como issue de GitHub con pasos para reproducir. Pasadas previstas: sábado ~14:30 (local), 04:00 y 07:00 (producción).
 
+## Pasada 5: domingo 15/11, ~07:30 (local, revisión de Fernando y Claude)
+
+- **Versión:** `main` + correcciones de la revisión de la fase final (Undara, Socompa, Rub' al Khali; ver `docs/INFORME_FASE_FINAL.md`, "Revisión posterior"). Build de producción con `vite preview`; sigue sin estar en Vercel.
+- **Navegador:** Google Chrome sin interfaz, clics y teclas reales por CDP (`docs/qa/qa.mjs`). Firefox, Safari, lector de pantalla y teléfono real **no se probaron**.
+- **Datos:** 47 candidatos (29 conocidos, 18 poco estudiados), 6 sitios. `validate.py`: 0 errores, 7 avisos (el de metas cuenta "25 o más poco estudiados", que ya no se cumple tras la auditoría: son 18). Poco estudiados en el top 5 general: 9 de 30.
+- **Código:** `tsc` sin errores, **76 de 76 pruebas** (se regeneraron los valores de referencia de `robustness.test.ts` con `pipeline/sensitivity.py`, porque el cambio de punto de Rub' al Khali movió el rango de temperatura del catálogo), build sin errores.
+- **Resultado: 47 de 47 OK.**
+- **Revisado a ojo con capturas:** inicio con la insignia de robustez, comparación con la explicación, el radar de tres análogos y su tabla, y la vista de impresión de la comparación (fondo claro, sin barra superior; el PDF tiene 6 páginas).
+- **Rendimiento (móvil lento, esta máquina):** primer contenido ≈ 2,2 s, bloqueo ≈ 470 ms, 580 KB. Con la medición de la fase final (1,74 s) la diferencia es de máquina y de ruido; no se afirma la meta de 1,8 s.
+- **Sin verificar:** Vercel, otros navegadores, lector de pantalla, zoom al 200 %, impresión en papel, la CI de GitHub (no corre por facturación).
+
 ## Pasada 4: domingo 15/11, ~01:15 (local, fase final)
 
 - **Versión:** `main` con las tareas 1 a 4 de `prompts/fase-final.md` (PR #59 a #63 y el PR de cierre). Build de producción con `vite preview`. **Sigue sin estar en Vercel**, así que la pasada es local.

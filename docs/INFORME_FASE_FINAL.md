@@ -63,3 +63,14 @@ Se quedaron: textos en inglés de los datos bajo demanda, Motion con `LazyMotion
 - **Tuyo:** desbloquear GitHub Actions (facturación), `gh repo edit` y comprobar la imagen de Open Graph cuando exista la URL de Vercel.
 - **Sin probar:** producción en Vercel, Chrome/Firefox/Safari (solo Edge), lector de pantalla y zoom al 200 %, impresión en papel.
 - **Datos:** el aviso de metas de `validate.py` (19 poco estudiados de 25 pedidos) es consecuencia honesta de la auditoría; no se agregaron lugares para cumplirla.
+
+## Revisión posterior (15/11/2026, Fernando y Claude)
+
+Se revisaron las decisiones dudosas y se corrigió lo que no resistía una comprobación:
+
+- **Undara:** la fuente usada (un resumen sobre La Corona con Undara solo en una figura) se descartó. Se sustituyó por Atkinson (2010, texto leído) y Atkinson (1991, título), que lo proponen como *posible* análogo lunar; ya no se le asigna Marte.
+- **Socompa:** pasa a conocido (nota de la Universidad de Colorado Boulder, 2009, y Schmidt et al. 2018); la ficha explica de dónde viene el encuadre.
+- **Rub' al Khali:** su punto se movió de (20,0; 50,0) a la sabkha de Liwa donde se hizo el estudio (23,05088; 53,77005). Eso movió algunos puestos (Arcadia 7.º → 22.º, Jezero 25.º → 20.º, Gale 20.º → 16.º) y las puntuaciones hasta 0,1.
+- **Mauna Kea:** las coordenadas de Pu'u Hiwahine se comprobaron en el texto completo del informe NTRS 20110008363.
+- **Cifras finales:** 29 conocidos y 18 poco estudiados; poco estudiados en el top 5 general: 9 de 30; sensibilidad: 58 de 60 pruebas de pesos y 19 de 30 omisiones con al menos cuatro nombres (39 con los cinco). Se actualizaron las tablas S-3 y S-6 de la metodología, las fichas, el inglés, las pruebas de robustez y la demo.
+

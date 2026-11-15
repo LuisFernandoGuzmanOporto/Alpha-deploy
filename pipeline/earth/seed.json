@@ -640,24 +640,29 @@
   {
     "id": "earth-rub-al-khali",
     "name": "Rub' al Khali (Cuarto Vacío)",
-    "country": "Arabia Saudita",
+    "country": "Emiratos Árabes Unidos",
     "is_bolivia": false,
     "known": true,
     "analog_for": [
       "mars"
     ],
     "tags": [
-      "aeolian-dunes"
+      "aeolian-dunes",
+      "evaporite"
     ],
-    "lat": 20.0,
-    "lon": 50.0,
-    "coord_source": "Wikipedia, artículo 'Rub' al Khali' (centro aproximado: https://en.wikipedia.org/wiki/Rub%27_al_Khali)",
+    "lat": 23.05088,
+    "lon": 53.77005,
+    "coord_source": "Sabkha de interduna de Liwa, Emiratos Árabes Unidos (N 23,05088°, E 53,77005°, 86 m), sitio de muestreo de McKay et al. 2016, PLOS ONE, doi:10.1371/journal.pone.0150342 (métodos)",
     "why": "Sabkhas entre dunas con esteras microbianas bajo costras de sal, descritas como análogo de hábitats de Marte actual.",
     "references": [
       "https://doi.org/10.1016/j.geomorph.2010.03.029",
       "https://doi.org/10.1371/journal.pone.0150342",
       "https://ntrs.nasa.gov/citations/20160012254"
-    ]
+    ],
+    "tag_sources": {
+      "aeolian-dunes": "https://doi.org/10.1016/j.geomorph.2010.03.029",
+      "evaporite": "https://doi.org/10.1371/journal.pone.0150342"
+    }
   },
   {
     "id": "earth-mar-de-arena-namib",
@@ -727,7 +732,7 @@
     "name": "Volcán Socompa (Puna de Atacama)",
     "country": "Argentina y Chile",
     "is_bolivia": false,
-    "known": false,
+    "known": true,
     "analog_for": [
       "mars"
     ],
@@ -737,9 +742,11 @@
     "lat": -24.3958,
     "lon": -68.2458,
     "coord_source": "Wikipedia, artículo 'Socompa' (https://en.wikipedia.org/wiki/Socompa)",
-    "why": "",
+    "why": "Volcán de la Puna de Atacama con fumarolas a más de 6000 m: su cumbre se comparó con Marte (Universidad de Colorado Boulder, 2009) y forma parte del bioma de altura de Atacama, descrito como el mejor análogo terrestre de la superficie de Marte (Schmidt et al., 2018).",
     "references": [
-      "https://doi.org/10.1128/aem.01469-08"
+      "https://doi.org/10.1007/s10482-018-1066-0",
+      "https://doi.org/10.1128/aem.01469-08",
+      "https://www.colorado.edu/asmagazine-archive/node/131"
     ]
   },
   {
@@ -792,8 +799,7 @@
     "is_bolivia": false,
     "known": true,
     "analog_for": [
-      "moon",
-      "mars"
+      "moon"
     ],
     "tags": [
       "lava-tubes"
@@ -801,10 +807,11 @@
     "lat": -18.2011,
     "lon": 144.5961,
     "coord_source": "Wikipedia, artículo 'Undara Volcanic National Park' (https://en.wikipedia.org/wiki/Undara_Volcanic_National_Park)",
-    "why": "Tubo de lava mostrado como ejemplo terrestre junto a tubos de la Luna y de Marte en un estudio de análogos planetarios.",
+    "why": "Sistema de tubos de lava propuesto como posible análogo de la Luna (Atkinson, 1991 y 2010).",
     "references": [
       "https://doi.org/10.3390/d13070326",
-      "https://doi.org/10.5194/epsc2022-1003"
+      "https://www.vulcanospeleology.org/sym14/papers/Atkinson.pdf",
+      "https://digitalcommons.usf.edu/kip_talks/151"
     ]
   },
   {

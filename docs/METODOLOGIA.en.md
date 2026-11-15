@@ -59,7 +59,7 @@ First place with each profile (computed from the normalized differences in `resu
 | --- | --- | --- | --- | --- |
 | Faustini Rim A | McMurdo (62.7) | Mauna Kea (85.4) | McMurdo (52.4) | Gilf Kebir (59.8) |
 | Peak Near Cabeus B | McMurdo (72.1) | McMurdo (90.5) | McMurdo (65.9) | Gilf Kebir (64.2) |
-| Malapert Massif | McMurdo (72.2) | McMurdo (91.3) | McMurdo (65.4) | Gilf Kebir (63.8) |
+| Malapert Massif | McMurdo (72.3) | McMurdo (91.3) | McMurdo (65.4) | Gilf Kebir (63.8) |
 | Jezero | Atacama-Yungay (82.1) | Laguna Colorada (90.4) | Laguna Colorada (81.7) | Gilf Kebir (82.2) |
 | Gale | Atacama-Yungay (83.8) | Laguna Colorada (90.0) | Atacama-Yungay (81.1) | Gilf Kebir (83.8) |
 | Arcadia Planitia | Gilf Kebir (76.9) | Dasht-e Kavir (91.1) | Coipasa (75.3) | Gilf Kebir (78.2) |
@@ -76,14 +76,14 @@ The initial reference is minimum–maximum over the joint catalog. An extreme lu
 
 | Site | ±50 %: shared top 5 (min–max) | ±50 %: largest mean / individual displacement | Omission: shared top 5 (min–max) | Omission: largest mean / individual displacement |
 | --- | ---: | ---: | ---: | ---: |
-| Faustini Rim A | 3–5 | 2.30 / 14 | 3–5 | 5.49 / 22 |
-| Peak Near Cabeus B | 4–5 | 1.83 / 12 | 2–5 | 4.26 / 20 |
-| Malapert Massif | 3–5 | 1.87 / 13 | 3–5 | 4.13 / 21 |
-| Jezero | 4–5 | 3.19 / 10 | 2–5 | 6.77 / 29 |
-| Gale | 4–5 | 3.23 / 14 | 3–4 | 7.32 / 33 |
-| Arcadia Planitia | 4–5 | 2.13 / 9 | 3–5 | 4.21 / 17 |
+| Faustini Rim A | 3–5 | 2.26 / 14 | 3–5 | 5.49 / 23 |
+| Peak Near Cabeus B | 4–5 | 1.83 / 12 | 2–5 | 4.17 / 21 |
+| Malapert Massif | 3–5 | 1.91 / 13 | 3–5 | 4.04 / 22 |
+| Jezero | 4–5 | 3.06 / 10 | 2–5 | 6.68 / 29 |
+| Gale | 4–5 | 3.19 / 14 | 3–4 | 7.15 / 33 |
+| Arcadia Planitia | 4–5 | 2.00 / 9 | 3–5 | 3.96 / 17 |
 
-With weight changes, 58 of 60 tests kept at least four names of the top 5 and 38 kept all five. The exceptions were Faustini with precipitation at +50 % and Malapert with precipitation at −50 %. Omissions kept at least four names in 19 of 30 tests. Removing slope left only two names at Peak Near Cabeus B, and removing precipitation, at Jezero. At Gale, removing slope moved one candidate up to 33 positions in the ranking. With the full catalog, no test makes candidates enter or leave the ranking. The missing lunar albedo explains why changing or removing its weight leaves the lunar rankings unchanged.
+With weight changes, 58 of 60 tests kept at least four names of the top 5 and 39 kept all five. The exceptions were Faustini with precipitation at +50 % and Malapert with precipitation at −50 %. Omissions kept at least four names in 19 of 30 tests. Removing slope left only two names at Peak Near Cabeus B, and removing precipitation, at Jezero. At Gale, removing slope moved one candidate up to 33 positions in the ranking. With the full catalog, no test makes candidates enter or leave the ranking. The missing lunar albedo explains why changing or removing its weight leaves the lunar rankings unchanged.
 
 Equal weights are kept as the reference. To interpret candidates with close scores, it helps to look at their coverage and at whether they stay on top when a variable is removed. The influence of thermal extremes on the min–max scale remains a limitation. The test does not compare alternative normalizations.
 
@@ -108,17 +108,17 @@ The validation uses `known: true` and requires that `analog_for` includes the bo
 | Site | Pairs | Known analogs of the body in the top 5 | Less-studied candidates in the top 5 (rank and score) |
 | --- | ---: | --- | --- |
 | Faustini Rim A | 47 | 0 of 7 | 1: Uturuncu (4th, 57.3) |
-| Peak Near Cabeus B | 47 | 0 of 7 | 2: Socompa (4th, 62.0) and Sajama (5th, 60.6) |
-| Malapert Massif | 47 | 0 of 7 | 2: Socompa (4th, 62.0) and Pamir (5th, 60.8) |
+| Peak Near Cabeus B | 47 | 0 of 7 | 1: Sajama (5th, 60.7) |
+| Malapert Massif | 47 | 0 of 7 | 1: Pamir (5th, 60.8) |
 | Jezero | 47 | 3 of 26: Atacama-Yungay (1st, 82.1), Gilf Kebir (2nd, 80.9) and Tibesti (3rd, 80.2) | 2: Siloli (4th, 79.5) and Harrat Khaybar (5th, 79.3) |
 | Gale | 47 | 3 of 26: Atacama-Yungay (1st, 83.8), Gilf Kebir (2nd, 83.3) and Tibesti (3rd, 79.0) | 2: Siloli (4th, 79.0) and Laguna Colorada (5th, 78.1) |
 | Arcadia Planitia | 47 | 3 of 26: Gilf Kebir (2nd, 76.9), Qaidam (4th, 75.8) and Coipasa (5th, 74.5) | 2: Dasht-e Kavir (1st, 76.9) and Taklamakan (3rd, 76.9) |
 
-In the lunar rankings (47 pairs each), the 7 known lunar analogs stay far from the top 5: Mauna Kea between 12th and 17th, Pinacate between 15th and 17th, La Corona 20th, Askja 26th, Lava Beds 27th, El Malpais 33rd and Undara 39th. The largest normalized differences of those pairs are temperature or precipitation. Documented analogs may be useful for geological processes, such as volcanism or lava tubes, that are outside the score. On Mars, the 26 relevant known analogs enter the ranking and three of them lead Jezero and Gale. McMurdo, documented as a Mars analog, ranks 45th or 46th on Mars, but leads all three lunar sites (72.1 at Peak Near Cabeus B, 72.2 at Malapert and 62.7 at Faustini) because of its slope (15.3°), relief (418 m) and cold (−26.7 °C, the lowest in the catalog). Terrestrial albedo includes snow, water and vegetation, while the Martian one describes bare ground. The validation supports the Martian ranking and leaves the lunar one unconfirmed.
+In the lunar rankings (47 pairs each), the 7 known lunar analogs stay far from the top 5: Mauna Kea between 12th and 17th, Pinacate between 15th and 17th, La Corona 20th, Askja 27th, Lava Beds 28th, El Malpais 33rd and Undara 39th. The largest normalized differences of those pairs are temperature or precipitation. Documented analogs may be useful for geological processes, such as volcanism or lava tubes, that are outside the score. On Mars, the 26 relevant known analogs enter the ranking and three of them lead Jezero and Gale. McMurdo, documented as a Mars analog, ranks 45th or 46th on Mars, but leads all three lunar sites (72.1 at Peak Near Cabeus B, 72.3 at Malapert and 62.7 at Faustini) because of its slope (15.3°), relief (418 m) and cold (−26.7 °C, the lowest in the catalog). Terrestrial albedo includes snow, water and vegetation, while the Martian one describes bare ground. The validation supports the Martian ranking and leaves the lunar one unconfirmed.
 
 The hyper-arid core of the Atacama, with the point of the Yungay sampling pit (Azua-Bustos et al. 2020), leads Jezero and Gale: its normalized slope and relief differences do not exceed 0.12 at either site and its albedo difference is 0.01 at Gale. Gilf Kebir, documented as a Mars analog in NASA report CR-3611 (El-Baz and Maxwell, 1982), is second at both, with 0.0 mm/yr in the regional NASA POWER product; that zero is a value of the product and does not prove a local absence of rain. At Arcadia, Dasht-e Kavir and Taklamakan have normalized slope differences below 0.004 and relief differences below 0.045, although their thermal differences are around 0.49–0.52. Siloli is fourth at Jezero and Gale, with normalized albedo differences below 0.07 and relief differences below 0.10. On the Moon, Ojos del Salado and Socompa stay near the top at more than one site because of terrain similarity, while the thermal difference of those pairs exceeds 0.65.
 
-The less-studied candidates hold 11 of the 30 places of the overall top 5, counting repeats across sites (12 before the audit). The catalog assigned `known: false` from a preliminary literature search that failed several times: Gilf Kebir changed to `known: true` because Crossref does not index NASA technical reports, where it does appear; Ojos del Salado, because of two 2020 *Astrobiology* articles (doi:10.1089/ast.2018.2021 and doi:10.1089/ast.2019.2024); and the final-phase audit (`docs/AUDITORIA_KNOWN.md`) changed Laguna Verde, Rub' al Khali, Lava Beds, El Malpais, Lake Eyre and Undara to known. The 19 that remain less studied have no publication found that uses them as a Moon or Mars analog; that does not prove none exists. These results help prioritize the review of candidates. Jaccard remains a separate indicator to contrast documented processes. Terrestrial climatology is regional, so the comparison must be checked before attributing a similarity to a specific field location.
+The less-studied candidates hold 9 of the 30 places of the overall top 5, counting repeats across sites (12 before the audit). The catalog assigned `known: false` from a preliminary literature search that failed several times: Gilf Kebir changed to `known: true` because Crossref does not index NASA technical reports, where it does appear; Ojos del Salado, because of two 2020 *Astrobiology* articles (doi:10.1089/ast.2018.2021 and doi:10.1089/ast.2019.2024); and the final-phase audit (`docs/AUDITORIA_KNOWN.md`) changed Laguna Verde, Rub' al Khali, Lava Beds, El Malpais, Lake Eyre, Undara and Socompa to known. The 18 that remain less studied have no publication found that uses them as a Moon or Mars analog; that does not prove none exists. These results help prioritize the review of candidates. Jaccard remains a separate indicator to contrast documented processes. Terrestrial climatology is regional, so the comparison must be checked before attributing a similarity to a specific field location.
 
 ## 7. Limitations
 
