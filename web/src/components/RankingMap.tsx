@@ -1,18 +1,17 @@
 import { useEffect, useRef, useState } from "react";
-import { LngLatBounds, Map as MapLibreMap, Popup, setWorkerUrl, type ExpressionSpecification, type GeoJSONSource } from "maplibre-gl";
+import { LngLatBounds, Map as MapLibreMap, Marker, setWorkerUrl } from "maplibre-gl";
 import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
-import type { Feature, FeatureCollection, Point } from "geojson";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useT } from "../i18n";
+import { loadCommonsPhotos } from "../lib/photos";
 import type { RankingRow } from "../lib/ranking";
-import { SCORE_GRADIENT, SCORE_STOPS } from "../lib/scoreColor";
+import { SCORE_GRADIENT, scoreColor } from "../lib/scoreColor";
 
 // Vite empaqueta el worker aparte; sin esto MapLibre no lo encuentra en dev ni en producción.
 setWorkerUrl(workerUrl);
 
-const SOURCE_ID = "candidates";
-const POINTS_LAYER = "candidate-points";
-const SELECTED_LAYER = "candidate-selected";
+/** Puestos con número dentro del marcador; el resto se ve como un punto. */
+const NUMBERED = 9;
 
 interface Props {
   rows: RankingRow[];
@@ -20,17 +19,71 @@ interface Props {
   onSelect: (candidateId: string) => void;
 }
 
-function toGeoJson(rows: RankingRow[]): FeatureCollection<Point> {
-  const features: Feature<Point>[] = [];
-  for (const { entry, candidate } of rows) {
-    if (candidate.lat === null || candidate.lon === null) continue;
-    features.push({
-      type: "Feature",
-      geometry: { type: "Point", coordinates: [candidate.lon, candidate.lat] },
-      properties: { id: candidate.id, name: candidate.name, score: entry.score },
-    });
-  }
-  return { type: "FeatureCollection", features };
+/** Tamaño del marcador según el puntaje: los más parecidos se ven más grandes. */
+function pinSize(score: number): number {
+  return Math.round(18 + Math.max(0, Math.min(1, (score - 40) / 45)) * 18);
+}
+
+/** Elemento del marcador. Es decorativo para el lector de pantalla: la lista de resultados tiene lo mismo. */
+function createPin(row: RankingRow, rank: number, onSelect: (id: string) => void): HTMLDivElement {
+  const { candidate, entry } = row;
+  const el = document.createElement("div");
+  el.className = `map-pin${rank <= 3 ? " map-pin--top" : ""}`;
+  el.setAttribute("aria-hidden", "true");
+  el.dataset.id = candidate.id;
+  el.style.setProperty("--pin-color", scoreColor(entry.score));
+  el.style.setProperty("--pin-size", `${pinSize(entry.score)}px`);
+  el.style.setProperty("--pin-delay", `${Math.min(rank, 30) * 18}ms`);
+
+  const halo = document.createElement("span");
+  halo.className = "map-pin__halo";
+  const dot = document.createElement("span");
+  dot.className = "map-pin__dot";
+  if (rank <= NUMBERED) dot.textContent = String(rank);
+
+  // Previsualización al pasar el cursor: miniatura (solo de Commons, sin coste), nombre, país y puntaje.
+  const preview = document.createElement("span");
+  preview.className = "map-pin__preview";
+  const thumb = document.createElement("span");
+  thumb.className = "map-pin__thumb";
+  const text = document.createElement("span");
+  text.className = "map-pin__text";
+  const name = document.createElement("strong");
+  name.textContent = candidate.name; // textContent: el nombre nunca se interpreta como HTML
+  const meta = document.createElement("small");
+  meta.textContent = `${candidate.country} · ${entry.score.toFixed(1)}`;
+  text.append(name, meta);
+  preview.append(thumb, text);
+  el.append(halo, dot, preview);
+
+  let requested = false;
+  el.addEventListener("pointerenter", () => {
+    if (requested) return;
+    requested = true;
+    thumb.classList.add("is-loading");
+    loadCommonsPhotos()
+      .then((places) => {
+        const photo = places[candidate.id]?.[0];
+        if (!photo) {
+          thumb.classList.add("is-empty");
+          return;
+        }
+        const img = document.createElement("img");
+        img.alt = "";
+        img.decoding = "async";
+        img.addEventListener("load", () => thumb.classList.add("is-loaded"), { once: true });
+        img.addEventListener("error", () => thumb.classList.add("is-empty"), { once: true });
+        img.src = photo.thumb;
+        thumb.append(img);
+      })
+      .catch(() => thumb.classList.add("is-empty"))
+      .finally(() => thumb.classList.remove("is-loading"));
+  });
+  el.addEventListener("click", (event) => {
+    event.stopPropagation();
+    onSelect(candidate.id);
+  });
+  return el;
 }
 
 /** Color de fondo del mapa, leído de tokens.css. */
@@ -57,6 +110,7 @@ export function RankingMap({ rows, selectedId, onSelect }: Props) {
   const onSelectRef = useRef(onSelect);
   const rowsRef = useRef(rows);
   rowsRef.current = rows;
+  const markersRef = useRef<Marker[]>([]);
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
@@ -92,50 +146,6 @@ export function RankingMap({ rows, selectedId, onSelect }: Props) {
     mapRef.current = map;
 
     map.on("load", () => {
-      map.addSource(SOURCE_ID, { type: "geojson", data: toGeoJson([]) });
-      map.addLayer({
-        id: POINTS_LAYER,
-        type: "circle",
-        source: SOURCE_ID,
-        paint: {
-          "circle-radius": ["interpolate", ["linear"], ["get", "score"], 20, 5, 85, 14],
-          "circle-color": ["interpolate", ["linear"], ["get", "score"], ...SCORE_STOPS.flatMap(([score, color]) => [score, color])],
-          "circle-stroke-color": "#0b0f17",
-          "circle-stroke-width": 1.5,
-          "circle-opacity": 0.95,
-        },
-      });
-      map.addLayer({
-        id: SELECTED_LAYER,
-        type: "circle",
-        source: SOURCE_ID,
-        filter: ["==", ["get", "id"], ""],
-        paint: {
-          "circle-radius": 22,
-          "circle-color": "rgba(0,0,0,0)",
-          "circle-stroke-color": "#4cc9f0",
-          "circle-stroke-width": 3,
-        },
-      });
-      map.on("click", POINTS_LAYER, (event) => {
-        const id = event.features?.[0]?.properties?.id;
-        if (typeof id === "string") onSelectRef.current(id);
-      });
-      const tooltip = new Popup({ closeButton: false, closeOnClick: false, offset: 12 });
-      map.on("mouseenter", POINTS_LAYER, (event) => {
-        map.getCanvas().style.cursor = "pointer";
-        const feature = event.features?.[0];
-        if (feature?.geometry.type !== "Point") return;
-        const { name, score } = feature.properties;
-        const [lon, lat] = feature.geometry.coordinates;
-        if (lon === undefined || lat === undefined) return;
-        // setText evita interpretar el nombre como HTML.
-        tooltip.setLngLat([lon, lat]).setText(`${String(name)}: ${Number(score).toFixed(1)}`).addTo(map);
-      });
-      map.on("mouseleave", POINTS_LAYER, () => {
-        map.getCanvas().style.cursor = "";
-        tooltip.remove();
-      });
       map.on("mousemove", (event) => {
         if (!cursorRef.current) return;
         const lon = ((((event.lngLat.lng + 180) % 360) + 360) % 360) - 180;
@@ -145,57 +155,52 @@ export function RankingMap({ rows, selectedId, onSelect }: Props) {
     });
 
     return () => {
+      for (const marker of markersRef.current) marker.remove();
+      markersRef.current = [];
       map.remove();
       mapRef.current = null;
       setReady(false);
     };
   }, []);
 
+  // Marcadores: se crean de nuevo cuando cambia el ranking (son pocos) y el mapa encuadra a todos.
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !ready) return;
-    const data = toGeoJson(rows);
-    (map.getSource(SOURCE_ID) as GeoJSONSource).setData(data);
-    if (data.features.length > 0) {
+    for (const marker of markersRef.current) marker.remove();
+    const located = rows.filter((row) => row.candidate.lat !== null && row.candidate.lon !== null);
+    // Los peores primero: los mejores quedan encima cuando se superponen.
+    markersRef.current = located
+      .map((row) => ({ row, rank: rows.indexOf(row) + 1 }))
+      .reverse()
+      .map(({ row, rank }) =>
+        new Marker({ element: createPin(row, rank, (id) => onSelectRef.current(id)), anchor: "center" })
+          .setLngLat([row.candidate.lon as number, row.candidate.lat as number])
+          .addTo(map),
+      );
+    if (located.length > 0) {
       const bounds = new LngLatBounds();
-      for (const feature of data.features) bounds.extend(feature.geometry.coordinates as [number, number]);
+      for (const { candidate } of located) bounds.extend([candidate.lon as number, candidate.lat as number]);
       map.fitBounds(bounds, { padding: overlayPadding(map), maxZoom: 6, duration: moveDuration(600) });
     }
   }, [rows, ready]);
 
+  // Selección: el elegido resalta y late; los demás se atenúan; el mapa vuela hasta él.
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !ready) return;
-    map.setFilter(SELECTED_LAYER, ["==", ["get", "id"], selectedId ?? ""]);
-    // El elegido resalta; los demás se atenúan para que se vea a cuál corresponde el resultado.
-    const isSelected: ExpressionSpecification = ["==", ["get", "id"], selectedId ?? ""];
-    map.setPaintProperty(POINTS_LAYER, "circle-opacity", selectedId ? ["case", isSelected, 1, 0.22] : 0.95);
-    map.setPaintProperty(POINTS_LAYER, "circle-stroke-opacity", selectedId ? ["case", isSelected, 1, 0.3] : 1);
+    for (const marker of markersRef.current) {
+      const el = marker.getElement();
+      const isSelected = el.dataset.id === selectedId;
+      el.classList.toggle("is-selected", isSelected);
+      el.classList.toggle("is-dimmed", Boolean(selectedId) && !isSelected);
+      el.style.zIndex = isSelected ? "5" : "";
+    }
     const target = rowsRef.current.find((row) => row.candidate.id === selectedId)?.candidate;
     if (target && target.lat !== null && target.lon !== null) {
       map.easeTo({ center: [target.lon, target.lat], zoom: Math.max(map.getZoom(), 4), padding: overlayPadding(map), duration: moveDuration(700) });
     }
-  }, [selectedId, ready]);
-
-  // El marcador elegido late para que se vea dónde está; sin animación si el usuario la desactivó.
-  useEffect(() => {
-    const map = mapRef.current;
-    if (!map || !ready) return undefined;
-    if (!selectedId || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      map.setPaintProperty(SELECTED_LAYER, "circle-radius", 22);
-      map.setPaintProperty(SELECTED_LAYER, "circle-stroke-opacity", 1);
-      return undefined;
-    }
-    let frame = 0;
-    const tick = (now: number) => {
-      const wave = (Math.sin(now / 320) + 1) / 2;
-      map.setPaintProperty(SELECTED_LAYER, "circle-radius", 20 + wave * 6);
-      map.setPaintProperty(SELECTED_LAYER, "circle-stroke-opacity", 1 - wave * 0.55);
-      frame = requestAnimationFrame(tick);
-    };
-    frame = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frame);
-  }, [selectedId, ready]);
+  }, [selectedId, ready, rows]);
 
   return (
     <div className="cc-map">

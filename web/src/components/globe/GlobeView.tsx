@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { Link } from "react-router-dom";
 import { useT, type MessageKey, type Translate } from "../../i18n";
 import type { Candidate, Site } from "../../types";
+import { PlaceCard } from "../place/PlaceCard";
 import { hasWebGL } from "../three/support";
 import { Globe, type GlobeMarker } from "./Globe";
 import { Globe3D } from "./Globe3D";
@@ -59,6 +60,7 @@ export function GlobeView({ site, analogs, scores }: GlobeViewProps) {
   const first = markers[0];
   const initialView: View = first ? { lat: first.lat, lon: first.lon } : ORIGIN;
   const current = BODIES.find((b) => b.id === body) ?? BODIES[0]!;
+  const selectedAnalog = body === "earth" ? analogs.find((c) => c.id === selectedId) : undefined;
 
   const onTabKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
     const step = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0;
@@ -138,7 +140,17 @@ export function GlobeView({ site, analogs, scores }: GlobeViewProps) {
               {t("globe.linkLegend", { site: site.name })}
             </p>
           )}
-          {webgl && body === "earth" ? (
+          {webgl && body === "earth" && selectedAnalog ? (
+            <PlaceCard
+              key={selectedAnalog.id}
+              variant="inline"
+              candidate={selectedAnalog}
+              rank={analogs.indexOf(selectedAnalog) + 1}
+              score={scores?.[analogs.indexOf(selectedAnalog)]}
+              compareTo={site ? { siteId: site.id, siteName: site.name } : undefined}
+              onClose={() => setSelectedId(null)}
+            />
+          ) : webgl && body === "earth" ? (
             <AnalogCards site={site} analogs={analogs} scores={scores} selectedId={selectedId} onSelect={setSelectedId} t={t} />
           ) : (
             <MarkerList body={body} site={site} analogs={analogs} t={t} />

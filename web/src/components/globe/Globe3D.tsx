@@ -268,7 +268,9 @@ function Satellite({
   const anchor = useMemo(() => {
     const centroid = targets.reduce((sum, p) => sum.add(p), new Vector3());
     if (centroid.lengthSq() < 1e-6) centroid.set(0, 0, 1);
-    return centroid.normalize().add(new Vector3(0, 0.55, 0)).normalize().multiplyScalar(1.75);
+    // Girado 40° hacia un lado: al mirar los análogos de frente, el satélite queda junto a ellos y no delante.
+    centroid.normalize().applyAxisAngle(new Vector3(0, 1, 0), MathUtils.degToRad(40));
+    return centroid.add(new Vector3(0, 0.45, 0)).normalize().multiplyScalar(1.7);
   }, [targets]);
   // El sitio en la superficie del satélite, girado para mirar hacia la Tierra.
   const sitePoint = useMemo(() => new Vector3(...latLonToXYZ(link.lat, link.lon, 0.2)), [link.lat, link.lon]);

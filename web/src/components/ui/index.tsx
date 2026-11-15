@@ -8,6 +8,7 @@ import type { Candidate, Site, Tag as DataTag, VariableId } from "../../types";
 import "../../styles/ui.css";
 import "../../styles/app.css";
 import "../../styles/premium.css";
+import "../../styles/place.css";
 import { installTilt } from "../../lib/tilt";
 
 // Componentes de Noe (sistema visual) conectados al idioma de la app. El idioma sale de
