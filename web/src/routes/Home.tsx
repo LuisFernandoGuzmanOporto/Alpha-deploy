@@ -9,6 +9,8 @@ import { WeightSliders } from "../components/WeightSliders";
 import { useContent, useT } from "../i18n";
 import { loadErrorText, useData } from "../lib/data";
 import { buildRanking } from "../lib/ranking";
+import { activeProfile, MISSION_PROFILES } from "../lib/profiles";
+import { pairDiffs, siteRobustness, type Robustness } from "../lib/robustness";
 import { parseWeights, serializeWeights } from "../lib/variables";
 import { VARIABLE_IDS } from "../types";
 
@@ -47,6 +49,10 @@ export function Home() {
         : [],
     [data, siteId, boliviaOnly, unstudiedOnly, weights],
   );
+  // Diferencias a precisión completa por sitio (no dependen de los pesos) y robustez con los pesos actuales.
+  const siteRecord = data && siteId ? data.sites.find((s) => s.id === siteId) : undefined;
+  const pairs = useMemo(() => (data && siteRecord ? pairDiffs(siteRecord, data.candidates, data.results) : []), [data, siteRecord]);
+  const robustness = useMemo(() => (weights ? siteRobustness(pairs, weights) : new Map<string, Robustness>()), [pairs, weights]);
 
   const update = (changes: Record<string, string | null>) => {
     const next = new URLSearchParams(params);
@@ -62,10 +68,14 @@ export function Home() {
   if (!data || !siteId || !weights) return <p className="cc-empty">{t("home.empty")}</p>;
 
   const site = data.sites.find((s) => s.id === siteId);
+  const profile = activeProfile(weights);
   const active = [
     boliviaOnly && { key: "bolivia", label: t("filters.bolivia") },
     unstudiedOnly && { key: "nuevos", label: t("filters.unstudied") },
-    weightsParam && { key: "pesos", label: t("explore.weightsCustom") },
+    weightsParam && {
+      key: "pesos",
+      label: profile && profile !== "equal" ? t("profiles.chip", { name: t(`profiles.${profile}`) }) : t("explore.weightsCustom"),
+    },
   ].filter((item): item is { key: string; label: string } => Boolean(item));
 
   return (
@@ -109,6 +119,10 @@ export function Home() {
                 weights={weights}
                 onChange={(w) => update({ pesos: serializeWeights(w) })}
                 onReset={() => update({ pesos: null })}
+                onProfile={(id) => {
+                  const profile = MISSION_PROFILES.find((p) => p.id === id);
+                  update({ pesos: !profile || id === "equal" ? null : serializeWeights(profile.weights) });
+                }}
               />
             </Dialog>
             {active.map((filter) => (
@@ -139,7 +153,13 @@ export function Home() {
               </span>
             </header>
             <div className="cc-panel__body">
-              <RankingList site={site} rows={rows} selectedId={selectedId} onSelect={(id) => update({ analogo: id })} />
+              <RankingList
+                site={site}
+                rows={rows}
+                selectedId={selectedId}
+                onSelect={(id) => update({ analogo: id })}
+                robustness={robustness}
+              />
             </div>
           </section>
         )}

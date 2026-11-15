@@ -3,10 +3,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useContent, useT } from "../i18n";
 import type { RankingRow } from "../lib/ranking";
+import type { Robustness } from "../lib/robustness";
 import { scoreColor } from "../lib/scoreColor";
 import { formatValue } from "../lib/variables";
 import type { Site } from "../types";
 import { biggestGaps, compareVariables } from "./compare/compare";
+import { RobustnessBadge } from "./RobustnessBadge";
 import { KnownBadge } from "./ui";
 
 const TOP = 3;
@@ -16,10 +18,12 @@ interface Props {
   rows: RankingRow[];
   selectedId: string | null;
   onSelect: (candidateId: string | null) => void;
+  /** Robustez del puesto por candidato (tarea 4b), calculada con los pesos actuales. */
+  robustness: ReadonlyMap<string, Robustness>;
 }
 
 /** Panel de resultados: los tres mejores con nombre, puntaje y una razón breve; el detalle aparece al elegir uno. */
-export function RankingList({ site, rows, selectedId, onSelect }: Props) {
+export function RankingList({ site, rows, selectedId, onSelect, robustness }: Props) {
   const t = useT();
   const { ui } = useContent();
   const [showAll, setShowAll] = useState(false);
@@ -30,7 +34,15 @@ export function RankingList({ site, rows, selectedId, onSelect }: Props) {
   const selected = selectedIndex >= 0 ? rows[selectedIndex] : undefined;
 
   if (selected) {
-    return <Detail site={site} row={selected} rank={selectedIndex + 1} onBack={() => onSelect(null)} />;
+    return (
+      <Detail
+        site={site}
+        row={selected}
+        rank={selectedIndex + 1}
+        robustness={robustness.get(selected.candidate.id)}
+        onBack={() => onSelect(null)}
+      />
+    );
   }
 
   const visible = showAll ? rows : rows.slice(0, TOP);
@@ -57,6 +69,7 @@ export function RankingList({ site, rows, selectedId, onSelect }: Props) {
                   <span className="cc-result__name">{candidate.name}</span>
                   <span className="cc-result__country">{candidate.country}</span>
                   {index < TOP && <span className="cc-result__why">{candidate.why}</span>}
+                  {index < TOP && robustness.has(candidate.id) && <RobustnessBadge robustness={robustness.get(candidate.id)!} />}
                 </span>
                 <span className="cc-result__score">
                   <strong>{entry.score.toFixed(0)}</strong>
@@ -76,7 +89,15 @@ export function RankingList({ site, rows, selectedId, onSelect }: Props) {
   );
 }
 
-function Detail({ site, row, rank, onBack }: { site: Site; row: RankingRow; rank: number; onBack: () => void }) {
+interface DetailProps {
+  site: Site;
+  row: RankingRow;
+  rank: number;
+  robustness: Robustness | undefined;
+  onBack: () => void;
+}
+
+function Detail({ site, row, rank, robustness, onBack }: DetailProps) {
   const t = useT();
   const { variables, tags } = useContent();
   const { entry, candidate } = row;
@@ -102,6 +123,7 @@ function Detail({ site, row, rank, onBack }: { site: Site; row: RankingRow; rank
       </header>
 
       <p className="cc-detail__why">{candidate.why}</p>
+      {robustness && <RobustnessBadge robustness={robustness} detailed />}
 
       <section>
         <h4 className="cc-subhead">{t("explore.vs", { site: site.name })}</h4>
