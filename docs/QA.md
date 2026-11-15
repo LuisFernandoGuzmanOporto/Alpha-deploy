@@ -2,6 +2,25 @@
 
 Dueño: Joel. Cada fallo va como issue de GitHub con pasos para reproducir. Pasadas previstas: sábado ~14:30 (local), 04:00 y 07:00 (producción).
 
+## Rendimiento (fase final, tarea 3)
+
+Medido con `docs/qa/perf.mjs` contra el build servido con `vite preview` y Edge sin interfaz (Chrome no está instalado en esta máquina). "Móvil lento" es 4G lenta y CPU 4× más lenta. Cada valor es la mediana de 2 o 3 corridas; el bloqueo varía ±60 ms entre corridas.
+
+| Paso | Paquete principal | Móvil lento: primer contenido | Móvil lento: bloqueo | Decisión |
+| --- | ---: | ---: | ---: | --- |
+| Línea base del prompt | 598 KB | 2,3 s | ~1,2 s | — |
+| Línea base al empezar (mismo build, esta máquina) | 618 KB | 2,01 s | ~610 ms | — |
+| 1. Textos en inglés de los datos bajo demanda (`dataEn.ts` en su propio fragmento) | 565 KB | 1,90 s | ~550 ms | Se queda |
+| 2. Precargar `sites`, `candidates` y `results` con `<link rel="preload">` | 565 KB | 2,03 s | ~560 ms | **Descartado**: compite con el JS y retrasa el primer contenido ~150 ms |
+| 3. `LazyMotion` con `domAnimation` | — | — | — | **No aplicado** como pedía el prompt: el ranking usa `layout="position"`, que necesita `domMax` |
+| 4. Análisis del paquete (mapa de fuentes): react-dom 202 KB, Motion 138 KB, react-router 37 KB, Radix + floating-ui ~50 KB. Motion con `LazyMotion` y `domMax` cargado aparte (`web/src/lib/motionFeatures.ts`) | 466 KB | 1,72 s | ~370 ms | Se queda. No se separaron más bibliotecas en fragmentos propios: con un solo despliegue no mejora la primera carga |
+| 5. Pedir el fragmento del mapa después del primer pintado, en paralelo con los datos | 466 KB | 1,72 s | ~410 ms | Se queda: el mapa aparece a 2,87 s en vez de 3,01 s |
+| 6. Desplazamiento de diseño: `main` ocupa al menos la pantalla y `scrollbar-gutter: stable` | 466 KB | 1,72 s | ~400 ms | Se queda: CLS del inicio de 0,16 a 0,001 (0 en descubrimientos, comparación y metodología, también en móvil) |
+
+**Meta cumplida:** móvil lento con primer contenido a 1,72 s (meta < 1,8 s) y bloqueo de unos 400 ms (meta < 600 ms). Escritorio: primer contenido entre 0,46 y 0,74 s, 626 KB transferidos.
+
+**Movimiento reducido:** `qa.mjs` comprueba ahora que con `prefers-reduced-motion: reduce` la transición entre pantallas no desplaza nada (y, como control, que sin esa preferencia sí lo hace). Con `LazyMotion` aparecía un cuadro suelto con el desplazamiento inicial; se corrigió poniendo el desplazamiento inicial a 0 cuando el usuario pide reducir movimiento.
+
 ## Pasada 3: sábado 14/11, noche (local, `main` después de #57, #58 y el inglés de los datos)
 
 - **Versión:** `main` en `a36532c` más la corrección de la metodología en móvil (ver abajo). Build de producción con `vite preview`. **Sigue sin estar en Vercel**, así que la pasada es local.

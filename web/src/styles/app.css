@@ -1,7 +1,7 @@
 /* Pantallas de la app con el sistema "centro de control". Solo usa las variables de tokens.css. */
 
 *, *::before, *::after { box-sizing: border-box; }
-html { background: var(--cc-bg); scrollbar-color: var(--cc-border-strong) transparent; scrollbar-width: thin; }
+html { background: var(--cc-bg); scrollbar-color: var(--cc-border-strong) transparent; scrollbar-width: thin; scrollbar-gutter: stable; }
 body { margin: 0; background: var(--cc-bg); color: var(--cc-text); font-family: var(--cc-font-sans); font-size: var(--cc-text-md); line-height: 1.55; -webkit-font-smoothing: antialiased; }
 ::selection { background: var(--cc-accent); color: var(--cc-accent-ink); }
 a { color: var(--cc-accent-strong); text-underline-offset: 3px; }
@@ -25,7 +25,8 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.01em; }
 
 /* ---------- Armazón ---------- */
 .cc-app { display: flex; flex-direction: column; min-height: 100vh; }
-.cc-app main { flex: 1; min-width: 0; }
+/* main ocupa al menos la pantalla: el pie empieza fuera de la vista y no salta cuando llegan los datos. */
+.cc-app main { flex: 1; min-width: 0; min-height: calc(100vh - var(--cc-topbar-h)); }
 .cc-topbar { position: sticky; top: 0; z-index: 40; display: flex; align-items: center; gap: var(--cc-space-5); min-height: var(--cc-topbar-h); padding: 0 var(--cc-space-5); background: var(--cc-topbar-bg); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: var(--cc-line) solid var(--cc-border); }
 .cc-brand { display: inline-flex; align-items: center; gap: var(--cc-space-3); color: var(--cc-text); text-decoration: none; }
 .cc-brand__name { font: 700 var(--cc-text-sm) var(--cc-font-mono); letter-spacing: var(--cc-tracking-caps); text-transform: uppercase; }

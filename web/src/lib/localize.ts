@@ -1,6 +1,23 @@
-import { CANDIDATE_NAMES_EN, CANDIDATE_WHY_EN, COUNTRIES_EN, FICHAS_EN, SITES_EN } from "../content/dataEn";
+import type * as DataEnModule from "../content/dataEn";
 import type { Lang } from "../i18n/messages";
 import type { AppData } from "./data";
+
+/** Textos en inglés de los datos (`content/dataEn.ts`), que se cargan aparte solo cuando hacen falta. */
+export type DataEn = Pick<
+  typeof DataEnModule,
+  "CANDIDATE_NAMES_EN" | "CANDIDATE_WHY_EN" | "COUNTRIES_EN" | "FICHAS_EN" | "SITES_EN"
+>;
+
+let dataEnPromise: Promise<DataEn> | null = null;
+
+/** Carga `dataEn.ts` (unos 60 KB) una sola vez; en español no se descarga. */
+export function loadDataEn(): Promise<DataEn> {
+  dataEnPromise ??= import("../content/dataEn").catch((error: unknown) => {
+    dataEnPromise = null;
+    throw error;
+  });
+  return dataEnPromise;
+}
 
 const WHY_TEMPLATE =
   /^Propuesto por sus valores en este catalogo \((.+)\); no se encontro un estudio previo como analogo planetario\.$/;
@@ -35,8 +52,9 @@ export function translateWhy(why: string): string | undefined {
  * Los datos y el contrato no cambian: la traducción es una capa por `id`; lo que no tiene traducción queda como está.
  * Las notas de los candidatos no se traducen: no se muestran y `warnings.ts` busca en ellas "ATENCION".
  */
-export function localizeData(data: AppData, lang: Lang): AppData {
-  if (lang === "es") return data;
+export function localizeData(data: AppData, lang: Lang, dataEn: DataEn | null): AppData {
+  if (lang === "es" || !dataEn) return data;
+  const { CANDIDATE_NAMES_EN, CANDIDATE_WHY_EN, COUNTRIES_EN, FICHAS_EN, SITES_EN } = dataEn;
   return {
     ...data,
     sites: data.sites.map((site) => {

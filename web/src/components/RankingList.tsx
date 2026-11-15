@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, m } from "motion/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useContent, useT } from "../i18n";
@@ -39,7 +39,7 @@ export function RankingList({ site, rows, selectedId, onSelect }: Props) {
       <ol className="cc-results__list">
         <AnimatePresence initial={false} mode="popLayout">
           {visible.map(({ entry, candidate }, index) => (
-            <motion.li
+            <m.li
               key={candidate.id}
               layout="position"
               initial={{ opacity: 0, y: 8 }}
@@ -63,7 +63,7 @@ export function RankingList({ site, rows, selectedId, onSelect }: Props) {
                   <small>/100</small>
                 </span>
               </button>
-            </motion.li>
+            </m.li>
           ))}
         </AnimatePresence>
       </ol>
@@ -84,7 +84,7 @@ function Detail({ site, row, rank, onBack }: { site: Site; row: RankingRow; rank
   const gaps = biggestGaps(comparison);
 
   return (
-    <motion.div className="cc-detail" initial={{ opacity: 0, x: 12 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.22 }}>
+    <m.div className="cc-detail" initial={{ opacity: 0, x: 12 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.22 }}>
       <button type="button" className="cc-detail__back" onClick={onBack}>{t("explore.back")}</button>
 
       <header className="cc-detail__head">
@@ -177,6 +177,6 @@ function Detail({ site, row, rank, onBack }: { site: Site; row: RankingRow; rank
       <Link className="ea-button ea-button--primary" to={`/comparar/${site.id}/${candidate.id}`}>
         {t("ranking.compare")} →
       </Link>
-    </motion.div>
+    </m.div>
   );
 }

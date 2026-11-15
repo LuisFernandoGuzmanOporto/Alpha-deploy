@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import candidatesRaw from "../../public/data/candidates.json?raw";
 import fichasRaw from "../../public/data/fichas.json?raw";
 import sitesRaw from "../../public/data/sites.json?raw";
+import * as dataEn from "../content/dataEn";
 import { CANDIDATE_NAMES_EN, CANDIDATE_WHY_EN, COUNTRIES_EN, FICHAS_EN, SITES_EN } from "../content/dataEn";
 import type { Candidate, Ficha, Site } from "../types";
 import type { AppData } from "./data";
@@ -64,11 +65,15 @@ describe("traducción de los textos de los datos", () => {
   });
 
   it("en español devuelve los datos tal cual", () => {
-    expect(localizeData(data, "es")).toBe(data);
+    expect(localizeData(data, "es", dataEn)).toBe(data);
+  });
+
+  it("mientras no llegan los textos en inglés devuelve los datos tal cual", () => {
+    expect(localizeData(data, "en", null)).toBe(data);
   });
 
   it("en inglés cambia los textos y conserva ids, valores y referencias", () => {
-    const en = localizeData(data, "en");
+    const en = localizeData(data, "en", dataEn);
     const licancabur = en.candidates.find((c) => c.id === "earth-licancabur-laguna-verde");
     const original = candidates.find((c) => c.id === "earth-licancabur-laguna-verde");
     expect(licancabur?.name).toBe("Licancabur Volcano and its summit lake");
