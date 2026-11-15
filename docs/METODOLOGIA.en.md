@@ -40,7 +40,31 @@ The thermal and radiometric variables may come from products with footprints lar
 
 ## 5. Weights
 
-Each variable starts with weight 1. It is a reproducible reference while the sensitivity of the ranking is evaluated and there is no calibration per mission objective. Two terrain variables can add influence if they are correlated. Availability also changes the effective weight, since the average includes only the shared variables. Keeping the tags out of the score avoids giving the same meaning to a measured difference and to a difference in the available documentation.
+Each variable starts with weight 1. It is a reproducible reference while the sensitivity of the ranking is evaluated and there is no calibration per mission objective (the profiles below are examples, not a calibration). Two terrain variables can add influence if they are correlated. Availability also changes the effective weight, since the average includes only the shared variables. Keeping the tags out of the score avoids giving the same meaning to a measured difference and to a difference in the available documentation.
+
+### Mission goal profiles
+
+In "Filters", four buttons set the five weights according to the goal of a test. They are **example profiles**, not a scientific calibration: they make explicit which variable matters most for each question and can be shared with the `pesos` URL parameter (the active profile is inferred by comparing the weights with the list in `web/src/lib/profiles.ts`).
+
+| Profile | Slope | Relief | Temperature | Precipitation | Albedo | Rationale |
+| --- | ---: | ---: | ---: | ---: | ---: | --- |
+| Equal (default) | 1 | 1 | 1 | 1 | 1 | Reference of the index |
+| Rover mobility | 3 | 3 | 0.5 | 0.5 | 1 | Terrain decides whether a vehicle can pass and how it navigates; albedo changes camera lighting |
+| Power and thermal systems | 1 | 1 | 3 | 0.5 | 2 | Temperature dominates and albedo sets how much radiation the surface absorbs |
+| Water and ice | 0.5 | 0.5 | 2 | 3 | 1 | Aridity and cold decide whether water or ice can persist |
+
+First place with each profile (computed from the normalized differences in `results.json`):
+
+| Site | Equal | Mobility | Power | Water and ice |
+| --- | --- | --- | --- | --- |
+| Faustini Rim A | McMurdo (62.7) | Mauna Kea (85.4) | McMurdo (52.4) | Gilf Kebir (59.8) |
+| Peak Near Cabeus B | McMurdo (72.1) | McMurdo (90.5) | McMurdo (65.9) | Gilf Kebir (64.2) |
+| Malapert Massif | McMurdo (72.2) | McMurdo (91.3) | McMurdo (65.4) | Gilf Kebir (63.8) |
+| Jezero | Atacama-Yungay (82.1) | Laguna Colorada (90.4) | Laguna Colorada (81.7) | Gilf Kebir (82.2) |
+| Gale | Atacama-Yungay (83.8) | Laguna Colorada (90.0) | Atacama-Yungay (81.1) | Gilf Kebir (83.8) |
+| Arcadia Planitia | Gilf Kebir (76.9) | Dasht-e Kavir (91.1) | Coipasa (75.3) | Gilf Kebir (78.2) |
+
+With "Water and ice", Gilf Kebir rises because its NASA POWER cell gives 0.0 mm/yr; that zero is a value of the regional product, not a local measurement. On the Moon albedo has no value, so its weight does not change those rankings.
 
 ## 6. Sensitivity and validation
 

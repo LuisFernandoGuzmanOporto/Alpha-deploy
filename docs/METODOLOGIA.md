@@ -38,7 +38,31 @@ Las variables térmicas y radiométricas pueden provenir de productos con huella
 
 ## 5. Pesos
 
-Cada variable empieza con peso 1. Es una referencia reproducible mientras se evalúa la sensibilidad del ranking y no hay una calibración por objetivo de misión. Dos variables de terreno pueden sumar influencia si están correlacionadas. La disponibilidad también cambia el peso efectivo, dado que el promedio solo incluye las variables compartidas. Mantener las etiquetas fuera del puntaje evita darle el mismo significado a una diferencia medida y a una diferencia en la documentación disponible.
+Cada variable empieza con peso 1. Es una referencia reproducible mientras se evalúa la sensibilidad del ranking y no hay una calibración por objetivo de misión (los perfiles de abajo son ejemplos, no una calibración). Dos variables de terreno pueden sumar influencia si están correlacionadas. La disponibilidad también cambia el peso efectivo, dado que el promedio solo incluye las variables compartidas. Mantener las etiquetas fuera del puntaje evita darle el mismo significado a una diferencia medida y a una diferencia en la documentación disponible.
+
+### Perfiles por objetivo de misión
+
+En "Filtros", cuatro botones fijan los cinco pesos según el objetivo de un ensayo. Son **perfiles de ejemplo**, no una calibración científica: hacen explícito qué variable importa más para cada pregunta y se pueden compartir con el parámetro `pesos` de la URL (el perfil activo se deduce comparando los pesos con la lista de `web/src/lib/profiles.ts`).
+
+| Perfil | Pendiente | Relieve | Temperatura | Precipitación | Albedo | Razón |
+| --- | ---: | ---: | ---: | ---: | ---: | --- |
+| Igual (por defecto) | 1 | 1 | 1 | 1 | 1 | Referencia del índice |
+| Movilidad de rovers | 3 | 3 | 0,5 | 0,5 | 1 | El terreno decide si un vehículo puede pasar y cómo navega; el albedo cambia la iluminación de las cámaras |
+| Energía y sistemas térmicos | 1 | 1 | 3 | 0,5 | 2 | La temperatura manda y el albedo fija cuánta radiación absorbe la superficie |
+| Agua y hielo | 0,5 | 0,5 | 2 | 3 | 1 | La aridez y el frío deciden si el agua o el hielo pueden persistir |
+
+Primer puesto con cada perfil (calculado con las diferencias normalizadas de `results.json`):
+
+| Sitio | Igual | Movilidad | Energía | Agua y hielo |
+| --- | --- | --- | --- | --- |
+| Faustini Rim A | McMurdo (62,7) | Mauna Kea (85,4) | McMurdo (52,4) | Gilf Kebir (59,8) |
+| Peak Near Cabeus B | McMurdo (72,1) | McMurdo (90,5) | McMurdo (65,9) | Gilf Kebir (64,2) |
+| Malapert Massif | McMurdo (72,2) | McMurdo (91,3) | McMurdo (65,4) | Gilf Kebir (63,8) |
+| Jezero | Atacama-Yungay (82,1) | Laguna Colorada (90,4) | Laguna Colorada (81,7) | Gilf Kebir (82,2) |
+| Gale | Atacama-Yungay (83,8) | Laguna Colorada (90,0) | Atacama-Yungay (81,1) | Gilf Kebir (83,8) |
+| Arcadia Planitia | Gilf Kebir (76,9) | Dasht-e Kavir (91,1) | Coipasa (75,3) | Gilf Kebir (78,2) |
+
+Con "Agua y hielo", Gilf Kebir sube porque su celda de NASA POWER da 0,0 mm/año; ese cero es un valor del producto regional, no una medición local. En la Luna el albedo no tiene dato, así que su peso no cambia esos rankings.
 
 ## 6. Sensibilidad y validación
 
