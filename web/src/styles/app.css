@@ -106,9 +106,9 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.01em; }
 /* Cuerpos: Luna, Marte y Tierra */
 .cc-disc, .ea-disc { display: block; border-radius: 50%; box-shadow: inset -3px -3px 6px var(--cc-shade); }
 .cc-disc { width: 18px; height: 18px; }
-.cc-disc--moon, .ea-disc--moon { background: radial-gradient(circle at 32% 30%, color-mix(in srgb, var(--cc-moon) 40%, white), var(--cc-moon) 50%, color-mix(in srgb, var(--cc-moon) 50%, black)); }
-.cc-disc--mars, .ea-disc--mars { background: radial-gradient(circle at 32% 30%, color-mix(in srgb, var(--cc-mars) 45%, white), var(--cc-mars) 50%, color-mix(in srgb, var(--cc-mars) 45%, black)); }
-.cc-disc--earth, .ea-disc--earth { background: radial-gradient(circle at 32% 30%, color-mix(in srgb, var(--cc-earth) 45%, white), var(--cc-earth) 50%, color-mix(in srgb, var(--cc-earth) 45%, black)); }
+.cc-disc--moon, .ea-disc--moon { background: var(--cc-moon); background: radial-gradient(circle at 32% 30%, color-mix(in srgb, var(--cc-moon) 40%, white), var(--cc-moon) 50%, color-mix(in srgb, var(--cc-moon) 50%, black)); }
+.cc-disc--mars, .ea-disc--mars { background: var(--cc-mars); background: radial-gradient(circle at 32% 30%, color-mix(in srgb, var(--cc-mars) 45%, white), var(--cc-mars) 50%, color-mix(in srgb, var(--cc-mars) 45%, black)); }
+.cc-disc--earth, .ea-disc--earth { background: var(--cc-earth); background: radial-gradient(circle at 32% 30%, color-mix(in srgb, var(--cc-earth) 45%, white), var(--cc-earth) 50%, color-mix(in srgb, var(--cc-earth) 45%, black)); }
 
 /* Tarjetas flotantes sobre el mapa */
 .cc-float { position: absolute; z-index: 5; border-radius: var(--cc-radius-xl); background: var(--cc-glass); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: var(--cc-shadow-float); }
