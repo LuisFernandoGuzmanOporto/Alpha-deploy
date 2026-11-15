@@ -10,6 +10,7 @@ import { useContent, useT } from "../i18n";
 import { loadErrorText, useData } from "../lib/data";
 import { buildRanking } from "../lib/ranking";
 import { activeProfile, MISSION_PROFILES } from "../lib/profiles";
+import { pairDiffs, siteRobustness, type Robustness } from "../lib/robustness";
 import { parseWeights, serializeWeights } from "../lib/variables";
 import { VARIABLE_IDS } from "../types";
 
@@ -48,6 +49,10 @@ export function Home() {
         : [],
     [data, siteId, boliviaOnly, unstudiedOnly, weights],
   );
+  // Diferencias a precisión completa por sitio (no dependen de los pesos) y robustez con los pesos actuales.
+  const siteRecord = data && siteId ? data.sites.find((s) => s.id === siteId) : undefined;
+  const pairs = useMemo(() => (data && siteRecord ? pairDiffs(siteRecord, data.candidates, data.results) : []), [data, siteRecord]);
+  const robustness = useMemo(() => (weights ? siteRobustness(pairs, weights) : new Map<string, Robustness>()), [pairs, weights]);
 
   const update = (changes: Record<string, string | null>) => {
     const next = new URLSearchParams(params);
@@ -148,7 +153,13 @@ export function Home() {
               </span>
             </header>
             <div className="cc-panel__body">
-              <RankingList site={site} rows={rows} selectedId={selectedId} onSelect={(id) => update({ analogo: id })} />
+              <RankingList
+                site={site}
+                rows={rows}
+                selectedId={selectedId}
+                onSelect={(id) => update({ analogo: id })}
+                robustness={robustness}
+              />
             </div>
           </section>
         )}

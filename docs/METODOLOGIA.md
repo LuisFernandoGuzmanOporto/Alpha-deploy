@@ -91,6 +91,10 @@ Se mantienen los pesos iguales como referencia. Para interpretar candidatos cerc
 | Menor precipitación a igual temperatura | 75,1 / 60,0 | Orden esperado |
 | Menor diferencia térmica a igual precipitación | 70,7 / 60,0 | Orden esperado |
 
+### Robustez del puesto en la interfaz
+
+Cada uno de los tres primeros análogos del ranking, y el análogo elegido, muestra una insignia como "Puesto estable: del 2.º al 4.º en 15 de 15 escenarios". El navegador repite la prueba de `pipeline/sensitivity.py` para ese sitio: cada peso al −50 % y al +50 % y quitar cada variable (volviendo a exigir tres compartidas), con los pesos activos como base. Las diferencias se recalculan a precisión completa con `ranges` y `log_variables` de `results.json`, y los empates se resuelven por el orden del catálogo, como en el pipeline; una prueba (`web/src/lib/robustness.test.ts`) comprueba que los seis rankings base y los 30 escenarios de Jezero y Peak Near Cabeus B coinciden con la salida de `sensitivity.py`. La insignia dice "estable" si el puesto se mueve dos lugares o menos, "algo sensible" hasta cinco y "sensible" si se mueve más o sale del ranking en algún escenario. Con los pesos iguales, el Atacama (Yungay) va del 1.º al 11.º en Jezero y Gilf Kebir del 1.º al 26.º (al quitar la precipitación), mientras Tibesti se queda entre el 2.º y el 4.º.
+
 ### Validación por cuerpo y candidatos poco estudiados (S-6)
 
 La validación usa `known: true` y exige que `analog_for` incluya el cuerpo del sitio. El conteo de poco estudiados usa `known: false` dentro del top 5 general. El índice compara los pares con cobertura suficiente, con independencia de `analog_for`. Esta distinción importa en la Luna, donde McMurdo y Laguna Verde, conocidos como análogos de Marte, ocupan puestos del top 5 lunar.

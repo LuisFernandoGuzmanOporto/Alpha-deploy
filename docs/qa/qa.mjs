@@ -69,6 +69,7 @@ try {
   // 2. Elegir Marte con un clic real
   await click(find("[role=radio]", "/^\\s*Mars\\s*$/"));
   check("Marte: la URL guarda el sitio", /sitio=mars-/.test(await url()), await url());
+  check("Robustez: los 3 primeros llevan su insignia con texto", (await ev(`[...document.querySelectorAll("ol li .cc-robust")].filter((b) => /(Stable rank|sensitive).*in 15 of 15 scenarios/.test(b.textContent)).length`)) === 3, await ev(`document.querySelector("ol li .cc-robust")?.textContent ?? "sin insignia"`));
   check("Marte: el ranking cambia (Atacama primero)", /Hyper-arid core of the Atacama/.test((await ev(`document.querySelector("ol li")?.textContent ?? ""`))), await ev(`(document.querySelector("ol li")?.textContent ?? "").slice(0, 40)`));
 
   // 3. Selector de sitio
