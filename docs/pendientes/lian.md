@@ -16,7 +16,7 @@ Ya entregado: L-1. `data/candidates.json` tiene 47 candidatos (20 conocidos, 27 
 - [ ] **L-2, fichas (prioridad):** crear `web/public/data/fichas.json` con resumen, procesos, usos, "dónde falla la analogía" y referencias. Primero los candidatos que estén en el top 10 de algún sitio. Solo afirmaciones citables. Hoy la web dice "aún no tiene ficha publicada".
 - [ ] **Etiquetas (`tags`):** a 24 de los 47 candidatos les faltan. Ejemplos: Eyre, Gilf Kebir, Hoggar, Taklamakan, Pamir, Arizaro, Tunupa, Uturuncu, McMurdo y Svalbard. Usa el vocabulario de `CONTEXT.md`, sección 5, y respáldalas con fuente.
 - [ ] **Huecos de variables:** `earth-valles-secos-mcmurdo`, `earth-svalbard-sverrefjellet`, `earth-la-corona-lanzarote` y `earth-manjanggul-jeju` no tienen pendiente ni relieve. Complétalos con fuente o déjalos en `null` documentado.
-- [ ] **Inglés (#25), si se decide traducir los datos:** versión en inglés de nombres, países y `notes` de los candidatos (campos `*_en`, acordados con Fernando para no romper el contrato).
+- [x] **Inglés (#25):** nombres, países, `why` y las 31 fichas. Hecho en `web/src/content/dataEn.ts`, una capa de traducción por `id` que no cambia el contrato de datos. Si agregas o cambias un lugar, agrega su entrada ahí: `npm test` falla si falta. Las `notes` de los candidatos no se muestran y no se tradujeron.
 - [ ] **L-3, explicaciones (segunda fase):** `web/public/data/explicaciones.json`, de 3 a 4 frases para los 5 mejores pares de cada sitio, revisadas por una persona.
 - [ ] **L-4, PDF (segunda fase):** exportar la ficha a PDF en `web/src/features/export/` con estilos de impresión.
 

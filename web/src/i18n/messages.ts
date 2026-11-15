@@ -64,8 +64,6 @@ const es = {
   "compare.back": "← Volver al ranking",
   "compare.notFound": "No existe esa comparación.",
 
-  "methodology.notice": "The full methodology document is written in Spanish.",
-
   "ficha.title": "Ficha: {name}",
   "ficha.aria": "Ficha de {name}",
   "ficha.none": "Este lugar aún no tiene ficha publicada.",
@@ -253,8 +251,6 @@ const en: Record<MessageKey, string> = {
 
   "compare.back": "← Back to ranking",
   "compare.notFound": "This comparison doesn't exist.",
-
-  "methodology.notice": "The full methodology document is written in Spanish.",
 
   "ficha.title": "Fact sheet: {name}",
   "ficha.aria": "Fact sheet for {name}",

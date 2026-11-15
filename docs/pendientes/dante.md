@@ -14,7 +14,7 @@ Ya entregado: D-1 (`data/sites.json` con los 6 sitios), D-2 (comparador) y D-3 (
 ## Pendientes
 
 - [ ] **Albedo de los 3 sitios lunares:** Faustini Rim A, Peak Near Cabeus B y Malapert Massif no tienen albedo. Busca una fuente real o déjalo en `null` con la limitación escrita.
-- [ ] **Inglés (#25), si se decide traducir los datos:** versión en inglés de las regiones de los 6 sitios en `data/sites.json` (campos `*_en`, acordados con Fernando).
+- [x] **Inglés (#25):** regiones y notas de los 6 sitios. Hecho en `web/src/content/dataEn.ts`, una capa de traducción por `id` que no cambia el contrato de datos. Si agregas o cambias un lugar, agrega su entrada ahí: `npm test` falla si falta.
 - [ ] **Globo:** los marcadores se superponen cuando los mejores análogos están agrupados. Mejora opcional, coordinada con Noe (diseño).
 - [ ] **Apoyo a Joel:** capturas y QA en producción cuando exista la URL de Vercel, como en la segunda pasada (PR #46).
 

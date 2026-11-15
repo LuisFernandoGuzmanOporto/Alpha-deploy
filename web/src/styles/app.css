@@ -333,7 +333,6 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.01em; }
 .methodology tbody tr:nth-child(even) td { background: var(--cc-surface-2); }
 .methodology blockquote { margin-left: 0; padding: var(--cc-space-3) var(--cc-space-4); border-left: 3px solid var(--cc-accent); border-radius: 0 var(--cc-radius) var(--cc-radius) 0; background: var(--cc-accent-wash); }
 .methodology blockquote p:last-child { margin-bottom: 0; }
-.ea-note { margin: 0 0 var(--cc-space-5); padding: var(--cc-space-3) var(--cc-space-4); border: var(--cc-line) solid var(--cc-accent-line); border-radius: var(--cc-radius); background: var(--cc-accent-wash); color: var(--cc-accent-strong); font: 600 var(--cc-text-sm) var(--cc-font-mono); }
 
 /* Globo */
 .globe-view { display: grid; gap: var(--cc-space-3); }

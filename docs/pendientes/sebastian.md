@@ -16,7 +16,7 @@ Ya entregado: S-1 a S-4 (revisión del índice, validación, sensibilidad y `web
 - [ ] **S-6, tesis de descubrimiento:** confirmar que está escrita: los `known: true` aparecen arriba para sus sitios, y cuántos poco estudiados entran al top 5 y por qué.
 - [ ] **Re-correr el pipeline** cuando Lian complete etiquetas y variables faltantes, validar y commitear `web/public/data/*.json`. Hoy hay 24 candidatos sin etiquetas.
 - [ ] **S-7, escaneo global (F12):** no existe `scan.json`. Decidir y dejar escrito si se descarta, porque solo vale con un camino de datos que no exija descargas enormes.
-- [ ] **Inglés (#25):** traducir `docs/METODOLOGIA.md` al inglés, si se decide. La web avisa hoy que ese documento está en español.
+- [x] **Inglés (#25):** `docs/METODOLOGIA.en.md` y la web lo muestra con `?lang=en`. Si cambias `METODOLOGIA.md`, actualiza también la versión en inglés.
 
 ## Reglas
 

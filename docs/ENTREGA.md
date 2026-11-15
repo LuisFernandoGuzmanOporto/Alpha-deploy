@@ -16,7 +16,7 @@ Dueño: Joel. Reglas y fuentes en `docs/REQUISITOS.md`.
 - [ ] `main` compila (`npm run build`) y las pruebas pasan (`npm test`).
 - [ ] `python pipeline/validate.py` sin errores, con los datos reales.
 - [ ] `web/public/data/` con los resultados reales, **no** con los DEMO.
-- [ ] Web en inglés, o con selector ES/EN (#25).
+- [x] Web en inglés con selector ES/EN, incluidos los textos de los datos y la metodología (#25). Revisar de nuevo si cambian los datos.
 - [ ] Etiqueta de la versión final (la crea Fernando):
   ```bash
   git tag v1.0-entrega
