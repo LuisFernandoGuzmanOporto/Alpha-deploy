@@ -11,16 +11,17 @@ Ya entregado: J-1 (requisitos), J-2 (README y atribución), J-4b (informe) y la 
 
 ## Pendientes
 
-- [ ] **J-3, QA:** fusionar el PR #46 (segunda pasada). Falta la pasada de las 07:00 sobre producción, cuando exista la URL de Vercel. Los bugs van como issues de GitHub.
+- [ ] **J-3, QA:** el PR #46 (segunda pasada) ya está fusionado. Sigue faltando la pasada sobre producción: **no existe todavía la URL de Vercel** (F-1, Fernando). Pasada local del rediseño 3D registrada en `docs/QA.md` (pasada 6). Los bugs van como issues de GitHub.
 - [ ] **J-4, pitch (`docs/PITCH.md`):**
   - [x] Cifras contrastadas con `results.json` el 14/11 y corregido el orden de Ojos del Salado y Socompa.
   - [ ] Confirmar los oradores propuestos: Joel en la apertura y Noe en límites e impacto.
   - [ ] Poner la URL de Vercel donde dice `[PENDIENTE: URL de Vercel]`.
-  - [ ] Revisar la ortografía en inglés.
+  - [x] Revisar la ortografía en inglés (15/11).
   - [x] PDF de las 7 diapositivas en `docs/demo/earth-analogs-demo.pdf`.
   - [ ] Revisarlo con el equipo (nombres completos y nombre del equipo en la diapositiva 1) y subirlo a Google Drive con acceso "cualquiera con el enlace".
   - [x] Capturas del rediseño nuevo: pantalla principal, "Solo Bolivia", comparador, descubrimientos y globo (`docs/demo/img/`).
-  - [ ] Captura de la metodología y la del comparador completo: los textos de los datos ya están en inglés (#25), falta regenerar las capturas.
+  - [x] Capturas regeneradas con el rediseño 3D (15/11): portada, pantalla principal, "Solo Bolivia", comparador, descubrimientos, globo (Luna y Tierra) y metodología, en `docs/demo/img/`. El PDF se volvió a exportar.
+  - [ ] Comparador completo con "Dónde falla" en una sola captura: la diapositiva 4 sigue usando la parte de arriba.
 - [ ] **J-5, video y ensayo:** grabar el video de respaldo con el recorrido de la sección 5 del pitch y ensayar 3 veces con el equipo (Sebastián hace de jurado). Cronometrar contra el tiempo de la sede.
 - [ ] **J-6, lista de entrega (`docs/ENTREGA.md`):**
   - [ ] Los 6 integrantes registrados en la sede Cochabamba, sin lista de espera, y visibles en la pestaña Members.

@@ -2,6 +2,17 @@
 
 Dueño: Joel. Cada fallo va como issue de GitHub con pasos para reproducir. Pasadas previstas: sábado ~14:30 (local), 04:00 y 07:00 (producción).
 
+## Pasada 6: domingo 15/11, ~11:30 (local, rediseño 3D en `feat/joel-rediseno-3d`)
+
+- **Versión:** rama `feat/joel-rediseno-3d` sobre `main` (`eab501e`). Build de producción con `vite preview`. **No es la pasada de producción:** sigue sin existir la URL de Vercel.
+- **Qué cambió:** portada con escena 3D (three.js con React Three Fiber), globo WebGL con giro por mouse, touch y flechas, marcadores numerados, líneas animadas del sitio a sus análogos y ficha breve al elegir un lugar; tarjetas destacadas en Descubrimientos; diagrama del proceso en Metodología; panel propio para "Solo Bolivia"; tipografías Inter y Space Grotesk servidas desde el propio sitio.
+- **Código:** `tsc` sin errores, **80 de 80 pruebas** (4 nuevas, de la conversión de latitud y longitud a la esfera), build sin errores.
+- **Resultado: 48 de 48 OK** con `docs/qa/qa.mjs`, sin tocar sus expectativas. Consola sin errores.
+- **Accesibilidad (`docs/qa/a11y.mjs`):** sin hallazgos. Un solo `h1` por pantalla (el de la portada; el del panel pasó a `h2`).
+- **Alternativas:** sin WebGL el globo usa el canvas 2D anterior y la portada un planeta en CSS. Con "reducir movimiento" no hay giro automático ni paralaje. En pantallas de hasta 760 px o con ahorro de datos la portada no carga three.js.
+- **Rendimiento (móvil lento, esta máquina, con mucho ruido):** primer contenido entre 3,2 y 6,3 s en la rama y entre 3,7 y 7,1 s en `main` medido a la vez; no se distingue una diferencia. Transferido en móvil: 663 KB frente a 586 a 598 KB (las fuentes). En escritorio la portada 3D sube lo transferido a unos 2,2 MB, pedidos después del primer pintado. No se afirma la meta de 1,8 s.
+- **Sin verificar:** Vercel, teléfono real, GPU real en móviles (las capturas usan WebGL por software), Firefox, Safari, lector de pantalla.
+
 ## Pasada 5: domingo 15/11, ~07:30 (local, revisión de Fernando y Claude)
 
 - **Versión:** `main` + revisión de la fase final (Undara, Socompa, Rub' al Khali y nueve lugares nuevos; ver `docs/INFORME_FASE_FINAL.md`, "Revisión posterior"). Build de producción con `vite preview`; sigue sin estar en Vercel.

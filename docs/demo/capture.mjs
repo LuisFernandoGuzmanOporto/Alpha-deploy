@@ -21,6 +21,8 @@ const chrome = spawn(CHROME, [
   "--hide-scrollbars",
   "--no-first-run",
   "--disable-gpu-vsync",
+  "--enable-unsafe-swiftshader", // WebGL por software: el globo y la portada 3D se ven también sin GPU
+  "--ignore-gpu-blocklist",
   "about:blank",
 ], { stdio: "ignore" });
 
@@ -80,16 +82,28 @@ async function shot(name, clip) {
 const elementClip = (selector) =>
   evaluate(`(() => { const r = document.querySelector(${JSON.stringify(selector)}).getBoundingClientRect(); return { x: r.x + scrollX, y: r.y + scrollY, width: r.width, height: r.height }; })()`);
 
+// La pantalla Explorar empieza con la portada: el mapa y el ranking están en #explore-stage.
+async function toStage() {
+  await evaluate(`document.getElementById('explore-stage').scrollIntoView({ block: 'start' })`);
+  await sleep(3000);
+}
+const stageClip = () => elementClip("#explore-stage");
+
 try {
   // Pantalla principal: sitio lunar, mapa y ranking (diapositiva 3).
-  await open("/?lang=en&sitio=moon-malapert-massif", 1200, 760);
-  await sleep(2500);
-  await shot("home-malapert");
+  // Portada con la escena 3D (pantalla principal).
+  await open("/?lang=en", 1440, 810);
+  await sleep(3500);
+  await shot("hero");
+
+  await open("/?lang=en&sitio=moon-malapert-massif", 1200, 816);
+  await toStage();
+  await shot("home-malapert", await stageClip());
 
   // Solo Bolivia sobre Marte (diapositiva 7).
-  await open("/?lang=en&sitio=mars-jezero&bolivia=1", 1200, 760);
-  await sleep(2500);
-  await shot("bolivia-jezero");
+  await open("/?lang=en&sitio=mars-jezero&bolivia=1", 1200, 816);
+  await toStage();
+  await shot("bolivia-jezero", await stageClip());
 
   // Comparador completo (diapositiva 4).
   await open("/comparar/moon-malapert-massif/earth-licancabur-laguna-verde?lang=en", 900, 1400);
@@ -100,15 +114,19 @@ try {
   await open("/descubrimientos?lang=en", 1100, 800);
   await shot("discoveries");
 
+  // Metodología: diagrama del proceso y comienzo del texto (diapositiva 4).
+  await open("/metodologia?lang=en", 1100, 800);
+  await shot("methodology");
+
   // Globo: Luna con el sitio marcado y Tierra con los análogos (diapositivas 1 y 7).
   await open("/?lang=en&sitio=moon-malapert-massif", 1440, 900);
   await evaluate(`window.scrollTo(0, document.body.scrollHeight)`); // el globo ya no está plegado: se carga al bajar
   await sleep(4000);
   await evaluate(`document.querySelector('.globe-canvas').scrollIntoView({ block: 'center' })`);
-  await sleep(800);
+  await sleep(3500); // la cámara vuela hasta el sitio
   await shot("globe-moon", await elementClip(".globe-canvas"));
   await evaluate(`[...document.querySelectorAll('.globe-tabs [role=tab]')].find((t) => /earth/i.test(t.textContent)).click()`);
-  await sleep(2500);
+  await sleep(4000);
   await evaluate(`document.querySelector('.globe-canvas').scrollIntoView({ block: 'center' })`);
   await sleep(800);
   await shot("globe-earth", await elementClip(".globe-canvas"));
