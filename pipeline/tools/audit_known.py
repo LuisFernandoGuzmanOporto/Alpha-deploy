@@ -1,5 +1,5 @@
 """Primera pasada (debil) para detectar `known: false` equivocados: busca en Crossref titulos con "analog" y el nombre del lugar.
-No sustituye una revision a fondo (ver docs/pendientes/fase-final.md). Uso: python pipeline/tools/audit_known.py"""
+No sustituye una revision a fondo (ver prompts/fase-final.md). Uso: python pipeline/tools/audit_known.py"""
 import json
 import re
 import subprocess

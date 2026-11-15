@@ -23,6 +23,7 @@ Antes de tocar nada, lee: `CONTEXT.md`, `CLAUDE.md`, `GIT.md`, `TASKS.md`, `docs
 
 ## 1. Reglas (obligatorias)
 
+0. **Excepción a `CLAUDE.md`:** sus reglas "nunca push directo a `main`" y "un archivo, un dueño" quedan **suspendidas para esta fase** por decisión de Fernando (tech lead): puedes tocar cualquier archivo que la tarea requiera. Lo demás de `CLAUDE.md` sigue vigente.
 1. **Trabajas directo en `main`** (Fernando lo autorizó para esta fase; tu cuenta lo permite por el bypass de administrador). Haz **commits chicos**, uno por subtarea, con prefijo `feat:`, `fix:`, `data:`, `docs:` o `chore:` y termina cada mensaje con la línea `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>`. Antes de cada `git push origin main`: `git pull --rebase origin main`. **Nunca** `--force`, ni borres ramas, ni reescribas el historial.
 2. **`main` siempre debe compilar.** Antes de cada push corre, desde `web/`: `npx tsc --noEmit`, `npm test` y `npm run build`; desde la raíz: `python pipeline/validate.py` (0 errores). Cuando cambies algo visible, corre además la pasada de QA (sección 6).
 3. **Nunca inventes datos.** Si un valor no se consigue, queda en `null` con su motivo. Cada afirmación de una ficha o de un documento debe poder citarse. Las cifras de los textos se **calculan de los datos**, no se escriben de memoria (hay herramientas para eso).
