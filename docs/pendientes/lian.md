@@ -2,7 +2,7 @@
 
 Estado revisado sobre `main` en `2517734` (14/11/2026). Fuente de las tareas originales: `TASKS.md`. Marca tus casillas en tu propio PR.
 
-Ya entregado: L-1. `data/candidates.json` tiene 47 candidatos (20 conocidos, 27 poco estudiados y 10 de Bolivia), así que cumple las metas.
+Ya entregado: L-1. `data/candidates.json` tiene 56 candidatos (31 conocidos, 25 poco estudiados y 13 de Bolivia), así que cumple las metas.
 
 ## Antes de empezar
 
@@ -13,10 +13,10 @@ Ya entregado: L-1. `data/candidates.json` tiene 47 candidatos (20 conocidos, 27 
 
 ## Pendientes
 
-- [x] **L-2, fichas:** `web/public/data/fichas.json` tiene 47 fichas, una por candidato: las 31 del top 10 (#52) y 16 más investigadas con Crossref y Wikipedia (todos los enlaces comprobados). Los lugares sin estudio planetario publicado dicen "propuesta del equipo". Si agregas un candidato, escribe su ficha y su entrada en `dataEn.ts`; `npm test` falla si falta.
+- [x] **L-2, fichas:** `web/public/data/fichas.json` tiene 56 fichas, una por candidato: las 31 del top 10 (#52), 16 más y 9 de la revisión final investigadas con Crossref y Wikipedia (todos los enlaces comprobados). Los lugares sin estudio planetario publicado dicen "propuesta del equipo". Si agregas un candidato, escribe su ficha y su entrada en `dataEn.ts`; `npm test` falla si falta.
 - [x] **Etiquetas (`tags`):** 21 de los 24 que faltaban tienen etiquetas con fuente: 20 en #51 y MDRS después, con `evaporite` e `hydrated-minerals` según Stoker et al. 2011 (doi:10.1017/s1473550411000115). Las otras 3 se buscaron en literatura científica y siguen sin etiqueta, con el motivo en sus notas: Licancabur (el único estudio de suelos, Gjorup et al. 2019, no halla permafrost y no tiene glaciares; es un estratovolcán), Laguna Verde (lago salado sin evaporitas documentadas) y Tunupa (estratovolcán; solo hay glaciares pasados).
 - [x] **Huecos de variables:** McMurdo, Svalbard, La Corona y Manjanggul ya tienen pendiente y relieve, calculados con Copernicus DEM GLO-30 (30 m) en `pipeline/earth/copernicus_dem.py` (solo con puntos de tierra donde la ventana incluye mar). El lector se validó contra seis lugares con Terrain Tiles. Con eso los cuatro entran al ranking lunar y los Valles Secos de McMurdo pasan a ser el primero para Cabeus y Malapert (ver `docs/METODOLOGIA.md`). Se rehacen con `python pipeline/earth/build_candidates.py --only <id>`.
-- [x] **Inglés (#25):** nombres, países, `why` y las 47 fichas. Hecho en `web/src/content/dataEn.ts`, una capa de traducción por `id` que no cambia el contrato de datos. Si agregas o cambias un lugar, agrega su entrada ahí: `npm test` falla si falta. Las `notes` de los candidatos no se muestran y no se tradujeron.
+- [x] **Inglés (#25):** nombres, países, `why` y las 56 fichas. Hecho en `web/src/content/dataEn.ts`, una capa de traducción por `id` que no cambia el contrato de datos. Si agregas o cambias un lugar, agrega su entrada ahí: `npm test` falla si falta. Las `notes` de los candidatos no se muestran y no se tradujeron.
 - [x] **L-3, explicaciones (segunda fase):** hecho en la fase final con una plantilla fija (`web/src/lib/explain.ts`), sin `explicaciones.json`; 30 pares en español e inglés revisados a mano.
 - [x] **L-4, PDF (segunda fase):** hecho en la fase final: botón "Exportar a PDF" en la comparación y hoja de impresión en `web/src/styles/app.css`.
 

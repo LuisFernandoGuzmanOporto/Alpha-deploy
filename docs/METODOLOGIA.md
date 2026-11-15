@@ -55,12 +55,12 @@ Primer puesto con cada perfil (calculado con las diferencias normalizadas de `re
 
 | Sitio | Igual | Movilidad | Energía | Agua y hielo |
 | --- | --- | --- | --- | --- |
-| Faustini Rim A | McMurdo (62,7) | Mauna Kea (85,4) | McMurdo (52,4) | Gilf Kebir (59,8) |
+| Faustini Rim A | McMurdo (62,7) | Mauna Kea (85,4) | McMurdo (52,5) | Gilf Kebir (59,9) |
 | Peak Near Cabeus B | McMurdo (72,1) | McMurdo (90,5) | McMurdo (65,9) | Gilf Kebir (64,2) |
-| Malapert Massif | McMurdo (72,3) | McMurdo (91,3) | McMurdo (65,4) | Gilf Kebir (63,8) |
-| Jezero | Atacama-Yungay (82,1) | Laguna Colorada (90,4) | Laguna Colorada (81,7) | Gilf Kebir (82,2) |
-| Gale | Atacama-Yungay (83,8) | Laguna Colorada (90,0) | Atacama-Yungay (81,1) | Gilf Kebir (83,8) |
-| Arcadia Planitia | Gilf Kebir (76,9) | Dasht-e Kavir (91,1) | Coipasa (75,3) | Gilf Kebir (78,2) |
+| Malapert Massif | McMurdo (72,3) | McMurdo (91,4) | McMurdo (65,5) | Gilf Kebir (63,9) |
+| Jezero | Atacama-Yungay (82,1) | Laguna Colorada (90,4) | Laguna Colorada (81,7) | Gilf Kebir (82,3) |
+| Gale | Atacama-Yungay (83,8) | Laguna Colorada (90,0) | Atacama-Yungay (81,2) | Gilf Kebir (83,9) |
+| Arcadia Planitia | Gilf Kebir (76,9) | Dasht-e Kavir (91,1) | Coipasa (75,4) | Gilf Kebir (78,2) |
 
 Con "Agua y hielo", Gilf Kebir sube porque su celda de NASA POWER da 0,0 mm/año; ese cero es un valor del producto regional, no una medición local. En la Luna el albedo no tiene dato, así que su peso no cambia esos rankings.
 
@@ -70,18 +70,18 @@ La referencia inicial es mínimo–máximo sobre el catálogo conjunto. Una temp
 
 ### Resultados de sensibilidad (S-3)
 
-Se evaluaron 47 candidatos y seis sitios con el catálogo de esta entrega, en el que cada candidato comparte al menos tres variables con cada sitio. Las 60 pruebas de pesos modifican una variable a la vez en ±50 %. Las otras 30 retiran una variable y vuelven a exigir al menos tres valores compartidos. El desplazamiento se calcula entre candidatos presentes en ambos rankings. El top 5 se toma del ranking general, con el orden de entrada como desempate de los puntajes redondeados.
+Se evaluaron 56 candidatos y seis sitios con el catálogo de esta entrega, en el que cada candidato comparte al menos tres variables con cada sitio. Las 60 pruebas de pesos modifican una variable a la vez en ±50 %. Las otras 30 retiran una variable y vuelven a exigir al menos tres valores compartidos. El desplazamiento se calcula entre candidatos presentes en ambos rankings. El top 5 se toma del ranking general, con el orden de entrada como desempate de los puntajes redondeados.
 
 | Sitio | ±50 %: top 5 compartido (mín.–máx.) | ±50 %: mayor desplazamiento medio / individual | Omisión: top 5 compartido (mín.–máx.) | Omisión: mayor desplazamiento medio / individual |
 | --- | ---: | ---: | ---: | ---: |
-| Faustini Rim A | 3–5 | 2,26 / 14 | 3–5 | 5,49 / 23 |
-| Peak Near Cabeus B | 4–5 | 1,83 / 12 | 2–5 | 4,17 / 21 |
-| Malapert Massif | 3–5 | 1,91 / 13 | 3–5 | 4,04 / 22 |
-| Jezero | 4–5 | 3,06 / 10 | 2–5 | 6,68 / 29 |
-| Gale | 4–5 | 3,19 / 14 | 3–4 | 7,15 / 33 |
-| Arcadia Planitia | 4–5 | 2,00 / 9 | 3–5 | 3,96 / 17 |
+| Faustini Rim A | 3–5 | 2,54 / 15 | 1–5 | 5,89 / 25 |
+| Peak Near Cabeus B | 4–5 | 2,11 / 13 | 3–5 | 4,50 / 23 |
+| Malapert Massif | 4–5 | 2,25 / 14 | 3–5 | 4,43 / 24 |
+| Jezero | 4–5 | 4,18 / 14 | 2–5 | 8,57 / 37 |
+| Gale | 3–5 | 4,43 / 17 | 2–5 | 9,00 / 40 |
+| Arcadia Planitia | 4–5 | 2,36 / 12 | 3–5 | 5,39 / 23 |
 
-Con cambios de peso, 58 de 60 pruebas mantuvieron al menos cuatro nombres del top 5 y 39 conservaron los cinco. Las excepciones fueron Faustini con precipitación al +50 % y Malapert con precipitación al −50 %. Las omisiones conservaron al menos cuatro nombres en 19 de 30 pruebas. Quitar la pendiente dejó solo dos nombres en Peak Near Cabeus B, y quitar la precipitación, en Jezero. En Gale, retirar la pendiente movió hasta 33 posiciones a un candidato del ranking. Con el catálogo completo, ninguna prueba hace entrar o salir candidatos del ranking. El albedo lunar faltante explica que variar o retirar su peso deje intactos los rankings lunares.
+Con cambios de peso, 58 de 60 pruebas mantuvieron al menos cuatro nombres del top 5 y 36 conservaron los cinco. Las excepciones fueron Faustini con precipitación al −50 % y Gale con precipitación al −50 %. Las omisiones conservaron al menos cuatro nombres en 21 de 30 pruebas. Quitar la precipitación dejó solo un nombre en Faustini Rim A y dos en Jezero y Gale. En Gale, retirar la pendiente movió hasta 40 posiciones a un candidato del ranking. Con el catálogo completo, ninguna prueba hace entrar o salir candidatos del ranking. El albedo lunar faltante explica que variar o retirar su peso deje intactos los rankings lunares.
 
 Se mantienen los pesos iguales como referencia. Para interpretar candidatos cercanos en puntaje, conviene mirar su cobertura y si se mantienen arriba al retirar una variable. La influencia de los extremos térmicos sobre la escala min–max sigue siendo una limitación. La prueba no compara normalizaciones alternativas.
 
@@ -105,18 +105,18 @@ La validación usa `known: true` y exige que `analog_for` incluya el cuerpo del 
 
 | Sitio | Pares | Conocidos del cuerpo en el top 5 | Poco estudiados en el top 5 (posición y puntaje) |
 | --- | ---: | --- | --- |
-| Faustini Rim A | 47 | 0 de 7 | 1: Uturuncu (4.º, 57,3) |
-| Peak Near Cabeus B | 47 | 0 de 7 | 1: Sajama (5.º, 60,7) |
-| Malapert Massif | 47 | 0 de 7 | 1: Pamir (5.º, 60,8) |
-| Jezero | 47 | 3 de 26: Atacama-Yungay (1.º, 82,1), Gilf Kebir (2.º, 80,9) y Tibesti (3.º, 80,2) | 2: Siloli (4.º, 79,5) y Harrat Khaybar (5.º, 79,3) |
-| Gale | 47 | 3 de 26: Atacama-Yungay (1.º, 83,8), Gilf Kebir (2.º, 83,3) y Tibesti (3.º, 79,0) | 2: Siloli (4.º, 79,0) y Laguna Colorada (5.º, 78,1) |
-| Arcadia Planitia | 47 | 3 de 26: Gilf Kebir (2.º, 76,9), Qaidam (4.º, 75,8) y Coipasa (5.º, 74,5) | 2: Dasht-e Kavir (1.º, 76,9) y Taklamakan (3.º, 76,9) |
+| Faustini Rim A | 56 | 0 de 7 | 2: Ollagüe (3.º, 60,3) y Wadi Rum (5.º, 58,7) |
+| Peak Near Cabeus B | 56 | 0 de 7 | 1: Ollagüe (3.º, 68,4) |
+| Malapert Massif | 56 | 0 de 7 | 1: Ollagüe (3.º, 68,2) |
+| Jezero | 56 | 3 de 28: Atacama-Yungay (1.º, 82,1), Gilf Kebir (2.º, 80,9) y Tibesti (3.º, 80,2) | 2: Siloli (4.º, 79,5) y Harrat Khaybar (5.º, 79,3) |
+| Gale | 56 | 3 de 28: Atacama-Yungay (1.º, 83,8), Gilf Kebir (2.º, 83,3) y Tibesti (4.º, 79,0) | 2: Kumtag (3.º, 80,1) y Siloli (5.º, 79,0) |
+| Arcadia Planitia | 56 | 3 de 28: Gilf Kebir (2.º, 76,9), Qaidam (4.º, 75,8) y Coipasa (5.º, 74,5) | 2: Dasht-e Kavir (1.º, 76,9) y Taklamakan (3.º, 76,9) |
 
-En los rankings lunares (47 pares cada uno), los 7 análogos lunares conocidos quedan lejos del top 5: Mauna Kea entre el 12.º y el 17.º, Pinacate entre el 15.º y el 17.º, La Corona 20.º, Askja 27.º, Lava Beds 28.º, El Malpaís 33.º y Undara 39.º. Las mayores diferencias normalizadas de esos pares son temperatura o precipitación. Los análogos documentados pueden ser útiles por procesos geológicos, como el vulcanismo o los tubos de lava, que quedan fuera del puntaje. En Marte entran al ranking los 26 conocidos pertinentes y tres de ellos encabezan Jezero y Gale. McMurdo, documentado como análogo de Marte, queda 45.º o 46.º en Marte, pero encabeza los tres sitios lunares (72,1 en Peak Near Cabeus B, 72,3 en Malapert y 62,7 en Faustini) por su pendiente (15,3°), su relieve (418 m) y su frío (−26,7 °C, el más bajo del catálogo). El albedo terrestre incluye nieve, agua y vegetación, mientras que el marciano describe suelo desnudo. La validación respalda el ranking marciano y deja sin confirmar el lunar.
+En los rankings lunares (56 pares cada uno), los 7 análogos lunares conocidos quedan lejos del top 5: Mauna Kea entre el 16.º y el 21.º, Pinacate entre el 20.º y el 21.º, La Corona 24.º, Askja 32.º, Lava Beds 33.º, El Malpaís 39.º y Undara 46.º. Las mayores diferencias normalizadas de esos pares son temperatura o precipitación. Los análogos documentados pueden ser útiles por procesos geológicos, como el vulcanismo o los tubos de lava, que quedan fuera del puntaje. En Marte entran al ranking los 28 conocidos pertinentes y tres de ellos están en el top 5 de cada sitio marciano. McMurdo, documentado como análogo de Marte, queda 54.º o 55.º en Marte, pero encabeza los tres sitios lunares (72,1 en Peak Near Cabeus B, 72,3 en Malapert y 62,7 en Faustini) por su pendiente (15,3°), su relieve (418 m) y su frío (−26,7 °C, el más bajo del catálogo). El albedo terrestre incluye nieve, agua y vegetación, mientras que el marciano describe suelo desnudo. La validación respalda el ranking marciano y deja sin confirmar el lunar.
 
-El núcleo hiperárido del Atacama, con el punto del pozo de muestreo de Yungay (Azua-Bustos et al. 2020), lidera Jezero y Gale: sus diferencias normalizadas de pendiente y relieve no superan 0,12 en ambos sitios y la de albedo es 0,01 en Gale. Gilf Kebir, documentado como análogo de Marte en el informe NASA CR-3611 (El-Baz y Maxwell, 1982), queda segundo en ambos, con 0,0 mm/año en el producto regional NASA POWER; ese cero es un valor del producto y no demuestra ausencia local de lluvias. En Arcadia, Dasht-e Kavir y Taklamakan tienen diferencias normalizadas de pendiente inferiores a 0,004 y de relieve inferiores a 0,045, aunque sus diferencias térmicas rondan 0,49–0,52. Siloli aparece cuarto en Jezero y Gale, con diferencias normalizadas de albedo inferiores a 0,07 y de relieve inferiores a 0,10. En la Luna, Ojos del Salado y Socompa se mantienen entre los primeros en más de un sitio por la semejanza del terreno, mientras la diferencia térmica de esos pares supera 0,65.
+El núcleo hiperárido del Atacama, con el punto del pozo de muestreo de Yungay (Azua-Bustos et al. 2020), lidera Jezero y Gale: sus diferencias normalizadas de pendiente y relieve no superan 0,12 en ambos sitios y la de albedo es 0,01 en Gale. Gilf Kebir, documentado como análogo de Marte en el informe NASA CR-3611 (El-Baz y Maxwell, 1982), queda segundo en ambos, con 0,0 mm/año en el producto regional NASA POWER; ese cero es un valor del producto y no demuestra ausencia local de lluvias. En Arcadia, Dasht-e Kavir y Taklamakan tienen diferencias normalizadas de pendiente inferiores a 0,004 y de relieve inferiores a 0,045, aunque sus diferencias térmicas rondan 0,49–0,52. Siloli aparece cuarto en Jezero y quinto en Gale, con diferencias normalizadas de albedo inferiores a 0,07 y de relieve inferiores a 0,10. En Gale, el desierto de Kumtag (poco estudiado) queda tercero con un 99 % de similitud en albedo y un 96 % en relieve. En la Luna, Ollagüe (poco estudiado, tercero en los tres sitios), Ojos del Salado y Socompa se mantienen entre los primeros en más de un sitio por la semejanza del terreno, mientras la diferencia térmica de esos pares supera 0,65.
 
-Los poco estudiados ocupan 9 de los 30 puestos del top 5 general, contando repeticiones entre sitios (12 antes de la auditoría). El catálogo asignó `known: false` a partir de una búsqueda bibliográfica preliminar que falló varias veces: Gilf Kebir pasó a `known: true` porque Crossref no indexa los informes técnicos de NASA, donde sí figura; Ojos del Salado, por dos artículos de *Astrobiology* de 2020 (doi:10.1089/ast.2018.2021 y doi:10.1089/ast.2019.2024); y la auditoría de la fase final (`docs/AUDITORIA_KNOWN.md`) pasó a conocidos a Laguna Verde, Rub' al Khali, Lava Beds, El Malpaís, el lago Eyre, Undara y Socompa. Los 18 que siguen poco estudiados no tienen una publicación encontrada que los use como análogo de la Luna o de Marte; eso no prueba que no exista. Estos resultados sirven para priorizar la revisión de candidatos. Jaccard sigue como indicador aparte para contrastar procesos documentados. La climatología terrestre es regional, por lo que la comparación debe verificarse antes de atribuir una similitud a un lugar de campo concreto.
+Los poco estudiados ocupan 10 de los 30 puestos del top 5 general, contando repeticiones entre sitios (12 antes de la auditoría). El catálogo asignó `known: false` a partir de una búsqueda bibliográfica preliminar que falló varias veces: Gilf Kebir pasó a `known: true` porque Crossref no indexa los informes técnicos de NASA, donde sí figura; Ojos del Salado, por dos artículos de *Astrobiology* de 2020 (doi:10.1089/ast.2018.2021 y doi:10.1089/ast.2019.2024); y la auditoría de la fase final (`docs/AUDITORIA_KNOWN.md`) pasó a conocidos a Laguna Verde, Rub' al Khali, Lava Beds, El Malpaís, el lago Eyre, Undara y Socompa. En la revisión final se agregaron nueve lugares tras buscarlos en OpenAlex, Crossref, NASA NTRS y Europe PMC: Makgadikgadi y el Ténéré, que sí están documentados como análogos de Marte, y siete poco estudiados (Ollagüe, Tata Sabaya, Valle de la Luna de La Paz, Erg Chebbi, Wadi Rum, Kumtag y Lençóis Maranhenses). Los 25 poco estudiados no tienen una publicación encontrada que los use como análogo de la Luna o de Marte; eso no prueba que no exista. Estos resultados sirven para priorizar la revisión de candidatos. Jaccard sigue como indicador aparte para contrastar procesos documentados. La climatología terrestre es regional, por lo que la comparación debe verificarse antes de atribuir una similitud a un lugar de campo concreto.
 
 ## 7. Limitaciones
 
@@ -135,4 +135,4 @@ Los poco estudiados ocupan 9 de los 30 puestos del top 5 general, contando repet
 
 ## 9. Escaneo global (S-7)
 
-Se descarta el escaneo global en cuadrícula de 2° para esta entrega. Falta una vía de datos validada que cubra tierra firme y obtenga variables comparables sin descargas masivas. El escaneo queda como posible trabajo futuro. Esta entrega publica los rankings del catálogo de 47 candidatos y prescinde de `scan.json`.
+Se descarta el escaneo global en cuadrícula de 2° para esta entrega. Falta una vía de datos validada que cubra tierra firme y obtenga variables comparables sin descargas masivas. El escaneo queda como posible trabajo futuro. Esta entrega publica los rankings del catálogo de 56 candidatos y prescinde de `scan.json`.

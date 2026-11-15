@@ -33,7 +33,7 @@ ROOT = Path(__file__).resolve().parents[2]
 SEED = Path(__file__).with_name("seed.json")
 POWER_DOCS = "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
 TILES_DOCS = "https://registry.opendata.aws/terrain-tiles/"
-SEARCH_DATE = "14/11/2026"
+SEARCH_DATE = "14 y 15/11/2026"
 # Diferencia de elevacion (m) entre la celda de POWER y el punto a partir de la cual se avisa de sesgo.
 ELEVATION_GAP_WARN_M = 500
 
@@ -166,8 +166,8 @@ def build_record(seed: dict) -> dict:
         notes.append("known=true: las referencias citadas documentan el lugar (o su region) como analogo planetario.")
     else:
         notes.append(
-            f"known=false: en una busqueda en Crossref del {SEARCH_DATE} no se encontro un estudio de analogo planetario de este "
-            "lugar; falta una revision bibliografica completa (a verificar)."
+            f"known=false: en busquedas en OpenAlex, Crossref, NASA NTRS y Europe PMC ({SEARCH_DATE}) no se encontro un estudio de "
+            "analogo planetario de este lugar; falta una revision bibliografica completa (ver docs/AUDITORIA_KNOWN.md)."
         )
     if seed.get("note_extra"):
         notes.append(seed["note_extra"] + ".")

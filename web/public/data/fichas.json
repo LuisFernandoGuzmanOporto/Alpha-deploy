@@ -12,7 +12,7 @@
     ],
     "breaks_down": [
       "La temperatura media de superficie es 19,0 °C (NASA POWER), unos 70 °C más que en Gale (−50,7 °C) y unos 179 °C más que en Faustini Rim A (−160,4 °C, Diviner).",
-      "Entra al top 10 de Faustini Rim A solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares.",
+      "Es el 11.º en Faustini Rim A (53,6) y el 15.º en Peak Near Cabeus B y Malapert: no entra al top 10 de ningún sitio lunar.",
       "El punto es el pozo de muestreo de Yungay, pero la temperatura y la precipitación vienen de una celda regional de NASA POWER (decenas de kilómetros), no del sitio exacto."
     ],
     "references": [
@@ -199,7 +199,7 @@
       "El encuadre como análogo de Marte viene de una nota de la universidad (2009) y de un artículo de revisión sobre los volcanes de Atacama (Schmidt et al., 2018), no de un estudio dedicado solo al Socompa.",
       "La vida depende del calor volcánico, que los sitios polares lunares no tienen.",
       "La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato).",
-      "Entra al top 10 de los sitios lunares solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares."
+      "Entra al top 10 de Peak Near Cabeus B y Malapert (5.º en ambos) solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares."
     ],
     "references": [
       {
@@ -236,7 +236,7 @@
     "breaks_down": [
       "Su hielo viene de nevadas; en los polos lunares el hielo estaría atrapado en cráteres en sombra permanente, sin precipitación.",
       "La celda de NASA POWER da 376 mm de precipitación anual, de las más altas del top 10 lunar. La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato).",
-      "Entra al top 10 de los sitios lunares solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares."
+      "Entra al top 10 de Peak Near Cabeus B (7.º) y Malapert (8.º) solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares."
     ],
     "references": [
       {
@@ -313,7 +313,7 @@
       "Propuesta del equipo, sin estudio publicado: comparar picos volcánicos erosionados con relieves de las tierras altas de Marte."
     ],
     "breaks_down": [
-      "Es el 11.º en Faustini Rim A con un puntaje bajo (52,5): la coincidencia es débil y solo topográfica.",
+      "Es el 14.º en Faustini Rim A con un puntaje bajo (52,5): la coincidencia es débil y solo topográfica.",
       "Temperatura media de 22,5 °C (NASA POWER), unos 183 °C por encima de Faustini Rim A (Diviner). La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato)."
     ],
     "references": [
@@ -921,7 +921,7 @@
       "Estudiar un análogo geológico, ambiental y ecológico de la superficie y la subsuperficie de Marte (Salvatore y Levy, 2021)."
     ],
     "breaks_down": [
-      "Es el primero del ranking en los tres sitios lunares: Peak Near Cabeus B (72,1), Malapert Massif (72,3) y Faustini Rim A (62,7), por su pendiente media de 15,3° y su relieve de 418 m (Copernicus DEM GLO-30); en Marte queda entre los puestos 45 y 46.",
+      "Es el primero del ranking en los tres sitios lunares: Peak Near Cabeus B (72,1), Malapert Massif (72,3) y Faustini Rim A (62,7), por su pendiente media de 15,3° y su relieve de 418 m (Copernicus DEM GLO-30); en Marte queda entre los puestos 54 y 55.",
       "Temperatura media de −26,7 °C (NASA POWER), la más baja del catálogo, pero unos 99 °C más que Peak Near Cabeus B (−125,6 °C, Diviner) y unos 51 °C más que Arcadia Planitia (−77,9 °C), que tiene permafrost.",
       "Su albedo (0,56) es más del doble que el de Arcadia Planitia (0,21), porque el albedo terrestre incluye nieve y hielo.",
       "El punto es el centro aproximado de los valles: las variables describen la región, no un valle concreto."
@@ -1027,7 +1027,7 @@
     "breaks_down": [
       "Temperatura media de −4,4 °C (NASA POWER), unos 156 °C más que Faustini Rim A (−160,4 °C, Diviner).",
       "Recibe unos 862 mm de precipitación anual (NASA POWER); la Luna no tiene lluvia.",
-      "Es el 27.º en los tres sitios lunares, con puntajes de 43,6 a 44,2: la coincidencia es débil."
+      "Es el 32.º en los tres sitios lunares, con puntajes de 43,7 a 44,2: la coincidencia es débil."
     ],
     "references": [
       {
@@ -1103,7 +1103,7 @@
     "breaks_down": [
       "Temperatura media de 18,7 °C (NASA POWER), unos 68 °C más que Jezero (−49,4 °C).",
       "Recibe unos 453 mm de precipitación anual (NASA POWER) y es un río con agua líquida en superficie.",
-      "La analogía es de química y mineralogía, no de terreno: es el 13.º en Jezero (73,1) y no entra al top 10."
+      "La analogía es de química y mineralogía, no de terreno: es el 14.º en Jezero (73,1) y no entra al top 10."
     ],
     "references": [
       {
@@ -1134,7 +1134,7 @@
       "Comparar los carbonatos de un basalto terrestre con los del meteorito marciano ALH 84001 (GSA Abstracts, 2016)."
     ],
     "breaks_down": [
-      "Pendiente media de 15,7° y relieve de 256 m (Copernicus DEM GLO-30, sin el fiordo, que ocupa el 15,5 % de la ventana): es el 7.º en Peak Near Cabeus B (60,0) y Malapert (60,2) y el 18.º en Faustini Rim A (50,6), pero el último en Marte.",
+      "Pendiente media de 15,7° y relieve de 256 m (Copernicus DEM GLO-30, sin el fiordo, que ocupa el 15,5 % de la ventana): es el 9.º en Peak Near Cabeus B (60,0) y Malapert (60,2) y el 22.º en Faustini Rim A (50,6), pero el último en Marte.",
       "Temperatura media de −8,1 °C (NASA POWER), unos 43 °C más que Gale (−50,7 °C).",
       "Su albedo (0,54) es más del doble que el de Gale (0,24), porque el albedo terrestre incluye nieve y hielo."
     ],
@@ -1203,7 +1203,7 @@
     "breaks_down": [
       "Temperatura media de 5,2 °C (NASA POWER), unos 56 °C más que Gale (−50,7 °C).",
       "Recibe unos 416 mm de precipitación anual (NASA POWER); Marte no tiene lluvia.",
-      "Es el 17.º en Gale (72,2) y el 19.º en Jezero (71,2): no entra al top 10."
+      "Es el 19.º en Gale (72,2) y el 21.º en Jezero (71,2): no entra al top 10."
     ],
     "references": [
       {
@@ -1237,7 +1237,7 @@
     "breaks_down": [
       "Temperatura media de 23,4 °C (NASA POWER), unos 184 °C más que Faustini Rim A (−160,4 °C, Diviner). El punto está 814 m por encima de la celda de NASA POWER, así que la temperatura puede estar sesgada (aviso en las notas del candidato).",
       "Recibe unos 139 mm de precipitación anual (NASA POWER); la Luna no tiene lluvia.",
-      "Es el 15.º en Faustini Rim A (51,2), el 16.º en Malapert (50,7) y el 17.º en Peak Near Cabeus B (50,7): la coincidencia es débil y solo topográfica."
+      "Es el 20.º en Faustini Rim A (51,2) y en Malapert (50,7), y el 21.º en Peak Near Cabeus B (50,7): la coincidencia es débil y solo topográfica."
     ],
     "references": [
       {
@@ -1274,7 +1274,7 @@
       "Consultar la investigación sobre cuevas y tubos de lava terrestres (von Ehrenfried, 2019)."
     ],
     "breaks_down": [
-      "Pendiente media de 5,0° y relieve de 116 m solo con los puntos de tierra (Copernicus DEM GLO-30; el 48,3 % de la ventana de 10 × 10 km, el resto es mar): es el 20.º en los tres sitios lunares (47,5 a 48,0) y queda entre los puestos 21 y 33 en Marte.",
+      "Pendiente media de 5,0° y relieve de 116 m solo con los puntos de tierra (Copernicus DEM GLO-30; el 48,3 % de la ventana de 10 × 10 km, el resto es mar): es el 24.º en los tres sitios lunares (47,5 a 48,0) y queda entre los puestos 23 y 38 en Marte.",
       "Temperatura media de 20,4 °C (NASA POWER), unos 98 °C más que Arcadia Planitia (−77,9 °C).",
       "Su albedo (0,03) es mucho menor que el de Arcadia Planitia (0,21)."
     ],
@@ -1346,7 +1346,7 @@
     ],
     "breaks_down": [
       "No encontramos un estudio que lo use como análogo planetario.",
-      "Pendiente media de 1,8° y relieve de 61 m solo con los puntos de tierra (Copernicus DEM GLO-30; el 84,0 % de la ventana, el resto es mar): es el 37.º en los tres sitios lunares y queda entre los puestos 22 y 34 en Marte.",
+      "Pendiente media de 1,8° y relieve de 61 m solo con los puntos de tierra (Copernicus DEM GLO-30; el 84,0 % de la ventana, el resto es mar): es el 44.º en los tres sitios lunares y queda entre los puestos 24 y 39 en Marte.",
       "Recibe unos 1629 mm de precipitación anual (NASA POWER), más que cualquier sitio de Marte, y 18,3 °C de media, unos 68 °C más que Jezero."
     ],
     "references": [
@@ -1466,6 +1466,251 @@
       {
         "title": "Wikipedia: Chott el Djerid",
         "url": "https://en.wikipedia.org/wiki/Chott_el_Djerid"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-volcan-ollague",
+    "summary": "Estratovolcán de andesita en la frontera entre Bolivia y Chile, con una cima de 5868 m cuyo cráter se abre hacia el sur. En el borde occidental del cráter hay domos de lava, y el más joven tiene una fumarola activa visible desde lejos. Es sobre todo del Pleistoceno.",
+    "processes": [
+      "Volcanismo andesítico del Pleistoceno en la Zona Volcánica Central de los Andes (Wikipedia).",
+      "Fumarola activa en un domo de lava joven del borde del cráter (Wikipedia)."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio publicado: comparar un gran volcán andino con los macizos polares de la Luna por su pendiente y su relieve."
+    ],
+    "breaks_down": [
+      "No encontramos un estudio que lo use como análogo planetario.",
+      "Es el 3.º en los tres sitios lunares (60,3 en Faustini Rim A, 68,4 en Peak Near Cabeus B y 68,2 en Malapert) solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares.",
+      "Temperatura media de 7,3 °C (NASA POWER), unos 168 °C por encima de Faustini Rim A (-160,4 °C, Diviner). La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato)."
+    ],
+    "references": [
+      {
+        "title": "Wikipedia: Ollagüe",
+        "url": "https://en.wikipedia.org/wiki/Ollag%C3%BCe"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-volcan-tata-sabaya",
+    "summary": "Volcán de 5430 m en Bolivia, al norte del Salar de Coipasa, formado por rocas de andesita. Su flanco sur colapsó hace unos 12 000 años y los escombros, de unos 6 km³, cayeron en un lago que entonces cubría el salar.",
+    "processes": [
+      "Colapso del flanco sur y depósito de avalancha de escombros sobre un antiguo lago (Wikipedia)."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio publicado: estudiar depósitos de colapsos de flanco junto a una llanura de sal y compararlos con los de volcanes de Marte."
+    ],
+    "breaks_down": [
+      "No encontramos un estudio que lo use como análogo planetario.",
+      "Es el 6.º en Faustini Rim A (58,2) solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares.",
+      "Temperatura media de 8,6 °C (NASA POWER), unos 58 °C por encima de Jezero (-49,4 °C). La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato)."
+    ],
+    "references": [
+      {
+        "title": "Wikipedia: Tata Sabaya",
+        "url": "https://en.wikipedia.org/wiki/Tata_Sabaya"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-valle-de-la-luna-la-paz",
+    "summary": "Área municipal protegida de 15 hectáreas, a unos 10 km al sur del centro de La Paz (Bolivia). Su suelo es de arcilla y arenisca, no de roca sólida, y la erosión formó cráteres, zanjas, agujas y cuevas. Su nombre viene de que el paisaje recuerda a la Luna.",
+    "processes": [
+      "Erosión de arcilla y arenisca que forma agujas, zanjas y cuevas (Wikipedia)."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio publicado: comparar paisajes erosionados en terreno blando con superficies lunares."
+    ],
+    "breaks_down": [
+      "No encontramos un estudio que lo use como análogo planetario.",
+      "Su suelo es arcilla y arenisca blandas; la superficie de la Luna es regolito de impactos y roca volcánica.",
+      "Recibe unos 646 mm de precipitación anual (NASA POWER); la Luna no tiene lluvia. La celda de NASA POWER está unos 564 m por encima del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato).",
+      "Es el 15.º en Faustini Rim A (52,3); su temperatura media de 9,5 °C está unos 170 °C por encima de la de ese sitio (-160,4 °C, Diviner)."
+    ],
+    "references": [
+      {
+        "title": "Wikipedia: Valle de la Luna (Bolivia)",
+        "url": "https://en.wikipedia.org/wiki/Valle_de_la_Luna_(Bolivia)"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-erg-chebbi",
+    "summary": "Uno de los ergs de Marruecos: un mar de dunas formado por arena que lleva el viento, en el extremo occidental del Sáhara. Sus dunas llegan a 150 m de altura sobre la hamada (desierto rocoso) y ocupan unos 28 km de norte a sur y de 5 a 7 km de este a oeste, junto a la frontera con Argelia.",
+    "processes": [
+      "Dunas formadas por arena transportada por el viento (Wikipedia)."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio publicado: comparar sus dunas con campos de dunas de Marte."
+    ],
+    "breaks_down": [
+      "No encontramos un estudio que lo use como análogo planetario.",
+      "Temperatura media de 22,2 °C (NASA POWER), unos 72 °C por encima de Jezero (-49,4 °C).",
+      "Es el 11.º en Gale (75,2) y el 16.º en Jezero (72,7): no entra al top 10 de Marte."
+    ],
+    "references": [
+      {
+        "title": "Wikipedia: Erg Chebbi",
+        "url": "https://en.wikipedia.org/wiki/Erg_Chebbi"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-wadi-rum",
+    "summary": "Valle excavado en arenisca y granito en el sur de Jordania, cerca de la frontera con Arabia Saudita y a unos 60 km al este de Aqaba. Con 720 km² es el wadi más grande del país y desde 2011 es Patrimonio Mundial de la UNESCO.",
+    "processes": [
+      "Erosión de un valle en arenisca y granito (Wikipedia)."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio publicado: ensayar la movilidad de vehículos en un valle árido de paredes de roca."
+    ],
+    "breaks_down": [
+      "No encontramos un estudio que lo use como análogo planetario.",
+      "Es el 5.º en Faustini Rim A (58,7) y el 6.º en Peak Near Cabeus B (61,3) y Malapert (61,3) solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares.",
+      "Temperatura media de 19,7 °C (NASA POWER), unos 69 °C por encima de Jezero (-49,4 °C)."
+    ],
+    "references": [
+      {
+        "title": "Wikipedia: Wadi Rum",
+        "url": "https://en.wikipedia.org/wiki/Wadi_Rum"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-desierto-de-kumtag",
+    "summary": "Desierto árido del noroeste de China, de unos 22 900 km², a veces considerado parte del Gobi, que limita al este con Dunhuang. Acumula grandes masas de arena arrastrada por el viento al pie de las cordilleras, con dunas de hasta unos 76 m de altura.",
+    "processes": [
+      "Acumulación de arena arrastrada por el viento en dunas junto a las cordilleras del desierto (Wikipedia)."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio publicado: comparar sus dunas y llanuras con las de Marte."
+    ],
+    "breaks_down": [
+      "No encontramos un estudio que lo use como análogo planetario.",
+      "Es el 3.º en Gale (80,1) y el 7.º en Jezero (78,1), pero su temperatura media de 13,7 °C (NASA POWER) está unos 64 °C por encima de la de Gale (-50,7 °C).",
+      "Los puntajes cercanos al primer lugar deben leerse con cuidado: el índice no mide la composición de la arena ni la gravedad."
+    ],
+    "references": [
+      {
+        "title": "Wikipedia: Kumtag Desert",
+        "url": "https://en.wikipedia.org/wiki/Kumtag_Desert"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-lencois-maranhenses",
+    "summary": "Parque nacional del estado de Maranhão (noreste de Brasil), de unas 155 000 ha, con 70 km de costa y un interior de dunas ondulantes. En la estación de lluvias los valles entre las dunas se llenan de lagunas de agua dulce, que no se drenan por la roca impermeable de abajo.",
+    "processes": [
+      "Dunas ondulantes con lagunas estacionales de agua dulce entre ellas (Wikipedia)."
+    ],
+    "use_cases": [
+      "Propuesta del equipo, sin estudio publicado: comparar campos de dunas con agua estacional con ambientes de dunas y lagos de Marte."
+    ],
+    "breaks_down": [
+      "No encontramos un estudio que lo use como análogo planetario.",
+      "Recibe unos 1399 mm de precipitación anual (NASA POWER), más que cualquier sitio de Marte; la analogía se limita a la forma de las dunas.",
+      "Temperatura media de 27,8 °C (NASA POWER), unos 106 °C por encima de Arcadia Planitia (-77,9 °C). Es el 23.º en Arcadia Planitia (65,2) y el 52.º en Gale (58,8)."
+    ],
+    "references": [
+      {
+        "title": "Wikipedia: Lençóis Maranhenses National Park",
+        "url": "https://en.wikipedia.org/wiki/Len%C3%A7%C3%B3is_Maranhenses_National_Park"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-makgadikgadi-botsuana",
+    "summary": "Una de las mayores salinas del mundo, en el noreste de Botsuana, en medio de la sabana seca. Es lo que queda del enorme lago Makgadikgadi, que cubría más superficie que Suiza y se secó hace decenas de miles de años. Tres resúmenes de congreso de 2024 la proponen como análogo de ambientes acuosos antiguos de Marte.",
+    "processes": [
+      "Minerales evaporíticos y arcillas derivados de sedimentos fluvio-lacustres (EPSC 2024).",
+      "Sílice hidratada y arcillas de un antiguo ambiente de playa y lago (EPSC 2024)."
+    ],
+    "use_cases": [
+      "Identificar y mapear con espectros de luz visible e infrarroja ambientes fluvio-lacustres parecidos en Marte (EPSC 2024)."
+    ],
+    "breaks_down": [
+      "Recibe unos 391 mm de precipitación anual (NASA POWER) y su temperatura media es de 25,2 °C, unos 75 °C por encima de Jezero; Marte no tiene lluvia.",
+      "Los tres estudios son resúmenes de congreso de 2024: no encontramos todavía campañas de campo publicadas en revistas.",
+      "Es el 6.º en Arcadia Planitia (72,3) por su terreno casi plano, pero el 52.º en Faustini Rim A."
+    ],
+    "references": [
+      {
+        "title": "Spectral field study of the Makgadikgadi Salt Pans in Botswana as a planetary analog for ancient fluvio-lacustrine environments on Mars (EPSC 2024)",
+        "url": "https://doi.org/10.5194/epsc2024-743"
+      },
+      {
+        "title": "The Makgadikgadi Pans as an Analogue to Ancient Silica-Rich Aqueous Environments on Mars: A Preliminary Assessment (EPSC 2024)",
+        "url": "https://doi.org/10.5194/epsc2024-991"
+      },
+      {
+        "title": "Characterizing clay minerals in the Makgadikgadi Pans (Botswana): terrestrial analogue for Mars playa deposits (EPSC 2024)",
+        "url": "https://doi.org/10.5194/epsc2024-590"
+      },
+      {
+        "title": "Wikipedia: Makgadikgadi Pan",
+        "url": "https://en.wikipedia.org/wiki/Makgadikgadi_Pan"
+      },
+      {
+        "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+        "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      }
+    ]
+  },
+  {
+    "candidate_id": "earth-desierto-del-tenere",
+    "summary": "Gran llanura de arena del centro-sur del Sáhara, de más de 400 000 km², entre el noreste de Níger y el oeste de Chad. En su parte central está el erg de Bilma, un campo de dunas. Un artículo de 2004 informó de las primeras huellas terrestres análogas a las de los remolinos de polvo de Marte.",
+    "processes": [
+      "Dunas del erg de Bilma (Wikipedia).",
+      "Remolinos de polvo que dejan huellas en la superficie, análogas a las de Marte (Geophysical Research Letters, 2004)."
+    ],
+    "use_cases": [
+      "Comparar las huellas de remolinos de polvo con las observadas desde órbita en Marte (Geophysical Research Letters, 2004)."
+    ],
+    "breaks_down": [
+      "Su albedo (0,5) es mucho mayor que el de Jezero (0,17), Gale (0,24) y Arcadia Planitia (0,21).",
+      "Recibe unos 66 mm de precipitación anual (NASA POWER) y su temperatura media es de 26,6 °C, unos 76 °C por encima de Jezero.",
+      "Es el 43.º en Jezero (62,4) y el 34.º en Gale (64,9): el índice la deja a media tabla."
+    ],
+    "references": [
+      {
+        "title": "The first terrestrial analogue to Martian dust devil tracks found in Ténéré Desert, Niger (Geophysical Research Letters, 2004)",
+        "url": "https://doi.org/10.1029/2004gl019428"
+      },
+      {
+        "title": "Wikipedia: Ténéré",
+        "url": "https://en.wikipedia.org/wiki/T%C3%A9n%C3%A9r%C3%A9"
       },
       {
         "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",

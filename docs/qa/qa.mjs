@@ -86,7 +86,7 @@ try {
   await sleep(2500);
   const t5 = await text();
   check("Comparación: tabla, perfil, qué falla y ficha", /Variable by variable/.test(t5) && /Similarity profile/.test(t5) && /Where the analogy breaks down/.test(t5) && /Fact sheet/.test(t5));
-  check("Explicación (F7): el primer análogo de Gale trae su párrafo con puesto y mayor diferencia", /Why it ranks near the top/.test(t5) && /1st of 47 places for Crater Gale/.test(t5) && /largest difference is in/.test(t5));
+  check("Explicación (F7): el primer análogo de Gale trae su párrafo con puesto y mayor diferencia", /Why it ranks near the top/.test(t5) && /1st of 56 places for Crater Gale/.test(t5) && /largest difference is in/.test(t5));
   check("Comparación: radar y 5 filas de variables", (await ev(`!!document.querySelector(".recharts-radar") && document.querySelectorAll("table:not(.cc-multi__table) tbody tr").length === 5`)));
   // Varios análogos (4c): elegir un segundo análogo en el selector guarda analogos= y suma una serie al radar
   await ev(`(() => { const select = document.querySelectorAll(".cc-multi select")[1]; const option = [...select.options].find((o) => o.value && !o.disabled); select.value = option.value; select.dispatchEvent(new Event("change", { bubbles: true })); })()`);
@@ -107,7 +107,7 @@ try {
   await click(find("button", "/^\\s*Filters/"));
   check("Filtros: abre el diálogo", await ev(`!!document.querySelector("[role=dialog]")`));
   await click(`document.querySelector("[role=dialog] [role=switch]")`);
-  check("Filtro Bolivia: URL y 10 resultados", /bolivia=1/.test(await url()) && /\(10\)|10 ranked/.test(await text()), await url());
+  check("Filtro Bolivia: URL y 13 resultados", /bolivia=1/.test(await url()) && /\(13\)|13 ranked/.test(await text()), await url());
   await click(`document.querySelector("[role=dialog] [role=slider]")`);
   await key("ArrowRight");
   check("Pesos: el teclado cambia el peso y la URL lo guarda", /pesos=/.test(await url()), await url());

@@ -4,11 +4,12 @@ Dueño: Joel. Cada fallo va como issue de GitHub con pasos para reproducir. Pasa
 
 ## Pasada 5: domingo 15/11, ~07:30 (local, revisión de Fernando y Claude)
 
-- **Versión:** `main` + correcciones de la revisión de la fase final (Undara, Socompa, Rub' al Khali; ver `docs/INFORME_FASE_FINAL.md`, "Revisión posterior"). Build de producción con `vite preview`; sigue sin estar en Vercel.
+- **Versión:** `main` + revisión de la fase final (Undara, Socompa, Rub' al Khali y nueve lugares nuevos; ver `docs/INFORME_FASE_FINAL.md`, "Revisión posterior"). Build de producción con `vite preview`; sigue sin estar en Vercel.
 - **Navegador:** Google Chrome sin interfaz, clics y teclas reales por CDP (`docs/qa/qa.mjs`). Firefox, Safari, lector de pantalla y teléfono real **no se probaron**.
-- **Datos:** 47 candidatos (29 conocidos, 18 poco estudiados), 6 sitios. `validate.py`: 0 errores, 7 avisos (el de metas cuenta "25 o más poco estudiados", que ya no se cumple tras la auditoría: son 18). Poco estudiados en el top 5 general: 9 de 30.
+- **Datos:** 56 candidatos (31 conocidos, 25 poco estudiados, 13 de Bolivia), 6 sitios. `validate.py`: 0 errores, 10 avisos (ya se cumplen las metas del contrato; los avisos son etiquetas sin respaldo citable). Poco estudiados en el top 5 general: 10 de 30. Las 14 URL nuevas de las fichas responden.
 - **Código:** `tsc` sin errores, **76 de 76 pruebas** (se regeneraron los valores de referencia de `robustness.test.ts` con `pipeline/sensitivity.py`, porque el cambio de punto de Rub' al Khali movió el rango de temperatura del catálogo), build sin errores.
-- **Resultado: 47 de 47 OK.**
+- **Resultado: 47 de 47 OK** (se actualizaron dos expectativas de `qa.mjs` al nuevo catálogo: "1.º de 56" y 13 resultados del filtro de Bolivia).
+- **Accesibilidad (`docs/qa/a11y.mjs`, 6 rutas en español e inglés):** sin hallazgos tras corregir tres cosas que la herramienta encontró: los radares tenían un elemento enfocable dentro de contenido oculto (`accessibilityLayer={false}`) y los enlaces de fuentes "[1] [2] [3]" no tenían nombre descriptivo ni 24 px. Foco visible en todo el recorrido con Tab, reflujo sin desborde a 320 y 640 px, contraste de texto sin fallas en los textos medibles (los que están sobre degradados o mapas no se miden).
 - **Revisado a ojo con capturas:** inicio con la insignia de robustez, comparación con la explicación, el radar de tres análogos y su tabla, y la vista de impresión de la comparación (fondo claro, sin barra superior; el PDF tiene 6 páginas).
 - **Rendimiento (móvil lento, esta máquina):** primer contenido ≈ 2,2 s, bloqueo ≈ 470 ms, 580 KB. Con la medición de la fase final (1,74 s) la diferencia es de máquina y de ruido; no se afirma la meta de 1,8 s.
 - **Sin verificar:** Vercel, otros navegadores, lector de pantalla, zoom al 200 %, impresión en papel, la CI de GitHub (no corre por facturación).

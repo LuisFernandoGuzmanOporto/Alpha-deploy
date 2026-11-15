@@ -2,7 +2,7 @@
 
 *Public report. NASA Space Apps Challenge 2026, Cochabamba, Bolivia. Challenge: Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars.*
 
-> **Results of the delivery catalog**, computed on 14 November 2026 (6 Moon and Mars sites, 47 Earth candidates, all with slope and relief). The team's validation is still in progress, and the numbers may change as data are added. *Resumen en español al final.*
+> **Results of the delivery catalog**, computed on 14 and 15 November 2026 (6 Moon and Mars sites, 56 Earth candidates, all with slope and relief). The team's validation is still in progress, and the numbers may change as data are added. *Resumen en español al final.*
 
 ## Why look for analogs on Earth
 
@@ -34,9 +34,9 @@ Each value is normalized to a 0–1 scale across all places, and the score is **
 
 ## What we found
 
-**For the Moon, the best matches are cold, steep, dry terrain.** The McMurdo Dry Valleys (Antarctica), already documented as a Mars analog, rank **first for all three lunar sites**: Peak Near Cabeus B (72.1), Malapert Massif (72.3) and Faustini Rim A (62.7). Licancabur Volcano, on the Bolivia–Chile border, is second at all three (69.8 for Cabeus and Malapert, 60.7 for Faustini), followed by Ojos del Salado Volcano (63.3 and 63.4), already studied as a Mars analog, and Socompa Volcano (62.0), also described as a Mars analog. These places match the slopes and relief of the lunar polar massifs and are among the driest or coldest on Earth. **Caution:** the temperature and precipitation of these three mountain candidates come from a coarse regional grid (tens of kilometres) and are biased; for example, Licancabur shows 14.7 °C on a 5,900 m summit. Their ranking rests mainly on slope and relief, which we checked against known elevations.
+**For the Moon, the best matches are cold, steep, dry terrain.** The McMurdo Dry Valleys (Antarctica), already documented as a Mars analog, rank **first for all three lunar sites**: Peak Near Cabeus B (72.1), Malapert Massif (72.3) and Faustini Rim A (62.7). Licancabur Volcano, on the Bolivia–Chile border, is second at all three (69.8 for Cabeus and Malapert, 60.7 for Faustini), followed by Ollagüe Volcano (68.4 for Cabeus, 68.2 for Malapert and 60.3 for Faustini), a less-studied place on the same border, then Ojos del Salado Volcano (63.3 and 63.4), already studied as a Mars analog, and Socompa Volcano (62.1 and 62.0), also described as a Mars analog. These places match the slopes and relief of the lunar polar massifs and are among the driest or coldest on Earth. **Caution:** the temperature and precipitation of these mountain candidates come from a coarse regional grid (tens of kilometres) and are biased; for example, Licancabur shows 14.7 °C on a 5,900 m summit. Their ranking rests mainly on slope and relief, which we checked against known elevations.
 
-**For Mars, the best matches are flat, hyper-arid desert plateaus, and the index puts documented analogs on top.** The hyper-arid core of the Atacama Desert near Yungay (Chile), a documented Mars analog, ranks **first for Jezero (82.1) and Gale (83.8)**. The Gilf Kebir plateau (Egypt and Libya), which a 1982 NASA report already compared with Mars, is second for both, and the Tibesti Mountains (Chad), also a known analog, third. Less-studied places such as the Siloli Desert, Harrat Khaybar and Laguna Colorada follow in the top 5. For Arcadia Planitia, the extremely flat Dasht-e Kavir salt desert and Taklamakan Desert lead with Gilf Kebir (all three 76.9).
+**For Mars, the best matches are flat, hyper-arid desert plateaus, and the index puts documented analogs on top.** The hyper-arid core of the Atacama Desert near Yungay (Chile), a documented Mars analog, ranks **first for Jezero (82.1) and Gale (83.8)**. The Gilf Kebir plateau (Egypt and Libya), which a 1982 NASA report already compared with Mars, is second for both, and the Tibesti Mountains (Chad), also a known analog, third for Jezero and fourth for Gale, where the less-studied Kumtag Desert (China) is third. Other less-studied places such as the Siloli Desert and Harrat Khaybar follow in the top 5. For Arcadia Planitia, the extremely flat Dasht-e Kavir salt desert and Taklamakan Desert lead with Gilf Kebir (all three 76.9).
 
 **Bolivia appears in every top 5.**
 
@@ -44,12 +44,12 @@ Each value is normalized to a 0–1 scale across all places, and the score is **
 | --- | --- | --- | --- |
 | Peak Near Cabeus B | Licancabur Volcano | 2 | 69.8 |
 | Malapert Massif | Licancabur Volcano | 2 | 69.8 |
-| Faustini Rim A | Licancabur Volcano | 3 | 60.6 |
-| Jezero crater | Siloli Desert ("Árbol de Piedra") | 3 | 79.4 |
-| Gale crater | Siloli Desert ("Árbol de Piedra") | 3 | 78.9 |
+| Faustini Rim A | Licancabur Volcano | 2 | 60.7 |
+| Jezero crater | Siloli Desert ("Árbol de Piedra") | 4 | 79.5 |
+| Gale crater | Siloli Desert ("Árbol de Piedra") | 5 | 79.0 |
 | Arcadia Planitia | Salar de Coipasa | 5 | 74.5 |
 
-The Siloli Desert and Laguna Colorada, both in the top 5 for Jezero and Gale, are less studied as analogs than the nearby Atacama. They are reachable high-altitude places where rovers and instruments could be tested in cold, dry, wind-swept terrain.
+The Siloli Desert (top 5 for Jezero and Gale) and Ollagüe Volcano (third at all three lunar sites) are less studied as analogs than the nearby Atacama. They are reachable high-altitude places where rovers and instruments could be tested in cold, dry, wind-swept terrain.
 
 **One unexpected result:** Licancabur is documented in the literature as a **Mars** analog (its summit lake), yet by terrain it is one of our closest matches to the lunar south pole massifs (second at two of the three).
 
@@ -65,7 +65,7 @@ The Siloli Desert and Laguna Colorada, both in the top 5 for Jezero and Gale, ar
 
 Partly, and we report it as it is.
 - **Mars:** three known analogs lead Jezero and Gale (the Atacama near Yungay first, Gilf Kebir second, Tibesti third), and others such as the Lut Desert and the Mars Desert Research Station (Utah) are in the top 10 for Jezero.
-- **Moon:** the seven places the literature already uses as **lunar** analogs rank only **12th to 39th** out of 47: Mauna Kea 12th to 17th, El Pinacate 15th to 17th, La Corona 20th, Askja 27th, Lava Beds 28th, El Malpaís 33rd and Undara 39th. They are much wetter and warmer than the polar massifs.
+- **Moon:** the seven places the literature already uses as **lunar** analogs rank only **16th to 46th** out of 56: Mauna Kea 16th to 21st, El Pinacate 20th to 21st, La Corona 24th, Askja 32nd, Lava Beds 33rd, El Malpaís 39th and Undara 46th. They are much wetter and warmer than the polar massifs.
 
 This suggests the index captures terrain and dryness, while **lunar analogs are probably chosen for properties our five variables do not measure**, such as rock type or soil. There is a second possible reason: two of those seven places, Mauna Kea and El Pinacate, are among the candidates whose temperature is biased (see above), so part of this weak result may come from bad temperature values and not only from missing variables. We have not tested that yet. Before treating the less-studied matches as discoveries, the team still has to check them against the qualitative tags and the literature.
 
@@ -75,7 +75,7 @@ The tool turns "this looks like Mars" into a measured, explainable comparison. A
 - Decide whether LOLA's 1064 nm lunar albedo can be compared with broadband albedo, and add Antarctic elevation data.
 - Add variables for rock type and soil.
 - Run a coarse global scan to find analogs outside our hand-picked list.
-- Validate the top matches in the field, starting with less-studied Bolivian places such as the Siloli Desert and Laguna Colorada.
+- Validate the top matches in the field, starting with less-studied Bolivian places such as Ollagüe Volcano and the Siloli Desert.
 
 **Data and credits:** NASA LRO (LOLA, Diviner, LROC), MGS MOLA, NASA POWER, NASA GIBS, Moon Trek and Mars Trek; Mars Climate Database (LMD, ESA, CNES); SRTM via Terrain Tiles on AWS; OpenStreetMap. Full list: `docs/ATRIBUCION.md`.
 
@@ -83,9 +83,9 @@ The tool turns "this looks like Mars" into a measured, explainable comparison. A
 
 ### Resumen en español
 
-Comparamos 6 sitios candidatos de la Luna y Marte con 47 lugares de la Tierra usando cinco variables derivadas de datos y modelos de NASA en la misma ventana de 10 × 10 km.
-- **Luna:** los mejores análogos son terrenos fríos, empinados y secos. Los **Valles Secos de McMurdo (Antártida)**, ya documentados como análogo de Marte, son los primeros en los tres sitios lunares y el **Licancabur (Bolivia–Chile)** es el segundo.
-- **Marte:** ganan mesetas desérticas planas y muy áridas, y el índice pone arriba a análogos ya documentados: el **núcleo hiperárido del Atacama (Yungay)**, Gilf Kebir y Tibesti quedan primero, segundo y tercero para Jezero y Gale.
-- **Bolivia:** aparece en el top 5 de los seis sitios (Licancabur, Siloli, Laguna Colorada y Coipasa).
+Comparamos 6 sitios candidatos de la Luna y Marte con 56 lugares de la Tierra usando cinco variables derivadas de datos y modelos de NASA en la misma ventana de 10 × 10 km.
+- **Luna:** los mejores análogos son terrenos fríos, empinados y secos. Los **Valles Secos de McMurdo (Antártida)**, ya documentados como análogo de Marte, son los primeros en los tres sitios lunares el **Licancabur (Bolivia–Chile)** es el segundo y el **Ollagüe (Bolivia–Chile)**, poco estudiado como análogo, el tercero.
+- **Marte:** ganan mesetas desérticas planas y muy áridas, y el índice pone arriba a análogos ya documentados: el **núcleo hiperárido del Atacama (Yungay)** y Gilf Kebir quedan primero y segundo para Jezero y Gale; el tercero es Tibesti en Jezero y el desierto de Kumtag, poco estudiado, en Gale.
+- **Bolivia:** aparece en el top 5 de los seis sitios (Licancabur, Ollagüe, Laguna Verde, Siloli y Coipasa).
 
 La analogía falla sobre todo por la **temperatura**: ningún lugar de la Tierra se acerca a los −126 a −160 °C del polo sur lunar. También fallan la **lluvia** y lo que la Tierra no puede reproducir: gravedad, vacío, atmósfera y radiación. Los análogos lunares que ya usa la literatura quedan lejos del primer lugar, lo que muestra que se eligen por razones que nuestras cinco variables no miden. Ojo: la temperatura y la lluvia de los volcanes y montañas andinos (Licancabur, Ojos del Salado, Socompa) vienen de una malla regional gruesa y están sesgadas; su posición se apoya sobre todo en la pendiente y el relieve. Son resultados de la versión 1 y la validación del equipo sigue en curso.

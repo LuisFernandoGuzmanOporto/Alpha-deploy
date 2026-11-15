@@ -15,7 +15,7 @@ El script de búsqueda es una primera criba; ninguna decisión se tomó solo con
 
 ## Resultado
 
-**7 pasan a `known: true`; 18 siguen `known: false`.** Ahora el catálogo tiene 29 conocidos y 18 poco estudiados (antes, 22 y 25). La primera pasada (14/11) dejó 6; la revisión del 15/11 corrigió la fuente de Undara y pasó a Socompa a conocido (ver sus filas).
+**7 pasan a `known: true`; 18 siguen `known: false`.** Con los 9 lugares agregados en la revisión final (ver más abajo), el catálogo tiene **56 candidatos: 31 conocidos y 25 poco estudiados** (al empezar la fase final eran 47: 22 y 25). La primera pasada (14/11) dejó 6; la revisión del 15/11 corrigió la fuente de Undara y pasó a Socompa a conocido (ver sus filas).
 
 | Lugar | Fuentes encontradas (DOI o id) | Decisión | Motivo |
 | --- | --- | --- | --- |
@@ -46,6 +46,34 @@ El script de búsqueda es una primera criba; ninguna decisión se tomó solo con
 | Salar de Arizaro | — | false | Sin resultados planetarios |
 
 "Sin resultados planetarios" significa que ninguna de las búsquedas devolvió un trabajo que nombrara el lugar junto a Marte, la Luna o un término de análogo. No prueba que no exista: falta una revisión bibliográfica completa, con bases de pago y literatura en otros idiomas.
+
+## Segunda ronda de búsqueda (15/11/2026)
+
+Para los 18 que siguen poco estudiados se repitió la búsqueda con otras fuentes: **Europe PMC** (resumen y texto completo de los artículos de acceso abierto, que alcanza hasta el cuerpo del artículo y no solo el resumen), **Semantic Scholar** y una segunda tanda de OpenAlex, Crossref y NTRS con nombres alternativos. Resultado: sin hallazgos nuevos.
+
+- **Namib:** el único artículo con "Mars" en el resumen (Frontiers in Microbiology 2017, fotogrametría de líquenes) trata del desierto central de grava, no del mar de arena, y solo menciona la astrobiología como aplicación; las demás coincidencias son las dunas Namib y High de Marte (Curiosity). Se queda `false`.
+- **Tengger y Taklamakan:** aparecen como origen de costras o microbios usados en experimentos, no como análogo del lugar. Se quedan `false`.
+- **Lago Eyre:** el único texto que lo nombra como ejemplo es la ponencia de NTRS de 1989; West et al. 2010 (*The geology of Australian Mars analogue sites*, PSS) probablemente lo incluye, pero está de pago y no se pudo leer. Se mantiene `true`, dudoso.
+- **Manjanggul:** en OpenAlex, Crossref, NTRS y Europe PMC solo hay estudios de sus microbios y de la distribución de tubos de lava de Jeju; el resumen de IAC-23 sigue sin poder leerse. Se mantiene `false`, dudoso.
+- **Uturuncu, Sajama, Laguna Colorada, Tunupa, Torotoro, Siloli, Arizaro, Harrat Khaybar, Badain Jaran, Etosha, Chott el Djerid, Dasht-e Kavir, Hoggar, Pamir:** 0 resultados con el nombre junto a Marte, la Luna o análogo.
+
+## Lugares agregados en la revisión final
+
+Para cumplir otra vez las metas del contrato (25 o más poco estudiados) se buscaron candidatos nuevos con el mismo método (OpenAlex con tres consultas, Crossref, NTRS y Europe PMC) **antes** de decidir su `known`, con coordenadas de Wikipedia y las cinco variables del pipeline.
+
+| Lugar | `known` | Evidencia | Notas |
+| --- | --- | --- | --- |
+| Makgadikgadi (Botsuana) | **true** (Marte) | Tres resúmenes de EPSC 2024: doi:10.5194/epsc2024-743, -991 y -590 | Solo resúmenes de congreso |
+| Desierto del Ténéré (Níger) | **true** (Marte) | doi:10.1029/2004gl019428 (GRL 2004), "The first terrestrial analogue to Martian dust devil tracks found in Ténéré Desert" | |
+| Volcán Ollagüe (Bolivia–Chile) | false | 0 en OpenAlex, Crossref, NTRS y Europe PMC | Queda **tercero en los tres sitios lunares** |
+| Volcán Tata Sabaya (Bolivia) | false | 0 en las cuatro fuentes (una ficha de NTRS sobre mapeo de volcanes andinos, sin encuadre planetario) | |
+| Valle de la Luna (La Paz) | false | 0 en las cuatro fuentes | |
+| Erg Chebbi (Marruecos) | false | 0 en las cuatro fuentes | |
+| Wadi Rum (Jordania) | false | Sin estudios planetarios del lugar: solo coincidencias de texto (la conferencia de astrogeología de Amán de 2010, un concurso de diseño espacial y una reseña de 2022) | Quinto o sexto en los sitios lunares |
+| Desierto de Kumtag (China) | false | 0 en las cuatro fuentes | Tercero en Gale |
+| Lençóis Maranhenses (Brasil) | false | 0 en las cuatro fuentes | Muy húmedo (1399 mm al año): la analogía se limita a las dunas |
+
+Se descartaron para el catálogo Laguna Hedionda (sin coordenadas en Wikipedia) y Sol de Mañana y el desierto de Dalí (misma celda de NASA POWER que Laguna Colorada y Siloli: habrían repetido los mismos valores de temperatura y lluvia). Simpson se descartó porque su artículo trata de la formación de dunas "en superficies planetarias" sin nombrarlo como análogo de un cuerpo. **Cambios en los rankings:** Ollagüe desplaza a Ojos del Salado y Socompa a los puestos 4.º y 5.º en Cabeus y Malapert; Kumtag es tercero en Gale; y como todos los lugares existentes bajan algunos puestos, se actualizaron las fichas y los textos.
 
 ## Coordenadas verificadas (tarea 1b)
 

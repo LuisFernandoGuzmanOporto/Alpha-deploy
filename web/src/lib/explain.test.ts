@@ -66,7 +66,7 @@ describe("explicaciones con plantilla (F7)", () => {
 
   it("el primero de Jezero se explica con su puesto y su mayor diferencia", () => {
     const first = allExplanations("en").find((e) => e.pair.startsWith("mars-jezero"))!;
-    expect(first.sentences[0]).toMatch(/: 1st of 47 places for Crater Jezero, with 82\.1\/100/);
+    expect(first.sentences[0]).toMatch(/: 1st of 56 places for Crater Jezero, with 82\.1\/100/);
     expect(first.sentences[2]).toMatch(/^The largest difference is in surface temperature/);
   });
 });

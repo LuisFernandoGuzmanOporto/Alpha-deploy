@@ -73,6 +73,12 @@ export const COUNTRIES_EN: Record<string, string> = {
   Noruega: "Norway",
   Tayikistán: "Tajikistan",
   Túnez: "Tunisia",
+  "Bolivia y Chile": "Bolivia and Chile",
+  "Marruecos": "Morocco",
+  "Jordania": "Jordan",
+  "Brasil": "Brazil",
+  "Botsuana": "Botswana",
+  "Níger": "Niger",
 };
 
 export const CANDIDATE_NAMES_EN: Record<string, string> = {
@@ -123,6 +129,15 @@ export const CANDIDATE_NAMES_EN: Record<string, string> = {
   "earth-desierto-de-taklamakan": "Taklamakan Desert",
   "earth-montanas-del-pamir": "Pamir high-altitude cold desert",
   "earth-salar-de-arizaro": "Salar de Arizaro (salt flat)",
+  "earth-volcan-ollague": "Ollagüe Volcano",
+  "earth-volcan-tata-sabaya": "Tata Sabaya Volcano",
+  "earth-valle-de-la-luna-la-paz": "Valley of the Moon (La Paz)",
+  "earth-erg-chebbi": "Erg Chebbi",
+  "earth-wadi-rum": "Wadi Rum",
+  "earth-desierto-de-kumtag": "Kumtag Desert",
+  "earth-lencois-maranhenses": "Lençóis Maranhenses",
+  "earth-makgadikgadi-botsuana": "Makgadikgadi Salt Pans",
+  "earth-desierto-del-tenere": "Ténéré Desert",
 };
 
 /** `why` escrito a mano. Los que sigue la plantilla "Propuesto por sus valores…" los traduce `translateWhy`. */
@@ -163,6 +178,8 @@ export const CANDIDATE_WHY_EN: Record<string, string> = {
   "earth-lago-eyre-australia": "Playa basin cited by NASA as an example of saline lakes analogous to early Mars.",
   "earth-undara-australia": "Lava tube system proposed as a possible lunar analog (Atkinson, 1991 and 2010).",
   "earth-volcan-socompa": "Volcano of the Puna de Atacama with fumaroles above 6,000 m: its summit was compared with Mars (University of Colorado Boulder, 2009) and it belongs to the high-altitude biome of the Atacama volcanoes, described as the best terrestrial analog of the Martian surface (Schmidt et al., 2018).",
+  "earth-makgadikgadi-botsuana": "Salt pans of an ancient giant lake, studied as an analog of ancient aqueous environments on Mars (evaporite minerals, clays and silica).",
+  "earth-desierto-del-tenere": "Sand plain where the first terrestrial analogue to the tracks of Martian dust devils was found.",
 };
 
 const CELL = "The NASA POWER cell differs by more than 500 m from the elevation of the point, so the temperature may be biased (see the candidate's notes).";
@@ -170,6 +187,8 @@ const TOP10 =
   "It reaches the top 10 of the lunar sites only because of slope and relief: it has no permanently shadowed ice and none of the cold of the lunar poles.";
 const TOP10_FAUSTINI = TOP10.replace("of the lunar sites", "of Faustini Rim A");
 const TOP10_CABEUS_MALAPERT = TOP10.replace("of the lunar sites", "of Peak Near Cabeus B and Malapert");
+const TOP10_SOCOMPA = TOP10.replace("of the lunar sites", "of Peak Near Cabeus B and Malapert (5th at both)");
+const TOP10_SAJAMA = TOP10.replace("of the lunar sites", "of Peak Near Cabeus B (7th) and Malapert (8th)");
 const NO_STUDY = "We found no study that uses it as a planetary analog.";
 const LAVA_TUBE_USE =
   "Team proposal, no published planetary study: practice exploring lava tubes, which on the Moon and Mars could serve as shelter.";
@@ -188,7 +207,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     ],
     breaks_down: [
       "Mean surface temperature is 19.0 °C (NASA POWER), about 70 °C more than at Gale (−50.7 °C) and about 179 °C more than at Faustini Rim A (−160.4 °C, Diviner).",
-      TOP10_FAUSTINI,
+      "It is 11th at Faustini Rim A (53.6) and 15th at Peak Near Cabeus B and Malapert: it does not reach the top 10 of any lunar site.",
       "The point is the Yungay sampling pit, but temperature and precipitation come from a regional NASA POWER cell (tens of kilometres wide), not from the exact site.",
     ],
   },
@@ -269,7 +288,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
       "The Mars-analog framing comes from a university news item (2009) and a review article on the Atacama volcanoes (Schmidt et al., 2018), not from a study dedicated only to Socompa.",
       "Life depends on volcanic heat, which the lunar polar sites do not have.",
       CELL,
-      TOP10,
+      TOP10_SOCOMPA,
     ],
   },
   "earth-nevado-sajama": {
@@ -280,7 +299,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     breaks_down: [
       "Its ice comes from snowfall; at the lunar poles the ice would be trapped in permanently shadowed craters, without precipitation.",
       `The NASA POWER cell gives 376 mm of annual precipitation, among the highest of the lunar top 10. ${CELL}`,
-      TOP10,
+      TOP10_SAJAMA,
     ],
   },
   "earth-torotoro-umajalanta": {
@@ -309,7 +328,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     processes: ["Erosion of ancient volcanic domes that leaves isolated peaks."],
     use_cases: ["Team proposal, no published study: compare eroded volcanic peaks with highland reliefs on Mars."],
     breaks_down: [
-      "It is 11th at Faustini Rim A with a low score (52.5): the match is weak and only topographic.",
+      "It is 14th at Faustini Rim A with a low score (52.5): the match is weak and only topographic.",
       `Mean temperature of 22.5 °C (NASA POWER), about 183 °C above Faustini Rim A (Diviner). ${CELL}`,
     ],
   },
@@ -576,7 +595,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
       "Study a geological, environmental and ecological analog of the Martian surface and near surface (Salvatore and Levy, 2021).",
     ],
     breaks_down: [
-      "It is first at all three lunar sites: Peak Near Cabeus B (72.1), Malapert Massif (72.3) and Faustini Rim A (62.7), thanks to its mean slope of 15.3° and relief of 418 m (Copernicus DEM GLO-30); on Mars it ranks between 45th and 46th.",
+      "It is first at all three lunar sites: Peak Near Cabeus B (72.1), Malapert Massif (72.3) and Faustini Rim A (62.7), thanks to its mean slope of 15.3° and relief of 418 m (Copernicus DEM GLO-30); on Mars it ranks between 54th and 55th.",
       "Mean temperature of −26.7 °C (NASA POWER), the lowest in the catalog, but about 99 °C more than Peak Near Cabeus B (−125.6 °C, Diviner) and about 51 °C more than Arcadia Planitia (−77.9 °C), which has permafrost.",
       "Its albedo (0.56) is more than double that of Arcadia Planitia (0.21), because terrestrial albedo includes snow and ice.",
       "The point is the approximate center of the valleys: the variables describe the region, not a specific valley.",
@@ -626,7 +645,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     breaks_down: [
       "Mean temperature of −4.4 °C (NASA POWER), about 156 °C more than Faustini Rim A (−160.4 °C, Diviner).",
       "It receives about 862 mm of annual precipitation (NASA POWER); the Moon has no rain.",
-      "It is 27th at all three lunar sites, with scores of 43.6 to 44.2: the match is weak.",
+      "It is 32nd at all three lunar sites, with scores of 43.7 to 44.2: the match is weak.",
     ],
   },
   "earth-mauna-kea-hawai": {
@@ -654,7 +673,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     breaks_down: [
       "Mean temperature of 18.7 °C (NASA POWER), about 68 °C more than Jezero (−49.4 °C).",
       "It receives about 453 mm of annual precipitation (NASA POWER) and it is a river with liquid water at the surface.",
-      "The analogy is one of chemistry and mineralogy, not of terrain: it is 13th at Jezero (73.1) and does not reach the top 10.",
+      "The analogy is one of chemistry and mineralogy, not of terrain: it is 14th at Jezero (73.1) and does not reach the top 10.",
     ],
   },
   "earth-svalbard-sverrefjellet": {
@@ -663,7 +682,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     processes: ["Carbonates in basaltic rock, compared with the carbonate globules of the Martian meteorite ALH 84001 (GSA Abstracts, 2016)."],
     use_cases: ["Compare the carbonates of a terrestrial basalt with those of the Martian meteorite ALH 84001 (GSA Abstracts, 2016)."],
     breaks_down: [
-      "Mean slope of 15.7° and relief of 256 m (Copernicus DEM GLO-30, without the fjord, which takes up 15.5 % of the window): it is 7th at Peak Near Cabeus B (60.0) and Malapert (60.2) and 18th at Faustini Rim A (50.6), but last on Mars.",
+      "Mean slope of 15.7° and relief of 256 m (Copernicus DEM GLO-30, without the fjord, which takes up 15.5 % of the window): it is 9th at Peak Near Cabeus B (60.0) and Malapert (60.2) and 22nd at Faustini Rim A (50.6), but last on Mars.",
       "Mean temperature of −8.1 °C (NASA POWER), about 43 °C more than Gale (−50.7 °C).",
       "Its albedo (0.54) is more than double that of Gale (0.24), because terrestrial albedo includes snow and ice.",
     ],
@@ -694,7 +713,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     breaks_down: [
       "Mean temperature of 5.2 °C (NASA POWER), about 56 °C more than Gale (−50.7 °C).",
       "It receives about 416 mm of annual precipitation (NASA POWER); Mars has no rain.",
-      "It is 17th at Gale (72.2) and 19th at Jezero (71.2): it does not reach the top 10.",
+      "It is 19th at Gale (72.2) and 21st at Jezero (71.2): it does not reach the top 10.",
     ],
   },
   "earth-pinacate-mexico": {
@@ -708,7 +727,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     breaks_down: [
       "Mean temperature of 23.4 °C (NASA POWER), about 184 °C more than Faustini Rim A (−160.4 °C, Diviner). The point is 814 m above the NASA POWER cell, so the temperature may be biased (see the candidate's notes).",
       "It receives about 139 mm of annual precipitation (NASA POWER); the Moon has no rain.",
-      "It is 15th at Faustini Rim A (51.2), 16th at Malapert (50.7) and 17th at Peak Near Cabeus B (50.7): the match is weak and only topographic.",
+      "It is 20th at Faustini Rim A (51.2) and at Malapert (50.7), and 21st at Peak Near Cabeus B (50.7): the match is weak and only topographic.",
     ],
   },
   "earth-la-corona-lanzarote": {
@@ -723,7 +742,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
       "Consult the research on terrestrial caves and lava tubes (von Ehrenfried, 2019).",
     ],
     breaks_down: [
-      "Mean slope of 5.0° and relief of 116 m using land points only (Copernicus DEM GLO-30; 48.3 % of the 10 × 10 km window, the rest is sea): it is 20th at all three lunar sites (47.5 to 48.0) and between 21st and 33rd on Mars.",
+      "Mean slope of 5.0° and relief of 116 m using land points only (Copernicus DEM GLO-30; 48.3 % of the 10 × 10 km window, the rest is sea): it is 24th at all three lunar sites (47.5 to 48.0) and between 23rd and 38th on Mars.",
       "Mean temperature of 20.4 °C (NASA POWER), about 98 °C more than Arcadia Planitia (−77.9 °C).",
       "Its albedo (0.03) is much lower than that of Arcadia Planitia (0.21).",
     ],
@@ -749,7 +768,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     use_cases: [LAVA_TUBE_USE],
     breaks_down: [
       NO_STUDY,
-      "Mean slope of 1.8° and relief of 61 m using land points only (Copernicus DEM GLO-30; 84.0 % of the window, the rest is sea): it is 37th at all three lunar sites and between 22nd and 34th on Mars.",
+      "Mean slope of 1.8° and relief of 61 m using land points only (Copernicus DEM GLO-30; 84.0 % of the window, the rest is sea): it is 44th at all three lunar sites and between 24th and 39th on Mars.",
       "It receives about 1,629 mm of annual precipitation (NASA POWER), more than any site on Mars, and 18.3 °C on average, about 68 °C more than Jezero.",
     ],
   },
@@ -792,6 +811,106 @@ export const FICHAS_EN: Record<string, FichaEn> = {
       NO_STUDY,
       "Mean temperature of 22.6 °C (NASA POWER), about 101 °C more than Arcadia Planitia (−77.9 °C), which has permafrost.",
       "Its albedo (0.43) is double that of Arcadia Planitia (0.21).",
+    ],
+  },
+  "earth-volcan-ollague": {
+    summary:
+      "Andesite stratovolcano on the Bolivia–Chile border, with a 5,868 m summit whose crater opens to the south. On the western rim of the crater there are lava domes, and the youngest has an active fumarole visible from afar. It is mostly Pleistocene in age.",
+    processes: ["Pleistocene andesitic volcanism in the Central Volcanic Zone of the Andes (Wikipedia).", "Active fumarole on a young lava dome on the crater rim (Wikipedia)."],
+    use_cases: ["Team proposal, no published study: compare a large Andean volcano with the lunar polar massifs by slope and relief."],
+    breaks_down: [
+      "We found no study that uses it as a planetary analog.",
+      "It is 3rd at all three lunar sites (60.3 at Faustini Rim A, 68.4 at Peak Near Cabeus B and 68.2 at Malapert) only because of slope and relief: it has no permanently shadowed ice and none of the cold of the lunar poles.",
+      "Mean temperature of 7.3 °C (NASA POWER), about 168 °C above Faustini Rim A (-160.4 °C, Diviner). The NASA POWER cell differs by more than 500 m from the elevation of the point, so the temperature may be biased (see the candidate's notes).",
+    ],
+  },
+  "earth-volcan-tata-sabaya": {
+    summary:
+      "5,430 m volcano in Bolivia, north of the Salar de Coipasa, made of andesite rocks. Its southern flank collapsed about 12,000 years ago and the debris, about 6 km³, fell into a lake that then covered the salt flat.",
+    processes: ["Collapse of the southern flank and a debris-avalanche deposit over an ancient lake (Wikipedia)."],
+    use_cases: ["Team proposal, no published study: study flank-collapse deposits next to a salt plain and compare them with those of Martian volcanoes."],
+    breaks_down: [
+      "We found no study that uses it as a planetary analog.",
+      "It is 6th at Faustini Rim A (58.2) only because of slope and relief: it has no permanently shadowed ice and none of the cold of the lunar poles.",
+      "Mean temperature of 8.6 °C (NASA POWER), about 58 °C above Jezero (-49.4 °C). The NASA POWER cell differs by more than 500 m from the elevation of the point, so the temperature may be biased (see the candidate's notes).",
+    ],
+  },
+  "earth-valle-de-la-luna-la-paz": {
+    summary:
+      "Protected municipal area of 15 hectares, about 10 km south of downtown La Paz (Bolivia). Its soil is clay and sandstone, not solid rock, and erosion has formed craters, ditches, spires and caves. Its name comes from the landscape's resemblance to the Moon.",
+    processes: ["Erosion of clay and sandstone that forms spires, ditches and caves (Wikipedia)."],
+    use_cases: ["Team proposal, no published study: compare eroded landscapes in soft terrain with lunar surfaces."],
+    breaks_down: [
+      "We found no study that uses it as a planetary analog.",
+      "Its soil is soft clay and sandstone; the lunar surface is impact regolith and volcanic rock.",
+      "It receives about 646 mm of annual precipitation (NASA POWER); the Moon has no rain. The NASA POWER cell is about 564 m above the point, so the temperature may be biased (see the candidate's notes).",
+      "It is 15th at Faustini Rim A (52.3); its mean temperature of 9.5 °C is about 170 °C above that site (-160.4 °C, Diviner).",
+    ],
+  },
+  "earth-erg-chebbi": {
+    summary:
+      "One of Morocco's ergs: a sea of dunes formed by wind-blown sand, on the far western edge of the Sahara. Its dunes rise up to 150 m above the hamada (rocky desert) and span about 28 km from north to south and 5 to 7 km from east to west, along the Algerian border.",
+    processes: ["Dunes formed by wind-blown sand (Wikipedia)."],
+    use_cases: ["Team proposal, no published study: compare its dunes with Martian dune fields."],
+    breaks_down: [
+      "We found no study that uses it as a planetary analog.",
+      "Mean temperature of 22.2 °C (NASA POWER), about 72 °C above Jezero (-49.4 °C).",
+      "It is 11th at Gale (75.2) and 16th at Jezero (72.7): it does not reach the top 10 on Mars.",
+    ],
+  },
+  "earth-wadi-rum": {
+    summary:
+      "Valley cut into sandstone and granite in southern Jordan, near the Saudi Arabian border and about 60 km east of Aqaba. At 720 km² it is the largest wadi in the country and has been a UNESCO World Heritage site since 2011.",
+    processes: ["Erosion of a valley in sandstone and granite (Wikipedia)."],
+    use_cases: ["Team proposal, no published study: practice vehicle mobility in an arid valley with rock walls."],
+    breaks_down: [
+      "We found no study that uses it as a planetary analog.",
+      "It is 5th at Faustini Rim A (58.7) and 6th at Peak Near Cabeus B (61.3) and Malapert (61.3) only because of slope and relief: it has no permanently shadowed ice and none of the cold of the lunar poles.",
+      "Mean temperature of 19.7 °C (NASA POWER), about 69 °C above Jezero (-49.4 °C).",
+    ],
+  },
+  "earth-desierto-de-kumtag": {
+    summary:
+      "Arid desert of northwestern China, of about 22,900 km², sometimes considered part of the Gobi, bordered by Dunhuang to the east. It has large accumulations of wind-blown sand at the foot of the desert ranges, with dunes up to about 76 m high.",
+    processes: ["Accumulation of wind-blown sand in dunes along the desert ranges (Wikipedia)."],
+    use_cases: ["Team proposal, no published study: compare its dunes and plains with those of Mars."],
+    breaks_down: [
+      "We found no study that uses it as a planetary analog.",
+      "It is 3rd at Gale (80.1) and 7th at Jezero (78.1), but its mean temperature of 13.7 °C (NASA POWER) is about 64 °C above that of Gale (-50.7 °C).",
+      "Scores close to first place must be read with care: the index measures neither sand composition nor gravity.",
+    ],
+  },
+  "earth-lencois-maranhenses": {
+    summary:
+      "National park in the state of Maranhão (northeastern Brazil), of about 155,000 ha, with 70 km of coastline and an interior of rolling sand dunes. In the rainy season the valleys between the dunes fill with freshwater lagoons, which cannot drain because of the impermeable rock beneath.",
+    processes: ["Rolling dunes with seasonal freshwater lagoons between them (Wikipedia)."],
+    use_cases: ["Team proposal, no published study: compare dune fields with seasonal water to Martian dune and lake environments."],
+    breaks_down: [
+      "We found no study that uses it as a planetary analog.",
+      "It receives about 1399 mm of annual precipitation (NASA POWER), more than any site on Mars; the analogy is limited to the shape of the dunes.",
+      "Mean temperature of 27.8 °C (NASA POWER), about 106 °C above Arcadia Planitia (-77.9 °C). It is 23rd at Arcadia Planitia (65.2) and 52nd at Gale (58.8).",
+    ],
+  },
+  "earth-makgadikgadi-botsuana": {
+    summary:
+      "One of the largest salt flats in the world, in northeastern Botswana, in the middle of the dry savanna. It is what remains of the enormous Lake Makgadikgadi, which covered more area than Switzerland and dried up tens of thousands of years ago. Three 2024 conference abstracts propose it as an analog of ancient aqueous environments on Mars.",
+    processes: ["Evaporite minerals and clays derived from fluvio-lacustrine sediments (EPSC 2024).", "Hydrated silica and clays from an ancient playa and lake environment (EPSC 2024)."],
+    use_cases: ["Identify and map similar fluvio-lacustrine environments on Mars using visible and infrared light spectra (EPSC 2024)."],
+    breaks_down: [
+      "It receives about 391 mm of annual precipitation (NASA POWER) and its mean temperature is 25.2 °C, about 75 °C above Jezero; Mars has no rain.",
+      "The three studies are 2024 conference abstracts: we have not yet found field campaigns published in journals.",
+      "It is 6th at Arcadia Planitia (72.3) because of its almost flat terrain, but 52nd at Faustini Rim A.",
+    ],
+  },
+  "earth-desierto-del-tenere": {
+    summary:
+      "Large sand plain in the south-central Sahara, of more than 400,000 km², between northeastern Niger and western Chad. Its central part holds the Erg of Bilma, a dune field. A 2004 paper reported the first terrestrial analogue to the tracks left by Martian dust devils.",
+    processes: ["Dunes of the Erg of Bilma (Wikipedia).", "Dust devils that leave tracks on the surface, analogous to those on Mars (Geophysical Research Letters, 2004)."],
+    use_cases: ["Compare dust-devil tracks with those observed from orbit on Mars (Geophysical Research Letters, 2004)."],
+    breaks_down: [
+      "Its albedo (0.5) is much higher than that of Jezero (0.17), Gale (0.24) and Arcadia Planitia (0.21).",
+      "It receives about 66 mm of annual precipitation (NASA POWER) and its mean temperature is 26.6 °C, about 76 °C above Jezero.",
+      "It is 43rd at Jezero (62.4) and 34th at Gale (64.9): the index leaves it mid-table.",
     ],
   },
 };

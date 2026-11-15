@@ -1055,5 +1055,186 @@
     "tag_sources": {
       "evaporite": "https://en.wikipedia.org/wiki/Salar_de_Arizaro"
     }
+  },
+  {
+    "id": "earth-volcan-ollague",
+    "name": "Volcán Ollagüe",
+    "country": "Bolivia y Chile",
+    "is_bolivia": true,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": -21.28333333,
+    "lon": -68.18333333,
+    "coord_source": "Wikipedia, artículo 'Ollagüe' (https://en.wikipedia.org/wiki/Ollag%C3%BCe)",
+    "why": "",
+    "references": [],
+    "tags_pending": "Etiquetas pendientes: es un estratovolcan de andesita con una fumarola en su cima; ninguna etiqueta del vocabulario cerrado tiene respaldo citable"
+  },
+  {
+    "id": "earth-volcan-tata-sabaya",
+    "name": "Volcán Tata Sabaya",
+    "country": "Bolivia",
+    "is_bolivia": true,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": -19.13333333,
+    "lon": -68.53333333,
+    "coord_source": "Wikipedia, artículo 'Tata Sabaya' (https://en.wikipedia.org/wiki/Tata_Sabaya)",
+    "why": "",
+    "references": [],
+    "tags_pending": "Etiquetas pendientes: es un estratovolcan aislado, no un campo volcanico; ninguna etiqueta del vocabulario cerrado tiene respaldo citable"
+  },
+  {
+    "id": "earth-valle-de-la-luna-la-paz",
+    "name": "Valle de la Luna (La Paz)",
+    "country": "Bolivia",
+    "is_bolivia": true,
+    "known": false,
+    "analog_for": [
+      "moon"
+    ],
+    "tags": [],
+    "lat": -16.56722222,
+    "lon": -68.09444444,
+    "coord_source": "Wikipedia, artículo 'Valle de la Luna (Bolivia)' (https://en.wikipedia.org/wiki/Valle_de_la_Luna_(Bolivia))",
+    "why": "",
+    "references": [],
+    "tags_pending": "Etiquetas pendientes: es un paisaje de arcilla y arenisca erosionada; ninguna etiqueta del vocabulario cerrado tiene respaldo citable"
+  },
+  {
+    "id": "earth-erg-chebbi",
+    "name": "Erg Chebbi",
+    "country": "Marruecos",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [
+      "aeolian-dunes"
+    ],
+    "lat": 31.16666667,
+    "lon": -3.98333333,
+    "coord_source": "Wikipedia, artículo 'Erg Chebbi' (https://en.wikipedia.org/wiki/Erg_Chebbi)",
+    "why": "",
+    "references": [],
+    "tag_sources": {
+      "aeolian-dunes": "https://en.wikipedia.org/wiki/Erg_Chebbi"
+    }
+  },
+  {
+    "id": "earth-wadi-rum",
+    "name": "Wadi Rum",
+    "country": "Jordania",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [],
+    "lat": 29.59305556,
+    "lon": 35.42,
+    "coord_source": "Wikipedia, artículo 'Wadi Rum' (https://en.wikipedia.org/wiki/Wadi_Rum)",
+    "why": "",
+    "references": [],
+    "tags_pending": "Etiquetas pendientes: es un valle excavado en arenisca y granito; ninguna etiqueta del vocabulario cerrado tiene respaldo citable"
+  },
+  {
+    "id": "earth-desierto-de-kumtag",
+    "name": "Desierto de Kumtag",
+    "country": "China",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [
+      "aeolian-dunes"
+    ],
+    "lat": 39.8,
+    "lon": 92.2,
+    "coord_source": "Wikipedia, artículo 'Kumtag Desert' (https://en.wikipedia.org/wiki/Kumtag_Desert)",
+    "why": "",
+    "references": [],
+    "tag_sources": {
+      "aeolian-dunes": "https://en.wikipedia.org/wiki/Kumtag_Desert"
+    }
+  },
+  {
+    "id": "earth-lencois-maranhenses",
+    "name": "Lençóis Maranhenses",
+    "country": "Brasil",
+    "is_bolivia": false,
+    "known": false,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [
+      "aeolian-dunes"
+    ],
+    "lat": -2.53333333,
+    "lon": -43.11666667,
+    "coord_source": "Wikipedia, artículo 'Lençóis Maranhenses National Park' (https://en.wikipedia.org/wiki/Len%C3%A7%C3%B3is_Maranhenses_National_Park)",
+    "why": "",
+    "references": [],
+    "tag_sources": {
+      "aeolian-dunes": "https://en.wikipedia.org/wiki/Len%C3%A7%C3%B3is_Maranhenses_National_Park"
+    }
+  },
+  {
+    "id": "earth-makgadikgadi-botsuana",
+    "name": "Salinas de Makgadikgadi",
+    "country": "Botsuana",
+    "is_bolivia": false,
+    "known": true,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [
+      "evaporite"
+    ],
+    "lat": -20.8,
+    "lon": 25.33333333,
+    "coord_source": "Wikipedia, artículo 'Makgadikgadi Pan' (https://en.wikipedia.org/wiki/Makgadikgadi_Pan)",
+    "why": "Salinas de un antiguo lago gigante, estudiadas como análogo de ambientes acuosos antiguos de Marte (minerales evaporíticos, arcillas y sílice).",
+    "references": [
+      "https://doi.org/10.5194/epsc2024-743",
+      "https://doi.org/10.5194/epsc2024-991",
+      "https://doi.org/10.5194/epsc2024-590"
+    ],
+    "tag_sources": {
+      "evaporite": "https://doi.org/10.5194/epsc2024-743"
+    }
+  },
+  {
+    "id": "earth-desierto-del-tenere",
+    "name": "Desierto del Ténéré",
+    "country": "Níger",
+    "is_bolivia": false,
+    "known": true,
+    "analog_for": [
+      "mars"
+    ],
+    "tags": [
+      "aeolian-dunes",
+      "dust-activity"
+    ],
+    "lat": 17.58333333,
+    "lon": 10.91666667,
+    "coord_source": "Wikipedia, artículo 'Ténéré' (https://en.wikipedia.org/wiki/T%C3%A9n%C3%A9r%C3%A9)",
+    "why": "Llanura de arena donde se encontraron las primeras huellas terrestres análogas a las de los remolinos de polvo de Marte.",
+    "references": [
+      "https://doi.org/10.1029/2004gl019428"
+    ],
+    "tag_sources": {
+      "aeolian-dunes": "https://en.wikipedia.org/wiki/T%C3%A9n%C3%A9r%C3%A9",
+      "dust-activity": "https://doi.org/10.1029/2004gl019428"
+    }
   }
 ]
