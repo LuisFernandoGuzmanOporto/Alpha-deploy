@@ -8,6 +8,7 @@ Dueño: Joel. Cada fallo va como issue de GitHub con pasos para reproducir. Pasa
 - **Cómo:** 34 comprobaciones automáticas con Chrome y **clics y teclas reales** (no eventos simulados), en español e inglés. Chequeos sobre la web en inglés: `?lang=en`.
 - **Datos:** reales (6 sitios, 47 candidatos, 47 fichas desde la ampliación posterior a esta pasada). `python pipeline/validate.py`: 0 errores. `npm test` 61/61; `tsc` y `npm run build` sin errores.
 - **Resultado: 34 de 34 OK.**
+- **Repetida después de completar los datos** (pendiente y relieve de McMurdo, Svalbard, La Corona y Manjanggul con Copernicus DEM, etiquetas de MDRS y el crédito de Copernicus en el pie): 34 de 34 OK otra vez, también a 375 y 768 px. Esos cambios mueven los rankings lunares (47 pares; McMurdo es primero en Cabeus y Malapert).
 
 | Grupo | Qué se comprobó | Estado |
 | --- | --- | --- |

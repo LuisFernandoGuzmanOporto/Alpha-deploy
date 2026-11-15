@@ -16,6 +16,7 @@ Ya entregado: S-1 a S-4 (revisión del índice, validación, sensibilidad y `web
 - [ ] **S-6, tesis de descubrimiento:** confirmar que está escrita: los `known: true` aparecen arriba para sus sitios, y cuántos poco estudiados entran al top 5 y por qué.
 - [ ] **Re-correr el pipeline** cuando Lian complete etiquetas y variables faltantes, validar y commitear `web/public/data/*.json`. Hoy hay 24 candidatos sin etiquetas.
 - [ ] **S-7, escaneo global (F12):** no existe `scan.json`. Decidir y dejar escrito si se descarta, porque solo vale con un camino de datos que no exija descargas enormes.
+- [x] **Recalculado con el catálogo completo:** los cuatro lugares que no tenían pendiente ni relieve ya los tienen (Copernicus DEM), así que los rankings lunares pasan de 43 a 47 pares. Se volvió a correr `pipeline/sensitivity.py` y se actualizaron las tablas de sensibilidad y validación de `METODOLOGIA.md` y `METODOLOGIA.en.md` (59 de 60 pruebas de pesos con al menos cuatro nombres; 14 de 30 puestos del top 5 son poco estudiados).
 - [x] **Inglés (#25):** `docs/METODOLOGIA.en.md` y la web lo muestra con `?lang=en`. Si cambias `METODOLOGIA.md`, actualiza también la versión en inglés.
 
 ## Reglas

@@ -46,7 +46,9 @@
       "extreme-cold": "https://en.wikipedia.org/wiki/McMurdo_Dry_Valleys",
       "hyper-arid": "https://en.wikipedia.org/wiki/McMurdo_Dry_Valleys",
       "permafrost": "https://en.wikipedia.org/wiki/McMurdo_Dry_Valleys"
-    }
+    },
+    "dem": "copernicus-glo30",
+    "land_only": true
   },
   {
     "id": "earth-haughton-isla-devon",
@@ -78,16 +80,24 @@
     "analog_for": [
       "mars"
     ],
-    "tags": [],
+    "tags": [
+      "evaporite",
+      "hydrated-minerals"
+    ],
     "lat": 38.4065,
     "lon": -110.7919,
     "coord_source": "Wikipedia, artículo 'Mars Desert Research Station' (https://en.wikipedia.org/wiki/Mars_Desert_Research_Station)",
     "why": "Estación de simulación de Marte en un desierto de Utah, usada como sitio análogo.",
     "references": [
       "https://doi.org/10.1016/j.pss.2025.106038",
-      "https://doi.org/10.15560/20.5.1096"
+      "https://doi.org/10.15560/20.5.1096",
+      "https://doi.org/10.1017/s1473550411000115",
+      "https://doi.org/10.1017/s1473550411000103"
     ],
-    "tags_pending": "Etiquetas pendientes: no se encontro una fuente abierta que describa la geologia local con el vocabulario cerrado (a verificar)"
+    "tag_sources": {
+      "evaporite": "https://doi.org/10.1017/s1473550411000115",
+      "hydrated-minerals": "https://doi.org/10.1017/s1473550411000115"
+    }
   },
   {
     "id": "earth-dallol-danakil",
@@ -234,7 +244,9 @@
     ],
     "tag_sources": {
       "basalt": "https://en.wikipedia.org/wiki/Sverrefjellet"
-    }
+    },
+    "dem": "copernicus-glo30",
+    "land_only": true
   },
   {
     "id": "earth-kau-kilauea-hawai",
@@ -363,12 +375,14 @@
     ],
     "lat": 29.158,
     "lon": -13.436,
-    "coord_source": "Coordenada aproximada del volcán La Corona, sin verificar contra un gazetteer: a verificar",
+    "coord_source": "Wikipedia, articulos 'Cueva de los Verdes' (29,1611 N, 13,4389 O) y 'Jameos del Agua' (29,1572 N, 13,4305 O), dos tramos del tubo volcanico de La Corona segun el Geoparque de Lanzarote (https://geoparquelanzarote.org/en/geositio/lz06-tubo-volcanico-de-la-corona-atlantida-2/); el punto usado queda entre ambos, a unos 0,4 km de cada uno",
     "why": "Tubo de lava estudiado como análogo planetario para cuevas de la Luna y Marte.",
     "references": [
       "https://doi.org/10.5194/egusphere-egu25-6513",
       "https://doi.org/10.1007/978-3-030-05408-3_4"
-    ]
+    ],
+    "dem": "copernicus-glo30",
+    "land_only": true
   },
   {
     "id": "earth-desierto-de-lut-iran",
@@ -452,7 +466,7 @@
       "https://doi.org/10.1017/cbo9780511536014.015",
       "https://en.wikipedia.org/wiki/Licancabur_Lake"
     ],
-    "tags_pending": "Etiquetas pendientes: es un lago de crater en un estratovolcan aislado; ninguna etiqueta del vocabulario cerrado tiene respaldo citable (a verificar)"
+    "tags_pending": "Etiquetas pendientes: es un estratovolcan aislado y sin glaciares (Wikipedia); el unico estudio de suelos del volcan (Gjorup et al. 2019, doi:10.1002/ppp.2029, entre 4426 y 5061 m) no halla permafrost; ninguna etiqueta del vocabulario cerrado tiene respaldo citable"
   },
   {
     "id": "earth-laguna-colorada",
@@ -492,7 +506,7 @@
     "coord_source": "Wikipedia, artículo 'Laguna Verde (Bolivia)' (https://en.wikipedia.org/wiki/Laguna_Verde_(Bolivia))",
     "why": "",
     "references": [],
-    "tags_pending": "Etiquetas pendientes: las fuentes la describen como lago salado, sin depositos evaporiticos documentados (a verificar)"
+    "tags_pending": "Etiquetas pendientes: las fuentes la describen como lago salado y no se encontro un estudio de su mineralogia ni depositos evaporiticos documentados en ella"
   },
   {
     "id": "earth-uturuncu-bolivia",
@@ -596,7 +610,7 @@
     "coord_source": "Wikipedia, artículo 'Tunupa' (https://en.wikipedia.org/wiki/Tunupa)",
     "why": "",
     "references": [],
-    "tags_pending": "Etiquetas pendientes: es un estratovolcan aislado, no un campo volcanico; ninguna etiqueta del vocabulario cerrado tiene respaldo citable (a verificar)"
+    "tags_pending": "Etiquetas pendientes: es un estratovolcan aislado, no un campo volcanico; solo se hallaron glaciares pasados (de hace unos 15 000 anos) y ninguna evaporita documentada en el volcan; ninguna etiqueta del vocabulario cerrado tiene respaldo citable"
   },
   {
     "id": "earth-badain-jaran-china",
@@ -759,7 +773,9 @@
     "why": "",
     "references": [
       "https://doi.org/10.1127/zfg_suppl/2021/0695"
-    ]
+    ],
+    "dem": "copernicus-glo30",
+    "land_only": true
   },
   {
     "id": "earth-undara-australia",

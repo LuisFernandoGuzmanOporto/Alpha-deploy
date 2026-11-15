@@ -158,6 +158,8 @@ export const CANDIDATE_WHY_EN: Record<string, string> = {
 const CELL = "The NASA POWER cell differs by more than 500 m from the elevation of the point, so the temperature may be biased (see the candidate's notes).";
 const TOP10 =
   "It reaches the top 10 of the lunar sites only because of slope and relief: it has no permanently shadowed ice and none of the cold of the lunar poles.";
+const TOP10_FAUSTINI = TOP10.replace("of the lunar sites", "of Faustini Rim A");
+const TOP10_CABEUS_MALAPERT = TOP10.replace("of the lunar sites", "of Peak Near Cabeus B and Malapert");
 const NO_STUDY = "We found no study that uses it as a planetary analog.";
 const LAVA_TUBE_USE =
   "Team proposal, no published planetary study: practice exploring lava tubes, which on the Moon and Mars could serve as shelter.";
@@ -191,7 +193,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
       "Look for signatures of habitats and life in high-altitude lakes as a guide to exploring Martian paleolakes (The Geology of Mars, 2007).",
     ],
     breaks_down: [
-      "It ranks first at Peak Near Cabeus B and Malapert because of slope and relief, but its mean temperature (14.7 °C) is about 140 °C above that of those sites (Diviner).",
+      "It ranks second at Peak Near Cabeus B and Malapert (69.8), after the McMurdo Dry Valleys, because of slope and relief, but its mean temperature (14.7 °C) is about 140 °C above that of those sites (Diviner).",
       CELL,
       "It has liquid water at the surface today; the lakes of Mars are ancient and no longer exist at the surface.",
     ],
@@ -225,7 +227,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     breaks_down: [
       "The study of the Altiplano-Puna volcanic complex as a planetary analog covers the Chilean sector; we found none on this volcano.",
       CELL,
-      TOP10,
+      TOP10_FAUSTINI,
     ],
   },
   "earth-ojos-del-salado": {
@@ -237,7 +239,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     ],
     use_cases: ["Team proposal: test subsurface temperature and ice-detection sensors on steep, very dry terrain."],
     breaks_down: [
-      "At −1.3 °C on average it is the coldest of the lunar top 10, but still about 124 °C above Peak Near Cabeus B (Diviner).",
+      "At −1.3 °C on average it is the sixth coldest in the catalog, but still about 124 °C above Peak Near Cabeus B (Diviner).",
       `The NASA POWER cell gives 219 mm of annual precipitation, although the field study describes an extremely arid climate: the cell is too coarse for the summit. ${CELL}`,
     ],
   },
@@ -270,8 +272,8 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     use_cases: ["Team proposal, no published study: practice navigation, mapping and communications inside a cave."],
     breaks_down: [
       "It is a karst cave formed by water; the caves sought on the Moon and Mars as shelter are mostly lava tubes.",
-      "It receives 533 mm of annual precipitation (NASA POWER), the highest of the lunar top 10 candidates.",
-      TOP10,
+      "It receives 533 mm of annual precipitation (NASA POWER), the highest of the Faustini Rim A top 10 candidates.",
+      TOP10_FAUSTINI,
     ],
   },
   "earth-volcan-tunupa-uyuni": {
@@ -289,7 +291,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     processes: ["Erosion of ancient volcanic domes that leaves isolated peaks."],
     use_cases: ["Team proposal, no published study: compare eroded volcanic peaks with highland reliefs on Mars."],
     breaks_down: [
-      "It is tenth at Faustini Rim A with a low score (52.4): the match is weak and only topographic.",
+      "It is 11th at Faustini Rim A with a low score (52.4): the match is weak and only topographic.",
       `Mean temperature of 22.5 °C (NASA POWER), about 183 °C above Faustini Rim A (Diviner). ${CELL}`,
     ],
   },
@@ -303,7 +305,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     breaks_down: [
       "At −4.7 °C on average it is among the coldest in the ranking, but still about 120 °C above Peak Near Cabeus B (Diviner).",
       `The point is an approximate center of the region, not a study site. ${CELL}`,
-      TOP10,
+      TOP10_CABEUS_MALAPERT,
     ],
   },
   "earth-gilf-kebir": {
@@ -391,7 +393,10 @@ export const FICHAS_EN: Record<string, FichaEn> = {
   "earth-mdrs-utah": {
     summary:
       "Mars Desert Research Station, a Mars mission simulation station in the Utah desert. During the Mars 160 mission (2016-2017) its crews recorded 35 lichen species.",
-    processes: ["Desert environment with exposed soils and erosion."],
+    processes: [
+      "Desert environment with exposed soils and erosion.",
+      "Mancos and Morrison soils rich in phyllosilicates (montmorillonite, nontronite and illite), like those seen from orbit on Mars, and with evaporite minerals such as gypsum, thenardite and polyhalite (Stoker et al., 2011).",
+    ],
     use_cases: [
       "Simulation of human missions to Mars (Mars 160).",
       "Rehearse geological-site conservation practices for future missions to Mars (Planetary and Space Science, 2025).",
@@ -552,9 +557,10 @@ export const FICHAS_EN: Record<string, FichaEn> = {
       "Study a geological, environmental and ecological analog of the Martian surface and near surface (Salvatore and Levy, 2021).",
     ],
     breaks_down: [
-      "Mean temperature of −26.7 °C (NASA POWER), about 51 °C more than Arcadia Planitia (−77.9 °C), which has permafrost.",
+      "It is first at Peak Near Cabeus B (72.1) and Malapert Massif (72.2) and second at Faustini Rim A (62.7), thanks to its mean slope of 15.3° and relief of 418 m (Copernicus DEM GLO-30); on Mars it ranks between 45th and 46th.",
+      "Mean temperature of −26.7 °C (NASA POWER), the lowest in the catalog, but about 99 °C more than Peak Near Cabeus B (−125.6 °C, Diviner) and about 51 °C more than Arcadia Planitia (−77.9 °C), which has permafrost.",
       "Its albedo (0.56) is more than double that of Arcadia Planitia (0.21), because terrestrial albedo includes snow and ice.",
-      "It has no slope or relief: the elevation tiles only provided coarse global models. With three shared variables it ranks between 37th and 45th on Mars.",
+      "The point is the approximate center of the valleys: the variables describe the region, not a specific valley.",
     ],
   },
   "earth-haughton-isla-devon": {
@@ -601,7 +607,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     breaks_down: [
       "Mean temperature of −4.4 °C (NASA POWER), about 156 °C more than Faustini Rim A (−160.4 °C, Diviner).",
       "It receives about 862 mm of annual precipitation (NASA POWER); the Moon has no rain.",
-      "It is 23rd at all three lunar sites, with scores of 43.5 to 44.0: the match is weak.",
+      "It is 26th at all three lunar sites, with scores of 43.5 to 44.0: the match is weak.",
     ],
   },
   "earth-mauna-kea-hawai": {
@@ -638,7 +644,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     processes: ["Carbonates in basaltic rock, compared with the carbonate globules of the Martian meteorite ALH 84001 (GSA Abstracts, 2016)."],
     use_cases: ["Compare the carbonates of a terrestrial basalt with those of the Martian meteorite ALH 84001 (GSA Abstracts, 2016)."],
     breaks_down: [
-      "It has no slope or relief: the elevation tiles only provided coarse global models. With three shared variables it ranks between 46th and 47th on Mars.",
+      "Mean slope of 15.7° and relief of 256 m (Copernicus DEM GLO-30, without the fjord, which takes up 15.5 % of the window): it is 8th at Peak Near Cabeus B (60.0) and Malapert (60.1) and 16th at Faustini Rim A (50.6), but last on Mars.",
       "Mean temperature of −8.1 °C (NASA POWER), about 43 °C more than Gale (−50.7 °C).",
       "Its albedo (0.54) is more than double that of Gale (0.24), because terrestrial albedo includes snow and ice.",
     ],
@@ -683,7 +689,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     breaks_down: [
       "Mean temperature of 23.4 °C (NASA POWER), about 184 °C more than Faustini Rim A (−160.4 °C, Diviner). The point is 814 m above the NASA POWER cell, so the temperature may be biased (see the candidate's notes).",
       "It receives about 139 mm of annual precipitation (NASA POWER); the Moon has no rain.",
-      "It is 14th at all three lunar sites, with scores of 50.6 to 51.1: the match is weak and only topographic.",
+      "It is 15th at Faustini Rim A (51.1) and 16th at Peak Near Cabeus B and Malapert (50.6): the match is weak and only topographic.",
     ],
   },
   "earth-la-corona-lanzarote": {
@@ -698,7 +704,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
       "Consult the research on terrestrial caves and lava tubes (von Ehrenfried, 2019).",
     ],
     breaks_down: [
-      "It has no slope or relief: the 10 × 10 km window includes sea and the ETOPO1 bathymetry is not usable. With three shared variables it ranks between 36th and 44th on Mars, and it is not in the lunar ranking.",
+      "Mean slope of 5.0° and relief of 116 m using land points only (Copernicus DEM GLO-30; 48.3 % of the 10 × 10 km window, the rest is sea): it is 20th at all three lunar sites (47.3 to 47.9) and between 20th and 33rd on Mars.",
       "Mean temperature of 20.4 °C (NASA POWER), about 98 °C more than Arcadia Planitia (−77.9 °C).",
       "Its albedo (0.03) is much lower than that of Arcadia Planitia (0.21).",
     ],
@@ -724,7 +730,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     use_cases: [LAVA_TUBE_USE],
     breaks_down: [
       NO_STUDY,
-      "It has no slope or relief: the 10 × 10 km window includes sea. With three shared variables it ranks between 46th and 47th on Mars.",
+      "Mean slope of 1.8° and relief of 61 m using land points only (Copernicus DEM GLO-30; 84.0 % of the window, the rest is sea): it is 37th at all three lunar sites and between 21st and 34th on Mars.",
       "It receives about 1,629 mm of annual precipitation (NASA POWER), more than any site on Mars, and 18.3 °C on average, about 68 °C more than Jezero.",
     ],
   },

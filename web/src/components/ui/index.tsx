@@ -72,6 +72,7 @@ export function Footer() {
     <footer className="cc-footer">
       <span>{t("ui.footerTeam")}</span>
       <small>{t("ui.footerDisclaimer")}</small>
+      <small className="cc-footer__credit">{t("ui.footerCopernicus")}</small>
     </footer>
   );
 }

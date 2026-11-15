@@ -34,6 +34,7 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.01em; }
 .cc-nav a:hover { color: var(--cc-text); }
 .cc-nav a[aria-current="page"] { color: var(--cc-text); border-bottom-color: var(--cc-accent); }
 .cc-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--cc-space-2) var(--cc-space-5); padding: var(--cc-space-4) var(--cc-space-5); border-top: var(--cc-line) solid var(--cc-border); color: var(--cc-text-muted); font: var(--cc-text-xs) var(--cc-font-mono); }
+.cc-footer__credit { flex-basis: 100%; line-height: 1.5; }
 
 /* ---------- Controles (Radix UI) ---------- */
 .cc-select { display: inline-flex; align-items: center; gap: var(--cc-space-2); min-height: 36px; padding: 0 var(--cc-space-3); border: var(--cc-line) solid var(--cc-control-line); border-radius: var(--cc-radius); background: var(--cc-surface); color: var(--cc-text); font: 600 var(--cc-text-sm) var(--cc-font-mono); cursor: pointer; transition: border-color var(--cc-dur) var(--cc-ease); }

@@ -53,18 +53,20 @@
     "lat": -77.4667,
     "lon": 162.5167,
     "variables": {
-      "slope_deg": null,
-      "relief_m": null,
+      "slope_deg": 15.27,
+      "relief_m": 417.8,
       "temp_mean_c": -26.67,
       "precip_mm_year": 73.0,
       "albedo": 0.56
     },
     "sources": {
+      "slope_deg": "Copernicus DEM GLO-30 (ESA, 30 m), mosaicos S78_00_E162_00 (https://registry.opendata.aws/copernicus-dem/); pendiente media de Horn (3 x 3) en ventana de 10 x 10 km a 250 m, calculada con pipeline/earth/copernicus_dem.py; solo con puntos de tierra (elevacion mayor de 1 m), el 100.0 % de la ventana",
+      "relief_m": "Copernicus DEM GLO-30 (ESA, 30 m), mosaicos S78_00_E162_00 (https://registry.opendata.aws/copernicus-dem/); desviacion estandar poblacional de la elevacion en ventana de 10 x 10 km a 250 m, calculada con pipeline/earth/copernicus_dem.py; solo con puntos de tierra (elevacion mayor de 1 m), el 100.0 % de la ventana",
       "temp_mean_c": "NASA POWER, climatologia January 2001 - December 2025, parametro TS (Earth Skin Temperature, temperatura de superficie), media anual en °C, MERRA-2 (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)",
       "precip_mm_year": "NASA POWER, parametro PRECTOTCORR (precipitacion corregida), media anual en mm/dia x 365,25, MERRA-2 (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)",
       "albedo": "NASA POWER, parametro ALLSKY_SRF_ALB (albedo de superficie en todo cielo), CERES SYN1deg (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)"
     },
-    "notes": "Coordenadas: Wikipedia, artículo 'McMurdo Dry Valleys' (https://en.wikipedia.org/wiki/McMurdo_Dry_Valleys). Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Pendiente y relieve: null, las teselas de elevacion solo aportaron modelos globales gruesos (etopo1/ETOPO1_Bed_g.tif), que no resuelven una ventana de 10 x 10 km. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 860 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. known=true: las referencias citadas documentan el lugar (o su region) como analogo planetario. Respaldo de etiquetas: extreme-cold: https://en.wikipedia.org/wiki/McMurdo_Dry_Valleys; hyper-arid: https://en.wikipedia.org/wiki/McMurdo_Dry_Valleys; permafrost: https://en.wikipedia.org/wiki/McMurdo_Dry_Valleys.",
+    "notes": "Coordenadas: Wikipedia, artículo 'McMurdo Dry Valleys' (https://en.wikipedia.org/wiki/McMurdo_Dry_Valleys). Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Elevacion en el centro: 405 m. Las teselas de Terrain Tiles solo aportaban modelos globales gruesos o batimetria en este lugar; pendiente y relieve se calcularon con Copernicus DEM GLO-30 de ESA (30 m, mosaicos S78_00_E162_00) en ventana de 10 x 10 km a 250 m con interpolacion bilineal. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 860 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. known=true: las referencias citadas documentan el lugar (o su region) como analogo planetario. Respaldo de etiquetas: extreme-cold: https://en.wikipedia.org/wiki/McMurdo_Dry_Valleys; hyper-arid: https://en.wikipedia.org/wiki/McMurdo_Dry_Valleys; permafrost: https://en.wikipedia.org/wiki/McMurdo_Dry_Valleys.",
     "tags": [
       "extreme-cold",
       "hyper-arid",
@@ -120,7 +122,9 @@
     "why": "Estación de simulación de Marte en un desierto de Utah, usada como sitio análogo.",
     "reference_urls": [
       "https://doi.org/10.1016/j.pss.2025.106038",
-      "https://doi.org/10.15560/20.5.1096"
+      "https://doi.org/10.15560/20.5.1096",
+      "https://doi.org/10.1017/s1473550411000115",
+      "https://doi.org/10.1017/s1473550411000103"
     ],
     "lat": 38.4065,
     "lon": -110.7919,
@@ -138,8 +142,11 @@
       "precip_mm_year": "NASA POWER, parametro PRECTOTCORR (precipitacion corregida), media anual en mm/dia x 365,25, MERRA-2 (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)",
       "albedo": "NASA POWER, parametro ALLSKY_SRF_ALB (albedo de superficie en todo cielo), CERES SYN1deg (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)"
     },
-    "notes": "Coordenadas: Wikipedia, artículo 'Mars Desert Research Station' (https://en.wikipedia.org/wiki/Mars_Desert_Research_Station). Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Elevacion en el centro: 1377 m. Pendiente y relieve en ventana de 10 x 10 km a 250 m con interpolacion bilineal; modelos de elevacion: srtm/N38W111.tif, srtm/N38W112.tif. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 1660 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. known=true: las referencias citadas documentan el lugar (o su region) como analogo planetario. Etiquetas pendientes: no se encontro una fuente abierta que describa la geologia local con el vocabulario cerrado (a verificar).",
-    "tags": []
+    "notes": "Coordenadas: Wikipedia, artículo 'Mars Desert Research Station' (https://en.wikipedia.org/wiki/Mars_Desert_Research_Station). Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Elevacion en el centro: 1377 m. Pendiente y relieve en ventana de 10 x 10 km a 250 m con interpolacion bilineal; modelos de elevacion: srtm/N38W111.tif, srtm/N38W112.tif. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 1660 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. known=true: las referencias citadas documentan el lugar (o su region) como analogo planetario. Respaldo de etiquetas: evaporite: https://doi.org/10.1017/s1473550411000115; hydrated-minerals: https://doi.org/10.1017/s1473550411000115.",
+    "tags": [
+      "evaporite",
+      "hydrated-minerals"
+    ]
   },
   {
     "id": "earth-dallol-danakil",
@@ -339,18 +346,20 @@
     "lat": 79.4317,
     "lon": 13.305,
     "variables": {
-      "slope_deg": null,
-      "relief_m": null,
+      "slope_deg": 15.66,
+      "relief_m": 256.3,
       "temp_mean_c": -8.12,
       "precip_mm_year": 664.8,
       "albedo": 0.54
     },
     "sources": {
+      "slope_deg": "Copernicus DEM GLO-30 (ESA, 30 m), mosaicos N79_00_E013_00 (https://registry.opendata.aws/copernicus-dem/); pendiente media de Horn (3 x 3) en ventana de 10 x 10 km a 250 m, calculada con pipeline/earth/copernicus_dem.py; solo con puntos de tierra (elevacion mayor de 1 m), el 84.5 % de la ventana",
+      "relief_m": "Copernicus DEM GLO-30 (ESA, 30 m), mosaicos N79_00_E013_00 (https://registry.opendata.aws/copernicus-dem/); desviacion estandar poblacional de la elevacion en ventana de 10 x 10 km a 250 m, calculada con pipeline/earth/copernicus_dem.py; solo con puntos de tierra (elevacion mayor de 1 m), el 84.5 % de la ventana",
       "temp_mean_c": "NASA POWER, climatologia January 2001 - December 2025, parametro TS (Earth Skin Temperature, temperatura de superficie), media anual en °C, MERRA-2 (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)",
       "precip_mm_year": "NASA POWER, parametro PRECTOTCORR (precipitacion corregida), media anual en mm/dia x 365,25, MERRA-2 (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)",
       "albedo": "NASA POWER, parametro ALLSKY_SRF_ALB (albedo de superficie en todo cielo), CERES SYN1deg (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)"
     },
-    "notes": "Coordenadas: Wikipedia, artículo 'Sverrefjellet' (https://en.wikipedia.org/wiki/Sverrefjellet). Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Pendiente y relieve: null, las teselas de elevacion solo aportaron modelos globales gruesos (etopo1/ETOPO1_Bed_g.tif, gmted/70N000E_20101117_gmted_mea075.tif), que no resuelven una ventana de 10 x 10 km. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 343 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. known=true: las referencias citadas documentan el lugar (o su region) como analogo planetario. Respaldo de etiquetas: basalt: https://en.wikipedia.org/wiki/Sverrefjellet.",
+    "notes": "Coordenadas: Wikipedia, artículo 'Sverrefjellet' (https://en.wikipedia.org/wiki/Sverrefjellet). Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Elevacion en el centro: 473 m. Las teselas de Terrain Tiles solo aportaban modelos globales gruesos o batimetria en este lugar; pendiente y relieve se calcularon con Copernicus DEM GLO-30 de ESA (30 m, mosaicos N79_00_E013_00) en ventana de 10 x 10 km a 250 m con interpolacion bilineal. La ventana incluye mar (el modelo da 0 m sobre el agua): se excluyeron esos puntos, de modo que el relieve usa solo tierra (el 84.5 % de la ventana) y la pendiente solo los puntos con todo su vecindario de tierra. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 343 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. known=true: las referencias citadas documentan el lugar (o su region) como analogo planetario. Respaldo de etiquetas: basalt: https://en.wikipedia.org/wiki/Sverrefjellet.",
     "tags": [
       "basalt"
     ]
@@ -556,18 +565,20 @@
     "lat": 29.158,
     "lon": -13.436,
     "variables": {
-      "slope_deg": null,
-      "relief_m": null,
+      "slope_deg": 4.95,
+      "relief_m": 115.8,
       "temp_mean_c": 20.43,
       "precip_mm_year": 109.6,
       "albedo": 0.03
     },
     "sources": {
+      "slope_deg": "Copernicus DEM GLO-30 (ESA, 30 m), mosaicos N29_00_W014_00 (https://registry.opendata.aws/copernicus-dem/); pendiente media de Horn (3 x 3) en ventana de 10 x 10 km a 250 m, calculada con pipeline/earth/copernicus_dem.py; solo con puntos de tierra (elevacion mayor de 1 m), el 48.3 % de la ventana",
+      "relief_m": "Copernicus DEM GLO-30 (ESA, 30 m), mosaicos N29_00_W014_00 (https://registry.opendata.aws/copernicus-dem/); desviacion estandar poblacional de la elevacion en ventana de 10 x 10 km a 250 m, calculada con pipeline/earth/copernicus_dem.py; solo con puntos de tierra (elevacion mayor de 1 m), el 48.3 % de la ventana",
       "temp_mean_c": "NASA POWER, climatologia January 2001 - December 2025, parametro TS (Earth Skin Temperature, temperatura de superficie), media anual en °C, MERRA-2 (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)",
       "precip_mm_year": "NASA POWER, parametro PRECTOTCORR (precipitacion corregida), media anual en mm/dia x 365,25, MERRA-2 (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)",
       "albedo": "NASA POWER, parametro ALLSKY_SRF_ALB (albedo de superficie en todo cielo), CERES SYN1deg (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)"
     },
-    "notes": "Coordenadas: Coordenada aproximada del volcán La Corona, sin verificar contra un gazetteer: a verificar. Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Pendiente y relieve: null, la ventana de 10 x 10 km incluye mar y la batimetria de ETOPO1 (etopo1/ETOPO1_Bed_g.tif, eudem/eudem_dem_5deg_n25w015.tif, gmted/10N030W_20101117_gmted_mea075.tif, srtm/N28W014.tif, srtm/N29W014.tif) distorsionaria pendiente y relieve. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 5 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. known=true: las referencias citadas documentan el lugar (o su region) como analogo planetario.",
+    "notes": "Coordenadas: Wikipedia, articulos 'Cueva de los Verdes' (29,1611 N, 13,4389 O) y 'Jameos del Agua' (29,1572 N, 13,4305 O), dos tramos del tubo volcanico de La Corona segun el Geoparque de Lanzarote (https://geoparquelanzarote.org/en/geositio/lz06-tubo-volcanico-de-la-corona-atlantida-2/); el punto usado queda entre ambos, a unos 0,4 km de cada uno. Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Elevacion en el centro: 35 m. Las teselas de Terrain Tiles solo aportaban modelos globales gruesos o batimetria en este lugar; pendiente y relieve se calcularon con Copernicus DEM GLO-30 de ESA (30 m, mosaicos N29_00_W014_00) en ventana de 10 x 10 km a 250 m con interpolacion bilineal. La ventana incluye mar (el modelo da 0 m sobre el agua): se excluyeron esos puntos, de modo que el relieve usa solo tierra (el 48.3 % de la ventana) y la pendiente solo los puntos con todo su vecindario de tierra. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 5 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. known=true: las referencias citadas documentan el lugar (o su region) como analogo planetario.",
     "tags": [
       "lava-tubes",
       "caves"
@@ -713,7 +724,7 @@
       "precip_mm_year": "NASA POWER, parametro PRECTOTCORR (precipitacion corregida), media anual en mm/dia x 365,25, MERRA-2 (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)",
       "albedo": "NASA POWER, parametro ALLSKY_SRF_ALB (albedo de superficie en todo cielo), CERES SYN1deg (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)"
     },
-    "notes": "Coordenadas: Wikipedia, artículo 'Licancabur' (https://en.wikipedia.org/wiki/Licancabur). El volcán está en la frontera entre Bolivia y Chile. Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Elevacion en el centro: 5912 m. Pendiente y relieve en ventana de 10 x 10 km a 250 m con interpolacion bilineal; modelos de elevacion: gmted/30S090W_20101117_gmted_mea075.tif, srtm/S23W068.tif, srtm/S23W069.tif. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 2881 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. ATENCION: el punto esta 3031 m por encima de la celda de POWER (elevacion de la celda frente a la del terreno); la temperatura y la precipitacion probablemente no representan el punto y no se corrigieron. known=true: las referencias citadas documentan el lugar (o su region) como analogo planetario. Etiquetas pendientes: es un lago de crater en un estratovolcan aislado; ninguna etiqueta del vocabulario cerrado tiene respaldo citable (a verificar).",
+    "notes": "Coordenadas: Wikipedia, artículo 'Licancabur' (https://en.wikipedia.org/wiki/Licancabur). El volcán está en la frontera entre Bolivia y Chile. Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Elevacion en el centro: 5912 m. Pendiente y relieve en ventana de 10 x 10 km a 250 m con interpolacion bilineal; modelos de elevacion: gmted/30S090W_20101117_gmted_mea075.tif, srtm/S23W068.tif, srtm/S23W069.tif. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 2881 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. ATENCION: el punto esta 3031 m por encima de la celda de POWER (elevacion de la celda frente a la del terreno); la temperatura y la precipitacion probablemente no representan el punto y no se corrigieron. known=true: las referencias citadas documentan el lugar (o su region) como analogo planetario. Etiquetas pendientes: es un estratovolcan aislado y sin glaciares (Wikipedia); el unico estudio de suelos del volcan (Gjorup et al. 2019, doi:10.1002/ppp.2029, entre 4426 y 5061 m) no halla permafrost; ninguna etiqueta del vocabulario cerrado tiene respaldo citable.",
     "tags": []
   },
   {
@@ -779,7 +790,7 @@
       "precip_mm_year": "NASA POWER, parametro PRECTOTCORR (precipitacion corregida), media anual en mm/dia x 365,25, MERRA-2 (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)",
       "albedo": "NASA POWER, parametro ALLSKY_SRF_ALB (albedo de superficie en todo cielo), CERES SYN1deg (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)"
     },
-    "notes": "Coordenadas: Wikipedia, artículo 'Laguna Verde (Bolivia)' (https://en.wikipedia.org/wiki/Laguna_Verde_(Bolivia)). Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Elevacion en el centro: 4324 m. Pendiente y relieve en ventana de 10 x 10 km a 250 m con interpolacion bilineal; modelos de elevacion: gmted/30S090W_20101117_gmted_mea075.tif, srtm/S23W068.tif, srtm/S23W069.tif. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 2881 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. ATENCION: el punto esta 1443 m por encima de la celda de POWER (elevacion de la celda frente a la del terreno); la temperatura y la precipitacion probablemente no representan el punto y no se corrigieron. known=false: en una busqueda en Crossref del 14/11/2026 no se encontro un estudio de analogo planetario de este lugar; falta una revision bibliografica completa (a verificar). Etiquetas pendientes: las fuentes la describen como lago salado, sin depositos evaporiticos documentados (a verificar).",
+    "notes": "Coordenadas: Wikipedia, artículo 'Laguna Verde (Bolivia)' (https://en.wikipedia.org/wiki/Laguna_Verde_(Bolivia)). Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Elevacion en el centro: 4324 m. Pendiente y relieve en ventana de 10 x 10 km a 250 m con interpolacion bilineal; modelos de elevacion: gmted/30S090W_20101117_gmted_mea075.tif, srtm/S23W068.tif, srtm/S23W069.tif. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 2881 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. ATENCION: el punto esta 1443 m por encima de la celda de POWER (elevacion de la celda frente a la del terreno); la temperatura y la precipitacion probablemente no representan el punto y no se corrigieron. known=false: en una busqueda en Crossref del 14/11/2026 no se encontro un estudio de analogo planetario de este lugar; falta una revision bibliografica completa (a verificar). Etiquetas pendientes: las fuentes la describen como lago salado y no se encontro un estudio de su mineralogia ni depositos evaporiticos documentados en ella.",
     "tags": []
   },
   {
@@ -949,7 +960,7 @@
       "precip_mm_year": "NASA POWER, parametro PRECTOTCORR (precipitacion corregida), media anual en mm/dia x 365,25, MERRA-2 (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)",
       "albedo": "NASA POWER, parametro ALLSKY_SRF_ALB (albedo de superficie en todo cielo), CERES SYN1deg (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)"
     },
-    "notes": "Coordenadas: Wikipedia, artículo 'Tunupa' (https://en.wikipedia.org/wiki/Tunupa). Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Elevacion en el centro: 5271 m. Pendiente y relieve en ventana de 10 x 10 km a 250 m con interpolacion bilineal; modelos de elevacion: gmted/30S090W_20101117_gmted_mea075.tif, srtm/S20W068.tif. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 3692 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. ATENCION: el punto esta 1579 m por encima de la celda de POWER (elevacion de la celda frente a la del terreno); la temperatura y la precipitacion probablemente no representan el punto y no se corrigieron. known=false: en una busqueda en Crossref del 14/11/2026 no se encontro un estudio de analogo planetario de este lugar; falta una revision bibliografica completa (a verificar). Etiquetas pendientes: es un estratovolcan aislado, no un campo volcanico; ninguna etiqueta del vocabulario cerrado tiene respaldo citable (a verificar).",
+    "notes": "Coordenadas: Wikipedia, artículo 'Tunupa' (https://en.wikipedia.org/wiki/Tunupa). Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Elevacion en el centro: 5271 m. Pendiente y relieve en ventana de 10 x 10 km a 250 m con interpolacion bilineal; modelos de elevacion: gmted/30S090W_20101117_gmted_mea075.tif, srtm/S20W068.tif. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 3692 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. ATENCION: el punto esta 1579 m por encima de la celda de POWER (elevacion de la celda frente a la del terreno); la temperatura y la precipitacion probablemente no representan el punto y no se corrigieron. known=false: en una busqueda en Crossref del 14/11/2026 no se encontro un estudio de analogo planetario de este lugar; falta una revision bibliografica completa (a verificar). Etiquetas pendientes: es un estratovolcan aislado, no un campo volcanico; solo se hallaron glaciares pasados (de hace unos 15 000 anos) y ninguna evaporita documentada en el volcan; ninguna etiqueta del vocabulario cerrado tiene respaldo citable.",
     "tags": []
   },
   {
@@ -1210,25 +1221,27 @@
       "moon",
       "mars"
     ],
-    "why": "Propuesto por sus valores en este catalogo (1629 mm/ano de precipitacion, 18.32 °C de temperatura media de superficie); no se encontro un estudio previo como analogo planetario.",
+    "why": "Propuesto por sus valores en este catalogo (1629 mm/ano de precipitacion, 18.32 °C de temperatura media de superficie, 61.3 m de relieve local); no se encontro un estudio previo como analogo planetario.",
     "reference_urls": [
       "https://doi.org/10.1127/zfg_suppl/2021/0695"
     ],
     "lat": 33.5282,
     "lon": 126.7701,
     "variables": {
-      "slope_deg": null,
-      "relief_m": null,
+      "slope_deg": 1.78,
+      "relief_m": 61.3,
       "temp_mean_c": 18.32,
       "precip_mm_year": 1629.0,
       "albedo": 0.05
     },
     "sources": {
+      "slope_deg": "Copernicus DEM GLO-30 (ESA, 30 m), mosaicos N33_00_E126_00 (https://registry.opendata.aws/copernicus-dem/); pendiente media de Horn (3 x 3) en ventana de 10 x 10 km a 250 m, calculada con pipeline/earth/copernicus_dem.py; solo con puntos de tierra (elevacion mayor de 1 m), el 84.0 % de la ventana",
+      "relief_m": "Copernicus DEM GLO-30 (ESA, 30 m), mosaicos N33_00_E126_00 (https://registry.opendata.aws/copernicus-dem/); desviacion estandar poblacional de la elevacion en ventana de 10 x 10 km a 250 m, calculada con pipeline/earth/copernicus_dem.py; solo con puntos de tierra (elevacion mayor de 1 m), el 84.0 % de la ventana",
       "temp_mean_c": "NASA POWER, climatologia January 2001 - December 2025, parametro TS (Earth Skin Temperature, temperatura de superficie), media anual en °C, MERRA-2 (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)",
       "precip_mm_year": "NASA POWER, parametro PRECTOTCORR (precipitacion corregida), media anual en mm/dia x 365,25, MERRA-2 (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)",
       "albedo": "NASA POWER, parametro ALLSKY_SRF_ALB (albedo de superficie en todo cielo), CERES SYN1deg (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)"
     },
-    "notes": "Coordenadas: Wikipedia, artículo 'Manjanggul' (https://en.wikipedia.org/wiki/Manjanggul). Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Pendiente y relieve: null, la ventana de 10 x 10 km incluye mar y la batimetria de ETOPO1 (etopo1/ETOPO1_Bed_g.tif, gmted/30N120E_20101117_gmted_mea075.tif, srtm/N33E126.tif) distorsionaria pendiente y relieve. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 47 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. known=false: en una busqueda en Crossref del 14/11/2026 no se encontro un estudio de analogo planetario de este lugar; falta una revision bibliografica completa (a verificar).",
+    "notes": "Coordenadas: Wikipedia, artículo 'Manjanggul' (https://en.wikipedia.org/wiki/Manjanggul). Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Elevacion en el centro: 86 m. Las teselas de Terrain Tiles solo aportaban modelos globales gruesos o batimetria en este lugar; pendiente y relieve se calcularon con Copernicus DEM GLO-30 de ESA (30 m, mosaicos N33_00_E126_00) en ventana de 10 x 10 km a 250 m con interpolacion bilineal. La ventana incluye mar (el modelo da 0 m sobre el agua): se excluyeron esos puntos, de modo que el relieve usa solo tierra (el 84.0 % de la ventana) y la pendiente solo los puntos con todo su vecindario de tierra. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 47 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. known=false: en una busqueda en Crossref del 14/11/2026 no se encontro un estudio de analogo planetario de este lugar; falta una revision bibliografica completa (a verificar).",
     "tags": [
       "lava-tubes"
     ]

@@ -141,6 +141,8 @@ const es = {
   "ui.brandAria": "Earth Analogs, inicio",
   "ui.footerTeam": "Proyecto del equipo · NASA Space Apps Challenge · Cochabamba 2026",
   "ui.footerDisclaimer": "Proyecto independiente. No implica respaldo de NASA.",
+  "ui.footerCopernicus":
+    "Pendiente y relieve de cuatro lugares (McMurdo, Svalbard, La Corona y Manjanggul): Copernicus DEM GLO-30. Produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved. The organisations in charge of the Copernicus programme by law or by delegation do not incur any liability for any use of the Copernicus WorldDEM-30.",
   "ui.knownHelp": "Documentado en la literatura como análogo planetario.",
   "ui.tagsAria": "Características del terreno",
   "ui.selected": "✓ Seleccionado",
@@ -329,6 +331,8 @@ const en: Record<MessageKey, string> = {
   "ui.brandAria": "Earth Analogs, home",
   "ui.footerTeam": "Team project · NASA Space Apps Challenge · Cochabamba 2026",
   "ui.footerDisclaimer": "Independent project. Not endorsed by NASA.",
+  "ui.footerCopernicus":
+    "Slope and relief of four places (McMurdo, Svalbard, La Corona and Manjanggul): Copernicus DEM GLO-30. Produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved. The organisations in charge of the Copernicus programme by law or by delegation do not incur any liability for any use of the Copernicus WorldDEM-30.",
   "ui.knownHelp": "Documented in the literature as a planetary analog.",
   "ui.tagsAria": "Terrain characteristics",
   "ui.selected": "✓ Selected",

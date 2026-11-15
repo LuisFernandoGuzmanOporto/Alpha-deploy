@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T20:43:27+00:00",
+  "generated_at": "2026-11-15T02:37:07+00:00",
   "variables": [
     "slope_deg",
     "relief_m",
@@ -62,6 +62,31 @@
           ],
           "only_candidate": [
             "hyper-arid"
+          ]
+        }
+      },
+      {
+        "candidate_id": "earth-valles-secos-mcmurdo",
+        "score": 62.7,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.2063,
+          "relief_m": 0.0298,
+          "temp_mean_c": 0.7014,
+          "precip_mm_year": 0.556
+        },
+        "tag_overlap": {
+          "jaccard": 0.2,
+          "shared": [
+            "extreme-cold"
+          ],
+          "only_site": [
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "hyper-arid",
+            "permafrost"
           ]
         }
       },
@@ -332,6 +357,29 @@
         }
       },
       {
+        "candidate_id": "earth-svalbard-sverrefjellet",
+        "score": 50.6,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.2246,
+          "relief_m": 0.1142,
+          "temp_mean_c": 0.7987,
+          "precip_mm_year": 0.8398
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "basalt"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-badain-jaran-china",
         "score": 50.6,
         "n_vars_used": 4,
@@ -397,6 +445,30 @@
           ],
           "only_candidate": [
             "volcanic-field"
+          ]
+        }
+      },
+      {
+        "candidate_id": "earth-la-corona-lanzarote",
+        "score": 47.9,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.2775,
+          "relief_m": 0.2511,
+          "temp_mean_c": 0.9484,
+          "precip_mm_year": 0.6079
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "caves",
+            "lava-tubes"
           ]
         }
       },
@@ -618,7 +690,19 @@
           "temp_mean_c": 0.9052,
           "precip_mm_year": 0.7091
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "evaporite",
+            "hydrated-minerals"
+          ]
+        }
       },
       {
         "candidate_id": "earth-desierto-tengger",
@@ -756,6 +840,29 @@
           ],
           "only_candidate": [
             "aeolian-dunes"
+          ]
+        }
+      },
+      {
+        "candidate_id": "earth-manjanggul-jeju",
+        "score": 33.0,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.4262,
+          "relief_m": 0.36,
+          "temp_mean_c": 0.9374,
+          "precip_mm_year": 0.9554
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "lava-tubes"
           ]
         }
       },
@@ -994,6 +1101,30 @@
     ],
     "moon-peak-near-cabeus-b": [
       {
+        "candidate_id": "earth-valles-secos-mcmurdo",
+        "score": 72.1,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.008,
+          "relief_m": 0.0351,
+          "temp_mean_c": 0.5189,
+          "precip_mm_year": 0.556
+        },
+        "tag_overlap": {
+          "jaccard": 0.25,
+          "shared": [
+            "extreme-cold"
+          ],
+          "only_site": [
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "hyper-arid",
+            "permafrost"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-licancabur-laguna-verde",
         "score": 69.8,
         "n_vars_used": 4,
@@ -1112,6 +1243,28 @@
           ],
           "only_candidate": [
             "glacier"
+          ]
+        }
+      },
+      {
+        "candidate_id": "earth-svalbard-sverrefjellet",
+        "score": 60.0,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.0263,
+          "relief_m": 0.1196,
+          "temp_mean_c": 0.6162,
+          "precip_mm_year": 0.8398
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "basalt"
           ]
         }
       },
@@ -1338,6 +1491,29 @@
         }
       },
       {
+        "candidate_id": "earth-la-corona-lanzarote",
+        "score": 47.3,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.4759,
+          "relief_m": 0.2564,
+          "temp_mean_c": 0.7659,
+          "precip_mm_year": 0.6079
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "caves",
+            "lava-tubes"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-mar-de-arena-namib",
         "score": 47.3,
         "n_vars_used": 4,
@@ -1547,7 +1723,18 @@
           "temp_mean_c": 0.7227,
           "precip_mm_year": 0.7091
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "evaporite",
+            "hydrated-minerals"
+          ]
+        }
       },
       {
         "candidate_id": "earth-desierto-tengger",
@@ -1679,6 +1866,28 @@
           ],
           "only_candidate": [
             "aeolian-dunes"
+          ]
+        }
+      },
+      {
+        "candidate_id": "earth-manjanggul-jeju",
+        "score": 32.5,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.6245,
+          "relief_m": 0.3654,
+          "temp_mean_c": 0.7549,
+          "precip_mm_year": 0.9554
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "lava-tubes"
           ]
         }
       },
@@ -1907,6 +2116,28 @@
     ],
     "moon-malapert-massif": [
       {
+        "candidate_id": "earth-valles-secos-mcmurdo",
+        "score": 72.2,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.0052,
+          "relief_m": 0.0152,
+          "temp_mean_c": 0.5341,
+          "precip_mm_year": 0.556
+        },
+        "tag_overlap": {
+          "jaccard": 0.333,
+          "shared": [
+            "extreme-cold"
+          ],
+          "only_site": [],
+          "only_candidate": [
+            "hyper-arid",
+            "permafrost"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-licancabur-laguna-verde",
         "score": 69.8,
         "n_vars_used": 4,
@@ -2020,6 +2251,27 @@
           ],
           "only_candidate": [
             "glacier"
+          ]
+        }
+      },
+      {
+        "candidate_id": "earth-svalbard-sverrefjellet",
+        "score": 60.1,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.0234,
+          "relief_m": 0.0996,
+          "temp_mean_c": 0.6314,
+          "precip_mm_year": 0.8398
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "basalt"
           ]
         }
       },
@@ -2237,6 +2489,28 @@
         }
       },
       {
+        "candidate_id": "earth-la-corona-lanzarote",
+        "score": 47.4,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.4787,
+          "relief_m": 0.2365,
+          "temp_mean_c": 0.7811,
+          "precip_mm_year": 0.6079
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "caves",
+            "lava-tubes"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-mar-de-arena-namib",
         "score": 47.3,
         "n_vars_used": 4,
@@ -2437,7 +2711,17 @@
           "temp_mean_c": 0.7379,
           "precip_mm_year": 0.7091
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "evaporite",
+            "hydrated-minerals"
+          ]
+        }
       },
       {
         "candidate_id": "earth-desierto-tengger",
@@ -2563,6 +2847,27 @@
           ],
           "only_candidate": [
             "aeolian-dunes"
+          ]
+        }
+      },
+      {
+        "candidate_id": "earth-manjanggul-jeju",
+        "score": 32.5,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.6273,
+          "relief_m": 0.3454,
+          "temp_mean_c": 0.7701,
+          "precip_mm_year": 0.9554
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "lava-tubes"
           ]
         }
       },
@@ -2983,7 +3288,19 @@
           "precip_mm_year": 0.7091,
           "albedo": 0.1491
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.25,
+          "shared": [
+            "hydrated-minerals"
+          ],
+          "only_site": [
+            "basalt",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-ubehebe-valle-de-la-muerte",
@@ -3211,6 +3528,55 @@
           ],
           "only_candidate": [
             "volcanic-field"
+          ]
+        }
+      },
+      {
+        "candidate_id": "earth-la-corona-lanzarote",
+        "score": 69.7,
+        "n_vars_used": 5,
+        "norm_diff": {
+          "slope_deg": 0.1678,
+          "relief_m": 0.1051,
+          "temp_mean_c": 0.3663,
+          "precip_mm_year": 0.6079,
+          "albedo": 0.266
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "caves",
+            "lava-tubes"
+          ]
+        }
+      },
+      {
+        "candidate_id": "earth-manjanggul-jeju",
+        "score": 68.8,
+        "n_vars_used": 5,
+        "norm_diff": {
+          "slope_deg": 0.0192,
+          "relief_m": 0.0039,
+          "temp_mean_c": 0.3552,
+          "precip_mm_year": 0.9554,
+          "albedo": 0.2283
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "lava-tubes"
           ]
         }
       },
@@ -3674,29 +4040,6 @@
         "tag_overlap": null
       },
       {
-        "candidate_id": "earth-la-corona-lanzarote",
-        "score": 58.7,
-        "n_vars_used": 3,
-        "norm_diff": {
-          "temp_mean_c": 0.3663,
-          "precip_mm_year": 0.6079,
-          "albedo": 0.266
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "basalt",
-            "hydrated-minerals",
-            "impact-crater"
-          ],
-          "only_candidate": [
-            "caves",
-            "lava-tubes"
-          ]
-        }
-      },
-      {
         "candidate_id": "earth-nevado-sajama",
         "score": 58.7,
         "n_vars_used": 5,
@@ -3793,9 +4136,11 @@
       },
       {
         "candidate_id": "earth-valles-secos-mcmurdo",
-        "score": 53.0,
-        "n_vars_used": 3,
+        "score": 52.3,
+        "n_vars_used": 5,
         "norm_diff": {
+          "slope_deg": 0.6517,
+          "relief_m": 0.3264,
           "temp_mean_c": 0.1192,
           "precip_mm_year": 0.556,
           "albedo": 0.734
@@ -3816,32 +4161,12 @@
         }
       },
       {
-        "candidate_id": "earth-manjanggul-jeju",
-        "score": 48.7,
-        "n_vars_used": 3,
-        "norm_diff": {
-          "temp_mean_c": 0.3552,
-          "precip_mm_year": 0.9554,
-          "albedo": 0.2283
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "basalt",
-            "hydrated-minerals",
-            "impact-crater"
-          ],
-          "only_candidate": [
-            "lava-tubes"
-          ]
-        }
-      },
-      {
         "candidate_id": "earth-svalbard-sverrefjellet",
-        "score": 41.6,
-        "n_vars_used": 3,
+        "score": 46.7,
+        "n_vars_used": 5,
         "norm_diff": {
+          "slope_deg": 0.6699,
+          "relief_m": 0.2419,
           "temp_mean_c": 0.2165,
           "precip_mm_year": 0.8398,
           "albedo": 0.6962
@@ -3989,7 +4314,19 @@
           "precip_mm_year": 0.7091,
           "albedo": 0.0264
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.25,
+          "shared": [
+            "hydrated-minerals"
+          ],
+          "only_site": [
+            "aeolian-dunes",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
       },
       {
         "candidate_id": "earth-harrat-khaybar",
@@ -4432,6 +4769,31 @@
         }
       },
       {
+        "candidate_id": "earth-la-corona-lanzarote",
+        "score": 67.0,
+        "n_vars_used": 5,
+        "norm_diff": {
+          "slope_deg": 0.1664,
+          "relief_m": 0.1114,
+          "temp_mean_c": 0.3731,
+          "precip_mm_year": 0.6079,
+          "albedo": 0.3887
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "aeolian-dunes",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "caves",
+            "lava-tubes"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-salar-de-coipasa",
         "score": 66.5,
         "n_vars_used": 5,
@@ -4452,6 +4814,30 @@
           ],
           "only_candidate": [
             "evaporite"
+          ]
+        }
+      },
+      {
+        "candidate_id": "earth-manjanggul-jeju",
+        "score": 66.2,
+        "n_vars_used": 5,
+        "norm_diff": {
+          "slope_deg": 0.0178,
+          "relief_m": 0.0025,
+          "temp_mean_c": 0.362,
+          "precip_mm_year": 0.9554,
+          "albedo": 0.3509
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "aeolian-dunes",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "lava-tubes"
           ]
         }
       },
@@ -4797,30 +5183,6 @@
         }
       },
       {
-        "candidate_id": "earth-valles-secos-mcmurdo",
-        "score": 56.9,
-        "n_vars_used": 3,
-        "norm_diff": {
-          "temp_mean_c": 0.126,
-          "precip_mm_year": 0.556,
-          "albedo": 0.6113
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "aeolian-dunes",
-            "hydrated-minerals",
-            "impact-crater"
-          ],
-          "only_candidate": [
-            "extreme-cold",
-            "hyper-arid",
-            "permafrost"
-          ]
-        }
-      },
-      {
         "candidate_id": "earth-volcan-socompa",
         "score": 56.5,
         "n_vars_used": 5,
@@ -4845,13 +5207,15 @@
         }
       },
       {
-        "candidate_id": "earth-la-corona-lanzarote",
-        "score": 54.3,
-        "n_vars_used": 3,
+        "candidate_id": "earth-valles-secos-mcmurdo",
+        "score": 54.5,
+        "n_vars_used": 5,
         "norm_diff": {
-          "temp_mean_c": 0.3731,
-          "precip_mm_year": 0.6079,
-          "albedo": 0.3887
+          "slope_deg": 0.6503,
+          "relief_m": 0.3327,
+          "temp_mean_c": 0.126,
+          "precip_mm_year": 0.556,
+          "albedo": 0.6113
         },
         "tag_overlap": {
           "jaccard": 0.0,
@@ -4862,8 +5226,9 @@
             "impact-crater"
           ],
           "only_candidate": [
-            "caves",
-            "lava-tubes"
+            "extreme-cold",
+            "hyper-arid",
+            "permafrost"
           ]
         }
       },
@@ -4893,9 +5258,11 @@
       },
       {
         "candidate_id": "earth-svalbard-sverrefjellet",
-        "score": 45.4,
-        "n_vars_used": 3,
+        "score": 48.9,
+        "n_vars_used": 5,
         "norm_diff": {
+          "slope_deg": 0.6685,
+          "relief_m": 0.2483,
           "temp_mean_c": 0.2233,
           "precip_mm_year": 0.8398,
           "albedo": 0.5736
@@ -4910,28 +5277,6 @@
           ],
           "only_candidate": [
             "basalt"
-          ]
-        }
-      },
-      {
-        "candidate_id": "earth-manjanggul-jeju",
-        "score": 44.4,
-        "n_vars_used": 3,
-        "norm_diff": {
-          "temp_mean_c": 0.362,
-          "precip_mm_year": 0.9554,
-          "albedo": 0.3509
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "aeolian-dunes",
-            "hydrated-minerals",
-            "impact-crater"
-          ],
-          "only_candidate": [
-            "lava-tubes"
           ]
         }
       }
@@ -5346,7 +5691,17 @@
           "precip_mm_year": 0.7091,
           "albedo": 0.0679
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "evaporite",
+            "hydrated-minerals"
+          ]
+        }
       },
       {
         "candidate_id": "earth-harrat-khaybar",
@@ -5627,6 +5982,51 @@
         }
       },
       {
+        "candidate_id": "earth-la-corona-lanzarote",
+        "score": 55.0,
+        "n_vars_used": 5,
+        "norm_diff": {
+          "slope_deg": 0.2236,
+          "relief_m": 0.5532,
+          "temp_mean_c": 0.5157,
+          "precip_mm_year": 0.6079,
+          "albedo": 0.3472
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "caves",
+            "lava-tubes"
+          ]
+        }
+      },
+      {
+        "candidate_id": "earth-manjanggul-jeju",
+        "score": 54.2,
+        "n_vars_used": 5,
+        "norm_diff": {
+          "slope_deg": 0.075,
+          "relief_m": 0.4442,
+          "temp_mean_c": 0.5047,
+          "precip_mm_year": 0.9554,
+          "albedo": 0.3094
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "lava-tubes"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-uturuncu-bolivia",
         "score": 52.5,
         "n_vars_used": 5,
@@ -5681,48 +6081,6 @@
           "only_candidate": [
             "basalt",
             "hydrated-minerals"
-          ]
-        }
-      },
-      {
-        "candidate_id": "earth-la-corona-lanzarote",
-        "score": 51.0,
-        "n_vars_used": 3,
-        "norm_diff": {
-          "temp_mean_c": 0.5157,
-          "precip_mm_year": 0.6079,
-          "albedo": 0.3472
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "permafrost"
-          ],
-          "only_candidate": [
-            "caves",
-            "lava-tubes"
-          ]
-        }
-      },
-      {
-        "candidate_id": "earth-valles-secos-mcmurdo",
-        "score": 50.8,
-        "n_vars_used": 3,
-        "norm_diff": {
-          "temp_mean_c": 0.2687,
-          "precip_mm_year": 0.556,
-          "albedo": 0.6528
-        },
-        "tag_overlap": {
-          "jaccard": 0.333,
-          "shared": [
-            "permafrost"
-          ],
-          "only_site": [],
-          "only_candidate": [
-            "extreme-cold",
-            "hyper-arid"
           ]
         }
       },
@@ -5893,30 +6251,35 @@
         }
       },
       {
-        "candidate_id": "earth-manjanggul-jeju",
-        "score": 41.0,
-        "n_vars_used": 3,
+        "candidate_id": "earth-valles-secos-mcmurdo",
+        "score": 40.8,
+        "n_vars_used": 5,
         "norm_diff": {
-          "temp_mean_c": 0.5047,
-          "precip_mm_year": 0.9554,
-          "albedo": 0.3094
+          "slope_deg": 0.7075,
+          "relief_m": 0.7745,
+          "temp_mean_c": 0.2687,
+          "precip_mm_year": 0.556,
+          "albedo": 0.6528
         },
         "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
+          "jaccard": 0.333,
+          "shared": [
             "permafrost"
           ],
+          "only_site": [],
           "only_candidate": [
-            "lava-tubes"
+            "extreme-cold",
+            "hyper-arid"
           ]
         }
       },
       {
         "candidate_id": "earth-svalbard-sverrefjellet",
-        "score": 39.3,
-        "n_vars_used": 3,
+        "score": 35.3,
+        "n_vars_used": 5,
         "norm_diff": {
+          "slope_deg": 0.7257,
+          "relief_m": 0.69,
           "temp_mean_c": 0.366,
           "precip_mm_year": 0.8398,
           "albedo": 0.6151

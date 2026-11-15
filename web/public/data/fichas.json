@@ -45,7 +45,7 @@
       "Buscar firmas de hábitat y de vida en lagos de altura como guía para explorar paleolagos marcianos (The Geology of Mars, 2007)."
     ],
     "breaks_down": [
-      "Es el primero del ranking en Peak Near Cabeus B y Malapert por pendiente y relieve, pero su temperatura media (14,7 °C) está unos 140 °C por encima de la de esos sitios (Diviner).",
+      "Es el segundo del ranking en Peak Near Cabeus B y Malapert (69,8), después de los Valles Secos de McMurdo, por pendiente y relieve, pero su temperatura media (14,7 °C) está unos 140 °C por encima de la de esos sitios (Diviner).",
       "La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato).",
       "Hoy tiene agua líquida en superficie; los lagos de Marte son antiguos y ya no existen en superficie."
     ],
@@ -115,7 +115,7 @@
     "breaks_down": [
       "El estudio del complejo volcánico Altiplano-Puna como análogo planetario cubre el sector chileno; no encontramos uno sobre este volcán.",
       "La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato).",
-      "Entra al top 10 de los sitios lunares solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares."
+      "Entra al top 10 de Faustini Rim A solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares."
     ],
     "references": [
       {
@@ -147,7 +147,7 @@
       "Propuesta del equipo: probar sensores de temperatura del subsuelo y de detección de hielo en terreno empinado y muy seco."
     ],
     "breaks_down": [
-      "Con −1,3 °C de media es el más frío del top 10 lunar, pero sigue unos 124 °C por encima de Peak Near Cabeus B (Diviner).",
+      "Con −1,3 °C de media es el sexto más frío del catálogo, pero sigue unos 124 °C por encima de Peak Near Cabeus B (Diviner).",
       "La celda de NASA POWER da 219 mm de precipitación anual, aunque el estudio de campo describe un clima extremadamente árido: la celda es demasiado gruesa para la cumbre. La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato)."
     ],
     "references": [
@@ -230,8 +230,8 @@
     ],
     "breaks_down": [
       "Es una cueva kárstica formada por agua; las cuevas que se buscan en la Luna y Marte como refugio son sobre todo tubos de lava.",
-      "Recibe 533 mm de precipitación anual (NASA POWER), la más alta de los candidatos del top 10 lunar.",
-      "Entra al top 10 de los sitios lunares solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares."
+      "Recibe 533 mm de precipitación anual (NASA POWER), la más alta de los candidatos del top 10 de Faustini Rim A.",
+      "Entra al top 10 de Faustini Rim A solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares."
     ],
     "references": [
       {
@@ -283,7 +283,7 @@
       "Propuesta del equipo, sin estudio publicado: comparar picos volcánicos erosionados con relieves de las tierras altas de Marte."
     ],
     "breaks_down": [
-      "Es el décimo en Faustini Rim A con un puntaje bajo (52,4): la coincidencia es débil y solo topográfica.",
+      "Es el 11.º en Faustini Rim A con un puntaje bajo (52,4): la coincidencia es débil y solo topográfica.",
       "Temperatura media de 22,5 °C (NASA POWER), unos 183 °C por encima de Faustini Rim A (Diviner). La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato)."
     ],
     "references": [
@@ -313,7 +313,7 @@
     "breaks_down": [
       "Con −4,7 °C de media es de los más fríos del ranking, pero sigue unos 120 °C por encima de Peak Near Cabeus B (Diviner).",
       "El punto es un centro aproximado de la región, no un sitio de estudio. La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato).",
-      "Entra al top 10 de los sitios lunares solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares."
+      "Entra al top 10 de Peak Near Cabeus B y Malapert solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares."
     ],
     "references": [
       {
@@ -522,7 +522,8 @@
     "candidate_id": "earth-mdrs-utah",
     "summary": "Mars Desert Research Station, una estación de simulación de misiones marcianas en el desierto de Utah. En la misión Mars 160 (2016-2017) sus tripulaciones registraron 35 especies de líquenes.",
     "processes": [
-      "Ambiente desértico con suelos expuestos y erosión."
+      "Ambiente desértico con suelos expuestos y erosión.",
+      "Suelos de las formaciones Mancos y Morrison ricos en filosilicatos (montmorillonita, nontronita e illita), como los vistos desde la órbita en Marte, y con minerales evaporíticos como yeso, thenardita y polihalita (Stoker et al., 2011)."
     ],
     "use_cases": [
       "Simulación de misiones humanas a Marte (Mars 160).",
@@ -544,6 +545,10 @@
       {
         "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
         "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      },
+      {
+        "title": "Mineralogical, chemical, organic and microbial properties of subsurface soil cores from Mars Desert Research Station (Utah, USA): Phyllosilicate and sulfate analogues to Mars mission landing sites (International Journal of Astrobiology, 2011)",
+        "url": "https://doi.org/10.1017/s1473550411000115"
       }
     ]
   },
@@ -876,9 +881,10 @@
       "Estudiar un análogo geológico, ambiental y ecológico de la superficie y la subsuperficie de Marte (Salvatore y Levy, 2021)."
     ],
     "breaks_down": [
-      "Temperatura media de −26,7 °C (NASA POWER), unos 51 °C más que Arcadia Planitia (−77,9 °C), que tiene permafrost.",
+      "Es el primero del ranking en Peak Near Cabeus B (72,1) y Malapert Massif (72,2) y el segundo en Faustini Rim A (62,7), por su pendiente media de 15,3° y su relieve de 418 m (Copernicus DEM GLO-30); en Marte queda entre los puestos 45 y 46.",
+      "Temperatura media de −26,7 °C (NASA POWER), la más baja del catálogo, pero unos 99 °C más que Peak Near Cabeus B (−125,6 °C, Diviner) y unos 51 °C más que Arcadia Planitia (−77,9 °C), que tiene permafrost.",
       "Su albedo (0,56) es más del doble que el de Arcadia Planitia (0,21), porque el albedo terrestre incluye nieve y hielo.",
-      "No tiene pendiente ni relieve: las teselas de elevación solo aportaron modelos globales gruesos. Con tres variables compartidas queda entre los puestos 37 y 45 en Marte."
+      "El punto es el centro aproximado de los valles: las variables describen la región, no un valle concreto."
     ],
     "references": [
       {
@@ -896,6 +902,10 @@
       {
         "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
         "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      },
+      {
+        "title": "Copernicus DEM GLO-30 (ESA), pendiente y relieve",
+        "url": "https://registry.opendata.aws/copernicus-dem/"
       }
     ]
   },
@@ -977,7 +987,7 @@
     "breaks_down": [
       "Temperatura media de −4,4 °C (NASA POWER), unos 156 °C más que Faustini Rim A (−160,4 °C, Diviner).",
       "Recibe unos 862 mm de precipitación anual (NASA POWER); la Luna no tiene lluvia.",
-      "Es el 23.º en los tres sitios lunares, con puntajes de 43,5 a 44,0: la coincidencia es débil."
+      "Es el 26.º en los tres sitios lunares, con puntajes de 43,5 a 44,0: la coincidencia es débil."
     ],
     "references": [
       {
@@ -1080,7 +1090,7 @@
       "Comparar los carbonatos de un basalto terrestre con los del meteorito marciano ALH 84001 (GSA Abstracts, 2016)."
     ],
     "breaks_down": [
-      "No tiene pendiente ni relieve: las teselas de elevación solo aportaron modelos globales gruesos. Con tres variables compartidas queda entre los puestos 46 y 47 en Marte.",
+      "Pendiente media de 15,7° y relieve de 256 m (Copernicus DEM GLO-30, sin el fiordo, que ocupa el 15,5 % de la ventana): es el 8.º en Peak Near Cabeus B (60,0) y Malapert (60,1) y el 16.º en Faustini Rim A (50,6), pero el último en Marte.",
       "Temperatura media de −8,1 °C (NASA POWER), unos 43 °C más que Gale (−50,7 °C).",
       "Su albedo (0,54) es más del doble que el de Gale (0,24), porque el albedo terrestre incluye nieve y hielo."
     ],
@@ -1100,6 +1110,10 @@
       {
         "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
         "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      },
+      {
+        "title": "Copernicus DEM GLO-30 (ESA), pendiente y relieve",
+        "url": "https://registry.opendata.aws/copernicus-dem/"
       }
     ]
   },
@@ -1179,7 +1193,7 @@
     "breaks_down": [
       "Temperatura media de 23,4 °C (NASA POWER), unos 184 °C más que Faustini Rim A (−160,4 °C, Diviner). El punto está 814 m por encima de la celda de NASA POWER, así que la temperatura puede estar sesgada (aviso en las notas del candidato).",
       "Recibe unos 139 mm de precipitación anual (NASA POWER); la Luna no tiene lluvia.",
-      "Es el 14.º en los tres sitios lunares, con puntajes de 50,6 a 51,1: la coincidencia es débil y solo topográfica."
+      "Es el 15.º en Faustini Rim A (51,1) y el 16.º en Peak Near Cabeus B y Malapert (50,6): la coincidencia es débil y solo topográfica."
     ],
     "references": [
       {
@@ -1216,7 +1230,7 @@
       "Consultar la investigación sobre cuevas y tubos de lava terrestres (von Ehrenfried, 2019)."
     ],
     "breaks_down": [
-      "No tiene pendiente ni relieve: la ventana de 10 × 10 km incluye mar y la batimetría de ETOPO1 no sirve. Con tres variables compartidas queda entre los puestos 36 y 44 en Marte, y no entra al ranking lunar.",
+      "Pendiente media de 5,0° y relieve de 116 m solo con los puntos de tierra (Copernicus DEM GLO-30; el 48,3 % de la ventana de 10 × 10 km, el resto es mar): es el 20.º en los tres sitios lunares (47,3 a 47,9) y queda entre los puestos 20 y 33 en Marte.",
       "Temperatura media de 20,4 °C (NASA POWER), unos 98 °C más que Arcadia Planitia (−77,9 °C).",
       "Su albedo (0,03) es mucho menor que el de Arcadia Planitia (0,21)."
     ],
@@ -1232,6 +1246,10 @@
       {
         "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
         "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      },
+      {
+        "title": "Copernicus DEM GLO-30 (ESA), pendiente y relieve",
+        "url": "https://registry.opendata.aws/copernicus-dem/"
       }
     ]
   },
@@ -1284,7 +1302,7 @@
     ],
     "breaks_down": [
       "No encontramos un estudio que lo use como análogo planetario.",
-      "No tiene pendiente ni relieve: la ventana de 10 × 10 km incluye mar. Con tres variables compartidas queda entre los puestos 46 y 47 en Marte.",
+      "Pendiente media de 1,8° y relieve de 61 m solo con los puntos de tierra (Copernicus DEM GLO-30; el 84,0 % de la ventana, el resto es mar): es el 37.º en los tres sitios lunares y queda entre los puestos 21 y 34 en Marte.",
       "Recibe unos 1629 mm de precipitación anual (NASA POWER), más que cualquier sitio de Marte, y 18,3 °C de media, unos 68 °C más que Jezero."
     ],
     "references": [
@@ -1299,6 +1317,10 @@
       {
         "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
         "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      },
+      {
+        "title": "Copernicus DEM GLO-30 (ESA), pendiente y relieve",
+        "url": "https://registry.opendata.aws/copernicus-dem/"
       }
     ]
   },

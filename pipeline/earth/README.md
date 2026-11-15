@@ -6,19 +6,21 @@ Scripts con solo la biblioteca estándar de Python. Generan los candidatos terre
 
 ```bash
 python pipeline/earth/build_candidates.py   # unos 3-5 min la primera vez; luego usa data/raw/ (ignorada por Git)
+python pipeline/earth/build_candidates.py --only earth-gilf-kebir   # rehace solo ese lugar y conserva el resto
 python pipeline/validate.py
 python pipeline/similarity.py
 ```
 
 - `seed.json`: la lista curada. Cada candidato lleva sus coordenadas con su fuente, `known`, etiquetas y referencias. **Es lo que se edita a mano**; `data/candidates.json` se regenera. Cada etiqueta lleva su fuente en `tag_sources` (etiqueta → URL) y, si no hay etiqueta con respaldo, `tags_pending` explica por qué; las dos cosas terminan en `notes`.
 - `terrain_tiles.py`: pendiente y relieve en la ventana de 10 × 10 km (Terrain Tiles de Mapzen en AWS, Terrarium, zoom 10). Mismo método que `pipeline/moon_mars/`: cuadrícula de 250 m, pendiente de Horn (3 × 3) y desviación estándar poblacional de la elevación.
+- `copernicus_dem.py`: pendiente y relieve con Copernicus DEM GLO-30 (ESA, 30 m, AWS Open Data) para los lugares que el seed marca con `"dem": "copernicus-glo30"` (Antártida, Svalbard y dos costas). Lee el GeoTIFF por teselas (DEFLATE y predictor de coma flotante) con la biblioteca estándar y aplica el mismo método. Con `"land_only": true` excluye el mar, porque el modelo da 0 m sobre el agua. Se validó contra seis lugares calculados con Terrain Tiles: pendientes dentro de 0,22° y relieves dentro de 2,4 m.
 - `power.py`: temperatura de superficie (`TS`), precipitación (`PRECTOTCORR` × 365,25) y albedo (`ALLSKY_SRF_ALB`) de NASA POWER, climatología 2001-2025.
 - `build_candidates.py`: une todo, escribe la fuente exacta de cada valor en `sources` y los motivos de cada `null` en `notes`.
 
 ## Reglas que aplica el script
 
-- **Modelos gruesos:** si las teselas solo aportan ETOPO1 o GMTED (sin SRTM ni otro modelo fino), pendiente y relieve quedan `null`. Pasa en la Antártida y en latitudes altas como Svalbard.
-- **Costas:** si la ventana incluye mar con batimetría de ETOPO1, pendiente y relieve quedan `null`. Las depresiones de tierra bajo el nivel del mar (Danakil, lago Eyre) se marcan con `land_below_sea_level` en el seed.
+- **Modelos gruesos:** si las teselas solo aportan ETOPO1 o GMTED (sin SRTM ni otro modelo fino), pendiente y relieve quedan `null`, salvo que el seed pida `"dem": "copernicus-glo30"`. Así se resolvieron los Valles Secos de McMurdo y Svalbard.
+- **Costas:** si la ventana incluye mar con batimetría de ETOPO1, pendiente y relieve quedan `null`, salvo que el seed pida Copernicus con `"land_only": true` (La Corona y Manjanggul). Las depresiones de tierra bajo el nivel del mar (Danakil, lago Eyre) se marcan con `land_below_sea_level` en el seed.
 - **Sesgo de elevación:** si la celda de NASA POWER difiere más de 500 m de la elevación real del punto, `notes` lo avisa con `ATENCION`. No se corrige.
 
 ## Límites que conviene conocer

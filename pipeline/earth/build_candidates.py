@@ -5,7 +5,9 @@ Solo biblioteca estandar. El seed es la lista curada a mano (lugar, coordenadas 
 `known`, etiquetas y referencias con respaldo citable). Este script agrega las cinco variables
 numericas con su fuente exacta:
 
-- slope_deg y relief_m: pipeline/earth/terrain_tiles.py (Terrain Tiles de Mapzen en AWS).
+- slope_deg y relief_m: pipeline/earth/terrain_tiles.py (Terrain Tiles de Mapzen en AWS) y, en los
+  lugares donde esas teselas solo traen modelos gruesos o mar (`"dem": "copernicus-glo30"` en el seed),
+  pipeline/earth/copernicus_dem.py (Copernicus DEM GLO-30 de ESA, 30 m).
 - temp_mean_c, precip_mm_year y albedo: pipeline/earth/power.py (NASA POWER).
 
 Un valor que no se consigue queda en `null` con su motivo en `notes`. Nada se inventa.
@@ -13,6 +15,7 @@ Un valor que no se consigue queda en `null` con su motivo en `notes`. Nada se in
 Uso:
     python pipeline/earth/build_candidates.py                 # escribe data/candidates.json
     python pipeline/earth/build_candidates.py --out otra.json
+    python pipeline/earth/build_candidates.py --only earth-gilf-kebir   # rehace solo ese lugar y conserva el resto
 """
 import argparse
 import json
@@ -21,6 +24,8 @@ import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from copernicus_dem import DOCS as COPERNICUS_DOCS  # noqa: E402
+from copernicus_dem import terrain_variables as copernicus_variables  # noqa: E402
 from power import climate_variables  # noqa: E402
 from terrain_tiles import terrain_variables  # noqa: E402
 
@@ -44,6 +49,33 @@ def terrain_source(kind: str, models: list[str]) -> str:
         f"Terrain Tiles de Mapzen en AWS (Terrarium, zoom 10), compuesto de: {', '.join(models)} ({TILES_DOCS}); "
         f"{what} en ventana de 10 x 10 km a 250 m, calculada con pipeline/earth/terrain_tiles.py"
     )
+
+
+def copernicus_source(kind: str, terrain: dict, land_only: bool) -> str:
+    what = "pendiente media de Horn (3 x 3)" if kind == "slope" else "desviacion estandar poblacional de la elevacion"
+    land = (
+        f"; solo con puntos de tierra (elevacion mayor de 1 m), el {terrain['land_fraction'] * 100:.1f} % de la ventana"
+        if land_only
+        else ""
+    )
+    return (
+        f"Copernicus DEM GLO-30 (ESA, 30 m), mosaicos {', '.join(terrain['imagery_sources'])} ({COPERNICUS_DOCS}); "
+        f"{what} en ventana de 10 x 10 km a 250 m, calculada con pipeline/earth/copernicus_dem.py{land}"
+    )
+
+
+def copernicus_note(terrain: dict, land_only: bool) -> str:
+    note = (
+        f"Elevacion en el centro: {terrain['elevation_center_m']:.0f} m. Las teselas de Terrain Tiles solo aportaban modelos "
+        "globales gruesos o batimetria en este lugar; pendiente y relieve se calcularon con Copernicus DEM GLO-30 de ESA "
+        f"(30 m, mosaicos {', '.join(terrain['imagery_sources'])}) en ventana de 10 x 10 km a 250 m con interpolacion bilineal."
+    )
+    if land_only and terrain["land_fraction"] < 1:
+        note += (
+            f" La ventana incluye mar (el modelo da 0 m sobre el agua): se excluyeron esos puntos, de modo que el relieve usa solo "
+            f"tierra (el {terrain['land_fraction'] * 100:.1f} % de la ventana) y la pendiente solo los puntos con todo su vecindario de tierra."
+        )
+    return note
 
 
 def auto_why(variables: dict) -> str:
@@ -72,15 +104,25 @@ def tag_notes(seed: dict) -> list[str]:
 
 def build_record(seed: dict) -> dict:
     lat, lon = seed["lat"], seed["lon"]
-    terrain = terrain_variables(lat, lon, seed.get("land_below_sea_level", False))
+    use_copernicus = seed.get("dem") == "copernicus-glo30"
+    land_only = seed.get("land_only", False)
+    terrain = (
+        copernicus_variables(lat, lon, land_only)
+        if use_copernicus
+        else terrain_variables(lat, lon, seed.get("land_below_sea_level", False))
+    )
     climate = climate_variables(lat, lon)
     models = terrain["imagery_sources"]
     period = climate["period"].split("(")[-1].rstrip(")")
 
     sources: dict[str, str] = {}
     if terrain["slope_deg"] is not None:
-        sources["slope_deg"] = terrain_source("slope", models)
-        sources["relief_m"] = terrain_source("relief", models)
+        if use_copernicus:
+            sources["slope_deg"] = copernicus_source("slope", terrain, land_only)
+            sources["relief_m"] = copernicus_source("relief", terrain, land_only)
+        else:
+            sources["slope_deg"] = terrain_source("slope", models)
+            sources["relief_m"] = terrain_source("relief", models)
     if climate["temp_mean_c"] is not None:
         sources["temp_mean_c"] = (
             f"NASA POWER, climatologia {period}, parametro TS (Earth Skin Temperature, temperatura de superficie), "
@@ -100,6 +142,8 @@ def build_record(seed: dict) -> dict:
     if terrain["null_reason"]:
         reason = NULL_REASONS[terrain["null_reason"]].format(models=", ".join(models))
         notes.append(f"Pendiente y relieve: null, {reason}.")
+    elif use_copernicus:
+        notes.append(copernicus_note(terrain, land_only))
     else:
         notes.append(
             f"Elevacion en el centro: {terrain['elevation_center_m']:.0f} m. Pendiente y relieve en ventana de 10 x 10 km "
@@ -158,11 +202,19 @@ def build_record(seed: dict) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--out", default=str(ROOT / "data" / "candidates.json"))
+    parser.add_argument("--only", help="ids separados por coma: rehace solo esos lugares y conserva el resto de --out")
     args = parser.parse_args()
 
     seeds = json.loads(SEED.read_text(encoding="utf-8"))
+    only = set(args.only.split(",")) if args.only else None
+    if only and only - {seed["id"] for seed in seeds}:
+        sys.exit(f"ids que no estan en el seed: {sorted(only - {seed['id'] for seed in seeds})}")
+    kept = {r["id"]: r for r in json.loads(Path(args.out).read_text(encoding="utf-8"))} if only else {}
     records = []
     for index, seed in enumerate(seeds, 1):
+        if only and seed["id"] not in only:
+            records.append(kept[seed["id"]])
+            continue
         record = build_record(seed)
         records.append(record)
         v = record["variables"]
