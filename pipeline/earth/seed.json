@@ -698,7 +698,7 @@
     "name": "Volcán Ojos del Salado",
     "country": "Chile y Argentina",
     "is_bolivia": false,
-    "known": false,
+    "known": true,
     "analog_for": [
       "mars"
     ],
@@ -708,9 +708,11 @@
     "lat": -27.1097,
     "lon": -68.5414,
     "coord_source": "Wikipedia, artículo 'Ojos del Salado' (https://en.wikipedia.org/wiki/Ojos_del_Salado)",
-    "why": "",
+    "why": "Desierto frío y seco de altura (5830 m) descrito como análogo de las condiciones de Marte: se estudiaron su régimen térmico con permafrost y hielo en el suelo y su balance de energía superficial (Nagy et al. 2020; Breuer et al. 2020).",
     "references": [
-      "https://doi.org/10.1002/ppp.1989"
+      "https://doi.org/10.1002/ppp.1989",
+      "https://doi.org/10.1089/ast.2018.2021",
+      "https://doi.org/10.1089/ast.2019.2024"
     ]
   },
   {

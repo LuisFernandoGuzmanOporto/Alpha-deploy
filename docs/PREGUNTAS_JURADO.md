@@ -16,7 +16,7 @@
 
 8. **¿Cómo comprueban que el ranking tiene sentido?** Usamos `analog_for` para evaluar los análogos documentados por cuerpo. Tibesti quedó segundo en Jezero y Gale, y Qaidam y Coipasa ocuparon los puestos cuarto y quinto en Arcadia. Ningún conocido pertinente entró en el top 5 lunar: Pinacate quedó 15.º o 16.º, Mauna Kea 18.º, La Corona 20.º y Askja 26.º. Las diferencias térmicas y de precipitación, y la ausencia de procesos como el vulcanismo en el puntaje, limitan la validación lunar.
 
-9. **¿Cómo distinguen un candidato poco estudiado de un descubrimiento demostrado?** Los candidatos marcados como poco estudiados ocuparon 14 de los 30 puestos del top 5 general, contando repeticiones entre sitios. Esa clasificación procede de una búsqueda bibliográfica preliminar. Los resultados priorizan candidatos para revisión bibliográfica y de campo, incluida la evaluación de su utilidad para un ensayo concreto.
+9. **¿Cómo distinguen un candidato poco estudiado de un descubrimiento demostrado?** Los candidatos marcados como poco estudiados ocuparon 12 de los 30 puestos del top 5 general, contando repeticiones entre sitios. Esa clasificación procede de una búsqueda bibliográfica preliminar. Los resultados priorizan candidatos para revisión bibliográfica y de campo, incluida la evaluación de su utilidad para un ensayo concreto.
 
 10. **¿Dónde deja de ser válida la analogía y para qué sirve aun así?** El índice no reproduce la gravedad reducida, el vacío lunar, la atmósfera marciana ni la radiación. Una similitud en pendientes, por ejemplo, puede orientar la elección de un recorrido para ensayar navegación y maniobras. La tracción, la dinámica del vehículo y la seguridad de la misión requieren evaluaciones propias.
 

@@ -1110,13 +1110,15 @@
     "name": "Volcán Ojos del Salado",
     "country": "Chile y Argentina",
     "is_bolivia": false,
-    "known": false,
+    "known": true,
     "analog_for": [
       "mars"
     ],
-    "why": "Propuesto por sus valores en este catalogo (219.2 mm/ano de precipitacion, -1.28 °C de temperatura media de superficie, 339.6 m de relieve local); no se encontro un estudio previo como analogo planetario.",
+    "why": "Desierto frío y seco de altura (5830 m) descrito como análogo de las condiciones de Marte: se estudiaron su régimen térmico con permafrost y hielo en el suelo y su balance de energía superficial (Nagy et al. 2020; Breuer et al. 2020).",
     "reference_urls": [
-      "https://doi.org/10.1002/ppp.1989"
+      "https://doi.org/10.1002/ppp.1989",
+      "https://doi.org/10.1089/ast.2018.2021",
+      "https://doi.org/10.1089/ast.2019.2024"
     ],
     "lat": -27.1097,
     "lon": -68.5414,
@@ -1134,7 +1136,7 @@
       "precip_mm_year": "NASA POWER, parametro PRECTOTCORR (precipitacion corregida), media anual en mm/dia x 365,25, MERRA-2 (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)",
       "albedo": "NASA POWER, parametro ALLSKY_SRF_ALB (albedo de superficie en todo cielo), CERES SYN1deg (https://power.larc.nasa.gov/docs/services/api/temporal/climatology/)"
     },
-    "notes": "Coordenadas: Wikipedia, artículo 'Ojos del Salado' (https://en.wikipedia.org/wiki/Ojos_del_Salado). Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Elevacion en el centro: 6844 m. Pendiente y relieve en ventana de 10 x 10 km a 250 m con interpolacion bilineal; modelos de elevacion: gmted/30S090W_20101117_gmted_mea075.tif, srtm/S28W069.tif. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 4810 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. ATENCION: el punto esta 2034 m por encima de la celda de POWER (elevacion de la celda frente a la del terreno); la temperatura y la precipitacion probablemente no representan el punto y no se corrigieron. known=false: en una busqueda en Crossref del 14/11/2026 no se encontro un estudio de analogo planetario de este lugar; falta una revision bibliografica completa (a verificar).",
+    "notes": "Coordenadas: Wikipedia, artículo 'Ojos del Salado' (https://en.wikipedia.org/wiki/Ojos_del_Salado). Son WGS84 en grados decimales y el punto representa el lugar, no toda su extension. Elevacion en el centro: 6844 m. Pendiente y relieve en ventana de 10 x 10 km a 250 m con interpolacion bilineal; modelos de elevacion: gmted/30S090W_20101117_gmted_mea075.tif, srtm/S28W069.tif. Temperatura, precipitacion y albedo vienen de NASA POWER con resolucion nativa de decenas de km (MERRA-2 de unos 0,5 x 0,625 grados y CERES SYN1deg de 1 grado), mucho mas gruesa que la ventana de 10 km: describen la region, no el punto. La celda de POWER tiene 4810 m de elevacion. El albedo incluye vegetacion, nieve y agua; no es comparable de forma directa con el de suelo desnudo de Marte. ATENCION: el punto esta 2034 m por encima de la celda de POWER (elevacion de la celda frente a la del terreno); la temperatura y la precipitacion probablemente no representan el punto y no se corrigieron. known=true: las referencias citadas documentan el lugar (o su region) como analogo planetario.",
     "tags": [
       "permafrost"
     ]

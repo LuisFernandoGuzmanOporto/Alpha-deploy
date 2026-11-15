@@ -151,6 +151,8 @@ export const CANDIDATE_WHY_EN: Record<string, string> = {
     "Seasonal brines of the world's largest salt flat, proposed as an analog of Martian brines; NASA describes it as a natural laboratory for studying Mars.",
   "earth-salar-de-coipasa": "NASA describes Uyuni and Coipasa as natural laboratories for studying the Martian environment.",
   "earth-licancabur-laguna-verde": "High-altitude crater lake studied as an analog of the Martian lakes of about 3.5 billion years ago.",
+  "earth-ojos-del-salado":
+    "High-altitude cold, dry desert (5,830 m) described as an analog of conditions on Mars: its ground thermal regime with permafrost and ground ice and its surface energy budget were studied (Nagy et al. 2020; Breuer et al. 2020).",
   "earth-gilf-kebir":
     "Plateau in Egypt's Western Desert whose wind-eroded forms and dry valleys were compared with those of Mars in a NASA report (El-Baz and Maxwell, 1982).",
 };
@@ -232,12 +234,15 @@ export const FICHAS_EN: Record<string, FichaEn> = {
   },
   "earth-ojos-del-salado": {
     summary:
-      "The highest volcano on Earth (6,893 m), in the Arid Diagonal of the Andes, between Chile and Argentina. Because of the extreme aridity there is almost no surface ice, although permafrost with ice may exist.",
+      "The highest volcano on Earth (6,893 m), in the Arid Diagonal of the Andes, between Chile and Argentina. Because of the extreme aridity there is almost no surface ice, but at 5,830 m there is permafrost and ground ice. Nagy and colleagues (2020) describe it as a high-altitude cold, dry desert that serves as an analog of conditions on Mars, and Breuer and colleagues (2020) use it as the site of an analog experiment to validate models of the surface energy budget.",
     processes: [
       "Ground thermal regime measured for four years (2012-2016) at six sites between 4,200 and 6,893 m (Permafrost and Periglacial Processes, 2018).",
-      "Possible permafrost under an extremely arid climate.",
+      "Permafrost and ground ice at 5,830 m, with water phase changes in the regolith that damp the daily temperature fluctuations (Nagy et al., 2020).",
     ],
-    use_cases: ["Team proposal: test subsurface temperature and ice-detection sensors on steep, very dry terrain."],
+    use_cases: [
+      "Test models of Martian soil and atmospheric conditions in a high-altitude cold, dry desert, such as the surface energy budget simulated with WRF (Breuer et al., 2020).",
+      "Rehearse a ground-temperature analysis that needs little processing power and is meant to be applied on Mars (Nagy et al., 2020).",
+    ],
     breaks_down: [
       "At −1.3 °C on average it is the sixth coldest in the catalog, but still about 124 °C above Peak Near Cabeus B (Diviner).",
       `The NASA POWER cell gives 219 mm of annual precipitation, although the field study describes an extremely arid climate: the cell is too coarse for the summit. ${CELL}`,

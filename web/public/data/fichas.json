@@ -138,19 +138,28 @@
   },
   {
     "candidate_id": "earth-ojos-del-salado",
-    "summary": "El volcán más alto de la Tierra (6893 m), en la Diagonal Árida de los Andes, entre Chile y Argentina. Por la extrema aridez casi no hay hielo en superficie, aunque podría existir permafrost con hielo.",
+    "summary": "El volcán más alto de la Tierra (6893 m), en la Diagonal Árida de los Andes, entre Chile y Argentina. Por la extrema aridez casi no hay hielo en superficie, pero a 5830 m hay permafrost y hielo en el suelo. Nagy y colaboradores (2020) lo describen como un desierto frío y seco de altura que sirve de análogo de las condiciones de Marte, y Breuer y colaboradores (2020) lo usan como sitio de un experimento análogo para validar modelos del balance de energía de la superficie.",
     "processes": [
       "Régimen térmico del suelo medido durante cuatro años (2012-2016) en seis sitios entre 4200 y 6893 m (Permafrost and Periglacial Processes, 2018).",
-      "Permafrost posible bajo un clima extremadamente árido."
+      "Permafrost y hielo en el suelo a 5830 m, con cambios de fase del agua en el regolito que amortiguan las fluctuaciones diarias de temperatura (Nagy et al., 2020)."
     ],
     "use_cases": [
-      "Propuesta del equipo: probar sensores de temperatura del subsuelo y de detección de hielo en terreno empinado y muy seco."
+      "Probar modelos de las condiciones del suelo y la atmósfera de Marte en un desierto frío y seco de altura, como el balance de energía de la superficie simulado con WRF (Breuer et al., 2020).",
+      "Ensayar un análisis de temperaturas del suelo que requiere poca potencia de cálculo y está pensado para aplicarse en Marte (Nagy et al., 2020)."
     ],
     "breaks_down": [
       "Con −1,3 °C de media es el sexto más frío del catálogo, pero sigue unos 124 °C por encima de Peak Near Cabeus B (Diviner).",
       "La celda de NASA POWER da 219 mm de precipitación anual, aunque el estudio de campo describe un clima extremadamente árido: la celda es demasiado gruesa para la cumbre. La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato)."
     ],
     "references": [
+      {
+        "title": "The Thermal Behavior of Ice-Bearing Ground: The Highest Cold, Dry Desert on Earth as an Analog for Conditions on Mars, at Ojos del Salado, Puna de Atacama-Altiplano Region (Astrobiology, 2020)",
+        "url": "https://doi.org/10.1089/ast.2018.2021"
+      },
+      {
+        "title": "Analog Site Experiment in the High Andes-Atacama Region: Surface Energy Budget Components on Ojos del Salado from Field Measurements and WRF Simulations (Astrobiology, 2020)",
+        "url": "https://doi.org/10.1089/ast.2019.2024"
+      },
       {
         "title": "Shallow ground temperature measurements on the highest volcano on Earth, Mt. Ojos del Salado, Arid Andes, Chile (Permafrost and Periglacial Processes, 2018)",
         "url": "https://doi.org/10.1002/ppp.1989"
