@@ -326,7 +326,7 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.01em; }
 .methodology p, .methodology ul, .methodology ol, .methodology table, .methodology blockquote { margin: 0 0 var(--cc-space-4); }
 .methodology h3 { margin: var(--cc-space-5) 0 var(--cc-space-2); font-size: var(--cc-text-lg); }
 .methodology li + li { margin-top: var(--cc-space-1); }
-.methodology code { padding: 0 4px; border: var(--cc-line) solid var(--cc-border); border-radius: 2px; background: var(--cc-surface-2); color: var(--cc-accent-strong); font-family: var(--cc-font-mono); font-size: 0.85em; white-space: nowrap; }
+.methodology code { padding: 0 4px; border: var(--cc-line) solid var(--cc-border); border-radius: 2px; background: var(--cc-surface-2); color: var(--cc-accent-strong); font-family: var(--cc-font-mono); font-size: 0.85em; overflow-wrap: anywhere; }
 .methodology table { display: block; width: 100%; overflow-x: auto; border-collapse: collapse; font-size: var(--cc-text-sm); }
 .methodology th, .methodology td { min-width: 120px; padding: var(--cc-space-3); border: var(--cc-line) solid var(--cc-border); text-align: left; vertical-align: top; }
 .methodology th { background: var(--cc-surface-2); font: 600 var(--cc-text-xs) var(--cc-font-mono); letter-spacing: 0.06em; text-transform: uppercase; }

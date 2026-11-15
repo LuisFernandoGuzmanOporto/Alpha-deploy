@@ -2,6 +2,34 @@
 
 Dueño: Joel. Cada fallo va como issue de GitHub con pasos para reproducir. Pasadas previstas: sábado ~14:30 (local), 04:00 y 07:00 (producción).
 
+## Pasada 3: sábado 14/11, noche (local, `main` después de #57, #58 y el inglés de los datos)
+
+- **Versión:** `main` en `a36532c` más la corrección de la metodología en móvil (ver abajo). Build de producción con `vite preview`. **Sigue sin estar en Vercel**, así que la pasada es local.
+- **Cómo:** 34 comprobaciones automáticas con Chrome y **clics y teclas reales** (no eventos simulados), en español e inglés. Chequeos sobre la web en inglés: `?lang=en`.
+- **Datos:** reales (6 sitios, 47 candidatos, 31 fichas). `python pipeline/validate.py`: 0 errores. `npm test` 61/61; `tsc` y `npm run build` sin errores.
+- **Resultado: 34 de 34 OK.**
+
+| Grupo | Qué se comprobó | Estado |
+| --- | --- | --- |
+| Flujo principal | Inicio → elegir Marte (URL guarda `sitio`, el ranking pasa a Gilf Kebir) → elegir Crater Gale en el selector → elegir un análogo (URL guarda `analogo`) → enlace a la comparación con el sitio correcto → comparación con tabla de 5 variables, radar, "dónde falla" y ficha → "Back to ranking" | OK |
+| Filtros y pesos | El diálogo abre; el interruptor "solo Bolivia" deja 10 resultados y guarda `bolivia=1`; con el teclado la flecha cambia un peso y la URL guarda `pesos=`; "Reset" la limpia; Esc cierra y devuelve el foco al botón "Filters" | OK |
+| Globo | Se carga solo al abrir el plegable y trae las 3 pestañas | OK |
+| Idioma | El selector pasa a español y `<html lang>` cambia a `es` | OK |
+| Rutas | Descubrimientos (6 sitios), Metodología en inglés y en español, ruta inexistente y comparación inexistente | OK |
+| Inglés (#25) | Sin textos en español en inicio, comparación, descubrimientos y metodología con `?lang=en` | OK |
+| Teclado | El primer Tab enfoca "Skip to content" y Enter lleva el foco al contenido | OK |
+| Responsive | Sin desborde horizontal a 375 px (inicio, ranking con análogo, comparación, descubrimientos, metodología) y a 768 px | OK, tras el arreglo de abajo |
+| Consola | Sin errores durante toda la pasada | OK |
+
+**Error encontrado y corregido:** la página de Metodología se salía del ancho en móvil (410 px sobre 375) porque las fórmulas en `code` no se partían (`white-space: nowrap`). Ocurría en español y en inglés. Arreglado en `web/src/styles/app.css` (`overflow-wrap: anywhere`); ahora mide 375 px en ambos. La primera versión de mi comprobación no lo detectó porque comparaba el ancho con el de la ventana ampliada por el desborde; ahora compara con 375.
+
+**Peso (compilado):** paquete principal 598 KB (195 KB comprimido; subió desde 562 KB por los textos en inglés de los datos), Compare 307 KB, Metodología 196 KB, mapa 1.070 KB y globo 7 KB (los tres últimos se cargan solo al entrar a su pantalla).
+
+**No probado en esta pasada:**
+- Lector de pantalla real (NVDA o VoiceOver), zoom real al 200 % y la preferencia de "reducir movimiento" del sistema (Noe).
+- Carga lenta y lista vacía.
+- **Producción:** URL de Vercel, enlace directo recargando `/comparar/...` y desde otra red o un teléfono con datos móviles. Bloqueante hasta desplegar.
+
 ## Pasada 2: sábado 14/11, ~16:00
 
 - **Versión:** `main` en `2517734`, después del rediseño (#44 y #45) y del selector de idioma (#40). Build de producción con `npm run build` y `npm run preview`.
