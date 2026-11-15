@@ -2,6 +2,18 @@
 
 Dueño: Joel. Cada fallo va como issue de GitHub con pasos para reproducir. Pasadas previstas: sábado ~14:30 (local), 04:00 y 07:00 (producción).
 
+## Pasada 7: domingo 15/11, ~12:30 (local, mapa con fotografías en `feat/joel-rediseno-3d`)
+
+- **Qué cambió:** marcadores nuevos con previsualización al pasar el cursor (miniatura, nombre, país, puntaje); tarjeta fotográfica flotante al elegir un lugar (hoja inferior en pantallas de hasta 1100 px) con galería, flechas, gesto de deslizar, miniaturas, foto ampliada y atribución; pestaña "Explorar lugares" con buscador sin tildes, filtros por categoría y país, destacados y miniaturas; el globo abre la misma tarjeta al elegir un análogo.
+- **Fotos:** Wikimedia Commons, solo geoetiquetadas a menos de 10 km. Se descartaron mapas, logos y **fotos orbitales de la ISS y del transbordador** (79 de las 222 de la primera descarga eran tomas desde el espacio). Resultado: 35 de 56 lugares con fotos y 152 fotos. Los 21 sin fotos muestran una ilustración de su categoría rotulada "no es una foto del lugar".
+- **Google Places:** función `web/api/place-photos.ts` lista, con la clave solo en el servidor, ids del catálogo como única entrada y verificación de distancia. **No probada contra Google:** no hay clave. Sin clave la web no la llama (`VITE_PLACES_API` vacío).
+- **Código:** `tsc` sin errores, **87 de 87 pruebas** (7 nuevas: categoría, buscador y filtros, verificación de distancia de Google), build sin errores.
+- **Resultado: 48 de 48 OK** con `docs/qa/qa.mjs`. `a11y.mjs`: sin hallazgos. Consola sin errores (solo un aviso de three.js por una clase obsoleta que usa React Three Fiber).
+- **Probado a mano en el navegador:** previsualización al pasar el cursor, clic en un marcador, galería con flechas y miniaturas, foto ampliada con flechas del teclado y Esc, lugar con fotos (Desierto de Siloli, Volcán Ollagüe) y sin fotos (Valles Secos de McMurdo), búsqueda "ollague" sin tilde, hoja inferior a 375 px sin desborde horizontal, tarjeta en el globo.
+- **Rendimiento:** `photos.json` (unos 130 KB sin comprimir) se pide solo al pasar el cursor, abrir una tarjeta o el explorador; las fotos son miniaturas de 500 px con carga diferida y la versión grande solo al ampliar. Móvil lento: 628 a 673 KB transferidos; los tiempos de esta máquina siguen siendo demasiado ruidosos para comparar.
+- **Incidencia de la pasada:** el servidor `vite preview` que llevaba horas abierto respondía en 1,5 s y hacía fallar `qa.mjs` por tiempo; al reiniciarlo, 48 de 48.
+- **Sin verificar:** Google Places real, teléfono real con gestos táctiles, Safari y Firefox.
+
 ## Pasada 6: domingo 15/11, ~11:30 (local, rediseño 3D en `feat/joel-rediseno-3d`)
 
 - **Versión:** rama `feat/joel-rediseno-3d` sobre `main` (`eab501e`). Build de producción con `vite preview`. **No es la pasada de producción:** sigue sin existir la URL de Vercel.

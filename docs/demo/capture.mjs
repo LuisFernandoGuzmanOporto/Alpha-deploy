@@ -85,7 +85,9 @@ const elementClip = (selector) =>
 // La pantalla Explorar empieza con la portada: el mapa y el ranking están en #explore-stage.
 async function toStage() {
   await evaluate(`document.getElementById('explore-stage').scrollIntoView({ block: 'start' })`);
-  await sleep(3000);
+  // Espera a que el mapa tenga teselas y marcadores (sin GPU tarda más).
+  await evaluate(`new Promise((ok) => { const t0 = Date.now(); const tick = () => document.querySelectorAll('.map-pin').length > 0 || Date.now() - t0 > 15000 ? ok() : setTimeout(tick, 200); tick(); })`);
+  await sleep(4000);
 }
 const stageClip = () => elementClip("#explore-stage");
 
@@ -104,6 +106,19 @@ try {
   await open("/?lang=en&sitio=mars-jezero&bolivia=1", 1200, 816);
   await toStage();
   await shot("bolivia-jezero", await stageClip());
+
+  // Mapa con fotos: tarjeta fotográfica de un lugar elegido (foto real de Wikimedia Commons).
+  await open("/?lang=en&sitio=mars-jezero&analogo=earth-arbol-de-piedra-siloli", 1440, 900);
+  await toStage();
+  await sleep(2500);
+  await shot("map-photo-card", await stageClip());
+
+  // Panel "Explore places" con buscador, filtros y miniaturas.
+  await open("/?lang=en&sitio=mars-jezero", 1440, 900);
+  await toStage();
+  await evaluate(`[...document.querySelectorAll('.cc-panel__tabs button')][1].click()`);
+  await sleep(2500);
+  await shot("explorer", await elementClip(".cc-panel"));
 
   // Comparador completo (diapositiva 4).
   await open("/comparar/moon-malapert-massif/earth-licancabur-laguna-verde?lang=en", 900, 1400);
