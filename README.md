@@ -16,7 +16,8 @@ Earth Analogs is a web app. You pick a candidate site on the Moon or Mars and ge
 - **A map and a ranked list** of Earth analogs, with a **Bolivia-only filter** and a **"less-studied places only" filter**.
 - **A side-by-side comparison** of each pair: value by value, a similarity radar, shared geology/ice/dust tags, and **where the analogy breaks down**.
 - **A discoveries view** with the five best less-studied analogs for each site, evaluated with the same index as the well-known ones.
-- **Adjustable weights** per variable, recomputed in the browser.
+- **Adjustable weights** per variable, recomputed in the browser, with **mission goal profiles** (rover mobility, power and thermal systems, water and ice) and a **robustness badge** that shows how much each analog's rank moves when the weights change.
+- **Up to three analogs on one radar** for the same site, with a table of the same numbers, and **Export to PDF** of a comparison.
 - **A 3D globe** of the Earth, the Moon and Mars showing the selected site and its top analogs.
 - **A methodology page** with the formula, sources and limitations.
 - **A Spanish/English interface**, with a language selector in the header (`?lang=en` or `?lang=es` in the link also works). Site and place names, descriptions, fact sheets and the methodology page are available in both languages.
