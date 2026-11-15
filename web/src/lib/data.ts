@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useLang } from "../i18n";
 import type { MessageKey, Translate, TranslateParams } from "../i18n/messages";
 import type { Candidate, Ficha, Results, Site } from "../types";
 import { indexFichas } from "./fichas";
+import { localizeData } from "./localize";
 
 export interface AppData {
   sites: Site[];
@@ -92,5 +94,9 @@ export function useData(): DataState {
     };
   }, []);
 
-  return state;
+  const { lang } = useLang();
+  return useMemo<DataState>(
+    () => (state.status === "ready" ? { status: "ready", data: localizeData(state.data, lang) } : state),
+    [state, lang],
+  );
 }
