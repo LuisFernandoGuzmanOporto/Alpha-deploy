@@ -73,6 +73,8 @@ Para cumplir otra vez las metas del contrato (25 o más poco estudiados) se busc
 | Desierto de Kumtag (China) | false | 0 en las cuatro fuentes | Tercero en Gale |
 | Lençóis Maranhenses (Brasil) | false | 0 en las cuatro fuentes | Muy húmedo (1399 mm al año): la analogía se limita a las dunas |
 
+Etiquetas: Ollagüe (`hyper-arid`, "una de las regiones más secas de Sudamérica"), Wadi Rum (`aeolian-dunes`) y el Valle de la Luna (`caves`) llevan etiqueta con su fuente de Wikipedia; Tata Sabaya, Tunupa, Licancabur y Laguna Verde (Bolivia) siguen sin etiqueta porque ninguna del vocabulario cerrado tiene respaldo citable (motivo en `tags_pending` del seed).
+
 Se descartaron para el catálogo Laguna Hedionda (sin coordenadas en Wikipedia) y Sol de Mañana y el desierto de Dalí (misma celda de NASA POWER que Laguna Colorada y Siloli: habrían repetido los mismos valores de temperatura y lluvia). Simpson se descartó porque su artículo trata de la formación de dunas "en superficies planetarias" sin nombrarlo como análogo de un cuerpo. **Cambios en los rankings:** Ollagüe desplaza a Ojos del Salado y Socompa a los puestos 4.º y 5.º en Cabeus y Malapert; Kumtag es tercero en Gale; y como todos los lugares existentes bajan algunos puestos, se actualizaron las fichas y los textos.
 
 ## Coordenadas verificadas (tarea 1b)

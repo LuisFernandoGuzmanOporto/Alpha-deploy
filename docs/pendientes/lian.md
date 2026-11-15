@@ -8,7 +8,7 @@ Ya entregado: L-1. `data/candidates.json` tiene 56 candidatos (31 conocidos, 25 
 
 1. `git checkout main && git pull`
 2. Rama propia: `git checkout -b feat/lian-<tarea>`
-3. Antes de cada cambio de datos: `python pipeline/validate.py`. Hoy da 0 errores y 6 avisos (3 sin etiqueta citable y el albedo lunar).
+3. Antes de cada cambio de datos: `python pipeline/validate.py`. Hoy da 0 errores y 7 avisos (4 candidatos sin etiqueta citable y el albedo lunar).
 4. Nunca inventes datos: si falta un valor, déjalo en `null` y anota la fuente.
 
 ## Pendientes

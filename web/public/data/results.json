@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T12:03:47+00:00",
+  "generated_at": "2026-11-15T12:41:27+00:00",
   "variables": [
     "slope_deg",
     "relief_m",
@@ -89,7 +89,18 @@
           "temp_mean_c": 0.8787,
           "precip_mm_year": 0.5276
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "hyper-arid"
+          ]
+        }
       },
       {
         "candidate_id": "earth-laguna-verde-bolivia",
@@ -113,7 +124,18 @@
           "temp_mean_c": 0.9435,
           "precip_mm_year": 0.4803
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "aeolian-dunes"
+          ]
+        }
       },
       {
         "candidate_id": "earth-volcan-tata-sabaya",
@@ -310,7 +332,18 @@
           "temp_mean_c": 0.8902,
           "precip_mm_year": 0.8361
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "caves"
+          ]
+        }
       },
       {
         "candidate_id": "earth-mauna-kea-hawai",
@@ -1311,7 +1344,17 @@
           "temp_mean_c": 0.6964,
           "precip_mm_year": 0.5276
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "hyper-arid"
+          ]
+        }
       },
       {
         "candidate_id": "earth-ojos-del-salado",
@@ -1367,7 +1410,17 @@
           "temp_mean_c": 0.7612,
           "precip_mm_year": 0.4803
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "aeolian-dunes"
+          ]
+        }
       },
       {
         "candidate_id": "earth-nevado-sajama",
@@ -1569,7 +1622,17 @@
           "temp_mean_c": 0.7079,
           "precip_mm_year": 0.8361
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "caves"
+          ]
+        }
       },
       {
         "candidate_id": "earth-mauna-kea-hawai",
@@ -2484,7 +2547,16 @@
           "temp_mean_c": 0.7116,
           "precip_mm_year": 0.5276
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "hyper-arid"
+          ]
+        }
       },
       {
         "candidate_id": "earth-ojos-del-salado",
@@ -2538,7 +2610,16 @@
           "temp_mean_c": 0.7764,
           "precip_mm_year": 0.4803
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "aeolian-dunes"
+          ]
+        }
       },
       {
         "candidate_id": "earth-montanas-del-pamir",
@@ -2733,7 +2814,16 @@
           "temp_mean_c": 0.7231,
           "precip_mm_year": 0.8361
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "caves"
+          ]
+        }
       },
       {
         "candidate_id": "earth-gilf-kebir",
@@ -4373,7 +4463,18 @@
           "precip_mm_year": 0.4803,
           "albedo": 0.2245
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "aeolian-dunes"
+          ]
+        }
       },
       {
         "candidate_id": "earth-valle-de-la-luna-la-paz",
@@ -4386,7 +4487,18 @@
           "precip_mm_year": 0.8361,
           "albedo": 0.0019
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "caves"
+          ]
+        }
       },
       {
         "candidate_id": "earth-licancabur-laguna-verde",
@@ -4460,7 +4572,18 @@
           "precip_mm_year": 0.5276,
           "albedo": 0.0547
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "hyper-arid"
+          ]
+        }
       },
       {
         "candidate_id": "earth-ojos-del-salado",
@@ -5506,7 +5629,17 @@
           "precip_mm_year": 0.4803,
           "albedo": 0.1019
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.333,
+          "shared": [
+            "aeolian-dunes"
+          ],
+          "only_site": [
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": []
+        }
       },
       {
         "candidate_id": "earth-salar-de-coipasa",
@@ -5861,7 +5994,18 @@
           "precip_mm_year": 0.5276,
           "albedo": 0.0679
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "aeolian-dunes",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "hyper-arid"
+          ]
+        }
       },
       {
         "candidate_id": "earth-valle-de-la-luna-la-paz",
@@ -5874,7 +6018,18 @@
           "precip_mm_year": 0.8361,
           "albedo": 0.1245
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "aeolian-dunes",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "caves"
+          ]
+        }
       },
       {
         "candidate_id": "earth-volcan-tunupa-uyuni",
@@ -6975,7 +7130,16 @@
           "precip_mm_year": 0.4803,
           "albedo": 0.1434
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "aeolian-dunes"
+          ]
+        }
       },
       {
         "candidate_id": "earth-volcan-tata-sabaya",
@@ -7059,7 +7223,16 @@
           "precip_mm_year": 0.5276,
           "albedo": 0.0264
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "hyper-arid"
+          ]
+        }
       },
       {
         "candidate_id": "earth-askja-islandia",
@@ -7095,7 +7268,16 @@
           "precip_mm_year": 0.8361,
           "albedo": 0.083
         },
-        "tag_overlap": null
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "caves"
+          ]
+        }
       },
       {
         "candidate_id": "earth-ojos-del-salado",
