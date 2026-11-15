@@ -34,7 +34,7 @@ Each value is normalized to a 0–1 scale across all places, and the score is **
 
 ## What we found
 
-**For the Moon, the best matches are high, steep, dry Andean terrain.** Volcán Licancabur, on the Bolivia–Chile border, ranks **first for Peak Near Cabeus B and Malapert Massif** (score 69.8). Volcán Ojos del Salado (63.3) and Volcán Socompa (62.0), both less studied as analogs, follow. For Faustini Rim A the top match is the hyper-arid core of the Atacama Desert near Yungay (62.7). These places match the slopes and relief of the lunar polar massifs and are among the driest on Earth. **Caution:** the temperature and precipitation of these three mountain candidates come from a coarse regional grid (tens of kilometres) and are biased; for example, Licancabur shows 14.7 °C on a 5,900 m summit. Their ranking rests mainly on slope and relief, which we checked against known elevations.
+**For the Moon, the best matches are high, steep, dry Andean terrain.** Licancabur Volcano, on the Bolivia–Chile border, ranks **first for Peak Near Cabeus B and Malapert Massif** (score 69.8). Ojos del Salado Volcano (63.3) and Socompa Volcano (62.0), both less studied as analogs, follow. For Faustini Rim A the top match is the hyper-arid core of the Atacama Desert near Yungay (62.7). These places match the slopes and relief of the lunar polar massifs and are among the driest on Earth. **Caution:** the temperature and precipitation of these three mountain candidates come from a coarse regional grid (tens of kilometres) and are biased; for example, Licancabur shows 14.7 °C on a 5,900 m summit. Their ranking rests mainly on slope and relief, which we checked against known elevations.
 
 **For Mars, the best matches are flat, hyper-arid desert plateaus, and the index puts documented analogs on top.** The Gilf Kebir plateau (Egypt and Libya), which a 1982 NASA report already compared with Mars, ranks **first for Jezero (80.8) and Gale (83.2)**. The Tibesti Mountains (Chad), also a known analog, are second for both. Less-studied places such as the Siloli Desert, Harrat Khaybar and Laguna Colorada follow in the top 5. For Arcadia Planitia, the extremely flat Taklamakan Desert (76.9) and Dasht-e Kavir salt desert (76.8) lead.
 
@@ -42,9 +42,9 @@ Each value is normalized to a 0–1 scale across all places, and the score is **
 
 | Site | Best Bolivian analog | Rank | Score |
 | --- | --- | --- | --- |
-| Peak Near Cabeus B | Volcán Licancabur | 1 | 69.8 |
-| Malapert Massif | Volcán Licancabur | 1 | 69.8 |
-| Faustini Rim A | Volcán Licancabur | 2 | 60.6 |
+| Peak Near Cabeus B | Licancabur Volcano | 1 | 69.8 |
+| Malapert Massif | Licancabur Volcano | 1 | 69.8 |
+| Faustini Rim A | Licancabur Volcano | 2 | 60.6 |
 | Jezero crater | Siloli Desert ("Árbol de Piedra") | 3 | 79.4 |
 | Gale crater | Siloli Desert ("Árbol de Piedra") | 3 | 78.9 |
 | Arcadia Planitia | Salar de Coipasa | 5 | 74.5 |
