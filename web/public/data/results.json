@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T03:04:13+00:00",
+  "generated_at": "2026-11-15T03:30:39+00:00",
   "variables": [
     "slope_deg",
     "relief_m",
@@ -25,7 +25,7 @@
     ],
     "relief_m": [
       0.4700036292457356,
-      6.240080894395223
+      6.334344780024526
     ],
     "temp_mean_c": [
       -160.4,
@@ -43,35 +43,12 @@
   "sites": {
     "moon-faustini-rim-a": [
       {
-        "candidate_id": "earth-atacama-nucleo-hiperarido",
-        "score": 62.7,
-        "n_vars_used": 4,
-        "norm_diff": {
-          "slope_deg": 0.1603,
-          "relief_m": 0.0884,
-          "temp_mean_c": 0.9238,
-          "precip_mm_year": 0.321
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "extreme-cold",
-            "impact-crater",
-            "polar-ice"
-          ],
-          "only_candidate": [
-            "hyper-arid"
-          ]
-        }
-      },
-      {
         "candidate_id": "earth-valles-secos-mcmurdo",
         "score": 62.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.2063,
-          "relief_m": 0.0298,
+          "relief_m": 0.0293,
           "temp_mean_c": 0.7014,
           "precip_mm_year": 0.556
         },
@@ -96,7 +73,7 @@
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.1932,
-          "relief_m": 0.0234,
+          "relief_m": 0.023,
           "temp_mean_c": 0.9184,
           "precip_mm_year": 0.4402
         },
@@ -104,11 +81,11 @@
       },
       {
         "candidate_id": "earth-laguna-verde-bolivia",
-        "score": 58.7,
+        "score": 58.8,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.1575,
-          "relief_m": 0.1345,
+          "relief_m": 0.1323,
           "temp_mean_c": 0.9184,
           "precip_mm_year": 0.4402
         },
@@ -116,11 +93,11 @@
       },
       {
         "candidate_id": "earth-uturuncu-bolivia",
-        "score": 57.2,
+        "score": 57.3,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.023,
-          "relief_m": 0.1172,
+          "relief_m": 0.1153,
           "temp_mean_c": 0.8657,
           "precip_mm_year": 0.7051
         },
@@ -139,11 +116,11 @@
       },
       {
         "candidate_id": "earth-ojos-del-salado",
-        "score": 56.3,
+        "score": 56.4,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.1491,
-          "relief_m": 0.0656,
+          "relief_m": 0.0646,
           "temp_mean_c": 0.8346,
           "precip_mm_year": 0.6968
         },
@@ -166,7 +143,7 @@
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.1031,
-          "relief_m": 0.0915,
+          "relief_m": 0.0901,
           "temp_mean_c": 0.8847,
           "precip_mm_year": 0.7504
         },
@@ -178,7 +155,7 @@
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.0511,
-          "relief_m": 0.055,
+          "relief_m": 0.0541,
           "temp_mean_c": 0.9226,
           "precip_mm_year": 0.8113
         },
@@ -196,12 +173,35 @@
         }
       },
       {
+        "candidate_id": "earth-atacama-nucleo-hiperarido",
+        "score": 53.6,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.3347,
+          "relief_m": 0.3072,
+          "temp_mean_c": 0.9407,
+          "precip_mm_year": 0.2734
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "hyper-arid"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-volcan-socompa",
         "score": 52.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.3526,
-          "relief_m": 0.0092,
+          "relief_m": 0.009,
           "temp_mean_c": 0.8723,
           "precip_mm_year": 0.6599
         },
@@ -224,7 +224,7 @@
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.1716,
-          "relief_m": 0.071,
+          "relief_m": 0.0699,
           "temp_mean_c": 0.8886,
           "precip_mm_year": 0.7664
         },
@@ -243,11 +243,11 @@
       },
       {
         "candidate_id": "earth-macizo-del-hoggar",
-        "score": 52.4,
+        "score": 52.5,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.1172,
-          "relief_m": 0.1991,
+          "relief_m": 0.1959,
           "temp_mean_c": 0.9594,
           "precip_mm_year": 0.6276
         },
@@ -265,12 +265,35 @@
         }
       },
       {
+        "candidate_id": "earth-mauna-kea-hawai",
+        "score": 51.6,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.0009,
+          "relief_m": 0.0213,
+          "temp_mean_c": 0.959,
+          "precip_mm_year": 0.954
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "basalt"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-gilf-kebir",
-        "score": 51.3,
+        "score": 51.5,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.4571,
-          "relief_m": 0.5312,
+          "relief_m": 0.5227,
           "temp_mean_c": 0.9604,
           "precip_mm_year": 0.0
         },
@@ -289,11 +312,11 @@
       },
       {
         "candidate_id": "earth-arbol-de-piedra-siloli",
-        "score": 51.2,
+        "score": 51.3,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.3324,
-          "relief_m": 0.2668,
+          "relief_m": 0.2625,
           "temp_mean_c": 0.873,
           "precip_mm_year": 0.4803
         },
@@ -311,35 +334,12 @@
         }
       },
       {
-        "candidate_id": "earth-montanas-del-pamir",
+        "candidate_id": "earth-pinacate-mexico",
         "score": 51.2,
         "n_vars_used": 4,
         "norm_diff": {
-          "slope_deg": 0.4941,
-          "relief_m": 0.0924,
-          "temp_mean_c": 0.8167,
-          "precip_mm_year": 0.5495
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "extreme-cold",
-            "impact-crater",
-            "polar-ice"
-          ],
-          "only_candidate": [
-            "glacier"
-          ]
-        }
-      },
-      {
-        "candidate_id": "earth-pinacate-mexico",
-        "score": 51.1,
-        "n_vars_used": 4,
-        "norm_diff": {
           "slope_deg": 0.1824,
-          "relief_m": 0.1722,
+          "relief_m": 0.1694,
           "temp_mean_c": 0.964,
           "precip_mm_year": 0.6381
         },
@@ -357,14 +357,14 @@
         }
       },
       {
-        "candidate_id": "earth-svalbard-sverrefjellet",
-        "score": 50.6,
+        "candidate_id": "earth-montanas-del-pamir",
+        "score": 51.2,
         "n_vars_used": 4,
         "norm_diff": {
-          "slope_deg": 0.2246,
-          "relief_m": 0.1142,
-          "temp_mean_c": 0.7987,
-          "precip_mm_year": 0.8398
+          "slope_deg": 0.4941,
+          "relief_m": 0.0909,
+          "temp_mean_c": 0.8167,
+          "precip_mm_year": 0.5495
         },
         "tag_overlap": {
           "jaccard": 0.0,
@@ -375,17 +375,17 @@
             "polar-ice"
           ],
           "only_candidate": [
-            "basalt"
+            "glacier"
           ]
         }
       },
       {
         "candidate_id": "earth-badain-jaran-china",
-        "score": 50.6,
+        "score": 50.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.1528,
-          "relief_m": 0.3362,
+          "relief_m": 0.3308,
           "temp_mean_c": 0.8934,
           "precip_mm_year": 0.5943
         },
@@ -403,14 +403,14 @@
         }
       },
       {
-        "candidate_id": "earth-mauna-kea-hawai",
-        "score": 48.6,
+        "candidate_id": "earth-svalbard-sverrefjellet",
+        "score": 50.6,
         "n_vars_used": 4,
         "norm_diff": {
-          "slope_deg": 0.0267,
-          "relief_m": 0.1165,
-          "temp_mean_c": 0.959,
-          "precip_mm_year": 0.954
+          "slope_deg": 0.2246,
+          "relief_m": 0.1124,
+          "temp_mean_c": 0.7987,
+          "precip_mm_year": 0.8398
         },
         "tag_overlap": {
           "jaccard": 0.0,
@@ -427,11 +427,11 @@
       },
       {
         "candidate_id": "earth-harrat-khaybar",
-        "score": 48.5,
+        "score": 48.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.3511,
-          "relief_m": 0.3076,
+          "relief_m": 0.3027,
           "temp_mean_c": 0.9761,
           "precip_mm_year": 0.4238
         },
@@ -450,11 +450,11 @@
       },
       {
         "candidate_id": "earth-la-corona-lanzarote",
-        "score": 47.9,
+        "score": 48.0,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.2775,
-          "relief_m": 0.2511,
+          "relief_m": 0.2471,
           "temp_mean_c": 0.9484,
           "precip_mm_year": 0.6079
         },
@@ -474,11 +474,11 @@
       },
       {
         "candidate_id": "earth-mar-de-arena-namib",
-        "score": 47.8,
+        "score": 48.0,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.2508,
-          "relief_m": 0.3835,
+          "relief_m": 0.3774,
           "temp_mean_c": 0.9521,
           "precip_mm_year": 0.5014
         },
@@ -497,11 +497,11 @@
       },
       {
         "candidate_id": "earth-tibesti-chad",
-        "score": 47.4,
+        "score": 47.5,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.3315,
-          "relief_m": 0.3538,
+          "relief_m": 0.3481,
           "temp_mean_c": 0.9643,
           "precip_mm_year": 0.4551
         },
@@ -520,11 +520,11 @@
       },
       {
         "candidate_id": "earth-ubehebe-valle-de-la-muerte",
-        "score": 47.1,
+        "score": 47.2,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.2836,
-          "relief_m": 0.2473,
+          "relief_m": 0.2433,
           "temp_mean_c": 0.9248,
           "precip_mm_year": 0.6599
         },
@@ -543,11 +543,11 @@
       },
       {
         "candidate_id": "earth-craters-of-the-moon-idaho",
-        "score": 45.9,
+        "score": 46.0,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.2911,
-          "relief_m": 0.2241,
+          "relief_m": 0.2205,
           "temp_mean_c": 0.8685,
           "precip_mm_year": 0.7794
         },
@@ -567,11 +567,11 @@
       },
       {
         "candidate_id": "earth-laguna-colorada",
-        "score": 44.1,
+        "score": 44.3,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.3929,
-          "relief_m": 0.3265,
+          "relief_m": 0.3213,
           "temp_mean_c": 0.8675,
           "precip_mm_year": 0.6479
         },
@@ -590,11 +590,11 @@
       },
       {
         "candidate_id": "earth-askja-islandia",
-        "score": 44.0,
+        "score": 44.1,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.2607,
-          "relief_m": 0.2865,
+          "relief_m": 0.2819,
           "temp_mean_c": 0.8183,
           "precip_mm_year": 0.8733
         },
@@ -613,35 +613,12 @@
         }
       },
       {
-        "candidate_id": "earth-rio-tinto-espana",
-        "score": 42.2,
-        "n_vars_used": 4,
-        "norm_diff": {
-          "slope_deg": 0.2719,
-          "relief_m": 0.305,
-          "temp_mean_c": 0.9398,
-          "precip_mm_year": 0.7944
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "extreme-cold",
-            "impact-crater",
-            "polar-ice"
-          ],
-          "only_candidate": [
-            "hydrated-minerals"
-          ]
-        }
-      },
-      {
         "candidate_id": "earth-lava-beds-california",
-        "score": 41.6,
+        "score": 41.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.3596,
-          "relief_m": 0.2463,
+          "relief_m": 0.2423,
           "temp_mean_c": 0.8885,
           "precip_mm_year": 0.8418
         },
@@ -660,11 +637,11 @@
       },
       {
         "candidate_id": "earth-haughton-isla-devon",
-        "score": 40.8,
+        "score": 41.0,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.3915,
-          "relief_m": 0.4702,
+          "relief_m": 0.4626,
           "temp_mean_c": 0.7636,
           "precip_mm_year": 0.7416
         },
@@ -681,12 +658,35 @@
         }
       },
       {
+        "candidate_id": "earth-rio-tinto-espana",
+        "score": 40.3,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.3122,
+          "relief_m": 0.3457,
+          "temp_mean_c": 0.9394,
+          "precip_mm_year": 0.7903
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "hydrated-minerals"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-mdrs-utah",
-        "score": 39.3,
+        "score": 39.5,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.4032,
-          "relief_m": 0.4104,
+          "relief_m": 0.4038,
           "temp_mean_c": 0.9052,
           "precip_mm_year": 0.7091
         },
@@ -706,11 +706,11 @@
       },
       {
         "candidate_id": "earth-desierto-tengger",
-        "score": 39.2,
+        "score": 39.4,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.3732,
-          "relief_m": 0.4962,
+          "relief_m": 0.4882,
           "temp_mean_c": 0.8937,
           "precip_mm_year": 0.6708
         },
@@ -729,11 +729,11 @@
       },
       {
         "candidate_id": "earth-rub-al-khali",
-        "score": 37.2,
+        "score": 37.5,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.466,
-          "relief_m": 0.7246,
+          "relief_m": 0.713,
           "temp_mean_c": 1.0,
           "precip_mm_year": 0.321
         },
@@ -752,11 +752,11 @@
       },
       {
         "candidate_id": "earth-el-malpais-nuevo-mexico",
-        "score": 35.5,
+        "score": 35.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.4665,
-          "relief_m": 0.4799,
+          "relief_m": 0.4722,
           "temp_mean_c": 0.9005,
           "precip_mm_year": 0.7322
         },
@@ -775,11 +775,11 @@
       },
       {
         "candidate_id": "earth-desierto-de-lut-iran",
-        "score": 35.0,
+        "score": 35.2,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.4862,
-          "relief_m": 0.5882,
+          "relief_m": 0.5787,
           "temp_mean_c": 0.9778,
           "precip_mm_year": 0.5495
         },
@@ -798,11 +798,11 @@
       },
       {
         "candidate_id": "earth-kau-kilauea-hawai",
-        "score": 34.8,
+        "score": 34.9,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.3802,
-          "relief_m": 0.2683,
+          "relief_m": 0.2639,
           "temp_mean_c": 0.9587,
           "precip_mm_year": 1.0
         },
@@ -822,11 +822,11 @@
       },
       {
         "candidate_id": "earth-cuenca-qaidam",
-        "score": 34.7,
+        "score": 34.9,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.4993,
-          "relief_m": 0.7012,
+          "relief_m": 0.6899,
           "temp_mean_c": 0.878,
           "precip_mm_year": 0.5354
         },
@@ -845,11 +845,11 @@
       },
       {
         "candidate_id": "earth-manjanggul-jeju",
-        "score": 33.0,
+        "score": 33.2,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.4262,
-          "relief_m": 0.36,
+          "relief_m": 0.3542,
           "temp_mean_c": 0.9374,
           "precip_mm_year": 0.9554
         },
@@ -867,35 +867,12 @@
         }
       },
       {
-        "candidate_id": "earth-undara-australia",
-        "score": 30.5,
-        "n_vars_used": 4,
-        "norm_diff": {
-          "slope_deg": 0.4491,
-          "relief_m": 0.4878,
-          "temp_mean_c": 0.9721,
-          "precip_mm_year": 0.8705
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "extreme-cold",
-            "impact-crater",
-            "polar-ice"
-          ],
-          "only_candidate": [
-            "lava-tubes"
-          ]
-        }
-      },
-      {
         "candidate_id": "earth-desierto-de-taklamakan",
-        "score": 30.5,
+        "score": 30.9,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.4974,
-          "relief_m": 0.8359,
+          "relief_m": 0.8224,
           "temp_mean_c": 0.9181,
           "precip_mm_year": 0.5276
         },
@@ -914,12 +891,35 @@
         }
       },
       {
+        "candidate_id": "earth-undara-australia",
+        "score": 30.7,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.4491,
+          "relief_m": 0.48,
+          "temp_mean_c": 0.9721,
+          "precip_mm_year": 0.8705
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "impact-crater",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "lava-tubes"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-chott-el-djerid",
-        "score": 29.8,
+        "score": 30.2,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.4862,
-          "relief_m": 0.7807,
+          "relief_m": 0.7681,
           "temp_mean_c": 0.96,
           "precip_mm_year": 0.5794
         },
@@ -938,11 +938,11 @@
       },
       {
         "candidate_id": "earth-dasht-e-kavir",
-        "score": 28.3,
+        "score": 28.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.5026,
-          "relief_m": 0.8494,
+          "relief_m": 0.8357,
           "temp_mean_c": 0.952,
           "precip_mm_year": 0.5623
         },
@@ -961,11 +961,11 @@
       },
       {
         "candidate_id": "earth-lago-eyre-australia",
-        "score": 26.2,
+        "score": 26.5,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.5021,
-          "relief_m": 0.8541,
+          "relief_m": 0.8404,
           "temp_mean_c": 0.9664,
           "precip_mm_year": 0.6312
         },
@@ -984,11 +984,11 @@
       },
       {
         "candidate_id": "earth-dallol-danakil",
-        "score": 24.9,
+        "score": 25.2,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.496,
-          "relief_m": 0.7316,
+          "relief_m": 0.7199,
           "temp_mean_c": 0.986,
           "precip_mm_year": 0.7892
         },
@@ -1008,11 +1008,11 @@
       },
       {
         "candidate_id": "earth-salar-de-coipasa",
-        "score": 24.9,
+        "score": 25.2,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.5054,
-          "relief_m": 0.864,
+          "relief_m": 0.8502,
           "temp_mean_c": 0.9006,
           "precip_mm_year": 0.7354
         },
@@ -1031,11 +1031,11 @@
       },
       {
         "candidate_id": "earth-salar-de-uyuni",
-        "score": 21.6,
+        "score": 22.0,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.5059,
-          "relief_m": 0.9947,
+          "relief_m": 0.9787,
           "temp_mean_c": 0.8847,
           "precip_mm_year": 0.7504
         },
@@ -1054,11 +1054,11 @@
       },
       {
         "candidate_id": "earth-etosha-namibia",
-        "score": 20.9,
+        "score": 21.2,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.5002,
-          "relief_m": 0.9173,
+          "relief_m": 0.9026,
           "temp_mean_c": 0.9734,
           "precip_mm_year": 0.7748
         },
@@ -1077,11 +1077,11 @@
       },
       {
         "candidate_id": "earth-salar-de-arizaro",
-        "score": 20.8,
+        "score": 21.2,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.5054,
-          "relief_m": 0.9842,
+          "relief_m": 0.9684,
           "temp_mean_c": 0.8781,
           "precip_mm_year": 0.7993
         },
@@ -1106,7 +1106,7 @@
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.008,
-          "relief_m": 0.0351,
+          "relief_m": 0.0346,
           "temp_mean_c": 0.5189,
           "precip_mm_year": 0.556
         },
@@ -1130,7 +1130,7 @@
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.0052,
-          "relief_m": 0.0287,
+          "relief_m": 0.0282,
           "temp_mean_c": 0.7359,
           "precip_mm_year": 0.4402
         },
@@ -1142,7 +1142,7 @@
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.0492,
-          "relief_m": 0.0709,
+          "relief_m": 0.0698,
           "temp_mean_c": 0.6521,
           "precip_mm_year": 0.6968
         },
@@ -1159,34 +1159,12 @@
         }
       },
       {
-        "candidate_id": "earth-atacama-nucleo-hiperarido",
-        "score": 62.1,
-        "n_vars_used": 4,
-        "norm_diff": {
-          "slope_deg": 0.3586,
-          "relief_m": 0.0937,
-          "temp_mean_c": 0.7413,
-          "precip_mm_year": 0.321
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "extreme-cold",
-            "polar-ice"
-          ],
-          "only_candidate": [
-            "hyper-arid"
-          ]
-        }
-      },
-      {
         "candidate_id": "earth-volcan-socompa",
         "score": 62.0,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.1542,
-          "relief_m": 0.0145,
+          "relief_m": 0.0142,
           "temp_mean_c": 0.6898,
           "precip_mm_year": 0.6599
         },
@@ -1208,7 +1186,7 @@
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.0267,
-          "relief_m": 0.0763,
+          "relief_m": 0.0751,
           "temp_mean_c": 0.7061,
           "precip_mm_year": 0.7664
         },
@@ -1230,7 +1208,7 @@
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.2958,
-          "relief_m": 0.0977,
+          "relief_m": 0.0962,
           "temp_mean_c": 0.6342,
           "precip_mm_year": 0.5495
         },
@@ -1252,7 +1230,7 @@
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.0263,
-          "relief_m": 0.1196,
+          "relief_m": 0.1176,
           "temp_mean_c": 0.6162,
           "precip_mm_year": 0.8398
         },
@@ -1274,7 +1252,7 @@
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.0952,
-          "relief_m": 0.0969,
+          "relief_m": 0.0953,
           "temp_mean_c": 0.7022,
           "precip_mm_year": 0.7504
         },
@@ -1282,11 +1260,11 @@
       },
       {
         "candidate_id": "earth-laguna-verde-bolivia",
-        "score": 58.2,
+        "score": 58.3,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.3558,
-          "relief_m": 0.1398,
+          "relief_m": 0.1376,
           "temp_mean_c": 0.7359,
           "precip_mm_year": 0.4402
         },
@@ -1294,11 +1272,11 @@
       },
       {
         "candidate_id": "earth-uturuncu-bolivia",
-        "score": 57.8,
+        "score": 57.9,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.1753,
-          "relief_m": 0.1225,
+          "relief_m": 0.1206,
           "temp_mean_c": 0.6832,
           "precip_mm_year": 0.7051
         },
@@ -1320,7 +1298,7 @@
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.2494,
-          "relief_m": 0.0603,
+          "relief_m": 0.0593,
           "temp_mean_c": 0.7401,
           "precip_mm_year": 0.8113
         },
@@ -1337,12 +1315,34 @@
         }
       },
       {
+        "candidate_id": "earth-atacama-nucleo-hiperarido",
+        "score": 53.1,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.5331,
+          "relief_m": 0.3124,
+          "temp_mean_c": 0.7582,
+          "precip_mm_year": 0.2734
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "hyper-arid"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-macizo-del-hoggar",
-        "score": 51.9,
+        "score": 52.0,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.3155,
-          "relief_m": 0.2044,
+          "relief_m": 0.2011,
           "temp_mean_c": 0.7768,
           "precip_mm_year": 0.6276
         },
@@ -1359,12 +1359,34 @@
         }
       },
       {
+        "candidate_id": "earth-mauna-kea-hawai",
+        "score": 51.4,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.1974,
+          "relief_m": 0.0161,
+          "temp_mean_c": 0.7765,
+          "precip_mm_year": 0.954
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "basalt"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-gilf-kebir",
-        "score": 50.8,
+        "score": 51.0,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.6554,
-          "relief_m": 0.5365,
+          "relief_m": 0.5279,
           "temp_mean_c": 0.7779,
           "precip_mm_year": 0.0
         },
@@ -1382,11 +1404,11 @@
       },
       {
         "candidate_id": "earth-arbol-de-piedra-siloli",
-        "score": 50.7,
+        "score": 50.8,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.5307,
-          "relief_m": 0.2721,
+          "relief_m": 0.2677,
           "temp_mean_c": 0.6905,
           "precip_mm_year": 0.4803
         },
@@ -1408,7 +1430,7 @@
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.3807,
-          "relief_m": 0.1775,
+          "relief_m": 0.1746,
           "temp_mean_c": 0.7815,
           "precip_mm_year": 0.6381
         },
@@ -1426,11 +1448,11 @@
       },
       {
         "candidate_id": "earth-badain-jaran-china",
-        "score": 50.1,
+        "score": 50.2,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.3511,
-          "relief_m": 0.3415,
+          "relief_m": 0.336,
           "temp_mean_c": 0.7109,
           "precip_mm_year": 0.5943
         },
@@ -1447,34 +1469,12 @@
         }
       },
       {
-        "candidate_id": "earth-mauna-kea-hawai",
+        "candidate_id": "earth-harrat-khaybar",
         "score": 48.1,
         "n_vars_used": 4,
         "norm_diff": {
-          "slope_deg": 0.225,
-          "relief_m": 0.1218,
-          "temp_mean_c": 0.7765,
-          "precip_mm_year": 0.954
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "extreme-cold",
-            "polar-ice"
-          ],
-          "only_candidate": [
-            "basalt"
-          ]
-        }
-      },
-      {
-        "candidate_id": "earth-harrat-khaybar",
-        "score": 48.0,
-        "n_vars_used": 4,
-        "norm_diff": {
           "slope_deg": 0.5495,
-          "relief_m": 0.3129,
+          "relief_m": 0.3079,
           "temp_mean_c": 0.7936,
           "precip_mm_year": 0.4238
         },
@@ -1492,11 +1492,11 @@
       },
       {
         "candidate_id": "earth-la-corona-lanzarote",
-        "score": 47.3,
+        "score": 47.5,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.4759,
-          "relief_m": 0.2564,
+          "relief_m": 0.2523,
           "temp_mean_c": 0.7659,
           "precip_mm_year": 0.6079
         },
@@ -1515,11 +1515,11 @@
       },
       {
         "candidate_id": "earth-mar-de-arena-namib",
-        "score": 47.3,
+        "score": 47.4,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.4491,
-          "relief_m": 0.3889,
+          "relief_m": 0.3826,
           "temp_mean_c": 0.7696,
           "precip_mm_year": 0.5014
         },
@@ -1537,11 +1537,11 @@
       },
       {
         "candidate_id": "earth-tibesti-chad",
-        "score": 46.9,
+        "score": 47.0,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.5298,
-          "relief_m": 0.3591,
+          "relief_m": 0.3533,
           "temp_mean_c": 0.7818,
           "precip_mm_year": 0.4551
         },
@@ -1559,11 +1559,11 @@
       },
       {
         "candidate_id": "earth-ubehebe-valle-de-la-muerte",
-        "score": 46.6,
+        "score": 46.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.482,
-          "relief_m": 0.2526,
+          "relief_m": 0.2486,
           "temp_mean_c": 0.7423,
           "precip_mm_year": 0.6599
         },
@@ -1581,11 +1581,11 @@
       },
       {
         "candidate_id": "earth-craters-of-the-moon-idaho",
-        "score": 45.4,
+        "score": 45.5,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.4895,
-          "relief_m": 0.2294,
+          "relief_m": 0.2257,
           "temp_mean_c": 0.686,
           "precip_mm_year": 0.7794
         },
@@ -1604,11 +1604,11 @@
       },
       {
         "candidate_id": "earth-laguna-colorada",
-        "score": 43.6,
+        "score": 43.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.5912,
-          "relief_m": 0.3318,
+          "relief_m": 0.3265,
           "temp_mean_c": 0.6849,
           "precip_mm_year": 0.6479
         },
@@ -1626,11 +1626,11 @@
       },
       {
         "candidate_id": "earth-askja-islandia",
-        "score": 43.5,
+        "score": 43.6,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.459,
-          "relief_m": 0.2919,
+          "relief_m": 0.2872,
           "temp_mean_c": 0.6357,
           "precip_mm_year": 0.8733
         },
@@ -1648,34 +1648,12 @@
         }
       },
       {
-        "candidate_id": "earth-rio-tinto-espana",
-        "score": 41.7,
-        "n_vars_used": 4,
-        "norm_diff": {
-          "slope_deg": 0.4702,
-          "relief_m": 0.3103,
-          "temp_mean_c": 0.7573,
-          "precip_mm_year": 0.7944
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "extreme-cold",
-            "polar-ice"
-          ],
-          "only_candidate": [
-            "hydrated-minerals"
-          ]
-        }
-      },
-      {
         "candidate_id": "earth-lava-beds-california",
-        "score": 41.1,
+        "score": 41.2,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.5579,
-          "relief_m": 0.2516,
+          "relief_m": 0.2476,
           "temp_mean_c": 0.706,
           "precip_mm_year": 0.8418
         },
@@ -1693,11 +1671,11 @@
       },
       {
         "candidate_id": "earth-haughton-isla-devon",
-        "score": 40.3,
+        "score": 40.5,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.5898,
-          "relief_m": 0.4755,
+          "relief_m": 0.4678,
           "temp_mean_c": 0.5811,
           "precip_mm_year": 0.7416
         },
@@ -1714,12 +1692,34 @@
         }
       },
       {
+        "candidate_id": "earth-rio-tinto-espana",
+        "score": 39.8,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.5105,
+          "relief_m": 0.3509,
+          "temp_mean_c": 0.7569,
+          "precip_mm_year": 0.7903
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "hydrated-minerals"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-mdrs-utah",
-        "score": 38.8,
+        "score": 38.9,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.6015,
-          "relief_m": 0.4157,
+          "relief_m": 0.409,
           "temp_mean_c": 0.7227,
           "precip_mm_year": 0.7091
         },
@@ -1738,11 +1738,11 @@
       },
       {
         "candidate_id": "earth-desierto-tengger",
-        "score": 38.6,
+        "score": 38.8,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.5715,
-          "relief_m": 0.5015,
+          "relief_m": 0.4934,
           "temp_mean_c": 0.7112,
           "precip_mm_year": 0.6708
         },
@@ -1760,11 +1760,11 @@
       },
       {
         "candidate_id": "earth-rub-al-khali",
-        "score": 36.7,
+        "score": 37.0,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.6643,
-          "relief_m": 0.73,
+          "relief_m": 0.7182,
           "temp_mean_c": 0.8175,
           "precip_mm_year": 0.321
         },
@@ -1782,11 +1782,11 @@
       },
       {
         "candidate_id": "earth-el-malpais-nuevo-mexico",
-        "score": 35.0,
+        "score": 35.2,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.6648,
-          "relief_m": 0.4852,
+          "relief_m": 0.4774,
           "temp_mean_c": 0.718,
           "precip_mm_year": 0.7322
         },
@@ -1804,11 +1804,11 @@
       },
       {
         "candidate_id": "earth-desierto-de-lut-iran",
-        "score": 34.4,
+        "score": 34.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.6845,
-          "relief_m": 0.5935,
+          "relief_m": 0.584,
           "temp_mean_c": 0.7952,
           "precip_mm_year": 0.5495
         },
@@ -1826,11 +1826,11 @@
       },
       {
         "candidate_id": "earth-kau-kilauea-hawai",
-        "score": 34.3,
+        "score": 34.4,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.5785,
-          "relief_m": 0.2736,
+          "relief_m": 0.2692,
           "temp_mean_c": 0.7761,
           "precip_mm_year": 1.0
         },
@@ -1849,11 +1849,11 @@
       },
       {
         "candidate_id": "earth-cuenca-qaidam",
-        "score": 34.1,
+        "score": 34.4,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.6976,
-          "relief_m": 0.7065,
+          "relief_m": 0.6952,
           "temp_mean_c": 0.6955,
           "precip_mm_year": 0.5354
         },
@@ -1871,11 +1871,11 @@
       },
       {
         "candidate_id": "earth-manjanggul-jeju",
-        "score": 32.5,
+        "score": 32.6,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.6245,
-          "relief_m": 0.3654,
+          "relief_m": 0.3595,
           "temp_mean_c": 0.7549,
           "precip_mm_year": 0.9554
         },
@@ -1892,34 +1892,12 @@
         }
       },
       {
-        "candidate_id": "earth-undara-australia",
-        "score": 30.0,
-        "n_vars_used": 4,
-        "norm_diff": {
-          "slope_deg": 0.6474,
-          "relief_m": 0.4932,
-          "temp_mean_c": 0.7896,
-          "precip_mm_year": 0.8705
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "extreme-cold",
-            "polar-ice"
-          ],
-          "only_candidate": [
-            "lava-tubes"
-          ]
-        }
-      },
-      {
         "candidate_id": "earth-desierto-de-taklamakan",
-        "score": 30.0,
+        "score": 30.3,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.6957,
-          "relief_m": 0.8412,
+          "relief_m": 0.8277,
           "temp_mean_c": 0.7356,
           "precip_mm_year": 0.5276
         },
@@ -1937,12 +1915,34 @@
         }
       },
       {
+        "candidate_id": "earth-undara-australia",
+        "score": 30.2,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.6474,
+          "relief_m": 0.4852,
+          "temp_mean_c": 0.7896,
+          "precip_mm_year": 0.8705
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold",
+            "polar-ice"
+          ],
+          "only_candidate": [
+            "lava-tubes"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-chott-el-djerid",
-        "score": 29.3,
+        "score": 29.6,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.6845,
-          "relief_m": 0.786,
+          "relief_m": 0.7734,
           "temp_mean_c": 0.7775,
           "precip_mm_year": 0.5794
         },
@@ -1960,11 +1960,11 @@
       },
       {
         "candidate_id": "earth-dasht-e-kavir",
-        "score": 27.8,
+        "score": 28.2,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.7009,
-          "relief_m": 0.8547,
+          "relief_m": 0.841,
           "temp_mean_c": 0.7694,
           "precip_mm_year": 0.5623
         },
@@ -1982,11 +1982,11 @@
       },
       {
         "candidate_id": "earth-lago-eyre-australia",
-        "score": 25.6,
+        "score": 26.0,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.7004,
-          "relief_m": 0.8595,
+          "relief_m": 0.8456,
           "temp_mean_c": 0.7839,
           "precip_mm_year": 0.6312
         },
@@ -2004,11 +2004,11 @@
       },
       {
         "candidate_id": "earth-dallol-danakil",
-        "score": 24.4,
+        "score": 24.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.6943,
-          "relief_m": 0.7369,
+          "relief_m": 0.7251,
           "temp_mean_c": 0.8035,
           "precip_mm_year": 0.7892
         },
@@ -2027,11 +2027,11 @@
       },
       {
         "candidate_id": "earth-salar-de-coipasa",
-        "score": 24.3,
+        "score": 24.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.7037,
-          "relief_m": 0.8694,
+          "relief_m": 0.8554,
           "temp_mean_c": 0.7181,
           "precip_mm_year": 0.7354
         },
@@ -2049,11 +2049,11 @@
       },
       {
         "candidate_id": "earth-salar-de-uyuni",
-        "score": 21.1,
+        "score": 21.5,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.7042,
-          "relief_m": 1.0,
+          "relief_m": 0.9839,
           "temp_mean_c": 0.7022,
           "precip_mm_year": 0.7504
         },
@@ -2071,11 +2071,11 @@
       },
       {
         "candidate_id": "earth-etosha-namibia",
-        "score": 20.3,
+        "score": 20.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.6985,
-          "relief_m": 0.9227,
+          "relief_m": 0.9078,
           "temp_mean_c": 0.7909,
           "precip_mm_year": 0.7748
         },
@@ -2093,11 +2093,11 @@
       },
       {
         "candidate_id": "earth-salar-de-arizaro",
-        "score": 20.3,
+        "score": 20.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.7037,
-          "relief_m": 0.9895,
+          "relief_m": 0.9736,
           "temp_mean_c": 0.6956,
           "precip_mm_year": 0.7993
         },
@@ -2121,7 +2121,7 @@
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.0052,
-          "relief_m": 0.0152,
+          "relief_m": 0.015,
           "temp_mean_c": 0.5341,
           "precip_mm_year": 0.556
         },
@@ -2143,7 +2143,7 @@
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.008,
-          "relief_m": 0.0088,
+          "relief_m": 0.0086,
           "temp_mean_c": 0.7511,
           "precip_mm_year": 0.4402
         },
@@ -2155,7 +2155,7 @@
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.052,
-          "relief_m": 0.051,
+          "relief_m": 0.0502,
           "temp_mean_c": 0.6673,
           "precip_mm_year": 0.6968
         },
@@ -2167,27 +2167,6 @@
           ],
           "only_candidate": [
             "permafrost"
-          ]
-        }
-      },
-      {
-        "candidate_id": "earth-atacama-nucleo-hiperarido",
-        "score": 62.2,
-        "n_vars_used": 4,
-        "norm_diff": {
-          "slope_deg": 0.3615,
-          "relief_m": 0.0738,
-          "temp_mean_c": 0.7565,
-          "precip_mm_year": 0.321
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "extreme-cold"
-          ],
-          "only_candidate": [
-            "hyper-arid"
           ]
         }
       },
@@ -2218,7 +2197,7 @@
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.293,
-          "relief_m": 0.0778,
+          "relief_m": 0.0766,
           "temp_mean_c": 0.6494,
           "precip_mm_year": 0.5495
         },
@@ -2239,7 +2218,7 @@
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.0295,
-          "relief_m": 0.0564,
+          "relief_m": 0.0555,
           "temp_mean_c": 0.7213,
           "precip_mm_year": 0.7664
         },
@@ -2256,11 +2235,11 @@
       },
       {
         "candidate_id": "earth-svalbard-sverrefjellet",
-        "score": 60.1,
+        "score": 60.2,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.0234,
-          "relief_m": 0.0996,
+          "relief_m": 0.098,
           "temp_mean_c": 0.6314,
           "precip_mm_year": 0.8398
         },
@@ -2277,11 +2256,11 @@
       },
       {
         "candidate_id": "earth-volcan-tunupa-uyuni",
-        "score": 58.9,
+        "score": 59.0,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.098,
-          "relief_m": 0.0769,
+          "relief_m": 0.0757,
           "temp_mean_c": 0.7174,
           "precip_mm_year": 0.7504
         },
@@ -2293,7 +2272,7 @@
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.3586,
-          "relief_m": 0.1199,
+          "relief_m": 0.118,
           "temp_mean_c": 0.7511,
           "precip_mm_year": 0.4402
         },
@@ -2305,7 +2284,7 @@
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.1782,
-          "relief_m": 0.1026,
+          "relief_m": 0.101,
           "temp_mean_c": 0.6984,
           "precip_mm_year": 0.7051
         },
@@ -2326,7 +2305,7 @@
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.2522,
-          "relief_m": 0.0404,
+          "relief_m": 0.0397,
           "temp_mean_c": 0.7553,
           "precip_mm_year": 0.8113
         },
@@ -2342,12 +2321,33 @@
         }
       },
       {
+        "candidate_id": "earth-atacama-nucleo-hiperarido",
+        "score": 53.1,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.5359,
+          "relief_m": 0.2928,
+          "temp_mean_c": 0.7734,
+          "precip_mm_year": 0.2734
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "hyper-arid"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-macizo-del-hoggar",
-        "score": 51.9,
+        "score": 52.0,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.3183,
-          "relief_m": 0.1845,
+          "relief_m": 0.1815,
           "temp_mean_c": 0.792,
           "precip_mm_year": 0.6276
         },
@@ -2364,11 +2364,11 @@
       },
       {
         "candidate_id": "earth-gilf-kebir",
-        "score": 50.8,
+        "score": 51.0,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.6582,
-          "relief_m": 0.5166,
+          "relief_m": 0.5083,
           "temp_mean_c": 0.7931,
           "precip_mm_year": 0.0
         },
@@ -2385,11 +2385,11 @@
       },
       {
         "candidate_id": "earth-arbol-de-piedra-siloli",
-        "score": 50.7,
+        "score": 50.8,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.5335,
-          "relief_m": 0.2522,
+          "relief_m": 0.2481,
           "temp_mean_c": 0.7057,
           "precip_mm_year": 0.4803
         },
@@ -2406,11 +2406,11 @@
       },
       {
         "candidate_id": "earth-pinacate-mexico",
-        "score": 50.6,
+        "score": 50.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.3835,
-          "relief_m": 0.1576,
+          "relief_m": 0.155,
           "temp_mean_c": 0.7967,
           "precip_mm_year": 0.6381
         },
@@ -2426,33 +2426,12 @@
         }
       },
       {
-        "candidate_id": "earth-badain-jaran-china",
-        "score": 50.1,
-        "n_vars_used": 4,
-        "norm_diff": {
-          "slope_deg": 0.354,
-          "relief_m": 0.3216,
-          "temp_mean_c": 0.7261,
-          "precip_mm_year": 0.5943
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "extreme-cold"
-          ],
-          "only_candidate": [
-            "aeolian-dunes"
-          ]
-        }
-      },
-      {
         "candidate_id": "earth-mauna-kea-hawai",
-        "score": 48.1,
+        "score": 50.5,
         "n_vars_used": 4,
         "norm_diff": {
-          "slope_deg": 0.2278,
-          "relief_m": 0.1019,
+          "slope_deg": 0.2002,
+          "relief_m": 0.0357,
           "temp_mean_c": 0.7917,
           "precip_mm_year": 0.954
         },
@@ -2468,12 +2447,33 @@
         }
       },
       {
+        "candidate_id": "earth-badain-jaran-china",
+        "score": 50.2,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.354,
+          "relief_m": 0.3164,
+          "temp_mean_c": 0.7261,
+          "precip_mm_year": 0.5943
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "aeolian-dunes"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-harrat-khaybar",
-        "score": 48.1,
+        "score": 48.2,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.5523,
-          "relief_m": 0.293,
+          "relief_m": 0.2883,
           "temp_mean_c": 0.8088,
           "precip_mm_year": 0.4238
         },
@@ -2490,11 +2490,11 @@
       },
       {
         "candidate_id": "earth-la-corona-lanzarote",
-        "score": 47.4,
+        "score": 47.5,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.4787,
-          "relief_m": 0.2365,
+          "relief_m": 0.2327,
           "temp_mean_c": 0.7811,
           "precip_mm_year": 0.6079
         },
@@ -2512,11 +2512,11 @@
       },
       {
         "candidate_id": "earth-mar-de-arena-namib",
-        "score": 47.3,
+        "score": 47.5,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.4519,
-          "relief_m": 0.3689,
+          "relief_m": 0.363,
           "temp_mean_c": 0.7848,
           "precip_mm_year": 0.5014
         },
@@ -2533,11 +2533,11 @@
       },
       {
         "candidate_id": "earth-tibesti-chad",
-        "score": 46.9,
+        "score": 47.0,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.5326,
-          "relief_m": 0.3391,
+          "relief_m": 0.3337,
           "temp_mean_c": 0.797,
           "precip_mm_year": 0.4551
         },
@@ -2554,11 +2554,11 @@
       },
       {
         "candidate_id": "earth-ubehebe-valle-de-la-muerte",
-        "score": 46.6,
+        "score": 46.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.4848,
-          "relief_m": 0.2327,
+          "relief_m": 0.229,
           "temp_mean_c": 0.7575,
           "precip_mm_year": 0.6599
         },
@@ -2575,11 +2575,11 @@
       },
       {
         "candidate_id": "earth-craters-of-the-moon-idaho",
-        "score": 45.4,
+        "score": 45.5,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.4923,
-          "relief_m": 0.2095,
+          "relief_m": 0.2061,
           "temp_mean_c": 0.7012,
           "precip_mm_year": 0.7794
         },
@@ -2597,11 +2597,11 @@
       },
       {
         "candidate_id": "earth-laguna-colorada",
-        "score": 43.7,
+        "score": 43.8,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.594,
-          "relief_m": 0.3119,
+          "relief_m": 0.3069,
           "temp_mean_c": 0.7001,
           "precip_mm_year": 0.6479
         },
@@ -2618,11 +2618,11 @@
       },
       {
         "candidate_id": "earth-askja-islandia",
-        "score": 43.6,
+        "score": 43.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.4618,
-          "relief_m": 0.2719,
+          "relief_m": 0.2676,
           "temp_mean_c": 0.6509,
           "precip_mm_year": 0.8733
         },
@@ -2639,33 +2639,12 @@
         }
       },
       {
-        "candidate_id": "earth-rio-tinto-espana",
-        "score": 41.7,
-        "n_vars_used": 4,
-        "norm_diff": {
-          "slope_deg": 0.473,
-          "relief_m": 0.2904,
-          "temp_mean_c": 0.7725,
-          "precip_mm_year": 0.7944
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "extreme-cold"
-          ],
-          "only_candidate": [
-            "hydrated-minerals"
-          ]
-        }
-      },
-      {
         "candidate_id": "earth-lava-beds-california",
-        "score": 41.1,
+        "score": 41.2,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.5607,
-          "relief_m": 0.2317,
+          "relief_m": 0.228,
           "temp_mean_c": 0.7212,
           "precip_mm_year": 0.8418
         },
@@ -2682,11 +2661,11 @@
       },
       {
         "candidate_id": "earth-haughton-isla-devon",
-        "score": 40.3,
+        "score": 40.5,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.5926,
-          "relief_m": 0.4556,
+          "relief_m": 0.4482,
           "temp_mean_c": 0.5963,
           "precip_mm_year": 0.7416
         },
@@ -2702,12 +2681,33 @@
         }
       },
       {
+        "candidate_id": "earth-rio-tinto-espana",
+        "score": 39.8,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.5134,
+          "relief_m": 0.3313,
+          "temp_mean_c": 0.7721,
+          "precip_mm_year": 0.7903
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "hydrated-minerals"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-mdrs-utah",
-        "score": 38.8,
+        "score": 39.0,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.6043,
-          "relief_m": 0.3958,
+          "relief_m": 0.3894,
           "temp_mean_c": 0.7379,
           "precip_mm_year": 0.7091
         },
@@ -2725,11 +2725,11 @@
       },
       {
         "candidate_id": "earth-desierto-tengger",
-        "score": 38.7,
+        "score": 38.9,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.5743,
-          "relief_m": 0.4816,
+          "relief_m": 0.4738,
           "temp_mean_c": 0.7264,
           "precip_mm_year": 0.6708
         },
@@ -2746,11 +2746,11 @@
       },
       {
         "candidate_id": "earth-rub-al-khali",
-        "score": 36.7,
+        "score": 37.0,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.6671,
-          "relief_m": 0.71,
+          "relief_m": 0.6986,
           "temp_mean_c": 0.8327,
           "precip_mm_year": 0.321
         },
@@ -2767,11 +2767,11 @@
       },
       {
         "candidate_id": "earth-el-malpais-nuevo-mexico",
-        "score": 35.0,
+        "score": 35.2,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.6676,
-          "relief_m": 0.4653,
+          "relief_m": 0.4578,
           "temp_mean_c": 0.7332,
           "precip_mm_year": 0.7322
         },
@@ -2788,11 +2788,11 @@
       },
       {
         "candidate_id": "earth-desierto-de-lut-iran",
-        "score": 34.5,
+        "score": 34.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.6873,
-          "relief_m": 0.5736,
+          "relief_m": 0.5644,
           "temp_mean_c": 0.8104,
           "precip_mm_year": 0.5495
         },
@@ -2809,11 +2809,11 @@
       },
       {
         "candidate_id": "earth-kau-kilauea-hawai",
-        "score": 34.3,
+        "score": 34.4,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.5813,
-          "relief_m": 0.2536,
+          "relief_m": 0.2496,
           "temp_mean_c": 0.7914,
           "precip_mm_year": 1.0
         },
@@ -2831,11 +2831,11 @@
       },
       {
         "candidate_id": "earth-cuenca-qaidam",
-        "score": 34.2,
+        "score": 34.4,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.7004,
-          "relief_m": 0.6866,
+          "relief_m": 0.6756,
           "temp_mean_c": 0.7107,
           "precip_mm_year": 0.5354
         },
@@ -2852,11 +2852,11 @@
       },
       {
         "candidate_id": "earth-manjanggul-jeju",
-        "score": 32.5,
+        "score": 32.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.6273,
-          "relief_m": 0.3454,
+          "relief_m": 0.3399,
           "temp_mean_c": 0.7701,
           "precip_mm_year": 0.9554
         },
@@ -2872,33 +2872,12 @@
         }
       },
       {
-        "candidate_id": "earth-undara-australia",
-        "score": 30.0,
-        "n_vars_used": 4,
-        "norm_diff": {
-          "slope_deg": 0.6503,
-          "relief_m": 0.4732,
-          "temp_mean_c": 0.8048,
-          "precip_mm_year": 0.8705
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "extreme-cold"
-          ],
-          "only_candidate": [
-            "lava-tubes"
-          ]
-        }
-      },
-      {
         "candidate_id": "earth-desierto-de-taklamakan",
-        "score": 30.0,
+        "score": 30.4,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.6985,
-          "relief_m": 0.8213,
+          "relief_m": 0.8081,
           "temp_mean_c": 0.7508,
           "precip_mm_year": 0.5276
         },
@@ -2915,12 +2894,33 @@
         }
       },
       {
+        "candidate_id": "earth-undara-australia",
+        "score": 30.2,
+        "n_vars_used": 4,
+        "norm_diff": {
+          "slope_deg": 0.6503,
+          "relief_m": 0.4656,
+          "temp_mean_c": 0.8048,
+          "precip_mm_year": 0.8705
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "extreme-cold"
+          ],
+          "only_candidate": [
+            "lava-tubes"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-chott-el-djerid",
-        "score": 29.4,
+        "score": 29.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.6873,
-          "relief_m": 0.7661,
+          "relief_m": 0.7538,
           "temp_mean_c": 0.7927,
           "precip_mm_year": 0.5794
         },
@@ -2937,11 +2937,11 @@
       },
       {
         "candidate_id": "earth-dasht-e-kavir",
-        "score": 27.9,
+        "score": 28.2,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.7037,
-          "relief_m": 0.8348,
+          "relief_m": 0.8214,
           "temp_mean_c": 0.7846,
           "precip_mm_year": 0.5623
         },
@@ -2958,11 +2958,11 @@
       },
       {
         "candidate_id": "earth-lago-eyre-australia",
-        "score": 25.7,
+        "score": 26.0,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.7032,
-          "relief_m": 0.8395,
+          "relief_m": 0.826,
           "temp_mean_c": 0.7991,
           "precip_mm_year": 0.6312
         },
@@ -2979,11 +2979,11 @@
       },
       {
         "candidate_id": "earth-dallol-danakil",
-        "score": 24.4,
+        "score": 24.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.6971,
-          "relief_m": 0.717,
+          "relief_m": 0.7055,
           "temp_mean_c": 0.8187,
           "precip_mm_year": 0.7892
         },
@@ -3001,11 +3001,11 @@
       },
       {
         "candidate_id": "earth-salar-de-coipasa",
-        "score": 24.4,
+        "score": 24.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.7065,
-          "relief_m": 0.8494,
+          "relief_m": 0.8358,
           "temp_mean_c": 0.7333,
           "precip_mm_year": 0.7354
         },
@@ -3022,11 +3022,11 @@
       },
       {
         "candidate_id": "earth-salar-de-uyuni",
-        "score": 21.1,
+        "score": 21.5,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.707,
-          "relief_m": 0.9801,
+          "relief_m": 0.9643,
           "temp_mean_c": 0.7174,
           "precip_mm_year": 0.7504
         },
@@ -3043,11 +3043,11 @@
       },
       {
         "candidate_id": "earth-etosha-namibia",
-        "score": 20.4,
+        "score": 20.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.7014,
-          "relief_m": 0.9027,
+          "relief_m": 0.8882,
           "temp_mean_c": 0.8061,
           "precip_mm_year": 0.7748
         },
@@ -3064,11 +3064,11 @@
       },
       {
         "candidate_id": "earth-salar-de-arizaro",
-        "score": 20.3,
+        "score": 20.7,
         "n_vars_used": 4,
         "norm_diff": {
           "slope_deg": 0.7065,
-          "relief_m": 0.9696,
+          "relief_m": 0.954,
           "temp_mean_c": 0.7108,
           "precip_mm_year": 0.7993
         },
@@ -3086,12 +3086,36 @@
     ],
     "mars-jezero": [
       {
+        "candidate_id": "earth-atacama-nucleo-hiperarido",
+        "score": 82.1,
+        "n_vars_used": 5,
+        "norm_diff": {
+          "slope_deg": 0.1106,
+          "relief_m": 0.0433,
+          "temp_mean_c": 0.3585,
+          "precip_mm_year": 0.2734,
+          "albedo": 0.1113
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "hyper-arid"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-gilf-kebir",
-        "score": 80.8,
+        "score": 80.9,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0117,
-          "relief_m": 0.175,
+          "relief_m": 0.1722,
           "temp_mean_c": 0.3782,
           "precip_mm_year": 0.0,
           "albedo": 0.3943
@@ -3135,11 +3159,11 @@
       },
       {
         "candidate_id": "earth-arbol-de-piedra-siloli",
-        "score": 79.4,
+        "score": 79.5,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.113,
-          "relief_m": 0.0894,
+          "relief_m": 0.088,
           "temp_mean_c": 0.2908,
           "precip_mm_year": 0.4803,
           "albedo": 0.0547
@@ -3159,11 +3183,11 @@
       },
       {
         "candidate_id": "earth-harrat-khaybar",
-        "score": 79.2,
+        "score": 79.3,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0942,
-          "relief_m": 0.0486,
+          "relief_m": 0.0478,
           "temp_mean_c": 0.3939,
           "precip_mm_year": 0.4238,
           "albedo": 0.0774
@@ -3187,7 +3211,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0525,
-          "relief_m": 0.0297,
+          "relief_m": 0.0292,
           "temp_mean_c": 0.2853,
           "precip_mm_year": 0.6479,
           "albedo": 0.0547
@@ -3211,7 +3235,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0211,
-          "relief_m": 0.1237,
+          "relief_m": 0.1217,
           "temp_mean_c": 0.3183,
           "precip_mm_year": 0.7322,
           "albedo": 0.017
@@ -3231,11 +3255,11 @@
       },
       {
         "candidate_id": "earth-desierto-de-lut-iran",
-        "score": 75.6,
+        "score": 75.7,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0408,
-          "relief_m": 0.232,
+          "relief_m": 0.2283,
           "temp_mean_c": 0.3956,
           "precip_mm_year": 0.5495,
           "albedo": 0.0019
@@ -3259,7 +3283,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.1946,
-          "relief_m": 0.0274,
+          "relief_m": 0.0269,
           "temp_mean_c": 0.3699,
           "precip_mm_year": 0.5014,
           "albedo": 0.1679
@@ -3279,11 +3303,11 @@
       },
       {
         "candidate_id": "earth-mdrs-utah",
-        "score": 74.4,
+        "score": 74.5,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0422,
-          "relief_m": 0.0542,
+          "relief_m": 0.0533,
           "temp_mean_c": 0.323,
           "precip_mm_year": 0.7091,
           "albedo": 0.1491
@@ -3304,11 +3328,11 @@
       },
       {
         "candidate_id": "earth-ubehebe-valle-de-la-muerte",
-        "score": 73.8,
+        "score": 73.9,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.1617,
-          "relief_m": 0.1089,
+          "relief_m": 0.1071,
           "temp_mean_c": 0.3427,
           "precip_mm_year": 0.6599,
           "albedo": 0.0358
@@ -3327,36 +3351,12 @@
         }
       },
       {
-        "candidate_id": "earth-atacama-nucleo-hiperarido",
-        "score": 73.5,
-        "n_vars_used": 5,
-        "norm_diff": {
-          "slope_deg": 0.285,
-          "relief_m": 0.2678,
-          "temp_mean_c": 0.3416,
-          "precip_mm_year": 0.321,
-          "albedo": 0.1113
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "basalt",
-            "hydrated-minerals",
-            "impact-crater"
-          ],
-          "only_candidate": [
-            "hyper-arid"
-          ]
-        }
-      },
-      {
         "candidate_id": "earth-laguna-verde-bolivia",
-        "score": 73.2,
+        "score": 73.3,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.2879,
-          "relief_m": 0.2217,
+          "relief_m": 0.2181,
           "temp_mean_c": 0.3363,
           "precip_mm_year": 0.4402,
           "albedo": 0.0547
@@ -3364,12 +3364,35 @@
         "tag_overlap": null
       },
       {
+        "candidate_id": "earth-rio-tinto-espana",
+        "score": 73.1,
+        "n_vars_used": 5,
+        "norm_diff": {
+          "slope_deg": 0.1331,
+          "relief_m": 0.0048,
+          "temp_mean_c": 0.3572,
+          "precip_mm_year": 0.7903,
+          "albedo": 0.0585
+        },
+        "tag_overlap": {
+          "jaccard": 0.333,
+          "shared": [
+            "hydrated-minerals"
+          ],
+          "only_site": [
+            "basalt",
+            "impact-crater"
+          ],
+          "only_candidate": []
+        }
+      },
+      {
         "candidate_id": "earth-badain-jaran-china",
         "score": 73.0,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.2925,
-          "relief_m": 0.02,
+          "relief_m": 0.0197,
           "temp_mean_c": 0.3112,
           "precip_mm_year": 0.5943,
           "albedo": 0.1302
@@ -3393,7 +3416,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0722,
-          "relief_m": 0.14,
+          "relief_m": 0.1377,
           "temp_mean_c": 0.3115,
           "precip_mm_year": 0.6708,
           "albedo": 0.1868
@@ -3417,7 +3440,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0858,
-          "relief_m": 0.1099,
+          "relief_m": 0.1081,
           "temp_mean_c": 0.3063,
           "precip_mm_year": 0.8418,
           "albedo": 0.0585
@@ -3436,35 +3459,12 @@
         }
       },
       {
-        "candidate_id": "earth-rio-tinto-espana",
-        "score": 71.3,
-        "n_vars_used": 5,
-        "norm_diff": {
-          "slope_deg": 0.1735,
-          "relief_m": 0.0512,
-          "temp_mean_c": 0.3576,
-          "precip_mm_year": 0.7944,
-          "albedo": 0.0585
-        },
-        "tag_overlap": {
-          "jaccard": 0.333,
-          "shared": [
-            "hydrated-minerals"
-          ],
-          "only_site": [
-            "basalt",
-            "impact-crater"
-          ],
-          "only_candidate": []
-        }
-      },
-      {
         "candidate_id": "earth-cuenca-qaidam",
-        "score": 71.3,
+        "score": 71.4,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0539,
-          "relief_m": 0.345,
+          "relief_m": 0.3395,
           "temp_mean_c": 0.2958,
           "precip_mm_year": 0.5354,
           "albedo": 0.2057
@@ -3488,7 +3488,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0038,
-          "relief_m": 0.1317,
+          "relief_m": 0.1295,
           "temp_mean_c": 0.3899,
           "precip_mm_year": 0.8705,
           "albedo": 0.0396
@@ -3508,11 +3508,11 @@
       },
       {
         "candidate_id": "earth-craters-of-the-moon-idaho",
-        "score": 71.1,
+        "score": 71.2,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.1542,
-          "relief_m": 0.1321,
+          "relief_m": 0.13,
           "temp_mean_c": 0.2863,
           "precip_mm_year": 0.7794,
           "albedo": 0.0925
@@ -3533,11 +3533,11 @@
       },
       {
         "candidate_id": "earth-la-corona-lanzarote",
-        "score": 69.7,
+        "score": 69.8,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.1678,
-          "relief_m": 0.1051,
+          "relief_m": 0.1034,
           "temp_mean_c": 0.3663,
           "precip_mm_year": 0.6079,
           "albedo": 0.266
@@ -3562,7 +3562,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0192,
-          "relief_m": 0.0039,
+          "relief_m": 0.0038,
           "temp_mean_c": 0.3552,
           "precip_mm_year": 0.9554,
           "albedo": 0.2283
@@ -3582,11 +3582,11 @@
       },
       {
         "candidate_id": "earth-desierto-de-taklamakan",
-        "score": 68.4,
+        "score": 68.5,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.052,
-          "relief_m": 0.4797,
+          "relief_m": 0.472,
           "temp_mean_c": 0.3359,
           "precip_mm_year": 0.5276,
           "albedo": 0.1868
@@ -3606,36 +3606,12 @@
         }
       },
       {
-        "candidate_id": "earth-pinacate-mexico",
-        "score": 68.1,
-        "n_vars_used": 5,
-        "norm_diff": {
-          "slope_deg": 0.263,
-          "relief_m": 0.184,
-          "temp_mean_c": 0.3818,
-          "precip_mm_year": 0.6381,
-          "albedo": 0.1302
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "basalt",
-            "hydrated-minerals",
-            "impact-crater"
-          ],
-          "only_candidate": [
-            "volcanic-field"
-          ]
-        }
-      },
-      {
         "candidate_id": "earth-dasht-e-kavir",
-        "score": 68.1,
+        "score": 68.3,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0572,
-          "relief_m": 0.4932,
+          "relief_m": 0.4853,
           "temp_mean_c": 0.3698,
           "precip_mm_year": 0.5623,
           "albedo": 0.1113
@@ -3654,12 +3630,36 @@
         }
       },
       {
+        "candidate_id": "earth-pinacate-mexico",
+        "score": 68.1,
+        "n_vars_used": 5,
+        "norm_diff": {
+          "slope_deg": 0.263,
+          "relief_m": 0.1811,
+          "temp_mean_c": 0.3818,
+          "precip_mm_year": 0.6381,
+          "albedo": 0.1302
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "basalt",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "volcanic-field"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-rub-al-khali",
-        "score": 67.7,
+        "score": 67.8,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0206,
-          "relief_m": 0.3685,
+          "relief_m": 0.3625,
           "temp_mean_c": 0.4178,
           "precip_mm_year": 0.321,
           "albedo": 0.4887
@@ -3683,7 +3683,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0539,
-          "relief_m": 0.114,
+          "relief_m": 0.1121,
           "temp_mean_c": 0.1814,
           "precip_mm_year": 0.7416,
           "albedo": 0.5453
@@ -3702,11 +3702,11 @@
       },
       {
         "candidate_id": "earth-dallol-danakil",
-        "score": 67.2,
+        "score": 67.3,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0506,
-          "relief_m": 0.3754,
+          "relief_m": 0.3694,
           "temp_mean_c": 0.4038,
           "precip_mm_year": 0.7892,
           "albedo": 0.0208
@@ -3727,11 +3727,11 @@
       },
       {
         "candidate_id": "earth-macizo-del-hoggar",
-        "score": 66.8,
+        "score": 66.9,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.3282,
-          "relief_m": 0.1571,
+          "relief_m": 0.1546,
           "temp_mean_c": 0.3772,
           "precip_mm_year": 0.6276,
           "albedo": 0.1679
@@ -3751,11 +3751,11 @@
       },
       {
         "candidate_id": "earth-salar-de-coipasa",
-        "score": 66.1,
+        "score": 66.3,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.06,
-          "relief_m": 0.5079,
+          "relief_m": 0.4997,
           "temp_mean_c": 0.3184,
           "precip_mm_year": 0.7354,
           "albedo": 0.0736
@@ -3779,7 +3779,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0652,
-          "relief_m": 0.0879,
+          "relief_m": 0.0865,
           "temp_mean_c": 0.3765,
           "precip_mm_year": 1.0,
           "albedo": 0.1717
@@ -3798,11 +3798,11 @@
       },
       {
         "candidate_id": "earth-uturuncu-bolivia",
-        "score": 65.0,
+        "score": 65.1,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.4684,
-          "relief_m": 0.239,
+          "relief_m": 0.2351,
           "temp_mean_c": 0.2835,
           "precip_mm_year": 0.7051,
           "albedo": 0.0547
@@ -3822,11 +3822,11 @@
       },
       {
         "candidate_id": "earth-licancabur-laguna-verde",
-        "score": 63.9,
+        "score": 64.1,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.6385,
-          "relief_m": 0.3328,
+          "relief_m": 0.3274,
           "temp_mean_c": 0.3363,
           "precip_mm_year": 0.4402,
           "albedo": 0.0547
@@ -3835,11 +3835,11 @@
       },
       {
         "candidate_id": "earth-salar-de-arizaro",
-        "score": 63.2,
+        "score": 63.4,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.06,
-          "relief_m": 0.628,
+          "relief_m": 0.6179,
           "temp_mean_c": 0.2959,
           "precip_mm_year": 0.7993,
           "albedo": 0.0547
@@ -3859,11 +3859,11 @@
       },
       {
         "candidate_id": "earth-ojos-del-salado",
-        "score": 63.0,
+        "score": 63.1,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.5945,
-          "relief_m": 0.2906,
+          "relief_m": 0.2859,
           "temp_mean_c": 0.2524,
           "precip_mm_year": 0.6968,
           "albedo": 0.017
@@ -3883,11 +3883,11 @@
       },
       {
         "candidate_id": "earth-lago-eyre-australia",
-        "score": 63.0,
+        "score": 63.1,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0567,
-          "relief_m": 0.498,
+          "relief_m": 0.49,
           "temp_mean_c": 0.3842,
           "precip_mm_year": 0.6312,
           "albedo": 0.2811
@@ -3907,11 +3907,11 @@
       },
       {
         "candidate_id": "earth-torotoro-umajalanta",
-        "score": 61.9,
+        "score": 62.0,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.3943,
-          "relief_m": 0.3012,
+          "relief_m": 0.2964,
           "temp_mean_c": 0.3404,
           "precip_mm_year": 0.8113,
           "albedo": 0.0585
@@ -3931,11 +3931,11 @@
       },
       {
         "candidate_id": "earth-etosha-namibia",
-        "score": 61.8,
+        "score": 61.9,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0549,
-          "relief_m": 0.5612,
+          "relief_m": 0.5521,
           "temp_mean_c": 0.3912,
           "precip_mm_year": 0.7748,
           "albedo": 0.1302
@@ -3955,11 +3955,11 @@
       },
       {
         "candidate_id": "earth-chott-el-djerid",
-        "score": 61.8,
+        "score": 61.9,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0408,
-          "relief_m": 0.4245,
+          "relief_m": 0.4177,
           "temp_mean_c": 0.3778,
           "precip_mm_year": 0.5794,
           "albedo": 0.4887
@@ -3979,11 +3979,11 @@
       },
       {
         "candidate_id": "earth-askja-islandia",
-        "score": 61.4,
+        "score": 61.5,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.1847,
-          "relief_m": 0.0696,
+          "relief_m": 0.0685,
           "temp_mean_c": 0.2361,
           "precip_mm_year": 0.8733,
           "albedo": 0.5642
@@ -4004,11 +4004,11 @@
       },
       {
         "candidate_id": "earth-salar-de-uyuni",
-        "score": 61.2,
+        "score": 61.4,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0605,
-          "relief_m": 0.6385,
+          "relief_m": 0.6282,
           "temp_mean_c": 0.3025,
           "precip_mm_year": 0.7504,
           "albedo": 0.1868
@@ -4028,11 +4028,11 @@
       },
       {
         "candidate_id": "earth-volcan-tunupa-uyuni",
-        "score": 59.7,
+        "score": 59.8,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.5485,
-          "relief_m": 0.2646,
+          "relief_m": 0.2604,
           "temp_mean_c": 0.3025,
           "precip_mm_year": 0.7504,
           "albedo": 0.1491
@@ -4045,7 +4045,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.617,
-          "relief_m": 0.2852,
+          "relief_m": 0.2806,
           "temp_mean_c": 0.3065,
           "precip_mm_year": 0.7664,
           "albedo": 0.0925
@@ -4065,11 +4065,11 @@
       },
       {
         "candidate_id": "earth-volcan-socompa",
-        "score": 57.0,
+        "score": 57.1,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.7979,
-          "relief_m": 0.347,
+          "relief_m": 0.3414,
           "temp_mean_c": 0.2902,
           "precip_mm_year": 0.6599,
           "albedo": 0.0547
@@ -4089,11 +4089,11 @@
       },
       {
         "candidate_id": "earth-montanas-del-pamir",
-        "score": 56.9,
+        "score": 57.0,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.9395,
-          "relief_m": 0.2638,
+          "relief_m": 0.2595,
           "temp_mean_c": 0.2345,
           "precip_mm_year": 0.5495,
           "albedo": 0.1679
@@ -4113,11 +4113,11 @@
       },
       {
         "candidate_id": "earth-mauna-kea-hawai",
-        "score": 56.8,
+        "score": 53.6,
         "n_vars_used": 5,
         "norm_diff": {
-          "slope_deg": 0.4187,
-          "relief_m": 0.2397,
+          "slope_deg": 0.4463,
+          "relief_m": 0.3718,
           "temp_mean_c": 0.3768,
           "precip_mm_year": 0.954,
           "albedo": 0.1717
@@ -4136,11 +4136,11 @@
       },
       {
         "candidate_id": "earth-valles-secos-mcmurdo",
-        "score": 52.3,
+        "score": 52.4,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.6517,
-          "relief_m": 0.3264,
+          "relief_m": 0.3211,
           "temp_mean_c": 0.1192,
           "precip_mm_year": 0.556,
           "albedo": 0.734
@@ -4162,11 +4162,11 @@
       },
       {
         "candidate_id": "earth-svalbard-sverrefjellet",
-        "score": 46.7,
+        "score": 46.8,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.6699,
-          "relief_m": 0.2419,
+          "relief_m": 0.2381,
           "temp_mean_c": 0.2165,
           "precip_mm_year": 0.8398,
           "albedo": 0.6962
@@ -4186,12 +4186,36 @@
     ],
     "mars-gale": [
       {
+        "candidate_id": "earth-atacama-nucleo-hiperarido",
+        "score": 83.8,
+        "n_vars_used": 5,
+        "norm_diff": {
+          "slope_deg": 0.1092,
+          "relief_m": 0.0495,
+          "temp_mean_c": 0.3653,
+          "precip_mm_year": 0.2734,
+          "albedo": 0.0113
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "aeolian-dunes",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "hyper-arid"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-gilf-kebir",
-        "score": 83.2,
+        "score": 83.3,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0131,
-          "relief_m": 0.1687,
+          "relief_m": 0.166,
           "temp_mean_c": 0.385,
           "precip_mm_year": 0.0,
           "albedo": 0.2717
@@ -4215,7 +4239,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.1125,
-          "relief_m": 0.0088,
+          "relief_m": 0.0087,
           "temp_mean_c": 0.3889,
           "precip_mm_year": 0.4551,
           "albedo": 0.0868
@@ -4235,11 +4259,11 @@
       },
       {
         "candidate_id": "earth-arbol-de-piedra-siloli",
-        "score": 78.9,
+        "score": 79.0,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.1116,
-          "relief_m": 0.0958,
+          "relief_m": 0.0942,
           "temp_mean_c": 0.2977,
           "precip_mm_year": 0.4803,
           "albedo": 0.0679
@@ -4262,7 +4286,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0511,
-          "relief_m": 0.0361,
+          "relief_m": 0.0355,
           "temp_mean_c": 0.2921,
           "precip_mm_year": 0.6479,
           "albedo": 0.0679
@@ -4282,11 +4306,11 @@
       },
       {
         "candidate_id": "earth-mar-de-arena-namib",
-        "score": 77.2,
+        "score": 77.3,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.1932,
-          "relief_m": 0.021,
+          "relief_m": 0.0206,
           "temp_mean_c": 0.3767,
           "precip_mm_year": 0.5014,
           "albedo": 0.0453
@@ -4309,7 +4333,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0408,
-          "relief_m": 0.0478,
+          "relief_m": 0.047,
           "temp_mean_c": 0.3299,
           "precip_mm_year": 0.7091,
           "albedo": 0.0264
@@ -4334,7 +4358,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0928,
-          "relief_m": 0.0549,
+          "relief_m": 0.0541,
           "temp_mean_c": 0.4008,
           "precip_mm_year": 0.4238,
           "albedo": 0.2
@@ -4358,7 +4382,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.2911,
-          "relief_m": 0.0264,
+          "relief_m": 0.026,
           "temp_mean_c": 0.3181,
           "precip_mm_year": 0.5943,
           "albedo": 0.0075
@@ -4376,36 +4400,12 @@
         }
       },
       {
-        "candidate_id": "earth-atacama-nucleo-hiperarido",
-        "score": 75.2,
-        "n_vars_used": 5,
-        "norm_diff": {
-          "slope_deg": 0.2836,
-          "relief_m": 0.2742,
-          "temp_mean_c": 0.3484,
-          "precip_mm_year": 0.321,
-          "albedo": 0.0113
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "aeolian-dunes",
-            "hydrated-minerals",
-            "impact-crater"
-          ],
-          "only_candidate": [
-            "hyper-arid"
-          ]
-        }
-      },
-      {
         "candidate_id": "earth-desierto-tengger",
-        "score": 74.8,
+        "score": 74.9,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0708,
-          "relief_m": 0.1336,
+          "relief_m": 0.1315,
           "temp_mean_c": 0.3184,
           "precip_mm_year": 0.6708,
           "albedo": 0.0642
@@ -4424,11 +4424,11 @@
       },
       {
         "candidate_id": "earth-el-malpais-nuevo-mexico",
-        "score": 73.9,
+        "score": 74.0,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0225,
-          "relief_m": 0.1173,
+          "relief_m": 0.1154,
           "temp_mean_c": 0.3251,
           "precip_mm_year": 0.7322,
           "albedo": 0.1057
@@ -4448,11 +4448,11 @@
       },
       {
         "candidate_id": "earth-cuenca-qaidam",
-        "score": 73.7,
+        "score": 73.8,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0553,
-          "relief_m": 0.3387,
+          "relief_m": 0.3332,
           "temp_mean_c": 0.3026,
           "precip_mm_year": 0.5354,
           "albedo": 0.083
@@ -4471,11 +4471,11 @@
       },
       {
         "candidate_id": "earth-desierto-de-lut-iran",
-        "score": 73.1,
+        "score": 73.2,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0422,
-          "relief_m": 0.2256,
+          "relief_m": 0.222,
           "temp_mean_c": 0.4024,
           "precip_mm_year": 0.5495,
           "albedo": 0.1245
@@ -4494,11 +4494,11 @@
       },
       {
         "candidate_id": "earth-laguna-verde-bolivia",
-        "score": 72.7,
+        "score": 72.8,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.2865,
-          "relief_m": 0.2281,
+          "relief_m": 0.2244,
           "temp_mean_c": 0.3431,
           "precip_mm_year": 0.4402,
           "albedo": 0.0679
@@ -4511,7 +4511,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.1603,
-          "relief_m": 0.1153,
+          "relief_m": 0.1134,
           "temp_mean_c": 0.3495,
           "precip_mm_year": 0.6599,
           "albedo": 0.0868
@@ -4531,11 +4531,11 @@
       },
       {
         "candidate_id": "earth-craters-of-the-moon-idaho",
-        "score": 72.1,
+        "score": 72.2,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.1528,
-          "relief_m": 0.1385,
+          "relief_m": 0.1362,
           "temp_mean_c": 0.2931,
           "precip_mm_year": 0.7794,
           "albedo": 0.0302
@@ -4556,11 +4556,11 @@
       },
       {
         "candidate_id": "earth-desierto-de-taklamakan",
-        "score": 70.8,
+        "score": 70.9,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0534,
-          "relief_m": 0.4733,
+          "relief_m": 0.4657,
           "temp_mean_c": 0.3428,
           "precip_mm_year": 0.5276,
           "albedo": 0.0642
@@ -4580,12 +4580,35 @@
         }
       },
       {
+        "candidate_id": "earth-rio-tinto-espana",
+        "score": 70.4,
+        "n_vars_used": 5,
+        "norm_diff": {
+          "slope_deg": 0.1317,
+          "relief_m": 0.011,
+          "temp_mean_c": 0.3641,
+          "precip_mm_year": 0.7903,
+          "albedo": 0.1811
+        },
+        "tag_overlap": {
+          "jaccard": 0.333,
+          "shared": [
+            "hydrated-minerals"
+          ],
+          "only_site": [
+            "aeolian-dunes",
+            "impact-crater"
+          ],
+          "only_candidate": []
+        }
+      },
+      {
         "candidate_id": "earth-pinacate-mexico",
         "score": 70.3,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.2616,
-          "relief_m": 0.1904,
+          "relief_m": 0.1873,
           "temp_mean_c": 0.3886,
           "precip_mm_year": 0.6381,
           "albedo": 0.0075
@@ -4605,11 +4628,11 @@
       },
       {
         "candidate_id": "earth-rub-al-khali",
-        "score": 70.1,
+        "score": 70.2,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.022,
-          "relief_m": 0.3621,
+          "relief_m": 0.3563,
           "temp_mean_c": 0.4246,
           "precip_mm_year": 0.321,
           "albedo": 0.366
@@ -4628,11 +4651,11 @@
       },
       {
         "candidate_id": "earth-dasht-e-kavir",
-        "score": 70.1,
+        "score": 70.2,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0586,
-          "relief_m": 0.4868,
+          "relief_m": 0.479,
           "temp_mean_c": 0.3766,
           "precip_mm_year": 0.5623,
           "albedo": 0.0113
@@ -4652,11 +4675,11 @@
       },
       {
         "candidate_id": "earth-haughton-isla-devon",
-        "score": 69.7,
+        "score": 69.8,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0525,
-          "relief_m": 0.1076,
+          "relief_m": 0.1059,
           "temp_mean_c": 0.1882,
           "precip_mm_year": 0.7416,
           "albedo": 0.4226
@@ -4679,7 +4702,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0844,
-          "relief_m": 0.1163,
+          "relief_m": 0.1144,
           "temp_mean_c": 0.3131,
           "precip_mm_year": 0.8418,
           "albedo": 0.1811
@@ -4703,7 +4726,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.3268,
-          "relief_m": 0.1635,
+          "relief_m": 0.1609,
           "temp_mean_c": 0.384,
           "precip_mm_year": 0.6276,
           "albedo": 0.0453
@@ -4727,7 +4750,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0052,
-          "relief_m": 0.1253,
+          "relief_m": 0.1233,
           "temp_mean_c": 0.3967,
           "precip_mm_year": 0.8705,
           "albedo": 0.1623
@@ -4746,35 +4769,12 @@
         }
       },
       {
-        "candidate_id": "earth-rio-tinto-espana",
-        "score": 68.6,
-        "n_vars_used": 5,
-        "norm_diff": {
-          "slope_deg": 0.1721,
-          "relief_m": 0.0576,
-          "temp_mean_c": 0.3644,
-          "precip_mm_year": 0.7944,
-          "albedo": 0.1811
-        },
-        "tag_overlap": {
-          "jaccard": 0.333,
-          "shared": [
-            "hydrated-minerals"
-          ],
-          "only_site": [
-            "aeolian-dunes",
-            "impact-crater"
-          ],
-          "only_candidate": []
-        }
-      },
-      {
         "candidate_id": "earth-la-corona-lanzarote",
-        "score": 67.0,
+        "score": 67.1,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.1664,
-          "relief_m": 0.1114,
+          "relief_m": 0.1097,
           "temp_mean_c": 0.3731,
           "precip_mm_year": 0.6079,
           "albedo": 0.3887
@@ -4795,11 +4795,11 @@
       },
       {
         "candidate_id": "earth-salar-de-coipasa",
-        "score": 66.5,
+        "score": 66.7,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0614,
-          "relief_m": 0.5015,
+          "relief_m": 0.4934,
           "temp_mean_c": 0.3252,
           "precip_mm_year": 0.7354,
           "albedo": 0.0491
@@ -4843,11 +4843,11 @@
       },
       {
         "candidate_id": "earth-lago-eyre-australia",
-        "score": 65.4,
+        "score": 65.5,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0581,
-          "relief_m": 0.4916,
+          "relief_m": 0.4837,
           "temp_mean_c": 0.3911,
           "precip_mm_year": 0.6312,
           "albedo": 0.1585
@@ -4867,11 +4867,11 @@
       },
       {
         "candidate_id": "earth-dallol-danakil",
-        "score": 64.7,
+        "score": 64.8,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.052,
-          "relief_m": 0.3691,
+          "relief_m": 0.3631,
           "temp_mean_c": 0.4106,
           "precip_mm_year": 0.7892,
           "albedo": 0.1434
@@ -4892,11 +4892,11 @@
       },
       {
         "candidate_id": "earth-uturuncu-bolivia",
-        "score": 64.5,
+        "score": 64.6,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.4669,
-          "relief_m": 0.2453,
+          "relief_m": 0.2414,
           "temp_mean_c": 0.2904,
           "precip_mm_year": 0.7051,
           "albedo": 0.0679
@@ -4916,11 +4916,11 @@
       },
       {
         "candidate_id": "earth-etosha-namibia",
-        "score": 64.2,
+        "score": 64.3,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0563,
-          "relief_m": 0.5548,
+          "relief_m": 0.5459,
           "temp_mean_c": 0.398,
           "precip_mm_year": 0.7748,
           "albedo": 0.0075
@@ -4940,14 +4940,38 @@
       },
       {
         "candidate_id": "earth-chott-el-djerid",
-        "score": 64.2,
+        "score": 64.3,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0422,
-          "relief_m": 0.4181,
+          "relief_m": 0.4114,
           "temp_mean_c": 0.3846,
           "precip_mm_year": 0.5794,
           "albedo": 0.366
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "aeolian-dunes",
+            "hydrated-minerals",
+            "impact-crater"
+          ],
+          "only_candidate": [
+            "evaporite"
+          ]
+        }
+      },
+      {
+        "candidate_id": "earth-salar-de-uyuni",
+        "score": 63.8,
+        "n_vars_used": 5,
+        "norm_diff": {
+          "slope_deg": 0.0619,
+          "relief_m": 0.622,
+          "temp_mean_c": 0.3093,
+          "precip_mm_year": 0.7504,
+          "albedo": 0.0642
         },
         "tag_overlap": {
           "jaccard": 0.0,
@@ -4968,7 +4992,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.1833,
-          "relief_m": 0.076,
+          "relief_m": 0.0748,
           "temp_mean_c": 0.2429,
           "precip_mm_year": 0.8733,
           "albedo": 0.4415
@@ -4988,36 +5012,12 @@
         }
       },
       {
-        "candidate_id": "earth-salar-de-uyuni",
+        "candidate_id": "earth-licancabur-laguna-verde",
         "score": 63.6,
         "n_vars_used": 5,
         "norm_diff": {
-          "slope_deg": 0.0619,
-          "relief_m": 0.6321,
-          "temp_mean_c": 0.3093,
-          "precip_mm_year": 0.7504,
-          "albedo": 0.0642
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "aeolian-dunes",
-            "hydrated-minerals",
-            "impact-crater"
-          ],
-          "only_candidate": [
-            "evaporite"
-          ]
-        }
-      },
-      {
-        "candidate_id": "earth-licancabur-laguna-verde",
-        "score": 63.5,
-        "n_vars_used": 5,
-        "norm_diff": {
           "slope_deg": 0.6371,
-          "relief_m": 0.3392,
+          "relief_m": 0.3337,
           "temp_mean_c": 0.3431,
           "precip_mm_year": 0.4402,
           "albedo": 0.0679
@@ -5030,7 +5030,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0638,
-          "relief_m": 0.0943,
+          "relief_m": 0.0928,
           "temp_mean_c": 0.3833,
           "precip_mm_year": 1.0,
           "albedo": 0.2943
@@ -5051,11 +5051,11 @@
       },
       {
         "candidate_id": "earth-salar-de-arizaro",
-        "score": 62.9,
+        "score": 63.1,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0614,
-          "relief_m": 0.6216,
+          "relief_m": 0.6116,
           "temp_mean_c": 0.3027,
           "precip_mm_year": 0.7993,
           "albedo": 0.0679
@@ -5075,11 +5075,11 @@
       },
       {
         "candidate_id": "earth-volcan-tunupa-uyuni",
-        "score": 61.9,
+        "score": 62.0,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.5471,
-          "relief_m": 0.271,
+          "relief_m": 0.2667,
           "temp_mean_c": 0.3093,
           "precip_mm_year": 0.7504,
           "albedo": 0.0264
@@ -5088,11 +5088,11 @@
       },
       {
         "candidate_id": "earth-ojos-del-salado",
-        "score": 61.0,
+        "score": 61.1,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.5931,
-          "relief_m": 0.2969,
+          "relief_m": 0.2922,
           "temp_mean_c": 0.2592,
           "precip_mm_year": 0.6968,
           "albedo": 0.1057
@@ -5112,11 +5112,11 @@
       },
       {
         "candidate_id": "earth-nevado-sajama",
-        "score": 59.7,
+        "score": 59.8,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.6156,
-          "relief_m": 0.2916,
+          "relief_m": 0.2869,
           "temp_mean_c": 0.3133,
           "precip_mm_year": 0.7664,
           "albedo": 0.0302
@@ -5136,11 +5136,11 @@
       },
       {
         "candidate_id": "earth-torotoro-umajalanta",
-        "score": 59.2,
+        "score": 59.3,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.3929,
-          "relief_m": 0.3076,
+          "relief_m": 0.3026,
           "temp_mean_c": 0.3472,
           "precip_mm_year": 0.8113,
           "albedo": 0.1811
@@ -5160,11 +5160,11 @@
       },
       {
         "candidate_id": "earth-montanas-del-pamir",
-        "score": 59.1,
+        "score": 59.2,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.9381,
-          "relief_m": 0.2701,
+          "relief_m": 0.2658,
           "temp_mean_c": 0.2413,
           "precip_mm_year": 0.5495,
           "albedo": 0.0453
@@ -5184,11 +5184,11 @@
       },
       {
         "candidate_id": "earth-volcan-socompa",
-        "score": 56.5,
+        "score": 56.6,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.7965,
-          "relief_m": 0.3534,
+          "relief_m": 0.3477,
           "temp_mean_c": 0.297,
           "precip_mm_year": 0.6599,
           "albedo": 0.0679
@@ -5208,11 +5208,11 @@
       },
       {
         "candidate_id": "earth-valles-secos-mcmurdo",
-        "score": 54.5,
+        "score": 54.6,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.6503,
-          "relief_m": 0.3327,
+          "relief_m": 0.3274,
           "temp_mean_c": 0.126,
           "precip_mm_year": 0.556,
           "albedo": 0.6113
@@ -5234,11 +5234,11 @@
       },
       {
         "candidate_id": "earth-mauna-kea-hawai",
-        "score": 54.1,
+        "score": 50.9,
         "n_vars_used": 5,
         "norm_diff": {
-          "slope_deg": 0.4173,
-          "relief_m": 0.2461,
+          "slope_deg": 0.4449,
+          "relief_m": 0.378,
           "temp_mean_c": 0.3837,
           "precip_mm_year": 0.954,
           "albedo": 0.2943
@@ -5258,11 +5258,11 @@
       },
       {
         "candidate_id": "earth-svalbard-sverrefjellet",
-        "score": 48.9,
+        "score": 49.0,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.6685,
-          "relief_m": 0.2483,
+          "relief_m": 0.2443,
           "temp_mean_c": 0.2233,
           "precip_mm_year": 0.8398,
           "albedo": 0.5736
@@ -5283,35 +5283,12 @@
     ],
     "mars-arcadia-planitia": [
       {
-        "candidate_id": "earth-desierto-de-taklamakan",
+        "candidate_id": "earth-dasht-e-kavir",
         "score": 76.9,
         "n_vars_used": 5,
         "norm_diff": {
-          "slope_deg": 0.0038,
-          "relief_m": 0.0316,
-          "temp_mean_c": 0.4854,
-          "precip_mm_year": 0.5276,
-          "albedo": 0.1057
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "permafrost"
-          ],
-          "only_candidate": [
-            "aeolian-dunes",
-            "dust-activity"
-          ]
-        }
-      },
-      {
-        "candidate_id": "earth-dasht-e-kavir",
-        "score": 76.8,
-        "n_vars_used": 5,
-        "norm_diff": {
           "slope_deg": 0.0014,
-          "relief_m": 0.0451,
+          "relief_m": 0.0444,
           "temp_mean_c": 0.5192,
           "precip_mm_year": 0.5623,
           "albedo": 0.0302
@@ -5329,11 +5306,11 @@
       },
       {
         "candidate_id": "earth-gilf-kebir",
-        "score": 76.8,
+        "score": 76.9,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0441,
-          "relief_m": 0.2731,
+          "relief_m": 0.2687,
           "temp_mean_c": 0.5277,
           "precip_mm_year": 0.0,
           "albedo": 0.3132
@@ -5350,12 +5327,35 @@
         }
       },
       {
+        "candidate_id": "earth-desierto-de-taklamakan",
+        "score": 76.9,
+        "n_vars_used": 5,
+        "norm_diff": {
+          "slope_deg": 0.0038,
+          "relief_m": 0.0311,
+          "temp_mean_c": 0.4854,
+          "precip_mm_year": 0.5276,
+          "albedo": 0.1057
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "aeolian-dunes",
+            "dust-activity"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-cuenca-qaidam",
         "score": 75.8,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0019,
-          "relief_m": 0.1031,
+          "relief_m": 0.1014,
           "temp_mean_c": 0.4453,
           "precip_mm_year": 0.5354,
           "albedo": 0.1245
@@ -5377,7 +5377,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0042,
-          "relief_m": 0.0598,
+          "relief_m": 0.0588,
           "temp_mean_c": 0.4679,
           "precip_mm_year": 0.7354,
           "albedo": 0.0075
@@ -5395,11 +5395,11 @@
       },
       {
         "candidate_id": "earth-desierto-de-lut-iran",
-        "score": 71.8,
+        "score": 71.9,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.015,
-          "relief_m": 0.2161,
+          "relief_m": 0.2126,
           "temp_mean_c": 0.5451,
           "precip_mm_year": 0.5495,
           "albedo": 0.083
@@ -5421,7 +5421,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0352,
-          "relief_m": 0.0796,
+          "relief_m": 0.0784,
           "temp_mean_c": 0.5673,
           "precip_mm_year": 0.321,
           "albedo": 0.4075
@@ -5443,7 +5443,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0009,
-          "relief_m": 0.0499,
+          "relief_m": 0.0491,
           "temp_mean_c": 0.5337,
           "precip_mm_year": 0.6312,
           "albedo": 0.2
@@ -5461,11 +5461,11 @@
       },
       {
         "candidate_id": "earth-salar-de-arizaro",
-        "score": 70.9,
+        "score": 71.0,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0042,
-          "relief_m": 0.1799,
+          "relief_m": 0.177,
           "temp_mean_c": 0.4454,
           "precip_mm_year": 0.7993,
           "albedo": 0.0264
@@ -5482,12 +5482,34 @@
         }
       },
       {
+        "candidate_id": "earth-atacama-nucleo-hiperarido",
+        "score": 70.8,
+        "n_vars_used": 5,
+        "norm_diff": {
+          "slope_deg": 0.1664,
+          "relief_m": 0.4842,
+          "temp_mean_c": 0.508,
+          "precip_mm_year": 0.2734,
+          "albedo": 0.0302
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "hyper-arid"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-etosha-namibia",
-        "score": 70.4,
+        "score": 70.5,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0009,
-          "relief_m": 0.1131,
+          "relief_m": 0.1112,
           "temp_mean_c": 0.5407,
           "precip_mm_year": 0.7748,
           "albedo": 0.0491
@@ -5505,11 +5527,11 @@
       },
       {
         "candidate_id": "earth-salar-de-uyuni",
-        "score": 69.9,
+        "score": 70.0,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0047,
-          "relief_m": 0.1904,
+          "relief_m": 0.1873,
           "temp_mean_c": 0.452,
           "precip_mm_year": 0.7504,
           "albedo": 0.1057
@@ -5531,7 +5553,7 @@
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0052,
-          "relief_m": 0.0727,
+          "relief_m": 0.0715,
           "temp_mean_c": 0.5533,
           "precip_mm_year": 0.7892,
           "albedo": 0.1019
@@ -5550,11 +5572,11 @@
       },
       {
         "candidate_id": "earth-chott-el-djerid",
-        "score": 68.9,
+        "score": 69.0,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.015,
-          "relief_m": 0.0236,
+          "relief_m": 0.0232,
           "temp_mean_c": 0.5273,
           "precip_mm_year": 0.5794,
           "albedo": 0.4075
@@ -5572,11 +5594,11 @@
       },
       {
         "candidate_id": "earth-el-malpais-nuevo-mexico",
-        "score": 67.5,
+        "score": 67.6,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.0347,
-          "relief_m": 0.3244,
+          "relief_m": 0.3192,
           "temp_mean_c": 0.4678,
           "precip_mm_year": 0.7322,
           "albedo": 0.0642
@@ -5594,11 +5616,11 @@
       },
       {
         "candidate_id": "earth-tibesti-chad",
-        "score": 67.0,
+        "score": 67.1,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.1697,
-          "relief_m": 0.4505,
+          "relief_m": 0.4433,
           "temp_mean_c": 0.5316,
           "precip_mm_year": 0.4551,
           "albedo": 0.0453
@@ -5616,11 +5638,11 @@
       },
       {
         "candidate_id": "earth-arbol-de-piedra-siloli",
-        "score": 66.9,
+        "score": 67.1,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.1688,
-          "relief_m": 0.5375,
+          "relief_m": 0.5289,
           "temp_mean_c": 0.4403,
           "precip_mm_year": 0.4803,
           "albedo": 0.0264
@@ -5638,11 +5660,11 @@
       },
       {
         "candidate_id": "earth-desierto-tengger",
-        "score": 66.5,
+        "score": 66.6,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.128,
-          "relief_m": 0.3081,
+          "relief_m": 0.3031,
           "temp_mean_c": 0.461,
           "precip_mm_year": 0.6708,
           "albedo": 0.1057
@@ -5660,11 +5682,11 @@
       },
       {
         "candidate_id": "earth-laguna-colorada",
-        "score": 66.1,
+        "score": 66.3,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.1083,
-          "relief_m": 0.4778,
+          "relief_m": 0.4701,
           "temp_mean_c": 0.4348,
           "precip_mm_year": 0.6479,
           "albedo": 0.0264
@@ -5682,11 +5704,11 @@
       },
       {
         "candidate_id": "earth-mdrs-utah",
-        "score": 65.2,
+        "score": 65.3,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.098,
-          "relief_m": 0.3939,
+          "relief_m": 0.3876,
           "temp_mean_c": 0.4725,
           "precip_mm_year": 0.7091,
           "albedo": 0.0679
@@ -5705,11 +5727,11 @@
       },
       {
         "candidate_id": "earth-harrat-khaybar",
-        "score": 64.6,
+        "score": 64.7,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.15,
-          "relief_m": 0.4967,
+          "relief_m": 0.4887,
           "temp_mean_c": 0.5434,
           "precip_mm_year": 0.4238,
           "albedo": 0.1585
@@ -5727,11 +5749,11 @@
       },
       {
         "candidate_id": "earth-mar-de-arena-namib",
-        "score": 64.4,
+        "score": 64.6,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.2504,
-          "relief_m": 0.4207,
+          "relief_m": 0.414,
           "temp_mean_c": 0.5194,
           "precip_mm_year": 0.5014,
           "albedo": 0.0868
@@ -5748,34 +5770,12 @@
         }
       },
       {
-        "candidate_id": "earth-atacama-nucleo-hiperarido",
-        "score": 62.0,
-        "n_vars_used": 5,
-        "norm_diff": {
-          "slope_deg": 0.3408,
-          "relief_m": 0.7159,
-          "temp_mean_c": 0.4911,
-          "precip_mm_year": 0.321,
-          "albedo": 0.0302
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "permafrost"
-          ],
-          "only_candidate": [
-            "hyper-arid"
-          ]
-        }
-      },
-      {
         "candidate_id": "earth-undara-australia",
-        "score": 62.0,
+        "score": 62.1,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.052,
-          "relief_m": 0.3164,
+          "relief_m": 0.3114,
           "temp_mean_c": 0.5394,
           "precip_mm_year": 0.8705,
           "albedo": 0.1208
@@ -5793,11 +5793,11 @@
       },
       {
         "candidate_id": "earth-badain-jaran-china",
-        "score": 61.6,
+        "score": 61.7,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.3483,
-          "relief_m": 0.4681,
+          "relief_m": 0.4606,
           "temp_mean_c": 0.4607,
           "precip_mm_year": 0.5943,
           "albedo": 0.0491
@@ -5815,11 +5815,11 @@
       },
       {
         "candidate_id": "earth-laguna-verde-bolivia",
-        "score": 60.7,
+        "score": 60.9,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.3436,
-          "relief_m": 0.6698,
+          "relief_m": 0.659,
           "temp_mean_c": 0.4857,
           "precip_mm_year": 0.4402,
           "albedo": 0.0264
@@ -5828,11 +5828,11 @@
       },
       {
         "candidate_id": "earth-ubehebe-valle-de-la-muerte",
-        "score": 60.6,
+        "score": 60.7,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.2175,
-          "relief_m": 0.557,
+          "relief_m": 0.548,
           "temp_mean_c": 0.4921,
           "precip_mm_year": 0.6599,
           "albedo": 0.0453
@@ -5850,11 +5850,11 @@
       },
       {
         "candidate_id": "earth-haughton-isla-devon",
-        "score": 60.4,
+        "score": 60.5,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.1097,
-          "relief_m": 0.3341,
+          "relief_m": 0.3287,
           "temp_mean_c": 0.3309,
           "precip_mm_year": 0.7416,
           "albedo": 0.4642
@@ -5872,11 +5872,11 @@
       },
       {
         "candidate_id": "earth-craters-of-the-moon-idaho",
-        "score": 59.7,
+        "score": 59.9,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.21,
-          "relief_m": 0.5802,
+          "relief_m": 0.5709,
           "temp_mean_c": 0.4358,
           "precip_mm_year": 0.7794,
           "albedo": 0.0113
@@ -5894,12 +5894,34 @@
         }
       },
       {
+        "candidate_id": "earth-rio-tinto-espana",
+        "score": 58.6,
+        "n_vars_used": 5,
+        "norm_diff": {
+          "slope_deg": 0.1889,
+          "relief_m": 0.4456,
+          "temp_mean_c": 0.5067,
+          "precip_mm_year": 0.7903,
+          "albedo": 0.1396
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "hydrated-minerals"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-lava-beds-california",
-        "score": 57.3,
+        "score": 57.4,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.1416,
-          "relief_m": 0.558,
+          "relief_m": 0.549,
           "temp_mean_c": 0.4558,
           "precip_mm_year": 0.8418,
           "albedo": 0.1396
@@ -5916,34 +5938,12 @@
         }
       },
       {
-        "candidate_id": "earth-rio-tinto-espana",
-        "score": 56.6,
-        "n_vars_used": 5,
-        "norm_diff": {
-          "slope_deg": 0.2293,
-          "relief_m": 0.4993,
-          "temp_mean_c": 0.5071,
-          "precip_mm_year": 0.7944,
-          "albedo": 0.1396
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "permafrost"
-          ],
-          "only_candidate": [
-            "hydrated-minerals"
-          ]
-        }
-      },
-      {
         "candidate_id": "earth-pinacate-mexico",
-        "score": 56.6,
+        "score": 56.8,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.3188,
-          "relief_m": 0.6321,
+          "relief_m": 0.622,
           "temp_mean_c": 0.5313,
           "precip_mm_year": 0.6381,
           "albedo": 0.0491
@@ -5961,11 +5961,11 @@
       },
       {
         "candidate_id": "earth-macizo-del-hoggar",
-        "score": 55.4,
+        "score": 55.6,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.384,
-          "relief_m": 0.6052,
+          "relief_m": 0.5955,
           "temp_mean_c": 0.5266,
           "precip_mm_year": 0.6276,
           "albedo": 0.0868
@@ -5983,11 +5983,11 @@
       },
       {
         "candidate_id": "earth-la-corona-lanzarote",
-        "score": 55.0,
+        "score": 55.2,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.2236,
-          "relief_m": 0.5532,
+          "relief_m": 0.5443,
           "temp_mean_c": 0.5157,
           "precip_mm_year": 0.6079,
           "albedo": 0.3472
@@ -6006,11 +6006,11 @@
       },
       {
         "candidate_id": "earth-manjanggul-jeju",
-        "score": 54.2,
+        "score": 54.4,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.075,
-          "relief_m": 0.4442,
+          "relief_m": 0.4371,
           "temp_mean_c": 0.5047,
           "precip_mm_year": 0.9554,
           "albedo": 0.3094
@@ -6028,11 +6028,11 @@
       },
       {
         "candidate_id": "earth-uturuncu-bolivia",
-        "score": 52.5,
+        "score": 52.7,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.5241,
-          "relief_m": 0.6871,
+          "relief_m": 0.676,
           "temp_mean_c": 0.433,
           "precip_mm_year": 0.7051,
           "albedo": 0.0264
@@ -6050,11 +6050,11 @@
       },
       {
         "candidate_id": "earth-licancabur-laguna-verde",
-        "score": 51.4,
+        "score": 51.7,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.6943,
-          "relief_m": 0.7809,
+          "relief_m": 0.7683,
           "temp_mean_c": 0.4857,
           "precip_mm_year": 0.4402,
           "albedo": 0.0264
@@ -6063,11 +6063,11 @@
       },
       {
         "candidate_id": "earth-kau-kilauea-hawai",
-        "score": 51.3,
+        "score": 51.5,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.121,
-          "relief_m": 0.536,
+          "relief_m": 0.5274,
           "temp_mean_c": 0.526,
           "precip_mm_year": 1.0,
           "albedo": 0.2528
@@ -6086,11 +6086,11 @@
       },
       {
         "candidate_id": "earth-askja-islandia",
-        "score": 50.0,
+        "score": 50.2,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.2405,
-          "relief_m": 0.5177,
+          "relief_m": 0.5094,
           "temp_mean_c": 0.3856,
           "precip_mm_year": 0.8733,
           "albedo": 0.483
@@ -6109,11 +6109,11 @@
       },
       {
         "candidate_id": "earth-ojos-del-salado",
-        "score": 49.0,
+        "score": 49.2,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.6503,
-          "relief_m": 0.7387,
+          "relief_m": 0.7268,
           "temp_mean_c": 0.4019,
           "precip_mm_year": 0.6968,
           "albedo": 0.0642
@@ -6129,11 +6129,11 @@
       },
       {
         "candidate_id": "earth-volcan-tunupa-uyuni",
-        "score": 48.3,
+        "score": 48.5,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.6043,
-          "relief_m": 0.7127,
+          "relief_m": 0.7013,
           "temp_mean_c": 0.452,
           "precip_mm_year": 0.7504,
           "albedo": 0.0679
@@ -6142,11 +6142,11 @@
       },
       {
         "candidate_id": "earth-nevado-sajama",
-        "score": 47.2,
+        "score": 47.4,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.6728,
-          "relief_m": 0.7333,
+          "relief_m": 0.7215,
           "temp_mean_c": 0.4559,
           "precip_mm_year": 0.7664,
           "albedo": 0.0113
@@ -6164,11 +6164,11 @@
       },
       {
         "candidate_id": "earth-torotoro-umajalanta",
-        "score": 47.2,
+        "score": 47.4,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.4501,
-          "relief_m": 0.7493,
+          "relief_m": 0.7373,
           "temp_mean_c": 0.4899,
           "precip_mm_year": 0.8113,
           "albedo": 0.1396
@@ -6186,11 +6186,11 @@
       },
       {
         "candidate_id": "earth-montanas-del-pamir",
-        "score": 45.5,
+        "score": 45.7,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.9953,
-          "relief_m": 0.7119,
+          "relief_m": 0.7004,
           "temp_mean_c": 0.384,
           "precip_mm_year": 0.5495,
           "albedo": 0.0868
@@ -6208,11 +6208,11 @@
       },
       {
         "candidate_id": "earth-volcan-socompa",
-        "score": 44.5,
+        "score": 44.8,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.8537,
-          "relief_m": 0.7951,
+          "relief_m": 0.7823,
           "temp_mean_c": 0.4396,
           "precip_mm_year": 0.6599,
           "albedo": 0.0264
@@ -6229,34 +6229,12 @@
         }
       },
       {
-        "candidate_id": "earth-mauna-kea-hawai",
-        "score": 42.1,
-        "n_vars_used": 5,
-        "norm_diff": {
-          "slope_deg": 0.4744,
-          "relief_m": 0.6878,
-          "temp_mean_c": 0.5263,
-          "precip_mm_year": 0.954,
-          "albedo": 0.2528
-        },
-        "tag_overlap": {
-          "jaccard": 0.0,
-          "shared": [],
-          "only_site": [
-            "permafrost"
-          ],
-          "only_candidate": [
-            "basalt"
-          ]
-        }
-      },
-      {
         "candidate_id": "earth-valles-secos-mcmurdo",
-        "score": 40.8,
+        "score": 41.1,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.7075,
-          "relief_m": 0.7745,
+          "relief_m": 0.762,
           "temp_mean_c": 0.2687,
           "precip_mm_year": 0.556,
           "albedo": 0.6528
@@ -6274,12 +6252,34 @@
         }
       },
       {
+        "candidate_id": "earth-mauna-kea-hawai",
+        "score": 39.0,
+        "n_vars_used": 5,
+        "norm_diff": {
+          "slope_deg": 0.5021,
+          "relief_m": 0.8127,
+          "temp_mean_c": 0.5263,
+          "precip_mm_year": 0.954,
+          "albedo": 0.2528
+        },
+        "tag_overlap": {
+          "jaccard": 0.0,
+          "shared": [],
+          "only_site": [
+            "permafrost"
+          ],
+          "only_candidate": [
+            "basalt"
+          ]
+        }
+      },
+      {
         "candidate_id": "earth-svalbard-sverrefjellet",
-        "score": 35.3,
+        "score": 35.5,
         "n_vars_used": 5,
         "norm_diff": {
           "slope_deg": 0.7257,
-          "relief_m": 0.69,
+          "relief_m": 0.679,
           "temp_mean_c": 0.366,
           "precip_mm_year": 0.8398,
           "albedo": 0.6151

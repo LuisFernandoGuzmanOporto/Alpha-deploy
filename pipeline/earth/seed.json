@@ -11,13 +11,14 @@
     "tags": [
       "hyper-arid"
     ],
-    "lat": -24.5,
-    "lon": -69.25,
-    "coord_source": "Wikipedia, artículo 'Atacama Desert' (centro del desierto: https://en.wikipedia.org/wiki/Atacama_Desert). El punto exacto de Yungay no se obtuvo: a verificar",
+    "lat": -24.0846,
+    "lon": -69.9153,
+    "coord_source": "Pozo de muestreo de la región de Yungay (24°5′4.52″ S, 69°54′55.11″ O), Azua-Bustos et al. 2020, Scientific Reports 10, 19183, doi:10.1038/s41598-020-76302-z (métodos)",
     "why": "Suelos hiperáridos descritos como semejantes a los de Marte y límite seco de la vida microbiana.",
     "references": [
       "https://doi.org/10.1126/science.1089143",
-      "https://doi.org/10.1016/j.asr.2011.10.001"
+      "https://doi.org/10.1016/j.asr.2011.10.001",
+      "https://doi.org/10.1038/s41598-020-76302-z"
     ]
   },
   {
@@ -164,12 +165,13 @@
     "tags": [
       "basalt"
     ],
-    "lat": 19.8206,
-    "lon": -155.4681,
-    "coord_source": "Wikipedia, artículo 'Mauna Kea' (cumbre: https://en.wikipedia.org/wiki/Mauna_Kea). Las pruebas de análogo lunar se hicieron en sus laderas: a verificar",
+    "lat": 19.7609,
+    "lon": -155.4707,
+    "coord_source": "Sitio de prueba de análogo lunar Pu'u Hiwahine (19°45′39.29″ N, 155°28′14.56″ O, ~2783 m), ten Kate et al., 'Mauna Kea, Hawai'i as an analogue site for future planetary resource exploration: results from the 2010 ILSO-ISRU field-testing campaign', NASA NTRS 20110008363",
     "why": "Sitio de pruebas de análogo para el aprovechamiento de recursos in situ en la Luna.",
     "references": [
-      "https://doi.org/10.2514/6.2010-8902"
+      "https://doi.org/10.2514/6.2010-8902",
+      "https://ntrs.nasa.gov/citations/20110008363"
     ],
     "tag_sources": {
       "basalt": "https://en.wikipedia.org/wiki/Mauna_Kea"
@@ -187,9 +189,9 @@
     "tags": [
       "hydrated-minerals"
     ],
-    "lat": 37.7,
-    "lon": -6.55,
-    "coord_source": "Coordenada aproximada del distrito minero del alto Río Tinto, sin verificar contra un gazetteer: a verificar",
+    "lat": 37.6833,
+    "lon": -6.5833,
+    "coord_source": "Minas de Riotinto (37°41′ N, 6°35′ O), Wikipedia, artículo 'Minas de Riotinto': https://en.wikipedia.org/wiki/Minas_de_Riotinto",
     "why": "Cuenca ácida con mineralogía y geobiología sedimentaria usadas para interpretar afloramientos de Meridiani Planum, en Marte.",
     "references": [
       "https://doi.org/10.1016/j.epsl.2005.09.043",
@@ -496,7 +498,7 @@
     "name": "Laguna Verde (Bolivia)",
     "country": "Bolivia",
     "is_bolivia": true,
-    "known": false,
+    "known": true,
     "analog_for": [
       "mars"
     ],
@@ -504,8 +506,11 @@
     "lat": -22.795,
     "lon": -67.825,
     "coord_source": "Wikipedia, artículo 'Laguna Verde (Bolivia)' (https://en.wikipedia.org/wiki/Laguna_Verde_(Bolivia))",
-    "why": "",
-    "references": [],
+    "why": "Lago de estudio del High Lakes Project de NASA, que compara los lagos del Altiplano con los paleolagos de Marte.",
+    "references": [
+      "https://ntrs.nasa.gov/citations/20030111008",
+      "https://doi.org/10.1029/2008jg000818"
+    ],
     "tags_pending": "Etiquetas pendientes: las fuentes la describen como lago salado y no se encontro un estudio de su mineralogia ni depositos evaporiticos documentados en ella"
   },
   {
@@ -637,7 +642,7 @@
     "name": "Rub' al Khali (Cuarto Vacío)",
     "country": "Arabia Saudita",
     "is_bolivia": false,
-    "known": false,
+    "known": true,
     "analog_for": [
       "mars"
     ],
@@ -647,9 +652,11 @@
     "lat": 20.0,
     "lon": 50.0,
     "coord_source": "Wikipedia, artículo 'Rub' al Khali' (centro aproximado: https://en.wikipedia.org/wiki/Rub%27_al_Khali)",
-    "why": "",
+    "why": "Sabkhas entre dunas con esteras microbianas bajo costras de sal, descritas como análogo de hábitats de Marte actual.",
     "references": [
-      "https://doi.org/10.1016/j.geomorph.2010.03.029"
+      "https://doi.org/10.1016/j.geomorph.2010.03.029",
+      "https://doi.org/10.1371/journal.pone.0150342",
+      "https://ntrs.nasa.gov/citations/20160012254"
     ]
   },
   {
@@ -740,10 +747,9 @@
     "name": "El Malpaís (Nuevo México)",
     "country": "Estados Unidos",
     "is_bolivia": false,
-    "known": false,
+    "known": true,
     "analog_for": [
-      "moon",
-      "mars"
+      "moon"
     ],
     "tags": [
       "lava-tubes"
@@ -751,7 +757,7 @@
     "lat": 34.8772,
     "lon": -108.0508,
     "coord_source": "Wikipedia, artículo 'El Malpais National Monument' (https://en.wikipedia.org/wiki/El_Malpais_National_Monument)",
-    "why": "",
+    "why": "Tubos de lava elegidos como análogo terrestre de los surcos (rilles) de la Luna.",
     "references": [
       "https://doi.org/10.58799/nmms-1989.105"
     ]
@@ -784,7 +790,7 @@
     "name": "Tubos de lava de Undara",
     "country": "Australia",
     "is_bolivia": false,
-    "known": false,
+    "known": true,
     "analog_for": [
       "moon",
       "mars"
@@ -795,9 +801,10 @@
     "lat": -18.2011,
     "lon": 144.5961,
     "coord_source": "Wikipedia, artículo 'Undara Volcanic National Park' (https://en.wikipedia.org/wiki/Undara_Volcanic_National_Park)",
-    "why": "",
+    "why": "Tubo de lava mostrado como ejemplo terrestre junto a tubos de la Luna y de Marte en un estudio de análogos planetarios.",
     "references": [
-      "https://doi.org/10.3390/d13070326"
+      "https://doi.org/10.3390/d13070326",
+      "https://doi.org/10.5194/epsc2022-1003"
     ]
   },
   {
@@ -805,7 +812,7 @@
     "name": "Lava Beds (California)",
     "country": "Estados Unidos",
     "is_bolivia": false,
-    "known": false,
+    "known": true,
     "analog_for": [
       "moon",
       "mars"
@@ -816,9 +823,12 @@
     "lat": 41.7139,
     "lon": -121.5083,
     "coord_source": "Wikipedia, artículo 'Lava Beds National Monument' (https://en.wikipedia.org/wiki/Lava_Beds_National_Monument)",
-    "why": "",
+    "why": "Tubos de lava usados como análogo de los tubos lunares y cuevas de hielo descritas como análogo de Marte.",
     "references": [
-      "https://doi.org/10.3133/b1673"
+      "https://doi.org/10.3133/b1673",
+      "https://doi.org/10.1029/2021je007140",
+      "https://doi.org/10.1089/ast.2020.2327",
+      "https://doi.org/10.1130/abs/2024am-403115"
     ]
   },
   {
@@ -909,7 +919,7 @@
     "name": "Kati Thanda–lago Eyre",
     "country": "Australia",
     "is_bolivia": false,
-    "known": false,
+    "known": true,
     "analog_for": [
       "mars"
     ],
@@ -919,8 +929,10 @@
     "lat": -28.6667,
     "lon": 137.3333,
     "coord_source": "Wikipedia, artículo 'Kati Thanda–Lake Eyre' (https://en.wikipedia.org/wiki/Kati_Thanda%E2%80%93Lake_Eyre)",
-    "why": "",
-    "references": [],
+    "why": "Cuenca de playa citada por NASA como ejemplo de lagos salinos análogos del Marte primitivo.",
+    "references": [
+      "https://ntrs.nasa.gov/citations/19890016966"
+    ],
     "land_below_sea_level": true,
     "tag_sources": {
       "evaporite": "https://en.wikipedia.org/wiki/Lake_Eyre"

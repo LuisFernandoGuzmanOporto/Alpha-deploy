@@ -1,9 +1,9 @@
 [
   {
     "candidate_id": "earth-atacama-nucleo-hiperarido",
-    "summary": "Núcleo hiperárido del desierto de Atacama, en el norte de Chile. Navarro-González y colaboradores (2003) describieron allí suelos semejantes a los de Marte, con compuestos orgánicos solo en trazas y muy pocas bacterias cultivables.",
+    "summary": "Núcleo hiperárido del desierto de Atacama, en el norte de Chile. Navarro-González y colaboradores (2003) describieron allí suelos semejantes a los de Marte, con compuestos orgánicos solo en trazas y muy pocas bacterias cultivables. El punto es el pozo de muestreo de Yungay de Azua-Bustos y colaboradores (2020).",
     "processes": [
-      "Hiperaridez: 11 mm de precipitación anual en la celda de NASA POWER.",
+      "Hiperaridez: 7 mm de precipitación anual en la celda de NASA POWER.",
       "Descomposición no biológica de compuestos orgánicos en el suelo, observada con experimentos inspirados en el de liberación marcada de las Viking (Navarro-González et al., 2003)."
     ],
     "use_cases": [
@@ -11,8 +11,8 @@
       "Estudiar cómo varía la materia orgánica en los horizontes superficiales de suelos parecidos a los marcianos (Advances in Space Research, 2012)."
     ],
     "breaks_down": [
-      "La temperatura media de superficie es 15,7 °C (NASA POWER), unos 66 °C más que en Gale (−50,7 °C) y unos 176 °C más que en Faustini Rim A (−160,4 °C, Diviner).",
-      "Entra al top 10 de los sitios lunares solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares.",
+      "La temperatura media de superficie es 19,0 °C (NASA POWER), unos 70 °C más que en Gale (−50,7 °C) y unos 179 °C más que en Faustini Rim A (−160,4 °C, Diviner).",
+      "Entra al top 10 de Faustini Rim A solo por pendiente y relieve: no tiene hielo en sombra permanente ni el frío de los polos lunares.",
       "El punto usado es el centro del desierto y no la estación de Yungay: las variables describen la región, no el sitio exacto de los estudios."
     ],
     "references": [
@@ -27,6 +27,10 @@
       {
         "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
         "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      },
+      {
+        "title": "Azua-Bustos et al. (2020), Inhabited subsurface wet smectites in the hyperarid core of the Atacama Desert as an analog for the search for life on Mars (Scientific Reports)",
+        "url": "https://doi.org/10.1038/s41598-020-76302-z"
       },
       {
         "title": "LRO Diviner, temperaturas lunares (PDS Geosciences)",
@@ -80,10 +84,10 @@
       "Agua salada con minerales disueltos y en suspensión, entre ellos arsénico."
     ],
     "use_cases": [
-      "Propuesta del equipo, sin estudio publicado: comparar su química con la del lago del cráter vecino, que sí se estudia como análogo de Marte."
+      "Lago de estudio del High Lakes Project de NASA: se estudió con los mismos experimentos que el lago de la cumbre del Licancabur, como análogo de los paleolagos de Marte (Cabrol et al., 2003)."
     ],
     "breaks_down": [
-      "No encontramos un estudio que la use como análogo planetario; su lugar en el ranking lunar se debe al relieve de la ventana, no a su química.",
+      "Se estudia como análogo de Marte, no de la Luna: su lugar en el ranking lunar se debe al relieve de la ventana, no a su química.",
       "Comparte la celda de NASA POWER con el lago del Licancabur: la temperatura (14,7 °C) no distingue entre los dos lugares. La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato).",
       "Tiene agua líquida en superficie, algo que hoy no existe ni en la Luna ni en Marte."
     ],
@@ -95,6 +99,14 @@
       {
         "title": "Signatures of habitats and life in Earth's high-altitude lakes: clues to Noachian aqueous environments on Mars (The Geology of Mars, 2007)",
         "url": "https://doi.org/10.1017/cbo9780511536014.015"
+      },
+      {
+        "title": "Cabrol et al. (2003), First Results of the Expedition to the Highest Lake on Earth: Studying a Martian Paleolake in Bolivia (LPSC, NASA NTRS 20030111008)",
+        "url": "https://ntrs.nasa.gov/citations/20030111008"
+      },
+      {
+        "title": "Cabrol et al. (2009), The High-Lakes Project (Journal of Geophysical Research: Biogeosciences)",
+        "url": "https://doi.org/10.1029/2008jg000818"
       },
       {
         "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
@@ -292,7 +304,7 @@
       "Propuesta del equipo, sin estudio publicado: comparar picos volcánicos erosionados con relieves de las tierras altas de Marte."
     ],
     "breaks_down": [
-      "Es el 11.º en Faustini Rim A con un puntaje bajo (52,4): la coincidencia es débil y solo topográfica.",
+      "Es el 11.º en Faustini Rim A con un puntaje bajo (52,5): la coincidencia es débil y solo topográfica.",
       "Temperatura media de 22,5 °C (NASA POWER), unos 183 °C por encima de Faustini Rim A (Diviner). La celda de NASA POWER difiere más de 500 m de la elevación del punto, así que la temperatura puede estar sesgada (aviso en las notas del candidato)."
     ],
     "references": [
@@ -479,7 +491,8 @@
     "candidate_id": "earth-el-malpais-nuevo-mexico",
     "summary": "Campo de lava en Nuevo México con tubos de lava, donde se describieron minerales y formas de roca propios de estas cuevas.",
     "processes": [
-      "Formación de tubos de lava en coladas basálticas y depósito de minerales en su interior (New Mexico Mineral Symposium, 1989)."
+      "Formación de tubos de lava en coladas basálticas y depósito de minerales en su interior (New Mexico Mineral Symposium, 1989).",
+      "Hatheway y Herring (1970) eligieron sus tubos de lava como análogo terrestre de los surcos (rilles) de la Luna, según Carleton (1989)."
     ],
     "use_cases": [
       "Propuesta del equipo: practicar exploración de tubos de lava, que en la Luna y Marte podrían servir de refugio."
@@ -750,7 +763,8 @@
     "candidate_id": "earth-rub-al-khali",
     "summary": "Gran mar de arena de la península arábiga, hiperárido, con menos de 35 mm de lluvia al año y dunas de hasta 250 m. Sus megadunas barjanoides se estudiaron para entender la autoorganización de los campos de dunas.",
     "processes": [
-      "Autoorganización y maduración de campos de megadunas (Geomorphology, 2010)."
+      "Autoorganización y maduración de campos de megadunas (Geomorphology, 2010).",
+      "Esteras microbianas bajo costras de sal en sabkhas entre dunas de Liwa (Emiratos), descritas como análogo de hábitats de Marte actual (McKay et al., 2016)."
     ],
     "use_cases": [
       "Propuesta del equipo: comparar la organización de campos de dunas terrestres y marcianos."
@@ -769,6 +783,10 @@
         "url": "https://en.wikipedia.org/wiki/Rub%27_al_Khali"
       },
       {
+        "title": "McKay et al. (2016), An Unusual Inverted Saline Microbial Mat Community in an Interdune Sabkha in the Rub' al Khali (PLOS ONE)",
+        "url": "https://doi.org/10.1371/journal.pone.0150342"
+      },
+      {
         "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
         "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
       }
@@ -781,10 +799,10 @@
       "Ciclos de inundación y evaporación que disuelven y vuelven a formar la costra salina."
     ],
     "use_cases": [
-      "Propuesta del equipo, sin estudio publicado: comparar costras salinas y su evolución con depósitos salinos de Marte."
+      "Buscar señales de esteras microbianas en depósitos de playa salina: NASA (1989) cita su cuenca como ejemplo para paleolagos del Marte primitivo."
     ],
     "breaks_down": [
-      "No encontramos un estudio publicado que lo use como análogo planetario.",
+      "Solo una ponencia de 1989 lo cita como ejemplo; no encontramos estudios de campo recientes que lo usen como análogo.",
       "Se inunda periódicamente con agua de lluvia caída aguas arriba; Arcadia Planitia no tiene agua líquida en superficie.",
       "Temperatura media de 23,9 °C (NASA POWER), unos 102 °C por encima de Arcadia Planitia."
     ],
@@ -792,6 +810,10 @@
       {
         "title": "Wikipedia: Lake Eyre",
         "url": "https://en.wikipedia.org/wiki/Lake_Eyre"
+      },
+      {
+        "title": "Microbial mats in playa lakes and other saline habitats: Early Mars analog? (NASA NTRS 19890016966)",
+        "url": "https://ntrs.nasa.gov/citations/19890016966"
       },
       {
         "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
@@ -890,7 +912,7 @@
       "Estudiar un análogo geológico, ambiental y ecológico de la superficie y la subsuperficie de Marte (Salvatore y Levy, 2021)."
     ],
     "breaks_down": [
-      "Es el primero del ranking en Peak Near Cabeus B (72,1) y Malapert Massif (72,2) y el segundo en Faustini Rim A (62,7), por su pendiente media de 15,3° y su relieve de 418 m (Copernicus DEM GLO-30); en Marte queda entre los puestos 45 y 46.",
+      "Es el primero del ranking en los tres sitios lunares: Peak Near Cabeus B (72,1), Malapert Massif (72,2) y Faustini Rim A (62,7), por su pendiente media de 15,3° y su relieve de 418 m (Copernicus DEM GLO-30); en Marte queda entre los puestos 45 y 46.",
       "Temperatura media de −26,7 °C (NASA POWER), la más baja del catálogo, pero unos 99 °C más que Peak Near Cabeus B (−125,6 °C, Diviner) y unos 51 °C más que Arcadia Planitia (−77,9 °C), que tiene permafrost.",
       "Su albedo (0,56) es más del doble que el de Arcadia Planitia (0,21), porque el albedo terrestre incluye nieve y hielo.",
       "El punto es el centro aproximado de los valles: las variables describen la región, no un valle concreto."
@@ -996,7 +1018,7 @@
     "breaks_down": [
       "Temperatura media de −4,4 °C (NASA POWER), unos 156 °C más que Faustini Rim A (−160,4 °C, Diviner).",
       "Recibe unos 862 mm de precipitación anual (NASA POWER); la Luna no tiene lluvia.",
-      "Es el 26.º en los tres sitios lunares, con puntajes de 43,5 a 44,0: la coincidencia es débil."
+      "Es el 26.º en los tres sitios lunares, con puntajes de 43,6 a 44,1: la coincidencia es débil."
     ],
     "references": [
       {
@@ -1023,7 +1045,7 @@
   },
   {
     "candidate_id": "earth-mauna-kea-hawai",
-    "summary": "Volcán en escudo inactivo de la isla de Hawái, con una cumbre de 4207 m, el punto más alto del estado. Nakamura y Smith (2010) probaron allí un sistema de energía solar térmica en una prueba de análogo para el aprovechamiento de recursos in situ (ISRU) en la Luna.",
+    "summary": "Volcán en escudo inactivo de la isla de Hawái, con una cumbre de 4207 m, el punto más alto del estado. Nakamura y Smith (2010) probaron allí un sistema de energía solar térmica en una prueba de análogo para el aprovechamiento de recursos in situ (ISRU) en la Luna. El punto es el cono Pu'u Hiwahine, sitio de la campaña de prueba de 2010 (ten Kate et al.).",
     "processes": [
       "Terreno volcánico de un volcán en escudo inactivo, usado como sitio de pruebas de análogo lunar (Wikipedia; Nakamura y Smith, 2010)."
     ],
@@ -1031,8 +1053,8 @@
       "Probar sistemas de energía solar térmica para el aprovechamiento de recursos in situ en la Luna (Nakamura y Smith, 2010)."
     ],
     "breaks_down": [
-      "Temperatura media de 22,5 °C en la celda de NASA POWER, unos 183 °C más que Faustini Rim A (−160,4 °C, Diviner). El punto está 3525 m por encima de la celda, así que la temperatura y la precipitación probablemente no lo representan (aviso en las notas del candidato).",
-      "El punto es la cumbre, pero las pruebas de análogo lunar se hicieron en sus laderas: las variables no describen el sitio de las pruebas.",
+      "Temperatura media de 22,5 °C en la celda de NASA POWER, unos 183 °C más que Faustini Rim A (−160,4 °C, Diviner). El punto está 2133 m por encima de la celda, así que la temperatura y la precipitación probablemente no lo representan (aviso en las notas del candidato).",
+      "El punto es el sitio de prueba, en la ladera, pero la celda de NASA POWER promedia una zona más baja y húmeda.",
       "Recibe unos 1611 mm de precipitación anual (NASA POWER); la Luna no tiene lluvia."
     ],
     "references": [
@@ -1047,6 +1069,10 @@
       {
         "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
         "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/"
+      },
+      {
+        "title": "ten Kate et al. (2010), Mauna Kea, Hawai'i as an analogue site for future planetary resource exploration (NASA NTRS 20110008363)",
+        "url": "https://ntrs.nasa.gov/citations/20110008363"
       },
       {
         "title": "LRO Diviner, temperaturas lunares (PDS Geosciences)",
@@ -1066,9 +1092,9 @@
       "Consultar la entrada de la Enciclopedia de Astrobiología sobre el análogo de Marte de Río Tinto (2011)."
     ],
     "breaks_down": [
-      "Temperatura media de 18,8 °C (NASA POWER), unos 68 °C más que Jezero (−49,4 °C).",
-      "Recibe unos 468 mm de precipitación anual (NASA POWER) y es un río con agua líquida en superficie.",
-      "La analogía es de química y mineralogía, no de terreno: es el 16.º en Jezero (71,3) y no entra al top 10."
+      "Temperatura media de 18,7 °C (NASA POWER), unos 68 °C más que Jezero (−49,4 °C).",
+      "Recibe unos 453 mm de precipitación anual (NASA POWER) y es un río con agua líquida en superficie.",
+      "La analogía es de química y mineralogía, no de terreno: es el 13.º en Jezero (73,1) y no entra al top 10."
     ],
     "references": [
       {
@@ -1099,7 +1125,7 @@
       "Comparar los carbonatos de un basalto terrestre con los del meteorito marciano ALH 84001 (GSA Abstracts, 2016)."
     ],
     "breaks_down": [
-      "Pendiente media de 15,7° y relieve de 256 m (Copernicus DEM GLO-30, sin el fiordo, que ocupa el 15,5 % de la ventana): es el 8.º en Peak Near Cabeus B (60,0) y Malapert (60,1) y el 16.º en Faustini Rim A (50,6), pero el último en Marte.",
+      "Pendiente media de 15,7° y relieve de 256 m (Copernicus DEM GLO-30, sin el fiordo, que ocupa el 15,5 % de la ventana): es el 7.º en Peak Near Cabeus B (60,0) y Malapert (60,2) y el 18.º en Faustini Rim A (50,6), pero el último en Marte.",
       "Temperatura media de −8,1 °C (NASA POWER), unos 43 °C más que Gale (−50,7 °C).",
       "Su albedo (0,54) es más del doble que el de Gale (0,24), porque el albedo terrestre incluye nieve y hielo."
     ],
@@ -1168,7 +1194,7 @@
     "breaks_down": [
       "Temperatura media de 5,2 °C (NASA POWER), unos 56 °C más que Gale (−50,7 °C).",
       "Recibe unos 416 mm de precipitación anual (NASA POWER); Marte no tiene lluvia.",
-      "Es el 16.º en Gale (72,1) y el 19.º en Jezero (71,1): no entra al top 10."
+      "Es el 16.º en Gale (72,2) y el 19.º en Jezero (71,2): no entra al top 10."
     ],
     "references": [
       {
@@ -1202,7 +1228,7 @@
     "breaks_down": [
       "Temperatura media de 23,4 °C (NASA POWER), unos 184 °C más que Faustini Rim A (−160,4 °C, Diviner). El punto está 814 m por encima de la celda de NASA POWER, así que la temperatura puede estar sesgada (aviso en las notas del candidato).",
       "Recibe unos 139 mm de precipitación anual (NASA POWER); la Luna no tiene lluvia.",
-      "Es el 15.º en Faustini Rim A (51,1) y el 16.º en Peak Near Cabeus B y Malapert (50,6): la coincidencia es débil y solo topográfica."
+      "Es el 15.º en Faustini Rim A (51,2), el 16.º en Malapert (50,7) y el 17.º en Peak Near Cabeus B (50,6): la coincidencia es débil y solo topográfica."
     ],
     "references": [
       {
@@ -1239,7 +1265,7 @@
       "Consultar la investigación sobre cuevas y tubos de lava terrestres (von Ehrenfried, 2019)."
     ],
     "breaks_down": [
-      "Pendiente media de 5,0° y relieve de 116 m solo con los puntos de tierra (Copernicus DEM GLO-30; el 48,3 % de la ventana de 10 × 10 km, el resto es mar): es el 20.º en los tres sitios lunares (47,3 a 47,9) y queda entre los puestos 20 y 33 en Marte.",
+      "Pendiente media de 5,0° y relieve de 116 m solo con los puntos de tierra (Copernicus DEM GLO-30; el 48,3 % de la ventana de 10 × 10 km, el resto es mar): es el 20.º en los tres sitios lunares (47,5 a 48,0) y queda entre los puestos 20 y 33 en Marte.",
       "Temperatura media de 20,4 °C (NASA POWER), unos 98 °C más que Arcadia Planitia (−77,9 °C).",
       "Su albedo (0,03) es mucho menor que el de Arcadia Planitia (0,21)."
     ],
@@ -1341,10 +1367,10 @@
       "Comunidades de cuevas con al menos 78 especies de artrópodos en 17 tubos de lava (Eberhard y Howarth, 2021)."
     ],
     "use_cases": [
-      "Propuesta del equipo, sin estudio planetario publicado: practicar exploración de tubos de lava, que en la Luna y Marte podrían servir de refugio."
+      "Practicar exploración de tubos de lava: un estudio de análogos planetarios lo muestra como ejemplo terrestre junto a tubos de la Luna y de Marte (Tomasi et al., 2022)."
     ],
     "breaks_down": [
-      "No encontramos un estudio que lo use como análogo planetario.",
+      "Solo aparece como ejemplo en un resumen de congreso; no encontramos campañas de campo que lo usen como análogo.",
       "Recibe unos 844 mm de precipitación anual (NASA POWER) y sus cuevas tienen vida; Marte no tiene lluvia.",
       "Temperatura media de 24,9 °C (NASA POWER), unos 74 °C más que Jezero (−49,4 °C)."
     ],
@@ -1356,6 +1382,10 @@
       {
         "title": "Wikipedia: Undara Volcanic National Park",
         "url": "https://en.wikipedia.org/wiki/Undara_Volcanic_National_Park"
+      },
+      {
+        "title": "Tomasi et al. (2022), Large size lava tubes as planetary analogues: the case of La Corona (Lanzarote, Canary Islands) (EPSC)",
+        "url": "https://doi.org/10.5194/epsc2022-1003"
       },
       {
         "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
@@ -1370,10 +1400,10 @@
       "Cuevas y tubos de lava en la ladera de un gran volcán (USGS, 1990)."
     ],
     "use_cases": [
-      "Propuesta del equipo, sin estudio planetario publicado: practicar exploración de tubos de lava, que en la Luna y Marte podrían servir de refugio."
+      "Mapear tubos de lava: se usó como análogo de los tubos lunares para medir anomalías magnéticas (Bell et al., 2022), y sus cuevas de hielo se describen como análogo de Marte (O'Connor et al., 2021)."
     ],
     "breaks_down": [
-      "No encontramos un estudio que lo use como análogo planetario.",
+      "Los estudios lo usan para tubos de lava y cuevas de hielo, no como análogo de la superficie de los sitios de este proyecto.",
       "Recibe unos 676 mm de precipitación anual (NASA POWER); Marte no tiene lluvia.",
       "Temperatura media de 9,0 °C (NASA POWER), unos 58 °C más que Jezero (−49,4 °C)."
     ],
@@ -1385,6 +1415,14 @@
       {
         "title": "Wikipedia: Lava Beds National Monument",
         "url": "https://en.wikipedia.org/wiki/Lava_Beds_National_Monument"
+      },
+      {
+        "title": "Bell et al. (2022), Field Mapping and Modeling of Terrestrial Lava Tube Magnetic Anomalies as an Analog for Lunar Lava Tube Exploration (JGR Planets)",
+        "url": "https://doi.org/10.1029/2021je007140"
+      },
+      {
+        "title": "O'Connor et al. (2021), Cold-Adapted Microbial Communities in Lava Tube Ice Caves from Lava Beds National Monument, a High-Fidelity Mars Analogue (Astrobiology)",
+        "url": "https://doi.org/10.1089/ast.2020.2327"
       },
       {
         "title": "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
