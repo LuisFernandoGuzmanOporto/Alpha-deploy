@@ -46,8 +46,8 @@ IA recomendada: ChatGPT con búsqueda web para la literatura, y la IA de código
 
 - [x] **L-1 (versión 1 con 10 candidatos a las 15:00; completo a las 19:00).** `data/candidates.json` con 40 o más: 12 o más conocidos, 25 o más poco estudiados y 8 o más de Bolivia. Variables, fuentes, `known`, `tags` y referencias. Scripts de apoyo en `pipeline/earth/`. _Estado: 47 candidatos (28 conocidos, 19 poco estudiados, 10 de Bolivia; la auditoría de la fase final pasó 6 a conocidos, ver `docs/AUDITORIA_KNOWN.md`); 6 avisos de `validate.py` (3 sin etiqueta citable y el albedo lunar). McMurdo, Svalbard, La Corona y Manjanggul ya tienen pendiente y relieve (Copernicus DEM)._
 - [x] **L-2 (hasta 00:00 para los del top 10 de algún sitio; el resto hasta 04:00).** F4 `web/public/data/fichas.json` con resumen, procesos, usos, **dónde falla la analogía** y referencias. Solo afirmaciones citables. _Estado: 47 fichas, una por candidato (las 31 del top 10 de #52 y 16 más). Los lugares sin estudio planetario publicado dicen "propuesta del equipo"._
-- [ ] **L-3 (segunda fase, hasta 04:00).** F7 `web/public/data/explicaciones.json`: explicación de 3 a 4 frases, con lo que se parece y dónde falla, para los 5 mejores pares de cada sitio, redactada con IA y revisada por una persona.
-- [ ] **L-4 (segunda fase, hasta 06:00).** F8 exportar ficha a PDF en `web/src/features/export/` con estilos de impresión.
+- [x] **L-3 (segunda fase, hasta 04:00).** F7 `web/public/data/explicaciones.json`: explicación de 3 a 4 frases, con lo que se parece y dónde falla, para los 5 mejores pares de cada sitio, redactada con IA y revisada por una persona. _Hecho en la fase final de otra forma: plantilla fija en `web/src/lib/explain.ts` (sin IA ni JSON aparte), 30 pares en español e inglés revisados a mano; se muestra en la comparación._
+- [x] **L-4 (segunda fase, hasta 06:00).** F8 exportar ficha a PDF en `web/src/features/export/` con estilos de impresión. _Hecho en la fase final: botón "Exportar a PDF" en la comparación (`window.print()`) y hoja de impresión en `web/src/styles/app.css`; verificado con `Page.printToPDF`._
 
 ## Sebastián: índice, validación y metodología
 
@@ -84,6 +84,13 @@ IA recomendada: ChatGPT. Prompt: `prompts/joel.md`.
 - [ ] **J-6 (09:00).** Lista de verificación de entrega y envío antes de las 10:00.
 
 ---
+
+## Fase final (`prompts/fase-final.md`, domingo 15/11 de 00:00 a 01:15, Dante con Claude)
+
+- [x] **Tarea 1:** auditoría de `known` (6 lugares pasan a conocidos, `docs/AUDITORIA_KNOWN.md`) y coordenadas verificadas del Atacama (Yungay), Mauna Kea y Río Tinto. Textos y demo actualizados.
+- [x] **Tarea 2:** metadatos y favicon, `LICENSE` (MIT), README con capturas y uso en 60 segundos, referencias de las fichas en la entrega, integración continua (`.github/workflows/ci.yml`) y exportar a PDF (F8). **Pendiente de Fernando:** descripción y temas del repositorio (`gh repo edit`, la cuenta de Dante no tiene permiso) y desbloquear GitHub Actions (cuenta bloqueada por facturación).
+- [x] **Tarea 3:** rendimiento. Móvil lento: primer contenido de 2,0 a 1,7 s y bloqueo de ~610 a ~410 ms; sin saltos de diseño al cargar. Detalle en `docs/QA.md`.
+- [x] **Tarea 4:** perfiles por objetivo de misión, insignia de robustez comprobada contra `sensitivity.py`, comparar hasta 3 análogos y explicaciones F7.
 
 ## Regla de oro
 

@@ -68,6 +68,12 @@ describe("traducción de los textos de los datos", () => {
     expect(localizeData(data, "es", dataEn)).toBe(data);
   });
 
+  it("en inglés no quedan títulos de referencias de fuentes de datos en español", () => {
+    const en = localizeData(data, "en", dataEn);
+    const titles = Object.values(en.fichas).flatMap((ficha) => ficha.references.map((reference) => reference.title));
+    expect(titles.filter((title) => /API de climatología|temperaturas lunares| en AWS Open Data|pendiente y relieve/.test(title))).toEqual([]);
+  });
+
   it("mientras no llegan los textos en inglés devuelve los datos tal cual", () => {
     expect(localizeData(data, "en", null)).toBe(data);
   });
@@ -83,6 +89,6 @@ describe("traducción de los textos de los datos", () => {
     expect(en.sites.find((s) => s.id === "moon-malapert-massif")?.region).toBe("Lunar south pole");
     const ficha: Ficha | undefined = en.fichas["earth-gilf-kebir"];
     expect(ficha?.summary).toContain("El-Baz and Maxwell");
-    expect(ficha?.references).toEqual(fichas["earth-gilf-kebir"]?.references);
+    expect(ficha?.references.map((r) => r.url)).toEqual(fichas["earth-gilf-kebir"]?.references.map((r) => r.url));
   });
 });

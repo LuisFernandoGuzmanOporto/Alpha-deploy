@@ -86,7 +86,13 @@ try {
   await sleep(2500);
   const t5 = await text();
   check("Comparación: tabla, perfil, qué falla y ficha", /Variable by variable/.test(t5) && /Similarity profile/.test(t5) && /Where the analogy breaks down/.test(t5) && /Fact sheet/.test(t5));
-  check("Comparación: radar y 5 filas de variables", (await ev(`!!document.querySelector(".recharts-radar") && document.querySelectorAll("table tbody tr").length === 5`)));
+  check("Explicación (F7): el primer análogo de Gale trae su párrafo con puesto y mayor diferencia", /Why it ranks near the top/.test(t5) && /1st of 47 places for Crater Gale/.test(t5) && /largest difference is in/.test(t5));
+  check("Comparación: radar y 5 filas de variables", (await ev(`!!document.querySelector(".recharts-radar") && document.querySelectorAll("table:not(.cc-multi__table) tbody tr").length === 5`)));
+  // Varios análogos (4c): elegir un segundo análogo en el selector guarda analogos= y suma una serie al radar
+  await ev(`(() => { const select = document.querySelectorAll(".cc-multi select")[1]; const option = [...select.options].find((o) => o.value && !o.disabled); select.value = option.value; select.dispatchEvent(new Event("change", { bubbles: true })); })()`);
+  await sleep(900);
+  check("Varios análogos: el segundo selector guarda analogos= y dibuja 2 series", /analogos=/.test(await url()) && (await ev(`document.querySelectorAll(".cc-multi__series .recharts-polygon").length`)) === 2, await url());
+  check("Varios análogos: tabla alternativa con 5 variables y el puntaje", (await ev(`document.querySelectorAll(".cc-multi__table tbody tr").length`)) === 6);
   await ev(`window.__printed = 0; window.print = () => { window.__printed += 1; }; [...document.querySelectorAll("button")].find((b) => /Export to PDF/.test(b.textContent))?.focus()`);
   await key("Enter");
   check("Exportar a PDF: el botón existe y Enter abre la impresión", (await ev("window.__printed")) === 1, String(await ev("window.__printed")));
@@ -136,6 +142,8 @@ try {
   check("Metodología en español", /Metodología del índice de similitud/.test(await text()));
   await go("/no-existe?lang=en");
   check("Ruta inexistente", /not found/i.test(await text()));
+  await go("/comparar/mars-jezero/earth-salar-de-uyuni?lang=en");
+  check("Explicación (F7): fuera del top 5 no aparece", !/Why it ranks near the top/.test(await text()));
   await go("/comparar/x/y?lang=en");
   check("Comparación inexistente", /doesn't exist|not exist/i.test(await text()), (await text()).slice(0, 60).replace(/\n/g, " "));
 
@@ -154,7 +162,7 @@ try {
   check("Enter en el enlace lleva el foco al contenido", /main|ea-main/.test(await ev(`document.activeElement?.id ?? document.activeElement?.tagName`)), await ev(`document.activeElement?.id || document.activeElement?.tagName`));
 
   // 11. Móvil: sin desborde horizontal
-  for (const route of ["/?lang=en", "/?lang=en&sitio=mars-jezero&analogo=earth-gilf-kebir", "/comparar/mars-jezero/earth-gilf-kebir?lang=en", "/descubrimientos?lang=en", "/metodologia?lang=en"]) {
+  for (const route of ["/?lang=en", "/?lang=en&sitio=mars-jezero&analogo=earth-gilf-kebir", "/comparar/mars-jezero/earth-gilf-kebir?lang=en", "/comparar/mars-jezero/earth-gilf-kebir?lang=en&analogos=earth-gilf-kebir,earth-atacama-nucleo-hiperarido,earth-arbol-de-piedra-siloli", "/descubrimientos?lang=en", "/metodologia?lang=en"]) {
     await go(route, 375, 812);
     const w = await ev(`({ s: document.documentElement.scrollWidth, i: innerWidth })`);
     check(`Móvil 375 px sin desborde: ${route.slice(0, 48)}`, w.s <= 375, `${w.s} de 375`);

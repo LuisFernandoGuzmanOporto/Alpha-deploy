@@ -5,7 +5,7 @@ import type { AppData } from "./data";
 /** Textos en inglés de los datos (`content/dataEn.ts`), que se cargan aparte solo cuando hacen falta. */
 export type DataEn = Pick<
   typeof DataEnModule,
-  "CANDIDATE_NAMES_EN" | "CANDIDATE_WHY_EN" | "COUNTRIES_EN" | "FICHAS_EN" | "SITES_EN"
+  "CANDIDATE_NAMES_EN" | "CANDIDATE_WHY_EN" | "COUNTRIES_EN" | "FICHAS_EN" | "REFERENCE_TITLES_EN" | "SITES_EN"
 >;
 
 let dataEnPromise: Promise<DataEn> | null = null;
@@ -54,7 +54,7 @@ export function translateWhy(why: string): string | undefined {
  */
 export function localizeData(data: AppData, lang: Lang, dataEn: DataEn | null): AppData {
   if (lang === "es" || !dataEn) return data;
-  const { CANDIDATE_NAMES_EN, CANDIDATE_WHY_EN, COUNTRIES_EN, FICHAS_EN, SITES_EN } = dataEn;
+  const { CANDIDATE_NAMES_EN, CANDIDATE_WHY_EN, COUNTRIES_EN, FICHAS_EN, REFERENCE_TITLES_EN, SITES_EN } = dataEn;
   return {
     ...data,
     sites: data.sites.map((site) => {
@@ -70,7 +70,11 @@ export function localizeData(data: AppData, lang: Lang, dataEn: DataEn | null): 
     fichas: Object.fromEntries(
       Object.entries(data.fichas).map(([id, ficha]) => {
         const en = FICHAS_EN[id];
-        return [id, en ? { ...ficha, ...en } : ficha];
+        const references = ficha.references.map((reference) => ({
+          ...reference,
+          title: REFERENCE_TITLES_EN[reference.title] ?? reference.title,
+        }));
+        return [id, { ...ficha, ...en, references }];
       }),
     ),
   };

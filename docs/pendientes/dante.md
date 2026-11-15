@@ -13,10 +13,14 @@ Ya entregado: D-1 (`data/sites.json` con los 6 sitios), D-2 (comparador) y D-3 (
 
 ## Pendientes
 
-- [ ] **Albedo de los 3 sitios lunares:** Faustini Rim A, Peak Near Cabeus B y Malapert Massif no tienen albedo. Busca una fuente real o déjalo en `null` con la limitación escrita.
+- [x] **Albedo de los 3 sitios lunares:** se queda en `null`; el albedo de LOLA a 1064 nm quedó documentado en las notas sin usarlo en el índice (PR #49).
 - [x] **Inglés (#25):** regiones y notas de los 6 sitios. Hecho en `web/src/content/dataEn.ts`, una capa de traducción por `id` que no cambia el contrato de datos. Si agregas o cambias un lugar, agrega su entrada ahí: `npm test` falla si falta.
-- [ ] **Globo:** los marcadores se superponen cuando los mejores análogos están agrupados. Mejora opcional, coordinada con Noe (diseño).
+- [x] **Globo:** los marcadores superpuestos se separan (`spreadMarkers`, PR #48).
 - [ ] **Apoyo a Joel:** capturas y QA en producción cuando exista la URL de Vercel, como en la segunda pasada (PR #46).
+
+## Fase final (15/11)
+
+- [x] Las cuatro tareas de `prompts/fase-final.md` (ver `TASKS.md`, sección "Fase final", y `docs/QA.md`, pasada 4).
 
 ## Reglas
 

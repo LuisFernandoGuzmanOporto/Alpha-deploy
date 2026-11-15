@@ -17,8 +17,8 @@ Ya entregado: L-1. `data/candidates.json` tiene 47 candidatos (20 conocidos, 27 
 - [x] **Etiquetas (`tags`):** 21 de los 24 que faltaban tienen etiquetas con fuente: 20 en #51 y MDRS después, con `evaporite` e `hydrated-minerals` según Stoker et al. 2011 (doi:10.1017/s1473550411000115). Las otras 3 se buscaron en literatura científica y siguen sin etiqueta, con el motivo en sus notas: Licancabur (el único estudio de suelos, Gjorup et al. 2019, no halla permafrost y no tiene glaciares; es un estratovolcán), Laguna Verde (lago salado sin evaporitas documentadas) y Tunupa (estratovolcán; solo hay glaciares pasados).
 - [x] **Huecos de variables:** McMurdo, Svalbard, La Corona y Manjanggul ya tienen pendiente y relieve, calculados con Copernicus DEM GLO-30 (30 m) en `pipeline/earth/copernicus_dem.py` (solo con puntos de tierra donde la ventana incluye mar). El lector se validó contra seis lugares con Terrain Tiles. Con eso los cuatro entran al ranking lunar y los Valles Secos de McMurdo pasan a ser el primero para Cabeus y Malapert (ver `docs/METODOLOGIA.md`). Se rehacen con `python pipeline/earth/build_candidates.py --only <id>`.
 - [x] **Inglés (#25):** nombres, países, `why` y las 47 fichas. Hecho en `web/src/content/dataEn.ts`, una capa de traducción por `id` que no cambia el contrato de datos. Si agregas o cambias un lugar, agrega su entrada ahí: `npm test` falla si falta. Las `notes` de los candidatos no se muestran y no se tradujeron.
-- [ ] **L-3, explicaciones (segunda fase):** `web/public/data/explicaciones.json`, de 3 a 4 frases para los 5 mejores pares de cada sitio, revisadas por una persona.
-- [ ] **L-4, PDF (segunda fase):** exportar la ficha a PDF en `web/src/features/export/` con estilos de impresión.
+- [x] **L-3, explicaciones (segunda fase):** hecho en la fase final con una plantilla fija (`web/src/lib/explain.ts`), sin `explicaciones.json`; 30 pares en español e inglés revisados a mano.
+- [x] **L-4, PDF (segunda fase):** hecho en la fase final: botón "Exportar a PDF" en la comparación y hoja de impresión en `web/src/styles/app.css`.
 
 ## Reglas
 

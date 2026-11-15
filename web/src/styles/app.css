@@ -412,6 +412,23 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.01em; }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 
+.cc-explain { margin-bottom: var(--cc-space-5); }
+.cc-explain p:first-of-type { margin: 0 0 var(--cc-space-2); line-height: var(--cc-leading); }
+
+/* ---------- Comparar varios análogos (tarea 4c) ---------- */
+.cc-multi { margin-top: var(--cc-space-5); }
+.cc-multi__pickers { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--cc-space-3); margin: var(--cc-space-3) 0; }
+.cc-multi__picker { display: grid; gap: var(--cc-space-1); font-size: var(--cc-text-sm); font-weight: 600; }
+.cc-multi__picker select { min-height: 40px; width: 100%; padding: 0 var(--cc-space-2); border: var(--cc-line) solid var(--cc-control-line); border-radius: var(--cc-radius); background: var(--cc-surface-2); color: var(--cc-text); font: inherit; font-weight: 400; }
+.cc-multi__swatch { display: inline-block; width: 18px; height: 0; vertical-align: middle; border-top: 3px solid var(--cc-multi-color); }
+.cc-multi__picker--0, .cc-multi__head--0, .cc-multi__series--0 { --cc-multi-color: var(--cc-scale-mid); --cc-multi-dash: none; }
+.cc-multi__picker--1, .cc-multi__head--1, .cc-multi__series--1 { --cc-multi-color: var(--cc-accent); --cc-multi-dash: 6 4; }
+.cc-multi__picker--2, .cc-multi__head--2, .cc-multi__series--2 { --cc-multi-color: var(--cc-good); --cc-multi-dash: 2 3; }
+.cc-multi__picker--1 .cc-multi__swatch, .cc-multi__head--1 .cc-multi__swatch { border-top-style: dashed; }
+.cc-multi__picker--2 .cc-multi__swatch, .cc-multi__head--2 .cc-multi__swatch { border-top-style: dotted; }
+.cc-multi__radar .cc-multi__series .recharts-polygon { stroke: var(--cc-multi-color); stroke-dasharray: var(--cc-multi-dash); stroke-width: 2.5; fill: var(--cc-multi-color); fill-opacity: 0.12; }
+.cc-multi__table td { font-family: var(--cc-font-mono); }
+
 /* ---------- Impresión y "Exportar a PDF" (F8) ---------- */
 @media print {
   :root {
@@ -426,7 +443,7 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.01em; }
   @page { margin: 14mm 12mm; }
   html, body, .cc-app { background: #fff; color: #000; }
   .cc-app main { min-height: 0; }
-  .cc-topbar, .cc-footer, .ea-skip, .cc-compare__bar, .ea-button { display: none !important; }
+  .cc-topbar, .cc-footer, .ea-skip, .cc-compare__bar, .ea-button, .cc-multi__pickers { display: none !important; }
   * { box-shadow: none !important; text-shadow: none !important; animation: none !important; transition: none !important; }
   .ea-card, .comparador-card, .ea-limitations, .ea-notice { break-inside: avoid; }
   .comparador-table tr, .ea-ficha li { break-inside: avoid; }
