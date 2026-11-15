@@ -1,13 +1,6 @@
-import { useLang, useT, type Lang } from "../i18n";
+import { useLang, useT } from "../i18n";
+import { ordinal } from "../lib/ordinal";
 import { stability, type Robustness } from "../lib/robustness";
-
-/** 1.º, 2.º… en español; 1st, 2nd, 3rd, 11th… en inglés. */
-export function ordinal(n: number, lang: Lang): string {
-  if (lang === "es") return `${n}.º`;
-  const lastTwo = n % 100;
-  const suffix = lastTwo >= 11 && lastTwo <= 13 ? "th" : ["th", "st", "nd", "rd"][n % 10] ?? "th";
-  return `${n}${suffix}`;
-}
 
 /**
  * Insignia de robustez (tarea 4b): cuánto se mueve el puesto con los 15 escenarios de pesos.

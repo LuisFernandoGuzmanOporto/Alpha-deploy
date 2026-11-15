@@ -97,6 +97,10 @@ Equal weights are kept as the reference. To interpret candidates with close scor
 
 Each of the top three analogs of the ranking, and the selected analog, shows a badge such as "Stable rank: 2nd to 4th in 15 of 15 scenarios". The browser repeats the test of `pipeline/sensitivity.py` for that site: each weight at −50 % and +50 % and removing each variable (again requiring three shared ones), with the active weights as the base. The differences are recomputed at full precision with `ranges` and `log_variables` from `results.json`, and ties are broken by catalog order, as in the pipeline; a test (`web/src/lib/robustness.test.ts`) checks that the six base rankings and the 30 scenarios of Jezero and Peak Near Cabeus B match the output of `sensitivity.py`. The badge says "stable" if the rank moves two places or fewer, "somewhat sensitive" up to five and "sensitive" if it moves more or leaves the ranking in any scenario. With equal weights, the Atacama (Yungay) goes from 1st to 11th at Jezero and Gilf Kebir from 1st to 26th (when precipitation is removed), while Tibesti stays between 2nd and 4th.
 
+### Explanations of the best pairs (F7)
+
+The top five pairs of each site (30 in total) carry a "Why it ranks near the top" paragraph in the comparison. It is built with a fixed template (`web/src/lib/explain.ts`) from the rank with equal weights, the two most similar variables, the largest difference with its values and the shared or missing tags; it uses no AI and no server calls. The 60 versions (Spanish and English) were reviewed by hand and a test checks that all have 3 to 4 complete sentences.
+
 ### Validation by body and less-studied candidates (S-6)
 
 The validation uses `known: true` and requires that `analog_for` includes the body of the site. The count of less-studied candidates uses `known: false` within the overall top 5. The index compares the pairs with sufficient coverage, regardless of `analog_for`. This distinction matters on the Moon, where McMurdo and Laguna Verde, known as Mars analogs, hold places in the lunar top 5.

@@ -86,6 +86,7 @@ try {
   await sleep(2500);
   const t5 = await text();
   check("Comparación: tabla, perfil, qué falla y ficha", /Variable by variable/.test(t5) && /Similarity profile/.test(t5) && /Where the analogy breaks down/.test(t5) && /Fact sheet/.test(t5));
+  check("Explicación (F7): el primer análogo de Gale trae su párrafo con puesto y mayor diferencia", /Why it ranks near the top/.test(t5) && /1st of 47 places for Crater Gale/.test(t5) && /largest difference is in/.test(t5));
   check("Comparación: radar y 5 filas de variables", (await ev(`!!document.querySelector(".recharts-radar") && document.querySelectorAll("table:not(.cc-multi__table) tbody tr").length === 5`)));
   // Varios análogos (4c): elegir un segundo análogo en el selector guarda analogos= y suma una serie al radar
   await ev(`(() => { const select = document.querySelectorAll(".cc-multi select")[1]; const option = [...select.options].find((o) => o.value && !o.disabled); select.value = option.value; select.dispatchEvent(new Event("change", { bubbles: true })); })()`);
@@ -141,6 +142,8 @@ try {
   check("Metodología en español", /Metodología del índice de similitud/.test(await text()));
   await go("/no-existe?lang=en");
   check("Ruta inexistente", /not found/i.test(await text()));
+  await go("/comparar/mars-jezero/earth-salar-de-uyuni?lang=en");
+  check("Explicación (F7): fuera del top 5 no aparece", !/Why it ranks near the top/.test(await text()));
   await go("/comparar/x/y?lang=en");
   check("Comparación inexistente", /doesn't exist|not exist/i.test(await text()), (await text()).slice(0, 60).replace(/\n/g, " "));
 

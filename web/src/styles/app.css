@@ -412,6 +412,9 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.01em; }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 
+.cc-explain { margin-bottom: var(--cc-space-5); }
+.cc-explain p:first-of-type { margin: 0 0 var(--cc-space-2); line-height: var(--cc-leading); }
+
 /* ---------- Comparar varios análogos (tarea 4c) ---------- */
 .cc-multi { margin-top: var(--cc-space-5); }
 .cc-multi__pickers { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--cc-space-3); margin: var(--cc-space-3) 0; }

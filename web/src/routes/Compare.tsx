@@ -1,5 +1,6 @@
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { Comparador } from "../components/compare/Comparador";
+import { Explanation } from "../components/compare/Explanation";
 import { MAX_ANALOGS, MultiRadar } from "../components/compare/MultiRadar";
 import { FichaPanel } from "../components/FichaPanel";
 import { LimitationsPanel } from "../components/ui";
@@ -55,6 +56,15 @@ export function Compare() {
           {t("compare.exportPdf")}
         </button>
       </div>
+      {entry && (
+        <Explanation
+          site={site}
+          candidate={candidate}
+          entry={entry}
+          rank={siteEntries.indexOf(entry) + 1}
+          total={siteEntries.length}
+        />
+      )}
       <Comparador
         site={site}
         candidate={candidate}
