@@ -83,7 +83,7 @@ Apertura y cierre los proponemos para Joel y Noe, que son quienes no tienen otro
 3. Clic en el primer análogo y luego "Ver comparación".
 4. Bajar hasta "Dónde falla la analogía" y el panel de limitaciones.
 5. "Volver al ranking" y activar "Solo Bolivia".
-6. "Ver en el globo 3D": se abre en la Luna con el sitio marcado; cambiar a la pestaña Tierra.
+6. "Míralo en el globo 3D" (al bajar en la pantalla Explorar, ya visible): aparece en la Luna con el sitio marcado; cambiar a la pestaña Tierra.
 
 ## 6. Plan B si falla la demo en vivo
 

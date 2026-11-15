@@ -122,9 +122,11 @@ try {
 
   // 6. Globo con teclado y clic
   await go("/?lang=en&sitio=moon-malapert-massif");
-  await click(`document.querySelector(".ea-fold summary")`);
+  // El globo ya no está plegado: es una sección visible que carga sus texturas al acercarse a la pantalla.
+  check("Globo: la sección está en la página sin abrir nada", await ev(`!!document.querySelector(".cc-globe-section") && !document.querySelector(".ea-fold")`));
+  await ev(`window.scrollTo(0, document.body.scrollHeight)`);
   await sleep(3500);
-  check("Globo: se carga al abrir con 3 pestañas", (await ev(`!!document.querySelector(".globe-canvas") && document.querySelectorAll(".globe-tabs [role=tab]").length === 3`)));
+  check("Globo: al bajar se ve con 3 pestañas y su lista", (await ev(`!!document.querySelector(".globe-canvas") && document.querySelectorAll(".globe-tabs [role=tab]").length === 3 && document.querySelector(".globe-canvas").getBoundingClientRect().height > 300`)));
 
   // 7. Cambio de idioma
   await go("/?lang=en");

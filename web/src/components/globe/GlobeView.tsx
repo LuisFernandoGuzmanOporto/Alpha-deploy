@@ -61,7 +61,7 @@ export function GlobeView({ site, analogs }: GlobeViewProps) {
 
   return (
     <section className="globe-view" aria-labelledby="globe-title">
-      <h2 id="globe-title">{t("globe.title")}</h2>
+      <h3 id="globe-title">{t("globe.title")}</h3>
       <div role="tablist" aria-label={t("globe.tabs")} className="globe-tabs">
         {BODIES.map((b) => (
           <button
@@ -88,9 +88,12 @@ export function GlobeView({ site, analogs }: GlobeViewProps) {
           markers={markers}
           initialView={initialView}
           label={t("globe.aria", { body: t(`body.${body}`), summary: markerSummary(t, markers.length) })}
+          size={440}
         />
-        <MarkerList body={body} site={site} analogs={analogs} t={t} />
-        <p className="globe-credit">{t("globe.credit", { credit: t(current.creditKey) })}</p>
+        <div className="globe-side">
+          <MarkerList body={body} site={site} analogs={analogs} t={t} />
+          <p className="globe-credit">{t("globe.credit", { credit: t(current.creditKey) })}</p>
+        </div>
       </div>
     </section>
   );

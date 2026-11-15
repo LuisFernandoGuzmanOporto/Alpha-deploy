@@ -88,7 +88,7 @@ Durante la revisión del PDF apareció un texto viejo en la ficha del Atacama ("
 | --- | --- | --- |
 | Flujo principal | Inicio → elegir Marte (URL guarda `sitio`, el ranking pasa a Gilf Kebir) → elegir Crater Gale en el selector → elegir un análogo (URL guarda `analogo`) → enlace a la comparación con el sitio correcto → comparación con tabla de 5 variables, radar, "dónde falla" y ficha → "Back to ranking" | OK |
 | Filtros y pesos | El diálogo abre; el interruptor "solo Bolivia" deja 10 resultados y guarda `bolivia=1`; con el teclado la flecha cambia un peso y la URL guarda `pesos=`; "Reset" la limpia; Esc cierra y devuelve el foco al botón "Filters" | OK |
-| Globo | Se carga solo al abrir el plegable y trae las 3 pestañas | OK |
+| Globo | Sección visible al bajar (ya no es un plegable); carga las texturas al acercarse a la pantalla y trae las 3 pestañas | OK |
 | Idioma | El selector pasa a español y `<html lang>` cambia a `es` | OK |
 | Rutas | Descubrimientos (6 sitios), Metodología en inglés y en español, ruta inexistente y comparación inexistente | OK |
 | Inglés (#25) | Sin textos en español en inicio, comparación, descubrimientos y metodología con `?lang=en` | OK |
@@ -162,7 +162,7 @@ Estados: **OK**, **Falla** (con issue o PR), **No probado** (con motivo).
 | 8 | F4 Ficha | En el comparador, bajar hasta la ficha | Ficha del análogo, o un aviso si aún no tiene | OK (estructura) | No probado | Contenido pendiente: falta `fichas.json` (Lian) |
 | 9 | F9 Metodología | Abrir `/metodologia` | Se lee `docs/METODOLOGIA.md` con títulos y tablas | OK | No probado | OK |
 | 10 | F10 Pesos | Subir "Temperatura" a 3 y luego "Restablecer pesos" | Cambian los puntajes, la URL guarda `pesos=`; al restablecer vuelven los valores originales | OK | No probado | OK |
-| 11 | F6 Globo 3D | Abrir "Ver en el globo 3D" | Se abre en el cuerpo del sitio, con el sitio marcado y pestañas Tierra, Luna y Marte | OK | OK (359 px, pestaña Luna) | OK |
+| 11 | F6 Globo 3D | Bajar hasta "Míralo en el globo 3D" | Se abre en el cuerpo del sitio, con el sitio marcado y pestañas Tierra, Luna y Marte | OK | OK (359 px, pestaña Luna) | OK |
 | 12 | Comparación inexistente | Abrir `/comparar/demo-moon-a/no-existe` | "No existe esa comparación" y enlace al inicio | OK | No probado | OK |
 | 13 | Ruta inexistente | Abrir `/no-existe` | "Página no encontrada" | OK | No probado | OK |
 | 14 | Error de datos | Quitar `results.json` del build y recargar | Mensaje de error, sin pantalla en blanco | OK | No probado | OK (*) |

@@ -4,7 +4,7 @@ import { Dialog, Switch } from "../components/controls";
 import { RankingList } from "../components/RankingList";
 import { SiteInfo } from "../components/SiteInfo";
 import { SiteSelector } from "../components/SiteSelector";
-import { ErrorState, Fold, Loading } from "../components/ui/extra";
+import { ErrorState, Loading } from "../components/ui/extra";
 import { WeightSliders } from "../components/WeightSliders";
 import { useContent, useT } from "../i18n";
 import { loadErrorText, useData } from "../lib/data";
@@ -17,10 +17,35 @@ import { VARIABLE_IDS } from "../types";
 // MapLibre pesa casi 1 MB: se carga aparte del resto de la app.
 const loadRankingMap = () => import("../components/RankingMap");
 const RankingMap = lazy(() => loadRankingMap().then((m) => ({ default: m.RankingMap })));
-// El globo trae texturas de ~1,3 MB: solo se carga cuando se abre la sección.
+// El globo trae texturas de ~1,3 MB: solo se carga cuando la sección está por entrar en pantalla.
 const GlobeView = lazy(() => import("../components/globe/GlobeView").then((m) => ({ default: m.GlobeView })));
 
 const GLOBE_ANALOGS = 5;
+
+/**
+ * Verdadero cuando el elemento está cerca de la pantalla (o si el navegador no tiene IntersectionObserver).
+ * Devuelve una ref de callback: el elemento aparece cuando ya llegaron los datos, no en el primer render.
+ */
+function useNearViewport(margin = "700px 0px"): [(el: HTMLElement | null) => void, boolean] {
+  const [element, setElement] = useState<HTMLElement | null>(null);
+  const [near, setNear] = useState(false);
+  useEffect(() => {
+    if (near || !element) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setNear(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) setNear(true);
+      },
+      { rootMargin: margin },
+    );
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [near, element, margin]);
+  return [setElement, near];
+}
 
 export function Home() {
   const state = useData();
@@ -31,7 +56,7 @@ export function Home() {
   const t = useT();
   const { ui } = useContent();
   const [params, setParams] = useSearchParams();
-  const [globeOpen, setGlobeOpen] = useState(false);
+  const [globeRef, globeNear] = useNearViewport();
 
   const data = state.status === "ready" ? state.data : null;
   const siteId = data ? (data.sites.find((s) => s.id === params.get("sitio"))?.id ?? data.sites[0]?.id) : undefined;
@@ -189,13 +214,21 @@ export function Home() {
         )}
       </section>
 
-      <Fold title={t("home.globe")} onToggle={setGlobeOpen}>
-        {globeOpen && (
-          <Suspense fallback={<Loading label={t("home.loadingGlobe")} />}>
-            <GlobeView site={site ?? null} analogs={rows.slice(0, GLOBE_ANALOGS).map((row) => row.candidate)} />
-          </Suspense>
-        )}
-      </Fold>
+      <section className="cc-globe-section" aria-labelledby="cc-globe-heading" ref={globeRef}>
+        <header className="cc-globe-section__head">
+          <h2 id="cc-globe-heading">{t("home.globe")}</h2>
+          <p className="cc-muted">{t("home.globeIntro")}</p>
+        </header>
+        <div className="cc-globe-section__body">
+          {globeNear ? (
+            <Suspense fallback={<Loading label={t("home.loadingGlobe")} />}>
+              <GlobeView site={site ?? null} analogs={rows.slice(0, GLOBE_ANALOGS).map((row) => row.candidate)} />
+            </Suspense>
+          ) : (
+            <Loading label={t("home.loadingGlobe")} />
+          )}
+        </div>
+      </section>
     </div>
   );
 }
