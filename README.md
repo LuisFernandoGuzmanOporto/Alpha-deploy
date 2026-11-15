@@ -71,6 +71,10 @@ The app is fully static: all results are computed offline in Python and the web 
 
 The team used AI assistants (Claude and ChatGPT) as tools to help write and review code, search and check literature, and draft texts. The idea, the method and the data decisions are the team's. By team rule every data value must cite an original source that a team member opened and checked, and the app makes no AI calls.
 
+## License
+
+The code is released under the [MIT License](LICENSE). The data come from sources with their own terms of use, listed with their credits in [`docs/ATRIBUCION.md`](docs/ATRIBUCION.md).
+
 ## Team
 
 Dante (Moon and Mars data, comparison view, 3D globe), Fernando (technical lead, web app and map), Lian (Earth and Bolivia data, analog fact sheets), Sebastián (similarity index, validation and methodology), Noe (design) and Joel (requirements, documentation, pitch and QA).
