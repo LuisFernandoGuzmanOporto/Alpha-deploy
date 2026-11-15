@@ -4,7 +4,8 @@ import { FichaPanel } from "../components/FichaPanel";
 import { LimitationsPanel } from "../components/ui";
 import { ErrorState, Loading } from "../components/ui/extra";
 import { useT } from "../i18n";
-import { loadErrorText, useData } from "../lib/data";
+import { loadErrorText } from "../lib/data";
+import { useLocalizedData as useData } from "../content/useLocalizedData";
 
 export function Compare() {
   const { siteId, candidateId } = useParams();

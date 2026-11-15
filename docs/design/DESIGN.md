@@ -70,3 +70,10 @@ Columnas laterales de 300 y 390 px en escritorio, con adaptación a tablet y mó
 Los bordes interactivos usan --cc-control-border (3:1); los decorativos siguen --cc-border.
 Globo consume los tokens de marcadores y fuente compartida. Detalles: BLOQUE-A.md,
 BLOQUE-B.md, BLOQUE-C.md, QA-NOE.md y CAPTURAS.md. La textura aprobada se conserva.
+
+## Idiomas de contenido
+
+Por solicitud posterior de Noe, ES/EN se aplica también a nombres descriptivos, países,
+regiones, notas visibles, fichas y metodología. La capa de presentación vive en content/;
+los JSON y cálculos originales permanecen intactos. Traducciones estáticas sin servicios
+externos en ejecución. Procedencia y mantenimiento: CONTENIDO-BILINGUE.md.

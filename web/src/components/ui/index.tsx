@@ -1,6 +1,6 @@
 import { useId, useRef } from "react";
 import type { ButtonHTMLAttributes, HTMLAttributes, ReactNode, KeyboardEvent } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useSearchParams } from "react-router-dom";
 import { LANGS, useContent, useLang, useT } from "../../i18n";
 import { Select } from "../controls";
 import { formatValue } from "../../lib/variables";
@@ -24,11 +24,21 @@ export function Card({ className = "", ...props }: HTMLAttributes<HTMLElement>) 
 /** Selector de idioma del encabezado. */
 export function LangSwitch() {
   const { lang, setLang } = useLang();
+  const [searchParams, setSearchParams] = useSearchParams();
   const t = useT();
   return (
     <Select
       value={lang}
-      onValueChange={(value) => setLang(value === "en" ? "en" : "es")}
+      onValueChange={(value) => {
+        const next = value === "en" ? "en" : "es";
+        setLang(next);
+        // Mantiene coherente un enlace que ya fija idioma, sin tocar filtros ni selección.
+        if (searchParams.has("lang")) {
+          const updated = new URLSearchParams(searchParams);
+          updated.set("lang", next);
+          setSearchParams(updated, { replace: true });
+        }
+      }}
       label={t("lang.label")}
       icon={
         <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">

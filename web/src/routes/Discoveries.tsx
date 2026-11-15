@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { ErrorState, Loading, ScoreMeter } from "../components/ui/extra";
 import { useT } from "../i18n";
-import { loadErrorText, useData } from "../lib/data";
+import { loadErrorText } from "../lib/data";
+import { useLocalizedData as useData } from "../content/useLocalizedData";
 import { topUnstudied } from "../lib/ranking";
 
 const TOP_N = 5;

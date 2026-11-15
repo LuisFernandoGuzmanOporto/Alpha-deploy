@@ -1,0 +1,114 @@
+[
+  {
+    "lang": "es",
+    "name": "inicio",
+    "overflow": false,
+    "spanishLeak": false,
+    "width": 1360
+  },
+  {
+    "lang": "es",
+    "name": "comparador",
+    "overflow": false,
+    "spanishLeak": false,
+    "width": 1360
+  },
+  {
+    "lang": "es",
+    "name": "descubrimientos",
+    "overflow": false,
+    "spanishLeak": false,
+    "width": 1360
+  },
+  {
+    "lang": "es",
+    "name": "metodologia",
+    "overflow": false,
+    "spanishLeak": false,
+    "width": 1360
+  },
+  {
+    "lang": "en",
+    "name": "inicio",
+    "overflow": false,
+    "spanishLeak": false,
+    "width": 1360
+  },
+  {
+    "lang": "en",
+    "name": "comparador",
+    "overflow": false,
+    "spanishLeak": false,
+    "width": 1360
+  },
+  {
+    "lang": "en",
+    "name": "descubrimientos",
+    "overflow": false,
+    "spanishLeak": false,
+    "width": 1360
+  },
+  {
+    "lang": "en",
+    "name": "metodologia",
+    "overflow": false,
+    "spanishLeak": false,
+    "width": 1360
+  },
+  {
+    "lang": "es",
+    "name": "inicio",
+    "overflow": false,
+    "spanishLeak": false,
+    "width": 375
+  },
+  {
+    "lang": "es",
+    "name": "comparador",
+    "overflow": false,
+    "spanishLeak": false,
+    "width": 375
+  },
+  {
+    "lang": "es",
+    "name": "descubrimientos",
+    "overflow": false,
+    "spanishLeak": false,
+    "width": 375
+  },
+  {
+    "lang": "es",
+    "name": "metodologia",
+    "overflow": false,
+    "spanishLeak": false,
+    "width": 375
+  },
+  {
+    "lang": "en",
+    "name": "inicio",
+    "overflow": false,
+    "spanishLeak": false,
+    "width": 375
+  },
+  {
+    "lang": "en",
+    "name": "comparador",
+    "overflow": false,
+    "spanishLeak": false,
+    "width": 375
+  },
+  {
+    "lang": "en",
+    "name": "descubrimientos",
+    "overflow": false,
+    "spanishLeak": false,
+    "width": 375
+  },
+  {
+    "lang": "en",
+    "name": "metodologia",
+    "overflow": false,
+    "spanishLeak": false,
+    "width": 375
+  }
+]
