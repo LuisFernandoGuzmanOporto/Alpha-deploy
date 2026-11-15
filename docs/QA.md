@@ -21,6 +21,18 @@ Medido con `docs/qa/perf.mjs` contra el build servido con `vite preview` y Edge 
 
 **Movimiento reducido:** `qa.mjs` comprueba ahora que con `prefers-reduced-motion: reduce` la transición entre pantallas no desplaza nada (y, como control, que sin esa preferencia sí lo hace). Con `LazyMotion` aparecía un cuadro suelto con el desplazamiento inicial; se corrigió poniendo el desplazamiento inicial a 0 cuando el usuario pide reducir movimiento.
 
+## Exportar a PDF (F8, fase final, tarea 2f)
+
+| Qué se comprobó | Cómo | Estado |
+| --- | --- | --- |
+| Botón "Exportar a PDF" / "Export to PDF" en la comparación, con Enter desde el teclado | `qa.mjs` (enfoca el botón, pulsa Enter y comprueba que se llamó a `window.print`) | OK |
+| Hoja de impresión: sin barra superior, pie ni controles; referencias con su URL visible | `qa.mjs` con `Emulation.setEmulatedMedia` en `print` | OK |
+| PDF real de Jezero–Atacama (inglés) y Malapert–Licancabur (español) | `Page.printToPDF` en Edge; 5 páginas cada uno, revisado a ojo: fondo blanco y texto negro, comparación, tabla, radar, "dónde falla", límites, ficha y referencias con URL; ninguna tarjeta partida | OK |
+
+Durante la revisión del PDF apareció un texto viejo en la ficha del Atacama ("el punto usado es el centro del desierto y no la estación de Yungay"), falso desde que el punto es el pozo de Yungay. Corregido en español y en inglés.
+
+**No probado:** imprimir en papel y el diálogo de impresión de Firefox y Safari.
+
 ## Pasada 3: sábado 14/11, noche (local, `main` después de #57, #58 y el inglés de los datos)
 
 - **Versión:** `main` en `a36532c` más la corrección de la metodología en móvil (ver abajo). Build de producción con `vite preview`. **Sigue sin estar en Vercel**, así que la pasada es local.

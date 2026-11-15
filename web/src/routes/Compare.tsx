@@ -33,9 +33,15 @@ export function Compare() {
 
   return (
     <div className="cc-compare">
-      <Link className="ea-back" to={`/?sitio=${site.id}&analogo=${candidate.id}`}>
-        {t("compare.back")}
-      </Link>
+      <div className="cc-compare__bar">
+        <Link className="ea-back" to={`/?sitio=${site.id}&analogo=${candidate.id}`}>
+          {t("compare.back")}
+        </Link>
+        {/* F8: la hoja de impresión de app.css deja solo la comparación, la ficha y las referencias con su URL. */}
+        <button type="button" className="ea-back cc-print-button" title={t("compare.exportPdfHint")} onClick={() => window.print()}>
+          {t("compare.exportPdf")}
+        </button>
+      </div>
       <Comparador
         site={site}
         candidate={candidate}
