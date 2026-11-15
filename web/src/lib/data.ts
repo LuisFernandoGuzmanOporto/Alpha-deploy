@@ -3,7 +3,7 @@ import { useLang } from "../i18n";
 import type { MessageKey, Translate, TranslateParams } from "../i18n/messages";
 import type { Candidate, Ficha, Results, Site } from "../types";
 import { indexFichas } from "./fichas";
-import { localizeData } from "./localize";
+import { loadDataEn, localizeData, type DataEn } from "./localize";
 
 export interface AppData {
   sites: Site[];
@@ -94,9 +94,27 @@ export function useData(): DataState {
     };
   }, []);
 
+  // Los textos en inglés de los datos se piden en paralelo con los JSON y solo si el idioma es inglés.
   const { lang } = useLang();
-  return useMemo<DataState>(
-    () => (state.status === "ready" ? { status: "ready", data: localizeData(state.data, lang) } : state),
-    [state, lang],
-  );
+  const [dataEn, setDataEn] = useState<DataEn | null>(null);
+  const [dataEnError, setDataEnError] = useState<unknown>(null);
+  useEffect(() => {
+    if (lang !== "en" || dataEn) return;
+    let active = true;
+    loadDataEn().then(
+      (module) => active && setDataEn(module),
+      (error: unknown) => active && setDataEnError(error),
+    );
+    return () => {
+      active = false;
+    };
+  }, [lang, dataEn]);
+
+  return useMemo<DataState>(() => {
+    if (state.status !== "ready") return state;
+    if (lang === "en" && !dataEn) {
+      return dataEnError ? { status: "error", error: dataEnError } : { status: "loading" };
+    }
+    return { status: "ready", data: localizeData(state.data, lang, dataEn) };
+  }, [state, lang, dataEn, dataEnError]);
 }
