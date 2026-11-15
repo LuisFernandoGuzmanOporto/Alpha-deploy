@@ -10,6 +10,8 @@ export interface GlobeMarker {
   /** Texto corto dentro del marcador (por ejemplo, el puesto en el ranking). */
   badge: string;
   kind: "site" | "analog";
+  /** Nombre accesible del marcador (globo 3D). */
+  title?: string;
 }
 
 export interface GlobeProps {

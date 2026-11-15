@@ -1,4 +1,4 @@
-import { useId, useRef } from "react";
+import { useEffect, useId, useRef } from "react";
 import type { ButtonHTMLAttributes, HTMLAttributes, ReactNode, KeyboardEvent } from "react";
 import { NavLink } from "react-router-dom";
 import { LANGS, useContent, useLang, useT } from "../../i18n";
@@ -7,6 +7,8 @@ import { formatValue } from "../../lib/variables";
 import type { Candidate, Site, Tag as DataTag, VariableId } from "../../types";
 import "../../styles/ui.css";
 import "../../styles/app.css";
+import "../../styles/premium.css";
+import { installTilt } from "../../lib/tilt";
 
 // Componentes de Noe (sistema visual) conectados al idioma de la app. El idioma sale de
 // `useLang`; si no hay proveedor (la vista de diseño `preview.html`) se usa español.
@@ -80,6 +82,7 @@ export function Footer() {
 /** <Layout>…</Layout> dentro de BrowserRouter. */
 export function Layout({ children }: { children: ReactNode }) {
   const t = useT();
+  useEffect(() => installTilt(), []);
   return (
     <div className="cc-app">
       <a className="ea-skip" href="#ea-main">{t("ui.skip")}</a>

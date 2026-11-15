@@ -26,6 +26,38 @@ export function Discoveries() {
         <p>{t("discoveries.intro", { n: TOP_N })}</p>
       </header>
 
+      <section aria-labelledby="disc-lead-title">
+        <h2 id="disc-lead-title" className="disc-h2">
+          {t("discoveries.lead")}
+        </h2>
+        <ul className="disc-grid">
+          {sites.map((site, index) => {
+            const best = topUnstudied(results, candidates, site.id, 1)[0];
+            if (!best) return null;
+            return (
+              <li key={site.id} style={{ animationDelay: `${index * 70}ms` }}>
+                <Link to={`/comparar/${site.id}/${best.candidate.id}`} className={`disc-card disc-card--${site.body} tilt`}>
+                  <span className="disc-card__target">
+                    <span className={`cc-disc cc-disc--${site.body}`} aria-hidden="true" />
+                    {site.name} · {t(`body.${site.body}`)}
+                  </span>
+                  <strong className="disc-card__name">{best.candidate.name}</strong>
+                  <span className="disc-card__country">{best.candidate.country}</span>
+                  <span className="disc-card__foot">
+                    <span className="disc-card__score">
+                      {best.entry.score.toFixed(1)}
+                      <small>/100</small>
+                    </span>
+                    <span className="disc-card__go">{t("discoveries.open")} →</span>
+                  </span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+
+      <h2 className="disc-h2">{t("discoveries.matrix")}</h2>
       {/* Matriz destino × puesto: se lee de un vistazo qué lugar poco estudiado lidera cada destino. */}
       <div className="cc-matrix-wrap">
         <table className="cc-matrix">

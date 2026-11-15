@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Dialog, Switch } from "../components/controls";
+import { Hero } from "../components/Hero";
 import { RankingList } from "../components/RankingList";
 import { SiteInfo } from "../components/SiteInfo";
 import { SiteSelector } from "../components/SiteSelector";
@@ -105,13 +106,14 @@ export function Home() {
 
   return (
     <div className="cc-home">
-      <div className="cc-stage">
+      <Hero sites={data.sites} candidates={data.candidates} exploreTarget="explore-stage" />
+      <div className={`cc-stage${boliviaOnly ? " cc-stage--bolivia" : ""}`} id="explore-stage" tabIndex={-1}>
         <Suspense fallback={<Loading label={t("home.loadingMap")} />}>
           <RankingMap rows={rows} selectedId={selectedId} onSelect={(id) => update({ analogo: id })} />
         </Suspense>
 
         <section className="cc-float cc-control" aria-labelledby="explore-title">
-          <h1 id="explore-title">{ui.title}</h1>
+          <h2 id="explore-title">{ui.title}</h2>
           <p className="cc-lead">{ui.intro}</p>
 
           <SiteSelector sites={data.sites} value={siteId} onChange={(id) => update({ sitio: id, analogo: null })} />
@@ -169,6 +171,30 @@ export function Home() {
           </div>
         </section>
 
+        {boliviaOnly && rows.length > 0 && (
+          <aside className="cc-float bo-card" aria-label={t("bolivia.title")}>
+            <span className="bo-card__flag" aria-hidden="true" />
+            <div className="bo-card__text">
+              <strong>{t("bolivia.title")}</strong>
+              <span>{t("bolivia.lead")}</span>
+            </div>
+            <dl className="bo-card__stats">
+              <div>
+                <dd>{rows.length}</dd>
+                <dt>{t("bolivia.count")}</dt>
+              </div>
+              <div>
+                <dd>{rows.filter((row) => !row.candidate.known).length}</dd>
+                <dt>{t("bolivia.unstudied")}</dt>
+              </div>
+              <div>
+                <dd>{Math.round(rows[0]!.entry.score)}</dd>
+                <dt>{t("bolivia.best", { name: rows[0]!.candidate.name })}</dt>
+              </div>
+            </dl>
+          </aside>
+        )}
+
         {site && (
           <section className="cc-float cc-panel" aria-labelledby="explore-rank-title">
             <header className="cc-panel__head">
@@ -222,7 +248,11 @@ export function Home() {
         <div className="cc-globe-section__body">
           {globeNear ? (
             <Suspense fallback={<Loading label={t("home.loadingGlobe")} />}>
-              <GlobeView site={site ?? null} analogs={rows.slice(0, GLOBE_ANALOGS).map((row) => row.candidate)} />
+              <GlobeView
+                site={site ?? null}
+                analogs={rows.slice(0, GLOBE_ANALOGS).map((row) => row.candidate)}
+                scores={rows.slice(0, GLOBE_ANALOGS).map((row) => row.entry.score)}
+              />
             </Suspense>
           ) : (
             <Loading label={t("home.loadingGlobe")} />
