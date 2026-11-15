@@ -62,6 +62,8 @@ const es = {
   "discoveries.none": "No hay candidatos poco estudiados con datos suficientes para este sitio.",
 
   "compare.back": "← Volver al ranking",
+  "compare.exportPdf": "Exportar a PDF",
+  "compare.exportPdfHint": "Abre el diálogo de impresión; elige \"Guardar como PDF\".",
   "compare.notFound": "No existe esa comparación.",
 
   "ficha.title": "Ficha: {name}",
@@ -252,6 +254,8 @@ const en: Record<MessageKey, string> = {
   "discoveries.none": "There are no less-studied candidates with enough data for this site.",
 
   "compare.back": "← Back to ranking",
+  "compare.exportPdf": "Export to PDF",
+  "compare.exportPdfHint": "Opens the print dialog; choose \"Save as PDF\".",
   "compare.notFound": "This comparison doesn't exist.",
 
   "ficha.title": "Fact sheet: {name}",

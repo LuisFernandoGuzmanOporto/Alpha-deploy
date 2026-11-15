@@ -259,6 +259,9 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.01em; }
 
 .ea-back { display: inline-flex; align-items: center; gap: var(--cc-space-2); margin-bottom: var(--cc-space-4); padding: var(--cc-space-1) var(--cc-space-3); border: var(--cc-line) solid var(--cc-control-line); border-radius: var(--cc-radius); color: var(--cc-text); font: 600 var(--cc-text-sm) var(--cc-font-mono); text-decoration: none; transition: border-color var(--cc-dur) var(--cc-ease); }
 .ea-back:hover { border-color: var(--cc-accent); color: var(--cc-accent-strong); }
+.cc-compare__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--cc-space-3); margin-bottom: var(--cc-space-4); }
+.cc-compare__bar .ea-back { margin-bottom: 0; }
+.cc-print-button { background: transparent; cursor: pointer; }
 
 .comparador { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--cc-space-5); }
 .ea-duel { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: var(--cc-space-6); align-items: center; padding: var(--cc-space-6); }
@@ -393,4 +396,28 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.01em; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* ---------- Impresión y "Exportar a PDF" (F8) ---------- */
+@media print {
+  :root {
+    color-scheme: light;
+    --cc-bg: #fff; --cc-surface: #fff; --cc-surface-2: #f3f4f6; --cc-surface-3: #e5e7eb;
+    --cc-border: #9ca3af; --cc-border-strong: #6b7280; --cc-control-line: #6b7280;
+    --cc-text: #000; --cc-text-muted: #333; --cc-accent: #075e57; --cc-accent-strong: #075e57; --cc-accent-ink: #fff;
+    --cc-glass: #fff; --cc-hud-bg: #fff; --cc-topbar-bg: #fff;
+    /* Ámbar y rojo más oscuros: los del tema oscuro no contrastan sobre papel blanco. */
+    --cc-scale-mid: #b45309; --cc-scale-high: #c2410c; --cc-warn: #b42318;
+  }
+  @page { margin: 14mm 12mm; }
+  html, body, .cc-app { background: #fff; color: #000; }
+  .cc-app main { min-height: 0; }
+  .cc-topbar, .cc-footer, .ea-skip, .cc-compare__bar, .ea-button { display: none !important; }
+  * { box-shadow: none !important; text-shadow: none !important; animation: none !important; transition: none !important; }
+  .ea-card, .comparador-card, .ea-limitations, .ea-notice { break-inside: avoid; }
+  .comparador-table tr, .ea-ficha li { break-inside: avoid; }
+  h2, h3 { break-after: avoid; }
+  .comparador-table-wrap { overflow: visible; }
+  a { color: #000; }
+  .ea-ficha a[href^="http"]::after { content: " (" attr(href) ")"; overflow-wrap: anywhere; font-size: 0.85em; color: #333; }
 }

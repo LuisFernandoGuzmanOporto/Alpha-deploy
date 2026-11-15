@@ -51,7 +51,7 @@ async function click(expr) {
 const KEYS = { Escape: 27, ArrowRight: 39, Tab: 9, Enter: 13 };
 async function key(k) {
   const base = { key: k, code: k, windowsVirtualKeyCode: KEYS[k] };
-  await send("Input.dispatchKeyEvent", { type: "keyDown", ...base });
+  await send("Input.dispatchKeyEvent", { type: "keyDown", ...base, ...(k === "Enter" ? { text: "\r" } : {}) });
   await send("Input.dispatchKeyEvent", { type: "keyUp", ...base });
   await sleep(500);
 }
@@ -86,6 +86,12 @@ try {
   const t5 = await text();
   check("Comparación: tabla, perfil, qué falla y ficha", /Variable by variable/.test(t5) && /Similarity profile/.test(t5) && /Where the analogy breaks down/.test(t5) && /Fact sheet/.test(t5));
   check("Comparación: radar y 5 filas de variables", (await ev(`!!document.querySelector(".recharts-radar") && document.querySelectorAll("table tbody tr").length === 5`)));
+  await ev(`window.__printed = 0; window.print = () => { window.__printed += 1; }; [...document.querySelectorAll("button")].find((b) => /Export to PDF/.test(b.textContent))?.focus()`);
+  await key("Enter");
+  check("Exportar a PDF: el botón existe y Enter abre la impresión", (await ev("window.__printed")) === 1, String(await ev("window.__printed")));
+  await send("Emulation.setEmulatedMedia", { media: "print" });
+  check("Impresión: sin barra superior, pie ni botones; referencias con su URL", await ev(`getComputedStyle(document.querySelector(".cc-topbar")).display === "none" && getComputedStyle(document.querySelector(".cc-footer")).display === "none" && getComputedStyle(document.querySelector(".cc-compare__bar")).display === "none" && getComputedStyle(document.querySelector(".ea-ficha a[href^='http']"), "::after").content.includes("http")`));
+  await send("Emulation.setEmulatedMedia", { media: "" });
   await click(find("a", "/Back to ranking/"));
   check("Volver al ranking", (await url()).startsWith("/?"), await url());
 
