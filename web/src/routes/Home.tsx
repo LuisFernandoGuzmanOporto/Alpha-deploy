@@ -1,6 +1,10 @@
+import { AnimatePresence } from "motion/react";
 import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Dialog, Switch } from "../components/controls";
+import { Hero } from "../components/Hero";
+import { PlaceCard } from "../components/place/PlaceCard";
+import { PlaceExplorer } from "../components/place/PlaceExplorer";
 import { RankingList } from "../components/RankingList";
 import { SiteInfo } from "../components/SiteInfo";
 import { SiteSelector } from "../components/SiteSelector";
@@ -57,6 +61,9 @@ export function Home() {
   const { ui } = useContent();
   const [params, setParams] = useSearchParams();
   const [globeRef, globeNear] = useNearViewport();
+  // Pestaña del panel derecho y tarjeta fotográfica que el usuario cerró (se vuelve a abrir al elegir otro lugar).
+  const [panelTab, setPanelTab] = useState<"ranking" | "explore">("ranking");
+  const [closedCard, setClosedCard] = useState<string | null>(null);
 
   const data = state.status === "ready" ? state.data : null;
   const siteId = data ? (data.sites.find((s) => s.id === params.get("sitio"))?.id ?? data.sites[0]?.id) : undefined;
@@ -93,6 +100,12 @@ export function Home() {
   if (!data || !siteId || !weights) return <p className="cc-empty">{t("home.empty")}</p>;
 
   const site = data.sites.find((s) => s.id === siteId);
+  const selectedIndex = rows.findIndex((row) => row.candidate.id === selectedId);
+  const selectedRow = selectedIndex >= 0 ? rows[selectedIndex] : undefined;
+  const select = (id: string | null) => {
+    setClosedCard(null);
+    update({ analogo: id });
+  };
   const profile = activeProfile(weights);
   const active = [
     boliviaOnly && { key: "bolivia", label: t("filters.bolivia") },
@@ -105,13 +118,14 @@ export function Home() {
 
   return (
     <div className="cc-home">
-      <div className="cc-stage">
+      <Hero sites={data.sites} candidates={data.candidates} exploreTarget="explore-stage" />
+      <div className={`cc-stage${boliviaOnly ? " cc-stage--bolivia" : ""}`} id="explore-stage" tabIndex={-1}>
         <Suspense fallback={<Loading label={t("home.loadingMap")} />}>
-          <RankingMap rows={rows} selectedId={selectedId} onSelect={(id) => update({ analogo: id })} />
+          <RankingMap rows={rows} selectedId={selectedId} onSelect={select} />
         </Suspense>
 
         <section className="cc-float cc-control" aria-labelledby="explore-title">
-          <h1 id="explore-title">{ui.title}</h1>
+          <h2 id="explore-title">{ui.title}</h2>
           <p className="cc-lead">{ui.intro}</p>
 
           <SiteSelector sites={data.sites} value={siteId} onChange={(id) => update({ sitio: id, analogo: null })} />
@@ -169,6 +183,30 @@ export function Home() {
           </div>
         </section>
 
+        {boliviaOnly && rows.length > 0 && (!selectedRow || closedCard === selectedRow.candidate.id) && (
+          <aside className="cc-float bo-card" aria-label={t("bolivia.title")}>
+            <span className="bo-card__flag" aria-hidden="true" />
+            <div className="bo-card__text">
+              <strong>{t("bolivia.title")}</strong>
+              <span>{t("bolivia.lead")}</span>
+            </div>
+            <dl className="bo-card__stats">
+              <div>
+                <dd>{rows.length}</dd>
+                <dt>{t("bolivia.count")}</dt>
+              </div>
+              <div>
+                <dd>{rows.filter((row) => !row.candidate.known).length}</dd>
+                <dt>{t("bolivia.unstudied")}</dt>
+              </div>
+              <div>
+                <dd>{Math.round(rows[0]!.entry.score)}</dd>
+                <dt>{t("bolivia.best", { name: rows[0]!.candidate.name })}</dt>
+              </div>
+            </dl>
+          </aside>
+        )}
+
         {site && (
           <section className="cc-float cc-panel" aria-labelledby="explore-rank-title">
             <header className="cc-panel__head">
@@ -177,17 +215,44 @@ export function Home() {
                 {t(rows.length === 1 ? "home.countOne" : "home.countMany", { n: rows.length })}
               </span>
             </header>
+            <div className="cc-panel__tabs" role="group" aria-label={t("explorer.view")}>
+              <button type="button" aria-pressed={panelTab === "ranking"} onClick={() => setPanelTab("ranking")}>
+                {t("explorer.tabRanking")}
+              </button>
+              <button type="button" aria-pressed={panelTab === "explore"} onClick={() => setPanelTab("explore")}>
+                {t("explorer.tabExplore")}
+              </button>
+            </div>
             <div className="cc-panel__body">
-              <RankingList
-                site={site}
-                rows={rows}
-                selectedId={selectedId}
-                onSelect={(id) => update({ analogo: id })}
-                robustness={robustness}
-              />
+              {panelTab === "explore" ? (
+                <PlaceExplorer
+                  rows={rows}
+                  selectedId={selectedId}
+                  onSelect={(id) => {
+                    select(id);
+                    setPanelTab("ranking");
+                  }}
+                />
+              ) : (
+                <RankingList site={site} rows={rows} selectedId={selectedId} onSelect={select} robustness={robustness} />
+              )}
             </div>
           </section>
         )}
+
+        <AnimatePresence>
+          {selectedRow && closedCard !== selectedRow.candidate.id && (
+            <div className="place-dock" key={selectedRow.candidate.id}>
+              <PlaceCard
+                candidate={selectedRow.candidate}
+                rank={selectedIndex + 1}
+                score={selectedRow.entry.score}
+                compareTo={site ? { siteId: site.id, siteName: site.name } : undefined}
+                onClose={() => setClosedCard(selectedRow.candidate.id)}
+              />
+            </div>
+          )}
+        </AnimatePresence>
       </div>
 
       <section className="cc-about" aria-labelledby="cc-about-title">
@@ -222,7 +287,11 @@ export function Home() {
         <div className="cc-globe-section__body">
           {globeNear ? (
             <Suspense fallback={<Loading label={t("home.loadingGlobe")} />}>
-              <GlobeView site={site ?? null} analogs={rows.slice(0, GLOBE_ANALOGS).map((row) => row.candidate)} />
+              <GlobeView
+                site={site ?? null}
+                analogs={rows.slice(0, GLOBE_ANALOGS).map((row) => row.candidate)}
+                scores={rows.slice(0, GLOBE_ANALOGS).map((row) => row.entry.score)}
+              />
             </Suspense>
           ) : (
             <Loading label={t("home.loadingGlobe")} />

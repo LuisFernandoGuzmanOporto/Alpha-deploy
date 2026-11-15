@@ -25,6 +25,9 @@ Dueño: Joel. Cada persona le pasa sus fuentes. Se muestra en el pie de la web y
 | Fuentes de la auditoría de `known` (Laguna Verde, Rub' al Khali, Lava Beds, El Malpaís, lago Eyre, Undara, Socompa) y de los nueve lugares agregados en la revisión final (Makgadikgadi, Ténéré, Ollagüe, Tata Sabaya, Valle de la Luna, Erg Chebbi, Wadi Rum, Kumtag, Lençóis Maranhenses) | Fase final | `docs/AUDITORIA_KNOWN.md` (DOI y NTRS de cada lugar) | Citas bibliográficas; los textos de las fichas son propios | Ver la tabla de `docs/AUDITORIA_KNOWN.md` |
 | Referencias de las fichas (`fichas.json`) | Lian | | | Pendiente: Lian |
 | Tipografías, logo e imágenes | Noe | `docs/design/IDENTIDAD.md` | Fuentes del sistema (Segoe UI, system-ui), sin descarga; símbolo SVG original del equipo; sin recursos gráficos externos | No requiere crédito |
+| Fotos de los lugares de la Tierra en el mapa, el explorador y el globo (`web/public/data/photos.json`) | Joel | https://commons.wikimedia.org/ (API `generator=geosearch`) | La licencia de **cada** foto (CC BY, CC BY-SA, dominio público…) está en `photos.json` y se muestra junto a la foto con su autor y enlace al archivo | "Foto: <autor> · <licencia> · Wikimedia Commons", visible debajo de cada foto |
+| Fotos de Google Places (opcional, solo si el despliegue configura `GOOGLE_PLACES_API_KEY`) | Joel | https://developers.google.com/maps/documentation/places/web-service/place-photos | Condiciones de Google Maps Platform: mostrar la atribución del autor de cada foto; no guardar los recursos ni las URL de las fotos | "Foto: <autor> · Google Maps", con enlace al perfil del autor |
+| Tipografías Inter y Space Grotesk (`@fontsource-variable`) | Joel | https://github.com/rsms/inter y https://github.com/floriankarsten/space-grotesk | SIL Open Font License 1.1 | — |
 
 ## Software
 

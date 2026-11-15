@@ -1,7 +1,11 @@
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
+import { Link } from "react-router-dom";
 import { useT, type MessageKey, type Translate } from "../../i18n";
 import type { Candidate, Site } from "../../types";
+import { PlaceCard } from "../place/PlaceCard";
+import { hasWebGL } from "../three/support";
 import { Globe, type GlobeMarker } from "./Globe";
+import { Globe3D } from "./Globe3D";
 import { wrapLon, type View } from "./orthographic";
 import earthTexture from "./textures/earth.jpg";
 import marsTexture from "./textures/mars.jpg";
@@ -23,31 +27,40 @@ export interface GlobeViewProps {
   site: Site | null;
   /** Mejores análogos en orden de ranking (normalmente los 5 primeros); se marcan en la Tierra. */
   analogs: Candidate[];
+  /** Puntaje (0 a 100) de cada análogo, en el mismo orden. */
+  scores?: number[];
 }
 
 /** F6: globo 3D con pestañas Tierra, Luna y Marte, el sitio elegido y sus mejores análogos. */
-export function GlobeView({ site, analogs }: GlobeViewProps) {
+export function GlobeView({ site, analogs, scores }: GlobeViewProps) {
   const t = useT();
   const [body, setBody] = useState<Body>(site?.body ?? "earth");
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [resetKey, setResetKey] = useState(0);
+  // Sin WebGL se usa el globo en canvas 2D de siempre.
+  const [webgl] = useState(hasWebGL);
   const tabRefs = useRef<Partial<Record<Body, HTMLButtonElement | null>>>({});
 
   useEffect(() => {
     if (site) setBody(site.body);
+    setSelectedId(null);
   }, [site]);
+  useEffect(() => setSelectedId(null), [body]);
 
   const siteMarker: GlobeMarker | null =
     site && site.lat !== null && site.lon !== null
-      ? { id: site.id, lat: site.lat, lon: wrapLon(site.lon), badge: "", kind: "site" }
+      ? { id: site.id, lat: site.lat, lon: wrapLon(site.lon), badge: "", kind: "site", title: site.name }
       : null;
   const analogMarkers: GlobeMarker[] = analogs.flatMap((c, i) =>
     c.lat !== null && c.lon !== null
-      ? [{ id: c.id, lat: c.lat, lon: wrapLon(c.lon), badge: String(i + 1), kind: "analog" as const }]
+      ? [{ id: c.id, lat: c.lat, lon: wrapLon(c.lon), badge: String(i + 1), kind: "analog" as const, title: `${i + 1}. ${c.name}` }]
       : [],
   );
   const markers = body === "earth" ? analogMarkers : siteMarker && site?.body === body ? [siteMarker] : [];
   const first = markers[0];
   const initialView: View = first ? { lat: first.lat, lon: first.lon } : ORIGIN;
   const current = BODIES.find((b) => b.id === body) ?? BODIES[0]!;
+  const selectedAnalog = body === "earth" ? analogs.find((c) => c.id === selectedId) : undefined;
 
   const onTabKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
     const step = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0;
@@ -83,19 +96,120 @@ export function GlobeView({ site, analogs }: GlobeViewProps) {
         ))}
       </div>
       <div role="tabpanel" id="globe-panel" aria-labelledby={`globe-tab-${body}`}>
-        <Globe
-          texture={current.texture}
-          markers={markers}
-          initialView={initialView}
-          label={t("globe.aria", { body: t(`body.${body}`), summary: markerSummary(t, markers.length) })}
-          size={440}
-        />
+        {webgl ? (
+          <div className="globe-stage">
+            <Globe3D
+              body={body}
+              texture={current.texture}
+              markers={markers}
+              selectedId={selectedId}
+              onSelect={(id) => setSelectedId((prev) => (prev === id ? null : id))}
+              link={
+                site && site.lat !== null && site.lon !== null
+                  ? { body: site.body, texture: BODIES.find((b) => b.id === site.body)!.texture, lat: site.lat, lon: wrapLon(site.lon) }
+                  : null
+              }
+              label={t("globe.aria", { body: t(`body.${body}`), summary: markerSummary(t, markers.length) })}
+              help={t("globe.help3d")}
+              resetKey={resetKey}
+            />
+            <button
+              type="button"
+              className="globe-reset"
+              onClick={() => {
+                setSelectedId(null);
+                setResetKey((k) => k + 1);
+              }}
+            >
+              {t("globe.reset")}
+            </button>
+          </div>
+        ) : (
+          <Globe
+            texture={current.texture}
+            markers={markers}
+            initialView={initialView}
+            label={t("globe.aria", { body: t(`body.${body}`), summary: markerSummary(t, markers.length) })}
+            size={440}
+          />
+        )}
         <div className="globe-side">
-          <MarkerList body={body} site={site} analogs={analogs} t={t} />
+          {webgl && body === "earth" && site && analogs.length > 0 && (
+            <p className="globe-legend">
+              <span className="globe-legend__line" aria-hidden="true" />
+              {t("globe.linkLegend", { site: site.name })}
+            </p>
+          )}
+          {webgl && body === "earth" && selectedAnalog ? (
+            <PlaceCard
+              key={selectedAnalog.id}
+              variant="inline"
+              candidate={selectedAnalog}
+              rank={analogs.indexOf(selectedAnalog) + 1}
+              score={scores?.[analogs.indexOf(selectedAnalog)]}
+              compareTo={site ? { siteId: site.id, siteName: site.name } : undefined}
+              onClose={() => setSelectedId(null)}
+            />
+          ) : webgl && body === "earth" ? (
+            <AnalogCards site={site} analogs={analogs} scores={scores} selectedId={selectedId} onSelect={setSelectedId} t={t} />
+          ) : (
+            <MarkerList body={body} site={site} analogs={analogs} t={t} />
+          )}
           <p className="globe-credit">{t("globe.credit", { credit: t(current.creditKey) })}</p>
         </div>
       </div>
     </section>
+  );
+}
+
+/** Lista interactiva de análogos: elegir uno lleva la cámara hasta él y muestra su ficha breve. */
+function AnalogCards({
+  site,
+  analogs,
+  scores,
+  selectedId,
+  onSelect,
+  t,
+}: {
+  site: Site | null;
+  analogs: Candidate[];
+  scores?: number[];
+  selectedId: string | null;
+  onSelect: (id: string | null) => void;
+  t: Translate;
+}) {
+  if (analogs.length === 0) return <p>{t("globe.pickEarth")}</p>;
+  return (
+    <ol className="globe-cards">
+      {analogs.map((c, i) => {
+        const open = c.id === selectedId;
+        const score = scores?.[i];
+        return (
+          <li key={c.id} className={open ? "is-open" : undefined}>
+            <button type="button" className="globe-card" aria-expanded={open} onClick={() => onSelect(open ? null : c.id)}>
+              <span className="globe-card__rank" aria-hidden="true">
+                {i + 1}
+              </span>
+              <span className="globe-card__text">
+                <strong>{c.name}</strong>
+                <small>{c.country}</small>
+              </span>
+              {score !== undefined && <span className="globe-card__score">{Math.round(score)}</span>}
+            </button>
+            {open && (
+              <div className="globe-card__detail">
+                <span className="cc-mono">{formatCoords(t, c.lat, c.lon)}</span>
+                {site && (
+                  <Link to={`/comparar/${site.id}/${c.id}`} className="globe-card__link">
+                    {t("globe.compare", { site: site.name })} →
+                  </Link>
+                )}
+              </div>
+            )}
+          </li>
+        );
+      })}
+    </ol>
   );
 }
 

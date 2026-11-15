@@ -40,7 +40,7 @@ Una idea por diapositiva, poco texto y una imagen fuerte en cada una.
 | 7 | **Why it matters and what's next** | Helps choose where to test rovers, instruments and operations on Earth, and makes each analog's limits explicit (gravity, vacuum, thin atmosphere, radiation). Less-studied Bolivian places (Siloli, Laguna Colorada, Uturuncu) as analog candidates. Next: more Earth candidates, a finer global scan, field validation. | Mapa con los análogos de Bolivia |
 
 **Antes de subirlas:**
-- [ ] Revisar ortografía en inglés.
+- [x] Revisar ortografía en inglés. Hecho el 15/11 sobre `docs/demo/slides.html` (dos retoques: "the Atacama Desert" y "for mountain candidates") y sobre los textos nuevos de la web.
 - [x] Diapositiva 6: decir que la temperatura de Licancabur, Ojos del Salado y Socompa viene de una malla regional gruesa y está sesgada, y que su posición se apoya en pendiente y relieve (issue #36).
 - [x] No presentar Uyuni, Coipasa ni Licancabur como "descubrimientos": ya están documentados como análogos de Marte. Revisado: la diapositiva 6 y el bloque de hallazgos presentan a Licancabur como análogo ya documentado.
 - [ ] Ninguna persona menor de 18 años en las imágenes.
@@ -68,22 +68,22 @@ Bloques con tiempo; si la sede da 3 minutos, se recorta lo marcado como *recorta
 
 | Bloque | Tiempo | Quién | Qué decir |
 | --- | --- | --- | --- |
-| Apertura | 0:00–0:30 | Joel (propuesto) | El problema: el propio reto dice que los análogos conocidos no están del todo bien caracterizados; ningún lugar es perfecto y hay que saber para qué sirve cada uno y dónde falla. |
-| Solución | 0:30–1:00 | | Qué es Earth Analogs, en una frase (sección 2). |
+| Apertura | 0:00–0:30 | Joel (propuesto; **[PENDIENTE: confirmar con el equipo]**) | El problema: el propio reto dice que los análogos conocidos no están del todo bien caracterizados; ningún lugar es perfecto y hay que saber para qué sirve cada uno y dónde falla. |
+| Solución | 0:30–1:00 | **[PENDIENTE: orador sin asignar]** (sigue a la apertura; lo natural es que la diga quien abre) | Qué es Earth Analogs, en una frase (sección 2). |
 | Demo en vivo | 1:00–2:30 | Fernando | Elegir **Malapert Massif** → mapa y ranking → clic en un análogo → comparador: la tabla, el radar y **"Dónde falla la analogía"** → volver y activar **"Solo Bolivia"** → abrir el **globo 3D**. Si falla, se pasa al video de respaldo. |
 | Cómo funciona | 2:30–3:15 | Sebastián | Cinco variables, ventana común, normalización y puntaje; cada valor con su fuente y sin datos inventados. *Recortable: dejar solo una frase.* |
 | Hallazgos | 3:15–4:15 | Dante y Lian | **Luna:** los Valles Secos de McMurdo, ya documentados como análogo de Marte, son los primeros en los tres sitios lunares (72,1 en Peak Near Cabeus B, 72,3 en Malapert y 62,7 en Faustini); el Licancabur es el segundo en los tres, seguido del volcán Ollagüe (3.º en los tres, poco estudiado), Ojos del Salado (4.º) y Socompa (5.º) en Cabeus y Malapert. **Aviso obligatorio:** su temperatura y lluvia vienen de una grilla regional gruesa y están sesgadas, así que su puesto se apoya sobre todo en pendiente y relieve (#36). **Marte:** el núcleo hiperárido del Atacama (Yungay), análogo documentado de Marte, es el primero para Jezero (82,1) y Gale (83,8), por delante de la meseta de Gilf Kebir, que un informe de NASA de 1982 ya comparó con Marte: el índice pone arriba a análogos documentados. **Bolivia:** aparece en el top 5 de los seis sitios, con lugares poco estudiados como el volcán Ollagüe (3.º en los tres sitios lunares) y el desierto de Siloli (4.º para Jezero, 5.º para Gale). **Dónde falla:** el lugar más frío del catálogo promedia −27 °C y los sitios lunares, de −126 a −160 °C; ningún lugar de la Tierra llega a ese frío. Ser honestos con la validación: los siete análogos lunares conocidos quedan entre el 16.º y el 46.º de 56. |
-| Límites e impacto | 4:15–5:00 | Noe (propuesta) | Gravedad, vacío, atmósfera y radiación no se reproducen; el valor está en saber qué se puede ensayar en cada lugar. Cierre con el mensaje central. |
+| Límites e impacto | 4:15–5:00 | Noe (propuesta; **[PENDIENTE: confirmar con el equipo]**) | Gravedad, vacío, atmósfera y radiación no se reproducen; el valor está en saber qué se puede ensayar en cada lugar. Cierre con el mensaje central. |
 
 Apertura y cierre los proponemos para Joel y Noe, que son quienes no tienen otro bloque; confirmar con el equipo.
 
 **Recorrido de la demo en vivo (probarlo antes):**
 1. Abrir la URL de producción [PENDIENTE: URL de Vercel] en una pestaña ya cargada.
-2. Selector: Malapert Massif.
+2. En la portada, pulsar **"Explorar análogos"** (baja al mapa). Selector: Malapert Massif.
 3. Clic en el primer análogo y luego "Ver comparación".
 4. Bajar hasta "Dónde falla la analogía" y el panel de limitaciones.
 5. "Volver al ranking" y activar "Solo Bolivia".
-6. "Míralo en el globo 3D" (al bajar en la pantalla Explorar, ya visible): aparece en la Luna con el sitio marcado; cambiar a la pestaña Tierra.
+6. "Míralo en el globo 3D" (al bajar en la pantalla Explorar): aparece la Luna con el sitio marcado; cambiar a la pestaña Tierra, donde las líneas unen el sitio con sus cinco análogos, y tocar un marcador o una tarjeta para que la cámara vuele hasta él.
 
 ## 6. Plan B si falla la demo en vivo
 
@@ -101,7 +101,8 @@ Todas en inglés si la web ya tiene versión en inglés (#25). Si no, se usan so
 - [ ] Comparador completo: tabla, radar, coincidencias y "Dónde falla". La diapositiva 4 usa solo la parte de arriba (`docs/demo/img/compare-malapert-licancabur.jpg`) porque "Dónde falla" muestra textos de los datos en español (#25).
 - [x] Vista de descubrimientos (`docs/demo/img/discoveries.jpg`).
 - [x] Globo 3D: Luna con el sitio y Tierra con los análogos numerados (`docs/demo/img/globe-moon.jpg` y `globe-earth.jpg`).
-- [ ] Página de metodología (para la diapositiva 4).
+- [x] Página de metodología con el diagrama del proceso (`docs/demo/img/methodology.jpg`).
+- [x] Portada con la escena 3D (`docs/demo/img/hero.jpg`).
 - [ ] Grabación de pantalla del recorrido de la sección 5 (para el video de respaldo).
 
 ## 8. Antes de presentar

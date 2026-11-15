@@ -21,3 +21,4 @@ Las herramientas de datos (Python, solo biblioteca estándar) están en `pipelin
 | `ficha_rank_claims.py` | Frases de las fichas sobre puestos o "top 10", junto a los puestos reales. |
 | `check_ficha_urls.py` | Comprueba que existen los enlaces de las fichas. |
 | `audit_known.py` | Primera pasada, débil, para detectar `known: false` equivocados. |
+| `fetch_photos.py` | Fotos de Wikimedia Commons geoetiquetadas a menos de 10 km de cada candidato (sin mapas ni fotos orbitales), con autor y licencia, en `web/public/data/photos.json`. `--resume` retoma tras un corte por límite de peticiones. |

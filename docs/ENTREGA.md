@@ -4,6 +4,35 @@ Dueño: Joel. Reglas y fuentes en `docs/REQUISITOS.md`.
 
 **Plazo real:** la sede carga los proyectos el **domingo 15 a las 12:00** y el cierre global es a las **23:59, hora de Bolivia**. Apuntamos a enviar **antes de las 10:00** y a terminar de revisar a las 11:00. Se puede editar y reenviar hasta el cierre; vale el último envío guardado.
 
+## 0. Estado al domingo 15/11 (rama `feat/joel-rediseno-3d`)
+
+Registro de lo comprobado y de lo que sigue abierto. Solo se marca lo que se verificó de verdad.
+
+| Punto | Estado | Evidencia o qué falta |
+| --- | --- | --- |
+| Rediseño visual y 3D (portada, globo WebGL, descubrimientos, metodología, Bolivia) | Hecho en la rama, **sin fusionar ni desplegar** | `tsc` sin errores, 80 de 80 pruebas, build correcto, `qa.mjs` 48 de 48, `a11y.mjs` sin hallazgos (`docs/QA.md`, pasada 6) |
+| Mapa con fotos reales (tarjetas, galería, explorador, globo) | Hecho en la rama, **sin fusionar** | 35 de 56 lugares con fotos de Wikimedia Commons (152 fotos geoetiquetadas a menos de 10 km); los otros 21 muestran una ilustración rotulada como tal. Google Places listo pero **sin clave configurada** |
+| Capturas de las seis secciones | Hecho | `docs/demo/img/` (ver `docs/demo/README.md`) |
+| PDF de la demo (7 diapositivas, inglés) | Exportado en local | `docs/demo/earth-analogs-demo.pdf`. Falta: nombres completos y nombre del equipo en la diapositiva 1, y la revisión del equipo |
+| PDF en Google Drive con enlace público | **Pendiente** | No se subió: el equipo aún no lo revisó |
+| URL de Vercel | **Pendiente** (F-1, Fernando) | El repositorio no tiene ningún despliegue registrado |
+| QA sobre producción | **Pendiente** | Depende de la URL de Vercel |
+| Oradores del pitch | **Pendiente** | Joel (apertura) y Noe (cierre) siguen como propuesta; el bloque "Solución" no tiene orador |
+| Video de respaldo | **Pendiente** | Hay que grabarlo (recorrido de `docs/PITCH.md`, sección 5) |
+| Tres ensayos cronometrados | **Pendiente** | Tabla de abajo, por llenar |
+| Registro de los seis en la sede y "Full Name" | **Pendiente** | Lo revisa cada integrante en su perfil |
+| Enlaces probados en ventana privada | Solo el repositorio | `github.com/LuisFernandoGuzmanOporto/Alpha-deploy` es público. Web, PDF y video: no existen todavía |
+| Formulario enviado y captura del banner | **Pendiente** | Requiere la autorización del equipo |
+| FortiGuard | No hecho (opcional) | Depende de la URL de Vercel |
+
+### Ensayos del pitch (llenar al hacerlos)
+
+| Ensayo | Hora | Duración | Límite de la sede | Ajustes |
+| --- | --- | --- | --- | --- |
+| 1 | | | [PENDIENTE: confirmar con la sede] | |
+| 2 | | | | |
+| 3 | | | | |
+
 ## 1. Lista de verificación
 
 ### Sábado, antes de dormir
@@ -99,6 +128,8 @@ Earth Analogs
 > - **Terrain Tiles** on the AWS Registry of Open Data (https://registry.opendata.aws/terrain-tiles), accessed on 14 November 2026: elevation tiles combining SRTM and other models.
 > - **Copernicus DEM GLO-30** (ESA and the European Union, AWS Open Data, https://registry.opendata.aws/copernicus-dem/), accessed on 14 November 2026: slope and relief of four Earth candidates (McMurdo Dry Valleys, Svalbard, La Corona and Manjanggul). Produced using copernicus worlddem-30 © dlr e.v. 2010-2014 and © airbus defence and space gmbh 2014-2018 provided under copernicus by the european union and esa; all rights reserved. The organisations in charge of the Copernicus programme by law or by delegation do not incur any liability for any use of the Copernicus WorldDEM-30.
 > - **Wikipedia**: approximate coordinates of the Earth candidates. **Crossref**: check of which places are already documented as planetary analogs.
-> - **Design:** system fonts (Segoe UI and a system monospace font, nothing downloaded) and an original SVG symbol made by the team; no external graphics.
+> - **Design:** an original SVG symbol and category illustrations made by the team.
 > - **Fact sheets of the 56 Earth places** (`web/public/data/fichas.json`, shown in the app): each lists its own references, 115 distinct links in total: 64 articles and abstracts with DOI (for example Navarro-González et al. 2003, Science, doi:10.1126/science.1089143; Azua-Bustos et al. 2020, Scientific Reports, doi:10.1038/s41598-020-76302-z), 4 NASA technical reports on NTRS, NASA POWER and PDS data pages, and Wikipedia for descriptions and coordinates. The sources behind each documented analog are listed in `docs/AUDITORIA_KNOWN.md`.
+> - **Wikimedia Commons** photos of the Earth places (map cards, explorer and globe): only photos geotagged within 10 km of each place; author, license and link shown under every photo and stored in `web/public/data/photos.json`.
+> - **Fonts:** Inter and Space Grotesk (SIL Open Font License 1.1). **3D:** three.js, React Three Fiber and Drei (MIT).
 > - Full list with links and licenses: `docs/ATRIBUCION.md` in the repository.

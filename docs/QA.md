@@ -2,6 +2,29 @@
 
 Dueño: Joel. Cada fallo va como issue de GitHub con pasos para reproducir. Pasadas previstas: sábado ~14:30 (local), 04:00 y 07:00 (producción).
 
+## Pasada 7: domingo 15/11, ~12:30 (local, mapa con fotografías en `feat/joel-rediseno-3d`)
+
+- **Qué cambió:** marcadores nuevos con previsualización al pasar el cursor (miniatura, nombre, país, puntaje); tarjeta fotográfica flotante al elegir un lugar (hoja inferior en pantallas de hasta 1100 px) con galería, flechas, gesto de deslizar, miniaturas, foto ampliada y atribución; pestaña "Explorar lugares" con buscador sin tildes, filtros por categoría y país, destacados y miniaturas; el globo abre la misma tarjeta al elegir un análogo.
+- **Fotos:** Wikimedia Commons, solo geoetiquetadas a menos de 10 km. Se descartaron mapas, logos y **fotos orbitales de la ISS y del transbordador** (79 de las 222 de la primera descarga eran tomas desde el espacio). Resultado: 35 de 56 lugares con fotos y 152 fotos. Los 21 sin fotos muestran una ilustración de su categoría rotulada "no es una foto del lugar".
+- **Google Places:** función `web/api/place-photos.ts` lista, con la clave solo en el servidor, ids del catálogo como única entrada y verificación de distancia. **No probada contra Google:** no hay clave. Sin clave la web no la llama (`VITE_PLACES_API` vacío).
+- **Código:** `tsc` sin errores, **87 de 87 pruebas** (7 nuevas: categoría, buscador y filtros, verificación de distancia de Google), build sin errores.
+- **Resultado: 48 de 48 OK** con `docs/qa/qa.mjs`. `a11y.mjs`: sin hallazgos. Consola sin errores (solo un aviso de three.js por una clase obsoleta que usa React Three Fiber).
+- **Probado a mano en el navegador:** previsualización al pasar el cursor, clic en un marcador, galería con flechas y miniaturas, foto ampliada con flechas del teclado y Esc, lugar con fotos (Desierto de Siloli, Volcán Ollagüe) y sin fotos (Valles Secos de McMurdo), búsqueda "ollague" sin tilde, hoja inferior a 375 px sin desborde horizontal, tarjeta en el globo.
+- **Rendimiento:** `photos.json` (unos 130 KB sin comprimir) se pide solo al pasar el cursor, abrir una tarjeta o el explorador; las fotos son miniaturas de 500 px con carga diferida y la versión grande solo al ampliar. Móvil lento: 628 a 673 KB transferidos; los tiempos de esta máquina siguen siendo demasiado ruidosos para comparar.
+- **Incidencia de la pasada:** el servidor `vite preview` que llevaba horas abierto respondía en 1,5 s y hacía fallar `qa.mjs` por tiempo; al reiniciarlo, 48 de 48.
+- **Sin verificar:** Google Places real, teléfono real con gestos táctiles, Safari y Firefox.
+
+## Pasada 6: domingo 15/11, ~11:30 (local, rediseño 3D en `feat/joel-rediseno-3d`)
+
+- **Versión:** rama `feat/joel-rediseno-3d` sobre `main` (`eab501e`). Build de producción con `vite preview`. **No es la pasada de producción:** sigue sin existir la URL de Vercel.
+- **Qué cambió:** portada con escena 3D (three.js con React Three Fiber), globo WebGL con giro por mouse, touch y flechas, marcadores numerados, líneas animadas del sitio a sus análogos y ficha breve al elegir un lugar; tarjetas destacadas en Descubrimientos; diagrama del proceso en Metodología; panel propio para "Solo Bolivia"; tipografías Inter y Space Grotesk servidas desde el propio sitio.
+- **Código:** `tsc` sin errores, **80 de 80 pruebas** (4 nuevas, de la conversión de latitud y longitud a la esfera), build sin errores.
+- **Resultado: 48 de 48 OK** con `docs/qa/qa.mjs`, sin tocar sus expectativas. Consola sin errores.
+- **Accesibilidad (`docs/qa/a11y.mjs`):** sin hallazgos. Un solo `h1` por pantalla (el de la portada; el del panel pasó a `h2`).
+- **Alternativas:** sin WebGL el globo usa el canvas 2D anterior y la portada un planeta en CSS. Con "reducir movimiento" no hay giro automático ni paralaje. En pantallas de hasta 760 px o con ahorro de datos la portada no carga three.js.
+- **Rendimiento (móvil lento, esta máquina, con mucho ruido):** primer contenido entre 3,2 y 6,3 s en la rama y entre 3,7 y 7,1 s en `main` medido a la vez; no se distingue una diferencia. Transferido en móvil: 663 KB frente a 586 a 598 KB (las fuentes). En escritorio la portada 3D sube lo transferido a unos 2,2 MB, pedidos después del primer pintado. No se afirma la meta de 1,8 s.
+- **Sin verificar:** Vercel, teléfono real, GPU real en móviles (las capturas usan WebGL por software), Firefox, Safari, lector de pantalla.
+
 ## Pasada 5: domingo 15/11, ~07:30 (local, revisión de Fernando y Claude)
 
 - **Versión:** `main` + revisión de la fase final (Undara, Socompa, Rub' al Khali y nueve lugares nuevos; ver `docs/INFORME_FASE_FINAL.md`, "Revisión posterior"). Build de producción con `vite preview`; sigue sin estar en Vercel.
