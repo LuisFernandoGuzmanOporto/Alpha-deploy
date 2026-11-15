@@ -155,6 +155,12 @@ export const CANDIDATE_WHY_EN: Record<string, string> = {
     "High-altitude cold, dry desert (5,830 m) described as an analog of conditions on Mars: its ground thermal regime with permafrost and ground ice and its surface energy budget were studied (Nagy et al. 2020; Breuer et al. 2020).",
   "earth-gilf-kebir":
     "Plateau in Egypt's Western Desert whose wind-eroded forms and dry valleys were compared with those of Mars in a NASA report (El-Baz and Maxwell, 1982).",
+  "earth-laguna-verde-bolivia": "Study lake of NASA's High Lakes Project, which compares Altiplano lakes with the paleolakes of Mars.",
+  "earth-rub-al-khali": "Interdune sabkhas with microbial mats under salt crusts, described as an analog of present-day Mars habitats.",
+  "earth-lava-beds-california": "Lava tubes used as an analog of lunar lava tubes, and ice caves described as a Mars analog.",
+  "earth-el-malpais-nuevo-mexico": "Lava tubes chosen as a terrestrial analog of lunar rilles.",
+  "earth-lago-eyre-australia": "Playa basin cited by NASA as an example of saline lakes analogous to early Mars.",
+  "earth-undara-australia": "Lava tube shown as the terrestrial example next to lunar and Martian lava tubes in a planetary-analog study.",
 };
 
 const CELL = "The NASA POWER cell differs by more than 500 m from the elevation of the point, so the temperature may be biased (see the candidate's notes).";
@@ -169,9 +175,9 @@ const LAVA_TUBE_USE =
 export const FICHAS_EN: Record<string, FichaEn> = {
   "earth-atacama-nucleo-hiperarido": {
     summary:
-      "Hyper-arid core of the Atacama Desert in northern Chile. Navarro-González and colleagues (2003) described Mars-like soils there, with organic compounds only in traces and very few culturable bacteria.",
+      "Hyper-arid core of the Atacama Desert in northern Chile. Navarro-González and colleagues (2003) described Mars-like soils there, with organic compounds only in traces and very few culturable bacteria. The point is the Yungay sampling pit of Azua-Bustos and colleagues (2020).",
     processes: [
-      "Hyper-aridity: 11 mm of annual precipitation in the NASA POWER cell.",
+      "Hyper-aridity: 7 mm of annual precipitation in the NASA POWER cell.",
       "Non-biological decomposition of organic compounds in the soil, observed with experiments inspired by the Viking labeled-release experiment (Navarro-González et al., 2003).",
     ],
     use_cases: [
@@ -179,8 +185,8 @@ export const FICHAS_EN: Record<string, FichaEn> = {
       "Study how organic matter varies in the surface horizons of Mars-like soils (Advances in Space Research, 2012).",
     ],
     breaks_down: [
-      "Mean surface temperature is 15.7 °C (NASA POWER), about 66 °C more than at Gale (−50.7 °C) and about 176 °C more than at Faustini Rim A (−160.4 °C, Diviner).",
-      TOP10,
+      "Mean surface temperature is 19.0 °C (NASA POWER), about 70 °C more than at Gale (−50.7 °C) and about 179 °C more than at Faustini Rim A (−160.4 °C, Diviner).",
+      TOP10_FAUSTINI,
       "The point used is the center of the desert and not the Yungay station: the variables describe the region, not the exact site of the studies.",
     ],
   },
@@ -208,10 +214,10 @@ export const FICHAS_EN: Record<string, FichaEn> = {
       "Salty water with dissolved and suspended minerals, including arsenic.",
     ],
     use_cases: [
-      "Team proposal, no published study: compare its chemistry with that of the neighboring crater lake, which is studied as a Mars analog.",
+      "Study lake of NASA's High Lakes Project: it was studied with the same experiments as the Licancabur summit lake, as an analog of Martian paleolakes (Cabrol et al., 2003).",
     ],
     breaks_down: [
-      "We found no study that uses it as a planetary analog; its place in the lunar ranking is due to the relief of the window, not to its chemistry.",
+      "It is studied as a Mars analog, not a lunar one: its place in the lunar ranking is due to the relief of the window, not to its chemistry.",
       `It shares the NASA POWER cell with the Licancabur lake: the temperature (14.7 °C) does not distinguish between the two places. ${CELL}`,
       "It has liquid water at the surface, something that exists today neither on the Moon nor on Mars.",
     ],
@@ -296,7 +302,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     processes: ["Erosion of ancient volcanic domes that leaves isolated peaks."],
     use_cases: ["Team proposal, no published study: compare eroded volcanic peaks with highland reliefs on Mars."],
     breaks_down: [
-      "It is 11th at Faustini Rim A with a low score (52.4): the match is weak and only topographic.",
+      "It is 11th at Faustini Rim A with a low score (52.5): the match is weak and only topographic.",
       `Mean temperature of 22.5 °C (NASA POWER), about 183 °C above Faustini Rim A (Diviner). ${CELL}`,
     ],
   },
@@ -379,6 +385,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
       "Lava field in New Mexico with lava tubes, where minerals and rock forms typical of these caves were described.",
     processes: [
       "Formation of lava tubes in basaltic flows and deposition of minerals inside them (New Mexico Mineral Symposium, 1989).",
+      "Hatheway and Herring (1970) chose its lava tubes as a terrestrial analog of lunar rilles, according to Carleton (1989).",
     ],
     use_cases: ["Team proposal: practice exploring lava tubes, which on the Moon and Mars could serve as shelter."],
     breaks_down: [
@@ -496,7 +503,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
   "earth-rub-al-khali": {
     summary:
       "Great sand sea of the Arabian Peninsula, hyper-arid, with less than 35 mm of rain a year and dunes up to 250 m. Its barchanoid megadunes were studied to understand the self-organization of dune fields.",
-    processes: ["Self-organization and maturation of megadune fields (Geomorphology, 2010)."],
+    processes: ["Self-organization and maturation of megadune fields (Geomorphology, 2010).", "Microbial mats under salt crusts in interdune sabkhas at Liwa (UAE), described as an analog of present-day Mars habitats (McKay et al., 2016)."],
     use_cases: ["Team proposal: compare the organization of terrestrial and Martian dune fields."],
     breaks_down: [
       "Mean temperature of 30.3 °C (NASA POWER), the highest of the Arcadia Planitia top 10 and about 108 °C above that site.",
@@ -508,10 +515,10 @@ export const FICHAS_EN: Record<string, FichaEn> = {
       "Almost always dry salt lake in southern Australia, with the lowest natural point in the country (about 15 m below sea level). Its salt crust reaches 50 cm and dissolves in the big floods, which fill it completely only a few times per century.",
     processes: ["Flooding and evaporation cycles that dissolve and re-form the salt crust."],
     use_cases: [
-      "Team proposal, no published study: compare salt crusts and their evolution with salt deposits on Mars.",
+      "Look for signs of microbial mats in salt-playa deposits: NASA (1989) cites its basin as an example for early-Mars paleolakes.",
     ],
     breaks_down: [
-      "We found no published study that uses it as a planetary analog.",
+      "Only a 1989 conference paper cites it as an example; we found no recent field studies that use it as an analog.",
       "It floods periodically with rainwater that fell upstream; Arcadia Planitia has no liquid water at the surface.",
       "Mean temperature of 23.9 °C (NASA POWER), about 102 °C above Arcadia Planitia.",
     ],
@@ -562,7 +569,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
       "Study a geological, environmental and ecological analog of the Martian surface and near surface (Salvatore and Levy, 2021).",
     ],
     breaks_down: [
-      "It is first at Peak Near Cabeus B (72.1) and Malapert Massif (72.2) and second at Faustini Rim A (62.7), thanks to its mean slope of 15.3° and relief of 418 m (Copernicus DEM GLO-30); on Mars it ranks between 45th and 46th.",
+      "It is first at all three lunar sites: Peak Near Cabeus B (72.1), Malapert Massif (72.2) and Faustini Rim A (62.7), thanks to its mean slope of 15.3° and relief of 418 m (Copernicus DEM GLO-30); on Mars it ranks between 45th and 46th.",
       "Mean temperature of −26.7 °C (NASA POWER), the lowest in the catalog, but about 99 °C more than Peak Near Cabeus B (−125.6 °C, Diviner) and about 51 °C more than Arcadia Planitia (−77.9 °C), which has permafrost.",
       "Its albedo (0.56) is more than double that of Arcadia Planitia (0.21), because terrestrial albedo includes snow and ice.",
       "The point is the approximate center of the valleys: the variables describe the region, not a specific valley.",
@@ -612,17 +619,17 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     breaks_down: [
       "Mean temperature of −4.4 °C (NASA POWER), about 156 °C more than Faustini Rim A (−160.4 °C, Diviner).",
       "It receives about 862 mm of annual precipitation (NASA POWER); the Moon has no rain.",
-      "It is 26th at all three lunar sites, with scores of 43.5 to 44.0: the match is weak.",
+      "It is 26th at all three lunar sites, with scores of 43.6 to 44.1: the match is weak.",
     ],
   },
   "earth-mauna-kea-hawai": {
     summary:
-      "Dormant shield volcano on the island of Hawaii, with a 4,207 m summit, the highest point in the state. Nakamura and Smith (2010) tested a solar thermal power system there in an analog test for in-situ resource utilization (ISRU) on the Moon.",
+      "Dormant shield volcano on the island of Hawaii, with a 4,207 m summit, the highest point in the state. Nakamura and Smith (2010) tested a solar thermal power system there in an analog test for in-situ resource utilization (ISRU) on the Moon. The point is the Pu'u Hiwahine cinder cone, site of the 2010 field test (ten Kate et al.).",
     processes: ["Volcanic terrain of a dormant shield volcano, used as a lunar analog test site (Wikipedia; Nakamura and Smith, 2010)."],
     use_cases: ["Test solar thermal power systems for in-situ resource utilization on the Moon (Nakamura and Smith, 2010)."],
     breaks_down: [
-      "Mean temperature of 22.5 °C in the NASA POWER cell, about 183 °C more than Faustini Rim A (−160.4 °C, Diviner). The point is 3,525 m above the cell, so the temperature and precipitation probably do not represent it (see the candidate's notes).",
-      "The point is the summit, but the lunar analog tests were carried out on its slopes: the variables do not describe the test site.",
+      "Mean temperature of 22.5 °C in the NASA POWER cell, about 183 °C more than Faustini Rim A (−160.4 °C, Diviner). The point is 2,133 m above the cell, so the temperature and precipitation probably do not represent it (see the candidate's notes).",
+      "The point is the test site, on the slope, but the NASA POWER cell averages a lower and wetter area.",
       "It receives about 1,611 mm of annual precipitation (NASA POWER); the Moon has no rain.",
     ],
   },
@@ -638,9 +645,9 @@ export const FICHAS_EN: Record<string, FichaEn> = {
       "Consult the Encyclopedia of Astrobiology entry on the Río Tinto Mars analog (2011).",
     ],
     breaks_down: [
-      "Mean temperature of 18.8 °C (NASA POWER), about 68 °C more than Jezero (−49.4 °C).",
-      "It receives about 468 mm of annual precipitation (NASA POWER) and it is a river with liquid water at the surface.",
-      "The analogy is one of chemistry and mineralogy, not of terrain: it is 16th at Jezero (71.3) and does not reach the top 10.",
+      "Mean temperature of 18.7 °C (NASA POWER), about 68 °C more than Jezero (−49.4 °C).",
+      "It receives about 453 mm of annual precipitation (NASA POWER) and it is a river with liquid water at the surface.",
+      "The analogy is one of chemistry and mineralogy, not of terrain: it is 13th at Jezero (73.1) and does not reach the top 10.",
     ],
   },
   "earth-svalbard-sverrefjellet": {
@@ -649,7 +656,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     processes: ["Carbonates in basaltic rock, compared with the carbonate globules of the Martian meteorite ALH 84001 (GSA Abstracts, 2016)."],
     use_cases: ["Compare the carbonates of a terrestrial basalt with those of the Martian meteorite ALH 84001 (GSA Abstracts, 2016)."],
     breaks_down: [
-      "Mean slope of 15.7° and relief of 256 m (Copernicus DEM GLO-30, without the fjord, which takes up 15.5 % of the window): it is 8th at Peak Near Cabeus B (60.0) and Malapert (60.1) and 16th at Faustini Rim A (50.6), but last on Mars.",
+      "Mean slope of 15.7° and relief of 256 m (Copernicus DEM GLO-30, without the fjord, which takes up 15.5 % of the window): it is 7th at Peak Near Cabeus B (60.0) and Malapert (60.2) and 18th at Faustini Rim A (50.6), but last on Mars.",
       "Mean temperature of −8.1 °C (NASA POWER), about 43 °C more than Gale (−50.7 °C).",
       "Its albedo (0.54) is more than double that of Gale (0.24), because terrestrial albedo includes snow and ice.",
     ],
@@ -680,7 +687,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     breaks_down: [
       "Mean temperature of 5.2 °C (NASA POWER), about 56 °C more than Gale (−50.7 °C).",
       "It receives about 416 mm of annual precipitation (NASA POWER); Mars has no rain.",
-      "It is 16th at Gale (72.1) and 19th at Jezero (71.1): it does not reach the top 10.",
+      "It is 16th at Gale (72.2) and 19th at Jezero (71.2): it does not reach the top 10.",
     ],
   },
   "earth-pinacate-mexico": {
@@ -694,7 +701,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     breaks_down: [
       "Mean temperature of 23.4 °C (NASA POWER), about 184 °C more than Faustini Rim A (−160.4 °C, Diviner). The point is 814 m above the NASA POWER cell, so the temperature may be biased (see the candidate's notes).",
       "It receives about 139 mm of annual precipitation (NASA POWER); the Moon has no rain.",
-      "It is 15th at Faustini Rim A (51.1) and 16th at Peak Near Cabeus B and Malapert (50.6): the match is weak and only topographic.",
+      "It is 15th at Faustini Rim A (51.2), 16th at Malapert (50.7) and 17th at Peak Near Cabeus B (50.6): the match is weak and only topographic.",
     ],
   },
   "earth-la-corona-lanzarote": {
@@ -709,7 +716,7 @@ export const FICHAS_EN: Record<string, FichaEn> = {
       "Consult the research on terrestrial caves and lava tubes (von Ehrenfried, 2019).",
     ],
     breaks_down: [
-      "Mean slope of 5.0° and relief of 116 m using land points only (Copernicus DEM GLO-30; 48.3 % of the 10 × 10 km window, the rest is sea): it is 20th at all three lunar sites (47.3 to 47.9) and between 20th and 33rd on Mars.",
+      "Mean slope of 5.0° and relief of 116 m using land points only (Copernicus DEM GLO-30; 48.3 % of the 10 × 10 km window, the rest is sea): it is 20th at all three lunar sites (47.5 to 48.0) and between 20th and 33rd on Mars.",
       "Mean temperature of 20.4 °C (NASA POWER), about 98 °C more than Arcadia Planitia (−77.9 °C).",
       "Its albedo (0.03) is much lower than that of Arcadia Planitia (0.21).",
     ],
@@ -746,9 +753,11 @@ export const FICHAS_EN: Record<string, FichaEn> = {
       "Lava tubes in basalts of the McBride volcanic province, less than 8 million years old (Wikipedia).",
       "Cave communities with at least 78 species of arthropods in 17 lava tubes (Eberhard and Howarth, 2021).",
     ],
-    use_cases: [LAVA_TUBE_USE],
+    use_cases: [
+      "Practice exploring lava tubes: a planetary-analog study shows it as the terrestrial example next to lunar and Martian lava tubes (Tomasi et al., 2022).",
+    ],
     breaks_down: [
-      NO_STUDY,
+      "It only appears as an example in a conference abstract; we found no field campaigns that use it as an analog.",
       "It receives about 844 mm of annual precipitation (NASA POWER) and its caves have life; Mars has no rain.",
       "Mean temperature of 24.9 °C (NASA POWER), about 74 °C more than Jezero (−49.4 °C).",
     ],
@@ -757,9 +766,11 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     summary:
       "National monument in northeastern California, on the northeastern flank of the Medicine Lake volcano, the largest volcano by area in the Cascade Range. A U.S. Geological Survey bulletin (1990) describes selected caves and lava-tube systems in and near the monument.",
     processes: ["Caves and lava tubes on the flank of a large volcano (USGS, 1990)."],
-    use_cases: [LAVA_TUBE_USE],
+    use_cases: [
+      "Map lava tubes: it was used as an analog of lunar lava tubes to measure magnetic anomalies (Bell et al., 2022), and its ice caves are described as a Mars analog (O'Connor et al., 2021).",
+    ],
     breaks_down: [
-      NO_STUDY,
+      "Studies use it for lava tubes and ice caves, not as an analog of the surface of this project's sites.",
       "It receives about 676 mm of annual precipitation (NASA POWER); Mars has no rain.",
       "Mean temperature of 9.0 °C (NASA POWER), about 58 °C more than Jezero (−49.4 °C).",
     ],
