@@ -74,7 +74,7 @@ Earth Analogs
 >
 > **Benefits and goals.** It helps mission teams and researchers choose where on Earth to test rovers, instruments and operations, and makes explicit what each analog is good for and where it fails. It also brings attention to less-studied places in the Bolivian Altiplano.
 >
-> **Tools.** Python, TypeScript, React, Vite, MapLibre GL JS, Recharts, Motion, Radix UI, two React Bits text-animation components and GitHub. [PENDING: add Vercel once the site is deployed.]
+> **Tools.** Python, TypeScript, React, Vite, MapLibre GL JS, Recharts, Motion, Radix UI and GitHub. [PENDING: add Vercel once the site is deployed.]
 >
 > **Findings (version 1, 6 sites and 47 Earth candidates).** For the lunar south pole sites, steep, dry Andean volcanoes match best: Volcán Licancabur ranks first for Peak Near Cabeus B and Malapert Massif (score 69.8), followed by Ojos del Salado (second) and Socompa (fourth). Temperature and precipitation for mountain and volcano candidates come from a coarse regional grid and are biased; the lunar ranking of these places rests mainly on slope and relief. For Mars, the Gilf Kebir plateau (Egypt and Libya), which a 1982 NASA report already compared with Mars, ranks first for Jezero (80.8) and Gale (83.2), a sign that the index puts documented analogs on top. Bolivian places appear in the top 5 of all six sites, including less-studied ones such as the Siloli Desert (third for Jezero and Gale) and Laguna Colorada. The analogy breaks down mainly on temperature (the coldest Earth candidate averages −27 °C, the lunar sites −126 to −160 °C) and on precipitation. Known lunar analogs rank only 14th, 16th and 23rd out of 43, which suggests they are chosen for properties our five variables do not measure.
 
@@ -95,7 +95,7 @@ Earth Analogs
 > - **IAU / USGS Gazetteer of Planetary Nomenclature**: coordinates of Arcadia Planitia.
 > - **OpenStreetMap** contributors (ODbL): base map.
 > - **Literature:** Paige et al. 2010 (Science 330, 479); Vasavada et al. 2014 (JGR Planets, doi:10.1002/2014JE004622); Goudge et al. 2015; Farley et al. 2022; Vaniman et al. 2014; Bridges et al. 2018; Bramson et al. 2015; Colaprete et al. 2010; Kring et al. 2025.
-> - **Software:** React, React Router, MapLibre GL JS, Recharts, react-markdown, Motion, Radix UI, React Bits (DecryptedText and CountUp), Vite, TypeScript, Vitest.
+> - **Software:** React, React Router, MapLibre GL JS, Recharts, react-markdown, Motion, Radix UI, Vite, TypeScript, Vitest.
 > - **Terrain Tiles** on the AWS Registry of Open Data (https://registry.opendata.aws/terrain-tiles), accessed on 14 November 2026: elevation tiles combining SRTM and other models.
 > - **Wikipedia**: approximate coordinates of the Earth candidates. **Crossref**: check of which places are already documented as planetary analogs.
 > - **Design:** system fonts (Segoe UI and a system monospace font, nothing downloaded) and an original SVG symbol made by the team; no external graphics.
