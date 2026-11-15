@@ -4,6 +4,7 @@ import { Suspense, useEffect, useMemo, useRef, type KeyboardEvent } from "react"
 import { MathUtils, Quaternion, SRGBColorSpace, Spherical, Vector3, type DirectionalLight, type Group, type Mesh } from "three";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import { Atmosphere } from "../three/Atmosphere";
+import { createEarthMaterial } from "../three/earthMaterial";
 import { latLonToXYZ, useInView, usePrefersReducedMotion } from "../three/support";
 import type { GlobeMarker } from "./Globe";
 
@@ -27,8 +28,7 @@ export interface Globe3DProps {
 const RADIUS = 1;
 const CAMERA_DIST = 4.3;
 const KEY_STEP = MathUtils.degToRad(10);
-const GLOW: Record<Body, { color: string; intensity: number }> = {
-  earth: { color: "#36a3ff", intensity: 1.3 },
+const GLOW: Record<Exclude<Body, "earth">, { color: string; intensity: number }> = {
   moon: { color: "#c9d1dc", intensity: 0.35 },
   mars: { color: "#e0694a", intensity: 0.8 },
 };
@@ -78,6 +78,9 @@ function Scene({ body, texture, markers, selectedId, onSelect, link, reduced, ke
   const map = useTexture(texture);
   map.colorSpace = SRGBColorSpace;
   map.anisotropy = 4;
+  // La Tierra usa el mismo material que la portada (mar azul marino, tierra aclarada y borde de atmósfera).
+  const earthMaterial = useMemo(() => (body === "earth" ? createEarthMaterial(map) : null), [body, map]);
+  useEffect(() => () => earthMaterial?.dispose(), [earthMaterial]);
   const controls = useRef<OrbitControlsImpl>(null);
   const camera = useThree((state) => state.camera);
   const flyTo = useRef<Vector3 | null>(null);
@@ -142,7 +145,7 @@ function Scene({ body, texture, markers, selectedId, onSelect, link, reduced, ke
   });
 
   const targetPositions = useMemo(() => points.map((p) => p.position), [points]);
-  const glow = GLOW[body];
+  const glow = body === "earth" ? null : GLOW[body];
   const satellite = body === "earth" && link ? link : null;
 
   return (
@@ -162,11 +165,24 @@ function Scene({ body, texture, markers, selectedId, onSelect, link, reduced, ke
         }}
       />
       <directionalLight ref={keyLight} intensity={2.4} color="#fff6e8" />
-      <mesh>
-        <sphereGeometry args={[RADIUS, 96, 96]} />
-        <meshStandardMaterial map={map} roughness={body === "earth" ? 0.82 : 1} metalness={0.02} />
-      </mesh>
-      <Atmosphere radius={RADIUS} color={glow.color} intensity={glow.intensity} />
+      {earthMaterial && (
+        <>
+          <mesh material={earthMaterial}>
+            <sphereGeometry args={[RADIUS, 96, 96]} />
+          </mesh>
+          <Atmosphere radius={RADIUS} color="#36a3ff" intensity={0.42} scale={1.08} falloff="halo" />
+          <Atmosphere radius={RADIUS} color="#1677ff" intensity={0.26} scale={1.24} falloff="halo" />
+        </>
+      )}
+      {glow && (
+        <>
+          <mesh>
+            <sphereGeometry args={[RADIUS, 96, 96]} />
+            <meshStandardMaterial map={map} roughness={1} metalness={0.02} />
+          </mesh>
+          <Atmosphere radius={RADIUS} color={glow.color} intensity={glow.intensity} />
+        </>
+      )}
 
       {points.map(({ marker, position }) => (
         <Marker
