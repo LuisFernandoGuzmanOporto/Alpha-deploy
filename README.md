@@ -19,9 +19,22 @@ Earth Analogs is a web app. You pick a candidate site on the Moon or Mars and ge
 - **Adjustable weights** per variable, recomputed in the browser.
 - **A 3D globe** of the Earth, the Moon and Mars showing the selected site and its top analogs.
 - **A methodology page** with the formula, sources and limitations.
-- **A Spanish/English interface**, with a language selector in the header (`?lang=en` or `?lang=es` in the link also works). Place names and descriptions come from the data files and stay in Spanish; the methodology document is in Spanish only.
+- **A Spanish/English interface**, with a language selector in the header (`?lang=en` or `?lang=es` in the link also works). Site and place names, descriptions, fact sheets and the methodology page are available in both languages.
 
 Every comparison also shows the limits no Earth analog can overcome: reduced gravity, the lunar vacuum, the thin Martian atmosphere and radiation.
+
+| Explore: best Earth analogs for Malapert Massif | Compare: Malapert Massif and Licancabur Volcano |
+| --- | --- |
+| ![Explore view with the map of Earth candidates and the ranked list for Malapert Massif](docs/demo/img/home-malapert.jpg) | ![Comparison view with values side by side, radar and where the analogy breaks down](docs/demo/img/compare-malapert-licancabur.jpg) |
+| **Bolivia only, Jezero crater** | **Discoveries: best less-studied analogs** |
+| ![Explore view filtered to Bolivia for Jezero crater](docs/demo/img/bolivia-jezero.jpg) | ![Discoveries view with the five best less-studied analogs per site](docs/demo/img/discoveries.jpg) |
+
+## Use it in 60 seconds
+
+1. **Pick a body and a site**: Moon or Mars at the top of the left panel, then a site such as Malapert Massif or Jezero crater.
+2. **Read the ranking**: the map and the list show the Earth places most like that site, with a score from 0 to 100. *Filters* shows only Bolivia, only less-studied places, or changes the weight of each variable.
+3. **Open a place**: the comparison puts both places side by side, value by value, with the radar, the shared tags, the fact sheet with its references and **where the analogy breaks down**.
+4. **See the less-studied candidates**: *Discoveries* lists the five best per site, and *Methodology* explains the formula, the sources and the limitations.
 
 ## Sites
 
@@ -38,7 +51,7 @@ Every comparison also shows the limits no Earth analog can overcome: reduced gra
 4. The distance is the weighted mean of those differences, and the score is `100 × (1 − distance)`; a pair needs at least three shared variables.
 5. Qualitative tags (basalt, impact crater, evaporite, polar ice, permafrost, lava tubes…) are compared separately with the Jaccard index and shown next to the score.
 
-Full method, choices and limitations: [`docs/METODOLOGIA.md`](docs/METODOLOGIA.md) (in Spanish).
+Full method, choices, sensitivity tests and limitations: the *Methodology* page of the app, or [`docs/METODOLOGIA.en.md`](docs/METODOLOGIA.en.md) (English) and [`docs/METODOLOGIA.md`](docs/METODOLOGIA.md) (Spanish). The audit of which places count as documented analogs is in [`docs/AUDITORIA_KNOWN.md`](docs/AUDITORIA_KNOWN.md) (Spanish).
 
 ## Data
 
