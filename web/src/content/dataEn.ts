@@ -787,3 +787,11 @@ export const FICHAS_EN: Record<string, FichaEn> = {
     ],
   },
 };
+
+/** Títulos de referencias de las fichas que están en español (fuentes de datos repetidas en muchas fichas). */
+export const REFERENCE_TITLES_EN: Record<string, string> = {
+  "NASA POWER, API de climatología (TS, PRECTOTCORR, ALLSKY_SRF_ALB)": "NASA POWER, climatology API (TS, PRECTOTCORR, ALLSKY_SRF_ALB)",
+  "LRO Diviner, temperaturas lunares (PDS Geosciences)": "LRO Diviner, lunar temperatures (PDS Geosciences)",
+  "Terrain Tiles (Mapzen) en AWS Open Data": "Terrain Tiles (Mapzen) on AWS Open Data",
+  "Copernicus DEM GLO-30 (ESA), pendiente y relieve": "Copernicus DEM GLO-30 (ESA), slope and relief",
+};

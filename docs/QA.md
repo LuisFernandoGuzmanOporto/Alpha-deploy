@@ -2,6 +2,37 @@
 
 Dueño: Joel. Cada fallo va como issue de GitHub con pasos para reproducir. Pasadas previstas: sábado ~14:30 (local), 04:00 y 07:00 (producción).
 
+## Pasada 4: domingo 15/11, ~01:15 (local, fase final)
+
+- **Versión:** `main` con las tareas 1 a 4 de `prompts/fase-final.md` (PR #59 a #63 y el PR de cierre). Build de producción con `vite preview`. **Sigue sin estar en Vercel**, así que la pasada es local.
+- **Navegador:** Microsoft Edge sin interfaz (motor Chromium); Chrome no está instalado en esta máquina. Clics y teclas reales por CDP.
+- **Datos:** 47 candidatos (28 conocidos, 19 poco estudiados), 6 sitios. `validate.py`: 0 errores, 7 avisos (el de metas cuenta "25 o más poco estudiados", que ya no se cumple tras la auditoría: son 19). `similarity.py` regenera `web/public/data/` sin diferencias salvo `generated_at`. `check_ficha_urls.py`: 99 URL, ninguna con problema.
+- **Código:** `tsc` sin errores, **76 de 76 pruebas**, build sin errores. Paquete principal 475 KB (154 KB comprimido).
+- **Resultado: 47 de 47 OK** (dos corridas seguidas). Las 34 anteriores siguen pasando; la de "Marte: el ranking cambia" ahora espera al Atacama primero, por la auditoría.
+
+| Nuevo en esta pasada | Comprobación | Estado |
+| --- | --- | --- |
+| Exportar a PDF (F8) | Enter en el botón llama a `window.print`; en `print` no hay barra, pie ni botones y las referencias muestran su URL | OK |
+| Perfiles de misión (4a) | "Rover mobility" fija `pesos=3,3,0.5,0.5,1` y queda marcado; "Equal" limpia la URL | OK |
+| Robustez (4b) | Los 3 primeros de Marte llevan la insignia con texto ("… in 15 of 15 scenarios") | OK |
+| Varios análogos (4c) | El segundo selector guarda `analogos=` y dibuja 2 series; tabla con 5 variables y el puntaje; sin desborde a 375 px con 3 análogos | OK |
+| Explicaciones (F7) | El primer análogo de Gale trae el párrafo; un par fuera del top 5 no lo trae | OK |
+| Movimiento reducido | Con `prefers-reduced-motion: reduce` la transición entre pantallas no desplaza; sin esa preferencia sí (control) | OK |
+| Saltos de diseño | CLS del inicio < 0,1 (medido 0,001) | OK |
+| Desborde | `overflow.mjs` en inicio, comparación con 3 análogos y metodología: 0 elementos | OK |
+
+**Errores encontrados y corregidos en esta pasada:**
+- La ficha del Atacama seguía diciendo que el punto era el centro del desierto (falso desde la auditoría). Corregido en español e inglés.
+- En inglés, cuatro títulos de referencias de fuentes de datos seguían en español (por ejemplo "NASA POWER, API de climatología", en las 47 fichas). La comprobación de idioma de `qa.mjs` no los detectaba porque son nombres propios mezclados; ahora se traducen en `dataEn.ts` y una prueba lo cubre.
+- `qa.mjs` mandaba Enter sin el carácter, así que no activaba botones; corregido.
+
+**No probado en esta pasada:**
+- **Producción:** URL de Vercel, enlaces directos recargando `/comparar/...`, la imagen de Open Graph en una red social real (necesita la URL pública) y la red móvil de un teléfono real.
+- **Integración continua:** el flujo de GitHub Actions no arrancó porque la cuenta dueña del repositorio está bloqueada por facturación ("The job was not started because your account is locked due to a billing issue"). Las mismas comprobaciones pasan en local.
+- Chrome, Firefox y Safari (solo Edge); lector de pantalla real (NVDA o VoiceOver) y zoom real al 200 %.
+- Imprimir en papel y el diálogo de impresión de Firefox y Safari.
+- La pestaña del navegador con el favicon: Edge sin interfaz no dibuja pestañas, así que se comprobó el título del documento, que `/favicon.svg` responde como SVG y cómo se ve el icono abierto directamente.
+
 ## Rendimiento (fase final, tarea 3)
 
 Medido con `docs/qa/perf.mjs` contra el build servido con `vite preview` y Edge sin interfaz (Chrome no está instalado en esta máquina). "Móvil lento" es 4G lenta y CPU 4× más lenta. Cada valor es la mediana de 2 o 3 corridas; el bloqueo varía ±60 ms entre corridas.
