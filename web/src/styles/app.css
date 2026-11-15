@@ -201,6 +201,7 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -0.01em; }
 .cc-facts { display: grid; gap: var(--cc-space-2); padding-top: var(--cc-space-4); border-top: var(--cc-line) solid var(--cc-border); }
 .cc-facts > div { display: flex; justify-content: space-between; gap: var(--cc-space-3); font-size: var(--cc-text-sm); }
 .cc-facts dt { color: var(--cc-text-muted); }
+.cc-facts dd a { display: inline-block; min-width: 24px; min-height: 24px; line-height: 24px; text-align: center; }
 .cc-facts dd { display: flex; flex-wrap: wrap; gap: var(--cc-space-2); }
 .cc-detail .ea-button { justify-self: stretch; }
 

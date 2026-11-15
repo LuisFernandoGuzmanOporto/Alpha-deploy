@@ -189,7 +189,7 @@ function Detail({ site, row, rank, robustness, onBack }: DetailProps) {
             <dt>{t("explore.sources")}</dt>
             <dd>
               {candidate.reference_urls.map((url, i) => (
-                <a key={url} href={url} target="_blank" rel="noreferrer">[{i + 1}]</a>
+                <a key={url} href={url} target="_blank" rel="noreferrer" aria-label={t("explore.sourceLink", { n: String(i + 1) })}>[{i + 1}]</a>
               ))}
             </dd>
           </div>

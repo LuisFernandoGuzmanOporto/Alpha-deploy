@@ -149,7 +149,7 @@ export function Comparador({ site, candidate, entry, limitations, tagLabel, brea
             <h3 id="cmp-radar">{t("cmp.profile")}</h3>
             <figure className="comparador-radar" role="img" aria-label={t("cmp.radarAria", { summary: radarSummary })}>
               <ResponsiveContainer width="100%" height={300}>
-                <RadarChart data={radarData} outerRadius="72%">
+                <RadarChart data={radarData} outerRadius="72%" accessibilityLayer={false}>
                   <PolarGrid />
                   <PolarAngleAxis dataKey="label" />
                   <PolarRadiusAxis domain={[0, 100]} tick={false} axisLine={false} />

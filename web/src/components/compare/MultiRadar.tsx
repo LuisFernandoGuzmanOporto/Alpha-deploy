@@ -82,7 +82,7 @@ export function MultiRadar({ entries, candidates, selected, onChange }: Props) {
       {data.length >= 3 ? (
         <figure className="comparador-radar cc-multi__radar" aria-hidden="true">
           <ResponsiveContainer width="100%" height={320}>
-            <RadarChart data={data} outerRadius="70%">
+            <RadarChart data={data} outerRadius="70%" accessibilityLayer={false}>
               <PolarGrid />
               <PolarAngleAxis dataKey="label" />
               <PolarRadiusAxis domain={[0, 100]} tick={false} axisLine={false} />

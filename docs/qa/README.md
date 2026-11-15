@@ -7,6 +7,7 @@ Scripts con solo Node 20 (con `--experimental-websocket`) y Chrome instalado; no
 | `qa.mjs` | Pasada de QA con clics y teclas reales: flujo completo, filtros, pesos, globo, idioma, rutas, teclado, móvil y tableta, consola. Debe dar 34 de 34. | `node --experimental-websocket docs/qa/qa.mjs http://localhost:4173` |
 | `perf.mjs` | Carga con red y CPU limitadas (móvil lento): primer contenido, bloqueo, peso, elementos. | `node --experimental-websocket docs/qa/perf.mjs <url> [mobile]` |
 | `overflow.mjs` | Qué elementos se salen de 375 px. | `node --experimental-websocket docs/qa/overflow.mjs <url>` |
+| `a11y.mjs` | Revisión automática de accesibilidad: lang, título, encabezados, landmarks, nombres accesibles, alt, foco visible con Tab, objetivos de 24 px, contraste y reflujo a 320 y 640 px. No sustituye a un lector de pantalla. | `node --experimental-websocket docs/qa/a11y.mjs http://localhost:4173` |
 | `shots.mjs` | Capturas de una lista de URLs. | `node --experimental-websocket docs/qa/shots.mjs <carpeta> <ancho> <alto> "<url>=><archivo.jpg>"` |
 
 Si Chrome no está en `C:/Program Files/Google/Chrome/Application/chrome.exe`, indica la ruta con la variable `CHROME`. Las capturas y el PDF de la demo oficial se generan con `docs/demo/capture.mjs`.

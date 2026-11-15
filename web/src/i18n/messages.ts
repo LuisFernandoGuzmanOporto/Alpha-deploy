@@ -222,6 +222,7 @@ const es = {
   "explore.noGaps": "Ninguna variable difiere mucho.",
   "explore.coords": "Coordenadas",
   "explore.sources": "Fuentes",
+  "explore.sourceLink": "Fuente {n} (se abre en una pestaña nueva)",
   "explore.back": "← Volver al ranking",
   "explore.about": "Sobre el sitio y los datos",
 } as const;
@@ -450,6 +451,7 @@ const en: Record<MessageKey, string> = {
   "explore.noGaps": "No variable differs much.",
   "explore.coords": "Coordinates",
   "explore.sources": "Sources",
+  "explore.sourceLink": "Source {n} (opens in a new tab)",
   "explore.back": "← Back to ranking",
   "explore.about": "About the site and the data",
 };
