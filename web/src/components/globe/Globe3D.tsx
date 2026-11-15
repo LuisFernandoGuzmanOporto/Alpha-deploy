@@ -28,7 +28,7 @@ const RADIUS = 1;
 const CAMERA_DIST = 4.3;
 const KEY_STEP = MathUtils.degToRad(10);
 const GLOW: Record<Body, { color: string; intensity: number }> = {
-  earth: { color: "#4cc9f0", intensity: 1.3 },
+  earth: { color: "#36a3ff", intensity: 1.3 },
   moon: { color: "#c9d1dc", intensity: 0.35 },
   mars: { color: "#e0694a", intensity: 0.8 },
 };
@@ -202,7 +202,7 @@ function Marker({
   const normal = useMemo(() => position.clone().normalize(), [position]);
   const camDir = useMemo(() => new Vector3(), []);
   const isSite = marker.kind === "site";
-  const color = isSite ? "#7ad8f5" : "#ffb566";
+  const color = isSite ? "#48dfff" : "#ffb566";
 
   useFrame((state) => {
     // El número se atenúa cuando el punto queda detrás del globo.
@@ -298,7 +298,7 @@ function Satellite({
         </mesh>
         <mesh position={sitePoint}>
           <sphereGeometry args={[0.016, 12, 12]} />
-          <meshBasicMaterial color="#7ad8f5" toneMapped={false} />
+          <meshBasicMaterial color="#48dfff" toneMapped={false} />
         </mesh>
       </group>
       {targets.map((end, i) => {
@@ -313,7 +313,7 @@ function Satellite({
             start={start}
             end={end}
             mid={mid}
-            color={i === 0 ? "#ffb566" : "#7ad8f5"}
+            color={i === 0 ? "#ffb566" : "#48dfff"}
             lineWidth={i === 0 ? 1.8 : 1.1}
             transparent
             opacity={i === 0 ? 0.95 : 0.55 - i * 0.06}

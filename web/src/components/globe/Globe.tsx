@@ -219,8 +219,8 @@ function renderMarkers(ctx: CanvasRenderingContext2D, px: number, markers: Globe
     visible.map((v) => v.point),
     2 * r + MARKER_GAP * scale,
   );
-  const outline = tokenColor("--cc-bg", "#0b0f17");
-  const siteColor = tokenColor("--cc-accent", "#4cc9f0");
+  const outline = tokenColor("--cc-bg", "#061426");
+  const siteColor = tokenColor("--cc-accent", "#36a3ff");
   const analogColor = tokenColor("--cc-scale-mid", "#ffb566");
   ctx.lineWidth = Math.max(1.5, scale * 1.5);
   ctx.strokeStyle = outline;

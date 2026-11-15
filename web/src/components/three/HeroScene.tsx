@@ -25,7 +25,7 @@ export default function HeroScene() {
       >
         <ambientLight intensity={0.3} />
         <directionalLight position={[-2, 2, 8]} intensity={2.8} color="#fff6e8" />
-        <directionalLight position={[6, -2, -4]} intensity={0.5} color="#4cc9f0" />
+        <directionalLight position={[6, -2, -4]} intensity={0.5} color="#36a3ff" />
         <Suspense fallback={null}>
           <System still={reduced} />
         </Suspense>
@@ -65,7 +65,7 @@ function System({ still }: { still: boolean }) {
           <sphereGeometry args={[1.3, 96, 96]} />
           <meshStandardMaterial map={earth} roughness={0.85} metalness={0.05} />
         </mesh>
-        <Atmosphere radius={1.3} color="#4cc9f0" intensity={1.25} />
+        <Atmosphere radius={1.3} color="#36a3ff" intensity={1.25} />
 
         <group rotation={[0.42, 0, 0.1]}>
           <OrbitRing radius={2.2} />
@@ -98,7 +98,7 @@ function OrbitRing({ radius }: { radius: number }) {
   return (
     <mesh rotation={[Math.PI / 2, 0, 0]}>
       <ringGeometry args={[radius - 0.005, radius + 0.005, 160]} />
-      <meshBasicMaterial color="#7ad8f5" transparent opacity={0.22} side={DoubleSide} depthWrite={false} />
+      <meshBasicMaterial color="#48dfff" transparent opacity={0.22} side={DoubleSide} depthWrite={false} />
     </mesh>
   );
 }

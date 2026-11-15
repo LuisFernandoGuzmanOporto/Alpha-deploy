@@ -9,6 +9,8 @@ import "../../styles/ui.css";
 import "../../styles/app.css";
 import "../../styles/premium.css";
 import "../../styles/place.css";
+import "../../styles/design.css";
+import "../../styles/about.css";
 import { installTilt } from "../../lib/tilt";
 
 // Componentes de Noe (sistema visual) conectados al idioma de la app. El idioma sale de
@@ -80,12 +82,27 @@ export function Footer() {
   );
 }
 
+/** Cielo fijo detrás de todas las páginas: 3 estrellas fugaces y 6 partículas, animadas solo con CSS (design.css). */
+function SpaceSky() {
+  return (
+    <div className="sky" aria-hidden="true">
+      {Array.from({ length: 3 }, (_, i) => (
+        <span key={`s${i}`} className="sky__shoot" />
+      ))}
+      {Array.from({ length: 6 }, (_, i) => (
+        <span key={`d${i}`} className="sky__dust" />
+      ))}
+    </div>
+  );
+}
+
 /** <Layout>…</Layout> dentro de BrowserRouter. */
 export function Layout({ children }: { children: ReactNode }) {
   const t = useT();
   useEffect(() => installTilt(), []);
   return (
     <div className="cc-app">
+      <SpaceSky />
       <a className="ea-skip" href="#ea-main">{t("ui.skip")}</a>
       <Header />
       <main id="ea-main" tabIndex={-1}>{children}</main>
