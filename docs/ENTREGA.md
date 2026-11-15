@@ -94,7 +94,7 @@ Earth Analogs
 [PENDING: public link to the 7-slide PDF or the ≤ 30 s video]
 
 ### Link to Final Project
-[PENDING: Vercel URL]. Repository: https://github.com/LuisFernandoGuzmanOporto/Alpha-deploy
+https://earth-analogs-coral.vercel.app. Repository: https://github.com/LuisFernandoGuzmanOporto/Alpha-deploy
 
 ### Detailed Project Description
 > **What it does.** You pick a candidate site: three Artemis III candidate regions near the lunar south pole (Peak Near Cabeus B and Malapert Massif from NASA's current list, and Faustini Rim A from its 2022 list) or three Mars sites (Jezero and Gale craters, Arcadia Planitia). The app shows a map and a ranked list of Earth analogs with their similarity score. Filters show only places in Bolivia or only less-studied places. A comparison view puts both places side by side: value by value, a similarity radar, shared qualitative tags (geology, ice, dust) and a "where the analogy breaks down" panel. A discoveries view lists the five best less-studied analogs per site. Users can change the weight of each variable and see the ranking recomputed. A 3D globe of the Earth, the Moon and Mars shows the site and its top analogs.
@@ -103,7 +103,7 @@ Earth Analogs
 >
 > **Benefits and goals.** It helps mission teams and researchers choose where on Earth to test rovers, instruments and operations, and makes explicit what each analog is good for and where it fails. It also brings attention to less-studied places in the Bolivian Altiplano.
 >
-> **Tools.** Python, TypeScript, React, Vite, MapLibre GL JS, Recharts, Motion, Radix UI and GitHub. [PENDING: add Vercel once the site is deployed.]
+> **Tools.** Python, TypeScript, React, Vite, MapLibre GL JS, Recharts, Motion, Radix UI, GitHub and Vercel.
 >
 > **Findings (version 1, 6 sites and 56 Earth candidates).** For the lunar south pole sites, cold, steep, dry terrain matches best: the McMurdo Dry Valleys (Antarctica), already documented as a Mars analog, rank first for all three lunar sites (scores 72.1 at Peak Near Cabeus B, 72.3 at Malapert Massif and 62.7 at Faustini Rim A), followed by Licancabur Volcano (second at all three) and Ollagüe Volcano on the Bolivia–Chile border, a less-studied place (third at all three), then Ojos del Salado and Socompa (fourth and fifth at Peak Near Cabeus B and Malapert). Temperature and precipitation for mountain and volcano candidates come from a coarse regional grid and are biased; the lunar ranking of these places rests mainly on slope and relief. For Mars, the hyper-arid core of the Atacama Desert near Yungay (Chile), a documented Mars analog, ranks first for Jezero (82.1) and Gale (83.8), followed by the Gilf Kebir plateau (Egypt and Libya), which a 1982 NASA report already compared with Mars, and then the Tibesti Mountains at Jezero and the less-studied Kumtag Desert (China) at Gale: a sign that the index puts documented analogs on top. Bolivian places appear in the top 5 of all six sites, including less-studied ones such as Ollagüe Volcano (third at all three lunar sites) and the Siloli Desert (fourth for Jezero, fifth for Gale). The analogy breaks down mainly on temperature (the coldest Earth candidate averages −27 °C, the lunar sites −126 to −160 °C) and on precipitation. The seven known lunar analogs rank only between 16th and 46th out of 56, which suggests they are chosen for properties our five variables do not measure.
 

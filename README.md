@@ -2,6 +2,8 @@
 
 **NASA Space Apps Challenge 2026, Cochabamba (Bolivia).** Challenge: *Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars.*
 
+**Live demo:** https://earth-analogs-coral.vercel.app
+
 *Resumen en español al final.*
 
 ## The problem
