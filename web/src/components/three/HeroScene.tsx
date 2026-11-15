@@ -1,11 +1,12 @@
 import { Stars, useTexture } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Suspense, useRef } from "react";
+import { Suspense, useEffect, useMemo, useRef } from "react";
 import { DoubleSide, MathUtils, SRGBColorSpace, type Group, type Mesh } from "three";
 import earthUrl from "../globe/textures/earth.jpg";
 import marsUrl from "../globe/textures/mars.jpg";
 import moonUrl from "../globe/textures/moon.jpg";
 import { Atmosphere } from "./Atmosphere";
+import { createEarthMaterial } from "./earthMaterial";
 import { useInView, usePrefersReducedMotion } from "./support";
 
 /**
@@ -23,9 +24,9 @@ export default function HeroScene() {
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
         frameloop={!visible ? "never" : reduced ? "demand" : "always"}
       >
-        <ambientLight intensity={0.3} />
-        <directionalLight position={[-2, 2, 8]} intensity={2.8} color="#fff6e8" />
-        <directionalLight position={[6, -2, -4]} intensity={0.5} color="#36a3ff" />
+        <ambientLight intensity={0.55} />
+        <directionalLight position={[-2, 2, 8]} intensity={3.4} color="#fff6e8" />
+        <directionalLight position={[6, -2, -4]} intensity={0.9} color="#36a3ff" />
         <Suspense fallback={null}>
           <System still={reduced} />
         </Suspense>
@@ -40,6 +41,8 @@ function System({ still }: { still: boolean }) {
   for (const texture of [earth, moon, mars]) texture.colorSpace = SRGBColorSpace;
   // Anisotropía moderada: la Tierra se ve nítida en los bordes sin pesar en móviles.
   earth.anisotropy = 4;
+  const earthMaterial = useMemo(() => createEarthMaterial(earth), [earth]);
+  useEffect(() => () => earthMaterial.dispose(), [earthMaterial]);
 
   const rig = useRef<Group>(null);
   const earthRef = useRef<Mesh>(null);
@@ -61,11 +64,12 @@ function System({ still }: { still: boolean }) {
   return (
     <group ref={rig}>
       <group rotation={[0.18, 0, -0.32]}>
-        <mesh ref={earthRef} rotation={[0, -1.2, 0]}>
+        <mesh ref={earthRef} rotation={[0, -1.2, 0]} material={earthMaterial}>
           <sphereGeometry args={[1.3, 96, 96]} />
-          <meshStandardMaterial map={earth} roughness={0.85} metalness={0.05} />
         </mesh>
-        <Atmosphere radius={1.3} color="#36a3ff" intensity={1.25} />
+        {/* Dos capas discretas: un resplandor azul pegado al planeta y un halo más ancho y tenue. */}
+        <Atmosphere radius={1.3} color="#36a3ff" intensity={0.42} scale={1.08} falloff="halo" />
+        <Atmosphere radius={1.3} color="#1677ff" intensity={0.26} scale={1.24} falloff="halo" />
 
         <group rotation={[0.42, 0, 0.1]}>
           <OrbitRing radius={2.2} />
@@ -98,7 +102,7 @@ function OrbitRing({ radius }: { radius: number }) {
   return (
     <mesh rotation={[Math.PI / 2, 0, 0]}>
       <ringGeometry args={[radius - 0.005, radius + 0.005, 160]} />
-      <meshBasicMaterial color="#48dfff" transparent opacity={0.22} side={DoubleSide} depthWrite={false} />
+      <meshBasicMaterial color="#48dfff" transparent opacity={0.3} side={DoubleSide} depthWrite={false} />
     </mesh>
   );
 }
