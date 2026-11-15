@@ -4,7 +4,7 @@
 
 | Archivo | Qué es |
 | --- | --- |
-| `slides.html` | Las 7 diapositivas (1280 × 720). Usa los mismos colores y tipografías que la web. |
+| `slides.html` | Las 7 diapositivas (1280 × 720). Usa los mismos colores y tipografías que la web (`web/src/styles/tokens.css`). |
 | `img/` | Capturas de la web en inglés, generadas por `capture.mjs`. |
 | `capture.mjs` | Saca las capturas y exporta el PDF con Chrome (sin instalar nada más). |
 | `earth-analogs-demo.pdf` | El PDF final. |

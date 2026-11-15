@@ -82,7 +82,7 @@ const elementClip = (selector) =>
 
 try {
   // Pantalla principal: sitio lunar, mapa y ranking (diapositiva 3).
-  await open("/?lang=en&sitio=moon-malapert-massif&analogo=earth-licancabur-laguna-verde", 1200, 760);
+  await open("/?lang=en&sitio=moon-malapert-massif", 1200, 760);
   await sleep(2500);
   await shot("home-malapert");
 
