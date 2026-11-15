@@ -58,49 +58,51 @@ export function PlaceExplorer({ rows, selectedId, onSelect }: Props) {
 
   return (
     <div className="explorer">
-      <label className="explorer__search">
-        <span className="visually-hidden">{t("explorer.search")}</span>
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-          <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" strokeWidth="2" />
-          <path d="M16.5 16.5L21 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        </svg>
-        <input
-          type="search"
-          value={filters.query}
-          placeholder={t("explorer.searchPlaceholder")}
-          onChange={(event) => setFilters((f) => ({ ...f, query: event.target.value }))}
-        />
-      </label>
+      <div className="explorer__tools">
+        <label className="explorer__search">
+          <span className="visually-hidden">{t("explorer.search")}</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" strokeWidth="2" />
+            <path d="M16.5 16.5L21 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+          <input
+            type="search"
+            value={filters.query}
+            placeholder={t("explorer.searchPlaceholder")}
+            onChange={(event) => setFilters((f) => ({ ...f, query: event.target.value }))}
+          />
+        </label>
 
-      <div className="explorer__chips" role="group" aria-label={t("explorer.category")}>
-        {(["all", ...categories] as const).map((category) => (
-          <button
-            key={category}
-            type="button"
-            className="explorer__chip"
-            aria-pressed={filters.category === category}
-            onClick={() => setFilters((f) => ({ ...f, category }))}
-          >
-            {category === "all" ? t("explorer.all") : t(`category.${category}`)}
-          </button>
-        ))}
-      </div>
-
-      <label className="explorer__country">
-        <span>{t("explorer.country")}</span>
-        <select value={filters.country} onChange={(event) => setFilters((f) => ({ ...f, country: event.target.value }))}>
-          <option value="">{t("explorer.allCountries")}</option>
-          {countries.map((country) => (
-            <option key={country} value={country}>
-              {country}
-            </option>
+        <div className="explorer__chips" role="group" aria-label={t("explorer.category")}>
+          {(["all", ...categories] as const).map((category) => (
+            <button
+              key={category}
+              type="button"
+              className="explorer__chip"
+              aria-pressed={filters.category === category}
+              onClick={() => setFilters((f) => ({ ...f, category }))}
+            >
+              {category === "all" ? t("explorer.all") : t(`category.${category}`)}
+            </button>
           ))}
-        </select>
-      </label>
+        </div>
+
+        <label className="explorer__country">
+          <span>{t("explorer.country")}</span>
+          <select value={filters.country} onChange={(event) => setFilters((f) => ({ ...f, country: event.target.value }))}>
+            <option value="">{t("explorer.allCountries")}</option>
+            {countries.map((country) => (
+              <option key={country} value={country}>
+                {country}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
 
       {featured.length > 0 && (
         <section aria-labelledby="explorer-featured">
-          <h3 id="explorer-featured" className="cc-subhead">
+          <h3 id="explorer-featured" className="explorer__label">
             {t("explorer.featured")}
           </h3>
           <ul className="explorer__featured">
@@ -110,11 +112,10 @@ export function PlaceExplorer({ rows, selectedId, onSelect }: Props) {
                 <li key={candidate.id}>
                   <button type="button" className="explorer__feature tilt" onClick={() => onSelect(candidate.id)}>
                     {photo && <img src={photo.thumb} alt="" loading="lazy" decoding="async" />}
+                    <span className="explorer__feature-score">{entry.score.toFixed(0)}</span>
                     <span className="explorer__feature-text">
                       <strong>{candidate.name}</strong>
-                      <small>
-                        {candidate.country} · {entry.score.toFixed(0)}
-                      </small>
+                      <small>{candidate.country}</small>
                     </span>
                   </button>
                 </li>
@@ -124,7 +125,7 @@ export function PlaceExplorer({ rows, selectedId, onSelect }: Props) {
         </section>
       )}
 
-      <p className="cc-muted" aria-live="polite">
+      <p className="explorer__label" aria-live="polite">
         {t(results.length === 1 ? "explorer.countOne" : "explorer.countMany", { n: results.length })}
       </p>
       {results.length === 0 ? (
@@ -141,23 +142,27 @@ export function PlaceExplorer({ rows, selectedId, onSelect }: Props) {
                   className={`explorer__item${candidate.id === selectedId ? " is-selected" : ""}`}
                   onClick={() => onSelect(candidate.id)}
                 >
+                  <span className="explorer__rank">{String(rank).padStart(2, "0")}</span>
                   <span className="explorer__thumb">
                     {photo ? (
                       <img src={photo.thumb} alt="" loading="lazy" decoding="async" />
                     ) : (
                       <CategoryArt category={placeCategory(candidate.tags)} />
                     )}
-                    <span className="explorer__rank" style={{ background: scoreColor(entry.score) }}>
-                      {rank}
-                    </span>
                   </span>
                   <span className="explorer__text">
                     <strong>{candidate.name}</strong>
                     <small>
                       {candidate.country} · {t(`category.${placeCategory(candidate.tags)}`)}
                     </small>
+                    <span className="explorer__meter" aria-hidden="true">
+                      <span style={{ width: `${Math.max(0, Math.min(100, entry.score))}%`, background: scoreColor(entry.score) }} />
+                    </span>
                   </span>
-                  <span className="explorer__score">{entry.score.toFixed(0)}</span>
+                  <span className="explorer__score" style={{ color: scoreColor(entry.score) }}>
+                    {entry.score.toFixed(0)}
+                    <small aria-hidden="true">/100</small>
+                  </span>
                 </button>
               </li>
             );

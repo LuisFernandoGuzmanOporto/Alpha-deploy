@@ -1,0 +1,74 @@
+/* «Sobre el sitio y los datos»: franja luminosa a todo el ancho sobre el cielo común (design.css).
+   Las tarjetas usan el vidrio del sistema de diseño; aquí solo va lo propio de la sección. */
+
+.cc-about {
+  position: relative;
+  max-width: none;
+  margin-top: var(--cc-space-5);
+  padding: var(--cc-space-7) max(var(--cc-space-5), calc((100% - 1232px) / 2)) var(--cc-space-7);
+  border-block: var(--cc-line) solid var(--cc-edge);
+  background:
+    radial-gradient(760px 420px at 12% 0%, #1677ff38, transparent 68%),
+    radial-gradient(680px 460px at 92% 18%, #36a3ff29, transparent 66%),
+    radial-gradient(900px 420px at 55% 118%, #48dfff24, transparent 64%),
+    #0a234259;
+}
+
+/* ---------- Título ---------- */
+.cc-about > h2 { position: relative; width: fit-content; padding-bottom: var(--cc-space-3); font-size: clamp(1.7rem, 3vw, 2.4rem); }
+.cc-about > h2::after { content: ""; position: absolute; left: 0; bottom: 0; width: 72px; height: 3px; border-radius: var(--cc-radius-pill); background: var(--cc-grad-brand); box-shadow: 0 0 16px #36a3ffb3; }
+
+/* ---------- Tarjetas de cifras ---------- */
+.cc-about .cc-stats > div { position: relative; gap: var(--cc-space-2); padding: var(--cc-space-5) var(--cc-space-4); overflow: hidden; }
+.cc-about .cc-stats > div::before { content: ""; position: absolute; inset: -40% -20% auto; height: 120%; background: radial-gradient(closest-side, #1677ff59, transparent); opacity: 0; transition: opacity 320ms var(--cc-ease); pointer-events: none; }
+.cc-about .cc-stats > div:hover { transform: translateY(-5px); }
+.cc-about .cc-stats > div:hover::before { opacity: 1; }
+.cc-about .cc-stats dd { position: relative; width: fit-content; background: linear-gradient(120deg, var(--cc-ice), #9fd4ff 55%, var(--cc-bright)); -webkit-background-clip: text; background-clip: text; color: transparent; font-size: clamp(2.2rem, 3.6vw, 3rem); font-variant-numeric: tabular-nums; }
+.cc-about .cc-stats > div:nth-child(2) dd { background-image: linear-gradient(120deg, var(--cc-ice), var(--cc-cyan) 55%, var(--cc-bright)); }
+.cc-about .cc-stats > div:nth-child(3) dd { background-image: linear-gradient(120deg, var(--cc-ice), var(--cc-bright) 55%, var(--cc-electric)); }
+.cc-about .cc-stats dt { position: relative; line-height: 1.4; }
+
+/* ---------- Ficha del sitio elegido ---------- */
+.cc-about__site { position: relative; padding: var(--cc-space-5); transition: border-color 320ms var(--cc-ease), box-shadow 320ms var(--cc-ease); }
+.cc-about__site:hover { border-color: var(--cc-edge-hot); box-shadow: var(--cc-shadow-glow); }
+.cc-about__site .cc-subhead { display: flex; align-items: center; gap: var(--cc-space-3); margin-bottom: var(--cc-space-4); color: var(--cc-ice); font: 700 var(--cc-text-lg) var(--cc-font-display); letter-spacing: -0.01em; }
+.cc-about__site .cc-subhead::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--cc-cyan); box-shadow: 0 0 0 4px #48dfff26, 0 0 14px #48dfffcc; }
+.cc-about__site .cc-readout > div { align-items: center; margin: 0 calc(-1 * var(--cc-space-3)); padding: 10px var(--cc-space-3); border-bottom: var(--cc-line) solid #36a3ff24; border-radius: var(--cc-radius-lg); transition: background var(--cc-dur) var(--cc-ease); }
+.cc-about__site .cc-readout > div:last-child { border-bottom-color: transparent; }
+.cc-about__site .cc-readout > div:hover { background: linear-gradient(90deg, #1677ff2e, #36a3ff14); }
+.cc-about__site .cc-readout dd { color: #d6f3ff; text-shadow: 0 0 14px #48dfff40; }
+.cc-about__site .ea-tags { gap: var(--cc-space-2); margin-top: var(--cc-space-4); }
+.cc-about__site .ea-tag { transition: background var(--cc-dur) var(--cc-ease), border-color var(--cc-dur) var(--cc-ease), box-shadow var(--cc-dur) var(--cc-ease); }
+.cc-about__site .ea-tag:hover { border-color: var(--cc-cyan); background: #1677ff40; box-shadow: 0 0 16px #36a3ff66; }
+.cc-about__site .cc-notes { border-top-color: var(--cc-edge); }
+.cc-about__site .cc-notes summary:hover { color: var(--cc-ice); }
+
+/* ---------- Aparición escalonada al entrar en pantalla (usa `translate`, que no pisa el hover) ---------- */
+@keyframes about-in { from { opacity: 0; translate: 0 26px; } to { opacity: 1; translate: 0 0; } }
+@supports (animation-timeline: view()) {
+  .cc-about { animation: none; }
+  .cc-about > h2, .cc-about .cc-stats > div, .cc-about__site { animation: about-in linear both; animation-timeline: view(); animation-range: entry 5% entry 70%; }
+  .cc-about .cc-stats > div:nth-child(2) { animation-range: entry 20% entry 85%; }
+  .cc-about .cc-stats > div:nth-child(3) { animation-range: entry 35% entry 100%; }
+  .cc-about__site { animation-range: entry 0% entry 45%; }
+}
+
+@media (max-width: 1100px) {
+  .cc-about { padding: var(--cc-space-6) var(--cc-space-4); }
+  .cc-about .cc-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--cc-space-3); }
+}
+@media (max-width: 560px) {
+  .cc-about .cc-stats { grid-template-columns: minmax(0, 1fr); }
+  .cc-about .cc-stats > div { grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--cc-space-4); padding: var(--cc-space-4); }
+  .cc-about__site { padding: var(--cc-space-4); }
+  .cc-about__site .cc-readout > div { margin: 0; padding-inline: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-about > h2, .cc-about .cc-stats > div, .cc-about__site { animation: none; }
+  .cc-about .cc-stats > div:hover { transform: none; }
+}
+@media print {
+  .cc-about { border: 0; background: none; }
+  .cc-about .cc-stats dd { background: none; color: inherit; }
+}

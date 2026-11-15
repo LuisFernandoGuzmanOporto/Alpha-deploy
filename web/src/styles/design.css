@@ -1,0 +1,126 @@
+/* Capa común del sistema de diseño: una sola receta de cielo, vidrio, bordes, brillos y botones para todas las páginas.
+   Se carga después de app.css, premium.css y place.css y solo usa las variables de tokens.css.
+   Solo se animan opacity y transform. */
+
+/* ---------- Cielo fijo detrás de todo el sitio ---------- */
+.cc-app { position: relative; isolation: isolate; }
+.sky, .sky::before, .sky::after { position: fixed; inset: 0; pointer-events: none; }
+.sky { z-index: -1; overflow: hidden; }
+.sky::before, .sky::after { content: ""; background-repeat: repeat; }
+.sky::before {
+  background-image:
+    radial-gradient(1.2px 1.2px at 24px 38px, #fff, transparent),
+    radial-gradient(1px 1px at 140px 92px, #cfe6ff, transparent),
+    radial-gradient(1.4px 1.4px at 208px 176px, #fff, transparent),
+    radial-gradient(1px 1px at 76px 214px, #b9f3ff, transparent);
+  background-size: 260px 260px;
+  animation: sky-twinkle 5.5s ease-in-out infinite;
+}
+.sky::after {
+  background-image:
+    radial-gradient(1.8px 1.8px at 60px 120px, #fff, transparent),
+    radial-gradient(1px 1px at 250px 40px, #b9f3ff, transparent),
+    radial-gradient(1.4px 1.4px at 330px 260px, #9fd4ff, transparent),
+    radial-gradient(1px 1px at 170px 330px, #fff, transparent);
+  background-size: 390px 390px;
+  animation: sky-fade 11s ease-in-out -4s infinite;
+}
+@keyframes sky-twinkle { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.85; } }
+@keyframes sky-fade { 0%, 100% { opacity: 0.05; } 45%, 60% { opacity: 0.8; } }
+
+/* Estrellas fugaces: cabeza brillante y estela azul; pasan y descansan casi todo el ciclo. */
+.sky__shoot { position: absolute; width: 170px; height: 2px; border-radius: var(--cc-radius-pill); background: linear-gradient(90deg, transparent, #36a3ff99 55%, #fff); rotate: 20deg; opacity: 0; will-change: transform, opacity; animation: sky-shoot 12s linear infinite; }
+.sky__shoot::after { content: ""; position: absolute; right: -1px; top: 50%; width: 5px; height: 5px; border-radius: 50%; background: #fff; box-shadow: 0 0 10px 3px #9fe9ffcc, 0 0 22px 8px #1677ff80; transform: translateY(-50%); }
+.sky__shoot:nth-child(1) { top: 12%; left: 6%; }
+.sky__shoot:nth-child(2) { top: 6%; left: 52%; width: 120px; rotate: 28deg; animation-duration: 17s; animation-delay: -7s; }
+/* La tercera cruza despacio toda la pantalla. */
+.sky__shoot:nth-child(3) { top: 46%; left: -14%; width: 240px; rotate: 9deg; background: linear-gradient(90deg, transparent, #48dfff80 55%, #fff); animation: sky-drift 36s linear -12s infinite; }
+@keyframes sky-shoot {
+  0% { opacity: 0; transform: translateX(-160px); }
+  3% { opacity: 1; }
+  15% { opacity: 1; }
+  19%, 100% { opacity: 0; transform: translateX(760px); }
+}
+@keyframes sky-drift {
+  0% { opacity: 0; transform: translateX(0); }
+  6% { opacity: 0.7; }
+  52% { opacity: 0.7; }
+  60%, 100% { opacity: 0; transform: translateX(125vw); }
+}
+
+/* Partículas: puntos de luz a distintas profundidades (tamaño y desenfoque) que suben despacio. */
+.sky__dust { position: absolute; bottom: -12px; width: 5px; height: 5px; border-radius: 50%; background: var(--cc-cyan); box-shadow: 0 0 12px 2px #48dfff80; opacity: 0; filter: blur(0.5px); will-change: transform, opacity; animation: sky-dust 20s linear infinite; }
+.sky__dust:nth-child(4) { left: 8%; }
+.sky__dust:nth-child(5) { left: 24%; width: 3px; height: 3px; background: var(--cc-bright); box-shadow: 0 0 10px 2px #36a3ff80; animation-duration: 26s; animation-delay: -9s; }
+.sky__dust:nth-child(6) { left: 43%; width: 7px; height: 7px; filter: blur(2px); animation-duration: 31s; animation-delay: -4s; }
+.sky__dust:nth-child(7) { left: 61%; width: 4px; height: 4px; background: var(--cc-electric); box-shadow: 0 0 12px 2px #1677ff99; animation-duration: 28s; animation-delay: -15s; }
+.sky__dust:nth-child(8) { left: 78%; width: 3px; height: 3px; animation-duration: 22s; animation-delay: -11s; }
+.sky__dust:nth-child(9) { left: 93%; width: 6px; height: 6px; background: var(--cc-bright); box-shadow: 0 0 10px 2px #36a3ff80; filter: blur(1.5px); animation-duration: 25s; animation-delay: -2s; }
+@keyframes sky-dust {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.6); }
+  12% { opacity: 0.75; }
+  70% { opacity: 0.45; }
+  100% { opacity: 0; transform: translate(40px, -78vh) scale(1.15); }
+}
+
+/* ---------- Barra superior y pie ---------- */
+.cc-topbar { border-bottom-color: var(--cc-edge); background: linear-gradient(180deg, #061426f2, #0a2342c7); box-shadow: 0 1px 0 #48dfff1f, 0 10px 30px #020a1659; }
+.cc-brand svg { color: var(--cc-ice); filter: drop-shadow(0 0 8px #36a3ff80); }
+.cc-footer { border-top-color: var(--cc-edge); background: linear-gradient(180deg, #0a234266, #061426cc); }
+
+/* ---------- Títulos: misma jerarquía en todas las páginas ---------- */
+.cc-control h1, .cc-about > h2, .cc-globe-section__head h2, .cc-page-head h1, .methodology h1, .cc-compare h1, .cc-panel__head h2 { background: var(--cc-grad-title); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero__accent { background: linear-gradient(100deg, var(--cc-bright) 5%, var(--cc-cyan) 55%, var(--cc-ice)); -webkit-background-clip: text; background-clip: text; }
+
+/* ---------- Tarjetas y paneles: vidrio azul, borde fino y sombra comunes ---------- */
+.cc-result, .cc-stats > div, .hero__stat, .disc-card, .methodology, .methodology .flow__step, .globe-cards li, .ea-card, .ea-site, .ea-limitations, .ea-fold, .ea-world, .cc-matrix-wrap, .cc-globe-section__body, .cc-about__site {
+  border: var(--cc-line) solid var(--cc-edge);
+  border-radius: var(--cc-radius-xl);
+  background: var(--cc-glass-card);
+  box-shadow: var(--cc-shadow-card);
+}
+/* Paneles flotantes, diálogos y menús: mismo vidrio, algo más opaco para leer encima del mapa. */
+.cc-float, .cc-panel, .place-card, .cc-dialog, .cc-menu, .cc-select__content, .map-pin__preview {
+  border: var(--cc-line) solid var(--cc-edge);
+  background: linear-gradient(180deg, #36a3ff1a, #0a234200 180px), #081a33eb;
+  box-shadow: 0 24px 60px #020a1699, inset 0 1px 0 #f3f8ff14;
+}
+.cc-float, .cc-panel { backdrop-filter: blur(18px) saturate(150%); -webkit-backdrop-filter: blur(18px) saturate(150%); }
+.map-pin__preview::after { border-color: var(--cc-edge); background: #081a33; }
+.explorer__tools { background: #081a33f2; }
+
+/* Luz al pasar el cursor en las tarjetas que se pueden pulsar o destacan una cifra. */
+.cc-result, .cc-stats > div, .hero__stat, .disc-card, .methodology .flow__step, .globe-cards li, .ea-card, .ea-site { transition: transform 260ms var(--cc-ease), border-color 260ms var(--cc-ease), box-shadow 260ms var(--cc-ease), background 260ms var(--cc-ease); }
+.cc-result:hover, .cc-stats > div:hover, .hero__stat:hover, .disc-card:hover, .methodology .flow__step:hover, .globe-cards li:hover, .ea-card:hover, .ea-site:hover { border-color: var(--cc-edge-hot); box-shadow: var(--cc-shadow-glow); }
+.cc-result.is-selected, .cc-result[aria-current="true"] { border-color: var(--cc-edge-hot); box-shadow: var(--cc-shadow-glow); }
+
+/* ---------- Botones: un solo degradado de marca ---------- */
+.btn--primary, .ea-button, .cc-filterbtn__count { background: var(--cc-grad-brand); color: #03101f; }
+.btn--primary { box-shadow: 0 8px 28px #1677ff59, inset 0 1px 0 #ffffff80; }
+.btn--primary:hover { box-shadow: 0 14px 38px #36a3ff80, inset 0 1px 0 #ffffff99; }
+.btn--ghost, .cc-filterbtn, .cc-current, .cc-select, .explorer__search, .explorer__country select, .cc-multi__picker select { border-color: #36a3ff66; background-color: #0a234299; }
+.btn--ghost:hover, .cc-filterbtn:hover, .cc-current:hover, .cc-select:hover { border-color: var(--cc-cyan); box-shadow: 0 0 0 3px #48dfff1f, 0 0 22px #36a3ff40; }
+.cc-seg, .cc-panel__tabs { border: var(--cc-line) solid var(--cc-edge); background: #04101fcc; }
+.cc-seg__btn[aria-checked="true"], .cc-panel__tabs button[aria-pressed="true"] { border-color: #48dfff59; background: linear-gradient(180deg, #36a3ff47, #1677ff29); color: var(--cc-ice); box-shadow: 0 0 18px #1677ff40, inset 0 1px 0 #f3f8ff26; }
+.explorer__chip { border-color: #36a3ff66; background: #0a234280; }
+.explorer__chip[aria-pressed="true"] { border-color: transparent; background: var(--cc-grad-brand); color: #03101f; }
+.cc-chip, .place-card__chip--cat { border-color: #48dfff80; background: #36a3ff24; color: var(--cc-cyan); }
+
+/* Enlaces y foco */
+a { transition: color var(--cc-dur) var(--cc-ease); }
+.ea-tag { border-color: #36a3ff66; border-radius: var(--cc-radius-pill); background: #1677ff1f; color: #cfe6ff; padding-inline: var(--cc-space-3); }
+
+/* Tablas (matriz, comparador, metodología): cabeceras y filas alternas en azul translúcido */
+.cc-matrix thead th, .methodology th { background: #0e2748; }
+.cc-matrix tbody th { background: #0a1c36; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sky::before, .sky::after { animation: none; opacity: 0.6; }
+  .sky__shoot, .sky__dust { display: none; }
+  .cc-result, .cc-stats > div, .hero__stat, .disc-card, .methodology .flow__step, .globe-cards li, .ea-card, .ea-site { transition: none; }
+}
+@media print {
+  .sky { display: none; }
+  .cc-control h1, .cc-about > h2, .cc-globe-section__head h2, .cc-page-head h1, .methodology h1, .cc-compare h1, .cc-panel__head h2 { background: none; color: inherit; }
+  .cc-result, .cc-stats > div, .hero__stat, .disc-card, .methodology, .methodology .flow__step, .globe-cards li, .ea-card, .ea-site, .ea-limitations, .ea-fold, .ea-world, .cc-matrix-wrap, .cc-globe-section__body, .cc-about__site { background: none; box-shadow: none; }
+}

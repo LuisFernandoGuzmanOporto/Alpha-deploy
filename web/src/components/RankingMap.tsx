@@ -1,5 +1,6 @@
+import type { Feature, FeatureCollection, LineString } from "geojson";
 import { useEffect, useRef, useState } from "react";
-import { LngLatBounds, Map as MapLibreMap, Marker, setWorkerUrl } from "maplibre-gl";
+import { LngLatBounds, Map as MapLibreMap, Marker, NavigationControl, setWorkerUrl } from "maplibre-gl";
 import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useT } from "../i18n";
@@ -88,7 +89,19 @@ function createPin(row: RankingRow, rank: number, onSelect: (id: string) => void
 
 /** Color de fondo del mapa, leído de tokens.css. */
 function waterColor(): string {
-  return getComputedStyle(document.documentElement).getPropertyValue("--cc-map-water").trim() || "#0f2240";
+  return getComputedStyle(document.documentElement).getPropertyValue("--cc-map-water").trim() || "#071a33";
+}
+
+/** Retícula de meridianos y paralelos cada 30°; el ecuador y el meridiano 0 van marcados como principales. */
+function graticule(): FeatureCollection<LineString> {
+  const features: Feature<LineString>[] = [];
+  for (let lon = -180; lon <= 180; lon += 30) {
+    features.push({ type: "Feature", properties: { major: lon === 0 }, geometry: { type: "LineString", coordinates: [[lon, -85], [lon, 85]] } });
+  }
+  for (let lat = -60; lat <= 60; lat += 30) {
+    features.push({ type: "Feature", properties: { major: lat === 0 }, geometry: { type: "LineString", coordinates: [[-180, lat], [180, lat]] } });
+  }
+  return { type: "FeatureCollection", features };
 }
 
 /** Con "reducir movimiento" el mapa salta al destino sin animar el recorrido. */
@@ -125,9 +138,20 @@ export function RankingMap({ rows, selectedId, onSelect }: Props) {
       zoom: 1,
       // En pantallas estrechas el mapa va entre bloques: un dedo desplaza la página y dos mueven el mapa.
       cooperativeGestures: window.matchMedia("(max-width: 1100px)").matches,
+      attributionControl: { compact: false },
       style: {
         version: 8,
         sources: {
+          // Imagen de satélite real de la Tierra (NASA Blue Marble, relieve sombreado y batimetría), hasta zoom 8.
+          bluemarble: {
+            type: "raster",
+            tiles: [
+              "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/BlueMarble_ShadedRelief_Bathymetry/default/GoogleMapsCompatible_Level8/{z}/{y}/{x}.jpeg",
+            ],
+            tileSize: 256,
+            maxzoom: 8,
+            attribution: "Blue Marble: NASA GIBS / ESDIS",
+          },
           osm: {
             type: "raster",
             tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
@@ -135,24 +159,59 @@ export function RankingMap({ rows, selectedId, onSelect }: Props) {
             maxzoom: 19,
             attribution: "© OpenStreetMap contributors",
           },
+          graticule: { type: "geojson", data: graticule() },
         },
         layers: [
-          // Fondo azul noche (token --cc-map-water) bajo las teselas en gris: tiñe el mapa sin competir con los puntos.
           { id: "water", type: "background", paint: { "background-color": waterColor() } },
-          { id: "osm", type: "raster", source: "osm", paint: { "raster-saturation": -1, "raster-brightness-max": 0.5, "raster-contrast": 0.1, "raster-opacity": 0.42 } },
+          // Oscurecida y algo desaturada: se reconoce el terreno sin competir con los puntos del ranking.
+          {
+            id: "bluemarble",
+            type: "raster",
+            source: "bluemarble",
+            paint: {
+              "raster-saturation": -0.3,
+              "raster-contrast": 0.18,
+              "raster-brightness-max": 0.74,
+              "raster-opacity": ["interpolate", ["linear"], ["zoom"], 8, 1, 10, 0.35],
+            },
+          },
+          // De cerca (zoom mayor que 8) la imagen ya no da detalle: entran las calles y nombres de OpenStreetMap en gris.
+          {
+            id: "osm",
+            type: "raster",
+            source: "osm",
+            minzoom: 8,
+            paint: {
+              "raster-saturation": -1,
+              "raster-brightness-max": 0.5,
+              "raster-contrast": 0.1,
+              "raster-opacity": ["interpolate", ["linear"], ["zoom"], 8, 0, 10, 0.5],
+            },
+          },
+          {
+            id: "graticule",
+            type: "line",
+            source: "graticule",
+            paint: {
+              "line-color": "#9fe9ff",
+              "line-width": ["case", ["get", "major"], 1, 0.6],
+              "line-opacity": ["case", ["get", "major"], 0.28, 0.12],
+              "line-dasharray": [2, 4],
+            },
+          },
         ],
       },
     });
     mapRef.current = map;
+    map.addControl(new NavigationControl({ showCompass: false }), "bottom-left");
 
-    map.on("load", () => {
-      map.on("mousemove", (event) => {
-        if (!cursorRef.current) return;
-        const lon = ((((event.lngLat.lng + 180) % 360) + 360) % 360) - 180;
-        cursorRef.current.textContent = `LAT ${event.lngLat.lat.toFixed(2)} · LON ${lon.toFixed(2)}`;
-      });
-      setReady(true);
+    map.on("mousemove", (event) => {
+      if (!cursorRef.current) return;
+      const lon = ((((event.lngLat.lng + 180) % 360) + 360) % 360) - 180;
+      cursorRef.current.textContent = `LAT ${event.lngLat.lat.toFixed(2)} · LON ${lon.toFixed(2)}`;
     });
+    // Los marcadores son elementos HTML: se colocan ya, sin esperar a que bajen las teselas de la imagen.
+    setReady(true);
 
     return () => {
       for (const marker of markersRef.current) marker.remove();

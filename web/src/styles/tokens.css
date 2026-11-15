@@ -1,29 +1,37 @@
-/* Sistema de diseño "centro de control": azul noche, cian solo para la interacción y ámbar/naranja solo para el puntaje.
+/* Sistema de diseño "centro de control": una sola identidad azul (noche, profundo, eléctrico, brillante y cian) y ámbar/naranja solo para el puntaje.
    Todo el color, la tipografía, el espaciado, las formas y el movimiento salen de estas variables.
    Los alias `--ea-*` mantienen funcionando los componentes de Noe (components/ui) con el tema nuevo. */
 :root {
   color-scheme: dark;
 
-  /* Color: superficies de grafito (de la más oscura a la más clara) */
-  --cc-bg: #0b0f17;
-  --cc-surface: #121826;
-  --cc-surface-2: #19212f;
-  --cc-surface-3: #222b3b;
-  --cc-border: #253044;
-  --cc-border-strong: #3a475e;
+  /* Identidad: los seis colores de la marca. El resto de variables sale de ellos. */
+  --cc-night: #061426;
+  --cc-deep: #0a2342;
+  --cc-electric: #1677ff;
+  --cc-bright: #36a3ff;
+  --cc-cyan: #48dfff;
+  --cc-ice: #f3f8ff;
+
+  /* Color: superficies azules (de la más oscura a la más clara) */
+  --cc-bg: #061426;
+  --cc-surface: #0a1c36;
+  --cc-surface-2: #0e2748;
+  --cc-surface-3: #112c52;
+  --cc-border: #1b3a63;
+  --cc-border-strong: #2b5288;
   /* Borde de controles (botones, interruptores, selectores): 3:1 sobre todas las superficies */
-  --cc-control-line: #6b7a93;
+  --cc-control-line: #6a8fc0;
 
   /* Color: texto y acento */
-  --cc-text: #e8ecf3;
-  --cc-text-muted: #a3adbf;
-  --cc-accent: #4cc9f0;
-  --cc-accent-strong: #7ad8f5;
+  --cc-text: #f3f8ff;
+  --cc-text-muted: #a9bedb;
+  --cc-accent: #36a3ff;
+  --cc-accent-strong: #48dfff;
   --cc-accent-ink: #06121a;
-  --cc-accent-wash: #4cc9f01f;
+  --cc-accent-wash: #36a3ff1f;
   --cc-warn: #ff7b7b;
   --cc-warn-wash: #ff7b7b1a;
-  --cc-focus: #a5e6ff;
+  --cc-focus: #9fe9ff;
 
   /* Escala del índice de similitud: apagado, ámbar y naranja intenso (brillo y tamaño dicen lo mismo que el color) */
   --cc-scale-low: #8a7d6e;
@@ -37,12 +45,12 @@
   --cc-earth: #4a90d9;
 
   /* Capas sobre el mapa y fondos translúcidos */
-  --cc-glass: #121826f2;
-  --cc-hud-bg: #0b0f17f0;
-  --cc-topbar-bg: #0b0f17ee;
-  --cc-scrim: #05080db3;
-  --cc-map-water: #0f2240;
-  --cc-accent-line: #4cc9f066;
+  --cc-glass: #0a1c36f2;
+  --cc-hud-bg: #061426f0;
+  --cc-topbar-bg: #061426ee;
+  --cc-scrim: #030a14b3;
+  --cc-map-water: #071a33;
+  --cc-accent-line: #36a3ff66;
   --cc-warn-line: #ff7b7b55;
   --cc-shade: #00000059;
 
@@ -72,11 +80,20 @@
 
   /* Formas y bordes finos */
   --cc-line: 1px;
-  --cc-radius: 4px;
-  --cc-radius-lg: 8px;
-  --cc-radius-xl: 12px;
+  --cc-radius: 6px;
+  --cc-radius-lg: 10px;
+  --cc-radius-xl: 16px;
   --cc-radius-pill: 999px;
   --cc-shadow-float: 0 12px 32px var(--cc-shade), 0 0 0 1px var(--cc-border);
+
+  /* Vidrio, bordes y brillos compartidos por tarjetas, paneles y botones (design.css) */
+  --cc-grad-brand: linear-gradient(135deg, var(--cc-electric), var(--cc-bright) 55%, var(--cc-cyan));
+  --cc-grad-title: linear-gradient(95deg, var(--cc-ice) 15%, #9fd4ff 55%, var(--cc-cyan));
+  --cc-glass-card: linear-gradient(180deg, #36a3ff17, #0a234200 62%), #0a2342b8;
+  --cc-edge: #36a3ff3d;
+  --cc-edge-hot: #48dfffa6;
+  --cc-shadow-card: 0 10px 30px #020a1666, inset 0 1px 0 #f3f8ff14;
+  --cc-shadow-glow: 0 16px 44px #1677ff47, 0 0 0 1px #48dfff40, inset 0 1px 0 #f3f8ff26;
 
   /* Movimiento */
   --cc-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
